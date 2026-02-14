@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件管理平台 - 统计分析</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>软件管理平台</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="software-list.html">软件列表</a></li>
+                    <li><a href="statistics.html" class="active">统计分析</a></li>
+                    <li><a href="user-management.html">用户管理</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>欢迎，管理员</span>
+                <button class="logout-btn">退出</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main">
+        <div class="container">
+            <!-- 统计概览 -->
+            <section class="stats-overview">
+                <h2>统计概览</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="card-icon">📊</div>
+                        <div class="card-content">
+                            <h3>软件总数</h3>
+                            <div class="card-number">1,245</div>
+                            <div class="card-change positive">+12.5%</div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="card-icon">👥</div>
+                        <div class="card-content">
+                            <h3>活跃用户</h3>
+                            <div class="card-number">892</div>
+                            <div class="card-change positive">+8.3%</div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="card-icon">⬇️</div>
+                        <div class="card-content">
+                            <h3>本月下载</h3>
+                            <div class="card-number">4,567</div>
+                            <div class="card-change positive">+23.1%</div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="card-icon">⭐</div>
+                        <div class="card-content">
+                            <h3>平均评分</h3>
+                            <div class="card-number">4.3</div>
+                            <div class="card-change negative">-0.2</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 图表分析区域 -->
+            <section class="charts-section">
+                <div class="charts-grid">
+                    <!-- 软件类型分布 -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>软件类型分布</h3>
+                            <div class="chart-controls">
+                                <button class="chart-btn active">饼图</button>
+                                <button class="chart-btn">柱状图</button>
+                            </div>
+                        </div>
+                        <div class="chart-content">
+                            <div class="pie-chart">
+                                <div class="pie-item commercial">
+                                    <div class="pie-legend">
+                                        <span class="color-dot commercial"></span>
+                                        <span>商业软件 34.4%</span>
+                                    </div>
+                                </div>
+                                <div class="pie-item opensource">
+                                    <div class="pie-legend">
+                                        <span class="color-dot opensource"></span>
+                                        <span>开源软件 45.5%</span>
+                                    </div>
+                                </div>
+                                <div class="pie-item self">
+                                    <div class="pie-legend">
+                                        <span class="color-dot self"></span>
+                                        <span>自主软件 20.1%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 下载趋势 -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>下载趋势</h3>
+                            <div class="chart-controls">
+                                <select class="time-range">
+                                    <option value="7">近7天</option>
+                                    <option value="30" selected>近30天</option>
+                                    <option value="90">近3个月</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-content">
+                            <div class="trend-chart">
+                                <div class="chart-bars">
+                                    <div class="bar" style="height: 60%"></div>
+                                    <div class="bar" style="height: 80%"></div>
+                                    <div class="bar" style="height: 45%"></div>
+                                    <div class="bar" style="height: 90%"></div>
+                                    <div class="bar" style="height: 70%"></div>
+                                    <div class="bar" style="height: 85%"></div>
+                                    <div class="bar" style="height: 95%"></div>
+                                </div>
+                                <div class="chart-labels">
+                                    <span>周一</span>
+                                    <span>周二</span>
+                                    <span>周三</span>
+                                    <span>周四</span>
+                                    <span>周五</span>
+                                    <span>周六</span>
+                                    <span>周日</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 部门使用统计 -->
+            <section class="department-stats">
+                <div class="section-header">
+                    <h2>部门使用统计</h2>
+                    <button class="btn btn-primary">导出报告</button>
+                </div>
+                <div class="department-grid">
+                    <div class="department-item">
+                        <div class="department-header">
+                            <h4>技术部</h4>
+                            <span class="usage-count">456次</span>
+                        </div>
+                        <div class="usage-bar">
+                            <div class="usage-fill" style="width: 75%"></div>
+                        </div>
+                        <div class="department-detail">
+                            <span>产品类: 234次</span>
+                            <span>组件类: 222次</span>
+                        </div>
+                    </div>
+                    <div class="department-item">
+                        <div class="department-header">
+                            <h4>产品部</h4>
+                            <span class="usage-count">234次</span>
+                        </div>
+                        <div class="usage-bar">
+                            <div class="usage-fill" style="width: 38%"></div>
+                        </div>
+                        <div class="department-detail">
+                            <span>产品类: 189次</span>
+                            <span>组件类: 45次</span>
+                        </div>
+                    </div>
+                    <div class="department-item">
+                        <div class="department-header">
+                            <h4>市场部</h4>
+                            <span class="usage-count">123次</span>
+                        </div>
+                        <div class="usage-bar">
+                            <div class="usage-fill" style="width: 20%"></div>
+                        </div>
+                        <div class="department-detail">
+                            <span>产品类: 98次</span>
+                            <span>组件类: 25次</span>
+                        </div>
+                    </div>
+                    <div class="department-item">
+                        <div class="department-header">
+                            <h4>运营部</h4>
+                            <span class="usage-count">178次</span>
+                        </div>
+                        <div class="usage-bar">
+                            <div class="usage-fill" style="width: 29%"></div>
+                        </div>
+                        <div class="department-detail">
+                            <span>产品类: 134次</span>
+                            <span>组件类: 44次</span>
+                        </div>
+                    </div>
+                    <div class="department-item">
+                        <div class="department-header">
+                            <h4>人事部</h4>
+                            <span class="usage-count">67次</span>
+                        </div>
+                        <div class="usage-bar">
+                            <div class="usage-fill" style="width: 11%"></div>
+                        </div>
+                        <div class="department-detail">
+                            <span>产品类: 56次</span>
+                            <span>组件类: 11次</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 热门软件排行 -->
+            <section class="popular-software">
+                <div class="section-header">
+                    <h2>热门软件排行</h2>
+                    <div class="filter-tabs">
+                        <button class="tab-btn active">全部</button>
+                        <button class="tab-btn">产品类</button>
+                        <button class="tab-btn">组件类</button>
+                    </div>
+                </div>
+                <div class="ranking-list">
+                    <div class="ranking-item">
+                        <div class="rank-number">1</div>
+                        <div class="software-info">
+                            <h4>org.springframework.boot:spring-boot-starter</h4>
+                            <p class="software-meta">开源软件 · 组件类</p>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="download-count">3,789次</div>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="rank-number">2</div>
+                        <div class="software-info">
+                            <h4>飞书</h4>
+                            <p class="software-meta">商业软件 · 产品类</p>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="download-count">2,456次</div>
+                            <div class="rating">★★★★☆</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="rank-number">3</div>
+                        <div class="software-info">
+                            <h4>内部CRM系统</h4>
+                            <p class="software-meta">自主软件 · 产品类</p>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="download-count">1,234次</div>
+                            <div class="rating">★★★★☆</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="rank-number">4</div>
+                        <div class="software-info">
+                            <h4>org.apache.logging.log4j:log4j-core</h4>
+                            <p class="software-meta">开源软件 · 组件类</p>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="download-count">987次</div>
+                            <div class="rating">★★★★☆</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <div class="rank-number">5</div>
+                        <div class="software-info">
+                            <h4>Office 365</h4>
+                            <p class="software-meta">商业软件 · 产品类</p>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="download-count">876次</div>
+                            <div class="rating">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 许可证状态 -->
+            <section class="license-stats">
+                <div class="section-header">
+                    <h2>许可证状态</h2>
+                    <div class="alert-controls">
+                        <button class="alert-btn active">全部</button>
+                        <button class="alert-btn warning">即将到期</button>
+                        <button class="alert-btn danger">已过期</button>
+                    </div>
+                </div>
+                <div class="license-grid">
+                    <div class="license-item">
+                        <div class="license-header">
+                            <h4>飞书企业版</h4>
+                            <span class="license-status valid">有效</span>
+                        </div>
+                        <div class="license-info">
+                            <span>到期时间: 2026-12-31</span>
+                            <span>剩余: 323天</span>
+                        </div>
+                    </div>
+                    <div class="license-item warning">
+                        <div class="license-header">
+                            <h4>Office 365</h4>
+                            <span class="license-status expiring">即将到期</span>
+                        </div>
+                        <div class="license-info">
+                            <span>到期时间: 2026-06-30</span>
+                            <span>剩余: 139天</span>
+                        </div>
+                    </div>
+                    <div class="license-item danger">
+                        <div class="license-header">
+                            <h4>Windows Server 2016</h4>
+                            <span class="license-status expired">已过期</span>
+                        </div>
+                        <div class="license-info">
+                            <span>到期时间: 2025-01-15</span>
+                            <span>过期: 393天</span>
+                        </div>
+                    </div>
+                    <div class="license-item warning">
+                        <div class="license-header">
+                            <h4>Adobe Creative Cloud</h4>
+                            <span class="license-status expiring">即将到期</span>
+                        </div>
+                        <div class="license-info">
+                            <span>到期时间: 2026-09-15</span>
+                            <span>剩余: 216天</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 软件管理平台. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

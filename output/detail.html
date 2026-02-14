@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件详情 - 企业软件管理系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">企业软件管理系统</h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-item">软件列表</a>
+                <a href="#" class="nav-item">帮助文档</a>
+                <a href="#" class="nav-item">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">软件列表</a> > <span id="softwareName">软件详情</span>
+            </div>
+
+            <div class="software-detail" id="softwareDetail">
+                <!-- 软件详情将通过JavaScript动态生成 -->
+            </div>
+
+            <div class="tabs-section">
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showTab('versions', this)">版本信息</button>
+                    <button class="tab-btn" onclick="showTab('documents', this)">相关文档</button>
+                    <button class="tab-btn" onclick="showTab('reviews', this)">用户评价</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="versions" class="tab-pane active">
+                        <h3>软件版本</h3>
+                        <div class="versions-list" id="versionsList">
+                            <!-- 版本信息将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+
+                    <div id="documents" class="tab-pane">
+                        <h3>相关文档</h3>
+                        <div class="documents-list" id="documentsList">
+                            <!-- 文档列表将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+
+                    <div id="reviews" class="tab-pane">
+                        <h3>用户评价</h3>
+                        <div class="reviews-section">
+                            <div class="rating-summary">
+                                <div class="average-rating">
+                                    <span class="rating-score" id="averageRating">4.5</span>
+                                    <div class="stars" id="starsContainer">
+                                        <!-- 星级评分将通过JavaScript动态生成 -->
+                                    </div>
+                                    <span class="rating-count">(基于用户评价)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="user-reviews" id="userReviews">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <span class="review-author">张三</span>
+                                        <span class="review-date">2024-01-15</span>
+                                        <div class="review-rating">★★★★★</div>
+                                    </div>
+                                    <p class="review-content">软件功能强大，界面友好，非常适合日常工作使用。</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <span class="review-author">李四</span>
+                                        <span class="review-date">2024-01-10</span>
+                                        <div class="review-rating">★★★★☆</div>
+                                    </div>
+                                    <p class="review-content">整体使用体验不错，但希望增加更多自定义功能。</p>
+                                </div>
+                            </div>
+                            
+                            <button class="add-review-btn" onclick="addReview()">写评价</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 企业软件管理系统. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="detail-script.js"></script>
+</body>
+</html>

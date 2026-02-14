@@ -1,0 +1,100 @@
+# 软件管理平台模拟数据
+
+## 软件列表数据
+
+### 商业软件 - 产品类
+1. 飞书 - v6.5.0 - 办公软件 - 2456次下载
+2. Office 365 - v2306 - 办公软件 - 1234次下载
+3. Adobe Creative Cloud - v2024 - 设计软件 - 892次下载
+4. SAP Business One - v10.0 - ERP系统 - 567次下载
+5. 金蝶云星空 - v7.5 - ERP系统 - 445次下载
+
+### 开源软件 - 产品类
+1. LibreOffice - v7.6.2 - 办公软件 - 678次下载
+2. GIMP - v2.10.34 - 图像处理 - 432次下载
+3. Blender - v4.0.1 - 3D建模 - 289次下载
+4. Audacity - v3.4.2 - 音频编辑 - 198次下载
+5. Inkscape - v1.3.0 - 矢量图形 - 156次下载
+
+### 自主软件 - 产品类
+1. 内部CRM系统 - v2.3.1 - 业务系统 - 567次下载
+2. 内部OA系统 - v3.1.0 - 办公系统 - 890次下载
+3. 内部BI平台 - v1.8.2 - 数据分析 - 334次下载
+4. 内部审批流程 - v2.0.5 - 流程管理 - 445次下载
+5. 内部文档管理 - v1.5.0 - 文档系统 - 678次下载
+
+### 商业软件 - 组件类
+1. Oracle JDBC Driver - v21.7.0.0 - 数据库驱动 - 1234次访问
+2. SQL Server JDBC - v12.4.0 - 数据库驱动 - 987次访问
+3. IBM MQ Client - v9.3.0 - 消息队列 - 456次访问
+4. DevExpress Components - v23.1 - UI组件 - 345次访问
+5. Telerik UI - v2023.3 - UI组件 - 234次访问
+
+### 开源软件 - 组件类
+1. org.springframework.boot:spring-boot-starter - v2.7.14 - 开发框架 - 3789次访问
+2. org.apache.logging.log4j:log4j-core - v2.20.0 - 日志组件 - 2156次访问
+3. org.apache.httpcomponents:httpclient - v4.5.14 - HTTP客户端 - 1876次访问
+4. com.fasterxml.jackson.core:jackson-databind - v2.15.2 - JSON处理 - 1654次访问
+5. org.hibernate:hibernate-core - v5.6.15.Final - ORM框架 - 1234次访问
+
+### 自主软件 - 组件类
+1. com.company.core:utils - v1.2.3 - 工具包 - 2345次访问
+2. com.company.auth:security - v2.1.0 - 安全组件 - 1876次访问
+3. com.company.cache:redis-client - v1.5.2 - 缓存客户端 - 1543次访问
+4. com.company.message:mq-adapter - v1.0.8 - 消息适配器 - 1234次访问
+5. com.company.data:database-pool - v2.3.1 - 数据库连接池 - 987次访问
+
+## 用户评价数据
+
+### 飞书评价
+- 李四 - 5星 - 2026-02-10 - 功能强大，界面友好，团队协作效率提升明显
+- 王五 - 4星 - 2026-02-08 - 整体使用体验不错，希望增加更多自定义选项
+- 赵六 - 5星 - 2026-02-05 - 视频会议功能稳定，文档协作非常方便
+
+### Spring Boot Starter评价
+- 张三 - 5星 - 2026-02-12 - 开发效率提升明显，配置简单，文档完善
+- 李四 - 4星 - 2026-02-09 - 功能强大，但某些配置复杂度较高
+- 王五 - 5星 - 2026-02-07 - 社区活跃，问题解决及时，推荐使用
+
+## 许可证数据
+
+### 即将到期许可证
+- 飞书企业版 - 2026-12-31 - 剩余323天
+- Office 365 - 2026-06-30 - 剩余139天
+- Adobe Creative Cloud - 2026-09-15 - 剩余216天
+
+### 已过期许可证
+- Windows Server 2016 - 2025-01-15 - 已过期393天
+
+## 统计数据
+
+### 总体统计
+- 软件总数：1,245
+- 商业软件：428
+- 开源软件：567
+- 自主软件：250
+- 产品类软件：521
+- 组件类软件：724
+
+### 使用统计
+- 今日下载：156次
+- 本周下载：1,089次
+- 本月下载：4,567次
+- 活跃用户：892人
+- 平均评分：4.3星
+
+### 部门统计
+- 技术部：456次使用
+- 产品部：234次使用
+- 市场部：123次使用
+- 运营部：178次使用
+- 人事部：67次使用
+
+## 白名单URL
+
+### 可信外部系统
+- https://search.maven.org/
+- https://repo.maven.apache.org/
+- https://central.sonatype.com/
+- https://repo1.maven.org/
+- https://dl.google.com/android/

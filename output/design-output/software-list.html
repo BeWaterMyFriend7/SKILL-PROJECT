@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件管理平台 - 软件列表</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>软件管理平台</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="software-list.html" class="active">软件列表</a></li>
+                    <li><a href="statistics.html">统计分析</a></li>
+                    <li><a href="user-management.html">用户管理</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>欢迎，管理员</span>
+                <button class="logout-btn">退出</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main">
+        <div class="container">
+            <!-- 搜索和筛选区域 -->
+            <section class="search-section">
+                <div class="search-bar">
+                    <input type="text" placeholder="搜索软件名称、组件坐标、功能类型..." class="search-input">
+                    <button class="search-btn">搜索</button>
+                </div>
+                
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <label>软件类型：</label>
+                        <select class="filter-select">
+                            <option value="">全部</option>
+                            <option value="commercial">商业软件</option>
+                            <option value="opensource">开源软件</option>
+                            <option value="self">自主软件</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>软件分类：</label>
+                        <select class="filter-select">
+                            <option value="">全部</option>
+                            <option value="product">产品类</option>
+                            <option value="component">组件类</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>功能类型：</label>
+                        <select class="filter-select">
+                            <option value="">全部</option>
+                            <option value="office">办公软件</option>
+                            <option value="dev">开发工具</option>
+                            <option value="system">系统软件</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>许可证状态：</label>
+                        <select class="filter-select">
+                            <option value="">全部</option>
+                            <option value="valid">有效</option>
+                            <option value="expired">已过期</option>
+                            <option value="expiring">即将到期</option>
+                        </select>
+                    </div>
+                    
+                    <button class="filter-btn">重置</button>
+                </div>
+            </section>
+
+            <!-- 视图切换 -->
+            <section class="view-toggle">
+                <div class="view-controls">
+                    <span class="view-label">显示方式：</span>
+                    <button class="view-btn active" data-view="grid">卡片视图</button>
+                    <button class="view-btn" data-view="list">列表视图</button>
+                </div>
+                <div class="sort-controls">
+                    <span class="sort-label">排序方式：</span>
+                    <select class="sort-select">
+                        <option value="update">更新时间</option>
+                        <option value="create">创建时间</option>
+                        <option value="name">名称</option>
+                        <option value="downloads">下载次数</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- 软件列表 - 卡片视图 -->
+            <section class="software-grid" id="grid-view">
+                <!-- 产品类软件卡片 -->
+                <div class="software-card product-card">
+                    <div class="card-header">
+                        <h3 class="software-name">飞书</h3>
+                        <div class="software-badges">
+                            <span class="badge type-badge commercial">商业软件</span>
+                            <span class="badge category-badge product">产品类</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="software-info">
+                            <p class="software-desc">企业协作办公平台，支持即时通讯、文档协作、视频会议等功能</p>
+                            <div class="software-meta">
+                                <span class="meta-item">版本: v6.5.0</span>
+                                <span class="meta-item">类型: 办公软件</span>
+                                <span class="meta-item">下载: 2,456次</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" onclick="location.href='software-detail.html?type=product&id=1'">查看详情</button>
+                        <button class="btn btn-success">立即下载</button>
+                    </div>
+                </div>
+
+                <!-- 组件类软件卡片 -->
+                <div class="software-card component-card">
+                    <div class="card-header">
+                        <h3 class="software-name">org.springframework.boot:spring-boot-starter</h3>
+                        <div class="software-badges">
+                            <span class="badge type-badge opensource">开源软件</span>
+                            <span class="badge category-badge component">组件类</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="software-info">
+                            <p class="software-desc">Spring Boot应用启动器，提供快速构建生产级Spring应用程序的功能</p>
+                            <div class="software-meta">
+                                <span class="meta-item">版本: 2.7.14</span>
+                                <span class="meta-item">类型: 开发组件</span>
+                                <span class="meta-item">访问: 3,789次</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" onclick="location.href='software-detail.html?type=component&id=2'">查看详情</button>
+                        <button class="btn btn-warning" onclick="location.href='https://search.maven.org/'">跳转下载</button>
+                    </div>
+                </div>
+
+                <!-- 更多软件卡片 -->
+                <div class="software-card product-card">
+                    <div class="card-header">
+                        <h3 class="software-name">Office 365</h3>
+                        <div class="software-badges">
+                            <span class="badge type-badge commercial">商业软件</span>
+                            <span class="badge category-badge product">产品类</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="software-info">
+                            <p class="software-desc">微软办公套件，包含Word、Excel、PowerPoint等应用</p>
+                            <div class="software-meta">
+                                <span class="meta-item">版本: 2306</span>
+                                <span class="meta-item">类型: 办公软件</span>
+                                <span class="meta-item">下载: 1,234次</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" onclick="location.href='software-detail.html?type=product&id=3'">查看详情</button>
+                        <button class="btn btn-success">立即下载</button>
+                    </div>
+                </div>
+
+                <div class="software-card component-card">
+                    <div class="card-header">
+                        <h3 class="software-name">org.apache.logging.log4j:log4j-core</h3>
+                        <div class="software-badges">
+                            <span class="badge type-badge opensource">开源软件</span>
+                            <span class="badge category-badge component">组件类</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="software-info">
+                            <p class="software-desc">Apache Log4j 2 核心组件，提供高性能的日志记录功能</p>
+                            <div class="software-meta">
+                                <span class="meta-item">版本: 2.20.0</span>
+                                <span class="meta-item">类型: 日志组件</span>
+                                <span class="meta-item">访问: 2,156次</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" onclick="location.href='software-detail.html?type=component&id=4'">查看详情</button>
+                        <button class="btn btn-warning" onclick="location.href='https://search.maven.org/'">跳转下载</button>
+                    </div>
+                </div>
+
+                <div class="software-card product-card">
+                    <div class="card-header">
+                        <h3 class="software-name">内部CRM系统</h3>
+                        <div class="software-badges">
+                            <span class="badge type-badge self">自主软件</span>
+                            <span class="badge category-badge product">产品类</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="software-info">
+                            <p class="software-desc">公司自主开发的客户关系管理系统，支持销售管理、客户跟踪等功能</p>
+                            <div class="software-meta">
+                                <span class="meta-item">版本: v2.3.1</span>
+                                <span class="meta-item">类型: 业务系统</span>
+                                <span class="meta-item">下载: 567次</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" onclick="location.href='software-detail.html?type=product&id=5'">查看详情</button>
+                        <button class="btn btn-success">立即下载</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 软件列表 - 列表视图（隐藏） -->
+            <section class="software-list" id="list-view" style="display: none;">
+                <table class="software-table">
+                    <thead>
+                        <tr>
+                            <th>软件名称/坐标</th>
+                            <th>类型</th>
+                            <th>分类</th>
+                            <th>版本</th>
+                            <th>功能类型</th>
+                            <th>许可证状态</th>
+                            <th>使用次数</th>
+                            <th>更新时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="software-name-cell">飞书</td>
+                            <td><span class="badge type-badge commercial">商业软件</span></td>
+                            <td><span class="badge category-badge product">产品类</span></td>
+                            <td>v6.5.0</td>
+                            <td>办公软件</td>
+                            <td><span class="status-badge valid">有效</span></td>
+                            <td>2,456</td>
+                            <td>2026-02-10</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary">查看</button>
+                                <button class="btn btn-sm btn-success">下载</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="software-name-cell">org.springframework.boot:spring-boot-starter</td>
+                            <td><span class="badge type-badge opensource">开源软件</span></td>
+                            <td><span class="badge category-badge component">组件类</span></td>
+                            <td>2.7.14</td>
+                            <td>开发组件</td>
+                            <td><span class="status-badge valid">有效</span></td>
+                            <td>3,789</td>
+                            <td>2026-02-11</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary">查看</button>
+                                <button class="btn btn-sm btn-warning">跳转</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 分页 -->
+            <section class="pagination">
+                <div class="pagination-info">
+                    <span>显示 1-5 条，共 1,245 条</span>
+                </div>
+                <div class="pagination-controls">
+                    <button class="page-btn" disabled>上一页</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="page-ellipsis">...</span>
+                    <button class="page-btn">249</button>
+                    <button class="page-btn">下一页</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 软件管理平台. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

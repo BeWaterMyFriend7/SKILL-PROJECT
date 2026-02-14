@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件管理平台 - 用户管理</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>软件管理平台</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="software-list.html">软件列表</a></li>
+                    <li><a href="statistics.html">统计分析</a></li>
+                    <li><a href="user-management.html" class="active">用户管理</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>欢迎，超级管理员</span>
+                <button class="logout-btn">退出</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main">
+        <div class="container">
+            <!-- 用户统计概览 -->
+            <section class="user-stats-overview">
+                <h2>用户统计</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1,023</div>
+                        <div class="stat-label">总用户数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">892</div>
+                        <div class="stat-label">活跃用户</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">部门管理员</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">超级管理员</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 用户管理操作 -->
+            <section class="user-management-actions">
+                <div class="actions-header">
+                    <h2>用户管理</h2>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="showAddUserModal()">添加用户</button>
+                        <button class="btn btn-secondary" onclick="showBatchImportModal()">批量导入</button>
+                        <button class="btn btn-secondary">导出用户</button>
+                    </div>
+                </div>
+
+                <!-- 搜索和筛选 -->
+                <div class="user-filters">
+                    <div class="search-bar">
+                        <input type="text" placeholder="搜索用户名、邮箱、部门..." class="search-input">
+                        <button class="search-btn">搜索</button>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <div class="filter-group">
+                            <label>角色：</label>
+                            <select class="filter-select">
+                                <option value="">全部角色</option>
+                                <option value="super_admin">超级管理员</option>
+                                <option value="dept_admin">部门管理员</option>
+                                <option value="user">普通用户</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>部门：</label>
+                            <select class="filter-select">
+                                <option value="">全部部门</option>
+                                <option value="tech">技术部</option>
+                                <option value="product">产品部</option>
+                                <option value="marketing">市场部</option>
+                                <option value="operations">运营部</option>
+                                <option value="hr">人事部</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>状态：</label>
+                            <select class="filter-select">
+                                <option value="">全部状态</option>
+                                <option value="active">活跃</option>
+                                <option value="inactive">非活跃</option>
+                                <option value="locked">已锁定</option>
+                            </select>
+                        </div>
+                        
+                        <button class="filter-btn">重置</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 用户列表 -->
+            <section class="user-list-section">
+                <div class="user-table-container">
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" id="selectAll">
+                                    <label for="selectAll">用户名</label>
+                                </th>
+                                <th>邮箱</th>
+                                <th>部门</th>
+                                <th>角色</th>
+                                <th>注册时间</th>
+                                <th>最后登录</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                    <div class="user-info">
+                                        <div class="user-avatar">A</div>
+                                        <span>admin</span>
+                                    </div>
+                                </td>
+                                <td>admin@company.com</td>
+                                <td>IT部</td>
+                                <td><span class="role-badge super-admin">超级管理员</span></td>
+                                <td>2025-01-01</td>
+                                <td>2026-02-13 09:30</td>
+                                <td><span class="status-badge active">活跃</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="editUser(1)">编辑</button>
+                                    <button class="btn btn-sm btn-secondary">重置密码</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                    <div class="user-info">
+                                        <div class="user-avatar">张</div>
+                                        <span>张三</span>
+                                    </div>
+                                </td>
+                                <td>zhangsan@company.com</td>
+                                <td>技术部</td>
+                                <td><span class="role-badge dept-admin">部门管理员</span></td>
+                                <td>2025-03-15</td>
+                                <td>2026-02-12 14:20</td>
+                                <td><span class="status-badge active">活跃</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="editUser(2)">编辑</button>
+                                    <button class="btn btn-sm btn-secondary">重置密码</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                    <div class="user-info">
+                                        <div class="user-avatar">李</div>
+                                        <span>李四</span>
+                                    </div>
+                                </td>
+                                <td>lisi@company.com</td>
+                                <td>产品部</td>
+                                <td><span class="role-badge dept-admin">部门管理员</span></td>
+                                <td>2025-04-20</td>
+                                <td>2026-02-11 16:45</td>
+                                <td><span class="status-badge active">活跃</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="editUser(3)">编辑</button>
+                                    <button class="btn btn-sm btn-secondary">重置密码</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                    <div class="user-info">
+                                        <div class="user-avatar">王</div>
+                                        <span>王五</span>
+                                    </div>
+                                </td>
+                                <td>wangwu@company.com</td>
+                                <td>技术部</td>
+                                <td><span class="role-badge user">普通用户</span></td>
+                                <td>2025-06-10</td>
+                                <td>2026-02-13 10:15</td>
+                                <td><span class="status-badge active">活跃</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="editUser(4)">编辑</button>
+                                    <button class="btn btn-sm btn-secondary">重置密码</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                    <div class="user-info">
+                                        <div class="user-avatar">赵</div>
+                                        <span>赵六</span>
+                                    </div>
+                                </td>
+                                <td>zhaoliu@company.com</td>
+                                <td>市场部</td>
+                                <td><span class="role-badge user">普通用户</span></td>
+                                <td>2025-08-22</td>
+                                <td>2026-01-28 09:00</td>
+                                <td><span class="status-badge inactive">非活跃</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="editUser(5)">编辑</button>
+                                    <button class="btn btn-sm btn-warning">锁定</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 分页 -->
+                <div class="pagination">
+                    <div class="pagination-info">
+                        <span>显示 1-5 条，共 1,023 条</span>
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="page-btn" disabled>上一页</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span class="page-ellipsis">...</span>
+                        <button class="page-btn">205</button>
+                        <button class="page-btn">下一页</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 权限配置说明 -->
+            <section class="permission-guide">
+                <h2>角色权限说明</h2>
+                <div class="permission-grid">
+                    <div class="permission-card">
+                        <h3>超级管理员</h3>
+                        <ul class="permission-list">
+                            <li>✓ 用户管理：增删改查所有用户</li>
+                            <li>✓ 软件管理：管理所有软件信息</li>
+                            <li>✓ 系统设置：配置系统参数</li>
+                            <li>✓ 统计查看：查看所有统计数据</li>
+                            <li>✓ 权限分配：分配用户权限</li>
+                        </ul>
+                    </div>
+                    <div class="permission-card">
+                        <h3>部门管理员</h3>
+                        <ul class="permission-list">
+                            <li>✓ 部门用户：管理部门内用户</li>
+                            <li>✓ 部门软件：管理部门相关软件</li>
+                            <li>✓ 软件下载：下载平台软件</li>
+                            <li>✓ 统计查看：查看本部门统计</li>
+                            <li>✗ 系统设置：无权限</li>
+                        </ul>
+                    </div>
+                    <div class="permission-card">
+                        <h3>普通用户</h3>
+                        <ul class="permission-list">
+                            <li>✓ 软件浏览：查看软件信息</li>
+                            <li>✓ 软件搜索：搜索和筛选软件</li>
+                            <li>✓ 软件下载：下载可用软件</li>
+                            <li>✓ 用户评价：提交软件评价</li>
+                            <li>✗ 管理功能：无管理权限</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 添加用户模态框 -->
+    <div id="addUserModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>添加用户</h3>
+                <button class="modal-close" onclick="hideAddUserModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>用户名 <span class="required">*</span></label>
+                    <input type="text" placeholder="请输入用户名" required>
+                </div>
+                <div class="form-group">
+                    <label>邮箱 <span class="required">*</span></label>
+                    <input type="email" placeholder="请输入邮箱地址" required>
+                </div>
+                <div class="form-group">
+                    <label>部门 <span class="required">*</span></label>
+                    <select required>
+                        <option value="">请选择部门</option>
+                        <option value="tech">技术部</option>
+                        <option value="product">产品部</option>
+                        <option value="marketing">市场部</option>
+                        <option value="operations">运营部</option>
+                        <option value="hr">人事部</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>角色 <span class="required">*</span></label>
+                    <select required>
+                        <option value="">请选择角色</option>
+                        <option value="user">普通用户</option>
+                        <option value="dept_admin">部门管理员</option>
+                        <option value="super_admin">超级管理员</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>初始密码</label>
+                    <input type="password" placeholder="留空则生成随机密码">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="hideAddUserModal()">取消</button>
+                <button class="btn btn-primary" onclick="addUser()">添加</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑用户模态框 -->
+    <div id="editUserModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>编辑用户</h3>
+                <button class="modal-close" onclick="hideEditUserModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" id="editUsername" readonly>
+                </div>
+                <div class="form-group">
+                    <label>邮箱</label>
+                    <input type="email" id="editEmail">
+                </div>
+                <div class="form-group">
+                    <label>部门</label>
+                    <select id="editDepartment">
+                        <option value="tech">技术部</option>
+                        <option value="product">产品部</option>
+                        <option value="marketing">市场部</option>
+                        <option value="operations">运营部</option>
+                        <option value="hr">人事部</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>角色</label>
+                    <select id="editRole">
+                        <option value="user">普通用户</option>
+                        <option value="dept_admin">部门管理员</option>
+                        <option value="super_admin">超级管理员</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>状态</label>
+                    <select id="editStatus">
+                        <option value="active">活跃</option>
+                        <option value="inactive">非活跃</option>
+                        <option value="locked">已锁定</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="hideEditUserModal()">取消</button>
+                <button class="btn btn-primary" onclick="updateUser()">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 软件管理平台. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
