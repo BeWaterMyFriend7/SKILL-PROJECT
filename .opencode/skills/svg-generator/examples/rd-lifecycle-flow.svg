@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="580" viewBox="0 0 680 580">
+  <defs>
+    <!-- 通用灰色箭头 -->
+    <marker id="arrow" markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto">
+      <polygon points="0 0, 5 2.5, 0 5" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <rect width="680" height="580" fill="#1a1a2e"/>
+  
+  <!-- 标题居中于新画布 -->
+  <text x="340" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">项目研发全生命周期流程图</text>
+  <text x="340" y="38" text-anchor="middle" font-size="9" fill="#888">Software Development Life Cycle</text>
+  <line x1="15" y1="45" x2="650" y2="45" stroke="#333" stroke-width="1"/>
+  
+  <!-- 主流程区域 -->
+  <!-- 第一行: 需求 -> 立项 -> 设计 -->
+  <rect x="30" y="55" width="130" height="75" rx="5" fill="#16213e" stroke="#3498db" stroke-width="2"/>
+  <rect x="30" y="55" width="130" height="22" rx="5" fill="#3498db"/>
+  <text x="95" y="70" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">1. 需求分析</text>
+  <text x="40" y="92" font-size="7" fill="#aaa">需求调研</text>
+  <text x="40" y="104" font-size="7" fill="#aaa">需求评审</text>
+  <text x="40" y="116" font-size="7" fill="#aaa">需求文档</text>
+  
+  <line x1="165" y1="92" x2="185" y2="92" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <rect x="190" y="55" width="130" height="75" rx="5" fill="#16213e" stroke="#2ecc71" stroke-width="2"/>
+  <rect x="190" y="55" width="130" height="22" rx="5" fill="#2ecc71"/>
+  <text x="255" y="70" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">2. 项目立项</text>
+  <text x="200" y="92" font-size="7" fill="#aaa">可行性分析</text>
+  <text x="200" y="104" font-size="7" fill="#aaa">项目章程</text>
+  <text x="200" y="116" font-size="7" fill="#aaa">资源评估</text>
+  
+  <line x1="325" y1="92" x2="345" y2="92" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <rect x="350" y="55" width="130" height="90" rx="5" fill="#16213e" stroke="#e67e22" stroke-width="2"/>
+  <rect x="350" y="55" width="130" height="22" rx="5" fill="#e67e22"/>
+  <text x="415" y="70" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">3. 设计阶段</text>
+  <text x="360" y="92" font-size="7" fill="#aaa">架构设计</text>
+  <text x="360" y="104" font-size="7" fill="#aaa">概要设计</text>
+  <text x="360" y="116" font-size="7" fill="#aaa">详细设计</text>
+  <text x="360" y="128" font-size="7" fill="#aaa">接口设计</text>
+  
+  <line x1="415" y1="145" x2="415" y2="165" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 第二行: 开发 <- 测试 <- 部署 -->
+  <rect x="350" y="170" width="130" height="90" rx="5" fill="#16213e" stroke="#e74c3c" stroke-width="2"/>
+  <rect x="350" y="170" width="130" height="22" rx="5" fill="#e74c3c"/>
+  <text x="415" y="185" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">4. 开发阶段</text>
+  <text x="360" y="207" font-size="7" fill="#aaa">环境搭建</text>
+  <text x="360" y="219" font-size="7" fill="#aaa">编码实现</text>
+  <text x="360" y="231" font-size="7" fill="#aaa">代码审查</text>
+  <text x="360" y="243" font-size="7" fill="#aaa">单元测试</text>
+  
+  <line x1="345" y1="215" x2="325" y2="215" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <rect x="190" y="170" width="130" height="90" rx="5" fill="#16213e" stroke="#9b59b6" stroke-width="2"/>
+  <rect x="190" y="170" width="130" height="22" rx="5" fill="#9b59b6"/>
+  <text x="255" y="185" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">5. 测试阶段</text>
+  <text x="200" y="207" font-size="7" fill="#aaa">测试计划</text>
+  <text x="200" y="219" font-size="7" fill="#aaa">功能测试</text>
+  <text x="200" y="231" font-size="7" fill="#aaa">集成测试</text>
+  <text x="200" y="243" font-size="7" fill="#aaa">性能测试</text>
+  
+  <line x1="185" y1="215" x2="165" y2="215" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <rect x="30" y="170" width="130" height="75" rx="5" fill="#16213e" stroke="#1abc9c" stroke-width="2"/>
+  <rect x="30" y="170" width="130" height="22" rx="5" fill="#1abc9c"/>
+  <text x="95" y="185" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">6. 部署发布</text>
+  <text x="40" y="207" font-size="7" fill="#aaa">部署准备</text>
+  <text x="40" y="219" font-size="7" fill="#aaa">生产部署</text>
+  <text x="40" y="231" font-size="7" fill="#aaa">数据迁移</text>
+  
+  <line x1="95" y1="245" x2="95" y2="265" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 第三行: 运维 <- 迭代 -->
+  <rect x="30" y="270" width="130" height="70" rx="5" fill="#16213e" stroke="#f39c12" stroke-width="2"/>
+  <rect x="30" y="270" width="130" height="22" rx="5" fill="#f39c12"/>
+  <text x="95" y="285" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">7. 运维支持</text>
+  <text x="40" y="305" font-size="7" fill="#aaa">系统监控</text>
+  <text x="40" y="317" font-size="7" fill="#aaa">故障处理</text>
+  <text x="40" y="329" font-size="7" fill="#aaa">安全加固</text>
+  
+  <line x1="165" y1="305" x2="185" y2="305" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <rect x="190" y="270" width="130" height="70" rx="5" fill="#16213e" stroke="#00cec9" stroke-width="2"/>
+  <rect x="190" y="270" width="130" height="22" rx="5" fill="#00cec9"/>
+  <text x="255" y="285" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">8. 迭代优化</text>
+  <text x="200" y="305" font-size="7" fill="#aaa">收集反馈</text>
+  <text x="200" y="317" font-size="7" fill="#aaa">问题修复</text>
+  <text x="200" y="329" font-size="7" fill="#aaa">版本规划</text>
+  
+  <!-- 右侧: 关键里程碑 -->
+  <rect x="500" y="55" width="150" height="285" rx="5" fill="#16213e" stroke="#333"/>
+  <text x="575" y="70" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">关键里程碑</text>
+  
+  <circle cx="515" cy="90" r="5" fill="#3498db" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="94" font-size="7" fill="#aaa">需求评审通过</text>
+  
+  <circle cx="515" cy="108" r="5" fill="#2ecc71" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="112" font-size="7" fill="#aaa">项目立项审批</text>
+  
+  <circle cx="515" cy="126" r="5" fill="#e67e22" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="130" font-size="7" fill="#aaa">设计评审通过</text>
+  
+  <circle cx="515" cy="144" r="5" fill="#e74c3c" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="148" font-size="7" fill="#aaa">代码完成</text>
+  
+  <circle cx="515" cy="162" r="5" fill="#9b59b6" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="166" font-size="7" fill="#aaa">测试通过</text>
+  
+  <circle cx="515" cy="180" r="5" fill="#1abc9c" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="184" font-size="7" fill="#aaa">上线发布</text>
+  
+  <circle cx="515" cy="198" r="5" fill="#f39c12" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="202" font-size="7" fill="#aaa">项目验收</text>
+  
+  <circle cx="515" cy="216" r="5" fill="#00cec9" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="220" font-size="7" fill="#aaa">项目结项</text>
+  
+  <circle cx="515" cy="240" r="5" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="530" y="244" font-size="7" font-weight="bold" fill="#e74c3c">运维交接</text>
+  
+  <circle cx="515" cy="262" r="5" fill="#2ecc71" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="266" font-size="7" fill="#aaa">迭代规划</text>
+  
+  <circle cx="515" cy="280" r="5" fill="#9b59b6" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="284" font-size="7" fill="#aaa">版本发布</text>
+  
+  <circle cx="515" cy="298" r="5" fill="#3498db" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="302" font-size="7" fill="#aaa">复盘总结</text>
+  
+  <circle cx="515" cy="316" r="5" fill="#e67e22" stroke="#fff" stroke-width="0.5"/>
+  <text x="530" y="320" font-size="7" fill="#aaa">下版规划</text>
+  
+  <!-- 底部: 角色与交付物 -->
+  <rect x="15" y="360" width="635" height="205" rx="5" fill="#16213e" stroke="#333"/>
+  <text x="340" y="378" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">各阶段角色与交付物</text>
+  
+  <!-- 需求阶段 -->
+  <rect x="28" y="390" width="95" height="160" rx="4" fill="#1a1a2e" stroke="#3498db"/>
+  <text x="75" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#3498db">需求阶段</text>
+  <text x="35" y="422" font-size="7" fill="#888">PM, BA</text>
+  <text x="35" y="435" font-size="7" fill="#666">------</text>
+  <text x="35" y="447" font-size="7" fill="#aaa">BRD</text>
+  <text x="35" y="458" font-size="7" fill="#aaa">PRD</text>
+  <text x="35" y="469" font-size="7" fill="#aaa">用例图</text>
+  <text x="35" y="480" font-size="7" fill="#aaa">API文档</text>
+  <text x="35" y="491" font-size="7" fill="#aaa">UI设计</text>
+  <text x="35" y="502" font-size="7" fill="#aaa">技术方案</text>
+  <text x="35" y="513" font-size="7" fill="#aaa">测试用例</text>
+  <text x="35" y="524" font-size="7" fill="#aaa">详细设计</text>
+  <text x="35" y="535" font-size="7" fill="#aaa">数据库设计</text>
+  
+  <!-- 设计阶段 -->
+  <rect x="132" y="390" width="95" height="100" rx="4" fill="#1a1a2e" stroke="#2ecc71"/>
+  <text x="179" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#2ecc71">设计阶段</text>
+  <text x="139" y="422" font-size="7" fill="#888">架构师, PM</text>
+  <text x="139" y="435" font-size="7" fill="#666">------</text>
+  <text x="139" y="447" font-size="7" fill="#aaa">架构设计</text>
+  <text x="139" y="458" font-size="7" fill="#aaa">详细设计</text>
+  <text x="139" y="469" font-size="7" fill="#aaa">数据库设计</text>
+  <text x="139" y="480" font-size="7" fill="#aaa">接口设计</text>
+  
+  <!-- 开发阶段 -->
+  <rect x="236" y="390" width="95" height="100" rx="4" fill="#1a1a2e" stroke="#e74c3c"/>
+  <text x="283" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#e74c3c">开发阶段</text>
+  <text x="243" y="422" font-size="7" fill="#888">前端, 后端</text>
+  <text x="243" y="435" font-size="7" fill="#666">------</text>
+  <text x="243" y="447" font-size="7" fill="#aaa">源代码</text>
+  <text x="243" y="458" font-size="7" fill="#aaa">单元测试</text>
+  <text x="243" y="469" font-size="7" fill="#aaa">CI/CD配置</text>
+  <text x="243" y="480" font-size="7" fill="#aaa">部署脚本</text>
+  
+  <!-- 测试阶段 -->
+  <rect x="340" y="390" width="95" height="100" rx="4" fill="#1a1a2e" stroke="#9b59b6"/>
+  <text x="387" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#9b59b6">测试阶段</text>
+  <text x="347" y="422" font-size="7" fill="#888">QA, 开发</text>
+  <text x="347" y="435" font-size="7" fill="#666">------</text>
+  <text x="347" y="447" font-size="7" fill="#aaa">测试报告</text>
+  <text x="347" y="458" font-size="7" fill="#aaa">Bug记录</text>
+  <text x="347" y="469" font-size="7" fill="#aaa">性能报告</text>
+  <text x="347" y="480" font-size="7" fill="#aaa">UAT报告</text>
+  
+  <!-- 部署阶段 -->
+  <rect x="444" y="390" width="95" height="100" rx="4" fill="#1a1a2e" stroke="#1abc9c"/>
+  <text x="491" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#1abc9c">部署阶段</text>
+  <text x="451" y="422" font-size="7" fill="#888">运维, 开发</text>
+  <text x="451" y="435" font-size="7" fill="#666">------</text>
+  <text x="451" y="447" font-size="7" fill="#aaa">部署文档</text>
+  <text x="451" y="458" font-size="7" fill="#aaa">回滚方案</text>
+  <text x="451" y="469" font-size="7" fill="#aaa">监控配置</text>
+  <text x="451" y="480" font-size="7" fill="#aaa">运维手册</text>
+  
+  <!-- 运维阶段 -->
+  <rect x="548" y="390" width="90" height="160" rx="4" fill="#1a1a2e" stroke="#f39c12"/>
+  <text x="593" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#f39c12">运维阶段</text>
+  <text x="555" y="422" font-size="7" fill="#888">运维, 客服</text>
+  <text x="555" y="435" font-size="7" fill="#666">------</text>
+  <text x="555" y="447" font-size="7" fill="#aaa">运维报告</text>
+  <text x="555" y="458" font-size="7" fill="#aaa">故障报告</text>
+  <text x="555" y="469" font-size="7" fill="#aaa">性能周报</text>
+  <text x="555" y="480" font-size="7" fill="#aaa">优化建议</text>
+  <text x="555" y="491" font-size="7" fill="#aaa">项目总结</text>
+  <text x="555" y="502" font-size="7" fill="#aaa">复盘报告</text>
+  <text x="555" y="513" font-size="7" fill="#aaa">下版规划</text>
+  <text x="555" y="524" font-size="7" fill="#aaa">项目结项</text>
+</svg>
