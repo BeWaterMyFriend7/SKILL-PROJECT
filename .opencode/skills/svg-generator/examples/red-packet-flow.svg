@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="900" viewBox="0 0 800 900">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#999999"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="900" fill="#f8f9fa"/>
+  
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333333">抢红包高并发系统 - 流程图</text>
+  
+  <!-- 1. 用户请求 -->
+  <g transform="translate(330, 60)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#3498db" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">用户发起请求</text>
+  </g>
+  
+  <!-- 箭头1 -->
+  <line x1="400" y1="110" x2="400" y2="135" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 2. 负载均衡 -->
+  <g transform="translate(330, 140)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">负载均衡</text>
+  </g>
+  
+  <!-- 箭头2 -->
+  <line x1="400" y1="190" x2="400" y2="215" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 3. API网关 -->
+  <g transform="translate(330, 220)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#e67e22" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">API网关</text>
+  </g>
+  
+  <!-- 箭头3 -->
+  <line x1="400" y1="270" x2="400" y2="295" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 4. 业务处理 -->
+  <g transform="translate(330, 300)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#2ecc71" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">业务处理服务</text>
+  </g>
+  
+  <!-- 箭头4 -->
+  <line x1="400" y1="350" x2="400" y2="375" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 5. Redis缓存 - 分布式锁 -->
+  <g transform="translate(330, 380)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">Redis分布式锁</text>
+  </g>
+  
+  <!-- 箭头5 -->
+  <line x1="400" y1="430" x2="400" y2="455" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 6. 库存预扣 -->
+  <g transform="translate(330, 460)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">库存预扣</text>
+  </g>
+  
+  <!-- 箭头6 -->
+  <line x1="400" y1="510" x2="400" y2="535" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 7. 消息队列 -->
+  <g transform="translate(330, 540)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">消息队列</text>
+  </g>
+  
+  <!-- 箭头7 -->
+  <line x1="400" y1="590" x2="400" y2="615" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 8. 发红包服务 -->
+  <g transform="translate(330, 620)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#f39c12" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">发红包服务</text>
+  </g>
+  
+  <!-- 箭头8 -->
+  <line x1="400" y1="670" x2="400" y2="695" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 9. 数据库落库 -->
+  <g transform="translate(330, 700)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#1abc9c" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">数据库落库</text>
+  </g>
+  
+  <!-- 箭头9 -->
+  <line x1="400" y1="750" x2="400" y2="775" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 10. 返回结果 -->
+  <g transform="translate(330, 780)">
+    <rect width="140" height="50" rx="8" fill="#ffffff" stroke="#27ae60" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="32" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">返回结果</text>
+  </g>
+  
+  <!-- 右侧说明 -->
+  <g transform="translate(520, 100)">
+    <rect x="0" y="0" width="230" height="280" rx="8" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="115" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">关键设计点</text>
+    <line x1="15" y1="32" x2="215" y2="32" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <text x="20" y="55" font-size="10" fill="#e74c3c">●</text>
+    <text x="35" y="55" font-size="10" fill="#666666">分布式锁</text>
+    <text x="20" y="72" font-size="9" fill="#999999">Redis SETNX保证库存一致性</text>
+    
+    <text x="20" y="100" font-size="10" fill="#9b59b6">●</text>
+    <text x="35" y="100" font-size="10" fill="#666666">消息队列</text>
+    <text x="20" y="117" font-size="9" fill="#999999">异步解耦，削峰填谷</text>
+    
+    <text x="20" y="145" font-size="10" fill="#e67e22">●</text>
+    <text x="35" y="145" font-size="10" fill="#666666">限流策略</text>
+    <text x="20" y="162" font-size="9" fill="#999999">网关层+业务层限流</text>
+    
+    <text x="20" y="190" font-size="10" fill="#3498db">●</text>
+    <text x="35" y="190" font-size="10" fill="#666666">缓存预热</text>
+    <text x="20" y="207" font-size="9" fill="#999999">活动前加载库存到Redis</text>
+    
+    <text x="20" y="235" font-size="10" fill="#1abc9c">●</text>
+    <text x="35" y="235" font-size="10" fill="#666666">读写分离</text>
+    <text x="20" y="252" font-size="9" fill="#999999">主从架构分散数据库压力</text>
+  </g>
+  
+  <!-- 底部流程说明 -->
+  <g transform="translate(50, 850)">
+    <rect x="0" y="0" width="420" height="40" rx="8" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="210" y="16" text-anchor="middle" font-size="10" font-weight="bold" fill="#333333">流程：请求 → 负载均衡 → 网关 → 业务 → 锁 → 预扣 → 队列 → 发红包 → 落库 → 返回</text>
+  </g>
+</svg>

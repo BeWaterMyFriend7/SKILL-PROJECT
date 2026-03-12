@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1000" viewBox="0 0 1100 1000">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#999999"/>
+    </marker>
+  </defs>
+  
+  <rect width="1100" height="1000" fill="#f8f9fa"/>
+  
+  <text x="550" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#333333">抢红包高并发系统 - 架构图</text>
+  
+  <!-- ========== 第1层：接入层 ========== -->
+  <g>
+    <text x="100" y="70" font-size="14" font-weight="bold" fill="#3498db">① 接入层</text>
+    <rect x="100" y="80" width="900" height="70" rx="8" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <g transform="translate(120, 95)">
+      <rect x="0" y="0" width="140" height="40" rx="6" fill="#3498db" filter="url(#shadow)"/>
+      <text x="70" y="26" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">APP/Web</text>
+    </g>
+    
+    <g transform="translate(300, 95)">
+      <rect x="0" y="0" width="140" height="40" rx="6" fill="#9b59b6" filter="url(#shadow)"/>
+      <text x="70" y="26" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">CDN</text>
+    </g>
+    
+    <g transform="translate(470, 95)">
+      <rect x="0" y="0" width="160" height="40" rx="6" fill="#e67e22" filter="url(#shadow)"/>
+      <text x="80" y="26" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">负载均衡 Nginx</text>
+    </g>
+    
+    <g transform="translate(650, 95)">
+      <rect x="0" y="0" width="160" height="40" rx="6" fill="#e67e22" filter="url(#shadow)"/>
+      <text x="80" y="26" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">API 网关</text>
+    </g>
+    
+    <g transform="translate(840, 95)">
+      <rect x="0" y="0" width="140" height="40" rx="6" fill="#e74c3c" filter="url(#shadow)"/>
+      <text x="70" y="26" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">限流熔断</text>
+    </g>
+  </g>
+  
+
+  
+  <!-- ========== 第2层：服务层 ========== -->
+  <g>
+    <text x="100" y="195" font-size="14" font-weight="bold" fill="#2ecc71">② 服务层</text>
+    <rect x="100" y="205" width="900" height="130" rx="8" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <g transform="translate(122.5, 225)">
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#3498db" stroke-width="2" filter="url(#shadow)"/>
+      <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">抢红包服务</text>
+      <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">请求校验</text>
+      <text x="90" y="70" text-anchor="middle" font-size="10" fill="#666666">库存预扣</text>
+      <text x="90" y="85" text-anchor="middle" font-size="10" fill="#666666">结果返回</text>
+    </g>
+    
+    <g transform="translate(347.5, 225)">
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+      <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">消息队列</text>
+      <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">Kafka / RabbitMQ</text>
+      <text x="90" y="70" text-anchor="middle" font-size="10" fill="#666666">削峰填谷</text>
+      <text x="90" y="85" text-anchor="middle" font-size="10" fill="#666666">异步解耦</text>
+    </g>
+    
+    <g transform="translate(572.5, 225)">
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#f39c12" stroke-width="2" filter="url(#shadow)"/>
+      <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">发红包服务</text>
+      <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">消息消费</text>
+      <text x="90" y="70" text-anchor="middle" font-size="10" fill="#666666">金额计算</text>
+      <text x="90" y="85" text-anchor="middle" font-size="10" fill="#666666">落库存储</text>
+    </g>
+    
+    <g transform="translate(797.5, 225)">
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#1abc9c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">用户服务</text>
+      <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">用户信息</text>
+      <text x="90" y="70" text-anchor="middle" font-size="10" fill="#666666">账户查询</text>
+      <text x="90" y="85" text-anchor="middle" font-size="10" fill="#666666">流水记录</text>
+    </g>
+  </g>
+  
+
+  
+  <!-- ========== 第3层：数据层 ========== -->
+  <g>
+    <text x="100" y="380" font-size="14" font-weight="bold" fill="#e74c3c">③ 数据层</text>
+    <rect x="100" y="390" width="900" height="130" rx="8" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <g transform="translate(122.5, 410)">
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">Redis 集群</text>
+      <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">红包库存缓存</text>
+      <text x="90" y="70" text-anchor="middle" font-size="10" fill="#666666">分布式锁</text>
+      <text x="90" y="85" text-anchor="middle" font-size="10" fill="#666666">Session</text>
+    </g>
+    
+    <g transform="translate(347.5, 410)">
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#1abc9c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">MySQL 主从</text>
+      <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">红包记录</text>
+      <text x="90" y="70" text-anchor="middle" font-size="10" fill="#666666">用户流水</text>
+      <text x="90" y="85" text-anchor="middle" font-size="10" fill="#666666">账户余额</text>
+    </g>
+    
+    <g transform="translate(572.5, 410)">
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+      <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">MongoDB</text>
+      <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">日志存储</text>
+      <text x="90" y="70" text-anchor="middle" font-size="10" fill="#666666">操作审计</text>
+      <text x="90" y="85" text-anchor="middle" font-size="10" fill="#666666">历史查询</text>
+    </g>
+    
+    <g transform="translate(797.5, 410)">
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#34495e" stroke-width="2" filter="url(#shadow)"/>
+      <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">Elasticsearch</text>
+      <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">日志检索</text>
+      <text x="90" y="70" text-anchor="middle" font-size="10" fill="#666666">数据分析</text>
+      <text x="90" y="85" text-anchor="middle" font-size="10" fill="#666666">实时统计</text>
+    </g>
+  </g>
+  
+
+  
+  <!-- ========== 第4层：基础层 ========== -->
+  <g>
+    <text x="100" y="565" font-size="14" font-weight="bold" fill="#95a5a6">④ 基础层</text>
+    <rect x="100" y="575" width="900" height="80" rx="8" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <g transform="translate(115, 595)">
+      <rect x="0" y="0" width="120" height="40" rx="6" fill="#95a5a6" filter="url(#shadow)"/>
+      <text x="60" y="26" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">Docker</text>
+    </g>
+    
+    <g transform="translate(265, 595)">
+      <rect x="0" y="0" width="120" height="40" rx="6" fill="#95a5a6" filter="url(#shadow)"/>
+      <text x="60" y="26" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">Kubernetes</text>
+    </g>
+    
+    <g transform="translate(415, 595)">
+      <rect x="0" y="0" width="120" height="40" rx="6" fill="#95a5a6" filter="url(#shadow)"/>
+      <text x="60" y="26" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">Prometheus</text>
+    </g>
+    
+    <g transform="translate(565, 595)">
+      <rect x="0" y="0" width="120" height="40" rx="6" fill="#95a5a6" filter="url(#shadow)"/>
+      <text x="60" y="26" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">Grafana</text>
+    </g>
+    
+    <g transform="translate(715, 595)">
+      <rect x="0" y="0" width="120" height="40" rx="6" fill="#95a5a6" filter="url(#shadow)"/>
+      <text x="60" y="26" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">SkyWalking</text>
+    </g>
+    
+    <g transform="translate(865, 595)">
+      <rect x="0" y="0" width="120" height="40" rx="6" fill="#95a5a6" filter="url(#shadow)"/>
+      <text x="60" y="26" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">ELK</text>
+    </g>
+  </g>
+  
+  <!-- ========== 右侧：核心技术点 ========== -->
+  <g transform="translate(560, 750)">
+    <rect x="0" y="0" width="440" height="180" rx="10" fill="#ffffff" stroke="#f39c12" stroke-width="2"/>
+    <text x="220" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#f39c12">核心技术</text>
+    <line x1="20" y1="38" x2="420" y2="38" stroke="#f39c12" stroke-width="1"/>
+    
+    <text x="30" y="60" font-size="10" fill="#e74c3c">●</text>
+    <text x="40" y="60" font-size="10" fill="#666666">分布式锁</text>
+    <text x="30" y="80" font-size="10" fill="#666666">Redis SETNX 库存预扣</text>
+    
+    <text x="30" y="105" font-size="10" fill="#9b59b6">●</text>
+    <text x="40" y="105" font-size="10" fill="#666666">消息队列</text>
+    <text x="30" y="125" font-size="10" fill="#666666">异步解耦削峰填谷</text>
+    
+    <text x="30" y="150" font-size="10" fill="#e67e22">●</text>
+    <text x="40" y="150" font-size="10" fill="#666666">限流策略</text>
+    <text x="30" y="170" font-size="10" fill="#666666">网关层 + 业务层</text>
+  </g>
+  
+  <!-- ========== 底部：数据流程 ========== -->
+  <g transform="translate(100, 750)">
+    <rect x="0" y="0" width="440" height="180" rx="10" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="220" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">数据流程</text>
+    <line x1="20" y1="35" x2="420" y2="35" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <!-- 简化流程箭头图示 -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="60" height="28" rx="4" fill="#E3F2FD" stroke="#3498db" stroke-width="1"/>
+      <text x="30" y="18" text-anchor="middle" font-size="9" fill="#333333">请求</text>
+      
+      <text x="70" y="16" font-size="10" fill="#999999">→</text>
+      
+      <rect x="80" y="0" width="60" height="28" rx="4" fill="#FFF3E0" stroke="#e67e22" stroke-width="1"/>
+      <text x="110" y="18" text-anchor="middle" font-size="9" fill="#333333">网关</text>
+      
+      <text x="150" y="16" font-size="10" fill="#999999">→</text>
+      
+      <rect x="160" y="0" width="60" height="28" rx="4" fill="#E8F5E9" stroke="#2ecc71" stroke-width="1"/>
+      <text x="190" y="18" text-anchor="middle" font-size="9" fill="#333333">服务</text>
+      
+      <text x="230" y="16" font-size="10" fill="#999999">→</text>
+      
+      <rect x="240" y="0" width="60" height="28" rx="4" fill="#FCE4EC" stroke="#e74c3c" stroke-width="1"/>
+      <text x="270" y="18" text-anchor="middle" font-size="9" fill="#333333">缓存</text>
+      
+      <text x="310" y="16" font-size="10" fill="#999999">→</text>
+      
+      <rect x="320" y="0" width="60" height="28" rx="4" fill="#E0F2F1" stroke="#1abc9c" stroke-width="1"/>
+      <text x="350" y="18" text-anchor="middle" font-size="9" fill="#333333">DB</text>
+    </g>
+    
+    <!-- 设计要点 -->
+    <g transform="translate(20, 95)">
+      <text x="0" y="0" font-size="10" font-weight="bold" fill="#e74c3c">核心设计：</text>
+      <text x="70" y="0" font-size="10" fill="#666666">分布式锁(Redis) + 消息队列(异步) + 限流(网关) + 缓存预热</text>
+    </g>
+    
+    <g transform="translate(20, 115)">
+      <text x="0" y="0" font-size="10" font-weight="bold" fill="#2ecc71">高可用：</text>
+      <text x="60" y="0" font-size="10" fill="#666666">负载均衡 + 读写分离 + 水平扩展 + 监控告警</text>
+    </g>
+  </g>
+</svg>

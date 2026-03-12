@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="870" viewBox="0 0 1000 870">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0078ff"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="100%" stop-color="#c44569"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1000" height="870" fill="#1a1a2e"/>
+  <circle cx="100" cy="80" r="60" fill="#00d4ff" opacity="0.08"/>
+  <circle cx="900" cy="100" r="80" fill="#ff6b6b" opacity="0.08"/>
+  
+  <text x="500" y="35" text-anchor="middle" font-size="24" font-weight="bold" fill="#fff">OpenCode vs OpenClaw</text>
+  <text x="500" y="58" text-anchor="middle" font-size="12" fill="#888">AI Coding Agent Comparison 2026</text>
+  <line x1="50" y1="75" x2="950" y2="75" stroke="#333" stroke-width="1"/>
+  
+  <rect x="60" y="95" width="420" height="340" rx="16" fill="#16213e" stroke="url(#g1)" stroke-width="2"/>
+  <rect x="60" y="95" width="420" height="60" rx="16" fill="url(#g1)"/>
+  <text x="270" y="132" text-anchor="middle" font-size="24" font-weight="bold" fill="#fff">OpenCode</text>
+  <text x="380" y="125" text-anchor="middle" font-size="10" fill="#fff" opacity="0.9">95K+ GitHub Stars</text>
+  <text x="270" y="175" text-anchor="middle" font-size="12" fill="#00d4ff">Terminal-based AI Coding Agent</text>
+  <text x="270" y="192" text-anchor="middle" font-size="10" fill="#666">SST - Open Source</text>
+  
+  <rect x="80" y="210" width="380" height="140" rx="8" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+  <text x="95" y="230" font-size="12" font-weight="bold" fill="#00d4ff">Core Features</text>
+  <circle cx="105" cy="255" r="4" fill="#00d4ff"/>
+  <text x="118" y="260" font-size="10" fill="#ccc">75+ LLM Providers</text>
+  <circle cx="105" cy="275" r="4" fill="#00d4ff"/>
+  <text x="118" y="280" font-size="10" fill="#ccc">Test Generation</text>
+  <circle cx="105" cy="295" r="4" fill="#00d4ff"/>
+  <text x="118" y="300" font-size="10" fill="#ccc">Debugging - Refactoring</text>
+  <circle cx="105" cy="315" r="4" fill="#00d4ff"/>
+  <text x="118" y="320" font-size="10" fill="#ccc">Multi-file Editing</text>
+  <circle cx="105" cy="335" r="4" fill="#00d4ff"/>
+  <text x="118" y="340" font-size="10" fill="#ccc">Agentic Mode</text>
+  
+  <rect x="80" y="405" width="160" height="24" rx="12" fill="#00d4ff"/>
+  <text x="160" y="422" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a1a2e">Free (BYOK)</text>
+  <rect x="250" y="405" width="100" height="24" rx="12" fill="#2ecc71"/>
+  <text x="300" y="422" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Zen $20</text>
+  <rect x="360" y="405" width="100" height="24" rx="12" fill="#e67e22"/>
+  <text x="410" y="422" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Black $200</text>
+  
+  <circle cx="500" cy="265" r="28" fill="#e74c3c"/>
+  <text x="500" y="271" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">VS</text>
+  
+  <rect x="520" y="95" width="420" height="340" rx="16" fill="#16213e" stroke="url(#g2)" stroke-width="2"/>
+  <rect x="520" y="95" width="420" height="60" rx="16" fill="url(#g2)"/>
+  <text x="730" y="132" text-anchor="middle" font-size="24" font-weight="bold" fill="#fff">OpenClaw</text>
+  <text x="840" y="125" text-anchor="middle" font-size="10" fill="#fff" opacity="0.9">180K+ GitHub Stars</text>
+  <text x="730" y="175" text-anchor="middle" font-size="12" fill="#ff6b6b">Autonomous AI Agent Platform</text>
+  <text x="730" y="192" text-anchor="middle" font-size="10" fill="#666">Peter Steinberger - MIT</text>
+  
+  <rect x="540" y="210" width="380" height="140" rx="8" fill="#1a1a2e" stroke="#ff6b6b" stroke-width="1" opacity="0.5"/>
+  <text x="555" y="230" font-size="12" font-weight="bold" fill="#ff6b6b">Core Features</text>
+  <circle cx="565" cy="255" r="4" fill="#ff6b6b"/>
+  <text x="578" y="260" font-size="10" fill="#ccc">Any LLM (OpenAI-Claude-Local)</text>
+  <circle cx="565" cy="275" r="4" fill="#ff6b6b"/>
+  <text x="578" y="280" font-size="10" fill="#ccc">5,700+ Community Skills</text>
+  <circle cx="565" cy="295" r="4" fill="#ff6b6b"/>
+  <text x="578" y="300" font-size="10" fill="#ccc">Self-extending Capabilities</text>
+  <circle cx="565" cy="315" r="4" fill="#ff6b6b"/>
+  <text x="578" y="320" font-size="10" fill="#ccc">12+ Messaging Platforms</text>
+  <circle cx="565" cy="335" r="4" fill="#ff6b6b"/>
+  <text x="578" y="340" font-size="10" fill="#ccc">Persistent Memory (Weeks)</text>
+  
+  <rect x="590" y="405" width="280" height="24" rx="12" fill="#9b59b6"/>
+  <text x="730" y="422" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Free (Self-hosted + BYO API)</text>
+  
+  <rect x="60" y="455" width="880" height="280" rx="12" fill="#16213e" stroke="#333" stroke-width="1"/>
+  <text x="500" y="485" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">Detailed Comparison</text>
+  
+  <rect x="75" y="500" width="160" height="28" rx="6" fill="#1a1a2e" stroke="#333"/>
+  <text x="155" y="518" text-anchor="middle" font-size="10" font-weight="bold" fill="#888">Feature</text>
+  <rect x="245" y="500" width="220" height="28" rx="6" fill="url(#g1)"/>
+  <text x="355" y="518" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">OpenCode</text>
+  <rect x="475" y="500" width="220" height="28" rx="6" fill="url(#g2)"/>
+  <text x="585" y="518" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">OpenClaw</text>
+  <rect x="705" y="500" width="220" height="28" rx="6" fill="#2d3436" stroke="#333"/>
+  <text x="815" y="518" text-anchor="middle" font-size="10" font-weight="bold" fill="#888">Verdict</text>
+  
+  <rect x="75" y="535" width="160" height="24" fill="#1a1a2e"/>
+  <text x="155" y="551" text-anchor="middle" font-size="9" fill="#888">Type</text>
+  <rect x="245" y="535" width="220" height="24" fill="#16213e"/>
+  <text x="355" y="551" text-anchor="middle" font-size="9" fill="#00d4ff">CLI Coding Agent</text>
+  <rect x="475" y="535" width="220" height="24" fill="#16213e"/>
+  <text x="585" y="551" text-anchor="middle" font-size="9" fill="#ff6b6b">Agent Platform</text>
+  <rect x="705" y="535" width="220" height="24" fill="#16213e"/>
+  <text x="815" y="551" text-anchor="middle" font-size="9" fill="#666">Use case dependent</text>
+  
+  <rect x="75" y="565" width="160" height="24" fill="#0f0f1a"/>
+  <text x="155" y="581" text-anchor="middle" font-size="9" fill="#888">License</text>
+  <rect x="245" y="565" width="220" height="24" fill="#0f0f1a"/>
+  <text x="355" y="581" text-anchor="middle" font-size="9" fill="#ccc">Open Source</text>
+  <rect x="475" y="565" width="220" height="24" fill="#0f0f1a"/>
+  <text x="585" y="581" text-anchor="middle" font-size="9" fill="#ccc">MIT License</text>
+  <rect x="705" y="565" width="220" height="24" fill="#0f0f1a"/>
+  <text x="815" y="581" text-anchor="middle" font-size="9" fill="#2ecc71">Both Open</text>
+  
+  <rect x="75" y="595" width="160" height="24" fill="#1a1a2e"/>
+  <text x="155" y="611" text-anchor="middle" font-size="9" fill="#888">Models</text>
+  <rect x="245" y="595" width="220" height="24" fill="#16213e"/>
+  <text x="355" y="611" text-anchor="middle" font-size="9" fill="#00d4ff">75+ Providers</text>
+  <rect x="475" y="595" width="220" height="24" fill="#16213e"/>
+  <text x="585" y="611" text-anchor="middle" font-size="9" fill="#ff6b6b">Any LLM</text>
+  <rect x="705" y="595" width="220" height="24" fill="#16213e"/>
+  <text x="815" y="611" text-anchor="middle" font-size="9" fill="#e67e22">OpenClaw wins</text>
+  
+  <rect x="75" y="625" width="160" height="24" fill="#0f0f1a"/>
+  <text x="155" y="641" text-anchor="middle" font-size="9" fill="#888">Interface</text>
+  <rect x="245" y="625" width="220" height="24" fill="#0f0f1a"/>
+  <text x="355" y="641" text-anchor="middle" font-size="9" fill="#ccc">Terminal, IDE</text>
+  <rect x="475" y="625" width="220" height="24" fill="#0f0f1a"/>
+  <text x="585" y="641" text-anchor="middle" font-size="9" fill="#ccc">Messaging + CLI</text>
+  <rect x="705" y="625" width="220" height="24" fill="#0f0f1a"/>
+  <text x="815" y="641" text-anchor="middle" font-size="9" fill="#666">Different use cases</text>
+  
+  <rect x="75" y="655" width="160" height="24" fill="#1a1a2e"/>
+  <text x="155" y="671" text-anchor="middle" font-size="9" fill="#888">Skills-Plugins</text>
+  <rect x="245" y="655" width="220" height="24" fill="#16213e"/>
+  <text x="355" y="671" text-anchor="middle" font-size="9" fill="#666">Limited</text>
+  <rect x="475" y="655" width="220" height="24" fill="#16213e"/>
+  <text x="585" y="671" text-anchor="middle" font-size="9" fill="#9b59b6">5,700+ via ClawHub</text>
+  <rect x="705" y="655" width="220" height="24" fill="#16213e"/>
+  <text x="815" y="671" text-anchor="middle" font-size="9" fill="#9b59b6">OpenClaw wins</text>
+  
+  <rect x="75" y="685" width="160" height="24" fill="#0f0f1a"/>
+  <text x="155" y="701" text-anchor="middle" font-size="9" fill="#888">Best For</text>
+  <rect x="245" y="685" width="220" height="24" fill="#0f0f1a"/>
+  <text x="355" y="701" text-anchor="middle" font-size="9" fill="#2ecc71">Coding</text>
+  <rect x="475" y="685" width="220" height="24" fill="#0f0f1a"/>
+  <text x="585" y="701" text-anchor="middle" font-size="9" fill="#e67e22">Life Automation</text>
+  <rect x="705" y="685" width="220" height="24" fill="#0f0f1a"/>
+  <text x="815" y="701" text-anchor="middle" font-size="9" fill="#666">Different focus</text>
+  
+  <rect x="60" y="755" width="880" height="95" rx="12" fill="#16213e" stroke="#333" stroke-width="1"/>
+  <text x="500" y="785" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">Recommendation</text>
+  
+  <rect x="100" y="805" width="340" height="35" rx="10" fill="url(#g1)"/>
+  <text x="270" y="823" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">Choose OpenCode</text>
+  <text x="270" y="838" text-anchor="middle" font-size="9" fill="#ddd">Software Development</text>
+  
+  <rect x="560" y="805" width="340" height="35" rx="10" fill="url(#g2)"/>
+  <text x="730" y="823" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">Choose OpenClaw</text>
+  <text x="730" y="838" text-anchor="middle" font-size="9" fill="#ddd">Life Automation</text>
+</svg>

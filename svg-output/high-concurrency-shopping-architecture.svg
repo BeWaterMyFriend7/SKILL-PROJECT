@@ -1,0 +1,304 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="950" viewBox="0 0 1100 950">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#999999"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#3498db"/>
+    </marker>
+  </defs>
+  
+  <rect width="1100" height="950" fill="#f8f9fa"/>
+  <text x="550" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#333333">高并发购物系统架构图</text>
+  <text x="550" y="55" text-anchor="middle" font-size="12" fill="#999999">分布式锁 + 防重复下单 + 限流熔断</text>
+  
+  <!-- 客户端层 -->
+  <g>
+    <text x="60" y="80" font-size="14" font-weight="bold" fill="#3498db">① 客户端层</text>
+    <rect x="60" y="90" width="980" height="60" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+    <g transform="translate(120, 105)">
+      <rect width="80" height="30" rx="4" fill="#e3f2fd" stroke="#3498db" stroke-width="1"/>
+      <text x="40" y="20" text-anchor="middle" font-size="10" fill="#333">Web</text>
+    </g>
+    <g transform="translate(230, 105)">
+      <rect width="80" height="30" rx="4" fill="#e3f2fd" stroke="#3498db" stroke-width="1"/>
+      <text x="40" y="20" text-anchor="middle" font-size="10" fill="#333">App</text>
+    </g>
+    <g transform="translate(340, 105)">
+      <rect width="80" height="30" rx="4" fill="#e3f2fd" stroke="#3498db" stroke-width="1"/>
+      <text x="40" y="20" text-anchor="middle" font-size="10" fill="#333">小程序</text>
+    </g>
+    <g transform="translate(450, 105)">
+      <rect width="80" height="30" rx="4" fill="#e3f2fd" stroke="#3498db" stroke-width="1"/>
+      <text x="40" y="20" text-anchor="middle" font-size="10" fill="#333">第三方API</text>
+    </g>
+    <!-- 幂等Token -->
+    <g transform="translate(600, 100)">
+      <rect width="120" height="40" rx="4" fill="#fff3e0" stroke="#e67e22" stroke-width="1"/>
+      <text x="60" y="18" text-anchor="middle" font-size="9" fill="#333">幂等Token</text>
+      <text x="60" y="32" text-anchor="middle" font-size="8" fill="#666">(防重复下单)</text>
+    </g>
+    <!-- 请求签名 -->
+    <g transform="translate(750, 100)">
+      <rect width="120" height="40" rx="4" fill="#fff3e0" stroke="#e67e22" stroke-width="1"/>
+      <text x="60" y="18" text-anchor="middle" font-size="9" fill="#333">请求签名</text>
+      <text x="60" y="32" text-anchor="middle" font-size="8" fill="#666">(防篡改)</text>
+    </g>
+    <!-- 限流配置 -->
+    <g transform="translate(900, 100)">
+      <rect width="120" height="40" rx="4" fill="#fff3e0" stroke="#e67e22" stroke-width="1"/>
+      <text x="60" y="18" text-anchor="middle" font-size="9" fill="#333">限流配置</text>
+      <text x="60" y="32" text-anchor="middle" font-size="8" fill="#666">(QPS限制)</text>
+    </g>
+  </g>
+  
+  <!-- 接入层 -->
+  <g>
+    <text x="60" y="175" font-size="14" font-weight="bold" fill="#2ecc71">② 接入层</text>
+    <rect x="60" y="185" width="980" height="80" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+    <!-- CDN -->
+    <g transform="translate(100, 200)">
+      <rect width="100" height="50" rx="6" fill="#e8f5e9" stroke="#2ecc71" stroke-width="2" filter="url(#shadow)"/>
+      <text x="50" y="22" text-anchor="middle" font-size="11" fill="#333">CDN</text>
+      <text x="50" y="38" text-anchor="middle" font-size="9" fill="#666">静态资源</text>
+    </g>
+    <!-- 负载均衡 -->
+    <g transform="translate(240, 200)">
+      <rect width="100" height="50" rx="6" fill="#e8f5e9" stroke="#2ecc71" stroke-width="2" filter="url(#shadow)"/>
+      <text x="50" y="22" text-anchor="middle" font-size="11" fill="#333">负载均衡</text>
+      <text x="50" y="38" text-anchor="middle" font-size="9" fill="#666">Nginx/LVS</text>
+    </g>
+    <!-- API网关 -->
+    <g transform="translate(380, 200)">
+      <rect width="100" height="50" rx="6" fill="#e8f5e9" stroke="#2ecc71" stroke-width="2" filter="url(#shadow)"/>
+      <text x="50" y="22" text-anchor="middle" font-size="11" fill="#333">API网关</text>
+      <text x="50" y="38" text-anchor="middle" font-size="9" fill="#666">鉴权/路由</text>
+    </g>
+    <!-- 限流器 -->
+    <g transform="translate(520, 200)">
+      <rect width="100" height="50" rx="6" fill="#ffebee" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="50" y="22" text-anchor="middle" font-size="11" fill="#333">限流器</text>
+      <text x="50" y="38" text-anchor="middle" font-size="9" fill="#666">Sentinel</text>
+    </g>
+    <!-- 熔断器 -->
+    <g transform="translate(660, 200)">
+      <rect width="100" height="50" rx="6" fill="#ffebee" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="50" y="22" text-anchor="middle" font-size="11" fill="#333">熔断器</text>
+      <text x="50" y="38" text-anchor="middle" font-size="9" fill="#666">Sentinel</text>
+    </g>
+    <!-- WAF防火墙 -->
+    <g transform="translate(800, 200)">
+      <rect width="100" height="50" rx="6" fill="#fff3e0" stroke="#e67e22" stroke-width="2" filter="url(#shadow)"/>
+      <text x="50" y="22" text-anchor="middle" font-size="11" fill="#333">WAF</text>
+      <text x="50" y="38" text-anchor="middle" font-size="9" fill="#666">防护攻击</text>
+    </g>
+  </g>
+  
+  <!-- 服务层 -->
+  <g>
+    <text x="60" y="295" font-size="14" font-weight="bold" fill="#9b59b6">③ 服务层</text>
+    <rect x="60" y="305" width="980" height="140" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <!-- 订单服务 -->
+    <g transform="translate(80, 320)">
+      <rect width="140" height="80" rx="8" fill="#f3e5f5" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+      <text x="70" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">订单服务</text>
+      <text x="70" y="45" text-anchor="middle" font-size="9" fill="#666">创建/查询/取消</text>
+      <text x="70" y="60" text-anchor="middle" font-size="8" fill="#999">幂等校验</text>
+    </g>
+    
+    <!-- 库存服务 -->
+    <g transform="translate(260, 320)">
+      <rect width="140" height="80" rx="8" fill="#f3e5f5" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+      <text x="70" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">库存服务</text>
+      <text x="70" y="45" text-anchor="middle" font-size="9" fill="#666">预扣/锁定/扣减</text>
+      <text x="70" y="60" text-anchor="middle" font-size="8" fill="#999">分布式锁</text>
+    </g>
+    
+    <!-- 支付服务 -->
+    <g transform="translate(440, 320)">
+      <rect width="140" height="80" rx="8" fill="#f3e5f5" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+      <text x="70" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">支付服务</text>
+      <text x="70" y="45" text-anchor="middle" font-size="9" fill="#666">支付/退款/回调</text>
+      <text x="70" y="60" text-anchor="middle" font-size="8" fill="#999">幂等处理</text>
+    </g>
+    
+    <!-- 用户服务 -->
+    <g transform="translate(620, 320)">
+      <rect width="140" height="80" rx="8" fill="#f3e5f5" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+      <text x="70" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">用户服务</text>
+      <text x="70" y="45" text-anchor="middle" font-size="9" fill="#666">登录/注册/风控</text>
+      <text x="70" y="60" text-anchor="middle" font-size="8" fill="#999">会员等级</text>
+    </g>
+    
+    <!-- 商品服务 -->
+    <g transform="translate(800, 320)">
+      <rect width="140" height="80" rx="8" fill="#f3e5f5" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+      <text x="70" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">商品服务</text>
+      <text x="70" y="45" text-anchor="middle" font-size="9" fill="#666">商品/分类/SKU</text>
+      <text x="70" y="60" text-anchor="middle" font-size="8" fill="#999">缓存预热</text>
+    </g>
+    
+    <!-- 消息队列 -->
+    <g transform="translate(900, 410)">
+      <rect width="120" height="20" rx="4" fill="#fff3e0" stroke="#e67e22" stroke-width="1"/>
+      <text x="60" y="14" text-anchor="middle" font-size="9" fill="#333">RocketMQ</text>
+    </g>
+  </g>
+  
+  <!-- 数据层 -->
+  <g>
+    <text x="60" y="475" font-size="14" font-weight="bold" fill="#e67e22">④ 数据层</text>
+    <rect x="60" y="485" width="980" height="140" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <!-- Redis集群 -->
+    <g transform="translate(80, 500)">
+      <rect width="160" height="110" rx="8" fill="#fff3e0" stroke="#e67e22" stroke-width="2" filter="url(#shadow)"/>
+      <text x="80" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">Redis集群</text>
+      <text x="80" y="45" text-anchor="middle" font-size="9" fill="#666">缓存/分布式锁</text>
+      <line x1="30" y1="55" x2="130" y2="55" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="80" y="70" text-anchor="middle" font-size="8" fill="#666">• 库存缓存</text>
+      <text x="80" y="82" text-anchor="middle" font-size="8" fill="#666">• 分布式锁</text>
+      <text x="80" y="94" text-anchor="middle" font-size="8" fill="#666">• 幂等Token</text>
+    </g>
+    
+    <!-- MySQL集群 -->
+    <g transform="translate(280, 500)">
+      <rect width="160" height="110" rx="8" fill="#fff3e0" stroke="#e67e22" stroke-width="2" filter="url(#shadow)"/>
+      <text x="80" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">MySQL集群</text>
+      <text x="80" y="45" text-anchor="middle" font-size="9" fill="#666">主从/读写分离</text>
+      <line x1="30" y1="55" x2="130" y2="55" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="80" y="70" text-anchor="middle" font-size="8" fill="#666">• 订单库</text>
+      <text x="80" y="82" text-anchor="middle" font-size="8" fill="#666">• 库存库</text>
+      <text x="80" y="94" text-anchor="middle" font-size="8" fill="#666">• 商品库</text>
+    </g>
+    
+    <!-- 分库分表 -->
+    <g transform="translate(480, 500)">
+      <rect width="160" height="110" rx="8" fill="#fff3e0" stroke="#e67e22" stroke-width="2" filter="url(#shadow)"/>
+      <text x="80" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">分库分表</text>
+      <text x="80" y="45" text-anchor="middle" font-size="9" fill="#666">ShardingSphere</text>
+      <line x1="30" y1="55" x2="130" y2="55" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="80" y="70" text-anchor="middle" font-size="8" fill="#666">• 订单分片</text>
+      <text x="80" y="82" text-anchor="middle" font-size="8" fill="#666">• 库存分片</text>
+      <text x="80" y="94" text-anchor="middle" font-size="8" fill="#666">• 用户分片</text>
+    </g>
+    
+    <!-- Seata分布式事务 -->
+    <g transform="translate(680, 500)">
+      <rect width="160" height="110" rx="8" fill="#e8f5e9" stroke="#2ecc71" stroke-width="2" filter="url(#shadow)"/>
+      <text x="80" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">分布式事务</text>
+      <text x="80" y="45" text-anchor="middle" font-size="9" fill="#666">Seata AT模式</text>
+      <line x1="30" y1="55" x2="130" y2="55" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="80" y="70" text-anchor="middle" font-size="8" fill="#666">• TCC/Saga</text>
+      <text x="80" y="82" text-anchor="middle" font-size="8" fill="#666">• 最终一致性</text>
+      <text x="80" y="94" text-anchor="middle" font-size="8" fill="#666">• 回滚机制</text>
+    </g>
+    
+    <!-- 分布式锁详解 -->
+    <g transform="translate(880, 500)">
+      <rect width="140" height="110" rx="8" fill="#e3f2fd" stroke="#3498db" stroke-width="2" filter="url(#shadow)"/>
+      <text x="70" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">分布式锁</text>
+      <text x="70" y="45" text-anchor="middle" font-size="9" fill="#666">Redis + Redisson</text>
+      <line x1="20" y1="55" x2="120" y2="55" stroke="#e0e0e0" stroke-width="1"/>
+      <text x="70" y="70" text-anchor="middle" font-size="8" fill="#666">• WatchDog</text>
+      <text x="70" y="82" text-anchor="middle" font-size="8" fill="#666">• Lua脚本</text>
+      <text x="70" y="94" text-anchor="middle" font-size="8" fill="#666">• 公平锁</text>
+    </g>
+  </g>
+  
+  <!-- 基础设施层 -->
+  <g>
+    <text x="60" y="655" font-size="14" font-weight="bold" fill="#e74c3c">⑤ 基础设施</text>
+    <rect x="60" y="665" width="980" height="100" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <!-- Kubernetes -->
+    <g transform="translate(100, 680)">
+      <rect width="120" height="70" rx="6" fill="#ffebee" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="22" text-anchor="middle" font-size="11" fill="#333">K8s集群</text>
+      <text x="60" y="40" text-anchor="middle" font-size="9" fill="#666">弹性扩缩容</text>
+      <text x="60" y="55" text-anchor="middle" font-size="8" fill="#999">自动故障恢复</text>
+    </g>
+    
+    <!-- 服务注册发现 -->
+    <g transform="translate(260, 680)">
+      <rect width="120" height="70" rx="6" fill="#ffebee" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="22" text-anchor="middle" font-size="11" fill="#333">Nacos</text>
+      <text x="60" y="40" text-anchor="middle" font-size="9" fill="#666">服务注册/发现</text>
+      <text x="60" y="55" text-anchor="middle" font-size="8" fill="#999">配置管理</text>
+    </g>
+    
+    <!-- 配置中心 -->
+    <g transform="translate(420, 680)">
+      <rect width="120" height="70" rx="6" fill="#ffebee" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="22" text-anchor="middle" font-size="11" fill="#333">Apollo</text>
+      <text x="60" y="40" text-anchor="middle" font-size="9" fill="#666">配置中心</text>
+      <text x="60" y="55" text-anchor="middle" font-size="8" fill="#999">动态配置</text>
+    </g>
+    
+    <!-- 链路追踪 -->
+    <g transform="translate(580, 680)">
+      <rect width="120" height="70" rx="6" fill="#ffebee" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="22" text-anchor="middle" font-size="11" fill="#333">SkyWalking</text>
+      <text x="60" y="40" text-anchor="middle" font-size="9" fill="#666">链路追踪</text>
+      <text x="60" y="55" text-anchor="middle" font-size="8" fill="#999">性能监控</text>
+    </g>
+    
+    <!-- 日志系统 -->
+    <g transform="translate(740, 680)">
+      <rect width="120" height="70" rx="6" fill="#ffebee" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="22" text-anchor="middle" font-size="11" fill="#333">ELK</text>
+      <text x="60" y="40" text-anchor="middle" font-size="9" fill="#666">日志收集</text>
+      <text x="60" y="55" text-anchor="middle" font-size="8" fill="#999">日志分析</text>
+    </g>
+    
+    <!-- 监控告警 -->
+    <g transform="translate(900, 680)">
+      <rect width="120" height="70" rx="6" fill="#ffebee" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+      <text x="60" y="22" text-anchor="middle" font-size="11" fill="#333">Prometheus</text>
+      <text x="60" y="40" text-anchor="middle" font-size="9" fill="#666">监控告警</text>
+      <text x="60" y="55" text-anchor="middle" font-size="8" fill="#999">指标采集</text>
+    </g>
+  </g>
+  
+  <!-- 关键技术说明 -->
+  <g transform="translate(60, 790)">
+    <rect width="980" height="130" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="40" y="25" font-size="14" font-weight="bold" fill="#333">关键技术点说明</text>
+    
+    <g transform="translate(40, 45)">
+      <rect width="220" height="70" rx="6" fill="#e3f2fd" stroke="#3498db" stroke-width="1"/>
+      <text x="10" y="18" font-size="11" font-weight="bold" fill="#333">🔒 分布式锁设计</text>
+      <text x="10" y="35" font-size="9" fill="#666">• Redisson + Lua原子操作</text>
+      <text x="10" y="48" font-size="9" fill="#666">• WatchDog自动续期</text>
+      <text x="10" y="61" font-size="9" fill="#666">• 库存扣减串行化</text>
+    </g>
+    
+    <g transform="translate(280, 45)">
+      <rect width="220" height="70" rx="6" fill="#fff3e0" stroke="#e67e22" stroke-width="1"/>
+      <text x="10" y="18" font-size="11" font-weight="bold" fill="#333">🔄 防重复下单</text>
+      <text x="10" y="35" font-size="9" fill="#666">• 幂等Token机制</text>
+      <text x="10" y="48" font-size="9" fill="#666">• 唯一订单号约束</text>
+      <text x="10" y="61" font-size="9" fill="#666">• 状态机防重</text>
+    </g>
+    
+    <g transform="translate(520, 45)">
+      <rect width="220" height="70" rx="6" fill="#e8f5e9" stroke="#2ecc71" stroke-width="1"/>
+      <text x="10" y="18" font-size="11" font-weight="bold" fill="#333">⚡ 高并发优化</text>
+      <text x="10" y="35" font-size="9" fill="#666">• 库存预扣+异步落库</text>
+      <text x="10" y="48" font-size="9" fill="#666">• 限流/熔断/降级</text>
+      <text x="10" y="61" font-size="9" fill="#666">• 消息队列削峰</text>
+    </g>
+    
+    <g transform="translate(760, 45)">
+      <rect width="220" height="70" rx="6" fill="#f3e5f5" stroke="#9b59b6" stroke-width="1"/>
+      <text x="10" y="18" font-size="11" font-weight="bold" fill="#333">🔐 数据一致性</text>
+      <text x="10" y="35" font-size="9" fill="#666">• Seata分布式事务</text>
+      <text x="10" y="48" font-size="9" fill="#666">• TCC补偿机制</text>
+      <text x="10" y="61" font-size="9" fill="#666">• 定时对账补偿</text>
+    </g>
+  </g>
+</svg>
