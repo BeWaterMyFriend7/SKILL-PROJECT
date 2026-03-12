@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件台账列表 - 软件台账管理平台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-boxes-stacked"></i> 软件台账管理平台
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="software-list.html" class="active"><i class="fas fa-list"></i> 软件台账</a></li>
+                    <li><a href="terminal-usage.html"><i class="fas fa-laptop"></i> 终端使用关系</a></li>
+                    <li><a href="app-usage.html"><i class="fas fa-server"></i> 应用系统使用关系</a></li>
+                    <li><a href="server-usage.html"><i class="fas fa-database"></i> 服务器使用关系</a></li>
+                    <li><a href="statistics-dashboard.html"><i class="fas fa-chart-bar"></i> 数据统计大屏</a></li>
+                    <li><a href="sync-monitor.html"><i class="fas fa-sync-alt"></i> 同步监控大屏</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title"><i class="fas fa-list"></i> 软件台账列表</h1>
+                    <div>
+                        <a href="software-detail.html" class="btn btn-secondary"><i class="fas fa-eye"></i> 查看详情示例</a>
+                        <button class="btn btn-primary"><i class="fas fa-plus"></i> 新增软件</button>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <p class="text-muted mb-4">展示软件基本信息和版本信息，支持多维度筛选、搜索、排序。数据为非敏感数据，无需登录均可查看。</p>
+                    
+                    <!-- 筛选栏 -->
+                    <div class="filter-bar">
+                        <div class="filter-item">
+                            <label class="form-label">软件名称</label>
+                            <input type="text" class="form-control" placeholder="输入软件名称关键词...">
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">管理类型</label>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                                <option value="商业软件">商业软件</option>
+                                <option value="开源软件">开源软件</option>
+                                <option value="自研软件">自研软件</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">功能类型（一级）</label>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                                <option value="办公">办公</option>
+                                <option value="开发测试">开发测试</option>
+                                <option value="运维管理">运维管理</option>
+                                <option value="系统类">系统类</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">介质类型</label>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                                <option value="产品类">产品类</option>
+                                <option value="组件类">组件类</option>
+                            </select>
+                        </div>
+                        <div class="filter-item align-self-end">
+                            <button class="btn btn-primary w-100"><i class="fas fa-search"></i> 筛选</button>
+                        </div>
+                        <div class="filter-item align-self-end">
+                            <button class="btn btn-secondary w-100"><i class="fas fa-redo"></i> 重置</button>
+                        </div>
+                    </div>
+
+                    <!-- 软件台账表格 -->
+                    <div class="table-container">
+                        <table class="data-table sortable paginated" id="softwareTable">
+                            <thead>
+                                <tr>
+                                    <th>软件ID</th>
+                                    <th>软件名称</th>
+                                    <th>管理类型</th>
+                                    <th>功能类型（一级）</th>
+                                    <th>功能类型（二级）</th>
+                                    <th>介质类型</th>
+                                    <th>仓库类型</th>
+                                    <th>软件负责人</th>
+                                    <th>版本数量</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10001</td>
+                                    <td><a href="software-detail.html">Apache Tomcat</a></td>
+                                    <td><span class="badge bg-success">开源软件</span></td>
+                                    <td>开发测试</td>
+                                    <td>应用服务器</td>
+                                    <td>产品类</td>
+                                    <td>—</td>
+                                    <td>张三</td>
+                                    <td>5</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-copy"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10002</td>
+                                    <td><a href="software-detail.html">MySQL</a></td>
+                                    <td><span class="badge bg-success">开源软件</span></td>
+                                    <td>开发测试</td>
+                                    <td>数据库</td>
+                                    <td>产品类</td>
+                                    <td>—</td>
+                                    <td>李四</td>
+                                    <td>3</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-copy"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10003</td>
+                                    <td><a href="software-detail.html">Microsoft Office</a></td>
+                                    <td><span class="badge bg-info">商业软件</span></td>
+                                    <td>办公</td>
+                                    <td>文字处理</td>
+                                    <td>产品类</td>
+                                    <td>—</td>
+                                    <td>王五</td>
+                                    <td>2</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-copy"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10004</td>
+                                    <td><a href="software-detail.html">Jenkins</a></td>
+                                    <td><span class="badge bg-success">开源软件</span></td>
+                                    <td>运维管理</td>
+                                    <td>CI/CD</td>
+                                    <td>产品类</td>
+                                    <td>—</td>
+                                    <td>赵六</td>
+                                    <td>4</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-copy"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10005</td>
+                                    <td><a href="software-detail.html">自研监控系统</a></td>
+                                    <td><span class="badge bg-warning">自研软件</span></td>
+                                    <td>运维管理</td>
+                                    <td>监控</td>
+                                    <td>产品类</td>
+                                    <td>—</td>
+                                    <td>钱七</td>
+                                    <td>1</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-copy"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10006</td>
+                                    <td><a href="software-detail.html">React</a></td>
+                                    <td><span class="badge bg-success">开源软件</span></td>
+                                    <td>开发测试</td>
+                                    <td>前端框架</td>
+                                    <td>组件类</td>
+                                    <td>npm</td>
+                                    <td>孙八</td>
+                                    <td>12</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-copy"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10007</td>
+                                    <td><a href="software-detail.html">Spring Boot</a></td>
+                                    <td><span class="badge bg-success">开源软件</span></td>
+                                    <td>开发测试</td>
+                                    <td>后端框架</td>
+                                    <td>组件类</td>
+                                    <td>maven</td>
+                                    <td>周九</td>
+                                    <td>8</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-copy"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10008</td>
+                                    <td><a href="software-detail.html">Oracle Database</a></td>
+                                    <td><span class="badge bg-info">商业软件</span></td>
+                                    <td>开发测试</td>
+                                    <td>数据库</td>
+                                    <td>产品类</td>
+                                    <td>—</td>
+                                    <td>吴十</td>
+                                    <td>6</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-copy"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-4">
+                        <p class="text-muted"><i class="fas fa-info-circle"></i> 共 <strong>8</strong> 条软件记录，数据来源于引入流程和其他系统同步。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">软件台账管理平台原型 &copy; 2025 | 设计规范：天蓝色主色，简约大气风格</p>
+            <p class="text-muted">最后更新: 2025-02-24</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

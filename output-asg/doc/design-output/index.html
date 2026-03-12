@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全检测流程管理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #4A90D9;
+            --primary-dark: #3A7BC8;
+            --primary-light: #E8F2FC;
+            --gray-light: #F5F7FA;
+            --gray: #6B7A8C;
+            --gray-dark: #3D4852;
+            --danger: #E74C3C;
+            --danger-light: #FDEDEC;
+            --success: #27AE60;
+            --success-light: #E8F8F0;
+            --warning: #F39C12;
+            --warning-light: #FEF5E7;
+            --border: #E1E5EB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--gray-light);
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        .page-header {
+            margin-bottom: 24px;
+        }
+        
+        .page-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--gray-dark);
+        }
+        
+        .page-subtitle {
+            color: var(--gray);
+            margin-top: 4px;
+            font-size: 14px;
+        }
+        
+        /* 卡片 */
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        /* 按钮级别 */
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--gray-dark);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gray-light);
+        }
+        
+        .btn-danger {
+            background: var(--danger);
+            color: var(--white);
+        }
+        
+        .btn-danger:hover {
+            background: #C0392B;
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        .btn-success:hover {
+            background: #219A52;
+        }
+        
+        .btn-warning {
+            background: var(--warning);
+            color: var(--white);
+        }
+        
+        .btn-warning:hover {
+            background: #D68910;
+        }
+        
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+        
+        .btn-lg {
+            padding: 14px 28px;
+            font-size: 16px;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* 提示信息 */
+        .alert {
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .alert-info {
+            background: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid #B8D4F0;
+        }
+        
+        .alert-success {
+            background: var(--success-light);
+            color: var(--success);
+            border: 1px solid #A9DFBF;
+        }
+        
+        .alert-warning {
+            background: var(--warning-light);
+            color: var(--warning);
+            border: 1px solid #F9E79F;
+        }
+        
+        .alert-danger {
+            background: var(--danger-light);
+            color: var(--danger);
+            border: 1px solid #F5B7B1;
+        }
+        
+        /* 介质列表 */
+        .media-list {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .media-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            background: var(--white);
+        }
+        
+        .media-item:last-child {
+            border-bottom: none;
+        }
+        
+        .media-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-size: 20px;
+        }
+        
+        .media-info {
+            flex: 1;
+        }
+        
+        .media-name {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        
+        .media-meta {
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        .media-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        /* 检测结果一行展示 */
+        .result-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .result-bar.info {
+            background: var(--primary-light);
+            border: 1px solid #B8D4F0;
+        }
+        
+        .result-bar.success {
+            background: var(--success-light);
+            border: 1px solid #A9DFBF;
+        }
+        
+        .result-bar.warning {
+            background: var(--warning-light);
+            border: 1px solid #F9E79F;
+        }
+        
+        .result-bar.danger {
+            background: var(--danger-light);
+            border: 1px solid #F5B7B1;
+        }
+        
+        .result-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .result-bar-icon {
+            font-size: 24px;
+        }
+        
+        .result-bar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .result-bar-id {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        .result-bar-status {
+            font-size: 13px;
+        }
+        
+        .result-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .result-bar .status-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .status-running {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .status-passed {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        .status-rejected {
+            background: var(--danger);
+            color: var(--white);
+        }
+        
+        /* iframe容器 */
+        .iframe-container {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--white);
+        }
+        
+        .iframe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: var(--gray-light);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .iframe-title {
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .iframe-content {
+            min-height: 400px;
+            background: #f8f9fa;
+        }
+        
+        /* 弹窗 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .modal-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray);
+            border-radius: 4px;
+        }
+        
+        .modal-close:hover {
+            background: var(--gray-light);
+        }
+        
+        .modal-body {
+            padding: 24px;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding: 16px 24px;
+            border-top: 1px solid var(--border);
+        }
+        
+        /* 表单 */
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--gray-dark);
+        }
+        
+        .form-label .required {
+            color: var(--danger);
+            margin-left: 2px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        .form-input:focus {
+            border-color: var(--primary);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
+            background: var(--white);
+            cursor: pointer;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        
+        /* 文件上传 */
+        .upload-area {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--gray-light);
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+        
+        .upload-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        
+        .upload-text {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .upload-text strong {
+            color: var(--primary);
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        /* 底部操作栏 */
+        .action-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding: 16px 0;
+        }
+        
+        /* 模拟iframe内容 */
+        .mock-iframe {
+            padding: 24px;
+        }
+        
+        .mock-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .mock-form-group {
+            margin-bottom: 16px;
+        }
+        
+        .mock-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        
+        .mock-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 14px;
+            background: var(--white);
+        }
+        
+        .mock-btn {
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .mock-submit {
+            background: var(--primary);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">安全检测流程管理</h1>
+            <p class="page-subtitle">上传介质、发起安全检测、查看结果</p>
+        </div>
+        
+        <!-- 提示信息 -->
+        <div class="alert alert-info">
+            <span>ℹ️</span>
+            <span>请上传需要安全检测的介质文件，填写必要信息后发起检测</span>
+        </div>
+        
+        <!-- 介质列表 -->
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border);">
+                <h3 class="card-title" style="margin: 0; padding: 0; border: none;">已上传介质</h3>
+                <button class="btn btn-primary" id="addMediaBtn">+ 添加介质</button>
+            </div>
+            
+            <div class="media-list" id="mediaList">
+                <div class="media-item">
+                    <div class="media-icon">📦</div>
+                    <div class="media-info">
+                        <div class="media-name">app-installer-v1.2.0.zip</div>
+                        <div class="media-meta">安装文件 | 字段1: xxx | 字段2: xxx | 字段3: xxx | 2024-01-23 10:30</div>
+                    </div>
+                    <div class="media-actions">
+                        <button class="btn btn-danger btn-sm">🗑️ 删除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 发起检测按钮 -->
+        <div class="action-bar">
+            <button class="btn btn-primary btn-lg" id="startDetectBtn">🚀 发起安全检测</button>
+        </div>
+        
+        <!-- 检测结果一行展示 -->
+        <div class="result-bar info" id="resultBar" style="display: none;">
+            <div class="result-bar-left">
+                <div class="result-bar-icon">🔄</div>
+                <div class="result-bar-content">
+                    <div class="result-bar-id">工单ID: ASG-20240123-001</div>
+                    <div class="result-bar-status">状态: 检测中 | 建议: 等待检测完成</div>
+                </div>
+            </div>
+            <div class="result-bar-right">
+                <span class="status-badge status-running">🔄 检测中</span>
+                <button class="btn btn-warning btn-sm" id="viewAsgBtn">🔍 查看ASG</button>
+            </div>
+        </div>
+        
+        <!-- ASG系统iframe -->
+        <div class="iframe-container" id="asgIframe" style="display: none;">
+            <div class="iframe-header">
+                <span class="iframe-title">ASG安全检测系统 - 工单详情</span>
+                <button class="btn btn-primary btn-sm" id="fullscreenBtn">🔳 全屏查看</button>
+            </div>
+            <div class="iframe-content">
+                <div class="mock-iframe">
+                    <div class="mock-form">
+                        <div class="mock-form-group">
+                            <label class="mock-label">申请单位</label>
+                            <input class="mock-input" value="XXX部门" disabled>
+                        </div>
+                        <div class="mock-form-group">
+                            <label class="mock-label">检测类型</label>
+                            <input class="mock-input" value="安全检测" disabled>
+                        </div>
+                        <div class="mock-form-group">
+                            <label class="mock-label">介质列表</label>
+                            <input class="mock-input" value="app-installer-v1.2.0.zip" disabled>
+                        </div>
+                        <div class="mock-form-group">
+                            <label class="mock-label">检测状态</label>
+                            <input class="mock-input" value="检测中..." disabled>
+                        </div>
+                        <div class="mock-form-group">
+                            <label class="mock-label">补充说明</label>
+                            <input class="mock-input" placeholder="请输入补充说明">
+                        </div>
+                        <button class="mock-btn mock-submit">📝 提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 使用范围（检测通过后显示） -->
+        <div class="card" id="scopeCard" style="display: none;">
+            <h3 class="card-title">介质使用范围</h3>
+            
+            <div class="alert alert-warning">
+                <span>⚠️</span>
+                <span>安全检测已通过，请补充介质使用范围信息，需上传Excel表格</span>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">使用范围说明</label>
+                <textarea class="form-input" rows="3" placeholder="请描述介质的使用范围和用途"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">使用范围Excel <span class="required">*</span></label>
+                <div class="upload-area" id="excelUploadArea">
+                    <div class="upload-icon">📊</div>
+                    <div class="upload-text">
+                        <strong>点击上传Excel</strong> 或拖拽文件到此处
+                    </div>
+                </div>
+                <input type="file" class="file-input" id="excelInput" accept=".xlsx,.xls">
+            </div>
+            
+            <div class="action-bar">
+                <button class="btn btn-success btn-lg" id="completeBtn">✓ 完成</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 添加介质弹窗 -->
+    <div class="modal-overlay" id="addMediaModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">添加介质</span>
+                <button class="modal-close" id="closeModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">介质类型 <span class="required">*</span></label>
+                        <select class="form-select" id="mediaType">
+                            <option value="">请选择类型</option>
+                            <option value="install">安装文件</option>
+                            <option value="sdk">SDK</option>
+                            <option value="image">镜像</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">字段1</label>
+                        <input type="text" class="form-input" id="field1" placeholder="请输入">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">字段2</label>
+                        <input type="text" class="form-input" id="field2" placeholder="请输入">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">字段3</label>
+                        <input type="text" class="form-input" id="field3" placeholder="请输入">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">介质文件 <span class="required">*</span></label>
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📁</div>
+                        <div class="upload-text">
+                            <strong>点击上传</strong> 或拖拽文件到此处<br>
+                            支持 .zip, .tar.gz, .img, .iso 等格式
+                        </div>
+                    </div>
+                    <input type="file" class="file-input" id="fileInput">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelBtn">取消</button>
+                <button class="btn btn-primary" id="confirmAddBtn">确认添加</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 全屏弹窗 -->
+    <div class="modal-overlay" id="fullscreenModal">
+        <div class="modal-content" style="max-width: 90%;">
+            <div class="modal-header">
+                <span class="modal-title">ASG安全检测系统 - 完整界面</span>
+                <button class="modal-close" id="closeFullscreen">×</button>
+            </div>
+            <div class="modal-body" style="background: #f8f9fa;">
+                <div style="padding: 40px; text-align: center;">
+                    <div style="font-size: 48px; margin-bottom: 16px;">🖥️</div>
+                    <h3 style="margin-bottom: 16px;">ASG系统完整界面</h3>
+                    <p style="color: var(--gray); margin-bottom: 24px;">
+                        此处将显示完整的ASG系统内容
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 弹窗控制
+        const addMediaModal = document.getElementById('addMediaModal');
+        const fullscreenModal = document.getElementById('fullscreenModal');
+        
+        // 打开添加介质弹窗
+        document.getElementById('addMediaBtn').addEventListener('click', () => {
+            addMediaModal.classList.add('active');
+        });
+        
+        // 关闭添加介质弹窗
+        document.getElementById('closeModal').addEventListener('click', () => {
+            addMediaModal.classList.remove('active');
+        });
+        
+        document.getElementById('cancelBtn').addEventListener('click', () => {
+            addMediaModal.classList.remove('active');
+        });
+        
+        // 文件上传
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        
+        uploadArea.addEventListener('click', () => fileInput.click());
+        
+        let selectedFileName = '';
+        
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                selectedFileName = e.target.files[0].name;
+            }
+        });
+        
+        // 确认添加介质
+        document.getElementById('confirmAddBtn').addEventListener('click', () => {
+            const mediaType = document.getElementById('mediaType').value;
+            const field1 = document.getElementById('field1').value;
+            const field2 = document.getElementById('field2').value;
+            const field3 = document.getElementById('field3').value;
+            
+            if (!mediaType || !selectedFileName) {
+                alert('请选择介质类型并上传文件');
+                return;
+            }
+            
+            // 添加到列表
+            const mediaList = document.getElementById('mediaList');
+            const typeText = { install: '安装文件', sdk: 'SDK', image: '镜像' }[mediaType];
+            
+            const newItem = document.createElement('div');
+            newItem.className = 'media-item';
+            newItem.innerHTML = `
+                <div class="media-icon">📦</div>
+                <div class="media-info">
+                    <div class="media-name">${selectedFileName}</div>
+                    <div class="media-meta">${typeText} | 字段1: ${field1 || '-'} | 字段2: ${field2 || '-'} | 字段3: ${field3 || '-'} | ${new Date().toLocaleString()}</div>
+                </div>
+                <div class="media-actions">
+                    <button class="btn btn-danger btn-sm" onclick="this.closest('.media-item').remove()">🗑️ 删除</button>
+                </div>
+            `;
+            mediaList.appendChild(newItem);
+            
+            // 重置表单
+            document.getElementById('mediaType').value = '';
+            document.getElementById('field1').value = '';
+            document.getElementById('field2').value = '';
+            document.getElementById('field3').value = '';
+            selectedFileName = '';
+            fileInput.value = '';
+            
+            addMediaModal.classList.remove('active');
+        });
+        
+        // 发起安全检测
+        let detectStarted = false;
+        
+        document.getElementById('startDetectBtn').addEventListener('click', () => {
+            const mediaItems = document.querySelectorAll('.media-item');
+            if (mediaItems.length === 0) {
+                alert('请先添加介质');
+                return;
+            }
+            
+            if (detectStarted) {
+                alert('检测已发起，请勿重复操作');
+                return;
+            }
+            
+            detectStarted = true;
+            
+            // 显示结果条
+            const resultBar = document.getElementById('resultBar');
+            resultBar.style.display = 'flex';
+            
+            // 显示ASG iframe
+            const asgIframe = document.getElementById('asgIframe');
+            asgIframe.style.display = 'block';
+            
+            // 禁用发起按钮
+            document.getElementById('startDetectBtn').disabled = true;
+            document.getElementById('startDetectBtn').textContent = '⏳ 检测已发起';
+            
+            // 模拟检测完成（3秒后）
+            setTimeout(() => {
+                // 更新结果条
+                resultBar.className = 'result-bar success';
+                resultBar.innerHTML = `
+                    <div class="result-bar-left">
+                        <div class="result-bar-icon">✅</div>
+                        <div class="result-bar-content">
+                            <div class="result-bar-id">工单ID: ASG-20240123-001</div>
+                            <div class="result-bar-status">状态: 检测通过 | 建议: 请确认下一步</div>
+                        </div>
+                    </div>
+                    <div class="result-bar-right">
+                        <span class="status-badge status-passed">✅ 检测通过</span>
+                        <button class="btn btn-warning btn-sm" id="viewAsgBtn2">🔍 查看ASG</button>
+                    </div>
+                `;
+                
+                // 显示使用范围
+                const scopeCard = document.getElementById('scopeCard');
+                scopeCard.style.display = 'block';
+                
+                // 添加查看ASG事件
+                document.getElementById('viewAsgBtn2').addEventListener('click', () => {
+                    fullscreenModal.classList.add('active');
+                });
+            }, 3000);
+        });
+        
+        // 查看ASG
+        document.getElementById('viewAsgBtn').addEventListener('click', () => {
+            fullscreenModal.classList.add('active');
+        });
+        
+        // 全屏关闭
+        document.getElementById('closeFullscreen').addEventListener('click', () => {
+            fullscreenModal.classList.remove('active');
+        });
+        
+        document.getElementById('fullscreenBtn').addEventListener('click', () => {
+            fullscreenModal.classList.add('active');
+        });
+        
+        fullscreenModal.addEventListener('click', (e) => {
+            if (e.target === fullscreenModal) {
+                fullscreenModal.classList.remove('active');
+            }
+        });
+        
+        // Excel上传
+        const excelUploadArea = document.getElementById('excelUploadArea');
+        const excelInput = document.getElementById('excelInput');
+        
+        excelUploadArea.addEventListener('click', () => excelInput.click());
+        
+        excelInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                alert('Excel文件已选择: ' + e.target.files[0].name);
+            }
+        });
+        
+        // 完成按钮
+        document.getElementById('completeBtn').addEventListener('click', () => {
+            alert('✅ 流程已完成！\n\n所有介质已通过安全检测并完成使用范围登记。');
+        });
+        
+        // 页面加载完成
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('安全检测流程原型加载完成');
+        });
+    </script>
+</body>
+</html>

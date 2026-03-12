@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件台账管理平台 - 原型导航</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-boxes-stacked"></i> 软件台账管理平台
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="pages/software-list.html"><i class="fas fa-list"></i> 软件台账</a></li>
+                    <li><a href="pages/terminal-usage.html"><i class="fas fa-laptop"></i> 终端使用关系</a></li>
+                    <li><a href="pages/app-usage.html"><i class="fas fa-server"></i> 应用系统使用关系</a></li>
+                    <li><a href="pages/server-usage.html"><i class="fas fa-database"></i> 服务器使用关系</a></li>
+                    <li><a href="pages/statistics-dashboard.html"><i class="fas fa-chart-bar"></i> 数据统计大屏</a></li>
+                    <li><a href="pages/sync-monitor.html"><i class="fas fa-sync-alt"></i> 同步监控大屏</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title">软件台账管理平台原型导航</h1>
+                </div>
+                <div class="card-body">
+                    <p class="lead">本原型展示了软件台账管理平台的主要功能界面，包含软件台账管理、软件使用关系台账、可观测大屏等模块。</p>
+                    
+                    <div class="row mt-5">
+                        <div class="col-md-4 mb-4">
+                            <div class="card home-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-list"></i>
+                                </div>
+                                <h4 class="section-title">软件台账</h4>
+                                <p class="card-desc">管理软件基本信息、版本介质，支持多维度筛选、搜索、排序。</p>
+                                <a href="pages/software-list.html" class="btn btn-primary">进入列表</a>
+                                <a href="pages/software-detail.html" class="btn btn-outline-primary mt-2">查看详情示例</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card home-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <h4 class="section-title">软件使用关系台账</h4>
+                                <p class="card-desc">终端、应用系统、服务器三大类使用关系管理，数据量千万级。</p>
+                                <a href="pages/terminal-usage.html" class="btn btn-primary">终端使用关系</a>
+                                <a href="pages/app-usage.html" class="btn btn-outline-primary mt-2">应用系统使用关系</a>
+                                <a href="pages/server-usage.html" class="btn btn-outline-primary mt-2">服务器使用关系</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card home-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4 class="section-title">可观测大屏</h4>
+                                <p class="card-desc">数据统计大屏与同步监控大屏，多维度可视化分析。</p>
+                                <a href="pages/statistics-dashboard.html" class="btn btn-primary">数据统计大屏</a>
+                                <a href="pages/sync-monitor.html" class="btn btn-outline-primary mt-2">同步监控大屏</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-5">
+
+                    <h3>原型使用说明</h3>
+                    <ul>
+                        <li>所有页面均为静态HTML原型，数据为模拟数据。</li>
+                        <li>表格支持前端排序、筛选、分页（模拟）。</li>
+                        <li>图表使用ECharts库，需要网络连接加载CDN。</li>
+                        <li>权限控制通过界面元素模拟（如不同角色看到不同数据）。</li>
+                        <li>设计遵循简约大气原则，主色天蓝色，辅助色浅灰色。</li>
+                    </ul>
+
+                    <div class="alert alert-info mt-4">
+                        <i class="fas fa-info-circle"></i> <strong>提示：</strong> 本原型仅用于需求验证和设计展示，实际开发需结合后端API和数据库实现。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">软件台账管理平台原型 &copy; 2025 | 设计规范：天蓝色主色，简约大气风格</p>
+            <p class="text-muted">最后更新: 2025-02-24</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

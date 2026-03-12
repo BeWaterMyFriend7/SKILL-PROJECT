@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件管理平台 - 软件详情</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>软件管理平台</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="software-list.html">软件列表</a></li>
+                    <li><a href="statistics.html">统计分析</a></li>
+                    <li><a href="user-management.html">用户管理</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>欢迎，管理员</span>
+                <button class="logout-btn">退出</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main">
+        <div class="container">
+            <!-- 面包屑导航 -->
+            <section class="breadcrumb">
+                <nav>
+                    <a href="index.html">首页</a> &gt; 
+                    <a href="software-list.html">软件列表</a> &gt; 
+                    <span>软件详情</span>
+                </nav>
+            </section>
+
+            <!-- 软件基本信息 -->
+            <section class="software-detail">
+                <div class="detail-header">
+                    <div class="software-title">
+                        <h1 id="software-name">飞书</h1>
+                        <div class="software-badges">
+                            <span class="badge type-badge commercial">商业软件</span>
+                            <span class="badge category-badge product">产品类</span>
+                        </div>
+                    </div>
+                    <div class="software-actions">
+                        <button class="btn btn-success" id="download-btn">立即下载</button>
+                        <button class="btn btn-warning" id="external-btn" style="display: none;">跳转下载</button>
+                        <button class="btn btn-primary">收藏</button>
+                    </div>
+                </div>
+
+                <div class="detail-content">
+                    <!-- 基础信息区 -->
+                    <div class="info-section">
+                        <h2>基础信息</h2>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>软件名称：</label>
+                                <span id="detail-name">飞书</span>
+                            </div>
+                            <div class="info-item">
+                                <label>软件类型：</label>
+                                <span id="detail-type">商业软件</span>
+                            </div>
+                            <div class="info-item">
+                                <label>软件分类：</label>
+                                <span id="detail-category">产品类</span>
+                            </div>
+                            <div class="info-item">
+                                <label>功能类型：</label>
+                                <span id="detail-function">办公软件</span>
+                            </div>
+                            <div class="info-item">
+                                <label>开源协议：</label>
+                                <span id="detail-license">商业许可</span>
+                            </div>
+                            <div class="info-item">
+                                <label>当前版本：</label>
+                                <span id="detail-version">v6.5.0</span>
+                            </div>
+                            <div class="info-item">
+                                <label>管理员：</label>
+                                <span>张三</span>
+                            </div>
+                            <div class="info-item">
+                                <label>创建时间：</label>
+                                <span>2025-01-15</span>
+                            </div>
+                        </div>
+                        <div class="info-description">
+                            <label>功能简介：</label>
+                            <p id="detail-description">飞书是一款企业协作办公平台，支持即时通讯、文档协作、视频会议、日程管理等功能，为企业提供一站式办公解决方案。</p>
+                        </div>
+                    </div>
+
+                    <!-- 版本管理区 -->
+                    <div class="version-section">
+                        <h2>版本管理</h2>
+                        <div class="version-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>版本号</th>
+                                        <th>发布说明</th>
+                                        <th>兼容性</th>
+                                        <th>发布时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>v6.5.0</td>
+                                        <td>新增AI助手功能，优化用户体验</td>
+                                        <td>Windows 10+, macOS 10.15+</td>
+                                        <td>2026-02-01</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success">下载</button>
+                                            <button class="btn btn-sm btn-info">查看说明</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>v6.4.0</td>
+                                        <td>修复已知问题，提升稳定性</td>
+                                        <td>Windows 10+, macOS 10.15+</td>
+                                        <td>2025-12-15</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success">下载</button>
+                                            <button class="btn btn-sm btn-info">查看说明</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>v6.3.0</td>
+                                        <td>新增白板功能，优化视频会议体验</td>
+                                        <td>Windows 10+, macOS 10.15+</td>
+                                        <td>2025-10-20</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success">下载</button>
+                                            <button class="btn btn-sm btn-info">查看说明</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 许可证管理区 -->
+                    <div class="license-section">
+                        <h2>许可证管理</h2>
+                        <div class="license-info">
+                            <div class="license-item">
+                                <label>许可证类型：</label>
+                                <span>企业商业许可</span>
+                            </div>
+                            <div class="license-item">
+                                <label>到期时间：</label>
+                                <span class="license-valid">2026-12-31</span>
+                                <span class="license-status valid">有效</span>
+                            </div>
+                            <div class="license-item">
+                                <label>许可证文件：</label>
+                                <button class="btn btn-sm btn-info">查看许可证</button>
+                            </div>
+                        </div>
+                        <div class="license-alert">
+                            <div class="alert-info">
+                                <i class="alert-icon">ℹ️</i>
+                                <span>许可证将在 323 天后到期，请及时续费</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 使用统计区 -->
+                    <div class="stats-section">
+                        <h2>使用统计</h2>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-icon">⬇️</div>
+                                <div class="stat-number">2,456</div>
+                                <div class="stat-label">总下载次数</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">👥</div>
+                                <div class="stat-number">1,892</div>
+                                <div class="stat-label">活跃用户数</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">⭐</div>
+                                <div class="stat-number">4.6</div>
+                                <div class="stat-label">用户评分</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">😊</div>
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">满意度</div>
+                            </div>
+                        </div>
+                        <div class="trend-chart">
+                            <h3>下载趋势</h3>
+                            <div class="chart-placeholder">
+                                <p>图表显示最近30天下载趋势</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 文档资源区 -->
+                    <div class="docs-section">
+                        <h2>文档资源</h2>
+                        <div class="docs-grid">
+                            <div class="doc-item">
+                                <div class="doc-icon">📖</div>
+                                <div class="doc-info">
+                                    <h4>用户手册</h4>
+                                    <p>详细的功能使用说明</p>
+                                </div>
+                                <button class="btn btn-sm btn-primary">查看</button>
+                            </div>
+                            <div class="doc-item">
+                                <div class="doc-icon">🔧</div>
+                                <div class="doc-info">
+                                    <h4>安装指南</h4>
+                                    <p>详细的安装和配置步骤</p>
+                                </div>
+                                <button class="btn btn-sm btn-primary">查看</button>
+                            </div>
+                            <div class="doc-item">
+                                <div class="doc-icon">❓</div>
+                                <div class="doc-info">
+                                    <h4>常见问题</h4>
+                                    <p>使用过程中的常见问题解答</p>
+                                </div>
+                                <button class="btn btn-sm btn-primary">查看</button>
+                            </div>
+                            <div class="doc-item">
+                                <div class="doc-icon">📝</div>
+                                <div class="doc-info">
+                                    <h4>API文档</h4>
+                                    <p>开发接口文档</p>
+                                </div>
+                                <button class="btn btn-sm btn-primary">查看</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 用户互动区 -->
+                    <div class="interaction-section">
+                        <h2>用户评价</h2>
+                        <div class="rating-summary">
+                            <div class="rating-score">
+                                <div class="score-number">4.6</div>
+                                <div class="score-stars">★★★★☆</div>
+                                <div class="score-count">基于 128 条评价</div>
+                            </div>
+                            <button class="btn btn-primary" onclick="showReviewForm()">发表评价</button>
+                        </div>
+                        
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">李四</span>
+                                        <span class="review-time">2026-02-10</span>
+                                    </div>
+                                    <div class="review-rating">★★★★★</div>
+                                </div>
+                                <div class="review-content">
+                                    <p>功能强大，界面友好，团队协作效率提升明显。特别是文档协作功能，多人实时编辑非常方便。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">王五</span>
+                                        <span class="review-time">2026-02-08</span>
+                                    </div>
+                                    <div class="review-rating">★★★★☆</div>
+                                </div>
+                                <div class="review-content">
+                                    <p>整体使用体验不错，视频会议功能稳定。希望后续能增加更多自定义选项。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 评价弹窗 -->
+    <div id="review-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>发表评价</h3>
+                <button class="modal-close" onclick="hideReviewForm()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>评分：</label>
+                    <div class="rating-input">
+                        <button class="star-btn" onclick="setRating(1)">☆</button>
+                        <button class="star-btn" onclick="setRating(2)">☆</button>
+                        <button class="star-btn" onclick="setRating(3)">☆</button>
+                        <button class="star-btn" onclick="setRating(4)">☆</button>
+                        <button class="star-btn" onclick="setRating(5)">☆</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>评价内容：</label>
+                    <textarea rows="4" placeholder="请分享您的使用体验..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="hideReviewForm()">取消</button>
+                <button class="btn btn-primary" onclick="submitReview()">提交</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 软件管理平台. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

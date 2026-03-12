@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>终端使用关系台账 - 软件台账管理平台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-boxes-stacked"></i> 软件台账管理平台
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="software-list.html"><i class="fas fa-list"></i> 软件台账</a></li>
+                    <li><a href="terminal-usage.html" class="active"><i class="fas fa-laptop"></i> 终端使用关系</a></li>
+                    <li><a href="app-usage.html"><i class="fas fa-server"></i> 应用系统使用关系</a></li>
+                    <li><a href="server-usage.html"><i class="fas fa-database"></i> 服务器使用关系</a></li>
+                    <li><a href="statistics-dashboard.html"><i class="fas fa-chart-bar"></i> 数据统计大屏</a></li>
+                    <li><a href="sync-monitor.html"><i class="fas fa-sync-alt"></i> 同步监控大屏</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title"><i class="fas fa-laptop"></i> 终端使用关系台账</h1>
+                    <div>
+                        <button class="btn btn-primary"><i class="fas fa-sync-alt"></i> 同步终端数据</button>
+                        <button class="btn btn-secondary"><i class="fas fa-download"></i> 导出报表</button>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <p class="text-muted mb-4">展示终端使用关系，关联到负责人。数据量约2000万条，支持多维度筛选、搜索、排序。权限：终端负责人本人、超管、终端负责人所属团队负责人可查看。</p>
+                    
+                    <!-- 筛选栏 -->
+                    <div class="filter-bar">
+                        <div class="filter-item">
+                            <label class="form-label">终端MAC</label>
+                            <input type="text" class="form-control" placeholder="例如: 00:1A:2B:3C:4D:5E">
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">终端IP</label>
+                            <input type="text" class="form-control" placeholder="例如: 192.168.1.100">
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">软件名称</label>
+                            <input type="text" class="form-control" placeholder="输入软件名称...">
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">合规状态</label>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                                <option value="合规">合规</option>
+                                <option value="不合规">不合规</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">黑名单</label>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                                <option value="是">是</option>
+                                <option value="否">否</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">数据状态</label>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                                <option value="正常">正常</option>
+                                <option value="残留数据">残留数据</option>
+                                <option value="未知">未知</option>
+                            </select>
+                        </div>
+                        <div class="filter-item align-self-end">
+                            <button class="btn btn-primary w-100"><i class="fas fa-search"></i> 筛选</button>
+                        </div>
+                        <div class="filter-item align-self-end">
+                            <button class="btn btn-secondary w-100"><i class="fas fa-redo"></i> 重置</button>
+                        </div>
+                    </div>
+
+                    <!-- 终端使用关系表格 -->
+                    <div class="table-container">
+                        <table class="data-table sortable paginated" id="terminalUsageTable">
+                            <thead>
+                                <tr>
+                                    <th>终端MAC</th>
+                                    <th>终端IP</th>
+                                    <th>终端名称</th>
+                                    <th>终端网段</th>
+                                    <th>终端负责人</th>
+                                    <th>终端状态</th>
+                                    <th>使用软件名称</th>
+                                    <th>使用软件版本</th>
+                                    <th>软件合规</th>
+                                    <th>黑名单软件</th>
+                                    <th>安装路径</th>
+                                    <th>安装时间</th>
+                                    <th>数据状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>00:1A:2B:3C:4D:5E</td>
+                                    <td>192.168.1.101</td>
+                                    <td>开发部-张三电脑</td>
+                                    <td><span class="badge bg-info">开发测试</span></td>
+                                    <td>张三</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                    <td>Microsoft Office</td>
+                                    <td>2021</td>
+                                    <td><span class="status-compliant">合规</span></td>
+                                    <td><span class="status-compliant">否</span></td>
+                                    <td>C:\Program Files\Microsoft Office</td>
+                                    <td>2023-05-10 14:30</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                </tr>
+                                <tr>
+                                    <td>00:1A:2B:3C:4D:5F</td>
+                                    <td>192.168.1.102</td>
+                                    <td>开发部-李四电脑</td>
+                                    <td><span class="badge bg-info">开发测试</span></td>
+                                    <td>李四</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                    <td>Visual Studio Code</td>
+                                    <td>1.85.0</td>
+                                    <td><span class="status-compliant">合规</span></td>
+                                    <td><span class="status-compliant">否</span></td>
+                                    <td>C:\Users\李四\AppData\Local\Programs\Microsoft VS Code</td>
+                                    <td>2024-01-15 09:20</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                </tr>
+                                <tr>
+                                    <td>00:1A:2B:3C:4D:60</td>
+                                    <td>192.168.2.50</td>
+                                    <td>办公部-王五电脑</td>
+                                    <td><span class="badge bg-primary">办公</span></td>
+                                    <td>王五</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                    <td>Adobe Photoshop</td>
+                                    <td>2023</td>
+                                    <td><span class="status-noncompliant">不合规</span></td>
+                                    <td><span class="status-compliant">否</span></td>
+                                    <td>C:\Program Files\Adobe\Photoshop</td>
+                                    <td>2023-11-22 16:45</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                </tr>
+                                <tr>
+                                    <td>00:1A:2B:3C:4D:61</td>
+                                    <td>192.168.3.100</td>
+                                    <td>生产部-服务器终端</td>
+                                    <td><span class="badge bg-warning">生产</span></td>
+                                    <td>赵六</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                    <td>Apache Tomcat</td>
+                                    <td>9.0.87</td>
+                                    <td><span class="status-compliant">合规</span></td>
+                                    <td><span class="status-compliant">否</span></td>
+                                    <td>/usr/local/tomcat</td>
+                                    <td>2024-02-10 10:00</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                </tr>
+                                <tr>
+                                    <td>00:1A:2B:3C:4D:62</td>
+                                    <td>192.168.1.103</td>
+                                    <td>测试部-测试机</td>
+                                    <td><span class="badge bg-info">开发测试</span></td>
+                                    <td>钱七</td>
+                                    <td><span class="badge bg-warning">已回收</span></td>
+                                    <td>MySQL</td>
+                                    <td>8.0.35</td>
+                                    <td><span class="status-compliant">合规</span></td>
+                                    <td><span class="status-compliant">否</span></td>
+                                    <td>C:\Program Files\MySQL\MySQL Server 8.0</td>
+                                    <td>2023-12-05 11:30</td>
+                                    <td><span class="badge bg-secondary">残留数据</span></td>
+                                </tr>
+                                <tr>
+                                    <td>00:1A:2B:3C:4D:63</td>
+                                    <td>192.168.2.51</td>
+                                    <td>办公部-刘八电脑</td>
+                                    <td><span class="badge bg-primary">办公</span></td>
+                                    <td>刘八</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                    <td>WPS Office</td>
+                                    <td>2023</td>
+                                    <td><span class="status-compliant">合规</span></td>
+                                    <td><span class="status-compliant">否</span></td>
+                                    <td>C:\Program Files\WPS Office</td>
+                                    <td>2024-01-20 13:15</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                </tr>
+                                <tr>
+                                    <td>00:1A:2B:3C:4D:64</td>
+                                    <td>192.168.3.101</td>
+                                    <td>生产部-监控终端</td>
+                                    <td><span class="badge bg-warning">生产</span></td>
+                                    <td>孙九</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                    <td>Zabbix Agent</td>
+                                    <td>6.0.0</td>
+                                    <td><span class="status-compliant">合规</span></td>
+                                    <td><span class="status-compliant">否</span></td>
+                                    <td>/usr/local/zabbix</td>
+                                    <td>2024-02-18 08:45</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                </tr>
+                                <tr>
+                                    <td>00:1A:2B:3C:4D:65</td>
+                                    <td>192.168.1.104</td>
+                                    <td>开发部-周十电脑</td>
+                                    <td><span class="badge bg-info">开发测试</span></td>
+                                    <td>周十</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                    <td>Node.js</td>
+                                    <td>20.11.0</td>
+                                    <td><span class="status-compliant">合规</span></td>
+                                    <td><span class="status-compliant">否</span></td>
+                                    <td>C:\Program Files\nodejs</td>
+                                    <td>2024-02-22 15:20</td>
+                                    <td><span class="badge bg-success">正常</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle"></i> <strong>数据量提示：</strong> 终端使用关系数据模型（A1）约2000万条，终端设备数据模型（A2）约10万条。实际生产环境需配合分页、索引、缓存等优化手段。
+                        </div>
+                        <p class="text-muted"><i class="fas fa-info-circle"></i> 当前展示模拟数据，实际数据来源于终端管理平台同步。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">软件台账管理平台原型 &copy; 2025 | 设计规范：天蓝色主色，简约大气风格</p>
+            <p class="text-muted">最后更新: 2025-02-24</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

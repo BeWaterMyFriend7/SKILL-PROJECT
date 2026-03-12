@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同步监控大屏 - 软件台账管理平台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body class="dashboard-container">
+    <div class="dashboard-clock">
+        <i class="fas fa-clock"></i>
+        <span id="currentTime"></span>
+        <span class="refresh-indicator"><i class="fas fa-sync fa-spin"></i> 实时监控</span>
+    </div>
+
+    <div class="dashboard-header">
+        <h1 class="dashboard-title"><i class="fas fa-sync-alt"></i> 同步监控大屏</h1>
+        <p class="lead">实时监控数据同步状态、异常检测、失败详情，支持多数据源切换</p>
+        <div class="view-tabs">
+            <button class="btn active" onclick="switchDataSource('all')"><i class="fas fa-globe"></i> 全部数据源</button>
+            <button class="btn" onclick="switchDataSource('terminal')"><i class="fas fa-laptop"></i> 终端数据</button>
+            <button class="btn" onclick="switchDataSource('app')"><i class="fas fa-server"></i> 应用系统</button>
+            <button class="btn" onclick="switchDataSource('server')"><i class="fas fa-database"></i> 服务器数据</button>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="dashboard-block dashboard-block-sync">
+            <div class="dashboard-block-header">
+                <i class="fas fa-tachometer-alt"></i>
+                <span class="dashboard-block-title">同步状态概览</span>
+            </div>
+            <div class="dashboard-block-content">
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card text-center">
+                            <h3><i class="fas fa-sync fa-spin"></i> 同步中</h3>
+                            <div class="metric-value warning">3</div>
+                            <p class="metric-label">正在同步任务</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card text-center">
+                            <h3><i class="fas fa-check-circle"></i> 今日成功</h3>
+                            <div class="metric-value success">1,245</div>
+                            <p class="metric-label">成功次数</p>
+                            <div class="metric-trend"><span class="text-success"><i class="fas fa-arrow-up"></i> 15.3%</span> 较昨日</div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card text-center">
+                            <h3><i class="fas fa-times-circle"></i> 今日失败</h3>
+                            <div class="metric-value danger">12</div>
+                            <p class="metric-label">失败次数</p>
+                            <div class="metric-trend"><span class="text-success"><i class="fas fa-arrow-down"></i> 8.5%</span> 较昨日</div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card text-center">
+                            <h3><i class="fas fa-clock"></i> 平均耗时</h3>
+                            <div class="metric-value info">45s</div>
+                            <p class="metric-label">每次同步</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card text-center">
+                            <h3><i class="fas fa-exclamation-triangle"></i> 待处理</h3>
+                            <div class="metric-value warning">8</div>
+                            <p class="metric-label">异常任务</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card text-center">
+                            <h3><i class="fas fa-calendar-check"></i> 今日同步率</h3>
+                            <div class="metric-value success">99.05%</div>
+                            <p class="metric-label">成功率</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block dashboard-block-sync">
+            <div class="dashboard-block-header">
+                <i class="fas fa-chart-line"></i>
+                <span class="dashboard-block-title">同步状态统计</span>
+            </div>
+            <div class="dashboard-block-content">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="dashboard-card">
+                            <h4><i class="fas fa-chart-bar"></i> 同步状态统计（最近7天）</h4>
+                            <div class="chart-container" id="chartSyncStatus"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-card">
+                            <h4><i class="fas fa-chart-pie"></i> 今日同步状态分布</h4>
+                            <div class="chart-container" id="chartSyncToday"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block dashboard-block-sync">
+            <div class="dashboard-block-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span class="dashboard-block-title">同步异常情况检测</span>
+            </div>
+            <div class="dashboard-block-content">
+                <p style="color:var(--text-muted);margin-bottom:1rem;">针对同步过程出现明显报错或者前后两次同步明显数据不一致的情况进行展示</p>
+                <div class="dashboard-card">
+                    <div class="table-responsive">
+                        <table class="table dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th><i class="fas fa-clock"></i> 时间</th>
+                                    <th><i class="fas fa-database"></i> 数据源</th>
+                                    <th><i class="fas fa-exclamation"></i> 异常类型</th>
+                                    <th><i class="fas fa-numbers"></i> 影响数据量</th>
+                                    <th><i class="fas fa-flag"></i> 状态</th>
+                                    <th><i class="fas fa-cog"></i> 操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-02-24 14:25:30</td>
+                                    <td><i class="fas fa-laptop" style="color:#1E90FF;"></i> 终端管理平台</td>
+                                    <td><span style="color:#F59E0B;">数据不一致</span></td>
+                                    <td><span style="color:#F59E0B;">12,450条</span></td>
+                                    <td><span style="background:rgba(245,158,11,0.15);color:#F59E0B;padding:2px 8px;border-radius:4px;font-size:12px;">待处理</span></td>
+                                    <td><button class="btn btn-sm" style="background:transparent;border:1px solid #1E90FF;color:#1E90FF;">查看详情</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-02-24 13:10:15</td>
+                                    <td><i class="fas fa-server" style="color:#8B5CF6;"></i> 应用系统管理平台</td>
+                                    <td><span style="color:#EF4444;">连接超时</span></td>
+                                    <td>—</td>
+                                    <td><span style="background:rgba(239,68,68,0.15);color:#EF4444;padding:2px 8px;border-radius:4px;font-size:12px;">处理中</span></td>
+                                    <td><button class="btn btn-sm" style="background:rgba(239,68,68,0.15);border:none;color:#EF4444;">重试同步</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-02-24 10:45:22</td>
+                                    <td><i class="fas fa-database" style="color:#10B981;"></i> 服务器管理平台</td>
+                                    <td><span style="color:#F59E0B;">部分数据缺失</span></td>
+                                    <td><span style="color:#F59E0B;">5,230条</span></td>
+                                    <td><span style="background:rgba(59,130,246,0.15);color:#3B82F6;padding:2px 8px;border-radius:4px;font-size:12px;">已告警</span></td>
+                                    <td><button class="btn btn-sm" style="background:transparent;border:1px solid #1E90FF;color:#1E90FF;">下钻分析</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-02-23 22:30:18</td>
+                                    <td><i class="fas fa-laptop" style="color:#1E90FF;"></i> 终端管理平台</td>
+                                    <td><span style="color:#EF4444;">数据格式错误</span></td>
+                                    <td><span style="color:#F59E0B;">890条</span></td>
+                                    <td><span style="background:rgba(16,185,129,0.15);color:#10B981;padding:2px 8px;border-radius:4px;font-size:12px;">已修复</span></td>
+                                    <td><button class="btn btn-sm" style="background:transparent;border:1px solid #718096;color:#718096;">查看报告</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-02-23 18:15:40</td>
+                                    <td><i class="fas fa-code"></i> DevOps平台</td>
+                                    <td><span style="color:#F59E0B;">API限流</span></td>
+                                    <td>—</td>
+                                    <td><span style="background:rgba(16,185,129,0.15);color:#10B981;padding:2px 8px;border-radius:4px;font-size:12px;">已恢复</span></td>
+                                    <td><button class="btn btn-sm" style="background:transparent;border:1px solid #718096;color:#718096;">查看日志</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block dashboard-block-sync">
+            <div class="dashboard-block-header">
+                <i class="fas fa-bug"></i>
+                <span class="dashboard-block-title">失败原因分析</span>
+            </div>
+            <div class="dashboard-block-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="dashboard-card">
+                            <h4><i class="fas fa-chart-bar"></i> 同步失败原因统计（最近30天）</h4>
+                            <div class="chart-container" id="chartFailureReasons"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="dashboard-card">
+                            <h4><i class="fas fa-chart-line"></i> 同步失败趋势（近一年）</h4>
+                            <div class="chart-container" id="chartFailureTrend"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block dashboard-block-sync">
+            <div class="dashboard-block-header">
+                <i class="fas fa-exchange-alt"></i>
+                <span class="dashboard-block-title">数据变动检测</span>
+            </div>
+            <div class="dashboard-block-content">
+                <p style="color:var(--text-muted);margin-bottom:1rem;">检测数据的新增、修改、删除变更数据的统计分析（最近24小时）</p>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="data-change-card add">
+                            <div class="change-value">+ 12,450</div>
+                            <div class="change-label"><i class="fas fa-plus-circle"></i> 新增数据</div>
+                            <div style="margin-top:0.5rem;font-size:0.75rem;color:var(--text-muted);">终端: 8,250 | 应用: 2,100 | 服务器: 2,100</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="data-change-card modify">
+                            <div class="change-value">↻ 3,245</div>
+                            <div class="change-label"><i class="fas fa-edit"></i> 修改数据</div>
+                            <div style="margin-top:0.5rem;font-size:0.75rem;color:var(--text-muted);">终端: 1,850 | 应用: 895 | 服务器: 500</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="data-change-card delete">
+                            <div class="change-value">- 890</div>
+                            <div class="change-label"><i class="fas fa-minus-circle"></i> 删除数据</div>
+                            <div style="margin-top:0.5rem;font-size:0.75rem;color:var(--text-muted);">终端: 520 | 应用: 280 | 服务器: 90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h4><i class="fas fa-clock"></i> 24小时内数据变动趋势</h4>
+                    <div class="chart-container" id="chartDataChange"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block dashboard-block-sync">
+            <div class="dashboard-block-header">
+                <i class="fas fa-tasks"></i>
+                <span class="dashboard-block-title">同步任务队列</span>
+            </div>
+            <div class="dashboard-block-content">
+                <div class="dashboard-card">
+                    <h4><i class="fas fa-list"></i> 待执行同步任务</h4>
+                    <div class="table-responsive">
+                        <table class="table dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>任务ID</th>
+                                    <th>数据源</th>
+                                    <th>任务类型</th>
+                                    <th>预计开始时间</th>
+                                    <th>优先级</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span style="color:#1E90FF;">SYNC-20250224-001</span></td>
+                                    <td><i class="fas fa-laptop" style="color:#1E90FF;"></i> 终端管理平台</td>
+                                    <td>增量同步</td>
+                                    <td>2025-02-24 15:00:00</td>
+                                    <td><span style="background:rgba(239,68,68,0.15);color:#EF4444;padding:2px 8px;border-radius:4px;font-size:12px;">高</span></td>
+                                    <td><span style="background:rgba(59,130,246,0.15);color:#3B82F6;padding:2px 8px;border-radius:4px;font-size:12px;">等待中</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color:#1E90FF;">SYNC-20250224-002</span></td>
+                                    <td><i class="fas fa-server" style="color:#8B5CF6;"></i> 应用系统管理平台</td>
+                                    <td>全量同步</td>
+                                    <td>2025-02-24 15:30:00</td>
+                                    <td><span style="background:rgba(245,158,11,0.15);color:#F59E0B;padding:2px 8px;border-radius:4px;font-size:12px;">中</span></td>
+                                    <td><span style="background:rgba(59,130,246,0.15);color:#3B82F6;padding:2px 8px;border-radius:4px;font-size:12px;">等待中</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color:#1E90FF;">SYNC-20250224-003</span></td>
+                                    <td><i class="fas fa-database" style="color:#10B981;"></i> 服务器管理平台</td>
+                                    <td>增量同步</td>
+                                    <td>2025-02-24 16:00:00</td>
+                                    <td><span style="background:rgba(16,185,129,0.15);color:#10B981;padding:2px 8px;border-radius:4px;font-size:12px;">低</span></td>
+                                    <td><span style="background:rgba(59,130,246,0.15);color:#3B82F6;padding:2px 8px;border-radius:4px;font-size:12px;">等待中</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-footer">
+            <p><i class="fas fa-shield-alt"></i> 仅超管可以查看此页面 | 数据实时刷新 | 最后更新: <span id="lastUpdateTime"></span></p>
+            <div class="dashboard-actions">
+                <a href="../index.html" class="btn btn-light"><i class="fas fa-arrow-left"></i> 返回首页</a>
+                <a href="statistics-dashboard.html" class="btn btn-outline-primary"><i class="fas fa-chart-bar"></i> 前往数据统计大屏</a>
+                <button class="btn btn-outline-primary" onclick="refreshData()"><i class="fas fa-redo"></i> 手动刷新数据</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const chartColors = {
+        text: '#4a5568',
+        textLight: '#718096',
+        primary: '#1E90FF',
+        success: '#10B981',
+        warning: '#F59E0B',
+        danger: '#EF4444',
+        info: '#3B82F6',
+        purple: '#8B5CF6',
+        categories: ['#1E90FF', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#3B82F6']
+    };
+
+    function updateClock() {
+        const now = new Date();
+        const timeStr = now.toLocaleString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        document.getElementById('currentTime').textContent = timeStr;
+        document.getElementById('lastUpdateTime').textContent = timeStr;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function switchDataSource(source) {
+        document.querySelectorAll('.view-tabs .btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        initSyncCharts();
+    }
+
+    function refreshData() {
+        const btn = event.target;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 刷新中...';
+        btn.disabled = true;
+        setTimeout(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> 刷新成功';
+            btn.style.background = 'rgba(16,185,129,0.15)';
+            btn.style.borderColor = '#10B981';
+            btn.style.color = '#10B981';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-redo"></i> 手动刷新数据';
+                btn.disabled = false;
+                btn.style.background = '';
+                btn.style.borderColor = '';
+                btn.style.color = '';
+            }, 2000);
+            initSyncCharts();
+        }, 1500);
+    }
+
+    function initSyncCharts() {
+        echarts.init(document.getElementById('chartSyncStatus')).setOption({
+            tooltip: { trigger: 'axis' },
+            legend: { data: ['成功', '失败', '同步中'], textStyle: { color: chartColors.text }, top: 0 },
+            grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+            xAxis: { type: 'category', data: ['2月18日', '2月19日', '2月20日', '2月21日', '2月22日', '2月23日', '2月24日'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [
+                { name: '成功', type: 'bar', data: [1120, 1232, 1101, 1134, 1090, 1210, 1245], itemStyle: { color: chartColors.success } },
+                { name: '失败', type: 'bar', data: [15, 18, 13, 17, 22, 16, 12], itemStyle: { color: chartColors.danger } },
+                { name: '同步中', type: 'line', data: [2, 3, 1, 2, 4, 3, 3], itemStyle: { color: chartColors.warning }, lineStyle: { color: chartColors.warning } }
+            ]
+        });
+
+        echarts.init(document.getElementById('chartSyncToday')).setOption({
+            tooltip: { trigger: 'item' },
+            legend: { orient: 'vertical', left: 'left', textStyle: { color: chartColors.text }, top: 'center' },
+            series: [{ name: '同步状态', type: 'pie', radius: ['45%', '70%'], center: ['65%', '50%'], label: { color: chartColors.text, fontSize: 11 },
+                data: [
+                    { value: 1245, name: '成功', itemStyle: { color: chartColors.success }},
+                    { value: 12, name: '失败', itemStyle: { color: chartColors.danger }},
+                    { value: 3, name: '同步中', itemStyle: { color: chartColors.warning }}
+                ]
+            }]
+        });
+
+        echarts.init(document.getElementById('chartFailureReasons')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['连接超时', '数据格式错误', 'API限流', '网络异常', '数据不一致', '权限不足'], axisLabel: { color: chartColors.text, rotate: 30 }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [35, 28, 15, 12, 8, 5], itemStyle: { color: chartColors.danger }, barWidth: '50%' }]
+        });
+
+        echarts.init(document.getElementById('chartFailureTrend')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月', '1月', '2月'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'line', smooth: true, data: [65, 58, 42, 35, 30, 28, 25, 22, 20, 18, 15, 12], itemStyle: { color: chartColors.danger }, lineStyle: { color: chartColors.danger } }]
+        });
+
+        echarts.init(document.getElementById('chartDataChange')).setOption({
+            tooltip: { trigger: 'axis' },
+            legend: { data: ['新增', '修改', '删除'], textStyle: { color: chartColors.text }, top: 0 },
+            grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+            xAxis: { type: 'category', data: ['00:00', '04:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '24:00'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [
+                { name: '新增', type: 'line', smooth: true, data: [120, 200, 350, 520, 680, 850, 920, 780, 520, 380], itemStyle: { color: chartColors.success } },
+                { name: '修改', type: 'line', smooth: true, data: [50, 80, 120, 180, 250, 320, 380, 350, 280, 180], itemStyle: { color: chartColors.warning } },
+                { name: '删除', type: 'line', smooth: true, data: [10, 15, 25, 35, 48, 62, 75, 68, 52, 35], itemStyle: { color: chartColors.danger } }
+            ]
+        });
+    }
+
+    window.addEventListener('resize', function() {
+        const charts = ['chartSyncStatus', 'chartSyncToday', 'chartFailureReasons', 'chartFailureTrend', 'chartDataChange'];
+        charts.forEach(id => { const el = document.getElementById(id); if(el) echarts.getInstanceByDom(el)?.resize(); });
+    });
+
+    document.addEventListener('DOMContentLoaded', initSyncCharts);
+    </script>
+</body>
+</html>

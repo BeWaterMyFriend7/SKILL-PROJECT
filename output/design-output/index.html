@@ -3,164 +3,809 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>软件管理平台 - 首页</title>
+    <title>软件台账管理平台</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 头部导航 -->
-    <header class="header">
-        <div class="container">
+    <div class="container">
+        <header class="header">
             <div class="logo">
-                <h1>软件管理平台</h1>
+                <span class="logo-icon">📋</span>
+                <span class="logo-text">软件台账管理平台</span>
             </div>
             <nav class="nav">
-                <ul>
-                    <li><a href="index.html" class="active">首页</a></li>
-                    <li><a href="software-list.html">软件列表</a></li>
-                    <li><a href="statistics.html">统计分析</a></li>
-                    <li><a href="user-management.html">用户管理</a></li>
-                </ul>
+                <a href="#" class="nav-item active" data-page="dashboard">首页</a>
+                <a href="#" class="nav-item" data-page="software-list">软件台账</a>
+                <a href="#" class="nav-item" data-page="usage-terminal">使用关系-终端</a>
+                <a href="#" class="nav-item" data-page="usage-app">使用关系-应用系统</a>
+                <a href="#" class="nav-item" data-page="usage-server">使用关系-服务器</a>
+                <a href="#" class="nav-item" data-page="statistics">统计大屏</a>
             </nav>
-            <div class="user-info">
-                <span>欢迎，管理员</span>
-                <button class="logout-btn">退出</button>
+            <div class="user-info" id="userInfo">
+                <span class="user-avatar">👤</span>
+                <span class="user-name" id="currentRole">超管</span>
+                <select id="roleSwitcher" class="role-switcher">
+                    <option value="super_admin">超管</option>
+                    <option value="team_leader">团队负责人</option>
+                    <option value="owner">负责人本人</option>
+                    <option value="normal">普通用户</option>
+                </select>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- 主要内容 -->
-    <main class="main">
-        <div class="container">
-            <!-- 统计卡片 -->
-            <section class="stats-section">
-                <h2>平台概览</h2>
-                <div class="stats-grid">
+        <main class="main-content">
+            <!-- 首页 -->
+            <section id="page-dashboard" class="page active">
+                <div class="welcome-section">
+                    <h1>欢迎使用软件台账管理平台</h1>
+                    <p class="subtitle">统一管理公司软件资产，追踪软件使用情况</p>
+                </div>
+                <div class="stats-overview">
                     <div class="stat-card">
                         <div class="stat-icon">📦</div>
-                        <div class="stat-number">1,245</div>
-                        <div class="stat-label">软件总数</div>
+                        <div class="stat-info">
+                            <div class="stat-value">1,280</div>
+                            <div class="stat-label">软件总数</div>
+                        </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">💰</div>
-                        <div class="stat-number">428</div>
-                        <div class="stat-label">商业软件</div>
+                        <div class="stat-icon">💻</div>
+                        <div class="stat-info">
+                            <div class="stat-value">20,000,000</div>
+                            <div class="stat-label">终端使用记录</div>
+                        </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">🌍</div>
-                        <div class="stat-number">567</div>
-                        <div class="stat-label">开源软件</div>
+                        <div class="stat-icon">🖥️</div>
+                        <div class="stat-info">
+                            <div class="stat-value">10,000</div>
+                            <div class="stat-label">应用系统</div>
+                        </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">🏢</div>
-                        <div class="stat-number">250</div>
-                        <div class="stat-label">自主软件</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 分类统计 -->
-            <section class="category-section">
-                <h2>分类统计</h2>
-                <div class="category-grid">
-                    <div class="category-item">
-                        <h3>产品类软件</h3>
-                        <div class="category-stats">
-                            <div class="category-stat">
-                                <span class="label">商业产品：</span>
-                                <span class="value">234</span>
-                            </div>
-                            <div class="category-stat">
-                                <span class="label">开源产品：</span>
-                                <span class="value">189</span>
-                            </div>
-                            <div class="category-stat">
-                                <span class="label">自主产品：</span>
-                                <span class="value">98</span>
-                            </div>
+                        <div class="stat-icon">🖧</div>
+                        <div class="stat-info">
+                            <div class="stat-value">45,000,000</div>
+                            <div class="stat-label">服务器使用记录</div>
                         </div>
                     </div>
-                    <div class="category-item">
-                        <h3>组件类软件</h3>
-                        <div class="category-stats">
-                            <div class="category-stat">
-                                <span class="label">商业组件：</span>
-                                <span class="value">194</span>
-                            </div>
-                            <div class="category-stat">
-                                <span class="label">开源组件：</span>
-                                <span class="value">378</span>
-                            </div>
-                            <div class="category-stat">
-                                <span class="label">自主组件：</span>
-                                <span class="value">152</span>
-                            </div>
+                </div>
+                <div class="quick-links">
+                    <h2>快速入口</h2>
+                    <div class="link-cards">
+                        <div class="link-card" data-target="software-list">
+                            <span class="link-icon">📋</span>
+                            <span class="link-text">软件台账</span>
+                        </div>
+                        <div class="link-card" data-target="usage-terminal">
+                            <span class="link-icon">💻</span>
+                            <span class="link-text">终端使用关系</span>
+                        </div>
+                        <div class="link-card" data-target="usage-app">
+                            <span class="link-icon">🖥️</span>
+                            <span class="link-text">应用系统使用关系</span>
+                        </div>
+                        <div class="link-card" data-target="usage-server">
+                            <span class="link-icon">🖧</span>
+                            <span class="link-text">服务器使用关系</span>
+                        </div>
+                        <div class="link-card" data-target="statistics">
+                            <span class="link-icon">📊</span>
+                            <span class="link-text">统计大屏</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 热门软件 -->
-            <section class="popular-section">
-                <h2>热门软件</h2>
-                <div class="popular-list">
-                    <div class="popular-item">
-                        <div class="popular-info">
-                            <h4>飞书</h4>
-                            <p class="popular-type">商业软件 · 产品类</p>
-                        </div>
-                        <div class="popular-stats">
-                            <span class="download-count">下载 2,456 次</span>
-                        </div>
+            <!-- 软件列表页 -->
+            <section id="page-software-list" class="page">
+                <div class="page-header">
+                    <h1>软件台账</h1>
+                    <div class="page-actions">
+                        <button class="btn btn-primary">新增软件</button>
                     </div>
-                    <div class="popular-item">
-                        <div class="popular-info">
-                            <h4>Spring Boot</h4>
-                            <p class="popular-type">开源软件 · 组件类</p>
-                        </div>
-                        <div class="popular-stats">
-                            <span class="download-count">访问 3,789 次</span>
-                        </div>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <input type="text" class="search-input" placeholder="搜索软件名称...">
                     </div>
-                    <div class="popular-item">
-                        <div class="popular-info">
-                            <h4>Office 365</h4>
-                            <p class="popular-type">商业软件 · 产品类</p>
-                        </div>
-                        <div class="popular-stats">
-                            <span class="download-count">下载 1,234 次</span>
-                        </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">全部类型</option>
+                            <option value="commercial">商业软件</option>
+                            <option value="opensource">开源软件</option>
+                            <option value="selfdeveloped">自研软件</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">全部分类</option>
+                            <option value="product">产品类</option>
+                            <option value="component">组件类</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">全部功能类型</option>
+                            <option value="office">办公</option>
+                            <option value="dev">开发测试</option>
+                            <option value="ops">运维管理</option>
+                            <option value="system">系统类</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary">筛选</button>
+                </div>
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>软件名称/组件坐标</th>
+                                <th>类型</th>
+                                <th>分类</th>
+                                <th>功能类型</th>
+                                <th>仓库类型</th>
+                                <th>版本数</th>
+                                <th>负责人</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="clickable-row" data-id="1">
+                                <td>
+                                    <div class="software-name">
+                                        <span class="name-text">Spring Boot</span>
+                                        <span class="name-badge component">组件</span>
+                                    </div>
+                                </td>
+                                <td><span class="type-badge opensource">开源软件</span></td>
+                                <td>组件类</td>
+                                <td>开发测试</td>
+                                <td>maven</td>
+                                <td>128</td>
+                                <td>张三</td>
+                                <td>
+                                    <button class="btn-link btn-view-detail" data-id="1">查看</button>
+                                    <button class="btn-link">编辑</button>
+                                </td>
+                            </tr>
+                            <tr class="clickable-row" data-id="2">
+                                <td>
+                                    <div class="software-name">
+                                        <span class="name-text">Microsoft Office</span>
+                                        <span class="name-badge product">产品</span>
+                                    </div>
+                                </td>
+                                <td><span class="type-badge commercial">商业软件</span></td>
+                                <td>产品类</td>
+                                <td>办公</td>
+                                <td>-</td>
+                                <td>5</td>
+                                <td>李四</td>
+                                <td>
+                                    <button class="btn-link btn-view-detail" data-id="2">查看</button>
+                                    <button class="btn-link">编辑</button>
+                                </td>
+                            </tr>
+                            <tr class="clickable-row" data-id="3">
+                                <td>
+                                    <div class="software-name">
+                                        <span class="name-text">Vue.js</span>
+                                        <span class="name-badge component">组件</span>
+                                    </div>
+                                </td>
+                                <td><span class="type-badge opensource">开源软件</span></td>
+                                <td>组件类</td>
+                                <td>开发测试</td>
+                                <td>npm</td>
+                                <td>86</td>
+                                <td>王五</td>
+                                <td>
+                                    <button class="btn-link btn-view-detail" data-id="3">查看</button>
+                                    <button class="btn-link">编辑</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <span class="page-info">共 1280 条记录，第 1/64 页</span>
+                    <div class="page-buttons">
+                        <button class="btn btn-page" disabled>上一页</button>
+                        <button class="btn btn-page active">1</button>
+                        <button class="btn btn-page">2</button>
+                        <button class="btn btn-page">3</button>
+                        <button class="btn btn-page">...</button>
+                        <button class="btn btn-page">64</button>
+                        <button class="btn btn-page">下一页</button>
                     </div>
                 </div>
             </section>
 
-            <!-- 快速操作 -->
-            <section class="quick-actions">
-                <h2>快速操作</h2>
-                <div class="actions-grid">
-                    <a href="software-list.html" class="action-btn primary">
-                        <span>浏览软件</span>
-                    </a>
-                    <a href="#" class="action-btn secondary">
-                        <span>添加软件</span>
-                    </a>
-                    <a href="statistics.html" class="action-btn secondary">
-                        <span>查看统计</span>
-                    </a>
-                    <a href="#" class="action-btn secondary">
-                        <span>许可证管理</span>
-                    </a>
+            <!-- 终端使用关系列表页 -->
+            <section id="page-usage-terminal" class="page">
+                <div class="page-header">
+                    <h1>终端使用关系台账</h1>
+                </div>
+                <div class="permission-notice" id="perm-notice-terminal">
+                    <span class="notice-icon">ℹ️</span>
+                    <span class="notice-text">当前角色：<strong id="role-text-terminal">超管</strong> - 可查看全部数据</span>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <input type="text" class="search-input" placeholder="搜索终端IP/MAC...">
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">全部网段</option>
+                            <option value="office">办公</option>
+                            <option value="dev">开发测试</option>
+                            <option value="prod">生产</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">全部状态</option>
+                            <option value="normal">正常</option>
+                            <option value="residual">残留数据</option>
+                            <option value="unknown">未知</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">合规性</option>
+                            <option value="compliant">合规</option>
+                            <option value="non-compliant">不合规</option>
+                            <option value="blacklist">黑名单</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary">筛选</button>
+                </div>
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>终端IP</th>
+                                <th>终端MAC</th>
+                                <th>使用软件</th>
+                                <th>软件版本</th>
+                                <th>安装路径</th>
+                                <th>合规性</th>
+                                <th>状态</th>
+                                <th>负责人</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>192.168.1.100</td>
+                                <td class="masked">00:1A:2B:3C:****</td>
+                                <td>Chrome</td>
+                                <td>120.0.6099</td>
+                                <td>C:\Program Files\Google\Chrome</td>
+                                <td><span class="status-badge success">合规</span></td>
+                                <td><span class="status-badge info">正常</span></td>
+                                <td>张三</td>
+                            </tr>
+                            <tr>
+                                <td>192.168.1.101</td>
+                                <td class="masked">00:1A:2B:3C:****</td>
+                                <td>Notepad++</td>
+                                <td>8.5.4</td>
+                                <td>C:\Program Files\Notepad++</td>
+                                <td><span class="status-badge success">合规</span></td>
+                                <td><span class="status-badge info">正常</span></td>
+                                <td>李四</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <span class="page-info">共 20,000,000 条记录</span>
+                    <div class="page-buttons">
+                        <button class="btn btn-page">上一页</button>
+                        <button class="btn btn-page active">1</button>
+                        <button class="btn btn-page">下一页</button>
+                    </div>
                 </div>
             </section>
-        </div>
-    </main>
 
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 软件管理平台. 保留所有权利.</p>
-        </div>
-    </footer>
+            <!-- 应用系统使用关系列表页 -->
+            <section id="page-usage-app" class="page">
+                <div class="page-header">
+                    <h1>应用系统使用关系台账</h1>
+                </div>
+                <div class="permission-notice" id="perm-notice-app">
+                    <span class="notice-icon">ℹ️</span>
+                    <span class="notice-text">当前角色：<strong id="role-text-app">超管</strong> - 可查看全部数据</span>
+                </div>
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="component">组件类</button>
+                    <button class="tab-btn" data-tab="product">产品类</button>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <input type="text" class="search-input" placeholder="搜索应用系统名称...">
+                    </div>
+                    <button class="btn btn-secondary">筛选</button>
+                </div>
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>应用系统名称</th>
+                                <th>使用软件</th>
+                                <th>软件版本</th>
+                                <th>仓库类型</th>
+                                <th>合规性</th>
+                                <th>负责人</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>电商平台系统</td>
+                                <td>Spring Boot</td>
+                                <td>3.2.1</td>
+                                <td>maven</td>
+                                <td><span class="status-badge success">合规</span></td>
+                                <td>张三</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <span class="page-info">共 2,000,000 条记录</span>
+                    <div class="page-buttons">
+                        <button class="btn btn-page">上一页</button>
+                        <button class="btn btn-page active">1</button>
+                        <button class="btn btn-page">下一页</button>
+                    </div>
+                </div>
+            </section>
 
+            <!-- 服务器使用关系列表页 -->
+            <section id="page-usage-server" class="page">
+                <div class="page-header">
+                    <h1>服务器使用关系台账</h1>
+                </div>
+                <div class="permission-notice" id="perm-notice-server">
+                    <span class="notice-icon">ℹ️</span>
+                    <span class="notice-text">当前角色：<strong id="role-text-server">超管</strong> - 可查看全部数据</span>
+                </div>
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="jar">JAR</button>
+                    <button class="tab-btn" data-tab="pkg">PKG</button>
+                    <button class="tab-btn" data-tab="pypi">PYPI</button>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <input type="text" class="search-input" placeholder="搜索服务器IP/名称...">
+                    </div>
+                    <button class="btn btn-secondary">筛选</button>
+                </div>
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>服务器IP</th>
+                                <th>服务器名称</th>
+                                <th>安装软件</th>
+                                <th>软件版本</th>
+                                <th>软件类型</th>
+                                <th>合规性</th>
+                                <th>所属应用系统</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10.0.1.10</td>
+                                <td>prod-app-server-01</td>
+                                <td>spring-boot-app</td>
+                                <td>2.7.14</td>
+                                <td>jar</td>
+                                <td><span class="status-badge success">合规</span></td>
+                                <td>电商平台系统</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <span class="page-info">共 45,000,000 条记录</span>
+                    <div class="page-buttons">
+                        <button class="btn btn-page">上一页</button>
+                        <button class="btn btn-page active">1</button>
+                        <button class="btn btn-page">下一页</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 统计大屏 + 同步情况 -->
+            <section id="page-statistics" class="page">
+                <div class="page-header">
+                    <h1>可观测中心</h1>
+                </div>
+                
+                <!-- 两个主Tab：统计大屏 | 同步情况 -->
+                <div class="main-tabs">
+                    <button class="main-tab-btn active" data-main-tab="stats">📊 统计大屏</button>
+                    <button class="main-tab-btn" data-main-tab="sync">🔄 同步情况</button>
+                </div>
+
+                <!-- ========== 统计大屏 Tab ========== -->
+                <div class="main-tab-panel active" id="main-tab-stats">
+                    <!-- 权限提醒 -->
+                    <div class="permission-notice" id="perm-notice-stats">
+                        <span class="notice-icon">ℹ️</span>
+                        <span class="notice-text">统计大屏 - 当前角色：<strong id="role-text-stats">超管</strong></span>
+                    </div>
+
+                    <!-- 软件台账统计（所有人可见） -->
+                    <div class="stats-section-title">
+                        <span class="section-icon">📦</span>
+                        <span>软件台账统计（所有人可查看）</span>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stats-section">
+                            <h3>介质类型分布</h3>
+                            <div class="pie-chart">
+                                <div class="pie-item">
+                                    <div class="pie-color" style="background: #4A90E2;"></div>
+                                    <span class="pie-label">产品类 (480)</span>
+                                </div>
+                                <div class="pie-item">
+                                    <div class="pie-color" style="background: #50C878;"></div>
+                                    <span class="pie-label">组件类 (800)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stats-section">
+                            <h3>管理类型分布</h3>
+                            <div class="pie-chart">
+                                <div class="pie-item">
+                                    <div class="pie-color" style="background: #F5A623;"></div>
+                                    <span class="pie-label">商业软件 (320)</span>
+                                </div>
+                                <div class="pie-item">
+                                    <div class="pie-color" style="background: #7ED321;"></div>
+                                    <span class="pie-label">开源软件 (850)</span>
+                                </div>
+                                <div class="pie-item">
+                                    <div class="pie-color" style="background: #D0021B;"></div>
+                                    <span class="pie-label">自研软件 (110)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stats-section">
+                            <h3>功能类型分布</h3>
+                            <div class="bar-chart">
+                                <div class="bar-item">
+                                    <div class="bar-label">办公类</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 30%;background: #4A90E2;"><span class="bar-value">320</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">开发测试</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 40%;background: #50C878;"><span class="bar-value">450</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">运维管理</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 20%;background: #F5A623;"><span class="bar-value">280</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">安全类</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 10%;background: #D0021B;"><span class="bar-value">130</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 软件使用关系统计（汇总 - 登录后可见） -->
+                    <div class="stats-section-title">
+                        <span class="section-icon">📈</span>
+                        <span>软件使用关系统计（需登录查看）</span>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stats-section full-width">
+                            <h3>使用场景汇总统计</h3>
+                            <div class="bar-chart">
+                                <div class="bar-item">
+                                    <div class="bar-label">终端使用</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 30%;background: #4A90E2;"><span class="bar-value">2000万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">应用系统使用</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 5%;background: #50C878;"><span class="bar-value">200万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">服务器使用</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 65%;background: #F5A623;"><span class="bar-value">4500万</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 细分统计（仅团队负责人+超管可见） -->
+                    <div class="stats-section-title detail-stats-title" id="detail-stats-title">
+                        <span class="section-icon">🔍</span>
+                        <span>细分统计（团队负责人/超管可查看）</span>
+                        <button class="btn btn-small" id="toggleDetailStats">收起详情 ▲</button>
+                    </div>
+                    <div class="stats-grid" id="detail-stats-content">
+                        <!-- 终端细分 -->
+                        <div class="stats-section">
+                            <h3>终端-按网段统计</h3>
+                            <div class="bar-chart">
+                                <div class="bar-item">
+                                    <div class="bar-label">办公</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 50%;background: #4A90E2;"><span class="bar-value">800万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">开发测试</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 30%;background: #50C878;"><span class="bar-value">600万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">生产</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 20%;background: #F5A623;"><span class="bar-value">400万</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stats-section">
+                            <h3>终端-按团队统计</h3>
+                            <div class="bar-chart">
+                                <div class="bar-item">
+                                    <div class="bar-label">研发团队</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 40%;background: #4A90E2;"><span class="bar-value">500万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">运维团队</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 30%;background: #50C878;"><span class="bar-value">300万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">测试团队</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 20%;background: #F5A623;"><span class="bar-value">200万</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 应用系统细分 -->
+                        <div class="stats-section">
+                            <h3>应用系统-按软件类型</h3>
+                            <div class="bar-chart">
+                                <div class="bar-item">
+                                    <div class="bar-label">组件-maven</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 45%;background: #4A90E2;"><span class="bar-value">90万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">组件-npm</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 25%;background: #50C878;"><span class="bar-value">50万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">组件-pypi</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 15%;background: #F5A623;"><span class="bar-value">30万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">产品类</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 15%;background: #9B59B6;"><span class="bar-value">30万</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 服务器细分 -->
+                        <div class="stats-section">
+                            <h3>服务器-按软件类型</h3>
+                            <div class="bar-chart">
+                                <div class="bar-item">
+                                    <div class="bar-label">JAR</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 45%;background: #4A90E2;"><span class="bar-value">2000万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">PKG</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 45%;background: #50C878;"><span class="bar-value">2000万</span></div></div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">PYPI</div>
+                                    <div class="bar-wrapper"><div class="bar" style="width: 11%;background: #F5A623;"><span class="bar-value">500万</span></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== 同步情况 Tab ========== -->
+                <div class="main-tab-panel" id="main-tab-sync">
+                    <!-- 权限提醒 -->
+                    <div class="permission-notice danger" id="perm-notice-sync">
+                        <span class="notice-icon">🔒</span>
+                        <span class="notice-text">同步情况仅<strong>超管</strong>可查看</span>
+                    </div>
+
+                    <!-- 同步Tab导航 -->
+                    <div class="sync-tabs">
+                        <button class="sync-tab-btn active" data-sync-tab="status">同步状态</button>
+                        <button class="sync-tab-btn" data-sync-tab="exception">异常告警</button>
+                        <button class="sync-tab-btn" data-sync-tab="failure">失败详情</button>
+                        <button class="sync-tab-btn" data-sync-tab="changes">数据变动</button>
+                    </div>
+
+                    <!-- 同步状态 -->
+                    <div class="sync-tab-panel active" id="sync-status">
+                        <div class="stats-grid">
+                            <div class="stats-section full-width">
+                                <h3>各系统同步状态</h3>
+                                <div class="sync-overview-cards">
+                                    <div class="sync-card success">
+                                        <div class="sync-card-header">
+                                            <span class="sync-card-icon">💻</span>
+                                            <span class="sync-card-title">终端管理平台</span>
+                                        </div>
+                                        <div class="sync-card-body">
+                                            <div class="sync-status-badge success">同步成功</div>
+                                            <div class="sync-info">
+                                                <span>最近同步：2024-01-15 10:30:00</span>
+                                                <span>数据量：2000万条</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sync-card success">
+                                        <div class="sync-card-header">
+                                            <span class="sync-card-icon">🖥️</span>
+                                            <span class="sync-card-title">应用系统管理平台</span>
+                                        </div>
+                                        <div class="sync-card-body">
+                                            <div class="sync-status-badge success">同步成功</div>
+                                            <div class="sync-info">
+                                                <span>最近同步：2024-01-15 10:28:00</span>
+                                                <span>数据量：100万条</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sync-card warning">
+                                        <div class="sync-card-header">
+                                            <span class="sync-card-icon">🔧</span>
+                                            <span class="sync-card-title">DEOPS平台</span>
+                                        </div>
+                                        <div class="sync-card-body">
+                                            <div class="sync-status-badge warning">同步中</div>
+                                            <div class="sync-info">
+                                                <span>开始时间：2024-01-15 10:25:00</span>
+                                                <span>当前进度：65%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sync-card success">
+                                        <div class="sync-card-header">
+                                            <span class="sync-card-icon">🖧</span>
+                                            <span class="sync-card-title">服务器管理平台</span>
+                                        </div>
+                                        <div class="sync-card-body">
+                                            <div class="sync-status-badge success">同步成功</div>
+                                            <div class="sync-info">
+                                                <span>最近同步：2024-01-15 10:20:00</span>
+                                                <span>数据量：4500万条</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 异常告警 -->
+                    <div class="sync-tab-panel" id="sync-exception">
+                        <div class="stats-grid">
+                            <div class="stats-section full-width">
+                                <h3>同步异常告警</h3>
+                                <div class="alarm-list">
+                                    <div class="alarm-item danger">
+                                        <div class="alarm-icon">🚨</div>
+                                        <div class="alarm-content">
+                                            <div class="alarm-title">数据一致性异常 - DEOPS平台</div>
+                                            <div class="alarm-desc">本次同步数据与上次同步数据差异超过阈值，当前差异率15%，超过设定的10%阈值</div>
+                                            <div class="alarm-time">检测时间：2024-01-15 10:35:00</div>
+                                        </div>
+                                        <button class="btn btn-small">查看详情</button>
+                                    </div>
+                                    <div class="alarm-item warning">
+                                        <div class="alarm-icon">⚠️</div>
+                                        <div class="alarm-content">
+                                            <div class="alarm-title">同步延迟告警 - 终端管理平台</div>
+                                            <div class="alarm-desc">同步耗时超过预期，从原来的30分钟延长至45分钟</div>
+                                            <div class="alarm-time">检测时间：2024-01-15 10:30:00</div>
+                                        </div>
+                                        <button class="btn btn-small">查看详情</button>
+                                    </div>
+                                    <div class="alarm-item info">
+                                        <div class="alarm-icon">ℹ️</div>
+                                        <div class="alarm-content">
+                                            <div class="alarm-title">接口响应异常 - 应用系统管理平台</div>
+                                            <div class="alarm-desc">API响应时间超过5秒，累计出现3次</div>
+                                            <div class="alarm-time">检测时间：2024-01-15 10:28:00</div>
+                                        </div>
+                                        <button class="btn btn-small">查看详情</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 失败详情 -->
+                    <div class="sync-tab-panel" id="sync-failure">
+                        <div class="stats-grid">
+                            <div class="stats-section">
+                                <h3>失败次数统计</h3>
+                                <div class="bar-chart">
+                                    <div class="bar-item">
+                                        <div class="bar-label">终端管理平台</div>
+                                        <div class="bar-wrapper"><div class="bar" style="width: 5%;background: #50C878;"><span class="bar-value">2次</span></div></div>
+                                    </div>
+                                    <div class="bar-item">
+                                        <div class="bar-label">应用系统管理平台</div>
+                                        <div class="bar-wrapper"><div class="bar" style="width: 2.5%;background: #F5A623;"><span class="bar-value">1次</span></div></div>
+                                    </div>
+                                    <div class="bar-item">
+                                        <div class="bar-label">DEOPS平台</div>
+                                        <div class="bar-wrapper"><div class="bar" style="width: 7.5%;background: #D0021B;"><span class="bar-value">3次</span></div></div>
+                                    </div>
+                                    <div class="bar-item">
+                                        <div class="bar-label">服务器管理平台</div>
+                                        <div class="bar-wrapper"><div class="bar" style="width: 2.5%;background: #50C878;"><span class="bar-value">1次</span></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stats-section">
+                                <h3>失败原因分析</h3>
+                                <div class="pie-chart">
+                                    <div class="pie-item">
+                                        <div class="pie-color" style="background: #D0021B;"></div>
+                                        <span class="pie-label">接口超时 (4次)</span>
+                                    </div>
+                                    <div class="pie-item">
+                                        <div class="pie-color" style="background: #F5A623;"></div>
+                                        <span class="pie-label">数据格式错误 (2次)</span>
+                                    </div>
+                                    <div class="pie-item">
+                                        <div class="pie-color" style="background: #9B59B6;"></div>
+                                        <span class="pie-label">权限不足 (1次)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 数据变动 -->
+                    <div class="sync-tab-panel" id="sync-changes">
+                        <div class="stats-grid">
+                            <div class="stats-section full-width">
+                                <h3>数据变动统计（本周）</h3>
+                                <div class="change-cards">
+                                    <div class="change-card">
+                                        <div class="change-card-header">
+                                            <span class="change-icon">➕</span>
+                                            <span>新增数据</span>
+                                        </div>
+                                        <div class="change-value success">+125,680</div>
+                                        <div class="change-detail">终端: +50,000 | 应用系统: +5,680 | 服务器: +70,000</div>
+                                    </div>
+                                    <div class="change-card">
+                                        <div class="change-card-header">
+                                            <span class="change-icon">✏️</span>
+                                            <span>修改数据</span>
+                                        </div>
+                                        <div class="change-value warning">+38,420</div>
+                                        <div class="change-detail">终端: +20,000 | 应用系统: +8,420 | 服务器: +10,000</div>
+                                    </div>
+                                    <div class="change-card">
+                                        <div class="change-card-header">
+                                            <span class="change-icon">🗑️</span>
+                                            <span>删除数据</span>
+                                        </div>
+                                        <div class="change-value danger">-15,230</div>
+                                        <div class="change-detail">终端: -8,000 | 应用系统: -230 | 服务器: -7,000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

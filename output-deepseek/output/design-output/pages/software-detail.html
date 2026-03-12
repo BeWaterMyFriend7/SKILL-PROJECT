@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件详情 - Apache Tomcat - 软件台账管理平台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-boxes-stacked"></i> 软件台账管理平台
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="software-list.html"><i class="fas fa-list"></i> 软件台账</a></li>
+                    <li><a href="terminal-usage.html"><i class="fas fa-laptop"></i> 终端使用关系</a></li>
+                    <li><a href="app-usage.html"><i class="fas fa-server"></i> 应用系统使用关系</a></li>
+                    <li><a href="server-usage.html"><i class="fas fa-database"></i> 服务器使用关系</a></li>
+                    <li><a href="statistics-dashboard.html"><i class="fas fa-chart-bar"></i> 数据统计大屏</a></li>
+                    <li><a href="sync-monitor.html"><i class="fas fa-sync-alt"></i> 同步监控大屏</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">首页</a></li>
+                    <li class="breadcrumb-item"><a href="software-list.html">软件台账</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Apache Tomcat 详情</li>
+                </ol>
+            </nav>
+
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title"><i class="fas fa-info-circle"></i> 软件详情：Apache Tomcat</h1>
+                    <div>
+                        <a href="software-list.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> 返回列表</a>
+                        <button class="btn btn-primary"><i class="fas fa-edit"></i> 编辑</button>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <div class="row mb-5">
+                        <div class="col-md-6">
+                            <h4><i class="fas fa-cube"></i> 基本信息</h4>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th width="30%">软件ID</th>
+                                    <td>10001</td>
+                                </tr>
+                                <tr>
+                                    <th>软件名称</th>
+                                    <td>Apache Tomcat</td>
+                                </tr>
+                                <tr>
+                                    <th>管理类型</th>
+                                    <td><span class="badge bg-success">开源软件</span></td>
+                                </tr>
+                                <tr>
+                                    <th>功能类型（一级）</th>
+                                    <td>开发测试</td>
+                                </tr>
+                                <tr>
+                                    <th>功能类型（二级）</th>
+                                    <td>应用服务器</td>
+                                </tr>
+                                <tr>
+                                    <th>介质类型</th>
+                                    <td>产品类</td>
+                                </tr>
+                                <tr>
+                                    <th>仓库类型</th>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <th>软件负责人</th>
+                                    <td>张三</td>
+                                </tr>
+                                <tr>
+                                    <th>开源协议</th>
+                                    <td>Apache License 2.0</td>
+                                </tr>
+                                <tr>
+                                    <th>使用限制</th>
+                                    <td>公司内部使用，禁止外部分发</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <h4><i class="fas fa-file-alt"></i> 文档与介绍</h4>
+                            <div class="mb-3">
+                                <h5>软件功能介绍</h5>
+                                <p>Apache Tomcat 是一个开源的Web服务器和Servlet容器，用于部署Java Web应用程序。提供HTTP服务、JSP解析、Servlet运行环境。</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5>软件使用手册</h5>
+                                <p><a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i> 下载使用手册 (PDF)</a></p>
+                            </div>
+                            <div class="mb-3">
+                                <h5>相关链接</h5>
+                                <ul>
+                                    <li><a href="https://tomcat.apache.org/" target="_blank">官方网站</a></li>
+                                    <li><a href="https://github.com/apache/tomcat" target="_blank">GitHub仓库</a></li>
+                                    <li><a href="#" target="_blank">内部部署文档</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h4 class="mb-4"><i class="fas fa-layer-group"></i> 版本介质列表</h4>
+                    <p class="text-muted mb-4">展示软件各个版本介质的详细情况，包括下载地址、介质类型、大小，支持筛选、排序和搜索。</p>
+
+                    <!-- 版本筛选 -->
+                    <div class="filter-bar mb-4">
+                        <div class="filter-item">
+                            <label class="form-label">版本号</label>
+                            <input type="text" class="form-control" placeholder="例如: 9.0.0">
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">介质类型</label>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                                <option value="安装包">安装包</option>
+                                <option value="镜像">镜像</option>
+                                <option value="SDK">SDK</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label class="form-label">大小范围</label>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                                <option value="<100MB">&lt; 100MB</option>
+                                <option value="100MB-1GB">100MB - 1GB</option>
+                                <option value=">1GB">&gt; 1GB</option>
+                            </select>
+                        </div>
+                        <div class="filter-item align-self-end">
+                            <button class="btn btn-primary w-100"><i class="fas fa-search"></i> 筛选</button>
+                        </div>
+                    </div>
+
+                    <!-- 版本表格 -->
+                    <div class="table-container">
+                        <table class="data-table sortable" id="versionTable">
+                            <thead>
+                                <tr>
+                                    <th>版本号</th>
+                                    <th>介质名称</th>
+                                    <th>介质类型</th>
+                                    <th>介质大小</th>
+                                    <th>下载地址</th>
+                                    <th>开源协议</th>
+                                    <th>介质描述</th>
+                                    <th>使用限制</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10.1.20</td>
+                                    <td>apache-tomcat-10.1.20.zip</td>
+                                    <td>安装包</td>
+                                    <td>12.5 MB</td>
+                                    <td><a href="https://downloads.apache.org/tomcat/tomcat-10/v10.1.20/bin/apache-tomcat-10.1.20.zip" target="_blank">下载</a></td>
+                                    <td>Apache License 2.0</td>
+                                    <td>Tomcat 10.1.x 稳定版，支持 Jakarta EE 9</td>
+                                    <td>公司内部使用</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-download"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-info"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9.0.87</td>
+                                    <td>apache-tomcat-9.0.87.tar.gz</td>
+                                    <td>安装包</td>
+                                    <td>11.8 MB</td>
+                                    <td><a href="https://downloads.apache.org/tomcat/tomcat-9/v9.0.87/bin/apache-tomcat-9.0.87.tar.gz" target="_blank">下载</a></td>
+                                    <td>Apache License 2.0</td>
+                                    <td>Tomcat 9.0.x 稳定版，支持 Servlet 4.0</td>
+                                    <td>公司内部使用</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-download"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-info"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8.5.98</td>
+                                    <td>apache-tomcat-8.5.98.zip</td>
+                                    <td>安装包</td>
+                                    <td>10.2 MB</td>
+                                    <td><a href="https://downloads.apache.org/tomcat/tomcat-8/v8.5.98/bin/apache-tomcat-8.5.98.zip" target="_blank">下载</a></td>
+                                    <td>Apache License 2.0</td>
+                                    <td>Tomcat 8.5.x 稳定版，支持 Servlet 3.1</td>
+                                    <td>公司内部使用</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-download"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-info"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10.1.20</td>
+                                    <td>tomcat-10.1.20-docker-image</td>
+                                    <td>镜像</td>
+                                    <td>456 MB</td>
+                                    <td><a href="https://hub.docker.com/_/tomcat" target="_blank">Docker Hub</a></td>
+                                    <td>Apache License 2.0</td>
+                                    <td>官方 Docker 镜像，包含 Tomcat 10.1.20</td>
+                                    <td>公司内部使用</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-download"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-info"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9.0.87</td>
+                                    <td>tomcat-9.0.87-src.zip</td>
+                                    <td>SDK</td>
+                                    <td>8.7 MB</td>
+                                    <td><a href="https://downloads.apache.org/tomcat/tomcat-9/v9.0.87/src/apache-tomcat-9.0.87-src.zip" target="_blank">下载</a></td>
+                                    <td>Apache License 2.0</td>
+                                    <td>源代码包，用于定制开发</td>
+                                    <td>仅开发团队可使用</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary"><i class="fas fa-download"></i></button>
+                                        <button class="btn btn-sm btn-secondary"><i class="fas fa-info"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-4">
+                        <p class="text-muted"><i class="fas fa-info-circle"></i> 共 <strong>5</strong> 个版本介质，数据来源于引入流程和其他系统同步。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">软件台账管理平台原型 &copy; 2025 | 设计规范：天蓝色主色，简约大气风格</p>
+            <p class="text-muted">最后更新: 2025-02-24</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

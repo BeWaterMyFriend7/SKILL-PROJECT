@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据统计大屏 - 软件台账管理平台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body class="dashboard-container">
+    <div class="dashboard-clock">
+        <i class="fas fa-clock"></i>
+        <span id="currentTime"></span>
+        <span class="refresh-indicator"><i class="fas fa-sync"></i> 自动刷新</span>
+    </div>
+
+    <div class="dashboard-header">
+        <h1 class="dashboard-title"><i class="fas fa-chart-bar"></i> 软件数据统计大屏</h1>
+        <p class="lead">实时展示软件使用关系统计、软件台账统计，支持多维度下钻分析</p>
+        <div class="view-tabs">
+            <button class="btn active" onclick="switchView('overview')"><i class="fas fa-globe"></i> 全局概览</button>
+            <button class="btn" onclick="switchView('terminal')"><i class="fas fa-laptop"></i> 终端视角</button>
+            <button class="btn" onclick="switchView('app')"><i class="fas fa-server"></i> 应用系统</button>
+            <button class="btn" onclick="switchView('server')"><i class="fas fa-database"></i> 服务器</button>
+            <button class="btn" onclick="switchView('software')"><i class="fas fa-boxes-stacked"></i> 软件台账</button>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="dashboard-block dashboard-block-terminal" id="blockOverview">
+            <div class="dashboard-block-header">
+                <i class="fas fa-globe"></i>
+                <span class="dashboard-block-title">全局数据概览</span>
+            </div>
+            <div class="dashboard-block-content">
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <div class="dashboard-card metric-card terminal-card text-center">
+                            <h3><i class="fas fa-laptop"></i> 终端使用数</h3>
+                            <div class="metric-value">2,450万</div>
+                            <p class="metric-label">终端使用关系记录</p>
+                            <div class="metric-trend"><span class="text-success"><i class="fas fa-arrow-up"></i> 12.5%</span> 较上周</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dashboard-card metric-card app-card text-center">
+                            <h3><i class="fas fa-server"></i> 应用系统使用数</h3>
+                            <div class="metric-value">1,980万</div>
+                            <p class="metric-label">应用系统使用关系记录</p>
+                            <div class="metric-trend"><span class="text-success"><i class="fas fa-arrow-up"></i> 8.3%</span> 较上周</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dashboard-card metric-card server-card text-center">
+                            <h3><i class="fas fa-database"></i> 服务器使用数</h3>
+                            <div class="metric-value">4,520万</div>
+                            <p class="metric-label">服务器使用关系记录</p>
+                            <div class="metric-trend"><span class="text-success"><i class="fas fa-arrow-up"></i> 15.7%</span> 较上周</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dashboard-card metric-card software-card text-center">
+                            <h3><i class="fas fa-boxes-stacked"></i> 软件总数</h3>
+                            <div class="metric-value">8,542</div>
+                            <p class="metric-label">软件台账记录</p>
+                            <div class="metric-trend"><span class="text-success"><i class="fas fa-arrow-up"></i> 3.2%</span> 较上周</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="dashboard-card">
+                            <h4><i class="fas fa-chart-line"></i> 软件使用关系统计（近6个月趋势）</h4>
+                            <div class="chart-container" id="chartUsageTrend"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-card">
+                            <h4><i class="fas fa-chart-pie"></i> 软件管理类型分布</h4>
+                            <div class="chart-container" id="chartManagementType"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block dashboard-block-terminal" id="blockTerminal" style="display:none;">
+            <div class="dashboard-block-header">
+                <i class="fas fa-laptop"></i>
+                <span class="dashboard-block-title">终端使用关系统计</span>
+            </div>
+            <div class="dashboard-block-content">
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card terminal-card text-center">
+                            <h3><i class="fas fa-desktop"></i> 终端总数</h3>
+                            <div class="metric-value">15,842</div>
+                            <p class="metric-label">在线终端</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card terminal-card text-center">
+                            <h3><i class="fas fa-link"></i> 关系记录</h3>
+                            <div class="metric-value">245万</div>
+                            <p class="metric-label">使用关系</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card terminal-card text-center">
+                            <h3><i class="fas fa-building"></i> 团队数量</h3>
+                            <div class="metric-value">28</div>
+                            <p class="metric-label">使用团队</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card terminal-card text-center">
+                            <h3><i class="fas fa-network-wired"></i> 网段数量</h3>
+                            <div class="metric-value">156</div>
+                            <p class="metric-label">网络分段</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card terminal-card text-center">
+                            <h3><i class="fas fa-clock"></i> 日活跃</h3>
+                            <div class="metric-value">12,450</div>
+                            <p class="metric-label">今日活跃</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card terminal-card text-center">
+                            <h3><i class="fas fa-exclamation-triangle"></i> 异常终端</h3>
+                            <div class="metric-value danger">23</div>
+                            <p class="metric-label">需要关注</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="dashboard-card"><h5><i class="fas fa-signal"></i> 使用网段统计</h5><div class="chart-container" id="chartTerminalSegment"></div></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-card"><h5><i class="fas fa-users"></i> 终端所属团队</h5><div class="chart-container" id="chartTerminalTeam"></div></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-card"><h5><i class="fas fa-tags"></i> 软件管理类型</h5><div class="chart-container" id="chartTerminalSoftwareType"></div></div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="dashboard-card"><h5><i class="fas fa-chart-line"></i> 终端使用趋势（按月）</h5><div class="chart-container" id="chartTerminalTrend"></div></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="dashboard-card"><h5><i class="fas fa-clock"></i> 终端活跃时段分布</h5><div class="chart-container" id="chartTerminalActiveTime"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block dashboard-block-app" id="blockApp" style="display:none;">
+            <div class="dashboard-block-header">
+                <i class="fas fa-server"></i>
+                <span class="dashboard-block-title">应用系统使用关系统计</span>
+            </div>
+            <div class="dashboard-block-content">
+                <div class="row mb-3">
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card app-card text-center">
+                            <h3><i class="fas fa-cube"></i> 应用系统</h3>
+                            <div class="metric-value">856</div>
+                            <p class="metric-label">系统总数</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card app-card text-center">
+                            <h3><i class="fas fa-link"></i> 关系记录</h3>
+                            <div class="metric-value">198万</div>
+                            <p class="metric-label">使用关系</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card app-card text-center">
+                            <h3><i class="fas fa-layer-group"></i> 核心系统</h3>
+                            <div class="metric-value warning">52</div>
+                            <p class="metric-label">核心级别</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card app-card text-center">
+                            <h3><i class="fas fa-users"></i> 负责团队</h3>
+                            <div class="metric-value">18</div>
+                            <p class="metric-label">运维团队</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card app-card text-center">
+                            <h3><i class="fas fa-box-open"></i> 软件依赖</h3>
+                            <div class="metric-value">4,250</div>
+                            <p class="metric-label">依赖软件</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dashboard-card metric-card app-card text-center">
+                            <h3><i class="fas fa-exclamation"></i> 待升级</h3>
+                            <div class="metric-value danger">126</div>
+                            <p class="metric-label">需关注版本</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"><div class="dashboard-card"><h5><i class="fas fa-tags"></i> 软件类型统计</h5><div class="chart-container" id="chartAppSoftwareType"></div></div></div>
+                    <div class="col-md-3"><div class="dashboard-card"><h5><i class="fas fa-users"></i> 所属团队统计</h5><div class="chart-container" id="chartAppTeam"></div></div></div>
+                    <div class="col-md-3"><div class="dashboard-card"><h5><i class="fas fa-shield-alt"></i> 管理类型统计</h5><div class="chart-container" id="chartAppManagementType"></div></div></div>
+                    <div class="col-md-3"><div class="dashboard-card"><h5><i class="fas fa-signal"></i> 系统级别统计</h5><div class="chart-container" id="chartAppLevel"></div></div></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><div class="dashboard-card"><h5><i class="fas fa-chart-line"></i> 应用系统增长趋势</h5><div class="chart-container" id="chartAppTrend"></div></div></div>
+                    <div class="col-md-6"><div class="dashboard-card"><h5><i class="fas fa-pie-chart"></i> 系统行业分布</h5><div class="chart-container" id="chartAppIndustry"></div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block dashboard-block-server" id="blockServer" style="display:none;">
+            <div class="dashboard-block-header">
+                <i class="fas fa-database"></i>
+                <span class="dashboard-block-title">服务器使用关系统计</span>
+            </div>
+            <div class="dashboard-block-content">
+                <div class="row mb-3">
+                    <div class="col-md-2"><div class="dashboard-card metric-card server-card text-center"><h3><i class="fas fa-server"></i> 服务器数</h3><div class="metric-value">32,560</div><p class="metric-label">服务器总量</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card server-card text-center"><h3><i class="fas fa-link"></i> 关系记录</h3><div class="metric-value">452万</div><p class="metric-label">使用关系</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card server-card text-center"><h3><i class="fas fa-microchip"></i> CPU核心</h3><div class="metric-value">98.5万</div><p class="metric-label">总核心数</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card server-card text-center"><h3><i class="fas fa-memory"></i> 内存总量</h3><div class="metric-value">485TB</div><p class="metric-label">总内存</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card server-card text-center"><h3><i class="fas fa-hdd"></i> 存储容量</h3><div class="metric-value">12.8PB</div><p class="metric-label">总存储</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card server-card text-center"><h3><i class="fas fa-thermometer-half"></i> 平均负载</h3><div class="metric-value info">42%</div><p class="metric-label">CPU使用率</p></div></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"><div class="dashboard-card"><h5><i class="fas fa-boxes"></i> 软件类型统计</h5><div class="chart-container" id="chartServerSoftwareType"></div></div></div>
+                    <div class="col-md-3"><div class="dashboard-card"><h5><i class="fas fa-shield-alt"></i> 管理类型统计</h5><div class="chart-container" id="chartServerManagementType"></div></div></div>
+                    <div class="col-md-3"><div class="dashboard-card"><h5><i class="fas fa-users"></i> 应用团队统计</h5><div class="chart-container" id="chartServerAppTeam"></div></div></div>
+                    <div class="col-md-3"><div class="dashboard-card"><h5><i class="fas fa-signal"></i> 系统级别统计</h5><div class="chart-container" id="chartServerAppLevel"></div></div></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><div class="dashboard-card"><h5><i class="fas fa-chart-line"></i> 服务器资源使用趋势</h5><div class="chart-container" id="chartServerResourceTrend"></div></div></div>
+                    <div class="col-md-6"><div class="dashboard-card"><h5><i class="fas fa-project-diagram"></i> 服务器类型分布</h5><div class="chart-container" id="chartServerType"></div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-block dashboard-block-software" id="blockSoftware" style="display:none;">
+            <div class="dashboard-block-header">
+                <i class="fas fa-boxes-stacked"></i>
+                <span class="dashboard-block-title">软件台账统计</span>
+            </div>
+            <div class="dashboard-block-content">
+                <div class="row mb-3">
+                    <div class="col-md-2"><div class="dashboard-card metric-card software-card text-center"><h3><i class="fas fa-box"></i> 软件总数</h3><div class="metric-value">8,542</div><p class="metric-label">台账记录</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card software-card text-center"><h3><i class="fas fa-globe"></i> 开源软件</h3><div class="metric-value">5,240</div><p class="metric-label">占比 61.3%</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card software-card text-center"><h3><i class="fas fa-shopping-cart"></i> 商业软件</h3><div class="metric-value">2,260</div><p class="metric-label">占比 26.5%</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card software-card text-center"><h3><i class="fas fa-code"></i> 自研软件</h3><div class="metric-value">1,042</div><p class="metric-label">占比 12.2%</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card software-card text-center"><h3><i class="fas fa-exclamation-triangle"></i> 许可证风险</h3><div class="metric-value danger">156</div><p class="metric-label">需关注</p></div></div>
+                    <div class="col-md-2"><div class="dashboard-card metric-card software-card text-center"><h3><i class="fas fa-sync"></i> 待更新</h3><div class="metric-value warning">892</div><p class="metric-label">版本过旧</p></div></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"><div class="dashboard-card"><h5><i class="fas fa-chart-pie"></i> 产品类 vs 组件类</h5><div class="chart-container" id="chartSoftwareProductVsComponent"></div></div></div>
+                    <div class="col-md-4"><div class="dashboard-card"><h5><i class="fas fa-balance-scale"></i> 开源/商业/自研分布</h5><div class="chart-container" id="chartSoftwareLicenseType"></div></div></div>
+                    <div class="col-md-4"><div class="dashboard-card"><h5><i class="fas fa-tags"></i> 功能类型统计</h5><div class="chart-container" id="chartSoftwareFunctionType"></div></div></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><div class="dashboard-card"><h5><i class="fas fa-chart-line"></i> 软件增长趋势（近一年）</h5><div class="chart-container" id="chartSoftwareTrend"></div></div></div>
+                    <div class="col-md-6"><div class="dashboard-card"><h5><i class="fas fa-industry"></i> 行业领域分布</h5><div class="chart-container" id="chartSoftwareIndustry"></div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-footer">
+            <p><i class="fas fa-info-circle"></i> 数据每30分钟自动刷新 | 最后更新: <span id="lastUpdateTime"></span></p>
+            <div class="dashboard-actions">
+                <a href="../index.html" class="btn btn-light"><i class="fas fa-arrow-left"></i> 返回首页</a>
+                <a href="sync-monitor.html" class="btn btn-outline-primary"><i class="fas fa-sync-alt"></i> 前往同步监控大屏</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const chartColors = {
+        text: '#4a5568',
+        textLight: '#718096',
+        primary: '#1E90FF',
+        success: '#10B981',
+        warning: '#F59E0B',
+        danger: '#EF4444',
+        info: '#3B82F6',
+        purple: '#8B5CF6',
+        categories: ['#1E90FF', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#3B82F6', '#EC4899', '#06B6D4']
+    };
+
+    function updateClock() {
+        const now = new Date();
+        const timeStr = now.toLocaleString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        document.getElementById('currentTime').textContent = timeStr;
+        document.getElementById('lastUpdateTime').textContent = timeStr;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function switchView(view) {
+        const blocks = ['blockOverview', 'blockTerminal', 'blockApp', 'blockServer', 'blockSoftware'];
+        blocks.forEach(block => document.getElementById(block).style.display = 'none');
+        const viewMap = { 'overview': 'blockOverview', 'terminal': 'blockTerminal', 'app': 'blockApp', 'server': 'blockServer', 'software': 'blockSoftware' };
+        document.getElementById(viewMap[view]).style.display = 'block';
+        document.querySelectorAll('.view-tabs .btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        setTimeout(initCharts, 100);
+    }
+
+    function initCharts() {
+        initOverviewCharts();
+        initTerminalCharts();
+        initAppCharts();
+        initServerCharts();
+        initSoftwareCharts();
+    }
+
+    function initOverviewCharts() {
+        const chart1 = echarts.init(document.getElementById('chartUsageTrend'));
+        chart1.setOption({
+            tooltip: { trigger: 'axis' },
+            legend: { data: ['终端', '应用系统', '服务器'], textStyle: { color: chartColors.text }, top: 0 },
+            grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+            xAxis: { type: 'category', data: ['9月', '10月', '11月', '12月', '1月', '2月'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [
+                { name: '终端', type: 'line', smooth: true, data: [1820, 2132, 2901, 3234, 2890, 2450], itemStyle: { color: chartColors.primary }, lineStyle: { width: 2 } },
+                { name: '应用系统', type: 'line', smooth: true, data: [1620, 1832, 2101, 2234, 2190, 1980], itemStyle: { color: chartColors.purple }, lineStyle: { width: 2 } },
+                { name: '服务器', type: 'line', smooth: true, data: [3200, 3532, 4101, 4534, 4890, 4520], itemStyle: { color: chartColors.success }, lineStyle: { width: 2 } }
+            ]
+        });
+        const chart2 = echarts.init(document.getElementById('chartManagementType'));
+        chart2.setOption({
+            tooltip: { trigger: 'item' },
+            legend: { orient: 'vertical', left: 'left', textStyle: { color: chartColors.text }, top: 'center' },
+            series: [{ name: '管理类型', type: 'pie', radius: ['45%', '70%'], center: ['60%', '50%'], label: { color: chartColors.text, fontSize: 11 },
+                data: [
+                    { value: 5240, name: '开源软件', itemStyle: { color: chartColors.primary }},
+                    { value: 2260, name: '商业软件', itemStyle: { color: chartColors.warning }},
+                    { value: 1042, name: '自研软件', itemStyle: { color: chartColors.success }}
+                ]
+            }]
+        });
+    }
+
+    function initTerminalCharts() {
+        const chart = echarts.init(document.getElementById('chartTerminalSegment'));
+        chart.setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['办公区', '开发区', '生产区', '测试区', 'DMZ区'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [6200, 4800, 3200, 1500, 142], itemStyle: { color: chartColors.primary }, barWidth: '50%' }]
+        });
+        const chart2 = echarts.init(document.getElementById('chartTerminalTeam'));
+        chart2.setOption({
+            tooltip: { trigger: 'item' },
+            series: [{ type: 'pie', radius: ['45%', '70%'], label: { color: chartColors.text, fontSize: 10 },
+                data: [
+                    { value: 4200, name: '研发部', itemStyle: { color: chartColors.categories[0] }},
+                    { value: 3100, name: '运维部', itemStyle: { color: chartColors.categories[1] }},
+                    { value: 2800, name: '市场部', itemStyle: { color: chartColors.categories[2] }},
+                    { value: 1800, name: '财务部', itemStyle: { color: chartColors.categories[3] }},
+                    { value: 1200, name: '人事部', itemStyle: { color: chartColors.categories[4] }}
+                ]
+            }]
+        });
+        const chart3 = echarts.init(document.getElementById('chartTerminalSoftwareType'));
+        chart3.setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['开源软件', '商业软件', '自研软件'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [12000, 8500, 4000], itemStyle: { color: chartColors.primary }, barWidth: '50%' }]
+        });
+        const chart4 = echarts.init(document.getElementById('chartTerminalTrend'));
+        chart4.setOption({
+            tooltip: { trigger: 'axis' },
+            legend: { data: ['使用量', '活跃数'], textStyle: { color: chartColors.text }, top: 0 },
+            grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+            xAxis: { type: 'category', data: ['1月', '2月', '3月', '4月', '5月', '6月'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [
+                { name: '使用量', type: 'line', smooth: true, data: [12000, 13200, 14500, 15200, 16800, 15842], itemStyle: { color: chartColors.primary } },
+                { name: '活跃数', type: 'line', smooth: true, data: [9500, 10200, 11500, 12800, 13500, 12450], itemStyle: { color: chartColors.success } }
+            ]
+        });
+        const chart5 = echarts.init(document.getElementById('chartTerminalActiveTime'));
+        chart5.setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['0时', '4时', '8时', '12时', '16时', '20时', '24时'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [1200, 800, 6500, 9800, 11200, 8500, 3200], itemStyle: { color: chartColors.primary }, barWidth: '50%' }]
+        });
+    }
+
+    function initAppCharts() {
+        echarts.init(document.getElementById('chartAppSoftwareType')).setOption({
+            tooltip: { trigger: 'item' },
+            series: [{ type: 'pie', radius: ['45%', '70%'], label: { color: chartColors.text, fontSize: 10 },
+                data: [
+                    { value: 320, name: '产品类', itemStyle: { color: chartColors.purple }},
+                    { value: 240, name: '组件(maven)', itemStyle: { color: chartColors.info }},
+                    { value: 180, name: '组件(npm)', itemStyle: { color: chartColors.success }},
+                    { value: 116, name: '组件(pypi)', itemStyle: { color: chartColors.warning }}
+                ]
+            }]
+        });
+        echarts.init(document.getElementById('chartAppTeam')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['电商团队', '数据团队', '办公团队', '监控团队', '支付团队', 'AI团队'], axisLabel: { color: chartColors.text, rotate: 30 }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [185, 156, 120, 98, 85, 72], itemStyle: { color: chartColors.purple }, barWidth: '50%' }]
+        });
+        echarts.init(document.getElementById('chartAppManagementType')).setOption({
+            tooltip: { trigger: 'item' },
+            series: [{ type: 'pie', radius: ['45%', '70%'], label: { color: chartColors.text, fontSize: 10 },
+                data: [
+                    { value: 520, name: '开源软件', itemStyle: { color: chartColors.primary }},
+                    { value: 236, name: '商业软件', itemStyle: { color: chartColors.warning }},
+                    { value: 100, name: '自研软件', itemStyle: { color: chartColors.success }}
+                ]
+            }]
+        });
+        echarts.init(document.getElementById('chartAppLevel')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['核心系统', '重要系统', '一般系统'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [52, 186, 618], itemStyle: { color: chartColors.purple }, barWidth: '50%' }]
+        });
+        echarts.init(document.getElementById('chartAppTrend')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['1月', '2月', '3月', '4月', '5月', '6月'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'line', smooth: true, data: [680, 720, 756, 798, 825, 856], itemStyle: { color: chartColors.purple } }]
+        });
+        echarts.init(document.getElementById('chartAppIndustry')).setOption({
+            tooltip: { trigger: 'item' },
+            series: [{ type: 'pie', radius: ['45%', '70%'], label: { color: chartColors.text, fontSize: 10 },
+                data: [
+                    { value: 280, name: '电商', itemStyle: { color: chartColors.categories[0] }},
+                    { value: 180, name: '金融', itemStyle: { color: chartColors.categories[1] }},
+                    { value: 150, name: '政务', itemStyle: { color: chartColors.categories[2] }},
+                    { value: 120, name: '教育', itemStyle: { color: chartColors.categories[3] }}
+                ]
+            }]
+        });
+    }
+
+    function initServerCharts() {
+        echarts.init(document.getElementById('chartServerSoftwareType')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['pkg', 'jar', 'pypi', 'docker', 'npm', '其他'], axisLabel: { color: chartColors.text, rotate: 30 }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [12500, 18200, 6800, 4200, 2500, 800], itemStyle: { color: chartColors.success }, barWidth: '50%' }]
+        });
+        echarts.init(document.getElementById('chartServerManagementType')).setOption({
+            tooltip: { trigger: 'item' },
+            series: [{ type: 'pie', radius: ['45%', '70%'], label: { color: chartColors.text, fontSize: 10 },
+                data: [
+                    { value: 28500, name: '开源软件', itemStyle: { color: chartColors.primary }},
+                    { value: 9500, name: '商业软件', itemStyle: { color: chartColors.warning }},
+                    { value: 4560, name: '自研软件', itemStyle: { color: chartColors.success }}
+                ]
+            }]
+        });
+        echarts.init(document.getElementById('chartServerAppTeam')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['电商团队', '数据团队', '办公团队', '监控团队', '支付团队'], axisLabel: { color: chartColors.text, rotate: 30 }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [8500, 7200, 5800, 4200, 3800], itemStyle: { color: chartColors.success }, barWidth: '50%' }]
+        });
+        echarts.init(document.getElementById('chartServerAppLevel')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['核心', '重要', '一般'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [6800, 12500, 13260], itemStyle: { color: chartColors.success }, barWidth: '50%' }]
+        });
+        echarts.init(document.getElementById('chartServerResourceTrend')).setOption({
+            tooltip: { trigger: 'axis' },
+            legend: { data: ['CPU使用率', '内存使用率', '磁盘使用率'], textStyle: { color: chartColors.text }, top: 0 },
+            grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+            xAxis: { type: 'category', data: ['1月', '2月', '3月', '4月', '5月', '6月'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text, formatter: '{value}%' }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [
+                { name: 'CPU使用率', type: 'line', smooth: true, data: [45, 48, 52, 49, 55, 42], itemStyle: { color: chartColors.primary } },
+                { name: '内存使用率', type: 'line', smooth: true, data: [62, 65, 68, 70, 72, 68], itemStyle: { color: chartColors.warning } },
+                { name: '磁盘使用率', type: 'line', smooth: true, data: [55, 56, 58, 59, 60, 61], itemStyle: { color: chartColors.danger } }
+            ]
+        });
+        echarts.init(document.getElementById('chartServerType')).setOption({
+            tooltip: { trigger: 'item' },
+            series: [{ type: 'pie', radius: ['45%', '70%'], label: { color: chartColors.text, fontSize: 10 },
+                data: [
+                    { value: 18500, name: '物理服务器', itemStyle: { color: chartColors.success }},
+                    { value: 9800, name: '虚拟机', itemStyle: { color: chartColors.info }},
+                    { value: 3260, name: '容器', itemStyle: { color: chartColors.purple }},
+                    { value: 1000, name: '云实例', itemStyle: { color: chartColors.warning }}
+                ]
+            }]
+        });
+    }
+
+    function initSoftwareCharts() {
+        echarts.init(document.getElementById('chartSoftwareProductVsComponent')).setOption({
+            tooltip: { trigger: 'item' },
+            series: [{ type: 'pie', radius: ['45%', '70%'], label: { color: chartColors.text, fontSize: 11 },
+                data: [
+                    { value: 6000, name: '产品类', itemStyle: { color: chartColors.warning }},
+                    { value: 2542, name: '组件类', itemStyle: { color: chartColors.info }}
+                ]
+            }]
+        });
+        echarts.init(document.getElementById('chartSoftwareLicenseType')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['开源软件', '商业软件', '自研软件'], axisLabel: { color: chartColors.text }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [5240, 2260, 1042], itemStyle: { color: chartColors.warning }, barWidth: '50%' }]
+        });
+        echarts.init(document.getElementById('chartSoftwareFunctionType')).setOption({
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['办公类', '开发类', '运维类', '安全类', '系统类', '数据库'], axisLabel: { color: chartColors.text, rotate: 30 }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [{ type: 'bar', data: [1850, 2650, 1580, 920, 860, 682], itemStyle: { color: chartColors.warning }, barWidth: '50%' }]
+        });
+        echarts.init(document.getElementById('chartSoftwareTrend')).setOption({
+            tooltip: { trigger: 'axis' },
+            legend: { data: ['新增软件', '总软件数'], textStyle: { color: chartColors.text }, top: 0 },
+            grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+            xAxis: { type: 'category', data: ['3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月', '1月', '2月'], axisLabel: { color: chartColors.text, rotate: 45 }, axisLine: { lineStyle: { color: '#e2e8f0' } } },
+            yAxis: { type: 'value', axisLabel: { color: chartColors.text }, splitLine: { lineStyle: { color: '#f0f0f0' } } },
+            series: [
+                { name: '新增软件', type: 'bar', data: [45, 62, 58, 75, 82, 68, 72, 88, 95, 102, 78, 65], itemStyle: { color: chartColors.success } },
+                { name: '总软件数', type: 'line', smooth: true, data: [7200, 7262, 7320, 7395, 7477, 7545, 7617, 7705, 7800, 7902, 7980, 8045], itemStyle: { color: chartColors.warning }, yAxisIndex: 1 }
+            ]
+        });
+        echarts.init(document.getElementById('chartSoftwareIndustry')).setOption({
+            tooltip: { trigger: 'item' },
+            series: [{ type: 'pie', radius: ['45%', '70%'], label: { color: chartColors.text, fontSize: 10 },
+                data: [
+                    { value: 2200, name: '企业服务', itemStyle: { color: chartColors.categories[0] }},
+                    { value: 1650, name: '开发工具', itemStyle: { color: chartColors.categories[1] }},
+                    { value: 1200, name: '数据库', itemStyle: { color: chartColors.categories[2] }},
+                    { value: 980, name: '办公协作', itemStyle: { color: chartColors.categories[3] }},
+                    { value: 850, name: '安全工具', itemStyle: { color: chartColors.categories[4] }}
+                ]
+            }]
+        });
+    }
+
+    window.addEventListener('resize', function() {
+        const charts = ['chartUsageTrend', 'chartManagementType', 'chartTerminalSegment', 'chartTerminalTeam', 'chartTerminalSoftwareType', 'chartTerminalTrend', 'chartTerminalActiveTime', 'chartAppSoftwareType', 'chartAppTeam', 'chartAppManagementType', 'chartAppLevel', 'chartAppTrend', 'chartAppIndustry', 'chartServerSoftwareType', 'chartServerManagementType', 'chartServerAppTeam', 'chartServerAppLevel', 'chartServerResourceTrend', 'chartServerType', 'chartSoftwareProductVsComponent', 'chartSoftwareLicenseType', 'chartSoftwareFunctionType', 'chartSoftwareTrend', 'chartSoftwareIndustry'];
+        charts.forEach(id => { const el = document.getElementById(id); if(el) echarts.getInstanceByDom(el)?.resize(); });
+    });
+
+    document.addEventListener('DOMContentLoaded', initCharts);
+    </script>
+</body>
+</html>

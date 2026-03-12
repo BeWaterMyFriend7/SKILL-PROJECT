@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件管理平台 - 首页</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>软件管理平台</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="software-list.html">软件列表</a></li>
+                    <li><a href="statistics.html">统计分析</a></li>
+                    <li><a href="user-management.html">用户管理</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>欢迎，管理员</span>
+                <button class="logout-btn">退出</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main">
+        <div class="container">
+            <!-- 统计卡片 -->
+            <section class="stats-section">
+                <h2>平台概览</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-number">1,245</div>
+                        <div class="stat-label">软件总数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-number">428</div>
+                        <div class="stat-label">商业软件</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🌍</div>
+                        <div class="stat-number">567</div>
+                        <div class="stat-label">开源软件</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏢</div>
+                        <div class="stat-number">250</div>
+                        <div class="stat-label">自主软件</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 分类统计 -->
+            <section class="category-section">
+                <h2>分类统计</h2>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <h3>产品类软件</h3>
+                        <div class="category-stats">
+                            <div class="category-stat">
+                                <span class="label">商业产品：</span>
+                                <span class="value">234</span>
+                            </div>
+                            <div class="category-stat">
+                                <span class="label">开源产品：</span>
+                                <span class="value">189</span>
+                            </div>
+                            <div class="category-stat">
+                                <span class="label">自主产品：</span>
+                                <span class="value">98</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <h3>组件类软件</h3>
+                        <div class="category-stats">
+                            <div class="category-stat">
+                                <span class="label">商业组件：</span>
+                                <span class="value">194</span>
+                            </div>
+                            <div class="category-stat">
+                                <span class="label">开源组件：</span>
+                                <span class="value">378</span>
+                            </div>
+                            <div class="category-stat">
+                                <span class="label">自主组件：</span>
+                                <span class="value">152</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 热门软件 -->
+            <section class="popular-section">
+                <h2>热门软件</h2>
+                <div class="popular-list">
+                    <div class="popular-item">
+                        <div class="popular-info">
+                            <h4>飞书</h4>
+                            <p class="popular-type">商业软件 · 产品类</p>
+                        </div>
+                        <div class="popular-stats">
+                            <span class="download-count">下载 2,456 次</span>
+                        </div>
+                    </div>
+                    <div class="popular-item">
+                        <div class="popular-info">
+                            <h4>Spring Boot</h4>
+                            <p class="popular-type">开源软件 · 组件类</p>
+                        </div>
+                        <div class="popular-stats">
+                            <span class="download-count">访问 3,789 次</span>
+                        </div>
+                    </div>
+                    <div class="popular-item">
+                        <div class="popular-info">
+                            <h4>Office 365</h4>
+                            <p class="popular-type">商业软件 · 产品类</p>
+                        </div>
+                        <div class="popular-stats">
+                            <span class="download-count">下载 1,234 次</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 快速操作 -->
+            <section class="quick-actions">
+                <h2>快速操作</h2>
+                <div class="actions-grid">
+                    <a href="software-list.html" class="action-btn primary">
+                        <span>浏览软件</span>
+                    </a>
+                    <a href="#" class="action-btn secondary">
+                        <span>添加软件</span>
+                    </a>
+                    <a href="statistics.html" class="action-btn secondary">
+                        <span>查看统计</span>
+                    </a>
+                    <a href="#" class="action-btn secondary">
+                        <span>许可证管理</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 软件管理平台. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
