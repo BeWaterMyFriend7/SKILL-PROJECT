@@ -1,0 +1,265 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="OpenCode vs OpenClaw 对比-深色">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="870" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 背景 -->
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1000" height="870" as="geometry" />
+        </mxCell>
+        
+        <!-- 装饰圆 -->
+        <mxCell id="deco1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#00d4ff;opacity=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="deco2" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ff6b6b;opacity=10;" vertex="1" parent="1">
+          <mxGeometry x="840" y="20" width="160" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- 标题 -->
+        <mxCell id="title" value="OpenCode vs OpenClaw" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="350" y="15" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="AI Coding Agent Comparison 2026" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="380" y="45" width="240" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- 分隔线 -->
+        <mxCell id="divider" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="50" y="75" width="900" height="1" as="geometry" />
+        </mxCell>
+        
+        <!-- OpenCode 卡片 -->
+        <mxCell id="oc_card" value="" style="rounded=16;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#00d4ff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="95" width="420" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_header" value="" style="rounded=16;whiteSpace=wrap;html=1;fillColor=#00d4ff;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="95" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_title" value="OpenCode" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="170" y="107" width="200" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_stars" value="95K+ GitHub Stars" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#ffffff;opacity=90;" vertex="1" parent="1">
+          <mxGeometry x="340" y="100" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_desc" value="Terminal-based AI Coding Agent" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#00d4ff;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="420" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_license" value="SST - Open Source" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="420" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- OpenCode 特性 -->
+        <mxCell id="oc_features_box" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#00d4ff;strokeWidth=1;opacity=50;" vertex="1" parent="1">
+          <mxGeometry x="80" y="210" width="380" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_features_title" value="Core Features" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontStyle=1;fontColor=#00d4ff;" vertex="1" parent="1">
+          <mxGeometry x="95" y="215" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_f1" value="● 75+ LLM Providers" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="105" y="240" width="150" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_f2" value="● Test Generation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="105" y="260" width="150" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_f3" value="● Debugging • Refactoring" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="105" y="280" width="150" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_f4" value="● Multi-file Editing" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="105" y="300" width="150" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_f5" value="● Agentic Mode" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="105" y="320" width="150" height="18" as="geometry" />
+        </mxCell>
+        
+        <!-- OpenCode 价格标签 -->
+        <mxCell id="oc_price1" value="Free (BYOK)" style="rounded=12;whiteSpace=wrap;html=1;fillColor=#00d4ff;strokeColor=none;fontColor=#1a1a2e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="405" width="100" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_price2" value="Zen $20" style="rounded=12;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=none;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="405" width="80" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="oc_price3" value="Black $200" style="rounded=12;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=none;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="405" width="90" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- VS 圆形 -->
+        <mxCell id="vs_circle" value="VS" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="472" y="229" width="56" height="56" as="geometry" />
+        </mxCell>
+        
+        <!-- OpenClaw 卡片 -->
+        <mxCell id="claw_card" value="" style="rounded=16;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#ff6b6b;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="95" width="420" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_header" value="" style="rounded=16;whiteSpace=wrap;html=1;fillColor=#ff6b6b;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="520" y="95" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_title" value="OpenClaw" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="630" y="107" width="200" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_stars" value="180K+ GitHub Stars" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#ffffff;opacity=90;" vertex="1" parent="1">
+          <mxGeometry x="730" y="100" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_desc" value="Autonomous AI Agent Platform" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#ff6b6b;" vertex="1" parent="1">
+          <mxGeometry x="520" y="160" width="420" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_license" value="Peter Steinberger • MIT" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="520" y="180" width="420" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- OpenClaw 特性 -->
+        <mxCell id="claw_features_box" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#ff6b6b;strokeWidth=1;opacity=50;" vertex="1" parent="1">
+          <mxGeometry x="540" y="210" width="380" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_features_title" value="Core Features" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontStyle=1;fontColor=#ff6b6b;" vertex="1" parent="1">
+          <mxGeometry x="555" y="215" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_f1" value="● Any LLM (OpenAI-Claude-Local)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="565" y="240" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_f2" value="● 5,700+ Community Skills" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="565" y="260" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_f3" value="● Self-extending Capabilities" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="565" y="280" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_f4" value="● 12+ Messaging Platforms" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="565" y="300" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="claw_f5" value="● Persistent Memory (Weeks)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="565" y="320" width="200" height="18" as="geometry" />
+        </mxCell>
+        
+        <!-- OpenClaw 价格标签 -->
+        <mxCell id="claw_price" value="Free (Self-hosted + BYO API)" style="rounded=12;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=none;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="405" width="200" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- 详细对比表 -->
+        <mxCell id="compare_box" value="" style="rounded=12;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="455" width="880" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="compare_title" value="Detailed Comparison" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="420" y="465" width="160" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- 表头 -->
+        <mxCell id="th1" value="Feature" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;fontColor=#888888;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="495" width="160" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="th2" value="OpenCode" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#00d4ff;strokeColor=#00d4ff;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="495" width="220" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="th3" value="OpenClaw" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#ff6b6b;strokeColor=#ff6b6b;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="495" width="220" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="th4" value="Verdict" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#2d3436;strokeColor=#333333;fontColor=#888888;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="705" y="495" width="220" height="28" as="geometry" />
+        </mxCell>
+        
+        <!-- 行1: Type -->
+        <mxCell id="row1_c1" value="Type" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;fontColor=#888888;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="75" y="530" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row1_c2" value="CLI Coding Agent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;fontColor=#00d4ff;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="245" y="530" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row1_c3" value="Agent Platform" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;fontColor=#ff6b6b;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="475" y="530" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row1_c4" value="Use case dependent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;fontColor=#666666;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="705" y="530" width="220" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- 行2: License -->
+        <mxCell id="row2_c1" value="License" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#888888;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="75" y="560" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row2_c2" value="Open Source" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#cccccc;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="245" y="560" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row2_c3" value="MIT License" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#cccccc;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="475" y="560" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row2_c4" value="Both Open ✓" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#2ecc71;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="705" y="560" width="220" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- 行3: Models -->
+        <mxCell id="row3_c1" value="Models" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;fontColor=#888888;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="75" y="590" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row3_c2" value="75+ Providers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;fontColor=#00d4ff;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="245" y="590" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row3_c3" value="Any LLM" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;fontColor=#ff6b6b;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="475" y="590" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row3_c4" value="OpenClaw wins" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;fontColor=#e67e22;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="705" y="590" width="220" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- 行4: Interface -->
+        <mxCell id="row4_c1" value="Interface" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#888888;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="75" y="620" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row4_c2" value="Terminal, IDE" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#cccccc;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="245" y="620" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row4_c3" value="Messaging + CLI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#cccccc;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="475" y="620" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row4_c4" value="Different use cases" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#666666;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="705" y="620" width="220" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- 行5: Skills/Plugins -->
+        <mxCell id="row5_c1" value="Skills-Plugins" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;fontColor=#888888;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="75" y="650" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row5_c2" value="Limited" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;fontColor=#666666;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="245" y="650" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row5_c3" value="5,700+ via ClawHub" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;fontColor=#9b59b6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="475" y="650" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row5_c4" value="OpenClaw wins" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;fontColor=#9b59b6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="705" y="650" width="220" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- 行6: Best For -->
+        <mxCell id="row6_c1" value="Best For" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#888888;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="75" y="680" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row6_c2" value="Coding" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#2ecc71;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="245" y="680" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row6_c3" value="Life Automation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#e67e22;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="475" y="680" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="row6_c4" value="Different focus" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f0f1a;strokeColor=#333333;fontColor=#666666;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="705" y="680" width="220" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- 推荐区域 -->
+        <mxCell id="rec_box" value="" style="rounded=12;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="755" width="880" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="rec_title" value="Recommendation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="380" y="765" width="240" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- 推荐按钮 -->
+        <mxCell id="rec_oc" value="Choose OpenCode&#xa;Software Development" style="rounded=10;whiteSpace=wrap;html=1;fillColor=#00d4ff;strokeColor=none;fontColor=#1a1a2e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="795" width="340" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="rec_claw" value="Choose OpenClaw&#xa;Life Automation" style="rounded=10;whiteSpace=wrap;html=1;fillColor=#ff6b6b;strokeColor=none;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="795" width="340" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

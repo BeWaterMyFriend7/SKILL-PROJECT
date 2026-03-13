@@ -1,0 +1,125 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="抢红包流程图">
+    <mxGraphModel dx="1200" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="900" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 背景 -->
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="800" height="900" as="geometry" />
+        </mxCell>
+        
+        <!-- 标题 -->
+        <mxCell id="title" value="抢红包高并发系统 - 流程图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="300" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- 1. 用户请求 -->
+        <mxCell id="node1" value="用户发起请求" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="60" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头1 -->
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node1" target="node2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 2. 负载均衡 -->
+        <mxCell id="node2" value="负载均衡" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="140" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头2 -->
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node2" target="node3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 3. API网关 -->
+        <mxCell id="node3" value="API网关" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="220" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头3 -->
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node3" target="node4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 4. 业务处理 -->
+        <mxCell id="node4" value="业务处理服务" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="300" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头4 -->
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node4" target="node5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 5. Redis缓存 -->
+        <mxCell id="node5" value="Redis分布式锁" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="380" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头5 -->
+        <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node5" target="node6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 6. 库存预扣 -->
+        <mxCell id="node6" value="库存预扣" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="460" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头6 -->
+        <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node6" target="node7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 7. 消息队列 -->
+        <mxCell id="node7" value="消息队列" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="540" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头7 -->
+        <mxCell id="edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node7" target="node8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 8. 发红包服务 -->
+        <mxCell id="node8" value="发红包服务" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f39c12;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="620" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头8 -->
+        <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node8" target="node9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 9. 数据库落库 -->
+        <mxCell id="node9" value="数据库落库" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1abc9c;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="700" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头9 -->
+        <mxCell id="edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node9" target="node10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 10. 返回结果 -->
+        <mxCell id="node10" value="返回结果" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#27ae60;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="780" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 右侧说明 -->
+        <mxCell id="note" value="关键设计点&#xa;&#xa;● 分布式锁&#xa;  Redis SETNX保证库存一致性&#xa;&#xa;● 消息队列&#xa;  异步解耦，削峰填谷&#xa;&#xa;● 限流策略&#xa;  网关层+业务层限流&#xa;&#xa;● 缓存预热&#xa;  活动前加载库存到Redis&#xa;&#xa;● 读写分离&#xa;  主从架构分散数据库压力" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;fontColor=#333333;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="520" y="100" width="230" height="280" as="geometry" />
+        </mxCell>
+        
+        <!-- 底部流程说明 -->
+        <mxCell id="footer" value="流程：请求 → 负载均衡 → 网关 → 业务 → 锁 → 预扣 → 队列 → 发红包 → 落库 → 返回" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;fontColor=#333333;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="850" width="420" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

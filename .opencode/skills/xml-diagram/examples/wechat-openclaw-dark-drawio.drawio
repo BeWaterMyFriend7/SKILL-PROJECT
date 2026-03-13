@@ -1,0 +1,43 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="微信接入OpenClaw-深色" id="0">
+    <mxGraphModel dx="1554" dy="914" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="500" width="800" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=20;fontStyle=1;fontColor=#ffffff;" value="微信接入 OpenClaw 教程" vertex="1">
+          <mxGeometry height="30" width="300" x="250" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#888888;" value="10分钟实现微信对话 OpenClaw" vertex="1">
+          <mxGeometry height="20" width="240" x="280" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="step1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;" value="Step 1&#xa;准备工具&#xa;下载安装 WorkBuddy&#xa;注意选 WorkBuddy" vertex="1">
+          <mxGeometry height="100" width="160" x="80" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" edge="1" parent="1" source="step1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="step2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="step2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;" value="Step 2&#xa;安装登录&#xa;安装并登录账号&#xa;选择账号完成登录" vertex="1">
+          <mxGeometry height="100" width="160" x="300" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" edge="1" parent="1" source="step2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="step3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="step3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e67e22;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;" value="Step 3&#xa;配置环境&#xa;进入 Claw 设置&#xa;绑定微信客服号" vertex="1">
+          <mxGeometry height="100" width="160" x="520" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="step4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#9b59b6;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;" value="Step 4&#xa;开始使用&#xa;微信直接对话&#xa;发送消息即可聊天" vertex="1">
+          <mxGeometry height="100" width="160" x="300" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;fontColor=#aaaaaa;fontSize=10;" value="⚠️ 注意事项&#xa;• 下载时选择「WorkBuddy」，不是 CodeBuddy&#xa;• 安装时建议全选附加任务，后续可右键快速打开&#xa;• 绑定后可直接在微信发送消息与 OpenClaw 对话" vertex="1">
+          <mxGeometry height="110" width="640" x="80" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=9;fontColor=#888888;" value="来源：Datawhale · 作者：筱可" vertex="1">
+          <mxGeometry height="20" width="200" x="300" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

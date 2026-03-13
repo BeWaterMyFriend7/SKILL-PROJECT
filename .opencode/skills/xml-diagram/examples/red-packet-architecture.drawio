@@ -1,0 +1,109 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="抢红包架构图" id="0">
+    <mxGraphModel dx="1828" dy="1075" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1000" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="1000" width="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#333333;" value="抢红包高并发系统 - 架构图" vertex="1">
+          <mxGeometry height="30" width="300" x="400" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#3498db;" value="① 接入层" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="70" width="900" x="100" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="app1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="APP/Web" vertex="1">
+          <mxGeometry height="40" width="140" x="120" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="cdn1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9b59b6;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="CDN" vertex="1">
+          <mxGeometry height="40" width="140" x="300" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="nginx1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="负载均衡 Nginx" vertex="1">
+          <mxGeometry height="40" width="160" x="470" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="API 网关" vertex="1">
+          <mxGeometry height="40" width="160" x="650" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="limit1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="限流熔断" vertex="1">
+          <mxGeometry height="40" width="140" x="840" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#2ecc71;" value="② 服务层" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="130" width="900" x="100" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="service1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=10;align=center;spacing=4;" value="抢红包服务&#xa;请求校验&#xa;库存预扣&#xa;结果返回" vertex="1">
+          <mxGeometry height="95" width="180" x="122.5" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="mq1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#333333;fontSize=10;align=center;spacing=4;" value="消息队列&#xa;Kafka/RabbitMQ&#xa;削峰填谷&#xa;异步解耦" vertex="1">
+          <mxGeometry height="95" width="180" x="347.5" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="service2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f39c12;strokeWidth=2;fontColor=#333333;fontSize=10;align=center;spacing=4;" value="发红包服务&#xa;消息消费&#xa;金额计算&#xa;落库存储" vertex="1">
+          <mxGeometry height="95" width="180" x="572.5" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="service3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1abc9c;strokeWidth=2;fontColor=#333333;fontSize=10;align=center;spacing=4;" value="用户服务&#xa;用户信息&#xa;账户查询&#xa;流水记录" vertex="1">
+          <mxGeometry height="95" width="180" x="797.5" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#e74c3c;" value="③ 数据层" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="130" width="900" x="100" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="redis1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#333333;fontSize=10;align=center;spacing=4;" value="Redis 集群&#xa;红包库存缓存&#xa;分布式锁&#xa;Session" vertex="1">
+          <mxGeometry height="95" width="180" x="122.5" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="mysql1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1abc9c;strokeWidth=2;fontColor=#333333;fontSize=10;align=center;spacing=4;" value="MySQL 主从&#xa;红包记录&#xa;用户流水&#xa;账户余额" vertex="1">
+          <mxGeometry height="95" width="180" x="347.5" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="mongo1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#333333;fontSize=10;align=center;spacing=4;" value="MongoDB&#xa;日志存储&#xa;操作审计&#xa;历史查询" vertex="1">
+          <mxGeometry height="95" width="180" x="572.5" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="es1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#34495e;strokeWidth=2;fontColor=#333333;fontSize=10;align=center;spacing=4;" value="Elasticsearch&#xa;日志检索&#xa;数据分析&#xa;实时统计" vertex="1">
+          <mxGeometry height="95" width="180" x="797.5" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#95a5a6;" value="④ 基础层" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="80" width="900" x="100" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="docker1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="Docker" vertex="1">
+          <mxGeometry height="40" width="120" x="115" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="Kubernetes" vertex="1">
+          <mxGeometry height="40" width="120" x="265" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="prom1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="Prometheus" vertex="1">
+          <mxGeometry height="40" width="120" x="415" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="grafana1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="Grafana" vertex="1">
+          <mxGeometry height="40" width="120" x="565" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="sky1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="SkyWalking" vertex="1">
+          <mxGeometry height="40" width="120" x="715" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="elk1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="ELK" vertex="1">
+          <mxGeometry height="40" width="120" x="865" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="tech_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f39c12;" value="核心技术" vertex="1">
+          <mxGeometry height="20" width="220" x="760" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="tech_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f39c12;strokeWidth=2;fontColor=#333333;fontSize=10;" value="● 分布式锁&#xa;  Redis SETNX 库存预扣&#xa;&#xa;● 消息队列&#xa;  异步解耦削峰填谷&#xa;&#xa;● 限流策略&#xa;  网关层 + 业务层" vertex="1">
+          <mxGeometry height="130" width="440" x="560" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontStyle=1;fontColor=#333333;" value="数据流程" vertex="1">
+          <mxGeometry height="20" width="220" x="310" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;fontColor=#333333;fontSize=10;" value="请求 → 网关 → 服务 → 缓存 → DB&#xa;&#xa;核心设计：分布式锁 + 消息队列 + 限流 + 缓存预热&#xa;&#xa;高可用：负载均衡 + 读写分离 + 水平扩展 + 监控告警" vertex="1">
+          <mxGeometry height="110" width="440" x="100" y="720" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
