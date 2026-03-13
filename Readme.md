@@ -30,7 +30,7 @@
   - technical-design 技术设计，产出技术方案
  
 
-- 绘图相关skill：输出示例：svg-output
+- 专业级别绘图相关skill：输出示例：svg-output
   - xml-diagram[推荐] 生成drawio XML 文件，支持drawio 直接编辑
   - svg-generator[推荐] 生成svg图形，支持架构图、流程图、对比图等
   - drawio-diagram 绘制流程图、架构图等
