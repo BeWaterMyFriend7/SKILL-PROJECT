@@ -64,7 +64,7 @@
 | self-improving-agent | 通过记录错误、经验和反馈让 Agent 持续自我改进 | https://github.com/peterskoett/self-improving-agent |
 | gsd | 一个多 Agent 的软件开发流程系统（研究→规划→执行→验证） | https://github.com/gsd-build/get-shit-done |
 | superpowers | 为 AI 编程 Agent 提供完整的软件开发技能库与自动化开发工作流 | https://github.com/obra/superpowers |
-| skill-creator | 创建和管理 OpenCode Skills 的指南，帮助你设计并构建符合规范的技能清单 | https://github.com/igorwarzocha/opencode-workflows |
+| skill-creator | 创建和管理 OpenCode Skills 的指南，帮助你设计并构建符合规范的技能清单 |[ https://github.com/igorwarzocha/opencode-workflows](https://github.com/anthropics/skills/tree/main/skills) |
 | add-skill | 从任意 GitHub 仓库安装 agent skills，支持 OpenCode、Claude Code、Codex、Cursor 等。 | https://github.com/ahmadawais/add-skill |
 | excalidraw-diagram | 程序化创建 Excalidraw 手绘风格图表，支持流程图、架构图等。 | https://github.com/axtonliu/axon-obsidian-visual-skills |
 | mermaid-visualizer | 创建专业的 Mermaid 图表，支持流程图、时序图、状态图等，带有颜色主题样式。 | https://github.com/axtonliu/axon-obsidian-visual-skills |
