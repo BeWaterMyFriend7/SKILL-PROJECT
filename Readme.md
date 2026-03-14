@@ -1,13 +1,6 @@
 # 项目介绍
 
 主要skills说明：
-- 编码相关skills，输出示例目录：output
-  - requirements-analysis 需求分析
-  - requirements-review 需求评审
-  - prototype-design 原型设计，产出可交互的html
-  - technical-design 技术设计，产出技术方案
- 
-
 - 专业级别绘图相关skill：输出示例：svg-output
   - xml-diagram[推荐] 生成drawio XML 文件，支持drawio 直接编辑
   - svg-generator[推荐] 生成svg图形，支持架构图、流程图、对比图等
@@ -29,6 +22,12 @@
   ![对比图](image/image-1.png)
 - 全生命周期图
 ![全生命周期示例图](image/image-2.png)
+
+- 编码相关skills[优化中]，输出示例目录：output
+  - requirements-analysis 需求分析
+  - requirements-review 需求评审
+  - prototype-design 原型设计，产出可交互的html
+  - technical-design 技术设计，产出技术方案
 ## 项目结构
 
 ``` markdown
