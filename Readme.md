@@ -33,12 +33,12 @@
 - 专业级别绘图相关skill：输出示例：svg-output
   - xml-diagram[推荐] 生成drawio XML 文件，支持drawio 直接编辑
   - svg-generator[推荐] 生成svg图形，支持架构图、流程图、对比图等
-  - drawio-diagram 绘制流程图、架构图等
-其中上面两个skill 生成的图形基本风格一致，xml-diagram 生成的图形可以直接在drawio中编辑，推荐使用这个skill。实际使用过程中，使用相关skill 生成复杂的流程图效果都不太好，尤其是分支较多的情况下，如果是流程图，建议还是使用mermaid等代码绘图，绘图完再进行相关格式的转换。      
+  - drawio-diagram 绘制流程图、架构图等   
+其中上面两个skill 生成的图形基本风格一致，xml-diagram 生成的图形可以直接在drawio中编辑，推荐使用这个skill。实际使用过程中，使用相关skill 生成复杂的流程图效果都不太好，尤其是分支较多的情况下，如果是流程图，建议还是使用mermaid等代码绘图，绘图完再进行相关格式的转换。 
 生成的图形 可以参考 相关skill 的示例目录或者svg-output目录
-- .opencode\skills\xml-diagram\examples
-- .opencode\skills\svg-generator\examples
-- svg-output
+  - .opencode\skills\xml-diagram\examples
+  - .opencode\skills\svg-generator\examples
+  - svg-output
 
 部分图形预览：
 - 架构图
