@@ -1,0 +1,133 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="页面-1" id="0">
+    <mxGraphModel dx="1554" dy="914" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="700" width="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#ffffff;" value="AI Agent 工具/产品汇总" vertex="1">
+          <mxGeometry height="40" width="300" x="370" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="header1" parent="1" style="text;html=1;strokeColor=#3498db;fillColor=#16213e;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#3498db;" value="工具名称" vertex="1">
+          <mxGeometry height="45" width="160" x="40" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="header2" parent="1" style="text;html=1;strokeColor=#3498db;fillColor=#16213e;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#3498db;" value="特色功能" vertex="1">
+          <mxGeometry height="45" width="380" x="200" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="header3" parent="1" style="text;html=1;strokeColor=#3498db;fillColor=#16213e;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#3498db;" value="官网地址" vertex="1">
+          <mxGeometry height="45" width="340" x="580" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="header4" parent="1" style="text;html=1;strokeColor=#3498db;fillColor=#16213e;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#3498db;" value="备注" vertex="1">
+          <mxGeometry height="45" width="160" x="920" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="row1_bg" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="75" width="1040" x="40" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="row1_name" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#ffffff;" value="阿里 jvsclaw" vertex="1">
+          <mxGeometry height="75" width="160" x="40" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="row1_func" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontColor=#aaaaaa;spacingLeft=8;" value="手机端OpenClaw，支持移动办公" vertex="1">
+          <mxGeometry height="75" width="380" x="200" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="row1_url" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#3498DB;spacingLeft=8;" value="https://jvs.wuying.aliyun.com/" vertex="1">
+          <mxGeometry height="75" width="340" x="580" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="row1_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#e67e22;" value="🟡 需要邀请码" vertex="1">
+          <mxGeometry height="75" width="160" x="920" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="row2_bg" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#1a1a2e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="75" width="1040" x="40" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="row2_name" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#ffffff;" value="腾讯 qclaw" vertex="1">
+          <mxGeometry height="75" width="160" x="40" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="row2_func" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontColor=#aaaaaa;spacingLeft=8;" value="微信内可直接调用AI Agent" vertex="1">
+          <mxGeometry height="75" width="380" x="200" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="row2_url" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#3498db;spacingLeft=8;" value="https://qclaw.qq.com/" vertex="1">
+          <mxGeometry height="75" width="340" x="580" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="row2_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#e67e22;" value="🟡 需要邀请码" vertex="1">
+          <mxGeometry height="75" width="160" x="920" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="row3_bg" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="75" width="1040" x="40" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="row3_name" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#ffffff;" value="skill-creator" vertex="1">
+          <mxGeometry height="75" width="160" x="40" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="row3_func" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontColor=#aaaaaa;spacingLeft=8;" value="Claude官方Skill-creater更新，更好用" vertex="1">
+          <mxGeometry height="75" width="380" x="200" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="row3_url" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=11;fontColor=#3498DB;spacingLeft=8;whiteSpace=wrap;" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 22px; white-space-collapse: preserve;&quot;&gt;&lt;span&gt;https://github.com/anthropics/skills/tree/main/skills/&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 22px; white-space-collapse: preserve;&quot;&gt;&lt;span&gt;skill-creator&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="340" x="580" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="row3_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#aaaaaa;" value="" vertex="1">
+          <mxGeometry height="75" width="160" x="920" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="row4_bg" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#1a1a2e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="75" width="1040" x="40" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="row4_name" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#ffffff;" value="台大李宏毅教授" vertex="1">
+          <mxGeometry height="75" width="160" x="40" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="row4_func" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontColor=#aaaaaa;spacingLeft=8;" value="OpenClaw解读 - 视频教程" vertex="1">
+          <mxGeometry height="75" width="380" x="200" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="row4_url" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#3498DB;spacingLeft=8;" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 22px; white-space-collapse: preserve;&quot;&gt;&lt;span&gt;https://www.youtube.com/watch?v=2rcJdFuNbZQ &lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="340" x="580" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="row4_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#aaaaaa;" value="" vertex="1">
+          <mxGeometry height="75" width="160" x="920" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="row5_bg" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="75" width="1040" x="40" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="row5_name" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#ffffff;" value="CLI-Anything" vertex="1">
+          <mxGeometry height="75" width="160" x="40" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="row5_func" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontColor=#aaaaaa;spacingLeft=8;" value="Agent 和工具之间的桥梁 | 今天的软件为人而生，&lt;div&gt;明天的用户是Agent&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="380" x="200" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="row5_url" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#3498DB;spacingLeft=8;" value="https://clianything.org/" vertex="1">
+          <mxGeometry height="75" width="340" x="580" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="row5_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#aaaaaa;" value="" vertex="1">
+          <mxGeometry height="75" width="160" x="920" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="row6_bg" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#1a1a2e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="75" width="1040" x="40" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="row6_name" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#ffffff;" value="Paperclip" vertex="1">
+          <mxGeometry height="75" width="160" x="40" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="row6_func" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontColor=#aaaaaa;spacingLeft=8;" value="AI无人运营公司框架" vertex="1">
+          <mxGeometry height="75" width="380" x="200" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="row6_url" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#3498DB;spacingLeft=8;" value="https://paperclip.ai/" vertex="1">
+          <mxGeometry height="75" width="340" x="580" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="row6_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#aaaaaa;" value="" vertex="1">
+          <mxGeometry height="75" width="160" x="920" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="row7_bg" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="75" width="1040" x="40" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="row7_name" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#ffffff;" value="agentrun-team" vertex="1">
+          <mxGeometry height="75" width="160" x="40" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="row7_func" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontColor=#aaaaaa;spacingLeft=8;" value="阿里推出的多Agent团队协作skill" vertex="1">
+          <mxGeometry height="75" width="380" x="200" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="row7_url" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#3498DB;spacingLeft=8;" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 22px; white-space-collapse: preserve;&quot;&gt;&lt;span&gt;https://mp.weixin.qq.com/s/EcJPA9OBm-zG1qiUskPS4Q &amp;nbsp; &lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="340" x="580" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="row7_note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#aaaaaa;" value="" vertex="1">
+          <mxGeometry height="75" width="160" x="920" y="565" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,163 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="组件关系-深色" id="0">
+    <mxGraphModel dx="1554" dy="914" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#1a1a2e;" value="" vertex="1">
+          <mxGeometry height="700" width="600" as="geometry" />
+        </mxCell>
+        <mxCell id="1_mLsGxZcQpzQUwcA5Eq-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#3498db;strokeWidth=1;dashed=1;arcSize=12;" value="" vertex="1">
+          <mxGeometry height="60" width="190" x="40" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#ffffff;" value="MCP / Skill / LLM / Agent / Prompt 关系图" vertex="1">
+          <mxGeometry height="30" width="400" x="100" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="divider" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;" value="" vertex="1">
+          <mxGeometry height="2" width="200" x="200" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="llm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=3;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" value="LLM&#xa;(大语言模型)" vertex="1">
+          <mxGeometry height="60" width="140" x="220" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="prompt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e67e22;strokeWidth=2;fontColor=#aaaaaa;fontSize=12;align=center;" value="Prompt&#xa;(提示词)" vertex="1">
+          <mxGeometry height="50" width="100" x="440" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_prompt" edge="1" parent="1" source="prompt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="llm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label_prompt" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontColor=#888888;fontSize=10;" value="交互接口" vertex="1">
+          <mxGeometry height="15" width="60" x="370" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#1abc9c;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;align=center;" value="MCP&#xa;(Model Context Protocol)" vertex="1">
+          <mxGeometry height="50" width="140" x="80" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_mcp" edge="1" parent="1" source="llm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1abc9c;strokeWidth=2;endArrow=classic;endFill=1;" target="mcp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label_mcp" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontColor=#1abc9c;fontSize=10;" value="让 LLM 学会使用工具" vertex="1">
+          <mxGeometry height="15" width="120" x="140" y="136" as="geometry" />
+        </mxCell>
+        <mxCell id="tools_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#1abc9c;fontSize=10;" value="工具箱" vertex="1">
+          <mxGeometry height="15" width="50" x="20" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="tool1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=10;" value="文件读写" vertex="1">
+          <mxGeometry height="25" width="60" x="10" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="tool2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=10;" value="浏览器" vertex="1">
+          <mxGeometry height="25" width="60" x="10" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="tool3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=10;" value="数据库" vertex="1">
+          <mxGeometry height="25" width="60" x="10" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="tool4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=10;" value="API调用" vertex="1">
+          <mxGeometry height="25" width="60" x="10" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="tool5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=10;" value="..." vertex="1">
+          <mxGeometry height="25" width="60" x="10" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="skill" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#9b59b6;strokeWidth=2;fontColor=#aaaaaa;fontSize=12;align=center;" value="Skill&#xa;(技能)" vertex="1">
+          <mxGeometry height="50" width="140" x="360" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_skill" edge="1" parent="1" source="llm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9b59b6;strokeWidth=2;endArrow=classic;endFill=1;" target="skill">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label_skill" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontColor=#9b59b6;fontSize=10;" value="让 LLM 按范式输出和优化" vertex="1">
+          <mxGeometry height="15" width="180" x="340" y="136" as="geometry" />
+        </mxCell>
+        <mxCell id="pattern_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#9b59b6;fontSize=10;" value="范式示例" vertex="1">
+          <mxGeometry height="15" width="50" x="520" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="pattern1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=10;" value="代码生成" vertex="1">
+          <mxGeometry height="25" width="70" x="510" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="pattern2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=10;" value="流程图生成" vertex="1">
+          <mxGeometry height="25" width="70" x="510" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="pattern3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=10;" value="需求分析" vertex="1">
+          <mxGeometry height="25" width="70" x="510" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="pattern4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=10;" value="技术设计" vertex="1">
+          <mxGeometry height="25" width="70" x="510" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="agent" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=3;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" value="Agent&#xa;(智能代理)" vertex="1">
+          <mxGeometry height="60" width="180" x="200" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_agent_mcp" edge="1" parent="1" source="mcp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#555555;strokeWidth=2;endArrow=classic;endFill=1;" target="agent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_agent_skill" edge="1" parent="1" source="skill" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#555555;strokeWidth=2;endArrow=classic;endFill=1;" target="agent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label_agent" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontColor=#888888;fontSize=10;" value="基于 LLM + MCP(Skill) 构建" vertex="1">
+          <mxGeometry height="15" width="180" x="300" y="337" as="geometry" />
+        </mxCell>
+        <mxCell id="apps_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#3498db;fontSize=12;fontStyle=1;" value="应用层" vertex="1">
+          <mxGeometry height="20" width="50" x="110" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="opencode" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#aaaaaa;fontSize=13;fontStyle=1;align=center;" value="OpenCode" vertex="1">
+          <mxGeometry height="40" width="100" x="110" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="openclaw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#aaaaaa;fontSize=13;fontStyle=1;align=center;" value="OpenClaw" vertex="1">
+          <mxGeometry height="40" width="100" x="240" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="other" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#555555;strokeWidth=1;fontColor=#888888;fontSize=11;align=center;" value="其他 Agent" vertex="1">
+          <mxGeometry height="40" width="100" x="370" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_agent_app" edge="1" parent="1" source="agent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="opencode">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_agent_app2" edge="1" parent="1" source="agent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="openclaw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_agent_app3" edge="1" parent="1" source="agent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="other">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#3498db;fontSize=12;fontStyle=1;" value="核心关系说明" vertex="1">
+          <mxGeometry height="20" width="90" x="276" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#888888;fontSize=10;" value="• MCP 让 LLM 学会使用工具" vertex="1">
+          <mxGeometry height="18" width="140" x="276" y="604" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#888888;fontSize=10;" value="• Skill 让 LLM 按范式输出" vertex="1">
+          <mxGeometry height="18" width="140" x="276" y="624" as="geometry" />
+        </mxCell>
+        <mxCell id="note3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#888888;fontSize=10;" value="• Agent = LLM + MCP + Skill" vertex="1">
+          <mxGeometry height="18" width="140" x="276" y="644" as="geometry" />
+        </mxCell>
+        <mxCell id="note4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#888888;fontSize=10;" value="• Prompt 是与 LLM 交互接口" vertex="1">
+          <mxGeometry height="18" width="140" x="276" y="664" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#3498db;fontSize=11;fontStyle=1;" value="图例" vertex="1">
+          <mxGeometry height="20" width="40" x="47" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="legend1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#ffffff;fontSize=10;" value="核心" vertex="1">
+          <mxGeometry height="18" width="40" x="49" y="619" as="geometry" />
+        </mxCell>
+        <mxCell id="legend1_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="15" width="15" x="50" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#aaaaaa;fontSize=10;" value="扩展" vertex="1">
+          <mxGeometry height="18" width="40" x="99" y="619" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#1abc9c;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="15" width="15" x="100" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#aaaaaa;fontSize=10;" value="应用" vertex="1">
+          <mxGeometry height="18" width="40" x="149" y="619" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="15" width="15" x="150" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="legend4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontColor=#aaaaaa;fontSize=10;" value="Skill" vertex="1">
+          <mxGeometry height="18" width="40" x="199" y="619" as="geometry" />
+        </mxCell>
+        <mxCell id="legend4_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#9b59b6;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="15" width="15" x="200" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="1_mLsGxZcQpzQUwcA5Eq-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="15" width="15" x="50" y="600" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
