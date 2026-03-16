@@ -731,3 +731,30 @@ endArrow=diamond;endFill=1;
 | 相同配色方案 | 相同配色方案 |
 | 相同布局规范 | 相同布局规范 |
 | 相同验证清单 | 相同验证清单 |
+
+## 示例文件
+
+以下是可供参考的示例文件：
+
+### 流程图
+- `examples/flow-test.drawio` - 测试流程图
+- `examples/flow-user-sign-in.drawio` - 用户登录流程图
+- `examples/flow-red-packet-flow.drawio` - 红包业务流程图
+- `examples/flow-rd-lifecycle-flow.drawio` - 研发流程生命周期图
+
+### 时间线
+- `examples/timeline-rd-timeline.drawio` - 研发时间线
+
+### 架构图
+- `examples/architecture-red-packet-architecture.drawio` - 红包系统架构图
+
+### 对比图
+- `examples/compare-opencode-vs-openclaw-light.drawio` - 工具对比图（浅色）
+- `examples/compare-opencode-vs-openclaw-dark.drawio` - 工具对比图（深色）
+
+### 文章摘要图
+- `examples/article-summary-openclaw-dark-drawio.drawio` - 文章摘要图（深色）
+- `examples/article-summary-wechat-openclaw-drawio.drawio` - 微信文章摘要图
+
+### 表格
+- `examples/table-ai-agent-tools-dark.drawio` - AI Agent 工具表格（深色）
