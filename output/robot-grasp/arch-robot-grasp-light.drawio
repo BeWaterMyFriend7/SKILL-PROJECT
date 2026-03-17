@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="机器人抓取架构">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="900" pageHeight="600">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="900" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="title" value="机器人抓取系统架构图" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="15" width="300" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="line1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="42" width="840" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer1_label" value="① 感知层" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;fontColor=#3498db;" vertex="1" parent="1">
+          <mxGeometry x="50" y="55" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="75" width="800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="sensor1" value="RGB-D相机&#xa;深度获取" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="85" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sensor2" value="激光雷达&#xa;距离测量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="85" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sensor3" value="力传感器&#xa;触觉反馈" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="85" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sensor4" value="IMU&#xa;姿态检测" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="85" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sensor5" value="视觉编码&#xa;特征提取" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#2ecc71;strokeWidth=0;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="85" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer2_label" value="② 神经网络层" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;fontColor=#2ecc71;" vertex="1" parent="1">
+          <mxGeometry x="50" y="145" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="165" width="800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="nn1" value="目标检测&#xa;YOLO/Faster R-CNN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="70" y="175" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="nn2" value="语义分割&#xa;Mask R-CNN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="210" y="175" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="nn3" value="抓取点检测&#xa;GraspNet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="350" y="175" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="nn4" value="位姿估计&#xa;PoseNet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="490" y="175" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="nn5" value="强化学习&#xa;DQN/PPO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="630" y="175" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer3_label" value="③ 决策层" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;fontColor=#e67e22;" vertex="1" parent="1">
+          <mxGeometry x="50" y="235" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="255" width="800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="dec1" value="运动规划&#xa;RRT/PRM/OMPL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#333333;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="70" y="265" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="dec2" value="抓取策略&#xa;Q-Learning" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#333333;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="210" y="265" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="dec3" value="轨迹优化&#xa;MPC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#333333;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="350" y="265" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="dec4" value="控制器&#xa;PID/滑模" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#333333;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="490" y="265" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer4_label" value="④ 执行层" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;fontColor=#e74c3c;" vertex="1" parent="1">
+          <mxGeometry x="50" y="325" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="345" width="800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="exec1" value="机械臂" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="360" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="exec2" value="夹爪/吸盘" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="360" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="exec3" value="移动底盘" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="360" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="exec4" value="末端执行器" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="360" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer5_label" value="⑤ 数据层" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;fontColor=#95a5a6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="415" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer5" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="435" width="800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="data1" value="Redis&#xa;实时数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="450" width="100" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="data2" value="MySQL&#xa;历史数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="450" width="100" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="data3" value="模型仓库&#xa;PyTorch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="450" width="100" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="data4" value="点云存储&#xa;PCL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#95a5a6;strokeWidth=0;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="450" width="100" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="tech_title" value="核心技术栈" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontStyle=1;fontColor=#9b59b6;" vertex="1" parent="1">
+          <mxGeometry x="600" y="455" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="tech_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="475" width="250" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="tech1" value="● 感知: OpenCV, PCL, ROS" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="610" y="485" width="230" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="tech2" value="● 深度学习: PyTorch, TensorFlow" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="610" y="508" width="230" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="tech3" value="● 控制: MoveIt, OMPL, PyBullet" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="610" y="528" width="230" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_box" value="数据流向: 感知 → 神经网络 → 决策 → 执行&#xa;&#xa;闭环反馈: 传感器数据实时回传调节" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;strokeWidth=1;fontColor=#333333;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="510" width="500" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

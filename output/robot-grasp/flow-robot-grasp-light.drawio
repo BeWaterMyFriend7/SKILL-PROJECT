@@ -1,0 +1,190 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="机器人抓取流程">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="900" pageHeight="650">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="900" height="650" as="geometry"/>
+        </mxCell>
+        <mxCell id="title" value="机器人抓取物体流程图" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="15" width="300" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="line1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="42" width="840" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="node1_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="60" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="node1_head" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="60" width="160" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="node1_title" value="1. 图像采集" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="50" y="62" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="node1_content" value="相机/RGB-D&#xa;传感器数据获取" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="50" y="85" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="node2_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="240" y="60" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="node2_head" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="60" width="160" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="node2_title" value="2. 图像预处理" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="62" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="node2_content" value="去噪/增强/归一化" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="240" y="85" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="node3_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="430" y="60" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="node3_head" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#2ecc71;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="60" width="160" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="node3_title" value="3. 目标检测" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="430" y="62" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="node3_content" value="CNN/YOLO神经网络&#xa;目标识别与定位" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="430" y="85" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="node4_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="620" y="60" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="node4_head" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="60" width="160" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="node4_title" value="4. 抓取点检测" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="620" y="62" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="node4_content" value="GraspNet/GGCNN&#xa;最优抓取位姿计算" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="620" y="85" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node1_box" target="node2_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node2_box" target="node3_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node3_box" target="node4_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow_down" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node4_box" target="node5_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="node5_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="620" y="180" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="node5_head" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9b59b6;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="180" width="160" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="node5_title" value="5. 运动规划" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="620" y="182" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="node5_content" value="RRT/PRM路径规划&#xa;机械臂逆运动学" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="620" y="205" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow_left" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node5_box" target="node6_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="node6_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="430" y="180" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="node6_head" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="180" width="160" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="node6_title" value="6. 抓取执行" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="430" y="182" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="node6_content" value="机械臂控制&#xa;夹爪闭合抓取" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="430" y="205" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow_left2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node6_box" target="node7_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="node7_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1abc9c;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="240" y="180" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="node7_head" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1abc9c;strokeColor=#1abc9c;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="180" width="160" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="node7_title" value="7. 质量检测" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="182" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="node7_content" value="力反馈检测&#xa;抓取成功判断" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="240" y="205" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow_down2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="node7_box" target="node8_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="node8_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f39c12;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="240" y="300" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="node8_head" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f39c12;strokeColor=#f39c12;strokeWidth=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="300" width="160" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="node8_title" value="8. 放置完成" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="302" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="node8_content" value="目标放置&#xa;任务完成" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="240" y="325" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_title" value="神经网络模块" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontStyle=1;fontColor=#2ecc71;" vertex="1" parent="1">
+          <mxGeometry x="50" y="400" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="420" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1" value="● 目标检测: YOLO, Faster R-CNN" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="430" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2" value="● 语义分割: Mask R-CNN" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="455" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3" value="● 抓取检测: GraspNet, GGCNN" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="l4" value="● 位姿估计: PoseNet, DenseFusion" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="505" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="tech_title" value="核心技术" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontStyle=1;fontColor=#e67e22;" vertex="1" parent="1">
+          <mxGeometry x="300" y="400" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="tech_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="420" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="t1" value="● 深度学习: PyTorch, TensorFlow" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="310" y="430" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2" value="● 运动规划: RRT, PRM, OMPL" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="310" y="455" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3" value="● 强化学习: DQN, PPO" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="310" y="480" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="t4" value="● 控制器: PID, MPC" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="310" y="505" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_title" value="数据流程" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontStyle=1;fontColor=#3498db;" vertex="1" parent="1">
+          <mxGeometry x="550" y="400" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="420" width="280" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="f1" value="感知 → 检测 → 规划 → 执行 → 反馈" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="560" y="435" width="260" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="f2" value="核心: 视觉感知 + 深度学习 + 运动控制" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="560" y="460" width="260" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="f3" value="闭环: 传感器反馈 + 在线调整" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="560" y="485" width="260" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="f4" value="感知层 → 决策层 → 执行层" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="560" y="510" width="260" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

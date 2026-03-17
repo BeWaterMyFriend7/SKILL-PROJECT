@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <rect width="900" height="600" fill="#1a1a2e"/>
+  <text x="450" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">机器人抓取系统架构图</text>
+  <line x1="30" y1="42" x2="870" y2="42" stroke="#333333" stroke-width="1"/>
+  
+  <!-- 感知层 -->
+  <text x="50" y="60" font-size="12" font-weight="bold" fill="#3498db">① 感知层</text>
+  <rect x="50" y="75" width="800" height="55" rx="5" fill="#16213e" stroke="#333333" stroke-width="1"/>
+  <rect x="70" y="85" width="90" height="35" rx="5" fill="#1a3a5c" stroke="#3498db" stroke-width="0"/>
+  <text x="115" y="102" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">RGB-D相机</text>
+  <text x="115" y="115" text-anchor="middle" font-size="7" fill="#888888">深度获取</text>
+  
+  <rect x="175" y="85" width="90" height="35" rx="5" fill="#1a3a5c" stroke="#3498db" stroke-width="0"/>
+  <text x="220" y="102" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">激光雷达</text>
+  <text x="220" y="115" text-anchor="middle" font-size="7" fill="#888888">距离测量</text>
+  
+  <rect x="280" y="85" width="90" height="35" rx="5" fill="#1a3a5c" stroke="#3498db" stroke-width="0"/>
+  <text x="325" y="102" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">力传感器</text>
+  <text x="325" y="115" text-anchor="middle" font-size="7" fill="#888888">触觉反馈</text>
+  
+  <rect x="385" y="85" width="90" height="35" rx="5" fill="#1a3a5c" stroke="#3498db" stroke-width="0"/>
+  <text x="430" y="102" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">IMU</text>
+  <text x="430" y="115" text-anchor="middle" font-size="7" fill="#888888">姿态检测</text>
+  
+  <rect x="490" y="85" width="90" height="35" rx="5" fill="#1a3a2a" stroke="#2ecc71" stroke-width="0"/>
+  <text x="535" y="102" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">视觉编码</text>
+  <text x="535" y="115" text-anchor="middle" font-size="7" fill="#888888">特征提取</text>
+  
+  <rect x="595" y="85" width="90" height="35" rx="5" fill="#2a1a3a" stroke="#9b59b6" stroke-width="0"/>
+  <text x="640" y="102" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">点云处理</text>
+  <text x="640" y="115" text-anchor="middle" font-size="7" fill="#888888">PCL</text>
+  
+  <rect x="700" y="85" width="130" height="35" rx="5" fill="#2a2a1a" stroke="#e67e22" stroke-width="0"/>
+  <text x="765" y="102" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">ROS通信</text>
+  <text x="765" y="115" text-anchor="middle" font-size="7" fill="#888888">数据同步</text>
+  
+  <!-- 神经网络层 -->
+  <text x="50" y="150" font-size="12" font-weight="bold" fill="#2ecc71">② 神经网络层</text>
+  <rect x="50" y="165" width="800" height="55" rx="5" fill="#16213e" stroke="#333333" stroke-width="1"/>
+  <rect x="70" y="175" width="110" height="35" rx="5" fill="#16213e" stroke="#2ecc71" stroke-width="2"/>
+  <text x="125" y="192" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">目标检测</text>
+  <text x="125" y="205" text-anchor="middle" font-size="7" fill="#888888">YOLO/Faster R-CNN</text>
+  
+  <rect x="195" y="175" width="110" height="35" rx="5" fill="#16213e" stroke="#2ecc71" stroke-width="2"/>
+  <text x="250" y="192" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">语义分割</text>
+  <text x="250" y="205" text-anchor="middle" font-size="7" fill="#888888">Mask R-CNN</text>
+  
+  <rect x="320" y="175" width="110" height="35" rx="5" fill="#16213e" stroke="#2ecc71" stroke-width="2"/>
+  <text x="375" y="192" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">抓取点检测</text>
+  <text x="375" y="205" text-anchor="middle" font-size="7" fill="#888888">GraspNet</text>
+  
+  <rect x="445" y="175" width="110" height="35" rx="5" fill="#16213e" stroke="#2ecc71" stroke-width="2"/>
+  <text x="500" y="192" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">位姿估计</text>
+  <text x="500" y="205" text-anchor="middle" font-size="7" fill="#888888">PoseNet</text>
+  
+  <rect x="570" y="175" width="110" height="35" rx="5" fill="#16213e" stroke="#2ecc71" stroke-width="2"/>
+  <text x="625" y="192" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">强化学习</text>
+  <text x="625" y="205" text-anchor="middle" font-size="7" fill="#888888">DQN/PPO</text>
+  
+  <rect x="695" y="175" width="130" height="35" rx="5" fill="#16213e" stroke="#2ecc71" stroke-width="2"/>
+  <text x="760" y="192" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">图像生成</text>
+  <text x="760" y="205" text-anchor="middle" font-size="7" fill="#888888">GAN/VAE</text>
+  
+  <!-- 决策层 -->
+  <text x="50" y="240" font-size="12" font-weight="bold" fill="#e67e22">③ 决策层</text>
+  <rect x="50" y="255" width="800" height="55" rx="5" fill="#16213e" stroke="#333333" stroke-width="1"/>
+  <rect x="70" y="265" width="110" height="35" rx="5" fill="#16213e" stroke="#e67e22" stroke-width="2"/>
+  <text x="125" y="282" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">运动规划</text>
+  <text x="125" y="295" text-anchor="middle" font-size="7" fill="#888888">RRT/PRM/OMPL</text>
+  
+  <rect x="195" y="265" width="110" height="35" rx="5" fill="#16213e" stroke="#e67e22" stroke-width="2"/>
+  <text x="250" y="282" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">抓取策略</text>
+  <text x="250" y="295" text-anchor="middle" font-size="7" fill="#888888">Q-Learning</text>
+  
+  <rect x="320" y="265" width="110" height="35" rx="5" fill="#16213e" stroke="#e67e22" stroke-width="2"/>
+  <text x="375" y="282" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">轨迹优化</text>
+  <text x="375" y="295" text-anchor="middle" font-size="7" fill="#888888">MPC</text>
+  
+  <rect x="445" y="265" width="110" height="35" rx="5" fill="#16213e" stroke="#e67e22" stroke-width="2"/>
+  <text x="500" y="282" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">控制器</text>
+  <text x="500" y="295" text-anchor="middle" font-size="7" fill="#888888">PID/滑模控制</text>
+  
+  <!-- 执行层 -->
+  <text x="50" y="330" font-size="12" font-weight="bold" fill="#e74c3c">④ 执行层</text>
+  <rect x="50" y="345" width="800" height="50" rx="5" fill="#16213e" stroke="#333333" stroke-width="1"/>
+  <rect x="70" y="355" width="100" height="30" rx="5" fill="#3a1a1a" stroke="#e74c3c" stroke-width="0"/>
+  <text x="120" y="372" text-anchor="middle" font-size="10" font-weight="bold" fill="#aaaaaa">机械臂</text>
+  
+  <rect x="185" y="355" width="100" height="30" rx="5" fill="#3a1a1a" stroke="#e74c3c" stroke-width="0"/>
+  <text x="235" y="372" text-anchor="middle" font-size="10" font-weight="bold" fill="#aaaaaa">夹爪/吸盘</text>
+  
+  <rect x="300" y="355" width="100" height="30" rx="5" fill="#3a1a1a" stroke="#e74c3c" stroke-width="0"/>
+  <text x="350" y="372" text-anchor="middle" font-size="10" font-weight="bold" fill="#aaaaaa">移动底盘</text>
+  
+  <rect x="415" y="355" width="100" height="30" rx="5" fill="#3a1a1a" stroke="#e74c3c" stroke-width="0"/>
+  <text x="465" y="372" text-anchor="middle" font-size="10" font-weight="bold" fill="#aaaaaa">末端执行器</text>
+  
+  <!-- 数据层 -->
+  <text x="50" y="415" font-size="12" font-weight="bold" fill="#95a5a6">⑤ 数据层</text>
+  <rect x="50" y="430" width="800" height="50" rx="5" fill="#16213e" stroke="#333333" stroke-width="1"/>
+  <rect x="70" y="440" width="90" height="30" rx="5" fill="#2a2a2a" stroke="#95a5a6" stroke-width="0"/>
+  <text x="115" y="457" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">Redis</text>
+  <text x="115" y="467" text-anchor="middle" font-size="7" fill="#888888">实时数据</text>
+  
+  <rect x="175" y="440" width="90" height="30" rx="5" fill="#2a2a2a" stroke="#95a5a6" stroke-width="0"/>
+  <text x="220" y="457" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">MySQL</text>
+  <text x="220" y="467" text-anchor="middle" font-size="7" fill="#888888">历史数据</text>
+  
+  <rect x="280" y="440" width="100" height="30" rx="5" fill="#2a2a2a" stroke="#95a5a6" stroke-width="0"/>
+  <text x="330" y="457" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">模型仓库</text>
+  <text x="330" y="467" text-anchor="middle" font-size="7" fill="#888888">PyTorch</text>
+  
+  <rect x="395" y="440" width="100" height="30" rx="5" fill="#2a2a2a" stroke="#95a5a6" stroke-width="0"/>
+  <text x="445" y="457" text-anchor="middle" font-size="9" font-weight="bold" fill="#aaaaaa">点云存储</text>
+  <text x="445" y="467" text-anchor="middle" font-size="7" fill="#888888">PCL</text>
+  
+  <!-- 底部说明 -->
+  <rect x="50" y="495" width="350" height="50" rx="5" fill="#16213e" stroke="#333333" stroke-width="1"/>
+  <text x="225" y="515" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">数据流向: 感知 → 神经网络 → 决策 → 执行</text>
+  <text x="225" y="532" text-anchor="middle" font-size="9" fill="#888888">闭环反馈: 传感器数据实时回传调节</text>
+  
+  <rect x="420" y="495" width="430" height="50" rx="5" fill="#16213e" stroke="#333333" stroke-width="1"/>
+  <text x="635" y="515" text-anchor="middle" font-size="10" font-weight="bold" fill="#9b59b6">核心技术栈</text>
+  <text x="510" y="532" font-size="9" fill="#aaaaaa">● 感知: OpenCV, PCL, ROS</text>
+  <text x="640" y="532" font-size="9" fill="#aaaaaa">● 深度学习: PyTorch, TF</text>
+  <text x="770" y="532" font-size="9" fill="#aaaaaa">● 控制: MoveIt, OMPL</text>
+</svg>
