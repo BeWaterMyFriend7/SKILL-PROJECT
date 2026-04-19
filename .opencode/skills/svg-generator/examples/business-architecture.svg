@@ -1,0 +1,310 @@
+<svg width="1000" height="820" viewBox="0 0 1000 820" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Microsoft YaHei', sans-serif; background-color: #ffffff;">
+  <defs>
+    <!-- 定义阴影滤镜 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#ccc"/>
+    </filter>
+    <!-- 定义箭头标记 -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="500" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">业务架构图设计案例</text>
+
+  <!-- ================== 第一层：业务场景层 ================== -->
+  <g id="layer1">
+    <!-- 外框 - 根据内容调整高度 -->
+    <rect x="20" y="50" width="960" height="165" rx="15" ry="15" fill="#f0f4ff" stroke="#7b86f7" stroke-width="2"/>
+    <text x="40" y="75" font-size="18" font-weight="bold" fill="#5c6bc0">业务场景层 (Business Scenario Layer)</text>
+
+    <!-- 列 1: 用户购物旅程 -->
+    <g transform="translate(50, 90)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#3b82f6"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">用户购物旅程</text>
+      <g font-size="11" fill="#333">
+        <rect x="0" y="38" width="50" height="22" rx="4" fill="#e0e7ff"/><text x="25" y="52" text-anchor="middle">浏览</text>
+        <rect x="60" y="38" width="50" height="22" rx="4" fill="#e0e7ff"/><text x="85" y="52" text-anchor="middle">购买</text>
+        <rect x="120" y="38" width="50" height="22" rx="4" fill="#e0e7ff"/><text x="145" y="52" text-anchor="middle">评价</text>
+        <rect x="0" y="65" width="50" height="22" rx="4" fill="#e0e7ff"/><text x="25" y="79" text-anchor="middle">收藏</text>
+        <rect x="60" y="65" width="50" height="22" rx="4" fill="#e0e7ff"/><text x="85" y="79" text-anchor="middle">分享</text>
+        <rect x="120" y="65" width="50" height="22" rx="4" fill="#e0e7ff"/><text x="145" y="79" text-anchor="middle">咨询</text>
+      </g>
+    </g>
+
+    <!-- 列 2: 商家运营流程 -->
+    <g transform="translate(230, 90)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#2563eb"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">商家运营流程</text>
+      <g font-size="11" fill="#333">
+        <rect x="0" y="38" width="60" height="22" rx="4" fill="#bfdbfe"/><text x="30" y="52" text-anchor="middle">商品上架</text>
+        <rect x="70" y="38" width="60" height="22" rx="4" fill="#bfdbfe"/><text x="100" y="52" text-anchor="middle">订单处理</text>
+        <rect x="0" y="65" width="60" height="22" rx="4" fill="#bfdbfe"/><text x="30" y="79" text-anchor="middle">库存管理</text>
+        <rect x="70" y="65" width="60" height="22" rx="4" fill="#bfdbfe"/><text x="100" y="79" text-anchor="middle">售后服务</text>
+        <rect x="135" y="38" width="35" height="22" rx="4" fill="#bfdbfe"/><text x="152.5" y="52" text-anchor="middle">结算</text>
+        <rect x="135" y="65" width="35" height="22" rx="4" fill="#bfdbfe"/><text x="152.5" y="79" text-anchor="middle">分析</text>
+      </g>
+    </g>
+
+    <!-- 列 3: 平台管理场景 -->
+    <g transform="translate(410, 90)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#1d4ed8"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">平台管理场景</text>
+      <g font-size="11" fill="#333">
+        <rect x="10" y="38" width="40" height="22" rx="4" fill="#93c5fd"/><text x="30" y="52" text-anchor="middle">审核</text>
+        <rect x="60" y="38" width="40" height="22" rx="4" fill="#93c5fd"/><text x="80" y="52" text-anchor="middle">监控</text>
+        <rect x="110" y="38" width="40" height="22" rx="4" fill="#93c5fd"/><text x="130" y="52" text-anchor="middle">结算</text>
+        <rect x="10" y="65" width="40" height="22" rx="4" fill="#93c5fd"/><text x="30" y="79" text-anchor="middle">风控</text>
+        <rect x="60" y="65" width="40" height="22" rx="4" fill="#93c5fd"/><text x="80" y="79" text-anchor="middle">合规</text>
+        <rect x="110" y="65" width="40" height="22" rx="4" fill="#93c5fd"/><text x="130" y="79" text-anchor="middle">税务</text>
+      </g>
+    </g>
+
+    <!-- 列 4: 营销推广活动 -->
+    <g transform="translate(590, 90)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#4f46e5"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">营销推广活动</text>
+      <g font-size="11" fill="#333">
+        <rect x="10" y="38" width="40" height="22" rx="4" fill="#c7d2fe"/><text x="30" y="52" text-anchor="middle">促销</text>
+        <rect x="60" y="38" width="40" height="22" rx="4" fill="#c7d2fe"/><text x="80" y="52" text-anchor="middle">推荐</text>
+        <rect x="110" y="38" width="40" height="22" rx="4" fill="#c7d2fe"/><text x="130" y="52" text-anchor="middle">投放</text>
+        <rect x="10" y="65" width="40" height="22" rx="4" fill="#c7d2fe"/><text x="30" y="79" text-anchor="middle">活动</text>
+        <rect x="60" y="65" width="40" height="22" rx="4" fill="#c7d2fe"/><text x="80" y="79" text-anchor="middle">内容</text>
+        <rect x="110" y="65" width="40" height="22" rx="4" fill="#c7d2fe"/><text x="130" y="79" text-anchor="middle">渠道</text>
+      </g>
+    </g>
+
+    <!-- 列 5: 数据分析决策 -->
+    <g transform="translate(770, 90)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#4338ca"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">数据分析决策</text>
+      <g font-size="11" fill="#333">
+        <rect x="10" y="38" width="40" height="22" rx="4" fill="#a5b4fc"/><text x="30" y="52" text-anchor="middle">数据</text>
+        <rect x="60" y="38" width="40" height="22" rx="4" fill="#a5b4fc"/><text x="80" y="52" text-anchor="middle">分析</text>
+        <rect x="110" y="38" width="40" height="22" rx="4" fill="#a5b4fc"/><text x="130" y="52" text-anchor="middle">决策</text>
+        <rect x="10" y="65" width="40" height="22" rx="4" fill="#a5b4fc"/><text x="30" y="79" text-anchor="middle">报表</text>
+        <rect x="60" y="65" width="40" height="22" rx="4" fill="#a5b4fc"/><text x="80" y="79" text-anchor="middle">预测</text>
+        <rect x="110" y="65" width="40" height="22" rx="4" fill="#a5b4fc"/><text x="130" y="79" text-anchor="middle">优化</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 箭头 1 -->
+  <g>
+    <path d="M500,215 L500,245" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="510" y="230" font-size="12" fill="#666" font-weight="bold">业务场景驱动</text>
+  </g>
+
+  <!-- ================== 第二层：业务能力层（调整矩形高度） ================== -->
+  <g id="layer2">
+    <!-- 调整高度为180px，刚好容纳内容 -->
+    <rect x="20" y="255" width="960" height="210" rx="15" ry="15" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+    <text x="40" y="280" font-size="18" font-weight="bold" fill="#16a34a">业务能力层 (Business Capability Layer)</text>
+
+    <!-- 域 1: 用户管理 -->
+    <g transform="translate(50, 295)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#a855f7"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">用户管理域</text>
+      <g font-size="11" fill="#333">
+        <rect x="0" y="38" width="75" height="22" rx="4" fill="#f3e8ff"/><text x="37.5" y="52" text-anchor="middle">注册登录</text>
+        <rect x="85" y="38" width="75" height="22" rx="4" fill="#f3e8ff"/><text x="122.5" y="52" text-anchor="middle">信息管理</text>
+        <rect x="0" y="65" width="75" height="22" rx="4" fill="#f3e8ff"/><text x="37.5" y="79" text-anchor="middle">会员体系</text>
+        <rect x="85" y="65" width="75" height="22" rx="4" fill="#f3e8ff"/><text x="122.5" y="79" text-anchor="middle">积分机制</text>
+        <rect x="0" y="92" width="75" height="22" rx="4" fill="#f3e8ff"/><text x="37.5" y="106" text-anchor="middle">行为分析</text>
+        <rect x="85" y="92" width="75" height="22" rx="4" fill="#f3e8ff"/><text x="122.5" y="106" text-anchor="middle">关系维护</text>
+      </g>
+    </g>
+
+    <!-- 域 2: 商品管理 -->
+    <g transform="translate(230, 295)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#f59e0b"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">商品管理域</text>
+      <g font-size="11" fill="#333">
+        <rect x="0" y="38" width="75" height="22" rx="4" fill="#fef3c7"/><text x="37.5" y="52" text-anchor="middle">信息录入</text>
+        <rect x="85" y="38" width="75" height="22" rx="4" fill="#fef3c7"/><text x="122.5" y="52" text-anchor="middle">分类管理</text>
+        <rect x="0" y="65" width="75" height="22" rx="4" fill="#fef3c7"/><text x="37.5" y="79" text-anchor="middle">库存监控</text>
+        <rect x="85" y="65" width="75" height="22" rx="4" fill="#fef3c7"/><text x="122.5" y="79" text-anchor="middle">价格策略</text>
+        <rect x="0" y="92" width="75" height="22" rx="4" fill="#fef3c7"/><text x="37.5" y="106" text-anchor="middle">搜索优化</text>
+        <rect x="85" y="92" width="75" height="22" rx="4" fill="#fef3c7"/><text x="122.5" y="106" text-anchor="middle">推荐配置</text>
+      </g>
+    </g>
+
+    <!-- 域 3: 交易管理 -->
+    <g transform="translate(410, 295)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#ef4444"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">交易管理域</text>
+      <g font-size="11" fill="#333">
+        <rect x="10" y="38" width="60" height="22" rx="4" fill="#fee2e2"/><text x="40" y="52" text-anchor="middle">购物车</text>
+        <rect x="80" y="38" width="70" height="22" rx="4" fill="#fee2e2"/><text x="115" y="52" text-anchor="middle">订单处理</text>
+        <rect x="10" y="65" width="60" height="22" rx="4" fill="#fee2e2"/><text x="40" y="79" text-anchor="middle">支付管理</text>
+        <rect x="80" y="65" width="70" height="22" rx="4" fill="#fee2e2"/><text x="115" y="79" text-anchor="middle">退款处理</text>
+        <rect x="10" y="92" width="60" height="22" rx="4" fill="#fee2e2"/><text x="40" y="106" text-anchor="middle">发票管理</text>
+        <rect x="80" y="92" width="70" height="22" rx="4" fill="#fee2e2"/><text x="115" y="106" text-anchor="middle">数据统计</text>
+      </g>
+    </g>
+
+    <!-- 域 4: 物流管理 -->
+    <g transform="translate(590, 295)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#22c55e"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">物流管理域</text>
+      <g font-size="11" fill="#333">
+        <rect x="0" y="38" width="75" height="22" rx="4" fill="#dcfce7"/><text x="37.5" y="52" text-anchor="middle">配送管理</text>
+        <rect x="85" y="38" width="75" height="22" rx="4" fill="#dcfce7"/><text x="122.5" y="52" text-anchor="middle">运费计算</text>
+        <rect x="0" y="65" width="75" height="22" rx="4" fill="#dcfce7"/><text x="37.5" y="79" text-anchor="middle">轨迹跟踪</text>
+        <rect x="85" y="65" width="75" height="22" rx="4" fill="#dcfce7"/><text x="122.5" y="79" text-anchor="middle">时效保障</text>
+        <rect x="0" y="92" width="75" height="22" rx="4" fill="#dcfce7"/><text x="37.5" y="106" text-anchor="middle">调配优化</text>
+        <rect x="85" y="92" width="75" height="22" rx="4" fill="#dcfce7"/><text x="122.5" y="106" text-anchor="middle">成本控制</text>
+      </g>
+    </g>
+
+    <!-- 域 5: 营销管理 -->
+    <g transform="translate(770, 295)">
+      <rect x="0" y="0" width="170" height="30" rx="6" fill="#f97316"/>
+      <text x="85" y="20" font-size="13" fill="white" text-anchor="middle" font-weight="bold">营销管理域</text>
+      <g font-size="11" fill="#333">
+        <rect x="0" y="38" width="75" height="22" rx="4" fill="#ffedd5"/><text x="37.5" y="52" text-anchor="middle">活动策划</text>
+        <rect x="85" y="38" width="75" height="22" rx="4" fill="#ffedd5"/><text x="122.5" y="52" text-anchor="middle">券发放</text>
+        <rect x="0" y="65" width="75" height="22" rx="4" fill="#ffedd5"/><text x="37.5" y="79" text-anchor="middle">推荐引擎</text>
+        <rect x="85" y="65" width="75" height="22" rx="4" fill="#ffedd5"/><text x="122.5" y="79" text-anchor="middle">画像构建</text>
+        <rect x="0" y="92" width="75" height="22" rx="4" fill="#ffedd5"/><text x="37.5" y="106" text-anchor="middle">效果分析</text>
+        <rect x="85" y="92" width="75" height="22" rx="4" fill="#ffedd5"/><text x="122.5" y="106" text-anchor="middle">渠道投放</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 箭头 2 -->
+  <g>
+    <path d="M500,465 L500,495" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="510" y="480" font-size="12" fill="#666" font-weight="bold">能力域分解</text>
+  </g>
+
+  <!-- ================== 第三层：业务对象层（调整高度防止元素超出） ================== -->
+  <g id="layer3">
+    <rect x="20" y="505" width="960" height="200" rx="15" ry="15" fill="#f5f3ff" stroke="#a78bfa" stroke-width="2"/>
+    <text x="40" y="530" font-size="18" font-weight="bold" fill="#7c3aed">业务对象层 (Business Object Layer)</text>
+
+    <!-- 第一行 - 5个实体 -->
+    <g transform="translate(50, 550)" font-size="11" fill="#333">
+
+      <!-- 用户实体 -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">用户实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="26" y="14" text-anchor="middle">User</text>
+          <rect x="60" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="86" y="14" text-anchor="middle">Profile</text>
+          <rect x="120" y="0" width="55" height="22" rx="4" fill="#e0e7ff"/><text x="147.5" y="14" text-anchor="middle">Auth</text>
+        </g>
+      </g>
+
+      <!-- 商品实体 -->
+      <g transform="translate(195, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">商品实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="26" y="14" text-anchor="middle">Product</text>
+          <rect x="60" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="86" y="14" text-anchor="middle">Category</text>
+          <rect x="120" y="0" width="55" height="22" rx="4" fill="#e0e7ff"/><text x="147.5" y="14" text-anchor="middle">SKU</text>
+        </g>
+      </g>
+
+      <!-- 订单实体 -->
+      <g transform="translate(390, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">订单实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="26" y="14" text-anchor="middle">Order</text>
+          <rect x="60" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="86" y="14" text-anchor="middle">Item</text>
+          <rect x="120" y="0" width="55" height="22" rx="4" fill="#e0e7ff"/><text x="147.5" y="14" text-anchor="middle">Status</text>
+        </g>
+      </g>
+
+      <!-- 支付实体 -->
+      <g transform="translate(585, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">支付实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="80" height="22" rx="4" fill="#e0e7ff"/><text x="40" y="14" text-anchor="middle">Payment</text>
+          <rect x="90" y="0" width="85" height="22" rx="4" fill="#e0e7ff"/><text x="132.5" y="14" text-anchor="middle">Transaction</text>
+        </g>
+      </g>
+
+      <!-- 物流实体 -->
+      <g transform="translate(780, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">物流实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="80" height="22" rx="4" fill="#e0e7ff"/><text x="40" y="14" text-anchor="middle">Logistics</text>
+          <rect x="90" y="0" width="85" height="22" rx="4" fill="#e0e7ff"/><text x="132.5" y="14" text-anchor="middle">Shipping</text>
+        </g>
+      </g>
+
+    </g>
+
+    <!-- 第二行 - 5个实体 -->
+    <g transform="translate(50, 660)" font-size="11" fill="#333">
+
+      <!-- 库存实体 -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">库存实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="26" y="14" text-anchor="middle">Stock</text>
+          <rect x="60" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="86" y="14" text-anchor="middle">Warehouse</text>
+          <rect x="120" y="0" width="55" height="22" rx="4" fill="#e0e7ff"/><text x="147.5" y="14" text-anchor="middle">Alert</text>
+        </g>
+      </g>
+
+      <!-- 促销实体 -->
+      <g transform="translate(195, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">促销实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="26" y="14" text-anchor="middle">Coupon</text>
+          <rect x="60" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="86" y="14" text-anchor="middle">Discount</text>
+          <rect x="120" y="0" width="55" height="22" rx="4" fill="#e0e7ff"/><text x="147.5" y="14" text-anchor="middle">Rule</text>
+        </g>
+      </g>
+
+      <!-- 评价实体 -->
+      <g transform="translate(390, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">评价实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="26" y="14" text-anchor="middle">Review</text>
+          <rect x="60" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="86" y="14" text-anchor="middle">Rating</text>
+          <rect x="120" y="0" width="55" height="22" rx="4" fill="#e0e7ff"/><text x="147.5" y="14" text-anchor="middle">Comment</text>
+        </g>
+      </g>
+
+      <!-- 消息实体 -->
+      <g transform="translate(585, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">消息实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="26" y="14" text-anchor="middle">Message</text>
+          <rect x="60" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="86" y="14" text-anchor="middle">Notification</text>
+          <rect x="120" y="0" width="55" height="22" rx="4" fill="#e0e7ff"/><text x="147.5" y="14" text-anchor="middle">Template</text>
+        </g>
+      </g>
+
+      <!-- 权限实体 -->
+      <g transform="translate(780, 0)">
+        <rect x="0" y="0" width="175" height="28" rx="6" fill="#6366f1"/>
+        <text x="87.5" y="19" font-size="13" fill="white" text-anchor="middle" font-weight="bold">权限实体</text>
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="26" y="14" text-anchor="middle">Role</text>
+          <rect x="60" y="0" width="52" height="22" rx="4" fill="#e0e7ff"/><text x="86" y="14" text-anchor="middle">Permission</text>
+          <rect x="120" y="0" width="55" height="22" rx="4" fill="#e0e7ff"/><text x="147.5" y="14" text-anchor="middle">Resource</text>
+        </g>
+      </g>
+
+    </g>
+
+  </g>
+
+  <!-- 底部说明 -->
+  <text x="500" y="785" font-size="14" fill="#666" text-anchor="middle">业务架构分层设计：场景层 → 能力层 → 对象层</text>
+
+</svg>

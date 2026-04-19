@@ -1,5 +1,5 @@
 ---
-name: prototype-design
+name: prototype-design-html
 description: 原型设计 Skill。根据需求文档生成可交互的 HTML 原型，包含界面设计、交互逻辑验证。当用户提到原型设计、界面设计、HTML原型时触发。
 ---
 

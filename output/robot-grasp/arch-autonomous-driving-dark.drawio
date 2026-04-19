@@ -1,0 +1,137 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="自动驾驶架构图" id="0">
+    <mxGraphModel dx="1828" dy="1075" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="1100" width="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#ffffff;" value="自动驾驶系统架构图" vertex="1">
+          <mxGeometry height="30" width="300" x="400" y="20" as="geometry" />
+        </mxCell>
+        <!-- ① 传感器层 -->
+        <mxCell id="layer1_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#e74c3c;" value="① 传感器层" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="70" width="900" x="100" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="camera" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="摄像头" vertex="1">
+          <mxGeometry height="40" width="140" x="116" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="lidar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="激光雷达" vertex="1">
+          <mxGeometry height="40" width="140" x="272" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="radar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f39c12;strokeColor=#f39c12;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="毫米波雷达" vertex="1">
+          <mxGeometry height="40" width="140" x="428" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="gps" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="GPS / IMU" vertex="1">
+          <mxGeometry height="40" width="140" x="584" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ultrasonic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9b59b6;strokeWidth=0;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="超声波" vertex="1">
+          <mxGeometry height="40" width="140" x="740" y="95" as="geometry" />
+        </mxCell>
+        <!-- ② 感知层 -->
+        <mxCell id="layer2_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#e67e22;" value="② 感知层" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="100" width="900" x="100" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="perception1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e74c3c;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="目标检测&#xa;────────────────&#xa;车辆/行人/障碍物检测" vertex="1">
+          <mxGeometry height="75" width="180" x="136" y="217" as="geometry" />
+        </mxCell>
+        <mxCell id="perception2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e67e22;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="车道线检测&#xa;────────────────&#xa;车道保持/边缘检测" vertex="1">
+          <mxGeometry height="75" width="180" x="352" y="217" as="geometry" />
+        </mxCell>
+        <mxCell id="perception3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#f39c12;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="交通标志识别&#xa;────────────────&#xa;红绿灯/限速标志" vertex="1">
+          <mxGeometry height="75" width="180" x="568" y="217" as="geometry" />
+        </mxCell>
+        <mxCell id="perception4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="可行驶区域分割&#xa;────────────────&#xa;语义分割/实例分割" vertex="1">
+          <mxGeometry height="75" width="180" x="784" y="217" as="geometry" />
+        </mxCell>
+        <!-- ③ 定位与地图 -->
+        <mxCell id="layer3_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#f39c12;" value="③ 定位与地图" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="80" width="900" x="100" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="loc1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#f39c12;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="高精地图 HD Map&#xa;────────────────&#xa;厘米级精度/道路拓扑" vertex="1">
+          <mxGeometry height="60" width="280" x="115" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="loc2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="SLAM / 视觉里程计&#xa;────────────────&#xa;实时定位/环境建图" vertex="1">
+          <mxGeometry height="60" width="280" x="410" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="loc3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#9b59b6;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="GPS / RTK 定位&#xa;────────────────&#xa;差分定位/绝对位置" vertex="1">
+          <mxGeometry height="60" width="280" x="705" y="370" as="geometry" />
+        </mxCell>
+        <!-- ④ 预测与规划 -->
+        <mxCell id="layer4_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#2ecc71;" value="④ 预测与规划" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="100" width="900" x="100" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="pred1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="行为预测&#xa;────────────────&#xa;行人意图/车辆轨迹预测" vertex="1">
+          <mxGeometry height="75" width="280" x="115" y="507" as="geometry" />
+        </mxCell>
+        <mxCell id="plan1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="全局路径规划&#xa;────────────────&#xa;A* / RRT算法" vertex="1">
+          <mxGeometry height="75" width="280" x="410" y="507" as="geometry" />
+        </mxCell>
+        <mxCell id="plan2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#9b59b6;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="局部运动规划&#xa;────────────────&#xa;Lattice / EM Planner" vertex="1">
+          <mxGeometry height="75" width="280" x="705" y="507" as="geometry" />
+        </mxCell>
+        <!-- ⑤ 决策控制 -->
+        <mxCell id="layer5_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#3498db;" value="⑤ 决策控制" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="layer5" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="100" width="900" x="100" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="decision1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="场景理解&#xa;────────────────&#xa;状态机 / POMDP" vertex="1">
+          <mxGeometry height="75" width="280" x="115" y="662" as="geometry" />
+        </mxCell>
+        <mxCell id="control1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e67e22;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="纵向控制&#xa;────────────────&#xa;PID / MPC" vertex="1">
+          <mxGeometry height="75" width="280" x="410" y="662" as="geometry" />
+        </mxCell>
+        <mxCell id="control2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e74c3c;strokeWidth=2;fontColor=#aaaaaa;fontSize=11;fontStyle=1;align=left;spacing=8;spacingLeft=12;spacingTop=8;" value="横向控制&#xa;────────────────&#xa;LQR / Stanley" vertex="1">
+          <mxGeometry height="75" width="280" x="705" y="662" as="geometry" />
+        </mxCell>
+        <!-- ⑥ 执行层 -->
+        <mxCell id="layer6_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontStyle=1;fontColor=#9b59b6;" value="⑥ 执行层" vertex="1">
+          <mxGeometry height="20" width="100" x="100" y="785" as="geometry" />
+        </mxCell>
+        <mxCell id="layer6" parent="1" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="70" width="900" x="100" y="805" as="geometry" />
+        </mxCell>
+        <mxCell id="act1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9b59b6;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="CAN 总线" vertex="1">
+          <mxGeometry height="40" width="160" x="112" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="act2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="动力域控制" vertex="1">
+          <mxGeometry height="40" width="160" x="324" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="act3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#2ecc71;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="底盘控制" vertex="1">
+          <mxGeometry height="40" width="160" x="536" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="act4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="执行机构" vertex="1">
+          <mxGeometry height="40" width="160" x="748" y="820" as="geometry" />
+        </mxCell>
+        <!-- 核心算法和数据流 -->
+        <mxCell id="tech_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#3498db;" value="核心算法" vertex="1">
+          <mxGeometry height="20" width="320" x="700" y="905" as="geometry" />
+        </mxCell>
+        <mxCell id="tech_box" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#aaaaaa;fontSize=10;" value="● 感知算法&#xa;  BEV / Transformer / CNN&#xa;&#xa;● 定位算法&#xa;  SLAM / 视觉里程计&#xa;&#xa;● 规划算法&#xa;  A* / RRT / Lattice" vertex="1">
+          <mxGeometry height="120" width="320" x="700" y="925" as="geometry" />
+        </mxCell>
+        <mxCell id="data_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#e67e22;" value="数据流" vertex="1">
+          <mxGeometry height="20" width="380" x="80" y="905" as="geometry" />
+        </mxCell>
+        <mxCell id="data_box" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;fontColor=#aaaaaa;fontSize=10;" value="传感器 → 感知 → 定位 → 预测 → 规划 → 控制 → 执行&#xa;&#xa;核心模块：感知融合 + 场景理解 + 轨迹优化 + 反馈控制&#xa;&#xa;安全机制：冗余设计 + 故障检测 + 安全停车" vertex="1">
+          <mxGeometry height="100" width="380" x="80" y="925" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

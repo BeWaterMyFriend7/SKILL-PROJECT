@@ -1,0 +1,410 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 前端蓝色渐变 -->
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2979ff"/>
+      <stop offset="100%" stop-color="#2962ff"/>
+    </linearGradient>
+    <linearGradient id="blueLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#448aff"/>
+      <stop offset="100%" stop-color="#2979ff"/>
+    </linearGradient>
+    
+    <!-- 后端绿色渐变 -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00c853"/>
+      <stop offset="100%" stop-color="#00b248"/>
+    </linearGradient>
+    <linearGradient id="greenLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#69f0ae"/>
+      <stop offset="100%" stop-color="#00c853"/>
+    </linearGradient>
+    
+    <!-- 外部系统黄色/橙色渐变 -->
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffab00"/>
+      <stop offset="100%" stop-color="#ff9100"/>
+    </linearGradient>
+    <linearGradient id="yellowLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd740"/>
+      <stop offset="100%" stop-color="#ffab00"/>
+    </linearGradient>
+    
+    <!-- 网关红色渐变 -->
+    <linearGradient id="gatewayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff1744"/>
+      <stop offset="100%" stop-color="#f50057"/>
+    </linearGradient>
+    
+    <!-- 阴影滤镜 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- 箭头标记 -->
+    <marker id="arrowBlue" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <path d="M 0 0 L 12 4 L 0 8 L 3 4 Z" fill="#2979ff"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <path d="M 0 0 L 12 4 L 0 8 L 3 4 Z" fill="#00c853"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <path d="M 0 0 L 12 4 L 0 8 L 3 4 Z" fill="#ff9100"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1200" height="800" fill="#fafafa"/>
+  
+  <!-- ==================== 标题 ==================== -->
+  <text x="600" y="30" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="bold" fill="#212121">应用架构图设计案例</text>
+  
+  <!-- ==================== 前端应用层 ==================== -->
+  <g id="frontend-layer" transform="translate(30, 60)">
+    <!-- 外框 -->
+    <rect x="0" y="0" width="260" height="680" rx="12" fill="#e3f2fd" stroke="#2979ff" stroke-width="2" opacity="0.3"/>
+    <rect x="0" y="0" width="260" height="680" rx="12" fill="none" stroke="#2979ff" stroke-width="2"/>
+    <text x="20" y="30" font-family="Microsoft YaHei" font-size="16" font-weight="bold" fill="#2979ff">前端应用层</text>
+    
+    <!-- 电商Web应用 -->
+    <g transform="translate(15, 50)">
+      <rect x="0" y="0" width="230" height="120" rx="8" fill="url(#blueGrad)" stroke="#1565c0" stroke-width="1" filter="url(#shadow)"/>
+      <text x="115" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="white">电商Web应用</text>
+      
+      <rect x="15" y="40" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="60" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">React</text>
+      
+      <rect x="125" y="40" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="170" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">TypeScript</text>
+      
+      <rect x="15" y="80" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="60" y="100" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">Antd</text>
+      
+      <rect x="125" y="80" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="170" y="100" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">Vite</text>
+    </g>
+    
+    <!-- 移动端应用 -->
+    <g transform="translate(15, 190)">
+      <rect x="0" y="0" width="230" height="120" rx="8" fill="url(#blueGrad)" stroke="#1565c0" stroke-width="1" filter="url(#shadow)"/>
+      <text x="115" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="white">移动端应用</text>
+      
+      <rect x="15" y="40" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="60" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">Flutter</text>
+      
+      <rect x="125" y="40" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="170" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">Dart</text>
+      
+      <rect x="15" y="80" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="60" y="100" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">原生</text>
+      
+      <rect x="125" y="80" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="170" y="100" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">跨平台</text>
+    </g>
+    
+    <!-- 管理后台系统 -->
+    <g transform="translate(15, 330)">
+      <rect x="0" y="0" width="230" height="120" rx="8" fill="url(#blueGrad)" stroke="#1565c0" stroke-width="1" filter="url(#shadow)"/>
+      <text x="115" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="white">管理后台系统</text>
+      
+      <rect x="15" y="40" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="60" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">Vue3</text>
+      
+      <rect x="125" y="40" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="170" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">Element</text>
+      
+      <rect x="15" y="80" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="60" y="100" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">Pinia</text>
+      
+      <rect x="125" y="80" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="170" y="100" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">权限管理</text>
+    </g>
+    
+    <!-- 微信小程序 -->
+    <g transform="translate(15, 470)">
+      <rect x="0" y="0" width="230" height="140" rx="8" fill="url(#blueGrad)" stroke="#1565c0" stroke-width="1" filter="url(#shadow)"/>
+      <text x="115" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="white">微信小程序</text>
+      
+      <rect x="15" y="40" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="60" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">原生开发</text>
+      
+      <rect x="125" y="40" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="170" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">云开发</text>
+      
+      <rect x="15" y="80" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="60" y="100" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">微信支付</text>
+      
+      <rect x="125" y="80" width="90" height="30" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="170" y="100" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">社交分享</text>
+    </g>
+  </g>
+  
+  <!-- ==================== API网关层 ==================== -->
+  <g id="gateway-layer" transform="translate(320, 200)">
+    <!-- 外框 -->
+    <rect x="0" y="0" width="140" height="400" rx="12" fill="#ffebee" stroke="#ff1744" stroke-width="2" opacity="0.3"/>
+    <rect x="0" y="0" width="140" height="400" rx="12" fill="none" stroke="#ff1744" stroke-width="2"/>
+    <text x="70" y="30" text-anchor="middle" font-family="Microsoft YaHei" font-size="16" font-weight="bold" fill="#ff1744">API网关</text>
+    
+    <!-- Gateway核心 -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="100" height="320" rx="10" fill="url(#gatewayGrad)" stroke="#c62828" stroke-width="1" filter="url(#shadow)"/>
+      <text x="50" y="35" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="white">Gateway</text>
+      
+      <rect x="10" y="60" width="80" height="35" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="50" y="82" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">路由转发</text>
+      
+      <rect x="10" y="105" width="80" height="35" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="50" y="127" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">身份认证</text>
+      
+      <rect x="10" y="150" width="80" height="35" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="50" y="172" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">限流熔断</text>
+      
+      <rect x="10" y="195" width="80" height="35" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="50" y="217" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">负载均衡</text>
+    </g>
+  </g>
+  
+  <!-- ==================== 后端服务层 ==================== -->
+  <g id="backend-layer" transform="translate(490, 60)">
+    <!-- 外框 -->
+    <rect x="0" y="0" width="380" height="680" rx="12" fill="#e8f5e9" stroke="#00c853" stroke-width="2" opacity="0.3"/>
+    <rect x="0" y="0" width="380" height="680" rx="12" fill="none" stroke="#00c853" stroke-width="2"/>
+    <text x="20" y="30" font-family="Microsoft YaHei" font-size="16" font-weight="bold" fill="#00c853">后端服务层</text>
+    
+    <!-- 业务服务标题 -->
+    <text x="20" y="55" font-family="Microsoft YaHei" font-size="12" fill="#2e7d32">业务服务</text>
+    
+    <!-- 用户中心 -->
+    <g transform="translate(15, 70)">
+      <rect x="0" y="0" width="170" height="90" rx="8" fill="url(#greenGrad)" stroke="#00b248" stroke-width="1" filter="url(#shadow)"/>
+      <text x="85" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">用户中心</text>
+      <rect x="10" y="35" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="50" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">User Service</text>
+      <rect x="10" y="62" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="77" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">Spring Boot</text>
+    </g>
+    
+    <!-- 商品中心 -->
+    <g transform="translate(195, 70)">
+      <rect x="0" y="0" width="170" height="90" rx="8" fill="url(#greenGrad)" stroke="#00b248" stroke-width="1" filter="url(#shadow)"/>
+      <text x="85" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">商品中心</text>
+      <rect x="10" y="35" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="50" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">Product Service</text>
+      <rect x="10" y="62" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="77" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">Spring Cloud</text>
+    </g>
+    
+    <!-- 订单中心 -->
+    <g transform="translate(15, 170)">
+      <rect x="0" y="0" width="170" height="90" rx="8" fill="url(#greenGrad)" stroke="#00b248" stroke-width="1" filter="url(#shadow)"/>
+      <text x="85" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">订单中心</text>
+      <rect x="10" y="35" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="50" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">Order Service</text>
+      <rect x="10" y="62" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="77" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">事务一致性</text>
+    </g>
+    
+    <!-- 支付中心 -->
+    <g transform="translate(195, 170)">
+      <rect x="0" y="0" width="170" height="90" rx="8" fill="url(#greenGrad)" stroke="#00b248" stroke-width="1" filter="url(#shadow)"/>
+      <text x="85" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">支付中心</text>
+      <rect x="10" y="35" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="50" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">Payment Service</text>
+      <rect x="10" y="62" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="77" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">安全加密</text>
+    </g>
+    
+    <!-- 通知中心 -->
+    <g transform="translate(15, 270)">
+      <rect x="0" y="0" width="170" height="90" rx="8" fill="url(#greenGrad)" stroke="#00b248" stroke-width="1" filter="url(#shadow)"/>
+      <text x="85" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">通知中心</text>
+      <rect x="10" y="35" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="50" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">Notification</text>
+      <rect x="10" y="62" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="77" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">消息队列</text>
+    </g>
+    
+    <!-- 中间件 - 调整为与通知中心一致的绿色 -->
+    <g transform="translate(195, 270)">
+      <rect x="0" y="0" width="170" height="90" rx="8" fill="url(#greenGrad)" stroke="#00b248" stroke-width="1" filter="url(#shadow)"/>
+      <text x="85" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">中间件</text>
+      <rect x="10" y="35" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="50" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">Redis &amp; RocketMQ</text>
+      <rect x="10" y="62" width="150" height="22" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="85" y="77" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">Elasticsearch · Nacos</text>
+    </g>
+    
+    <!-- 数据存储标题 -->
+    <text x="20" y="385" font-family="Microsoft YaHei" font-size="12" fill="#2e7d32">数据存储</text>
+    
+    <!-- 数据存储层 -->
+    <g transform="translate(15, 400)">
+      <rect x="0" y="0" width="350" height="260" rx="8" fill="url(#greenGrad)" stroke="#00b248" stroke-width="1" filter="url(#shadow)"/>
+      <text x="175" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="14" font-weight="bold" fill="white">数据存储层</text>
+      
+      <!-- MySQL -->
+      <rect x="15" y="40" width="150" height="55" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="90" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white" font-weight="bold">MySQL主从集群</text>
+      <text x="90" y="80" text-anchor="middle" font-family="Microsoft YaHei" font-size="10" fill="rgba(255,255,255,0.9)">用户 · 商品数据</text>
+      
+      <!-- TiDB -->
+      <rect x="185" y="40" width="150" height="55" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="260" y="60" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white" font-weight="bold">TiDB分布式</text>
+      <text x="260" y="80" text-anchor="middle" font-family="Microsoft YaHei" font-size="10" fill="rgba(255,255,255,0.9)">订单 · 交易数据</text>
+      
+      <!-- MongoDB -->
+      <rect x="15" y="105" width="150" height="55" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="90" y="125" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white" font-weight="bold">MongoDB</text>
+      <text x="90" y="145" text-anchor="middle" font-family="Microsoft YaHei" font-size="10" fill="rgba(255,255,255,0.9)">日志 · 文档</text>
+      
+      <!-- ClickHouse -->
+      <rect x="185" y="105" width="150" height="55" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="260" y="125" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white" font-weight="bold">ClickHouse</text>
+      <text x="260" y="145" text-anchor="middle" font-family="Microsoft YaHei" font-size="10" fill="rgba(255,255,255,0.9)">数据分析 · BI</text>
+      
+      <!-- MinIO -->
+      <rect x="15" y="170" width="320" height="75" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="175" y="195" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white" font-weight="bold">MinIO对象存储 - 文件 · 图片 · 视频</text>
+      <text x="175" y="220" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="rgba(255,255,255,0.9)">分布式文件存储系统</text>
+    </g>
+  </g>
+  
+  <!-- ==================== 外部系统层 ==================== -->
+  <g id="external-layer" transform="translate(900, 60)">
+    <!-- 外框 -->
+    <rect x="0" y="0" width="270" height="680" rx="12" fill="#fff3e0" stroke="#ff9100" stroke-width="2" opacity="0.3"/>
+    <rect x="0" y="0" width="270" height="680" rx="12" fill="none" stroke="#ff9100" stroke-width="2"/>
+    <text x="20" y="30" font-family="Microsoft YaHei" font-size="16" font-weight="bold" fill="#ff6f00">外部系统层</text>
+    
+    <!-- 第三方支付平台 -->
+    <g transform="translate(15, 50)">
+      <rect x="0" y="0" width="240" height="100" rx="8" fill="url(#yellowGrad)" stroke="#ff6f00" stroke-width="1" filter="url(#shadow)"/>
+      <text x="120" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">第三方支付平台</text>
+      
+      <rect x="15" y="40" width="100" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="65" y="55" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">支付宝</text>
+      
+      <rect x="125" y="40" width="100" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="175" y="55" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">微信支付</text>
+      
+      <rect x="15" y="70" width="210" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="120" y="85" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">银联 · 云闪付 · Apple Pay</text>
+    </g>
+    
+    <!-- 物流配送平台 -->
+    <g transform="translate(15, 170)">
+      <rect x="0" y="0" width="240" height="100" rx="8" fill="url(#yellowGrad)" stroke="#ff6f00" stroke-width="1" filter="url(#shadow)"/>
+      <text x="120" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">物流配送平台</text>
+      
+      <rect x="15" y="40" width="100" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="65" y="55" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">顺丰速运</text>
+      
+      <rect x="125" y="40" width="100" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="175" y="55" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">菜鸟网络</text>
+      
+      <rect x="15" y="70" width="210" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="120" y="85" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">圆通 · 韵达 · 中通 · 申通</text>
+    </g>
+    
+    <!-- 短信通知平台 -->
+    <g transform="translate(15, 290)">
+      <rect x="0" y="0" width="240" height="100" rx="8" fill="url(#yellowGrad)" stroke="#ff6f00" stroke-width="1" filter="url(#shadow)"/>
+      <text x="120" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">短信通知平台</text>
+      
+      <rect x="15" y="40" width="100" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="65" y="55" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">阿里云</text>
+      
+      <rect x="125" y="40" width="100" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="175" y="55" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">腾讯云</text>
+      
+      <rect x="15" y="70" width="210" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="120" y="85" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">华为云 · 网易云信</text>
+    </g>
+    
+    <!-- AI推荐引擎 -->
+    <g transform="translate(15, 410)">
+      <rect x="0" y="0" width="240" height="100" rx="8" fill="url(#yellowGrad)" stroke="#ff6f00" stroke-width="1" filter="url(#shadow)"/>
+      <text x="120" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">AI推荐引擎</text>
+      
+      <rect x="15" y="40" width="100" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="65" y="55" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">机器学习</text>
+      
+      <rect x="125" y="40" width="100" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="175" y="55" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">深度学习</text>
+      
+      <rect x="15" y="70" width="210" height="22" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="120" y="85" text-anchor="middle" font-family="Microsoft YaHei" font-size="11" fill="white">个性化推荐 · 智能搜索</text>
+    </g>
+    
+    <!-- 监控运维平台 -->
+    <g transform="translate(15, 530)">
+      <rect x="0" y="0" width="240" height="100" rx="8" fill="url(#yellowGrad)" stroke="#ff6f00" stroke-width="1" filter="url(#shadow)"/>
+      <text x="120" y="25" text-anchor="middle" font-family="Microsoft YaHei" font-size="13" font-weight="bold" fill="white">监控运维平台</text>
+      
+      <rect x="15" y="50" width="100" height="35" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="65" y="72" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">Prometheus</text>
+      
+      <rect x="125" y="50" width="100" height="35" rx="3" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="175" y="72" text-anchor="middle" font-family="Microsoft YaHei" font-size="12" fill="white">Grafana</text>
+    </g>
+  </g>
+  
+  <!-- ==================== 连接线 ==================== -->
+  <g id="connections">
+    <!-- 前端到网关 -->
+    <g fill="none" marker-end="url(#arrowBlue)">
+      <path d="M 290 170 L 320 170" stroke="#2979ff" stroke-width="2"/>
+      <text x="305" y="160" font-family="Microsoft YaHei" font-size="10" fill="#2979ff">HTTP</text>
+      
+      <path d="M 290 250 L 320 250" stroke="#2979ff" stroke-width="2"/>
+      <text x="305" y="240" font-family="Microsoft YaHei" font-size="10" fill="#2979ff">API</text>
+      
+      <path d="M 290 390 L 320 390" stroke="#2979ff" stroke-width="2"/>
+      <text x="305" y="380" font-family="Microsoft YaHei" font-size="10" fill="#2979ff">REST</text>
+      
+      <path d="M 290 570 L 320 570" stroke="#2979ff" stroke-width="2"/>
+      <text x="305" y="560" font-family="Microsoft YaHei" font-size="10" fill="#2979ff">WebSocket</text>
+    </g>
+    
+    <!-- 网关到后端 -->
+    <g fill="none" marker-end="url(#arrowGreen)">
+      <path d="M 460 400 L 490 400" stroke="#00c853" stroke-width="2"/>
+      <text x="475" y="390" font-family="Microsoft YaHei" font-size="10" fill="#00c853">负载均衡</text>
+    </g>
+    
+    <!-- 后端到外部系统 -->
+    <g fill="none" marker-end="url(#arrowOrange)">
+      <path d="M 870 115 L 900 115" stroke="#ff9100" stroke-width="2"/>
+      <path d="M 870 220 L 900 220" stroke="#ff9100" stroke-width="2"/>
+      <path d="M 870 340 L 900 340" stroke="#ff9100" stroke-width="2"/>
+      <path d="M 870 460 L 900 460" stroke="#ff9100" stroke-width="2"/>
+      <path d="M 870 580 L 900 580" stroke="#ff9100" stroke-width="2"/>
+      
+      <text x="885" y="200" font-family="Microsoft YaHei" font-size="10" fill="#ff6f00" transform="rotate(-90 885 200)">第三方调用</text>
+    </g>
+  </g>
+  
+  <!-- ==================== 图例 ==================== -->
+  <g id="legend" transform="translate(30, 760)">
+    <rect x="0" y="0" width="500" height="30" rx="5" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="10" y="20" font-family="Microsoft YaHei" font-size="12" fill="#424242">调用链路：</text>
+    
+    <!-- 前端应用 -->
+    <line x1="80" y1="15" x2="110" y2="15" stroke="#2979ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+    <text x="115" y="20" font-family="Microsoft YaHei" font-size="12" fill="#2979ff">前端应用</text>
+    
+    <!-- API网关 -->
+    <line x1="190" y1="15" x2="220" y2="15" stroke="#00c853" stroke-width="2" marker-end="url(#arrowGreen)"/>
+    <text x="225" y="20" font-family="Microsoft YaHei" font-size="12" fill="#00c853">API网关</text>
+    
+    <!-- 后端服务 -->
+    <line x1="300" y1="15" x2="330" y2="15" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowGreen)"/>
+    <text x="335" y="20" font-family="Microsoft YaHei" font-size="12" fill="#2e7d32">后端服务</text>
+    
+    <!-- 外部系统 -->
+    <line x1="410" y1="15" x2="440" y2="15" stroke="#ff6f00" stroke-width="2" marker-end="url(#arrowOrange)"/>
+    <text x="445" y="20" font-family="Microsoft YaHei" font-size="12" fill="#ff6f00">外部系统</text>
+  </g>
+  
+</svg>

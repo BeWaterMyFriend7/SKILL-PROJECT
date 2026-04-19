@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="上传文件弹窗">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" pageWidth="500" pageHeight="400">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        
+        <!-- 弹窗背景 -->
+        <mxCell id="modal-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;shadow=1;fillOpacity=100;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="400" height="300" as="geometry"/>
+        </mxCell>
+        
+        <!-- 标题栏背景 -->
+        <mxCell id="title-bar" value="" style="rounded=1;whiteSpace=wrap=1;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="400" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- 标题 -->
+        <mxCell id="title" value="上传文件" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;routed=0;fontSize=16;fontStyle=1;fontColor=#333333;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="360" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- 关闭按钮 -->
+        <mxCell id="close-btn" value="✕" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;routed=0;fontSize=16;fontColor=#999999;cursor=pointer;" vertex="1" parent="1">
+          <mxGeometry x="420" y="55" width="30" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- 上传区域虚线框 -->
+        <mxCell id="drop-zone" value="" style="rounded=1;dashed=1;dashed=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#3498db;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="340" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- 上传图标 -->
+        <mxCell id="upload-icon" value="⬆️" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;routed=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="210" y="130" width="80" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- 上传文字 -->
+        <mxCell id="upload-text" value="点击或拖拽文件到此处上传" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;routed=0;fontSize=14;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="175" width="340" height="25" as="geometry"/>
+        </mxCell>
+        
+        <!-- 支持格式 -->
+        <mxCell id="format-text" value="支持 PDF、Word、Excel、图片等文件" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;routed=0;fontSize=12;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="340" height="20" as="geometry"/>
+        </mxCell>
+        
+        <!-- 已上传文件标题 -->
+        <mxCell id="file-list-title" value="已选择文件：" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;routed=0;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="235" width="100" height="20" as="geometry"/>
+        </mxCell>
+        
+        <!-- 文件列表项 -->
+        <mxCell id="file-item" value="📄 测试文件.pdf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f0f0f0;strokeWidth=1;fontColor=#333333;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="260" width="280" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- 删除文件按钮 -->
+        <mxCell id="remove-btn" value="✕" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;routed=0;fontSize=12;fontColor=#999999;cursor=pointer;" vertex="1" parent="1">
+          <mxGeometry x="365" y="265" width="20" height="20" as="geometry"/>
+        </mxCell>
+        
+        <!-- 文件大小 -->
+        <mxCell id="file-size" value="2.5 MB" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;routed=0;fontSize=11;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="290" y="265" width="70" height="20" as="geometry"/>
+        </mxCell>
+        
+        <!-- 按钮组背景 -->
+        <mxCell id="btn-group" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#f0f0f0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="310" width="400" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- 取消按钮 -->
+        <mxCell id="cancel-btn" value="取消" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;fontColor=#666666;fontSize=13;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="315" width="80" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- 上传按钮 -->
+        <mxCell id="upload-btn" value="确认上传" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;strokeWidth=1;fontColor=#ffffff;fontSize=13;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="315" width="80" height="30" as="geometry"/>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,263 @@
+<svg viewBox="0 0 1200 850" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#eab308;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#64748b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#94a3b8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 阴影滤镜 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+    
+    <!-- 箭头标记定义 -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1200" height="850" fill="#fafafa"/>
+  
+  <!-- 标题 -->
+  <text x="600" y="35" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="bold" fill="#1f2937">系统架构图设计案例</text>
+  
+  <!-- ========== 表现层 (Presentation Layer) ========== -->
+  <g transform="translate(0, 55)">
+    <!-- 层标题 -->
+    <text x="20" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="#6366f1">表现层 (Presentation Layer)</text>
+    
+    <!-- 外框 -->
+    <rect x="20" y="25" width="1160" height="110" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    
+    <!-- 模块组 -->
+    <g transform="translate(40, 40)">
+      <!-- Web前端 -->
+      <rect x="0" y="0" width="180" height="35" rx="8" fill="url(#grad1)" filter="url(#shadow)"/>
+      <text x="90" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">Web前端</text>
+      <rect x="0" y="42" width="180" height="28" rx="6" fill="#dbeafe"/>
+      <text x="90" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1e40af">React 18 · TypeScript</text>
+      
+      <!-- 移动端 -->
+      <rect x="220" y="0" width="180" height="35" rx="8" fill="url(#grad1)" filter="url(#shadow)"/>
+      <text x="310" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">移动端</text>
+      <rect x="220" y="42" width="180" height="28" rx="6" fill="#dbeafe"/>
+      <text x="310" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1e40af">React Native · Flutter</text>
+      
+      <!-- 小程序 -->
+      <rect x="440" y="0" width="180" height="35" rx="8" fill="url(#grad1)" filter="url(#shadow)"/>
+      <text x="530" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">小程序</text>
+      <rect x="440" y="42" width="180" height="28" rx="6" fill="#dbeafe"/>
+      <text x="530" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1e40af">微信 · Taro/UniApp</text>
+      
+      <!-- 管理后台 -->
+      <rect x="660" y="0" width="180" height="35" rx="8" fill="url(#grad1)" filter="url(#shadow)"/>
+      <text x="750" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">管理后台</text>
+      <rect x="660" y="42" width="180" height="28" rx="6" fill="#dbeafe"/>
+      <text x="750" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1e40af">Vue 3 · Element Plus</text>
+      
+      <!-- API文档 -->
+      <rect x="880" y="0" width="180" height="35" rx="8" fill="url(#grad1)" filter="url(#shadow)"/>
+      <text x="970" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">API文档</text>
+      <rect x="880" y="42" width="180" height="28" rx="6" fill="#dbeafe"/>
+      <text x="970" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1e40af">Swagger · Postman</text>
+    </g>
+  </g>
+  
+  <!-- 连接线：表现层 -> 网关层 -->
+  <g transform="translate(600, 190)">
+    <line x1="0" y1="0" x2="0" y2="30" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="10" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b7280">请求路由</text>
+  </g>
+  
+  <!-- ========== 网关层 (Gateway Layer) ========== -->
+  <g transform="translate(0, 220)">
+    <!-- 层标题 -->
+    <text x="20" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="#ef4444">网关层 (Gateway Layer)</text>
+    
+    <!-- 外框 -->
+    <rect x="20" y="25" width="1160" height="70" rx="12" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    
+    <!-- 模块组 -->
+    <g transform="translate(140, 42)">
+      <!-- API Gateway -->
+      <rect x="0" y="0" width="160" height="35" rx="8" fill="url(#grad2)" filter="url(#shadow)"/>
+      <text x="80" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">API Gateway</text>
+      
+      <!-- 负载均衡 -->
+      <rect x="200" y="0" width="160" height="35" rx="8" fill="url(#grad2)" filter="url(#shadow)"/>
+      <text x="280" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">负载均衡</text>
+      
+      <!-- 限流熔断 -->
+      <rect x="400" y="0" width="160" height="35" rx="8" fill="url(#grad2)" filter="url(#shadow)"/>
+      <text x="480" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">限流熔断</text>
+      
+      <!-- 安全认证 -->
+      <rect x="600" y="0" width="160" height="35" rx="8" fill="url(#grad2)" filter="url(#shadow)"/>
+      <text x="680" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">安全认证</text>
+    </g>
+  </g>
+  
+  <!-- 连接线：网关层 -> 应用层 -->
+  <g transform="translate(600, 315)">
+    <line x1="0" y1="0" x2="0" y2="30" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="10" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b7280">业务处理</text>
+  </g>
+  
+  <!-- ========== 应用层 (Application Layer) ========== -->
+  <g transform="translate(0, 345)">
+    <!-- 层标题 -->
+    <text x="20" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="#22c55e">应用层 (Application Layer)</text>
+    
+    <!-- 外框 -->
+    <rect x="20" y="25" width="1160" height="110" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    
+    <!-- 模块组 -->
+    <g transform="translate(40, 40)">
+      <!-- 业务服务 -->
+      <rect x="0" y="0" width="180" height="35" rx="8" fill="url(#grad3)" filter="url(#shadow)"/>
+      <text x="90" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">业务服务</text>
+      <rect x="0" y="42" width="180" height="28" rx="6" fill="#dcfce7"/>
+      <text x="90" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#166534">Spring Boot · Java 17</text>
+      
+      <!-- 服务治理 -->
+      <rect x="220" y="0" width="180" height="35" rx="8" fill="url(#grad4)" filter="url(#shadow)"/>
+      <text x="310" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">服务治理</text>
+      <rect x="220" y="42" width="180" height="28" rx="6" fill="#fef3c7"/>
+      <text x="310" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#92400e">Nacos · Sentinel</text>
+      
+      <!-- 缓存层 -->
+      <rect x="440" y="0" width="180" height="35" rx="8" fill="url(#grad5)" filter="url(#shadow)"/>
+      <text x="530" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">缓存层</text>
+      <rect x="440" y="42" width="180" height="28" rx="6" fill="#f3e8ff"/>
+      <text x="530" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b21a8">Redis 7.0 · Redisson</text>
+      
+      <!-- 消息队列 -->
+      <rect x="660" y="0" width="180" height="35" rx="8" fill="url(#grad2)" filter="url(#shadow)"/>
+      <text x="750" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">消息队列</text>
+      <rect x="660" y="42" width="180" height="28" rx="6" fill="#fee2e2"/>
+      <text x="750" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#991b1b">RocketMQ · Kafka</text>
+      
+      <!-- 搜索引擎 -->
+      <rect x="880" y="0" width="180" height="35" rx="8" fill="url(#grad6)" filter="url(#shadow)"/>
+      <text x="970" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">搜索引擎</text>
+      <rect x="880" y="42" width="180" height="28" rx="6" fill="#ede9fe"/>
+      <text x="970" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#5b21b6">Elasticsearch · Solr</text>
+    </g>
+  </g>
+  
+  <!-- 连接线：应用层 -> 数据层 -->
+  <g transform="translate(600, 480)">
+    <line x1="0" y1="0" x2="0" y2="30" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="10" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b7280">数据存储</text>
+  </g>
+  
+  <!-- ========== 数据层 (Data Layer) ========== -->
+  <g transform="translate(0, 510)">
+    <!-- 层标题 -->
+    <text x="20" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="#7c3aed">数据层 (Data Layer)</text>
+    
+    <!-- 外框 -->
+    <rect x="20" y="25" width="1160" height="110" rx="12" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
+    
+    <!-- 模块组 -->
+    <g transform="translate(40, 40)">
+      <!-- 关系型数据库 -->
+      <rect x="0" y="0" width="180" height="35" rx="8" fill="url(#grad5)" filter="url(#shadow)"/>
+      <text x="90" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">关系型数据库</text>
+      <rect x="0" y="42" width="180" height="28" rx="6" fill="#f3e8ff"/>
+      <text x="90" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b21a8">MySQL 8.0</text>
+      
+      <!-- NoSQL数据库 -->
+      <rect x="220" y="0" width="180" height="35" rx="8" fill="url(#grad5)" filter="url(#shadow)"/>
+      <text x="310" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">NoSQL数据库</text>
+      <rect x="220" y="42" width="180" height="28" rx="6" fill="#f3e8ff"/>
+      <text x="310" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b21a8">MongoDB · HBase</text>
+      
+      <!-- 时序数据库 -->
+      <rect x="440" y="0" width="180" height="35" rx="8" fill="url(#grad5)" filter="url(#shadow)"/>
+      <text x="530" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">时序数据库</text>
+      <rect x="440" y="42" width="180" height="28" rx="6" fill="#f3e8ff"/>
+      <text x="530" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b21a8">InfluxDB · ClickHouse</text>
+      
+      <!-- 对象存储 -->
+      <rect x="660" y="0" width="180" height="35" rx="8" fill="url(#grad5)" filter="url(#shadow)"/>
+      <text x="750" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">对象存储</text>
+      <rect x="660" y="42" width="180" height="28" rx="6" fill="#f3e8ff"/>
+      <text x="750" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b21a8">MinIO · AWS S3</text>
+      
+      <!-- 数据仓库 -->
+      <rect x="880" y="0" width="180" height="35" rx="8" fill="url(#grad5)" filter="url(#shadow)"/>
+      <text x="970" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">数据仓库</text>
+      <rect x="880" y="42" width="180" height="28" rx="6" fill="#f3e8ff"/>
+      <text x="970" y="61" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b21a8">Hive · Spark · Flink</text>
+    </g>
+  </g>
+  
+  <!-- 连接线：数据层 -> 基础设施层 -->
+  <g transform="translate(600, 645)">
+    <line x1="0" y1="0" x2="0" y2="30" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="10" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6b7280">基础支撑</text>
+  </g>
+  
+  <!-- ========== 基础设施层 (Infrastructure Layer) ========== -->
+  <g transform="translate(0, 675)">
+    <!-- 层标题 -->
+    <text x="20" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="#374151">基础设施层 (Infrastructure Layer)</text>
+    
+    <!-- 外框 -->
+    <rect x="20" y="25" width="1160" height="70" rx="12" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+    
+    <!-- 模块组 -->
+    <g transform="translate(40, 42)">
+      <!-- 容器化 -->
+      <rect x="0" y="0" width="140" height="35" rx="8" fill="url(#grad7)" filter="url(#shadow)"/>
+      <text x="70" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">容器化</text>
+      
+      <!-- 监控告警 -->
+      <rect x="180" y="0" width="140" height="35" rx="8" fill="url(#grad7)" filter="url(#shadow)"/>
+      <text x="250" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">监控告警</text>
+      
+      <!-- 日志收集 -->
+      <rect x="360" y="0" width="140" height="35" rx="8" fill="url(#grad7)" filter="url(#shadow)"/>
+      <text x="430" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">日志收集</text>
+      
+      <!-- CI/CD -->
+      <rect x="540" y="0" width="140" height="35" rx="8" fill="url(#grad7)" filter="url(#shadow)"/>
+      <text x="610" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">CI/CD</text>
+      
+      <!-- 服务网格 -->
+      <rect x="720" y="0" width="140" height="35" rx="8" fill="url(#grad7)" filter="url(#shadow)"/>
+      <text x="790" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white">服务网格</text>
+      
+      <!-- 云平台 -->
+      <rect x="900" y="0" width="140" height="35" rx="8" fill="url(#grad7)" filter="url(#shadow)"/>
+      <text x="970" y="23" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="white">云平台</text>
+    </g>
+  </g>
+</svg>
