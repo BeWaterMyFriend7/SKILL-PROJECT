@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <!-- 箭头标记 - 深色模式 -->
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666666"/>
+    </marker>
+    <marker id="arrowhead-active" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#bb86fc"/>
+    </marker>
+    <marker id="arrowhead-return" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#03dac6"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 - 深色模式 -->
+  <rect width="800" height="500" fill="#1a1a2e"/>
+  
+  <!-- 标题 -->
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">用户登录时序图</text>
+  
+  <!-- 生命线 -->
+  <!-- 用户界面 -->
+  <line x1="150" y1="80" x2="150" y2="420" stroke="#666666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="150" y="60" text-anchor="middle" fill="#ffffff" font-size="14">用户界面</text>
+  
+  <!-- 认证服务 -->
+  <line x1="400" y1="80" x2="400" y2="420" stroke="#666666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="400" y="60" text-anchor="middle" fill="#ffffff" font-size="14">认证服务</text>
+  
+  <!-- 数据库 -->
+  <line x1="650" y1="80" x2="650" y2="420" stroke="#666666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="650" y="60" text-anchor="middle" fill="#ffffff" font-size="14">数据库</text>
+  
+  <!-- 活性条 - 使用深色模式卡片颜色 -->
+  <rect x="130" y="100" width="40" height="50" fill="#16213e" stroke="#bb86fc"/>
+  <rect x="380" y="160" width="40" height="60" fill="#16213e" stroke="#03dac6"/>
+  <rect x="630" y="230" width="40" height="50" fill="#16213e" stroke="#e67e22"/>
+  
+  <!-- 消息 -->
+  <!-- 用户点击登录 -->
+  <line x1="170" y1="125" x2="380" y2="125" stroke="#bb86fc" stroke-width="2" marker-end="url(#arrowhead-active)"/>
+  <text x="275" y="105" text-anchor="middle" fill="#ffffff" font-size="12">login(username, password)</text>
+  
+  <!-- 服务验证凭证 -->
+  <line x1="420" y1="190" x2="650" y2="190" stroke="#bb86fc" stroke-width="2" marker-end="url(#arrowhead-active)"/>
+  <text x="535" y="170" text-anchor="middle" fill="#ffffff" font-size="12">validateCredentials()</text>
+  
+  <!-- 数据库查询 -->
+  <line x1="670" y1="220" x2="630" y2="220" stroke="#bb86fc" stroke-width="2" marker-end="url(#arrowhead-return)"/>
+  <text x="650" y="200" text-anchor="middle" fill="#ffffff" font-size="12">SELECT * FROM users WHERE username=?</text>
+  
+  <!-- 返回查询结果 -->
+  <line x1="630" y1="250" x2="420" y2="250" stroke="#bb86fc" stroke-width="2" marker-end="url(#arrowhead-return)"/>
+  <text x="525" y="230" text-anchor="middle" fill="#ffffff" font-size="12">返回用户记录</text>
+  
+  <!-- 验证密码 -->
+  <line x1="420" y1="280" x2="650" y2="280" stroke="#bb86fc" stroke-width="2" marker-end="url(#arrowhead-active)"/>
+  <text x="535" y="260" text-anchor="middle" fill="#ffffff" font-size="12">verifyPassword()</text>
+  
+  <!-- 返回验证结果 -->
+  <line x1="630" y1="310" x2="420" y2="310" stroke="#bb86fc" stroke-width="2" marker-end="url(#arrowhead-return)"/>
+  <text x="525" y="290" text-anchor="middle" fill="#ffffff" font-size="12">返回验证结果</text>
+  
+  <!-- 返回登录结果 -->
+  <line x1="380" y1="340" x2="170" y2="340" stroke="#bb86fc" stroke-width="2" marker-end="url(#arrowhead-return)"/>
+  <text x="275" y="320" text-anchor="middle" fill="#ffffff" font-size="12">登录成功/失败</text>
+</svg>

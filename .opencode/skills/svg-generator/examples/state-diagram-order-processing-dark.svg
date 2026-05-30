@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <!-- 深色模式样式 -->
+    <style>
+      .state { fill: #16213e; stroke: #bb86fc; stroke-width: 2; rx: 6; }
+      .initial { fill: #bb86fc; }
+      .final { fill: none; stroke: #03dac6; stroke-width: 2; }
+      .final-inner { fill: #03dac6; }
+      .decision { fill: #16213e; stroke: #e67e22; stroke-width: 2; }
+      .text { fill: #ffffff; font-family: "Microsoft YaHei", sans-serif; }
+      .connector { stroke: #666666; stroke-width: 2; fill: none; marker-end: url(#arrowhead-dark); }
+      .decision-text { fill: #ffffff; font-size: 10px; text-anchor: middle; }
+    </style>
+    
+    <!-- 箭头标记 - 深色模式 -->
+    <marker id="arrowhead-dark" markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto">
+      <polygon points="0 0, 5 2.5, 0 5" fill="#666666"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 - 深色模式 -->
+  <rect width="800" height="600" fill="#1a1a2e"/>
+  
+  <!-- 标题 -->
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">订单处理状态流转图</text>
+  
+  <!-- 初始状态 -->
+  <circle cx="100" cy="100" r="8" class="initial"/>
+  
+  <!-- 状态 -->
+  <!-- 订单创建 -->
+  <rect x="150" y="80" width="140" height="50" rx="6" class="state"/>
+  <text x="220" y="110" text-anchor="middle" class="text">订单创建</text>
+  
+  <!-- 支付处理 -->
+  <rect x="400" y="80" width="140" height="50" rx="6" class="state"/>
+  <text x="470" y="110" text-anchor="middle" class="text">支付处理</text>
+  
+  <!-- 库存检查 -->
+  <rect x="650" y="80" width="140" height="50" rx="6" class="state"/>
+  <text x="720" y="110" text-anchor="middle" class="text">库存检查</text>
+  
+  <!-- 订单确认 -->
+  <rect x="300" y="200" width="140" height="50" rx="6" class="state"/>
+  <text x="370" y="230" text-anchor="middle" class="text">订单确认</text>
+  
+  <!-- 发货准备 -->
+  <rect x="550" y="200" width="140" height="50" rx="6" class="state"/>
+  <text x="620" y="230" text-anchor="middle" class="text">发货准备</text>
+  
+  <!-- 订单完成 -->
+  <rect x="425" y="320" width="140" height="50" rx="6" class="state"/>
+  <text x="495" y="350" text-anchor="middle" class="text">订单完成</text>
+  
+  <!-- 订单取消 -->
+  <rect x="150" y="320" width="140" height="50" rx="6" class="state"/>
+  <text x="220" y="350" text-anchor="middle" class="text">订单取消</text>
+  
+  <!-- 结束状态 -->
+  <g transform="translate(495, 440)">
+    <circle cx="0" cy="0" r="10" class="final"/>
+    <circle cx="0" cy="0" r="6" class="final-inner"/>
+  </g>
+  
+  <!-- 决策菱形 -->
+  <!-- 支付验证 -->
+  <polygon points="520,130 560,150 520,170 480,150" class="decision"/>
+  <text x="520" y="155" text-anchor="middle" class="decision-text">支付成功?</text>
+  
+  <!-- 库存充足 -->
+  <polygon points="770,130 810,150 770,170 730,150" class="decision"/>
+  <text x="770" y="155" text-anchor="middle" class="decision-text">库存充足?</text>
+  
+  <!-- 连接线 -->
+  <!-- 初始状态 -> 订单创建 -->
+  <line x1="108" y1="100" x2="150" y2="105" class="connector"/>
+  
+  <!-- 订单创建 -> 支付处理 -->
+  <line x1="290" y1="105" x2="400" y2="105" class="connector"/>
+  <text x="345" y="90" text-anchor="middle" class="text">提交订单</text>
+  
+  <!-- 支付处理 -> 支付验证 -->
+  <line x1="470" y="130" x2="520" y2="130" class="connector"/>
+  
+  <!-- 支付验证成功路径 -->
+  <line x1="560" y1="150" x2="650" y2="105" class="connector"/>
+  <text x="610" y="130" text-anchor="middle" class="text">是</text>
+  
+  <!-- 支付验证失败路径 -->
+  <line x1="520" y1="170" x2="390" y2="320" class="connector"/>
+  <text x="455" y="170" text-anchor="middle" class="text">否</text>
+  
+  <!-- 支付处理 -> 库存检查 -->
+  <line x1="540" y1="105" x2="650" y2="105" class="connector"/>
+  
+  <!-- 库存检查 -> 库存充足决策 -->
+  <line x1="790" y1="105" x2="770" y2="130" class="connector"/>
+  
+  <!-- 库存充足 -> 订单确认 -->
+  <line x1="810" y1="150" x2="440" y2="200" class="connector"/>
+  <text x="625" y="170" text-anchor="middle" class="text">是</text>
+  
+  <!-- 库存不足 -> 订单取消 -->
+  <line x1="730" y1="150" x2="220" y2="370" class="connector"/>
+  <text x="475" y="150" text-anchor="middle" class="text">否</text>
+  
+  <!-- 订单创建 -> 订单取消 -->
+  <line x1="220" y1="130" x2="220" y2="320" class="connector"/>
+  <text x="190" y="225" text-anchor="middle" class="text">用户取消</text>
+  
+  <!-- 订单确认 -> 发货准备 -->
+  <line x1="440" y1="250" x2="550" y2="225" class="connector"/>
+  
+  <!-- 发货准备 -> 订单完成 -->
+  <line x1="690" y1="225" x2="495" y2="320" class="connector"/>
+  
+  <!-- 订单完成 -> 结束状态 -->
+  <line x1="495" y1="370" x2="495" y2="430" class="connector"/>
+</svg>

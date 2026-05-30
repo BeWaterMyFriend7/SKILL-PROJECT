@@ -54,7 +54,7 @@
   </defs>
   
   <!-- 背景 -->
-  <rect width="1200" height="800" fill="#fafafa"/>
+  <rect width="1200" height="800" fill="#f8f9fa"/>
   
   <!-- ==================== 标题 ==================== -->
   <text x="600" y="30" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="bold" fill="#212121">应用架构图设计案例</text>

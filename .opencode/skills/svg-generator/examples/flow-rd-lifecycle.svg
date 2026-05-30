@@ -64,8 +64,8 @@
   
   <line x1="185" y1="215" x2="165" y2="215" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
   
-  <rect x="30" y="170" width="130" height="75" rx="5" fill="#16213e" stroke="#1abc9c" stroke-width="2"/>
-  <rect x="30" y="170" width="130" height="22" rx="5" fill="#1abc9c"/>
+  <rect x="30" y="170" width="130" height="75" rx="5" fill="#16213e" stroke="#2ecc71" stroke-width="2"/>
+  <rect x="30" y="170" width="130" height="22" rx="5" fill="#2ecc71"/>
   <text x="95" y="185" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">6. 部署发布</text>
   <text x="40" y="207" font-size="7" fill="#aaa">部署准备</text>
   <text x="40" y="219" font-size="7" fill="#aaa">生产部署</text>
@@ -74,8 +74,8 @@
   <line x1="95" y1="245" x2="95" y2="265" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
   
   <!-- 第三行: 运维 <- 迭代 -->
-  <rect x="30" y="270" width="130" height="70" rx="5" fill="#16213e" stroke="#f39c12" stroke-width="2"/>
-  <rect x="30" y="270" width="130" height="22" rx="5" fill="#f39c12"/>
+  <rect x="30" y="270" width="130" height="70" rx="5" fill="#16213e" stroke="#e67e22" stroke-width="2"/>
+  <rect x="30" y="270" width="130" height="22" rx="5" fill="#e67e22"/>
   <text x="95" y="285" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">7. 运维支持</text>
   <text x="40" y="305" font-size="7" fill="#aaa">系统监控</text>
   <text x="40" y="317" font-size="7" fill="#aaa">故障处理</text>
@@ -109,10 +109,10 @@
   <circle cx="515" cy="162" r="5" fill="#9b59b6" stroke="#fff" stroke-width="0.5"/>
   <text x="530" y="166" font-size="7" fill="#aaa">测试通过</text>
   
-  <circle cx="515" cy="180" r="5" fill="#1abc9c" stroke="#fff" stroke-width="0.5"/>
+  <circle cx="515" cy="180" r="5" fill="#2ecc71" stroke="#fff" stroke-width="0.5"/>
   <text x="530" y="184" font-size="7" fill="#aaa">上线发布</text>
   
-  <circle cx="515" cy="198" r="5" fill="#f39c12" stroke="#fff" stroke-width="0.5"/>
+  <circle cx="515" cy="198" r="5" fill="#e67e22" stroke="#fff" stroke-width="0.5"/>
   <text x="530" y="202" font-size="7" fill="#aaa">项目验收</text>
   
   <circle cx="515" cy="216" r="5" fill="#00cec9" stroke="#fff" stroke-width="0.5"/>
@@ -183,8 +183,8 @@
   <text x="347" y="480" font-size="7" fill="#aaa">UAT报告</text>
   
   <!-- 部署阶段 -->
-  <rect x="444" y="390" width="95" height="100" rx="4" fill="#1a1a2e" stroke="#1abc9c"/>
-  <text x="491" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#1abc9c">部署阶段</text>
+  <rect x="444" y="390" width="95" height="100" rx="4" fill="#1a1a2e" stroke="#2ecc71"/>
+  <text x="491" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#2ecc71">部署阶段</text>
   <text x="451" y="422" font-size="7" fill="#888">运维, 开发</text>
   <text x="451" y="435" font-size="7" fill="#666">------</text>
   <text x="451" y="447" font-size="7" fill="#aaa">部署文档</text>
@@ -193,8 +193,8 @@
   <text x="451" y="480" font-size="7" fill="#aaa">运维手册</text>
   
   <!-- 运维阶段 -->
-  <rect x="548" y="390" width="90" height="160" rx="4" fill="#1a1a2e" stroke="#f39c12"/>
-  <text x="593" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#f39c12">运维阶段</text>
+  <rect x="548" y="390" width="90" height="160" rx="4" fill="#1a1a2e" stroke="#e67e22"/>
+  <text x="593" y="405" text-anchor="middle" font-size="9" font-weight="bold" fill="#e67e22">运维阶段</text>
   <text x="555" y="422" font-size="7" fill="#888">运维, 客服</text>
   <text x="555" y="435" font-size="7" fill="#666">------</text>
   <text x="555" y="447" font-size="7" fill="#aaa">运维报告</text>

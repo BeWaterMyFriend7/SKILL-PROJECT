@@ -1,0 +1,203 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="系统架构图">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="850" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 深色背景 -->
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1200" height="850" as="geometry" />
+        </mxCell>
+
+        <!-- 标题 -->
+        <mxCell id="title" value="系统架构图设计案例" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="480" y="15" width="240" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 表现层 ========== -->
+        <mxCell id="presentation-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e2a4a;strokeColor=#6366f1;strokeWidth=2;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="20" y="55" width="1160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="presentation-layer" value="表现层 (Presentation Layer)" style="text;html=1;strokeColor=#6366f1;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#6366f1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="65" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Web前端 -->
+        <mxCell id="web-frontend" value="Web前端&#xa;━━━━━&#xa;React 18 · TypeScript" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="95" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 移动端 -->
+        <mxCell id="mobile" value="移动端&#xa;━━━━━&#xa;React Native · Flutter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="95" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 小程序 -->
+        <mxCell id="mini-program" value="小程序&#xa;━━━━━&#xa;微信 · Taro/UniApp" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="95" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 管理后台 -->
+        <mxCell id="admin" value="管理后台&#xa;━━━━━&#xa;Vue 3 · Element Plus" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="605" y="95" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- API文档 -->
+        <mxCell id="api-docs" value="API文档&#xa;━━━━━&#xa;Swagger · Postman" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="95" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 网关层 ========== -->
+        <mxCell id="gateway-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3e1a1a;strokeColor=#ef4444;strokeWidth=2;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="20" y="185" width="1160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-layer" value="网关层 (Gateway Layer)" style="text;html=1;strokeColor=#ef4444;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#ef4444;" vertex="1" parent="1">
+          <mxGeometry x="40" y="195" width="180" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway -->
+        <mxCell id="api-gateway" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="200" width="145" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 负载均衡 -->
+        <mxCell id="lb" value="负载均衡" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="200" width="145" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 限流熔断 -->
+        <mxCell id="rate-limit" value="限流熔断" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="200" width="145" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 安全认证 -->
+        <mxCell id="auth" value="安全认证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="635" y="200" width="145" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 应用层 ========== -->
+        <mxCell id="app-layer-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a3e1a;strokeColor=#22c55e;strokeWidth=2;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="20" y="275" width="1160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="app-layer" value="应用层 (Application Layer)" style="text;html=1;strokeColor=#22c55e;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#22c55e;" vertex="1" parent="1">
+          <mxGeometry x="40" y="285" width="160" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 业务服务 -->
+        <mxCell id="business-service" value="业务服务&#xa;━━━━━&#xa;Spring Boot · Java 17" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#22c55e;strokeColor=#16a34a;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="315" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 服务治理 -->
+        <mxCell id="service-governance" value="服务治理&#xa;━━━━━&#xa;Nacos · Sentinel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eab308;strokeColor=#ca8a04;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="315" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 缓存层 -->
+        <mxCell id="cache" value="缓存层&#xa;━━━━━&#xa;Redis 7.0 · Redisson" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="315" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 消息队列 -->
+        <mxCell id="mq" value="消息队列&#xa;━━━━━&#xa;RocketMQ · Kafka" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="605" y="315" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 搜索引擎 -->
+        <mxCell id="search" value="搜索引擎&#xa;━━━━━&#xa;Elasticsearch · Solr" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;strokeColor=#7c3aed;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="315" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 数据层 ========== -->
+        <mxCell id="data-layer-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a1a3e;strokeColor=#a855f7;strokeWidth=2;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="20" y="405" width="1160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="data-layer" value="数据层 (Data Layer)" style="text;html=1;strokeColor=#a855f7;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#a855f7;" vertex="1" parent="1">
+          <mxGeometry x="40" y="415" width="150" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 关系型数据库 -->
+        <mxCell id="rdbms" value="关系型数据库&#xa;━━━&#xa;MySQL 8.0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="445" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- NoSQL数据库 -->
+        <mxCell id="nosql" value="NoSQL数据库&#xa;━━━━━&#xa;MongoDB · HBase" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="445" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 时序数据库 -->
+        <mxCell id="tsdb" value="时序数据库&#xa;━━━━━&#xa;InfluxDB · ClickHouse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="445" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 对象存储 -->
+        <mxCell id="object-storage" value="对象存储&#xa;━━━��━&#xa;MinIO · AWS S3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="605" y="445" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 数据仓库 -->
+        <mxCell id="data-warehouse" value="数据仓库&#xa;━━━━━&#xa;Hive · Spark · Flink" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="445" width="165" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 基础设施层 ========== -->
+        <mxCell id="infra-layer-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a2a2e;strokeColor=#64748b;strokeWidth=2;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="20" y="535" width="1160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="infra-layer" value="基础设施层 (Infrastructure Layer)" style="text;html=1;strokeColor=#94a3b8;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#94a3b8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="545" width="240" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 容器化 -->
+        <mxCell id="container" value="容器化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="555" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 监控告警 -->
+        <mxCell id="monitoring" value="监控告警" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="555" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 日志收集 -->
+        <mxCell id="logging" value="日志收集" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="555" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- CI/CD -->
+        <mxCell id="cicd" value="CI/CD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="555" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 服务网格 -->
+        <mxCell id="service-mesh" value="服务网格" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="555" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 云平台 -->
+        <mxCell id="cloud" value="云平台" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="555" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 连接线 -->
+        <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="web-frontend" target="api-gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="conn2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="api-gateway" target="business-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="conn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="business-service" target="rdbms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="conn4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="rdbms" target="container">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

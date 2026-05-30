@@ -38,7 +38,7 @@
     </g>
     
     <g transform="translate(920, 95)">
-      <rect x="0" y="0" width="160" height="50" rx="6" fill="#1abc9c" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="160" height="50" rx="6" fill="#2ecc71" filter="url(#shadow)"/>
       <text x="80" y="30" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">客服系统</text>
     </g>
   </g>
@@ -69,7 +69,7 @@
     </g>
     
     <g transform="translate(640, 240)">
-      <rect x="0" y="0" width="180" height="115" rx="8" fill="#ffffff" stroke="#f39c12" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="180" height="115" rx="8" fill="#ffffff" stroke="#e67e22" stroke-width="2" filter="url(#shadow)"/>
       <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">订单服务</text>
       <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
       <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">订单创建</text>
@@ -79,7 +79,7 @@
     </g>
     
     <g transform="translate(900, 240)">
-      <rect x="0" y="0" width="180" height="115" rx="8" fill="#ffffff" stroke="#1abc9c" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="180" height="115" rx="8" fill="#ffffff" stroke="#2ecc71" stroke-width="2" filter="url(#shadow)"/>
       <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">支付服务</text>
       <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
       <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">支付接口</text>
@@ -103,7 +103,7 @@
     </g>
     
     <g transform="translate(380, 450)">
-      <rect x="0" y="0" width="180" height="85" rx="8" fill="#ffffff" stroke="#1abc9c" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="180" height="85" rx="8" fill="#ffffff" stroke="#2ecc71" stroke-width="2" filter="url(#shadow)"/>
       <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">票价策略</text>
       <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
       <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">动态定价</text>
@@ -119,7 +119,7 @@
     </g>
     
     <g transform="translate(900, 450)">
-      <rect x="0" y="0" width="180" height="85" rx="8" fill="#ffffff" stroke="#34495e" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="180" height="85" rx="8" fill="#ffffff" stroke="#3498db" stroke-width="2" filter="url(#shadow)"/>
       <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">风控系统</text>
       <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
       <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">反黄牛</text>
@@ -129,7 +129,7 @@
   
   <!-- ========== 第4层：数据访问层 ========== -->
   <g>
-    <text x="100" y="600" font-size="16" font-weight="bold" fill="#95a5a6">④ 数据访问层 (Data Access Layer)</text>
+    <text x="100" y="600" font-size="16" font-weight="bold" fill="#3498db">④ 数据访问层 (Data Access Layer)</text>
     <rect x="100" y="610" width="1000" height="130" rx="8" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
     
     <g transform="translate(120, 630)">
@@ -142,7 +142,7 @@
     </g>
     
     <g transform="translate(380, 630)">
-      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#1abc9c" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#2ecc71" stroke-width="2" filter="url(#shadow)"/>
       <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">MySQL 主从</text>
       <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
       <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">用户数据</text>
@@ -160,7 +160,7 @@
     </g>
     
     <g transform="translate(900, 630)">
-      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#34495e" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#ffffff" stroke="#3498db" stroke-width="2" filter="url(#shadow)"/>
       <text x="90" y="22" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">Elasticsearch</text>
       <line x1="20" y1="35" x2="160" y2="35" stroke="#e0e0e0" stroke-width="1"/>
       <text x="90" y="55" text-anchor="middle" font-size="10" fill="#666666">车次搜索</text>
@@ -168,12 +168,20 @@
       <text x="90" y="85" text-anchor="middle" font-size="10" fill="#666666">实时统计</text>
     </g>
   </g>
-  
+
+  <!-- ========== 层间连接箭头 ========== -->
+  <!-- 表现层 → 应用层 -->
+  <line x1="600" y1="162" x2="600" y2="216" stroke="#3498db" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- 应用层 → 业务逻辑层 -->
+  <line x1="600" y1="372" x2="600" y2="426" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- 业务逻辑层 → 数据访问层 -->
+  <line x1="600" y1="552" x2="600" y2="606" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowhead)"/>
+
   <!-- ========== 右侧：核心技术点 ========== -->
-  <g transform="translate(900, 770)">
-    <rect x="0" y="0" width="280" height="100" rx="10" fill="#ffffff" stroke="#f39c12" stroke-width="2"/>
-    <text x="140" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#f39c12">核心技术</text>
-    <line x1="20" y1="30" x2="260" y2="30" stroke="#f39c12" stroke-width="1"/>
+  <g transform="translate(880, 770)">
+    <rect x="0" y="0" width="280" height="100" rx="10" fill="#ffffff" stroke="#e67e22" stroke-width="2"/>
+    <text x="140" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#e67e22">核心技术</text>
+    <line x1="20" y1="30" x2="260" y2="30" stroke="#e67e22" stroke-width="1"/>
     
     <text x="30" y="50" font-size="10" fill="#e74c3c">●</text>
     <text x="40" y="50" font-size="10" fill="#666666">分布式锁</text>
@@ -190,9 +198,9 @@
   
   <!-- ========== 底部：架构特点 ========== -->
   <g transform="translate(100, 770)">
-    <rect x="0" y="0" width="780" height="100" rx="10" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
-    <text x="390" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">架构特点</text>
-    <line x1="20" y1="30" x2="760" y2="30" stroke="#e0e0e0" stroke-width="1"/>
+    <rect x="0" y="0" width="760" height="100" rx="10" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="380" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#333333">架构特点</text>
+    <line x1="20" y1="30" x2="740" y2="30" stroke="#e0e0e0" stroke-width="1"/>
     
     <g transform="translate(20, 45)">
       <text x="0" y="0" font-size="10" font-weight="bold" fill="#e74c3c">高并发：</text>

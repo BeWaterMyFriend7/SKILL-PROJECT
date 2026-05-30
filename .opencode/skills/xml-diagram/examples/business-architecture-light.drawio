@@ -1,0 +1,118 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="业务架构图" id="0">
+    <mxGraphModel dx="1062" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="820" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="820" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#333333;" value="业务架构图设计案例" vertex="1">
+          <mxGeometry height="35" width="240" x="380" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f4ff;strokeColor=#7b86f7;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="165" width="960" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#5c6bc0;" value="业务场景层 (Business Scenario Layer)" vertex="1">
+          <mxGeometry height="25" width="260" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="user-journey" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b82f6;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="用户购物旅程" vertex="1">
+          <mxGeometry height="35" width="160" x="50" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="merchant-flow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2563eb;strokeColor=#1d4ed8;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="商家运营流程" vertex="1">
+          <mxGeometry height="35" width="160" x="220" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="platform-mgmt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1d4ed8;strokeColor=#1e40af;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="平台管理场景" vertex="1">
+          <mxGeometry height="35" width="160" x="390" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="marketing" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4f46e5;strokeColor=#4338ca;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="营销推广活动" vertex="1">
+          <mxGeometry height="35" width="160" x="560" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="data-analysis" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4338ca;strokeColor=#3730a3;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="数据分析决策" vertex="1">
+          <mxGeometry height="35" width="160" x="730" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#4ade80;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="210" width="960" x="20" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#16a34a;" value="业务能力层 (Business Capability Layer)" vertex="1">
+          <mxGeometry height="25" width="260" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="user-domain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="用户管理域&#xa;━━━━━━&#xa;注册登录 | 信息管理&#xa;会员体系 | 积分机制" vertex="1">
+          <mxGeometry height="80" width="160" x="50" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="product-domain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#d97706;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="商品管理域&#xa;━━━━━━&#xa;信息录入 | 分类管理&#xa;库存监控 | 价格策略" vertex="1">
+          <mxGeometry height="80" width="160" x="220" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="order-domain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="交易管理域&#xa;━━━━━━&#xa;购物车 | 订单处理&#xa;支付管理 | 退款处理" vertex="1">
+          <mxGeometry height="80" width="160" x="390" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="logistics-domain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#22c55e;strokeColor=#16a34a;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="物流管理域&#xa;━━━━━━&#xa;配送管理 | 运费计算&#xa;轨迹跟踪 | 时效保障" vertex="1">
+          <mxGeometry height="80" width="160" x="560" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="promo-domain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f97316;strokeColor=#ea580c;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="营销管理域&#xa;━━━━━━&#xa;活动策划 | 券发放&#xa;推荐引擎 | 画像构建" vertex="1">
+          <mxGeometry height="80" width="160" x="730" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f3ff;strokeColor=#a78bfa;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="200" width="960" x="20" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#7c3aed;" value="业务对象层 (Business Object Layer)" vertex="1">
+          <mxGeometry height="25" width="260" x="40" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="user-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="用户实体&#xa;━━━━━&#xa;User | Profile | Auth" vertex="1">
+          <mxGeometry height="60" width="160" x="50" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="product-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="商品实体&#xa;━━━━━&#xa;Product | Category | SKU" vertex="1">
+          <mxGeometry height="60" width="160" x="220" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="order-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="订单实体&#xa;━━━━━&#xa;Order | Item | Status" vertex="1">
+          <mxGeometry height="60" width="160" x="390" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="payment-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="支付实体&#xa;━━━━━&#xa;Payment | Transaction" vertex="1">
+          <mxGeometry height="60" width="160" x="560" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="logistics-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="物流实体&#xa;━━━━━&#xa;Logistics | Shipping" vertex="1">
+          <mxGeometry height="60" width="160" x="730" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="stock-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="库存实体&#xa;━━━━━&#xa;Stock | Warehouse | Alert" vertex="1">
+          <mxGeometry height="60" width="160" x="50" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="coupon-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="促销实体&#xa;━━━━━&#xa;Coupon | Discount | Rule" vertex="1">
+          <mxGeometry height="60" width="160" x="220" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="review-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="评价实体&#xa;━━━━━&#xa;Review | Rating | Comment" vertex="1">
+          <mxGeometry height="60" width="160" x="390" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="message-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="消息实体&#xa;━━━━━&#xa;Message | Notification" vertex="1">
+          <mxGeometry height="60" width="160" x="560" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="permission-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="权限实体&#xa;━━━━━&#xa;Role | Permission | Resource" vertex="1">
+          <mxGeometry height="60" width="160" x="730" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" edge="1" parent="1" source="layer2-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="layer3-bg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="desc" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=14;fontColor=#666666;" value="业务架构分层设计：场景层 → 能力层 → 对象层" vertex="1">
+          <mxGeometry height="25" width="400" x="300" y="785" as="geometry" />
+        </mxCell>
+        <mxCell id="qLEdUMIC-i8p9BPusbEY-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Times New Roman, SimSun;strokeColor=none;fillColor=#7ad6fb;fontSize=10;" value="浏览" vertex="1">
+          <mxGeometry height="20" width="40" x="52" y="137" as="geometry" />
+        </mxCell>
+        <mxCell id="qLEdUMIC-i8p9BPusbEY-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Times New Roman, SimSun;strokeColor=none;fillColor=#7ad6fb;fontSize=10;" value="购买" vertex="1">
+          <mxGeometry height="20" width="40" x="110" y="137" as="geometry" />
+        </mxCell>
+        <mxCell id="qLEdUMIC-i8p9BPusbEY-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Times New Roman, SimSun;strokeColor=none;fillColor=#7ad6fb;fontSize=10;" value="评价" vertex="1">
+          <mxGeometry height="20" width="40" x="168" y="137" as="geometry" />
+        </mxCell>
+        <mxCell id="qLEdUMIC-i8p9BPusbEY-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Times New Roman, SimSun;strokeColor=none;fillColor=#7ad6fb;fontSize=10;" value="收藏" vertex="1">
+          <mxGeometry height="20" width="40" x="52" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="qLEdUMIC-i8p9BPusbEY-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Times New Roman, SimSun;strokeColor=none;fillColor=#7ad6fb;fontSize=10;" value="分享" vertex="1">
+          <mxGeometry height="20" width="40" x="110" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="qLEdUMIC-i8p9BPusbEY-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Times New Roman, SimSun;strokeColor=none;fillColor=#7ad6fb;fontSize=10;" value="咨询" vertex="1">
+          <mxGeometry height="20" width="40" x="168" y="162" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

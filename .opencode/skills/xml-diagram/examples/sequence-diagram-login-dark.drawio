@@ -1,0 +1,74 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="时序图-登录-暗色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="800" pageHeight="500" pageBackground="#1a1a2e">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- 标题 -->
+        <mxCell id="title" value="用户登录时序图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="300" y="10" width="200" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 生命线 ===== -->
+        <mxCell id="lifeline-ui" value="" style="endArrow=none;html=1;strokeColor=#666666;strokeWidth=1;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="150" y="80" as="sourcePoint"/><mxPoint x="150" y="440" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="lifeline-auth" value="" style="endArrow=none;html=1;strokeColor=#666666;strokeWidth=1;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="360" y="80" as="sourcePoint"/><mxPoint x="360" y="440" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="lifeline-db" value="" style="endArrow=none;html=1;strokeColor=#666666;strokeWidth=1;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="570" y="80" as="sourcePoint"/><mxPoint x="570" y="440" as="targetPoint"/></mxGeometry>
+        </mxCell>
+
+        <!-- 角色标签 -->
+        <mxCell id="actor-ui" value="用户界面" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="100" y="55" width="100" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor-auth" value="认证服务" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="310" y="55" width="100" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor-db" value="数据库" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="520" y="55" width="100" height="25" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 激活条（暗色模式用卡片色 #16213e） ===== -->
+        <mxCell id="active-ui" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="135" y="100" width="30" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="active-auth" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="345" y="165" width="30" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="active-db" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e67e22;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="555" y="235" width="30" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 消息 ===== -->
+        <mxCell id="msg1" value="login(username, password)" style="endArrow=classic;endFill=1;html=1;strokeColor=#3498db;strokeWidth=2;labelBackgroundColor=#1a1a2e;fontColor=#ffffff;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="165" y="120" as="sourcePoint"/><mxPoint x="345" y="120" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" value="validateCredentials()" style="endArrow=classic;endFill=1;html=1;strokeColor=#3498db;strokeWidth=2;labelBackgroundColor=#1a1a2e;fontColor=#ffffff;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="375" y="185" as="sourcePoint"/><mxPoint x="555" y="185" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="msg3" value="返回验证结果" style="endArrow=classic;endFill=1;html=1;strokeColor=#666666;strokeWidth=2;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="555" y="270" as="sourcePoint"/><mxPoint x="375" y="270" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" value="登录成功/失败" style="endArrow=classic;endFill=1;html=1;strokeColor=#666666;strokeWidth=2;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="345" y="360" as="sourcePoint"/><mxPoint x="165" y="360" as="targetPoint"/></mxGeometry>
+        </mxCell>
+
+        <!-- 结束激活条 -->
+        <mxCell id="active-ui-end" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="135" y="165" width="30" height="5" as="geometry"/>
+        </mxCell>
+        <mxCell id="active-auth-end" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="345" y="255" width="30" height="5" as="geometry"/>
+        </mxCell>
+        <mxCell id="active-db-end" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="555" y="300" width="30" height="5" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

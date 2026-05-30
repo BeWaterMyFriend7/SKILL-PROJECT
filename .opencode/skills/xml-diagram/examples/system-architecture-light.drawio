@@ -1,0 +1,133 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="系统架构图" id="0">
+    <mxGraphModel dx="1540" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="850" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="850" width="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#1f2937;" value="系统架构图设计案例" vertex="1">
+          <mxGeometry height="35" width="240" x="480" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="presentation-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2ff;strokeColor=#6366f1;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="110" width="1160" x="20" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="presentation-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#6366f1;" value="表现层 (Presentation Layer)" vertex="1">
+          <mxGeometry height="25" width="200" x="40" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="web-frontend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="Web前端&#xa;━━━━━&#xa;React 18 · TypeScript" vertex="1">
+          <mxGeometry height="60" width="165" x="50" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="mobile" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="移动端&#xa;━━━━━&#xa;React Native · Flutter" vertex="1">
+          <mxGeometry height="60" width="165" x="235" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="mini-program" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="小程序&#xa;━━━━━&#xa;微信 · Taro/UniApp" vertex="1">
+          <mxGeometry height="60" width="165" x="420" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="管理后台&#xa;━━━━━&#xa;Vue 3 · Element Plus" vertex="1">
+          <mxGeometry height="60" width="165" x="605" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="api-docs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="API文档&#xa;━━━━━&#xa;Swagger · Postman" vertex="1">
+          <mxGeometry height="60" width="165" x="790" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#ef4444;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="70" width="1160" x="20" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#ef4444;" value="网关层 (Gateway Layer)" vertex="1">
+          <mxGeometry height="25" width="180" x="40" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="api-gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="40" width="145" x="140" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="负载均衡" vertex="1">
+          <mxGeometry height="40" width="145" x="305" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="rate-limit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="限流熔断" vertex="1">
+          <mxGeometry height="40" width="145" x="470" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="安全认证" vertex="1">
+          <mxGeometry height="40" width="145" x="635" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="app-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#22c55e;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="110" width="1160" x="20" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="app-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#22c55e;" value="应用层 (Application Layer)" vertex="1">
+          <mxGeometry height="25" width="160" x="40" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="business-service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#22c55e;strokeColor=#16a34a;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="业务服务&#xa;━━━━━&#xa;Spring Boot · Java 17" vertex="1">
+          <mxGeometry height="60" width="165" x="50" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="service-governance" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eab308;strokeColor=#ca8a04;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="服务治理&#xa;━━━━━&#xa;Nacos · Sentinel" vertex="1">
+          <mxGeometry height="60" width="165" x="235" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="cache" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="缓存层&#xa;━━━━━&#xa;Redis 7.0 · Redisson" vertex="1">
+          <mxGeometry height="60" width="165" x="420" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="mq" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="消息队列&#xa;━━━━━&#xa;RocketMQ · Kafka" vertex="1">
+          <mxGeometry height="60" width="165" x="605" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="search" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;strokeColor=#7c3aed;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="搜索引擎&#xa;━━━━━&#xa;Elasticsearch · Solr" vertex="1">
+          <mxGeometry height="60" width="165" x="790" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="data-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5ff;strokeColor=#a855f7;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="110" width="1160" x="20" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="data-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#a855f7;" value="数据层 (Data Layer)" vertex="1">
+          <mxGeometry height="25" width="150" x="40" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="rdbms" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="关系型数据库&#xa;━━━&#xa;MySQL 8.0" vertex="1">
+          <mxGeometry height="60" width="165" x="50" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="nosql" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="NoSQL数据库&#xa;━━━━━&#xa;MongoDB · HBase" vertex="1">
+          <mxGeometry height="60" width="165" x="235" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="tsdb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="时序数据库&#xa;━━━━━&#xa;InfluxDB · ClickHouse" vertex="1">
+          <mxGeometry height="60" width="165" x="420" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="object-storage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="对象存储&#xa;━━━���━&#xa;MinIO · AWS S3" vertex="1">
+          <mxGeometry height="60" width="165" x="605" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="data-warehouse" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="数据仓库&#xa;━━━━━&#xa;Hive · Spark · Flink" vertex="1">
+          <mxGeometry height="60" width="165" x="790" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="infra-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f4f6;strokeColor=#64748b;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="70" width="1160" x="20" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="infra-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#374151;" value="基础设施层 (Infrastructure Layer)" vertex="1">
+          <mxGeometry height="25" width="240" x="40" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="container" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="容器化" vertex="1">
+          <mxGeometry height="40" width="130" x="50" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="monitoring" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="监控告警" vertex="1">
+          <mxGeometry height="40" width="130" x="200" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="logging" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="日志收集" vertex="1">
+          <mxGeometry height="40" width="130" x="350" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="cicd" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="CI/CD" vertex="1">
+          <mxGeometry height="40" width="130" x="500" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="service-mesh" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="服务网格" vertex="1">
+          <mxGeometry height="40" width="130" x="650" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="云平台" vertex="1">
+          <mxGeometry height="40" width="130" x="800" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="conn1" edge="1" parent="1" source="web-frontend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" target="api-gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn2" edge="1" parent="1" source="api-gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" target="business-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn3" edge="1" parent="1" source="business-service" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" target="rdbms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn4" edge="1" parent="1" source="rdbms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" target="container">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

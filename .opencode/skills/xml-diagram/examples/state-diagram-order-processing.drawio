@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="状态图-订单处理">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="800" pageHeight="550" pageBackground="#f8f9fa">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- 标题 -->
+        <mxCell id="title" value="订单处理状态流转图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="10" width="200" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 第一行：初始 → 订单创建 → 支付处理 → 库存检查 → 决策 ===== -->
+
+        <!-- 初始状态 -->
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="75" y="95" width="16" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- 订单创建 -->
+        <mxCell id="state-create" value="订单创建" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="80" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- 支付处理 -->
+        <mxCell id="state-pay" value="支付处理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- 库存检查 -->
+        <mxCell id="state-check" value="库存检查" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="80" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- 支付验证（菱形判断） -->
+        <mxCell id="decision-pay" value="支付成功?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#333333;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="670" y="60" width="80" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 第一行箭头 ===== -->
+        <mxCell id="edge-1" value="" style="endArrow=classic;endFill=1;html=1;strokeColor=#999999;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="91" y="103" as="sourcePoint"/>
+            <mxPoint x="130" y="100" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="edge-2" value="提交订单" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#f8f9fa;fontColor=#666666;fontSize=10;" edge="1" parent="1" source="state-create" target="state-pay">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="state-pay" target="state-check">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="state-check" target="decision-pay">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 第二行：订单确认 → 发货准备 → 订单完成 ===== -->
+
+        <!-- 订单确认 -->
+        <mxCell id="state-confirm" value="订单确认" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="210" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- 发货准备 -->
+        <mxCell id="state-ship" value="发货准备" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="210" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- 订单完成 -->
+        <mxCell id="state-done" value="订单完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="350" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- 订单取消 -->
+        <mxCell id="state-cancel" value="订单取消" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#333333;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="350" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 分支箭头 ===== -->
+        <!-- 决策 - 是 → 订单确认 -->
+        <mxCell id="edge-yes" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#f8f9fa;fontColor=#2ecc71;fontSize=10;" edge="1" parent="1" source="decision-pay" target="state-confirm">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 决策 - 否 → 订单取消（红色实线！） -->
+        <mxCell id="edge-no" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#f8f9fa;fontColor=#e74c3c;fontSize=10;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="decision-pay" target="state-cancel">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 订单确认 → 发货准备 -->
+        <mxCell id="edge-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="state-confirm" target="state-ship">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 发货准备 → 订单完成 -->
+        <mxCell id="edge-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="state-ship" target="state-done">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 订单确认 → 订单取消（用户取消） -->
+        <mxCell id="edge-cancel" value="用户取消" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#f8f9fa;fontColor=#666666;fontSize=10;" edge="1" parent="1" source="state-confirm" target="state-cancel">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 结束状态（同心圆） -->
+        <mxCell id="end-outer" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2ecc71;strokeWidth=2;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="370" y="445" width="24" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="end-inner" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=none;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="374" y="449" width="16" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- 订单完成 → 结束 -->
+        <mxCell id="edge-end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="state-done" target="end-outer">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

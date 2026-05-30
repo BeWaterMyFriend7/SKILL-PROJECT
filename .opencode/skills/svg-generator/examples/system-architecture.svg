@@ -42,7 +42,7 @@
   </defs>
   
   <!-- 背景 -->
-  <rect width="1200" height="850" fill="#fafafa"/>
+  <rect width="1200" height="850" fill="#f8f9fa"/>
   
   <!-- 标题 -->
   <text x="600" y="35" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="bold" fill="#1f2937">系统架构图设计案例</text>

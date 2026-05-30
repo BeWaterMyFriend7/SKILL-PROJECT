@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="550" viewBox="0 0 800 550">
+  <defs>
+    <!-- 箭头标记 - 统一 -->
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#999999"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="800" height="550" fill="#f8f9fa"/>
+  
+  <!-- 标题 -->
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333333">订单处理状态流转图</text>
+  
+  <!-- 第一行状态 -->
+  <!-- 初始状态 -->
+  <circle cx="80" cy="100" r="8" fill="#3498db"/>
+  
+  <!-- 订单创建 -->
+  <rect x="130" y="80" width="100" height="40" rx="6" fill="#ffffff" stroke="#3498db" stroke-width="2"/>
+  <text x="180" y="105" text-anchor="middle" fill="#333333" font-size="12">订单创建</text>
+  
+  <!-- 箭头：初始->创建 -->
+  <line x1="88" y1="100" x2="130" y2="100" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 支付处理 -->
+  <rect x="320" y="80" width="100" height="40" rx="6" fill="#ffffff" stroke="#3498db" stroke-width="2"/>
+  <text x="370" y="105" text-anchor="middle" fill="#333333" font-size="12">支付处理</text>
+  
+  <!-- 箭头：订单创建->支付处理 -->
+  <line x1="230" y1="100" x2="320" y2="100" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="275" y="90" text-anchor="middle" fill="#666666" font-size="10">提交订单</text>
+  
+  <!-- 库存检查 -->
+  <rect x="510" y="80" width="100" height="40" rx="6" fill="#ffffff" stroke="#3498db" stroke-width="2"/>
+  <text x="560" y="105" text-anchor="middle" fill="#333333" font-size="12">库存检查</text>
+  
+  <!-- 箭头：支付处理->库存检查 -->
+  <line x1="420" y1="100" x2="510" y2="100" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 决策：支付验证 -->
+  <polygon points="680,100 710,120 680,140 650,120" fill="#ffffff" stroke="#e67e22" stroke-width="2"/>
+  <text x="680" y="124" text-anchor="middle" fill="#333333" font-size="10">支付成功?</text>
+  
+  <!-- 箭头：库存检查->决策 -->
+  <line x1="610" y1="100" x2="650" y2="100" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 决策连接线：直上直下，避免斜线 -->
+  <!-- 是 -> 订单确认 -->
+  <line x1="680" y1="140" x2="680" y2="200" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="695" y="175" text-anchor="middle" fill="#2ecc71" font-size="10">是</text>
+  
+  <!-- 否 -> 订单取消 (正交L形路径避免交叉) -->
+  <polyline points="650,120 650,365 230,365" fill="none" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="440" y="355" text-anchor="middle" fill="#e74c3c" font-size="10">否</text>
+  
+  <!-- 第二行状态 -->
+  <!-- 订单确认 -->
+  <rect x="230" y="210" width="100" height="40" rx="6" fill="#ffffff" stroke="#2ecc71" stroke-width="2"/>
+  <text x="280" y="235" text-anchor="middle" fill="#333333" font-size="12">订单确认</text>
+  
+  <!-- 发货准备 -->
+  <rect x="420" y="210" width="100" height="40" rx="6" fill="#ffffff" stroke="#9b59b6" stroke-width="2"/>
+  <text x="470" y="235" text-anchor="middle" fill="#333333" font-size="12">发货准备</text>
+  
+  <!-- 箭头：订单确认->发货准备 -->
+  <line x1="330" y1="230" x2="420" y2="230" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 箭头：发货准备->订单完成 -->
+  <line x1="520" y1="230" x2="560" y2="230" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 订单取消 -->
+  <rect x="130" y="350" width="100" height="40" rx="6" fill="#ffffff" stroke="#e74c3c" stroke-width="2"/>
+  <text x="180" y="375" text-anchor="middle" fill="#333333" font-size="12">订单取消</text>
+  
+  <!-- 订单完成 -->
+  <rect x="330" y="350" width="100" height="40" rx="6" fill="#ffffff" stroke="#2ecc71" stroke-width="2"/>
+  <text x="380" y="375" text-anchor="middle" fill="#333333" font-size="12">订单完成</text>
+  
+  <!-- 箭头：订单确认 -> 订单取消（用户取消） -->
+  <line x1="280" y1="250" x2="280" y2="350" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="260" y="305" text-anchor="middle" fill="#666666" font-size="10">用户取消</text>
+  
+  <!-- 箭头：发货准备 -> 订单完成 (正交L形路径) -->
+  <polyline points="470,300 470,370 430,370" fill="none" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 箭头：订单完成->结束状态 -->
+  <g transform="translate(380, 440)">
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#2ecc71" stroke-width="2"/>
+    <circle cx="0" cy="0" r="5" fill="#2ecc71"/>
+  </g>
+  <line x1="380" y1="390" x2="380" y2="430" stroke="#999999" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

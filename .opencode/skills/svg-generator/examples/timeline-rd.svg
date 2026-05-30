@@ -6,7 +6,7 @@
     </linearGradient>
     <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#2ecc71"/>
-      <stop offset="100%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#2ecc71"/>
     </linearGradient>
     <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#e67e22"/>
@@ -21,11 +21,11 @@
       <stop offset="100%" stop-color="#8e44ad"/>
     </linearGradient>
     <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1abc9c"/>
+      <stop offset="0%" stop-color="#2ecc71"/>
       <stop offset="100%" stop-color="#16a085"/>
     </linearGradient>
     <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="0%" stop-color="#e67e22"/>
       <stop offset="100%" stop-color="#f1c40f"/>
     </linearGradient>
     <linearGradient id="grad8" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -97,8 +97,8 @@
   <circle cx="290" cy="620" r="5" fill="#e67e22"/>
   <circle cx="420" cy="620" r="5" fill="#e74c3c"/>
   <circle cx="540" cy="620" r="5" fill="#9b59b6"/>
-  <circle cx="630" cy="620" r="5" fill="#1abc9c"/>
-  <circle cx="690" cy="620" r="5" fill="#f39c12"/>
+  <circle cx="630" cy="620" r="5" fill="#2ecc71"/>
+  <circle cx="690" cy="620" r="5" fill="#e67e22"/>
   <circle cx="820" cy="620" r="5" fill="#00cec9"/>
   
   <!-- 右侧说明区域 -->
@@ -120,10 +120,10 @@
   <rect x="945" y="173" width="10" height="10" rx="2" fill="#9b59b6"/>
   <text x="962" y="182" font-size="8" fill="#aaa">功能、性能测试</text>
   
-  <rect x="945" y="190" width="10" height="10" rx="2" fill="#1abc9c"/>
+  <rect x="945" y="190" width="10" height="10" rx="2" fill="#2ecc71"/>
   <text x="962" y="199" font-size="8" fill="#aaa">生产环境部署</text>
   
-  <rect x="945" y="207" width="10" height="10" rx="2" fill="#f39c12"/>
+  <rect x="945" y="207" width="10" height="10" rx="2" fill="#e67e22"/>
   <text x="962" y="216" font-size="8" fill="#aaa">监控、故障处理</text>
   
   <rect x="945" y="224" width="10" height="10" rx="2" fill="#00cec9"/>
@@ -163,6 +163,6 @@
   <text x="240" y="587" font-size="8" fill="#aaa">开发</text>
   <rect x="270" y="580" width="15" height="8" rx="1" fill="none" stroke="#9b59b6" stroke-width="1"/>
   <text x="290" y="587" font-size="8" fill="#aaa">测试</text>
-  <rect x="320" y="580" width="15" height="8" rx="1" fill="none" stroke="#1abc9c" stroke-width="1"/>
+  <rect x="320" y="580" width="15" height="8" rx="1" fill="none" stroke="#2ecc71" stroke-width="1"/>
   <text x="340" y="587" font-size="8" fill="#aaa">部署</text>
 </svg>
