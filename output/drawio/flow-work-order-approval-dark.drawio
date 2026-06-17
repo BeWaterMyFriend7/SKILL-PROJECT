@@ -1,0 +1,90 @@
+<mxfile host="app.diagrams.net" modified="2026-06-14T00:00:00.000Z" agent="xml-diagram" version="24.7.17">
+  <diagram id="flow-work-order-approval" name="工单审批流程">
+    <mxGraphModel dx="800" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="800" height="750" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="工单审批流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#ffffff;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="line" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="720" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="开始" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="340" y="70" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="submit" value="提交工单" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="330" y="130" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="leaderReview" value="组长审批" style="rhombus;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e67e22;strokeWidth=2;fontColor=#ffffff;fontSize=11;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="340" y="200" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="deptReview" value="部门审批" style="rhombus;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e67e22;strokeWidth=2;fontColor=#ffffff;fontSize=11;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="550" y="200" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="finalArchive" value="最终归档" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="550" y="360" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="archiveDone" value="归档完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="560" y="450" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="rejectLeader" value="驳回" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e74c3c;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="340" y="310" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="rejectDept" value="驳回" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e74c3c;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="550" y="310" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="start" target="submit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="submit" target="leaderReview">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="通过" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" edge="1" parent="1" source="leaderReview" target="deptReview">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="驳回" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" edge="1" parent="1" source="leaderReview" target="rejectLeader">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="通过" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" edge="1" parent="1" source="deptReview" target="finalArchive">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="225" />
+              <mxPoint x="700" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="驳回" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" edge="1" parent="1" source="deptReview" target="rejectDept">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="finalArchive" target="archiveDone">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="修改后重提" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" edge="1" parent="1" source="rejectLeader" target="submit">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="380" />
+              <mxPoint x="160" y="380" />
+              <mxPoint x="160" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" value="重新提交" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" edge="1" parent="1" source="rejectDept" target="submit">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="380" />
+              <mxPoint x="200" y="380" />
+              <mxPoint x="200" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend" value="图例说明&#xa;━━━━━━━━━&#xa;■ 主流程(蓝色)  ■ 成功/通过(绿色)&#xa;■ 驳回/错误(红色)  ■ 判断(橙色)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;strokeWidth=1;fontColor=#aaaaaa;fontSize=10;fontFamily=Microsoft YaHei;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="560" y="530" width="210" height="65" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

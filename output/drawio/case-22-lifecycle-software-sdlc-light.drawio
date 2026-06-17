@@ -1,0 +1,111 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="软件生命周期-浅色" id="0">
+    <mxGraphModel dx="1295" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="920" pageHeight="800" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="800" width="920" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#333333;" value="软件全生命周期流程图" vertex="1">
+          <mxGeometry height="25" width="300" x="300" y="8" as="geometry" />
+        </mxCell>
+        <mxCell id="line" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#e0e0e0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="1" width="870" x="15" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=7;align=center;spacing=2;arcSize=6;" value="1. 需求分析&#10;需求调研&#10;需求评审&#10;需求文档" vertex="1">
+          <mxGeometry height="75" width="130" x="30" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="node1_head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="30" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="node1_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="1. 需求分析" vertex="1">
+          <mxGeometry height="20" width="130" x="30" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" edge="1" parent="1" source="node1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#666666;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="node2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=7;align=center;spacing=2;arcSize=8;" value="2. 设计阶段&#10;架构设计&#10;概要设计&#10;详细设计&#10;接口设计" vertex="1">
+          <mxGeometry height="90" width="130" x="190" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="node2_head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#2ecc71;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="190" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="node2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="2. 设计阶段" vertex="1">
+          <mxGeometry height="20" width="130" x="190" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" edge="1" parent="1" source="node2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#666666;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;entryX=0.004;entryY=0.434;entryDx=0;entryDy=0;entryPerimeter=0;" target="node3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#333333;fontSize=7;align=center;spacing=2;arcSize=6;" value="3. 开发阶段&#10;环境搭建&#10;编码实现&#10;代码审查&#10;单元测试" vertex="1">
+          <mxGeometry height="90" width="130" x="350" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="node3_head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="350" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="node3_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="3. 开发阶段" vertex="1">
+          <mxGeometry height="20" width="130" x="350" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_down1" edge="1" parent="1" source="node3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#666666;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="node4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="node4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#333333;fontSize=7;align=center;spacing=2;arcSize=6;" value="4. 测试阶段&#10;测试计划&#10;功能测试&#10;集成测试&#10;性能测试" vertex="1">
+          <mxGeometry height="90" width="130" x="350" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="node4_head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="350" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="node4_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="4. 测试阶段" vertex="1">
+          <mxGeometry height="20" width="130" x="350" y="173" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_left1" edge="1" parent="1" source="node4" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#666666;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="node5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="325" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#333333;fontSize=7;align=center;spacing=2;arcSize=6;" value="5. 部署发布&#10;部署准备&#10;生产部署&#10;数据迁移" vertex="1">
+          <mxGeometry height="75" width="130" x="190" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="node5_head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9b59b6;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="190" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="node5_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="5. 部署发布" vertex="1">
+          <mxGeometry height="20" width="130" x="190" y="173" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_left2" edge="1" parent="1" source="node5" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#666666;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="node6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="165" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1abc9c;strokeWidth=2;fontColor=#333333;fontSize=7;align=center;spacing=2;arcSize=5;" value="6. 运维支持&#10;系统监控&#10;故障处理&#10;安全加固" vertex="1">
+          <mxGeometry height="70" width="130" x="30" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="node6_head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1abc9c;strokeColor=#1abc9c;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="30" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="node6_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="6. 运维支持" vertex="1">
+          <mxGeometry height="20" width="130" x="30" y="173" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_down2" edge="1" parent="1" source="node6" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#666666;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="node7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="node7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f39c12;strokeWidth=2;fontColor=#333333;fontSize=7;align=center;spacing=2;arcSize=3;" value="7. 迭代优化&#10;收集反馈&#10;问题修复&#10;版本规划" vertex="1">
+          <mxGeometry height="70" width="130" x="30" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="node7_head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f39c12;strokeColor=#f39c12;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="30" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="node7_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="7. 迭代优化" vertex="1">
+          <mxGeometry height="20" width="130" x="30" y="268" as="geometry" />
+        </mxCell>
+        <mxCell id="desc" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontColor=#666666;" value="软件全生命周期：需求 → 设计 → 开发 → 测试 → 部署 → 运维 → 迭代" vertex="1">
+          <mxGeometry height="20" width="480" x="210" y="640" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

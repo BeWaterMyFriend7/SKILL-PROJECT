@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-rm-01-light" name="未来四个季度规划Roadmap-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="500" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="500" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="未来四个季度规划 Roadmap" vertex="1">
+          <mxGeometry height="34" width="400" x="300" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="q1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="Q1&#xa;Agent基础能力&#xa;对话管理 · 插件系统&#xa;知识库 · 权限控制" vertex="1">
+          <mxGeometry height="140" width="200" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="q2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#22c55e;fontColor=#0f172a;fontSize=14;fontStyle=1;" value="Q2&#xa;Workflow引擎&#xa;可视化编排 · 条件分支&#xa;人工审批 · 定时触发" vertex="1">
+          <mxGeometry height="140" width="200" x="280" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="q3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#ea580c;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="Q3&#xa;Memory体系&#xa;长期记忆 · 向量存储&#xa;上下文压缩 · 知识图谱" vertex="1">
+          <mxGeometry height="140" width="200" x="520" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="q4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="Q4&#xa;Marketplace&#xa;技能市场 · 模板系统&#xa;生态开放 · 第三方集成" vertex="1">
+          <mxGeometry height="140" width="200" x="760" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="q1" target="q2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="q2" target="q3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="q3" target="q4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontColor=#334155;fontSize=11;" value="图例：  🔵Q1 Agent  🟢Q2 Workflow  🟠Q3 Memory  🟣Q4 Marketplace" vertex="1">
+          <mxGeometry height="36" width="540" x="230" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

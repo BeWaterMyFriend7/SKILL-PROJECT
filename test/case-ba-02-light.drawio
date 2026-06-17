@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-ba-02-light" name="CRM业务架构图-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="780" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="780" width="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#0f172a;" value="CRM系统业务架构图" vertex="1">
+          <mxGeometry height="35" width="300" x="400" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#64748b;" value="业务场景层 → 业务能力层 → 业务对象层" vertex="1">
+          <mxGeometry height="22" width="360" x="370" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="scene-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f3ff;strokeColor=#3498db;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="140" width="1040" x="30" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="scene-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#3498db;" value="业务场景层" vertex="1">
+          <mxGeometry height="25" width="120" x="50" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="scene1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="客户获取场景" vertex="1">
+          <mxGeometry height="36" width="160" x="50" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="scene2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="销售跟进场景" vertex="1">
+          <mxGeometry height="36" width="160" x="240" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="scene3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="合同签订场景" vertex="1">
+          <mxGeometry height="36" width="160" x="430" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="scene4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="回款管理场景" vertex="1">
+          <mxGeometry height="36" width="160" x="620" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="scene5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="客户服务场景" vertex="1">
+          <mxGeometry height="36" width="160" x="810" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="cap-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eafaf1;strokeColor=#2ecc71;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="260" width="1040" x="30" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="cap-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#2ecc71;" value="业务能力层" vertex="1">
+          <mxGeometry height="25" width="120" x="50" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="card-customer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="客户管理&#xa;━━━━━━&#xa;客户信息 | 客户分层&#xa;联系人 | 客户池管理" vertex="1">
+          <mxGeometry height="100" width="175" x="50" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="card-lead" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="线索管理&#xa;━━━━━━&#xa;线索导入 | 线索分配&#xa;线索跟进 | 线索转化" vertex="1">
+          <mxGeometry height="100" width="175" x="245" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="card-opportunity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="商机管理&#xa;━━━━━━&#xa;商机跟进 | 报价管理&#xa;竞争分析 | 赢单分析" vertex="1">
+          <mxGeometry height="100" width="175" x="440" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="card-contract" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="合同管理&#xa;━━━━━━&#xa;合同审批 | 合同归档&#xa;合同变更 | 到期提醒" vertex="1">
+          <mxGeometry height="100" width="175" x="635" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="card-payment-recovery" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="回款管理&#xa;━━━━━━&#xa;回款计划 | 回款录入&#xa;逾期提醒 | 对账核销" vertex="1">
+          <mxGeometry height="100" width="175" x="830" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#9b59b6;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="180" width="1040" x="30" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#9b59b6;" value="业务对象层" vertex="1">
+          <mxGeometry height="25" width="120" x="50" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-account" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;" value="客户对象&#xa;━━━━━━&#xa;Account | Contact" vertex="1">
+          <mxGeometry height="66" width="160" x="50" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-lead" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;" value="线索对象&#xa;━━━━━━&#xa;Lead | Source" vertex="1">
+          <mxGeometry height="66" width="160" x="230" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-opp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;" value="商机对象&#xa;━━━━━━&#xa;Opportunity | Quote" vertex="1">
+          <mxGeometry height="66" width="160" x="410" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-contract" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;" value="合同对象&#xa;━━━━━━&#xa;Contract | Clause" vertex="1">
+          <mxGeometry height="66" width="160" x="590" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-pay-rec" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;" value="回款对象&#xa;━━━━━━&#xa;PaymentRecord | Invoice" vertex="1">
+          <mxGeometry height="66" width="160" x="770" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontColor=#334155;fontSize=11;" value="图例： 蓝色=业务场景  绿色=业务能力  紫色=业务对象" vertex="1">
+          <mxGeometry height="36" width="480" x="295" y="720" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

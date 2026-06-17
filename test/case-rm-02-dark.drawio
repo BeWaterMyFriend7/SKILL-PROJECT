@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-rm-02-dark" name="企业数字化平台Roadmap-深色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="500" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#f8fafc;" value="企业数字化平台年度规划 Roadmap" vertex="1">
+          <mxGeometry height="34" width="480" x="260" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="ph1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="第一阶段&#xa;业务中台建设&#xa;订单中心 · 用户中心&#xa;商品中心 · 支付中心" vertex="1">
+          <mxGeometry height="140" width="200" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ph2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#22c55e;fontColor=#0f172a;fontSize=14;fontStyle=1;" value="第二阶段&#xa;数据中台建设&#xa;数据治理 · 数据仓库&#xa;数据分析 · 数据服务" vertex="1">
+          <mxGeometry height="140" width="200" x="280" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ph3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#ea580c;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="第三阶段&#xa;AI中台建设&#xa;大模型接入 · Agent框架&#xa;知识库 · 智能客服" vertex="1">
+          <mxGeometry height="140" width="200" x="520" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ph4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="第四阶段&#xa;治理体系建设&#xa;安全合规 · 监控告警&#xa;成本优化 · 持续交付" vertex="1">
+          <mxGeometry height="140" width="200" x="760" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="ph1" target="ph2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="ph2" target="ph3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="ph3" target="ph4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;fontColor=#cbd5e1;fontSize=11;" value="图例： 🔵业务中台  🟢数据中台  🟠AI中台  🟣治理体系" vertex="1">
+          <mxGeometry height="36" width="540" x="230" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

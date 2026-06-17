@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-er-03-dark" name="CRM系统ER图-深色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="620" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="620" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#f8fafc;" value="CRM系统ER图" vertex="1">
+          <mxGeometry height="34" width="240" x="380" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="e-customer" parent="1" value="客户 (Customer)&#xa;────────────&#xa;+ cust_id: int (PK)&#xa;+ name: varchar(50)&#xa;+ phone: varchar(20)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;strokeWidth=2;fontColor=#cbd5e1;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="110" width="200" x="50" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-contract" parent="1" value="合同 (Contract)&#xa;────────────&#xa;+ contract_id: int (PK)&#xa;+ amount: decimal(12,2)&#xa;+ sign_date: date&#xa;+ cust_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;strokeWidth=2;fontColor=#cbd5e1;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="140" width="210" x="400" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-lead" parent="1" value="线索 (Lead)&#xa;────────────&#xa;+ lead_id: int (PK)&#xa;+ source: varchar(50)&#xa;+ status: varchar(20)&#xa;+ cust_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;strokeWidth=2;fontColor=#cbd5e1;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="140" width="210" x="50" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e-opportunity" parent="1" value="商机 (Opportunity)&#xa;────────────&#xa;+ opp_id: int (PK)&#xa;+ stage: varchar(20)&#xa;+ expected_amount: decimal(12,2)&#xa;+ cust_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;strokeWidth=2;fontColor=#cbd5e1;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="140" width="220" x="380" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e-receivable" parent="1" value="回款记录 (Receivable)&#xa;────────────&#xa;+ recv_id: int (PK)&#xa;+ amount: decimal(12,2)&#xa;+ recv_date: date&#xa;+ contract_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;strokeWidth=2;fontColor=#cbd5e1;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="140" width="220" x="720" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" parent="1" value="产生" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e67e22;strokeWidth=2;fontColor=#cbd5e1;fontSize=11;" vertex="1">
+          <mxGeometry height="50" width="70" x="315" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" parent="1" value="转化" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e67e22;strokeWidth=2;fontColor=#cbd5e1;fontSize=11;" vertex="1">
+          <mxGeometry height="50" width="70" x="315" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" parent="1" value="支付" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e67e22;strokeWidth=2;fontColor=#cbd5e1;fontSize=11;" vertex="1">
+          <mxGeometry height="50" width="70" x="640" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="e-customer" target="r1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1l" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#94a3b8;" vertex="1" connectable="0" parent="edge1">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="r1" target="e-contract">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2l" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#94a3b8;" vertex="1" connectable="0" parent="edge2">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="-15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="e-customer" target="r2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3l" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#94a3b8;" vertex="1" connectable="0" parent="edge3">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="r2" target="e-opportunity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4l" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#94a3b8;" vertex="1" connectable="0" parent="edge4">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="-15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="e-contract" target="r3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5l" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#94a3b8;" vertex="1" connectable="0" parent="edge5">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="r3" target="e-receivable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6l" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#94a3b8;" vertex="1" connectable="0" parent="edge6">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="-15" as="offset" /></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

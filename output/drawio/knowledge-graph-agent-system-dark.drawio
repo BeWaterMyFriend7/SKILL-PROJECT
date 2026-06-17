@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="AI Agent 系统知识图谱" id="case28-dark">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="900" pageHeight="400" pageBackground="#1a1a2e">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="400" width="900" as="geometry"/>
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=20;fontStyle=1;fontColor=#ffffff;" value="AI Agent 系统知识图谱" vertex="1">
+          <mxGeometry height="30" width="400" x="250" y="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="hub" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;strokeWidth=2;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="AI Agent系统" vertex="1">
+          <mxGeometry height="60" width="140" x="380" y="165" as="geometry"/>
+        </mxCell>
+        <mxCell id="card-tl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=2;fontColor=#ffffff;fontSize=11;shadow=1;" value="Memory(记忆)&#xa;━━━━&#xa;短期记忆&#xa;长期记忆&#xa;向量检索" vertex="1">
+          <mxGeometry height="100" width="160" x="100" y="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn-tl" edge="1" parent="1" source="hub" target="card-tl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" value="核心能力">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="card-tr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e67e22;strokeWidth=2;fontColor=#ffffff;fontSize=11;shadow=1;" value="Planning(规划)&#xa;━━━━&#xa;任务分解&#xa;路径规划&#xa;多步推理" vertex="1">
+          <mxGeometry height="100" width="160" x="640" y="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn-tr" edge="1" parent="1" source="hub" target="card-tr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" value="核心能力">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="card-bl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#9b59b6;strokeWidth=2;fontColor=#ffffff;fontSize=11;shadow=1;" value="Tool Use(工具)&#xa;━━━━&#xa;函数调用&#xa;API集成&#xa;工具选择" vertex="1">
+          <mxGeometry height="100" width="160" x="100" y="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn-bl" edge="1" parent="1" source="hub" target="card-bl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" value="核心能力">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="card-br" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e74c3c;strokeWidth=2;fontColor=#ffffff;fontSize=11;shadow=1;" value="Reflection(反思)&#xa;━━━━&#xa;自我评估&#xa;错误纠正&#xa;迭代优化" vertex="1">
+          <mxGeometry height="100" width="160" x="640" y="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn-br" edge="1" parent="1" source="hub" target="card-br" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" value="核心能力">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

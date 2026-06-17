@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" modified="2026-06-14T00:00:00.000Z" agent="xml-diagram" version="24.7.17">
+  <diagram id="flow-user-registration" name="用户注册流程">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="800" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="用户注册流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#333333;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="line" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="720" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="开始" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="70" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="inputPhone" value="输入手机号" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="130" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="verifyCode" value="验证码校验" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#333333;fontSize=11;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="340" y="210" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="createUser" value="创建用户" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="210" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="initConfig" value="初始化配置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="290" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="loginDone" value="登录完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="370" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="registerSuccess" value="注册成功" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="450" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="errorReturn" value="返回错误提示" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="210" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="endNo" value="结束" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="450" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="start" target="inputPhone">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="inputPhone" target="verifyCode">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#f8f9fa;fontColor=#333333;fontSize=10;" edge="1" parent="1" source="verifyCode" target="createUser">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="createUser" target="initConfig">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="initConfig" target="loginDone">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="loginDone" target="registerSuccess">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#f8f9fa;fontColor=#333333;fontSize=10;" edge="1" parent="1" source="verifyCode" target="errorReturn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="errorReturn" target="endNo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="图例说明&#xa;━━━━━━━━━&#xa;■ 主流程(蓝色)  ■ 成功(绿色)&#xa;■ 错误(红色)  ■ 判断(橙色)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;fontColor=#666666;fontSize=10;fontFamily=Microsoft YaHei;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="560" y="500" width="210" height="65" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

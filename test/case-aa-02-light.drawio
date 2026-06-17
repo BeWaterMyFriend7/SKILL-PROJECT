@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-aa-02-light" name="OA办公应用架构图-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="780" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="780" width="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#0f172a;" value="OA办公平台应用架构图" vertex="1">
+          <mxGeometry height="35" width="300" x="400" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="front-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f3ff;strokeColor=#3498db;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="540" width="220" x="30" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="front-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#3498db;" value="前端接入层" vertex="1">
+          <mxGeometry height="25" width="120" x="50" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="portal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="门户&#xa;━━━━━━&#xa;统一入口 · 工作台&#xa;待办中心 · 通知" vertex="1">
+          <mxGeometry height="100" width="190" x="45" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="service-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eafaf1;strokeColor=#2ecc71;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="540" width="400" x="280" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="service-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#2ecc71;" value="业务服务层" vertex="1">
+          <mxGeometry height="25" width="120" x="300" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="approval-center" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="审批中心&#xa;━━━━━━&#xa;审批引擎 | 流程设计&#xa;表单管理 | 代理设置" vertex="1">
+          <mxGeometry height="100" width="170" x="300" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="msg-center" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="消息中心&#xa;━━━━━━&#xa;站内信 | 邮件&#xa;短信 | 消息分发" vertex="1">
+          <mxGeometry height="100" width="170" x="490" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="doc-center" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="文档中心&#xa;━━━━━━&#xa;在线编辑 | 文档管理&#xa;知识库 | 版本管理" vertex="1">
+          <mxGeometry height="100" width="170" x="300" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#9b59b6;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="200" width="380" x="280" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#9b59b6;" value="基础能力层" vertex="1">
+          <mxGeometry height="25" width="120" x="300" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="identity-auth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="统一身份认证&#xa;━━━━━━━━&#xa;SSO | OAuth2.0&#xa;权限管理 | 审计日志" vertex="1">
+          <mxGeometry height="90" width="350" x="295" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontColor=#334155;fontSize=11;" value=" 蓝色=前端接入  绿色=业务服务  橙色=文档服务  紫色=基础能力" vertex="1">
+          <mxGeometry height="36" width="480" x="300" y="720" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,94 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="消息发送时序图-浅色" id="0">
+    <mxGraphModel dx="900" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="800" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="800" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="消息发送时序图" vertex="1">
+          <mxGeometry height="32" width="360" x="320" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="a-client" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="发送方客户端" vertex="1">
+          <mxGeometry height="35" width="110" x="25" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a-access" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#dc2626;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="接入层" vertex="1">
+          <mxGeometry height="35" width="100" x="230" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a-route" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="路由服务" vertex="1">
+          <mxGeometry height="35" width="100" x="420" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a-store" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="存储服务" vertex="1">
+          <mxGeometry height="35" width="100" x="610" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a-recv" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1abc9c;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="接收方客户端" vertex="1">
+          <mxGeometry height="35" width="110" x="810" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="80" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="280" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="470" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="660" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="865" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="1. 发送消息" vertex="1">
+          <mxGeometry height="35" width="110" x="25" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="2. 验证消息&#xa;分配连接" vertex="1">
+          <mxGeometry height="45" width="110" x="215" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="3. 路由查询&#xa;目标定位" vertex="1">
+          <mxGeometry height="45" width="110" x="415" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="4. 存储消息&#xa;持久化" vertex="1">
+          <mxGeometry height="45" width="110" x="605" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1abc9c;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="5. 推送消息" vertex="1">
+          <mxGeometry height="35" width="110" x="810" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1abc9c;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="6. 已读回执" vertex="1">
+          <mxGeometry height="35" width="110" x="810" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="s1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3498db;strokeWidth=2;endArrow=block;endFill=1;" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="消息内容" vertex="1">
+          <mxGeometry height="16" width="60" x="130" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="s2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=block;endFill=1;" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="路由请求" vertex="1">
+          <mxGeometry height="16" width="60" x="330" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="s3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=block;endFill=1;" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="存储请求" vertex="1">
+          <mxGeometry height="16" width="60" x="520" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="s4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9b59b6;strokeWidth=2;endArrow=block;endFill=1;" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="推送通知" vertex="1">
+          <mxGeometry height="16" width="60" x="720" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="s5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1abc9c;strokeWidth=2;endArrow=block;endFill=1;endSize=6;startSize=6;" target="s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="已读回执" vertex="1">
+          <mxGeometry height="16" width="60" x="865" y="490" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

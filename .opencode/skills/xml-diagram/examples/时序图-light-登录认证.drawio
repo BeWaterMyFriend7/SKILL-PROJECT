@@ -1,0 +1,128 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="sequence-login-light" name="时序图-light-登录认证">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="720" background="#f8fafc" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" vertex="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;">
+          <mxGeometry x="0" y="0" width="1040" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" value="登录认证时序图" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;fontColor=#0f172a;align=center;verticalAlign=middle;">
+          <mxGeometry x="35" y="20" width="970" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" value="浏览器、网关、认证服务、Redis 与数据库之间的请求和返回链路" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#64748b;align=center;verticalAlign=middle;">
+          <mxGeometry x="35" y="58" width="970" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p-browser" parent="1" value="浏览器" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f3ff;strokeColor=#3498db;fontColor=#1d4ed8;fontSize=14;fontStyle=1;shadow=1;">
+          <mxGeometry x="70" y="100" width="140" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="p-gateway" parent="1" value="API 网关" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#eafaf1;strokeColor=#2ecc71;fontColor=#15803d;fontSize=14;fontStyle=1;shadow=1;">
+          <mxGeometry x="260" y="100" width="140" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="p-auth" parent="1" value="认证服务" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#f3e8ff;strokeColor=#9b59b6;fontColor=#6b21a8;fontSize=14;fontStyle=1;shadow=1;">
+          <mxGeometry x="450" y="100" width="140" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="p-redis" parent="1" value="Redis" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff4e6;strokeColor=#e67e22;fontColor=#9a3412;fontSize=14;fontStyle=1;shadow=1;">
+          <mxGeometry x="640" y="100" width="140" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="p-db" parent="1" value="用户数据库" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e6fffb;strokeColor=#1abc9c;fontColor=#0f766e;fontSize=14;fontStyle=1;shadow=1;">
+          <mxGeometry x="830" y="100" width="140" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="life-browser" parent="1" vertex="1" style="shape=line;html=1;strokeColor=#cbd5e1;dashed=1;dashPattern=8 6;strokeWidth=1;">
+          <mxGeometry x="140" y="154" width="1" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="life-gateway" parent="1" vertex="1" style="shape=line;html=1;strokeColor=#cbd5e1;dashed=1;dashPattern=8 6;strokeWidth=1;">
+          <mxGeometry x="330" y="154" width="1" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="life-auth" parent="1" vertex="1" style="shape=line;html=1;strokeColor=#cbd5e1;dashed=1;dashPattern=8 6;strokeWidth=1;">
+          <mxGeometry x="520" y="154" width="1" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="life-redis" parent="1" vertex="1" style="shape=line;html=1;strokeColor=#cbd5e1;dashed=1;dashPattern=8 6;strokeWidth=1;">
+          <mxGeometry x="710" y="154" width="1" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="life-db" parent="1" vertex="1" style="shape=line;html=1;strokeColor=#cbd5e1;dashed=1;dashPattern=8 6;strokeWidth=1;">
+          <mxGeometry x="900" y="154" width="1" height="500" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-gateway" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;opacity=90;">
+          <mxGeometry x="324" y="206" width="12" height="372" as="geometry" />
+        </mxCell>
+        <mxCell id="act-auth" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;opacity=90;">
+          <mxGeometry x="514" y="260" width="12" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="act-redis" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;opacity=90;">
+          <mxGeometry x="704" y="316" width="12" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="act-db" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1abc9c;opacity=90;">
+          <mxGeometry x="894" y="416" width="12" height="78" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m1" parent="1" edge="1" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#3498db;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="220" as="sourcePoint" />
+            <mxPoint x="330" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1-label" parent="1" value="1. 提交账号和密码" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#334155;align=center;verticalAlign=middle;">
+          <mxGeometry x="150" y="198" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" parent="1" edge="1" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#334155;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="280" as="sourcePoint" />
+            <mxPoint x="520" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2-label" parent="1" value="2. 转发认证请求" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#334155;align=center;verticalAlign=middle;">
+          <mxGeometry x="340" y="258" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" parent="1" edge="1" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#334155;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="340" as="sourcePoint" />
+            <mxPoint x="710" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3-label" parent="1" value="3. 查询会话与限流状态" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#334155;align=center;verticalAlign=middle;">
+          <mxGeometry x="530" y="318" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="m4" parent="1" edge="1" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#334155;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="440" as="sourcePoint" />
+            <mxPoint x="900" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4-label" parent="1" value="4. 校验用户凭证" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#334155;align=center;verticalAlign=middle;">
+          <mxGeometry x="620" y="418" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="m5" parent="1" edge="1" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#94a3b8;dashed=1;dashPattern=8 6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="500" as="sourcePoint" />
+            <mxPoint x="520" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5-label" parent="1" value="5. 返回用户与权限" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#64748b;align=center;verticalAlign=middle;">
+          <mxGeometry x="620" y="478" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="m6" parent="1" edge="1" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#94a3b8;dashed=1;dashPattern=8 6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="560" as="sourcePoint" />
+            <mxPoint x="330" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6-label" parent="1" value="6. 签发 Token" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#64748b;align=center;verticalAlign=middle;">
+          <mxGeometry x="350" y="538" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="m7" parent="1" edge="1" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#94a3b8;dashed=1;dashPattern=8 6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="620" as="sourcePoint" />
+            <mxPoint x="140" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7-label" parent="1" value="7. 登录成功" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#64748b;align=center;verticalAlign=middle;">
+          <mxGeometry x="175" y="598" width="120" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

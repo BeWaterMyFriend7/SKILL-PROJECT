@@ -1,0 +1,127 @@
+<mxfile host="app.diagrams.net" modified="2026-06-14T00:00:00.000Z" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-08-light" name="数据架构全链路图 - Light">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="1100" pageHeight="520" pageBackground="#f8f9fa">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="520" width="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#333333;" value="数据架构全链路图" vertex="1">
+          <mxGeometry height="30" width="380" x="360" y="12" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f4ff;strokeColor=#3498db;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="60" width="1060" x="20" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#3498db;" value="数据源 (Data Sources)" vertex="1">
+          <mxGeometry height="22" width="200" x="30" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="n1-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="App 埋点" vertex="1">
+          <mxGeometry height="35" width="120" x="138" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="n1-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="业务 DB" vertex="1">
+          <mxGeometry height="35" width="120" x="366" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="n1-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="日志文件" vertex="1">
+          <mxGeometry height="35" width="120" x="594" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="n1-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="外部 API" vertex="1">
+          <mxGeometry height="35" width="120" x="822" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="l2-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e67e22;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="60" width="1060" x="20" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="l2-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#e67e22;" value="数据采集 (Collection)" vertex="1">
+          <mxGeometry height="22" width="200" x="30" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="n2-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d35400;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="Flume" vertex="1">
+          <mxGeometry height="35" width="120" x="138" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="n2-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d35400;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="DataX" vertex="1">
+          <mxGeometry height="35" width="120" x="366" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="n2-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d35400;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="Canal" vertex="1">
+          <mxGeometry height="35" width="120" x="594" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="n2-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d35400;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="Kafka" vertex="1">
+          <mxGeometry height="35" width="120" x="822" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#2ecc71;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="60" width="1060" x="20" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#2ecc71;" value="清洗计算 (Compute)" vertex="1">
+          <mxGeometry height="22" width="200" x="30" y="202" as="geometry" />
+        </mxCell>
+        <mxCell id="n3-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#27ae60;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="Spark" vertex="1">
+          <mxGeometry height="35" width="140" x="195" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="n3-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#27ae60;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="Flink" vertex="1">
+          <mxGeometry height="35" width="140" x="480" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="n3-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#27ae60;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="Doris" vertex="1">
+          <mxGeometry height="35" width="140" x="765" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f3ff;strokeColor=#9b59b6;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="60" width="1060" x="20" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#9b59b6;" value="数据仓库 (Warehouse)" vertex="1">
+          <mxGeometry height="22" width="220" x="30" y="272" as="geometry" />
+        </mxCell>
+        <mxCell id="n4-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#8e44ad;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="ODS" vertex="1">
+          <mxGeometry height="35" width="120" x="138" y="288" as="geometry" />
+        </mxCell>
+        <mxCell id="n4-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#8e44ad;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="DWD" vertex="1">
+          <mxGeometry height="35" width="120" x="366" y="288" as="geometry" />
+        </mxCell>
+        <mxCell id="n4-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#8e44ad;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="DWS" vertex="1">
+          <mxGeometry height="35" width="120" x="594" y="288" as="geometry" />
+        </mxCell>
+        <mxCell id="n4-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#8e44ad;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="ADS" vertex="1">
+          <mxGeometry height="35" width="120" x="822" y="288" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecfdf5;strokeColor=#1abc9c;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="60" width="1060" x="20" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#1abc9c;" value="指标计算 (Metrics)" vertex="1">
+          <mxGeometry height="22" width="200" x="30" y="342" as="geometry" />
+        </mxCell>
+        <mxCell id="n5-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1abc9c;strokeColor=#16a085;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="用户行为指标" vertex="1">
+          <mxGeometry height="35" width="140" x="290" y="358" as="geometry" />
+        </mxCell>
+        <mxCell id="n5-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1abc9c;strokeColor=#16a085;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="交易经营指标" vertex="1">
+          <mxGeometry height="35" width="140" x="670" y="358" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf2f8;strokeColor=#ec4899;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="60" width="1060" x="20" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#ec4899;" value="数据应用 (Application)" vertex="1">
+          <mxGeometry height="22" width="200" x="30" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="n6-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ec4899;strokeColor=#db2777;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="BI 看板" vertex="1">
+          <mxGeometry height="35" width="140" x="195" y="428" as="geometry" />
+        </mxCell>
+        <mxCell id="n6-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ec4899;strokeColor=#db2777;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="数据 API" vertex="1">
+          <mxGeometry height="35" width="140" x="480" y="428" as="geometry" />
+        </mxCell>
+        <mxCell id="n6-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ec4899;strokeColor=#db2777;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="报表大屏" vertex="1">
+          <mxGeometry height="35" width="140" x="765" y="428" as="geometry" />
+        </mxCell>
+        <mxCell id="a1-2" edge="1" parent="1" source="l1-bg" target="l2-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2-3" edge="1" parent="1" source="l2-bg" target="l3-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3-4" edge="1" parent="1" source="l3-bg" target="l4-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4-5" edge="1" parent="1" source="l4-bg" target="l5-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5-6" edge="1" parent="1" source="l5-bg" target="l6-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

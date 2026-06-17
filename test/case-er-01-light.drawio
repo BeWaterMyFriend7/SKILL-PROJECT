@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-er-01-light" name="电商系统ER图-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="620" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="620" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="电商系统ER图" vertex="1">
+          <mxGeometry height="34" width="260" x="370" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="e-user" parent="1" value="用户 (User)&#xa;────────────&#xa;+ id: int (PK)&#xa;+ username: varchar(50)&#xa;+ email: varchar(100)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="110" width="200" x="50" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-order" parent="1" value="订单 (Order)&#xa;────────────&#xa;+ order_id: int (PK)&#xa;+ order_date: datetime&#xa;+ user_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="110" width="200" x="400" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-product" parent="1" value="商品 (Product)&#xa;────────────&#xa;+ product_id: int (PK)&#xa;+ name: varchar(100)&#xa;+ price: decimal(10,2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="110" width="200" x="50" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="e-orderitem" parent="1" value="订单明细 (OrderItem)&#xa;────────────&#xa;+ item_id: int (PK)&#xa;+ quantity: int&#xa;+ unit_price: decimal(10,2)&#xa;+ order_id: int (FK)&#xa;+ product_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="140" width="210" x="400" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e-payment" parent="1" value="支付记录 (Payment)&#xa;────────────&#xa;+ payment_id: int (PK)&#xa;+ amount: decimal(10,2)&#xa;+ pay_time: datetime&#xa;+ order_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="140" width="210" x="730" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" parent="1" value="下单" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=11;" vertex="1">
+          <mxGeometry height="50" width="70" x="315" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" parent="1" value="包含" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=11;" vertex="1">
+          <mxGeometry height="50" width="70" x="315" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" parent="1" value="支付" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=11;" vertex="1">
+          <mxGeometry height="50" width="70" x="640" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="e-user" target="r1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1l" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge1">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="r1" target="e-order">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2l" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge2">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="e-order" target="r2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3l" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge3">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="r2" target="e-orderitem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4l" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge4">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="e-order" target="r3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5l" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge5">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="r3" target="e-payment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6l" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge6">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

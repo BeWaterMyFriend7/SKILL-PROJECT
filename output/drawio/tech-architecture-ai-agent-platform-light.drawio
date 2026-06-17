@@ -1,0 +1,127 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="AI Agent平台技术架构图-浅色" id="0">
+    <mxGraphModel dx="1540" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="870" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="870" width="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#1f2937;" value="AI Agent平台技术架构图" vertex="1">
+          <mxGeometry height="35" width="300" x="450" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="presentation-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2ff;strokeColor=#6366f1;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="100" width="1160" x="20" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="presentation-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#6366f1;" value="接入层 (Access Layer)" vertex="1">
+          <mxGeometry height="25" width="180" x="40" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="web-frontend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="Web控制台&#10;━━━━━&#10;React · TypeScript" vertex="1">
+          <mxGeometry height="55" width="165" x="50" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="api-portal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="API入口&#10;━━━━━&#10;REST · gRPC · WebSocket" vertex="1">
+          <mxGeometry height="55" width="165" x="235" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#e74c3c;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="60" width="1160" x="20" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#e74c3c;" value="网关层 (Gateway Layer)" vertex="1">
+          <mxGeometry height="25" width="180" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="api-gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="35" width="145" x="140" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="认证鉴权" vertex="1">
+          <mxGeometry height="35" width="145" x="305" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="rate-limit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#dc2626;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=1;" value="限流熔断" vertex="1">
+          <mxGeometry height="35" width="145" x="470" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="app-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#2ecc71;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="200" width="500" x="20" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="app-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#2ecc71;" value="编排引擎 (Orchestration Engine)" vertex="1">
+          <mxGeometry height="25" width="220" x="40" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="planner" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="任务规划器&#10;━━━━━&#10;Planner" vertex="1">
+          <mxGeometry height="60" width="145" x="40" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="memory" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="记忆系统&#10;━━━━━&#10;Memory" vertex="1">
+          <mxGeometry height="60" width="145" x="200" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="tool-center" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="工具中心&#10;━━━━━&#10;Tool Center" vertex="1">
+          <mxGeometry height="60" width="145" x="360" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="service-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fefce8;strokeColor=#e67e22;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="200" width="390" x="550" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="service-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#e67e22;" value="模型服务 (Model Service)" vertex="1">
+          <mxGeometry height="25" width="200" x="570" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="llm-gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="LLM Gateway&#10;━━━━━&#10;OpenAI · Claude · 文心" vertex="1">
+          <mxGeometry height="60" width="170" x="570" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="embedding" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="Embedding&#10;━━━━━&#10;向量嵌入 · Rerank" vertex="1">
+          <mxGeometry height="60" width="170" x="755" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="data-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f3ff;strokeColor=#9b59b6;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="190" width="500" x="20" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="data-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#9b59b6;" value="存储层 (Storage Layer)" vertex="1">
+          <mxGeometry height="25" width="200" x="40" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="rdbms" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="关系数据库&#10;━━━&#10;PostgreSQL" vertex="1">
+          <mxGeometry height="55" width="145" x="40" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="vector-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="向量数据库&#10;━━━━━&#10;Milvus · Weaviate" vertex="1">
+          <mxGeometry height="55" width="145" x="200" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="缓存/队列&#10;━━━━━&#10;Redis · Kafka" vertex="1">
+          <mxGeometry height="55" width="145" x="360" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="infra-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f4f6;strokeColor=#64748b;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="140" width="390" x="550" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="infra-layer" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#374151;" value="监控运维 (Observability)" vertex="1">
+          <mxGeometry height="25" width="200" x="570" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="monitoring" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="监控告警&#10;━━━━━&#10;Prometheus · Grafana" vertex="1">
+          <mxGeometry height="55" width="170" x="570" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="logging" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=#475569;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="日志追踪&#10;━━━━━&#10;ELK · Jaeger" vertex="1">
+          <mxGeometry height="55" width="170" x="755" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="conn1" edge="1" parent="1" source="web-frontend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" target="api-gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn2" edge="1" parent="1" source="api-gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9ca3af;strokeWidth=2;endArrow=classic;endFill=1;" target="planner">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="35" width="400" x="30" y="805" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#424242;" value="分层说明：" vertex="1">
+          <mxGeometry height="25" width="80" x="40" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#6366f1;" value="接入" vertex="1">
+          <mxGeometry height="25" width="50" x="110" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#e74c3c;" value="网关" vertex="1">
+          <mxGeometry height="25" width="50" x="160" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#2ecc71;" value="编排" vertex="1">
+          <mxGeometry height="25" width="50" x="210" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#e67e22;" value="模型" vertex="1">
+          <mxGeometry height="25" width="50" x="260" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#9b59b6;" value="存储" vertex="1">
+          <mxGeometry height="25" width="50" x="310" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#64748b;" value="运维" vertex="1">
+          <mxGeometry height="25" width="50" x="360" y="810" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

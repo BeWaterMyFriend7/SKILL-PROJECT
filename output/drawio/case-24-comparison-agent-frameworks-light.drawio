@@ -1,0 +1,39 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Agent框架对比 - 浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="900" pageHeight="390" pageBackground="#f8f9fa">
+      <root>
+        <mxCell id="0" /><mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" value="" vertex="1"><mxGeometry height="390" width="900" as="geometry" /></mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;fontSize=18;fontStyle=1;fontColor=#333333;" value="Agent 框架对比" vertex="1"><mxGeometry x="300" y="12" width="300" height="30" as="geometry" /></mxCell>
+        <mxCell id="h1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#c0392b;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="LangGraph" vertex="1"><mxGeometry height="36" width="180" x="30" y="70" as="geometry" /></mxCell>
+        <mxCell id="h2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d35400;fontColor=#0f172a;fontSize=12;fontStyle=1;shadow=1;" value="CrewAI" vertex="1"><mxGeometry height="36" width="180" x="230" y="70" as="geometry" /></mxCell>
+        <mxCell id="h3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="AutoGen" vertex="1"><mxGeometry height="36" width="180" x="430" y="70" as="geometry" /></mxCell>
+        <mxCell id="h4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#27ae60;fontColor=#0f172a;fontSize=12;fontStyle=1;shadow=1;" value="OpenAI Agent SDK" vertex="1"><mxGeometry height="36" width="180" x="630" y="70" as="geometry" /></mxCell>
+        <mxCell id="fl1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=11;fontStyle=1;" value="核心特点" vertex="1"><mxGeometry height="32" width="50" x="30" y="120" as="geometry" /></mxCell>
+        <mxCell id="fl1a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="状态图驱动&#10;节点编排" vertex="1"><mxGeometry height="32" width="180" x="230" y="120" as="geometry" /></mxCell>
+        <mxCell id="fl1b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="角色协作&#10;任务委派" vertex="1"><mxGeometry height="32" width="180" x="430" y="120" as="geometry" /></mxCell>
+        <mxCell id="fl1c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="多Agent对话&#10;自主协作" vertex="1"><mxGeometry height="32" width="180" x="630" y="120" as="geometry" /></mxCell>
+        <mxCell id="fl2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=11;fontStyle=1;" value="编排方式" vertex="1"><mxGeometry height="32" width="50" x="30" y="160" as="geometry" /></mxCell>
+        <mxCell id="fl2a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="Graph状态机" vertex="1"><mxGeometry height="32" width="180" x="230" y="160" as="geometry" /></mxCell>
+        <mxCell id="fl2b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="顺序/层级" vertex="1"><mxGeometry height="32" width="180" x="430" y="160" as="geometry" /></mxCell>
+        <mxCell id="fl2c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="对话驱动" vertex="1"><mxGeometry height="32" width="180" x="630" y="160" as="geometry" /></mxCell>
+        <mxCell id="fl3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=11;fontStyle=1;" value="LLM支持" vertex="1"><mxGeometry height="32" width="50" x="30" y="200" as="geometry" /></mxCell>
+        <mxCell id="fl3a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="多模型" vertex="1"><mxGeometry height="32" width="180" x="230" y="200" as="geometry" /></mxCell>
+        <mxCell id="fl3b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="多模型" vertex="1"><mxGeometry height="32" width="180" x="430" y="200" as="geometry" /></mxCell>
+        <mxCell id="fl3c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="多模型" vertex="1"><mxGeometry height="32" width="180" x="630" y="200" as="geometry" /></mxCell>
+        <mxCell id="fl4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=11;fontStyle=1;" value="工具集成" vertex="1"><mxGeometry height="32" width="50" x="30" y="240" as="geometry" /></mxCell>
+        <mxCell id="fl4a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="丰富" vertex="1"><mxGeometry height="32" width="180" x="230" y="240" as="geometry" /></mxCell>
+        <mxCell id="fl4b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="中等" vertex="1"><mxGeometry height="32" width="180" x="430" y="240" as="geometry" /></mxCell>
+        <mxCell id="fl4c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="原生函数调用" vertex="1"><mxGeometry height="32" width="180" x="630" y="240" as="geometry" /></mxCell>
+        <mxCell id="fl5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=11;fontStyle=1;" value="学习曲线" vertex="1"><mxGeometry height="32" width="50" x="30" y="280" as="geometry" /></mxCell>
+        <mxCell id="fl5a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="较高" vertex="1"><mxGeometry height="32" width="180" x="230" y="280" as="geometry" /></mxCell>
+        <mxCell id="fl5b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="中等" vertex="1"><mxGeometry height="32" width="180" x="430" y="280" as="geometry" /></mxCell>
+        <mxCell id="fl5c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="低" vertex="1"><mxGeometry height="32" width="180" x="630" y="280" as="geometry" /></mxCell>
+        <mxCell id="fl6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=11;fontStyle=1;" value="适用场景" vertex="1"><mxGeometry height="32" width="50" x="30" y="320" as="geometry" /></mxCell>
+        <mxCell id="fl6a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="复杂工作流&#10;条件分支" vertex="1"><mxGeometry height="32" width="180" x="230" y="320" as="geometry" /></mxCell>
+        <mxCell id="fl6b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="团队协作&#10;任务拆解" vertex="1"><mxGeometry height="32" width="180" x="430" y="320" as="geometry" /></mxCell>
+        <mxCell id="fl6c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#333333;fontSize=10;" value="多Agent系统&#10;研究探索" vertex="1"><mxGeometry height="32" width="180" x="630" y="320" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

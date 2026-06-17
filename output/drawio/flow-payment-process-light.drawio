@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" modified="2026-06-14T00:00:00.000Z" agent="xml-diagram" version="24.7.17">
+  <diagram id="flow-payment-process" name="支付流程">
+    <mxGraphModel dx="900" dy="550" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="920" pageHeight="610" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="920" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="支付流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#333333;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="line" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#e0e0e0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="820" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="开始" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="70" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="placeOrder" value="用户下单" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="130" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="initPay" value="发起支付" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="200" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="payGateway" value="支付网关" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="200" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bankChannel" value="银行渠道" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="200" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="paySuccess" value="支付成功?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#333333;fontSize=11;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="740" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="callbackNotify" value="回调通知" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="370" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="orderComplete" value="订单完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="430" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="endYes" value="结束" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="495" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="payFail" value="支付失败" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="370" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="endNo" value="结束" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="495" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="start" target="placeOrder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="placeOrder" target="initPay">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="initPay" target="payGateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="payGateway" target="bankChannel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="bankChannel" target="paySuccess">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#f8f9fa;fontColor=#333333;fontSize=10;" edge="1" parent="1" source="paySuccess" target="callbackNotify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="callbackNotify" target="orderComplete">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="orderComplete" target="endYes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#f8f9fa;fontColor=#333333;fontSize=10;" edge="1" parent="1" source="paySuccess" target="payFail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="payFail" target="endNo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="图例说明&#10;━━━━━━━━━&#10;■ 主流程(蓝色)  ■ 成功(绿色)&#10;■ 失败(红色)  ■ 判断(橙色)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;fontColor=#666666;fontSize=10;fontFamily=Microsoft YaHei;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="460" width="210" height="65" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

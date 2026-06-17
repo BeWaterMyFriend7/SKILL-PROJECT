@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-sl-02-dark" name="电商订单处理泳道图-深色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="680" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="680" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#f8fafc;" value="电商订单处理泳道图" vertex="1">
+          <mxGeometry height="34" width="340" x="330" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;fontColor=#94a3b8;fontSize=13;fontStyle=1;verticalAlign=middle;align=center;" value="客户" vertex="1">
+          <mxGeometry height="130" width="60" x="30" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;fontColor=#94a3b8;fontSize=13;fontStyle=1;verticalAlign=middle;align=center;" value="订单系统" vertex="1">
+          <mxGeometry height="130" width="60" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;fontColor=#94a3b8;fontSize=13;fontStyle=1;verticalAlign=middle;align=center;" value="仓储系统" vertex="1">
+          <mxGeometry height="130" width="60" x="30" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;fontColor=#94a3b8;fontSize=13;fontStyle=1;verticalAlign=middle;align=center;" value="物流系统" vertex="1">
+          <mxGeometry height="130" width="60" x="30" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;fontColor=#cbd5e1;fontSize=11;" value="提交订单&#xa;并支付" vertex="1">
+          <mxGeometry height="65" width="110" x="120" y="107" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;fontColor=#cbd5e1;fontSize=11;" value="确认收货&#xa;与评价" vertex="1">
+          <mxGeometry height="65" width="110" x="700" y="107" as="geometry" />
+        </mxCell>
+        <mxCell id="o1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;fontColor=#cbd5e1;fontSize=11;" value="订单校验&#xa;与风控" vertex="1">
+          <mxGeometry height="65" width="110" x="120" y="237" as="geometry" />
+        </mxCell>
+        <mxCell id="o2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;fontColor=#cbd5e1;fontSize=11;" value="库存锁定&#xa;生成出库单" vertex="1">
+          <mxGeometry height="65" width="110" x="270" y="237" as="geometry" />
+        </mxCell>
+        <mxCell id="o3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;fontColor=#cbd5e1;fontSize=11;" value="支付处理&#xa;与确认" vertex="1">
+          <mxGeometry height="65" width="110" x="420" y="237" as="geometry" />
+        </mxCell>
+        <mxCell id="o4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;fontColor=#cbd5e1;fontSize=11;" value="状态同步&#xa;与通知" vertex="1">
+          <mxGeometry height="65" width="110" x="570" y="237" as="geometry" />
+        </mxCell>
+        <mxCell id="w1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e67e22;fontColor=#cbd5e1;fontSize=11;" value="波次创建&#xa;与拣货" vertex="1">
+          <mxGeometry height="65" width="110" x="120" y="367" as="geometry" />
+        </mxCell>
+        <mxCell id="w2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e67e22;fontColor=#cbd5e1;fontSize=11;" value="包装复核&#xa;与称重" vertex="1">
+          <mxGeometry height="65" width="110" x="270" y="367" as="geometry" />
+        </mxCell>
+        <mxCell id="ld1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#9b59b6;fontColor=#cbd5e1;fontSize=11;" value="揽件配送&#xa;与轨迹" vertex="1">
+          <mxGeometry height="65" width="110" x="120" y="497" as="geometry" />
+        </mxCell>
+        <mxCell id="ld2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#9b59b6;fontColor=#cbd5e1;fontSize=11;" value="签收确认&#xa;与回单" vertex="1">
+          <mxGeometry height="65" width="110" x="270" y="497" as="geometry" />
+        </mxCell>
+        <mxCell id="ep1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=11;" value="客户操作" vertex="1">
+          <mxGeometry height="26" width="690" x="120" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="ep2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#22c55e;fontColor=#ffffff;fontSize=11;" value="订单系统" vertex="1">
+          <mxGeometry height="26" width="560" x="120" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="ep3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#ea580c;fontColor=#ffffff;fontSize=11;" value="仓储系统" vertex="1">
+          <mxGeometry height="26" width="260" x="120" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="ep4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#7c3aed;fontColor=#ffffff;fontSize=11;" value="物流系统" vertex="1">
+          <mxGeometry height="26" width="260" x="120" y="465" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

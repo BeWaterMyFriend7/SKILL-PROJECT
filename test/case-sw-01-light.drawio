@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-sw-01-light" name="AI Agent平台SWOT分析-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="600" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="600" width="800" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="AI Agent平台SWOT分析" vertex="1">
+          <mxGeometry height="34" width="340" x="230" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="s-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f3ff;strokeColor=#3498db;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="230" width="350" x="30" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s-title" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="S - 优势 (Strengths)" vertex="1">
+          <mxGeometry height="28" width="250" x="80" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="s-content" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#334155;spacingLeft=8;" value="• 多模型兼容：支持主流LLM&#xa;• 架构灵活：插件化可扩展&#xa;• 技能生态：丰富的社区技能&#xa;• 多平台支持：CLI/消息/IDE" vertex="1">
+          <mxGeometry height="120" width="300" x="55" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="w-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff1f0;strokeColor=#e74c3c;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="230" width="350" x="420" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="w-title" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="W - 劣势 (Weaknesses)" vertex="1">
+          <mxGeometry height="28" width="260" x="465" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="w-content" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#334155;spacingLeft=8;" value="• 学习曲线：需要时间掌握&#xa;• 稳定性：依赖外部LLM服务&#xa;• 内存管理：长对话上下文受限&#xa;• 安全性：插件审核机制待完善" vertex="1">
+          <mxGeometry height="120" width="310" x="440" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="o-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eafaf1;strokeColor=#2ecc71;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="230" width="350" x="30" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="o-title" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#2ecc71;strokeColor=#2ecc71;strokeWidth=0;fontColor=#0f172a;fontSize=14;fontStyle=1;" value="O - 机会 (Opportunities)" vertex="1">
+          <mxGeometry height="28" width="250" x="80" y="336" as="geometry" />
+        </mxCell>
+        <mxCell id="o-content" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#334155;spacingLeft=8;" value="• AI Agent市场快速增长&#xa;• 企业智能化转型需求旺盛&#xa;• 开源社区贡献日益活跃&#xa;• 多模态/Agent生态正在形成" vertex="1">
+          <mxGeometry height="120" width="300" x="55" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="t-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7e6;strokeColor=#e67e22;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="230" width="350" x="420" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="t-title" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="T - 威胁 (Threats)" vertex="1">
+          <mxGeometry height="28" width="260" x="465" y="336" as="geometry" />
+        </mxCell>
+        <mxCell id="t-content" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=11;fontColor=#334155;spacingLeft=8;" value="• 竞品增多：大厂纷纷入局&#xa;• LLM成本波动：API价格不确定&#xa;• 数据隐私法规日趋严格&#xa;• 用户粘性不足：切换成本低" vertex="1">
+          <mxGeometry height="120" width="310" x="440" y="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-as-02-light" name="ReAct论文总结-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="500" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="500" width="900" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="《ReAct》论文总结" vertex="1">
+          <mxGeometry height="34" width="300" x="300" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="card-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=12;align=center;spacing=8;" value="背景&#xa;━━━━━━&#xa;LLM在推理和行动&#xa;方面存在脱节&#xa;需要统一框架&#xa;将推理与行动结合" vertex="1">
+          <mxGeometry height="140" width="250" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="card-method" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=12;align=center;spacing=8;" value="核心方法&#xa;━━━━━━━━&#xa;Reasoning + Acting&#xa;Thought → Action → Observation&#xa;循环迭代&#xa;增强LLM的实用性" vertex="1">
+          <mxGeometry height="140" width="250" x="330" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="card-flow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=12;align=center;spacing=8;" value="工作流程&#xa;━━━━━━━━&#xa;1. 推理当前状态（Thought）&#xa;2. 执行具体操作（Action）&#xa;3. 观察环境反馈（Observation）&#xa;4. 重复直到任务完成" vertex="1">
+          <mxGeometry height="140" width="250" x="620" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="card-value" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;align=center;spacing=8;" value="核心价值&#xa;━━━━━━━━&#xa;提升可解释性&#xa;减少幻觉&#xa;增强交互能力&#xa;Agent范式的基础框架" vertex="1">
+          <mxGeometry height="120" width="820" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontColor=#334155;fontSize=11;" value="ReAct = Reasoning + Acting · 推理与行动的协同 · Agent系统的理论基础" vertex="1">
+          <mxGeometry height="36" width="540" x="180" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

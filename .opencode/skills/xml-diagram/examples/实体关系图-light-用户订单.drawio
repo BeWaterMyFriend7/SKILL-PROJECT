@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ER图-用户订单系统">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="940" pageHeight="500" pageBackground="#f8f9fa">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- 标题 -->
+        <mxCell id="title" value="用户订单系统ER图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="10" width="300" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 用户实体 ===== -->
+        <mxCell id="entity-user" value="用户 (User)&#xa;────────────&#xa;+ id: int (PK)&#xa;+ username: varchar(50)&#xa;+ email: varchar(100)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="200" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 订单实体 ===== -->
+        <mxCell id="entity-order" value="订单 (Order)&#xa;────────────&#xa;+ order_id: int (PK)&#xa;+ order_date: datetime&#xa;+ total_amount: decimal(10,2)&#xa;+ user_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="400" y="100" width="220" height="125" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 订单项实体 ===== -->
+        <mxCell id="entity-item" value="订单项 (OrderItem)&#xa;────────────&#xa;+ item_id: int (PK)&#xa;+ quantity: int&#xa;+ unit_price: decimal(10,2)&#xa;+ order_id: int (FK)&#xa;+ product_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="100" width="210" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 产品实体 ===== -->
+        <mxCell id="entity-product" value="产品 (Product)&#xa;────────────&#xa;+ product_id: int (PK)&#xa;+ name: varchar(100)&#xa;+ price: decimal(10,2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="320" width="200" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 关系菱形 ===== -->
+        <!-- 下单关系 User-Order -->
+        <mxCell id="rel-places" value="下单" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=1;fontColor=#333333;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="335" y="190" width="50" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- 包含关系 Order-OrderItem -->
+        <mxCell id="rel-contains" value="包含" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=1;fontColor=#333333;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="635" y="190" width="50" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- 关联关系 OrderItem-Product -->
+        <mxCell id="rel-refers" value="关联" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=1;fontColor=#333333;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="270" width="50" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== 连接线 ===== -->
+        <!-- User → 下单菱形 -->
+        <mxCell id="edge-u-rel" edge="1" parent="1" source="entity-user" target="rel-places">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-u-rel-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#666666;" vertex="1" connectable="0" parent="edge-u-rel">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="15" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 下单菱形 → Order -->
+        <mxCell id="edge-rel-o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="rel-places" target="entity-order">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-rel-o-label" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#666666;" vertex="1" connectable="0" parent="edge-rel-o">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="-15" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Order → 包含菱形 -->
+        <mxCell id="edge-o-rel2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="entity-order" target="rel-contains">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-o-rel2-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#666666;" vertex="1" connectable="0" parent="edge-o-rel2">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="15" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 包含菱形 → OrderItem -->
+        <mxCell id="edge-rel2-i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="rel-contains" target="entity-item">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-rel2-i-label" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#666666;" vertex="1" connectable="0" parent="edge-rel2-i">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="-15" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- OrderItem → 关联菱形 -->
+        <mxCell id="edge-i-rel3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="entity-item" target="rel-refers">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-i-rel3-label" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#666666;" vertex="1" connectable="0" parent="edge-i-rel3">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="15" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 关联菱形 → Product -->
+        <mxCell id="edge-rel3-p" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="rel-refers" target="entity-product">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-rel3-p-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#666666;" vertex="1" connectable="0" parent="edge-rel3-p">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="-15" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

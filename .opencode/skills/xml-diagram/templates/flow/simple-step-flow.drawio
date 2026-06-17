@@ -1,0 +1,81 @@
+<mxfile host="app.diagrams.net" modified="2026-06-14T00:00:00.000Z" agent="xml-diagram" version="24.7.17">
+  <diagram id="simple-step-flow-template" name="简约步骤流程图模板">
+    <mxGraphModel dx="900" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="620" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#e0e0e0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="900" height="620" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="简约步骤流程图模板" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="270" y="28" width="360" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="少步骤、少连线、无复杂分支" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#64748b;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="270" y="64" width="360" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="line" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e2e8f0;strokeColor=#e2e8f0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="96" width="820" height="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step1" value="1. 输入采集&#xa;━━━━━━&#xa;接收用户输入或外部信号" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="125" width="170" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="step2" value="2. 预处理&#xa;━━━━━━&#xa;清洗、归一化、补全上下文" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="265" y="125" width="170" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="step3" value="3. 核心识别&#xa;━━━━━━&#xa;抽取目标、意图或关键参数" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="475" y="125" width="170" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="step4" value="4. 决策计算&#xa;━━━━━━&#xa;生成最优动作或处理方案" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="685" y="125" width="170" height="92" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step5" value="5. 执行动作&#xa;━━━━━━&#xa;调用设备、服务或工作流" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="685" y="285" width="170" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="step6" value="6. 结果校验&#xa;━━━━━━&#xa;判断是否达到预期结果" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="475" y="285" width="170" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="step7" value="7. 记录反馈&#xa;━━━━━━&#xa;写入日志、指标和业务记录" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="265" y="285" width="170" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="step8" value="8. 流程完成&#xa;━━━━━━&#xa;返回结果并结束本次任务" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="285" width="170" height="92" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note1" value="生成规则&#xa;━━━━━━&#xa;主步骤 4-8 个；箭头不超过步骤数减一；条件说明写入卡片，不展开复杂分支。" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;fontColor=#334155;fontSize=12;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="70" y="430" width="350" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="适用场景&#xa;━━━━━━&#xa;算法步骤、操作流程、审核流程、机器人动作链、数据处理主线。" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;fontColor=#334155;fontSize=12;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="480" y="430" width="350" height="92" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498db;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step1" target="step2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498db;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step2" target="step3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step3" target="step4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step4" target="step5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9b59b6;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step5" target="step6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9b59b6;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step6" target="step7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9b59b6;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step7" target="step8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

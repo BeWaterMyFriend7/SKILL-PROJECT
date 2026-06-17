@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-er-02-light" name="IM系统ER图-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="620" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="620" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="IM系统ER图" vertex="1">
+          <mxGeometry height="34" width="240" x="380" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="e-user" parent="1" value="用户 (User)&#xa;────────────&#xa;+ user_id: int (PK)&#xa;+ nickname: varchar(50)&#xa;+ avatar: varchar(200)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="110" width="200" x="50" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-group" parent="1" value="群组 (Group)&#xa;────────────&#xa;+ group_id: int (PK)&#xa;+ name: varchar(100)&#xa;+ owner_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="110" width="200" x="400" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-msg" parent="1" value="消息 (Message)&#xa;────────────&#xa;+ msg_id: bigint (PK)&#xa;+ content: text&#xa;+ send_time: datetime&#xa;+ sender_id: int (FK)&#xa;+ group_id: int (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="140" width="220" x="50" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e-member" parent="1" value="群成员 (GroupMember)&#xa;────────────&#xa;+ id: int (PK)&#xa;+ user_id: int (FK)&#xa;+ group_id: int (FK)&#xa;+ role: varchar(20)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="140" width="220" x="400" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e-attach" parent="1" value="附件 (Attachment)&#xa;────────────&#xa;+ attach_id: int (PK)&#xa;+ file_name: varchar(100)&#xa;+ file_url: varchar(200)&#xa;+ msg_id: bigint (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;align=left;spacingLeft=12;spacingTop=5;" vertex="1">
+          <mxGeometry height="140" width="220" x="720" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" parent="1" value="创建" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=11;" vertex="1">
+          <mxGeometry height="50" width="70" x="315" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" parent="1" value="包含" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=11;" vertex="1">
+          <mxGeometry height="50" width="70" x="315" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" parent="1" value="关联" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=11;" vertex="1">
+          <mxGeometry height="50" width="70" x="640" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="e-user" target="r1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1l" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge1">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="r1" target="e-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2l" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge2">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="-15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="e-group" target="r2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3l" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge3">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="r2" target="e-member">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4l" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge4">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="-15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="e-msg" target="r3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5l" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge5">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="r3" target="e-attach">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6l" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=11;fontColor=#64748b;" vertex="1" connectable="0" parent="edge6">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="-15" as="offset" /></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

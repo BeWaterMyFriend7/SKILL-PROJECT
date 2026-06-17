@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-st-02-light" name="工单状态流转图-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="480" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="480" width="800" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="工单状态流转图" vertex="1">
+          <mxGeometry height="34" width="260" x="270" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;aspect=fixed;" vertex="1">
+          <mxGeometry height="16" width="16" x="52" y="77" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" parent="1" value="待处理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="90" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" parent="1" value="处理中" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="250" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" value="待确认" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="410" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" parent="1" value="已完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="350" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" parent="1" value="已关闭" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="350" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" parent="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" source="start" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" parent="1" value="认领" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;fontColor=#64748b;fontSize=11;" edge="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" parent="1" value="处理完成" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;fontColor=#64748b;fontSize=11;" edge="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" parent="1" value="确认" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;fontColor=#64748b;fontSize=11;" edge="1" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" parent="1" value="归档" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;fontColor=#64748b;fontSize=11;" edge="1" source="s4" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#64748b;strokeWidth=2;aspect=fixed;" vertex="1">
+          <mxGeometry height="24" width="24" x="388" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="end-inner" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#64748b;strokeColor=none;aspect=fixed;" vertex="1">
+          <mxGeometry height="16" width="16" x="392" y="404" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" parent="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" source="s5" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

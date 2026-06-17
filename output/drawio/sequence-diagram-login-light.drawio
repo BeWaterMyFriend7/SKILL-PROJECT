@@ -1,0 +1,114 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="登录时序图-浅色" id="0">
+    <mxGraphModel dx="900" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="800" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="800" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="登录时序图" vertex="1">
+          <mxGeometry height="32" width="360" x="320" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-browser" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="浏览器" vertex="1">
+          <mxGeometry height="35" width="100" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#dc2626;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="API网关" vertex="1">
+          <mxGeometry height="35" width="100" x="240" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-auth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="认证服务" vertex="1">
+          <mxGeometry height="35" width="100" x="440" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-redis" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="Redis" vertex="1">
+          <mxGeometry height="35" width="100" x="640" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1abc9c;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="数据库" vertex="1">
+          <mxGeometry height="35" width="100" x="840" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="90" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="290" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="490" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="690" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" parent="1" style="line;strokeColor=#cbd5e1;strokeWidth=1;dashed=1;html=1;shape=line;perimeter=linePerimeter;points=[];rounded=0;" value="" vertex="1">
+          <mxGeometry height="620" width="1" x="890" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="1. 输入账号密码&#10;点击登录" vertex="1">
+          <mxGeometry height="50" width="130" x="25" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="s1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3498db;strokeWidth=2;endArrow=block;endFill=1;" target="s2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="2. 转发登录请求" vertex="1">
+          <mxGeometry height="40" width="130" x="225" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="e1l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="POST /login" vertex="1">
+          <mxGeometry height="16" width="80" x="165" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="s2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=block;endFill=1;" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="POST /auth" vertex="1">
+          <mxGeometry height="16" width="80" x="365" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="3. 校验用户身份" vertex="1">
+          <mxGeometry height="40" width="130" x="425" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="s3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1abc9c;strokeWidth=2;endArrow=block;endFill=1;" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="查询用户" vertex="1">
+          <mxGeometry height="16" width="60" x="625" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1abc9c;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="4. 查询用户信息" vertex="1">
+          <mxGeometry height="40" width="130" x="825" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="e4r" edge="1" parent="1" source="s4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1abc9c;strokeWidth=2;endArrow=block;endFill=1;" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4rl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="返回用户信息" vertex="1">
+          <mxGeometry height="16" width="80" x="625" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="5. 生成Token" vertex="1">
+          <mxGeometry height="40" width="130" x="425" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="s5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9b59b6;strokeWidth=2;endArrow=block;endFill=1;" target="s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=none;fontColor=#64748b;fontSize=9;" value="存储Token" vertex="1">
+          <mxGeometry height="16" width="60" x="625" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="6. 缓存Token" vertex="1">
+          <mxGeometry height="40" width="130" x="625" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="s6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=block;endFill=1;" target="s7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="7. 返回Token" vertex="1">
+          <mxGeometry height="40" width="130" x="425" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="s7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e74c3c;strokeWidth=2;endArrow=block;endFill=1;" target="s8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="8. 返回登录结果" vertex="1">
+          <mxGeometry height="40" width="130" x="225" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="s8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3498db;strokeWidth=2;endArrow=block;endFill=1;" target="s9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=11;fontStyle=1;arcSize=6;" value="9. 登录成功&#10;跳转首页" vertex="1">
+          <mxGeometry height="45" width="130" x="25" y="670" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

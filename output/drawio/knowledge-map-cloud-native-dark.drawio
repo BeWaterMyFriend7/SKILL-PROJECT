@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="云原生体系知识地图" id="case29-dark">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="900" pageHeight="450" pageBackground="#1a1a2e">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="450" width="900" as="geometry"/>
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=20;fontStyle=1;fontColor=#ffffff;" value="云原生体系知识地图" vertex="1">
+          <mxGeometry height="30" width="400" x="250" y="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="hub" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;strokeWidth=2;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="云原生体系" vertex="1">
+          <mxGeometry height="60" width="140" x="380" y="175" as="geometry"/>
+        </mxCell>
+        <mxCell id="card-tl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#ffffff;fontSize=11;shadow=1;" value="Kubernetes&#xa;━━━━&#xa;容器编排&#xa;自动伸缩&#xa;服务发现&#xa;资源管理" vertex="1">
+          <mxGeometry height="110" width="160" x="100" y="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn-tl" edge="1" parent="1" source="hub" target="card-tl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" value="核心技术">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="card-tr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#9b59b6;strokeWidth=2;fontColor=#ffffff;fontSize=11;shadow=1;" value="Service Mesh&#xa;━━━━&#xa;流量管理&#xa;安全通信&#xa;可观测性&#xa;Istio/Linkerd" vertex="1">
+          <mxGeometry height="110" width="160" x="640" y="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn-tr" edge="1" parent="1" source="hub" target="card-tr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" value="核心技术">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="card-bl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#e67e22;strokeWidth=2;fontColor=#ffffff;fontSize=11;shadow=1;" value="Observability&#xa;━━━━&#xa;Metrics监控&#xa;日志收集&#xa;分布式追踪&#xa;Prometheus/ELK" vertex="1">
+          <mxGeometry height="110" width="160" x="100" y="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn-bl" edge="1" parent="1" source="hub" target="card-bl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" value="核心技术">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="card-br" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=2;fontColor=#ffffff;fontSize=11;shadow=1;" value="DevOps&#xa;━━━━&#xa;CI/CD&#xa;GitOps&#xa;自动化运维&#xa;平台工程" vertex="1">
+          <mxGeometry height="110" width="160" x="640" y="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn-br" edge="1" parent="1" source="hub" target="card-br" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=#1a1a2e;fontColor=#aaaaaa;fontSize=10;" value="核心技术">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,46 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="Case-21 产品Roadmap-浅色" id="0">
+    <mxGraphModel dx="1295" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="700" width="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=20;fontStyle=1;fontColor=#333333;" value="产品Roadmap" vertex="1">
+          <mxGeometry height="30" width="300" x="400" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="timeline" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cbd5e1;strokeColor=#cbd5e1;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="3" width="820" x="80" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="q1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=9;fontColor=#64748b;" value="Q1" vertex="1">
+          <mxGeometry height="20" width="80" x="80" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="q2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=9;fontColor=#64748b;" value="Q2" vertex="1">
+          <mxGeometry height="20" width="80" x="280" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="q3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=9;fontColor=#64748b;" value="Q3" vertex="1">
+          <mxGeometry height="20" width="80" x="490" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="q4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=9;fontColor=#64748b;" value="Q4" vertex="1">
+          <mxGeometry height="20" width="80" x="700" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-agent" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="Agent引擎&#10;核心框架·推理增强" vertex="1">
+          <mxGeometry height="55" width="240" x="50" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-memory" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#2ecc71;strokeWidth=0;fontColor=#0f172a;fontSize=11;fontStyle=1;" value="记忆系统&#10;长期记忆·知识管理" vertex="1">
+          <mxGeometry height="55" width="240" x="160" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-workflow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;fontColor=#0f172a;fontSize=11;fontStyle=1;" value="Workflow引擎&#10;流程编排·自动执行" vertex="1">
+          <mxGeometry height="55" width="240" x="360" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-marketplace" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9b59b6;strokeWidth=0;fontColor=#ffffff;fontSize=11;fontStyle=1;" value="Marketplace&#10;插件市场·模板商店" vertex="1">
+          <mxGeometry height="55" width="240" x="540" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;fontColor=#333333;fontSize=11;" value="图例：蓝=Agent引擎　绿=记忆系统　橙=Workflow　紫=Marketplace" vertex="1">
+          <mxGeometry height="30" width="420" x="50" y="550" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

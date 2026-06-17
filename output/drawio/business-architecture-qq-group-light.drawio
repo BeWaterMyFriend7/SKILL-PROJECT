@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="QQ群聊业务架构图" id="qq-group-business-light">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="520" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="520" width="1100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#333333;" value="QQ群聊业务架构图" vertex="1">
+          <mxGeometry height="35" width="260" x="420" y="12" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="l1-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f4ff;strokeColor=#7b86f7;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="80" width="1060" x="20" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#5c6bc0;" value="业务场景层 (Business Scenario Layer)" vertex="1">
+          <mxGeometry height="22" width="260" x="30" y="63" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l1-n1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b82f6;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="即时消息聊天" vertex="1">
+          <mxGeometry height="40" width="180" x="50" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-n2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#d97706;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="群组协作管理" vertex="1">
+          <mxGeometry height="40" width="180" x="247" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-n3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#10b981;strokeColor=#059669;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="文件媒体传输" vertex="1">
+          <mxGeometry height="40" width="180" x="444" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-n4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ec4899;strokeColor=#db2777;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="好友社交互动" vertex="1">
+          <mxGeometry height="40" width="180" x="641" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-n5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;strokeColor=#7c3aed;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="系统通知推送" vertex="1">
+          <mxGeometry height="40" width="180" x="838" y="75" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="l2-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#4ade80;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="170" width="1060" x="20" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="l2-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#16a34a;" value="业务能力域 (Business Capability Domain)" vertex="1">
+          <mxGeometry height="22" width="260" x="30" y="158" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="l2-d1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b82f6;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="用户关系域&#10;━━━━━━━━&#10;QQ账号登录体系&#10;好友关系链管理&#10;群成员管理&#10;用户在线状态&#10;黑名单屏蔽" vertex="1">
+          <mxGeometry height="145" width="180" x="50" y="163" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="l2-d2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#d97706;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="群管理域&#10;━━━━━━━━&#10;群创建与解散&#10;群资料配置&#10;群公告管理&#10;群文件/相册&#10;角色权限管理" vertex="1">
+          <mxGeometry height="145" width="180" x="247" y="163" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="l2-d3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="消息域&#10;━━━━━━━━&#10;消息收发&#10;消息存储&#10;消息同步&#10;消息撤回&#10;消息搜索" vertex="1">
+          <mxGeometry height="145" width="180" x="444" y="163" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="l2-d4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#10b981;strokeColor=#059669;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="实时通信域&#10;━━━━━━━━&#10;WebSocket长连接&#10;心跳维护&#10;消息推送&#10;离线消息&#10;多端同步" vertex="1">
+          <mxGeometry height="145" width="180" x="641" y="163" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="l2-d5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;strokeColor=#7c3aed;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="媒体内容域&#10;━━━━━━━━&#10;图片/表情&#10;语音消息&#10;视频/文件&#10;红包/转账&#10;@提及/引用" vertex="1">
+          <mxGeometry height="145" width="180" x="838" y="163" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="l3-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f3ff;strokeColor=#a78bfa;strokeWidth=2;opacity=60;" value="" vertex="1">
+          <mxGeometry height="80" width="1060" x="20" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#7c3aed;" value="业务对象层 (Business Object Layer)" vertex="1">
+          <mxGeometry height="22" width="260" x="30" y="343" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l3-e1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="用户实体&#10;━━━━&#10;User / Profile / Friend" vertex="1">
+          <mxGeometry height="50" width="180" x="50" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-e2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="群组实体&#10;━━━━&#10;Group / Member / Role" vertex="1">
+          <mxGeometry height="50" width="180" x="247" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-e3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="消息实体&#10;━━━━&#10;Message / Seq / Recall" vertex="1">
+          <mxGeometry height="50" width="180" x="444" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-e4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="会话实体&#10;━━━━&#10;Session / Conn / Push" vertex="1">
+          <mxGeometry height="50" width="180" x="641" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-e5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6366f1;strokeColor=#4f46e5;fontColor=#ffffff;fontSize=12;fontStyle=1;shadow=1;" value="文件实体&#10;━━━━&#10;File / Image / RedPacket" vertex="1">
+          <mxGeometry height="50" width="180" x="838" y="350" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="c-1-2" edge="1" parent="1" source="l1-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="l2-bg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-2-3" edge="1" parent="1" source="l2-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;strokeWidth=2;endArrow=classic;endFill=1;" target="l3-bg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="desc" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#666666;" value="QQ群聊业务架构核心领域：用户关系 → 群管理 → 消息 → 实时通信 → 媒体内容" vertex="1">
+          <mxGeometry height="25" width="500" x="300" y="435" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,38 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="服务注册中心对比 - 深色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="800" pageHeight="420" pageBackground="#1a1a2e">
+      <root>
+        <mxCell id="0" /><mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" value="" vertex="1"><mxGeometry height="420" width="800" as="geometry" /></mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;fontSize=18;fontStyle=1;fontColor=#ffffff;" value="服务注册中心对比" vertex="1"><mxGeometry x="265" y="12" width="270" height="30" as="geometry" /></mxCell>
+        <mxCell id="h1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d35400;fontColor=#0f172a;fontSize=13;fontStyle=1;" value="Zookeeper" vertex="1"><mxGeometry height="40" width="160" x="160" y="70" as="geometry" /></mxCell>
+        <mxCell id="h2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="Nacos" vertex="1"><mxGeometry height="40" width="160" x="340" y="70" as="geometry" /></mxCell>
+        <mxCell id="h3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#8e44ad;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="Consul" vertex="1"><mxGeometry height="40" width="160" x="520" y="70" as="geometry" /></mxCell>
+        <mxCell id="fl1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="CAP理论" vertex="1"><mxGeometry height="35" width="100" x="50" y="130" as="geometry" /></mxCell>
+        <mxCell id="fv1_1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="CP" vertex="1"><mxGeometry height="35" width="160" x="160" y="130" as="geometry" /></mxCell>
+        <mxCell id="fv1_2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="CP/AP" vertex="1"><mxGeometry height="35" width="160" x="340" y="130" as="geometry" /></mxCell>
+        <mxCell id="fv1_3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="CP" vertex="1"><mxGeometry height="35" width="160" x="520" y="130" as="geometry" /></mxCell>
+        <mxCell id="fl2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="健康检查" vertex="1"><mxGeometry height="35" width="100" x="50" y="170" as="geometry" /></mxCell>
+        <mxCell id="fv2_1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="Keepalive" vertex="1"><mxGeometry height="35" width="160" x="160" y="170" as="geometry" /></mxCell>
+        <mxCell id="fv2_2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="HTTP/心跳" vertex="1"><mxGeometry height="35" width="160" x="340" y="170" as="geometry" /></mxCell>
+        <mxCell id="fv2_3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="多协议" vertex="1"><mxGeometry height="35" width="160" x="520" y="170" as="geometry" /></mxCell>
+        <mxCell id="fl3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="配置管理" vertex="1"><mxGeometry height="35" width="100" x="50" y="210" as="geometry" /></mxCell>
+        <mxCell id="fv3_1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="有限" vertex="1"><mxGeometry height="35" width="160" x="160" y="210" as="geometry" /></mxCell>
+        <mxCell id="fv3_2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="原生支持" vertex="1"><mxGeometry height="35" width="160" x="340" y="210" as="geometry" /></mxCell>
+        <mxCell id="fv3_3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="原生支持" vertex="1"><mxGeometry height="35" width="160" x="520" y="210" as="geometry" /></mxCell>
+        <mxCell id="fl4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="服务发现" vertex="1"><mxGeometry height="35" width="100" x="50" y="250" as="geometry" /></mxCell>
+        <mxCell id="fv4_1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="基础" vertex="1"><mxGeometry height="35" width="160" x="160" y="250" as="geometry" /></mxCell>
+        <mxCell id="fv4_2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="丰富" vertex="1"><mxGeometry height="35" width="160" x="340" y="250" as="geometry" /></mxCell>
+        <mxCell id="fv4_3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="丰富" vertex="1"><mxGeometry height="35" width="160" x="520" y="250" as="geometry" /></mxCell>
+        <mxCell id="fl5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="管理界面" vertex="1"><mxGeometry height="35" width="100" x="50" y="290" as="geometry" /></mxCell>
+        <mxCell id="fv5_1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="无" vertex="1"><mxGeometry height="35" width="160" x="160" y="290" as="geometry" /></mxCell>
+        <mxCell id="fv5_2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="有" vertex="1"><mxGeometry height="35" width="160" x="340" y="290" as="geometry" /></mxCell>
+        <mxCell id="fv5_3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="有" vertex="1"><mxGeometry height="35" width="160" x="520" y="290" as="geometry" /></mxCell>
+        <mxCell id="fl6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="适用场景" vertex="1"><mxGeometry height="35" width="100" x="50" y="330" as="geometry" /></mxCell>
+        <mxCell id="fv6_1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="大数据" vertex="1"><mxGeometry height="35" width="160" x="160" y="330" as="geometry" /></mxCell>
+        <mxCell id="fv6_2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="Spring Cloud" vertex="1"><mxGeometry height="35" width="160" x="340" y="330" as="geometry" /></mxCell>
+        <mxCell id="fv6_3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#333333;fontColor=#aaaaaa;fontSize=12;" value="多数据中心" vertex="1"><mxGeometry height="35" width="160" x="520" y="330" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

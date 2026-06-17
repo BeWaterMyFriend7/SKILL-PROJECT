@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-st-01-dark" name="订单状态流转图-深色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="620" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="620" width="900" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#f8fafc;" value="订单状态流转图" vertex="1">
+          <mxGeometry height="34" width="260" x="320" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;aspect=fixed;" vertex="1">
+          <mxGeometry height="16" width="16" x="72" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" parent="1" value="待支付" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e67e22;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="110" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" parent="1" value="已支付" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="270" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" value="待发货" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="430" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" parent="1" value="运输中" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#9b59b6;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="590" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" parent="1" value="已签收" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="340" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" parent="1" value="已完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry height="40" width="100" x="340" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" parent="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" source="start" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" parent="1" value="下单" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;fontColor=#94a3b8;fontSize=11;" edge="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" parent="1" value="付款" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;fontColor=#94a3b8;fontSize=11;" edge="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" parent="1" value="发货" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;fontColor=#94a3b8;fontSize=11;" edge="1" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" parent="1" value="确认收货" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;fontColor=#94a3b8;fontSize=11;" edge="1" source="s4" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" parent="1" value="确认完成" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;fontColor=#94a3b8;fontSize=11;" edge="1" source="s5" target="s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2ecc71;strokeWidth=2;aspect=fixed;" vertex="1">
+          <mxGeometry height="24" width="24" x="378" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="end-inner" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=none;aspect=fixed;" vertex="1">
+          <mxGeometry height="16" width="16" x="382" y="404" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" parent="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" source="s6" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;fontColor=#cbd5e1;fontSize=11;" value="图例： 🟠待支付  🔵进行中  🟣运输中  🟢已完成" vertex="1">
+          <mxGeometry height="36" width="420" x="240" y="560" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

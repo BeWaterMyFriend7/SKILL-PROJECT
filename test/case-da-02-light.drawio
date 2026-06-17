@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-da-02-light" name="北京上海双活部署架构图-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="720" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="720" width="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#0f172a;" value="北京上海双活部署架构图" vertex="1">
+          <mxGeometry height="35" width="320" x="390" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-region" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f3ff;strokeColor=#3498db;strokeWidth=2;fontColor=#0f172a;fontSize=16;fontStyle=1;align=left;verticalAlign=top;spacingLeft=18;spacingTop=12;" value="北京机房" vertex="1">
+          <mxGeometry height="480" width="460" x="40" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-lb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=1;" value="负载均衡&#xa;━━━━━&#xa;SLB · Nginx" vertex="1">
+          <mxGeometry height="60" width="200" x="60" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-app" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="应用集群&#xa;━━━━━━&#xa;应用实例组" vertex="1">
+          <mxGeometry height="60" width="200" x="60" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="数据库&#xa;━━━━━&#xa;MySQL" vertex="1">
+          <mxGeometry height="60" width="200" x="60" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-region" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eafaf1;strokeColor=#2ecc71;strokeWidth=2;fontColor=#0f172a;fontSize=16;fontStyle=1;align=left;verticalAlign=top;spacingLeft=18;spacingTop=12;" value="上海机房" vertex="1">
+          <mxGeometry height="480" width="460" x="600" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-lb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=1;" value="负载均衡&#xa;━━━━━&#xa;SLB · Nginx" vertex="1">
+          <mxGeometry height="60" width="200" x="620" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-app" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="应用集群&#xa;━━━━━━&#xa;应用实例组" vertex="1">
+          <mxGeometry height="60" width="200" x="620" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="数据库&#xa;━━━━━&#xa;MySQL" vertex="1">
+          <mxGeometry height="60" width="200" x="620" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="sync-arrow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="数据库双向同步" vertex="1">
+          <mxGeometry height="40" width="150" x="475" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontColor=#334155;fontSize=11;" value=" 蓝色=北京机房  绿色=上海机房  橙色=数据库同步" vertex="1">
+          <mxGeometry height="36" width="440" x="330" y="660" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

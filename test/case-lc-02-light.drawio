@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-lc-02-light" name="客户生命周期图-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="480" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="480" width="900" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="客户生命周期图" vertex="1">
+          <mxGeometry height="34" width="280" x="310" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="获客&#xa;渠道推广&#xa;流量获取" vertex="1">
+          <mxGeometry height="80" width="130" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n1h" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n1t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="1. 获客" vertex="1">
+          <mxGeometry height="20" width="130" x="40" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="转化&#xa;注册激活&#xa;首次购买" vertex="1">
+          <mxGeometry height="80" width="130" x="210" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n2h" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#2ecc71;strokeColor=#2ecc71;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="210" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n2t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="2. 转化" vertex="1">
+          <mxGeometry height="20" width="130" x="210" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="成交&#xa;订单支付&#xa;复购增购" vertex="1">
+          <mxGeometry height="80" width="130" x="380" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n3h" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="380" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n3t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="3. 成交" vertex="1">
+          <mxGeometry height="20" width="130" x="380" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e74c3c;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="服务&#xa;售后支持&#xa;客户关怀" vertex="1">
+          <mxGeometry height="80" width="130" x="550" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n4h" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="550" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n4t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="4. 服务" vertex="1">
+          <mxGeometry height="20" width="130" x="550" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=13;fontStyle=1;" value="续费&#xa;会员续费&#xa;口碑推荐" vertex="1">
+          <mxGeometry height="80" width="130" x="720" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n5h" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#9b59b6;strokeColor=#9b59b6;strokeWidth=0;" value="" vertex="1">
+          <mxGeometry height="22" width="130" x="720" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n5t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=10;fontStyle=1;fontColor=#ffffff;" value="5. 续费" vertex="1">
+          <mxGeometry height="20" width="130" x="720" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="n1" target="n2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="n2" target="n3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="n3" target="n4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="n4" target="n5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="back" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94a3b8;strokeWidth=2;endArrow=classic;endFill=1;dashed=1;" edge="1" parent="1" source="n5" target="n3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontColor=#334155;fontSize=11;" value="图例：🔵获客  🟢转化  🟠成交  🔴服务  🟣续费  虚线=复购循环" vertex="1">
+          <mxGeometry height="36" width="580" x="160" y="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

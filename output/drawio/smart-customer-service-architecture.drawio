@@ -1,0 +1,157 @@
+<mxfile host="app.diagrams.net" modified="2026-06-14T00:00:00.000Z" agent="xml-diagram" version="24.7.17">
+  <diagram id="smart-customer-service" name="智能客服系统技术架构图">
+    <mxGraphModel dx="1450" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1450" pageHeight="980" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#e2e8f0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1450" height="980" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="智能客服系统技术架构图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Microsoft YaHei;fontSize=24;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="455" y="24" width="540" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="多渠道接入 / 智能问答 / 人工协同 / 工单通知 / 数据观测" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Microsoft YaHei;fontSize=12;fontColor=#64748b;" vertex="1" parent="1">
+          <mxGeometry x="395" y="64" width="660" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sec_channel" value="多渠道接入层" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=2;arcSize=10;fontColor=#0f172a;fontSize=15;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="40" y="110" width="205" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="sec_gateway" value="接入与网关层" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2ff;strokeColor=#4f46e5;strokeWidth=2;arcSize=10;fontColor=#0f172a;fontSize=15;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="275" y="110" width="215" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="sec_core" value="会话、问答与坐席协同" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=2;arcSize=10;fontColor=#0f172a;fontSize=15;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="520" y="110" width="410" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="sec_workflow" value="工单与通知层" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;strokeWidth=2;arcSize=10;fontColor=#0f172a;fontSize=15;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="960" y="110" width="185" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="sec_data" value="数据与存储层" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecfeff;strokeColor=#0f766e;strokeWidth=2;arcSize=10;fontColor=#0f172a;fontSize=15;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1175" y="110" width="195" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="sec_ops" value="运维与观测层" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#475569;strokeWidth=2;arcSize=10;fontColor=#0f172a;fontSize=15;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1175" y="555" width="195" height="230" as="geometry" />
+        </mxCell>
+
+        <mxCell id="web" value="Web 聊天窗口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1;fontColor=#1e3a8a;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="70" y="165" width="130" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="app" value="App SDK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1;fontColor=#1e3a8a;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="70" y="235" width="130" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="mini" value="微信小程序" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1;fontColor=#1e3a8a;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="70" y="305" width="130" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="wechat" value="企业微信" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1;fontColor=#1e3a8a;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="70" y="375" width="130" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="phone" value="电话语音入口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1;fontColor=#1e3a8a;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="70" y="445" width="130" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="api" value="API 网关&#xa;鉴权 / 限流" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4f46e5;strokeWidth=1;fontColor=#312e81;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="305" y="190" width="130" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="ws" value="WebSocket 网关&#xa;会话长连接" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4f46e5;strokeWidth=1;fontColor=#312e81;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="305" y="290" width="130" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="route" value="路由转发&#xa;熔断降级" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4f46e5;strokeWidth=1;fontColor=#312e81;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="305" y="390" width="130" height="54" as="geometry" />
+        </mxCell>
+
+        <mxCell id="session" value="会话管理&#xa;上下文 / 状态" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;strokeWidth=1;fontColor=#14532d;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="550" y="170" width="130" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="profile" value="用户画像识别" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;strokeWidth=1;fontColor=#14532d;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="660" y="250" width="130" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="intent" value="意图识别" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;strokeWidth=1;fontColor=#14532d;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="800" y="250" width="110" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="router" value="智能路由&#xa;机器人 / 人工" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1;fontColor=#14532d;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="665" y="335" width="130" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="bot" value="机器人问答&#xa;FAQ / RAG / 大模型" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1;fontColor=#14532d;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="550" y="475" width="150" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="agent" value="人工坐席&#xa;工作台 / 质检 / 评价" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1;fontColor=#14532d;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="740" y="475" width="150" height="58" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ticket" value="工单流转&#xa;创建 / SLA / 状态" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;strokeWidth=1;fontColor=#7c2d12;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="990" y="240" width="130" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="notify" value="消息通知&#xa;短信 / 邮件 / 站内信" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;strokeWidth=1;fontColor=#7c2d12;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="990" y="390" width="130" height="54" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mysql" value="MySQL&#xa;用户 / 工单 / 配置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ccfbf1;strokeColor=#0f766e;strokeWidth=1;fontColor=#134e4a;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1208" y="165" width="130" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" value="Redis&#xa;会话缓存 / 限流" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ccfbf1;strokeColor=#0f766e;strokeWidth=1;fontColor=#134e4a;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1208" y="235" width="130" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="es" value="Elasticsearch&#xa;聊天记录 / 知识检索" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ccfbf1;strokeColor=#0f766e;strokeWidth=1;fontColor=#134e4a;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1208" y="305" width="130" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="minio" value="MinIO&#xa;附件 / 图片 / 语音" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ccfbf1;strokeColor=#0f766e;strokeWidth=1;fontColor=#134e4a;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1208" y="375" width="130" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka" value="Kafka&#xa;消息事件流" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;strokeWidth=1;fontColor=#3b0764;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1208" y="445" width="130" height="54" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prom" value="Prometheus" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e2e8f0;strokeColor=#64748b;strokeWidth=1;fontColor=#1e293b;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1208" y="610" width="130" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="grafana" value="Grafana" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e2e8f0;strokeColor=#64748b;strokeWidth=1;fontColor=#1e293b;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1208" y="655" width="130" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="logs" value="日志采集" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e2e8f0;strokeColor=#64748b;strokeWidth=1;fontColor=#1e293b;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1208" y="700" width="130" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="trace" value="链路追踪 / 告警" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e2e8f0;strokeColor=#64748b;strokeWidth=1;fontColor=#1e293b;fontSize=10;fontStyle=1;arcSize=6;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
+          <mxGeometry x="1208" y="745" width="130" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend" value="图例：蓝色粗实线=主流程　紫色虚线=异步事件　青色实线=存储访问　灰色实线=观测采集" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;fontColor=#334155;fontSize=12;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="250" y="850" width="950" height="56" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_web_api" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="web" target="api"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_app_api" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="app" target="api"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_mini_api" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="mini" target="api"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_wechat_ws" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="wechat" target="ws"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_phone_route" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="phone" target="route"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_api_session" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="api" target="session"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_ws_session" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="ws" target="session"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_route_session" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="route" target="session"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_session_profile" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="session" target="profile"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_profile_intent" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="profile" target="intent"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_intent_router" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="intent" target="router"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_router_bot" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="router" target="bot"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_router_agent" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="router" target="agent"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_agent_ticket" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="agent" target="ticket"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_ticket_notify" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=3;endArrow=block;endFill=1;fontColor=#2563eb;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="ticket" target="notify"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_session_redis" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=2;endArrow=block;endFill=1;fontColor=#0f766e;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="session" target="redis"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_bot_es" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=2;endArrow=block;endFill=1;fontColor=#0f766e;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="bot" target="es"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_bot_mysql" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=2;endArrow=block;endFill=1;fontColor=#0f766e;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="bot" target="mysql"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_agent_mysql" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=2;endArrow=block;endFill=1;fontColor=#0f766e;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="agent" target="mysql"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_ticket_mysql" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=2;endArrow=block;endFill=1;fontColor=#0f766e;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="ticket" target="mysql"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_notify_minio" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=2;endArrow=block;endFill=1;fontColor=#0f766e;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="notify" target="minio"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_session_kafka" value="事件" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7c3aed;strokeWidth=2;dashed=1;endArrow=block;endFill=1;fontColor=#7c3aed;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="session" target="kafka"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_bot_kafka" value="事件" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7c3aed;strokeWidth=2;dashed=1;endArrow=block;endFill=1;fontColor=#7c3aed;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="bot" target="kafka"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_agent_kafka" value="事件" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7c3aed;strokeWidth=2;dashed=1;endArrow=block;endFill=1;fontColor=#7c3aed;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="agent" target="kafka"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_ticket_kafka" value="事件" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7c3aed;strokeWidth=2;dashed=1;endArrow=block;endFill=1;fontColor=#7c3aed;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="ticket" target="kafka"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_notify_kafka" value="事件" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7c3aed;strokeWidth=2;dashed=1;endArrow=block;endFill=1;fontColor=#7c3aed;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="notify" target="kafka"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_ops1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=block;endFill=1;fontColor=#64748b;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="api" target="prom"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_ops2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=block;endFill=1;fontColor=#64748b;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="bot" target="logs"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_ops3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=block;endFill=1;fontColor=#64748b;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="agent" target="trace"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_ops4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=2;endArrow=block;endFill=1;fontColor=#64748b;fontSize=10;labelBackgroundColor=#f8fafc;fontFamily=Microsoft YaHei;" edge="1" parent="1" source="prom" target="grafana"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

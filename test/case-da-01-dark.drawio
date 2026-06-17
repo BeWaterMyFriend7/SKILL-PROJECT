@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-da-01-dark" name="K8S集群部署架构图-深色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="780" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="780" width="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#f8fafc;" value="Kubernetes集群部署架构图" vertex="1">
+          <mxGeometry height="35" width="320" x="390" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-cluster" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#334155;strokeWidth=2;fontColor=#f8fafc;fontSize=18;fontStyle=1;align=left;verticalAlign=top;spacingLeft=20;spacingTop=14;" value="Kubernetes 集群" vertex="1">
+          <mxGeometry height="620" width="900" x="30" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ingress-zone" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3498db;strokeWidth=2;fontColor=#cbd5e1;fontSize=14;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" value="入口层" vertex="1">
+          <mxGeometry height="120" width="860" x="50" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ingress" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="Ingress" vertex="1">
+          <mxGeometry height="50" width="150" x="70" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="Gateway" vertex="1">
+          <mxGeometry height="50" width="150" x="250" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="service-zone" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111827;strokeColor=#2ecc71;strokeWidth=2;fontColor=#cbd5e1;fontSize=14;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" value="业务服务层" vertex="1">
+          <mxGeometry height="200" width="860" x="50" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="biz-svc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" value="业务服务&#xa;━━━━━━&#xa;微服务实例" vertex="1">
+          <mxGeometry height="80" width="180" x="70" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="data-zone" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111827;strokeColor=#9b59b6;strokeWidth=2;fontColor=#cbd5e1;fontSize=14;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" value="数据与中间件层" vertex="1">
+          <mxGeometry height="200" width="860" x="50" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#9b59b6;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" value="Redis&#xa;缓存集群" vertex="1">
+          <mxGeometry height="60" width="150" x="70" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="mysql" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#9b59b6;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" value="MySQL&#xa;主从集群" vertex="1">
+          <mxGeometry height="60" width="150" x="240" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e67e22;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" value="Kafka&#xa;消息队列" vertex="1">
+          <mxGeometry height="60" width="150" x="410" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="monitor-zone" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111827;strokeColor=#95a5a6;strokeWidth=2;fontColor=#cbd5e1;fontSize=14;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" value="监控体系" vertex="1">
+          <mxGeometry height="130" width="200" x="700" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="monitor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#95a5a6;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" value="监控&#xa;━━━━━&#xa;告警 · 日志" vertex="1">
+          <mxGeometry height="70" width="170" x="715" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;fontColor=#cbd5e1;fontSize=11;" value=" 蓝色=入口  绿色=业务服务  紫色=数据  橙色=消息  灰色=监控" vertex="1">
+          <mxGeometry height="36" width="480" x="300" y="720" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

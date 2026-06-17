@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="OpenClaw vs OpenCode 对比-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="500" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="900" height="500" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="title" value="OpenClaw vs OpenCode 对比" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="300" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="openclaw_title" value="OpenClaw" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#3498db;" vertex="1" parent="1">
+          <mxGeometry x="100" y="70" width="150" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="openclaw_box" value="AI编程助手&#xa;&#xa;✓ 多模型支持&#xa;✓ 代码补全&#xa;✓ 智能对话&#xa;✓ 项目分析&#xa;✓ 文件编辑" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#333333;fontSize=12;align=center;spacing=8;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="250" height="280" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="vs" value="VS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#e74c3c;" vertex="1" parent="1">
+          <mxGeometry x="420" y="220" width="60" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="opencode_title" value="OpenCode" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#2ecc71;" vertex="1" parent="1">
+          <mxGeometry x="650" y="70" width="150" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="opencode_box" value="AI CLI工具&#xa;&#xa;✓ 交互式编程&#xa;✓ 多Agent协作&#xa;✓ 任务自动化&#xa;✓ 智能助手&#xa;✓ 插件扩展" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#333333;fontSize=12;align=center;spacing=8;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="100" width="250" height="280" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="compare_title" value="核心差异" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="380" y="400" width="140" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="compare_box" value="OpenClaw: 专注于代码补全和IDE集成&#xa;OpenCode: 专注于命令行交互和任务自动化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;fontColor=#666666;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="200" y="425" width="500" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

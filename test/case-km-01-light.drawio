@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-km-01-light" name="Agent系统知识图谱-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="680" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="680" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="Agent系统知识图谱" vertex="1">
+          <mxGeometry height="34" width="340" x="330" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="center" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=16;fontStyle=1;" value="Agent系统&#xa;核心体系" vertex="1">
+          <mxGeometry height="60" width="140" x="430" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=12;align=center;spacing=8;" value="🧠 Planning&#xa;━━━━━━━━&#xa;任务分解&#xa;目标规划&#xa;路径选择&#xa;资源分配" vertex="1">
+          <mxGeometry height="140" width="180" x="60" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=12;align=center;spacing=8;" value="💾 Memory&#xa;━━━━━━━━&#xa;短期记忆&#xa;长期记忆&#xa;向量存储&#xa;检索增强" vertex="1">
+          <mxGeometry height="140" width="180" x="410" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e67e22;strokeWidth=2;fontColor=#334155;fontSize=12;align=center;spacing=8;" value="🔧 Tool Use&#xa;━━━━━━━━&#xa;API调用&#xa;代码执行&#xa;外部工具&#xa;技能集成" vertex="1">
+          <mxGeometry height="140" width="180" x="760" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9b59b6;strokeWidth=2;fontColor=#334155;fontSize=12;align=center;spacing=8;" value="🔄 Reflection&#xa;━━━━━━━━&#xa;自我评估&#xa;错误修正&#xa;持续学习&#xa;策略优化" vertex="1">
+          <mxGeometry height="140" width="180" x="410" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3498db;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="c1" target="center">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="c2" target="center">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#e67e22;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="c3" target="center">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9b59b6;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="c4" target="center">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontColor=#334155;fontSize=11;" value="图例：  🔵 Planning  🟢 Memory  🟠 Tool Use  🟣 Reflection  四者协同构成Agent核心能力" vertex="1">
+          <mxGeometry height="36" width="640" x="180" y="625" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

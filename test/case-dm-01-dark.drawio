@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-dm-01-dark" name="服务注册中心决策矩阵-深色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="500" width="900" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#f8fafc;" value="服务注册中心决策矩阵" vertex="1">
+          <mxGeometry height="34" width="340" x="280" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="h-name" parent="1" style="text;html=1;strokeColor=#3498db;fillColor=#16213e;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f8fafc;" value="产品" vertex="1">
+          <mxGeometry height="40" width="140" x="40" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="h-perf" parent="1" style="text;html=1;strokeColor=#3498db;fillColor=#16213e;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f8fafc;" value="性能" vertex="1">
+          <mxGeometry height="40" width="200" x="180" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="h-avail" parent="1" style="text;html=1;strokeColor=#3498db;fillColor=#16213e;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f8fafc;" value="可用性" vertex="1">
+          <mxGeometry height="40" width="200" x="380" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="h-cost" parent="1" style="text;html=1;strokeColor=#3498db;fillColor=#16213e;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f8fafc;" value="维护成本" vertex="1">
+          <mxGeometry height="40" width="200" x="580" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="h-score" parent="1" style="text;html=1;strokeColor=#3498db;fillColor=#16213e;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f8fafc;" value="综合评分" vertex="1">
+          <mxGeometry height="40" width="100" x="780" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#1e293b;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="50" width="840" x="40" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r1n" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f8fafc;" value="Nacos" vertex="1">
+          <mxGeometry height="50" width="140" x="40" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r1p" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#cbd5e1;" value="⭐⭐⭐⭐ 高吞吐，低延迟" vertex="1">
+          <mxGeometry height="50" width="200" x="180" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r1a" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#cbd5e1;" value="⭐⭐⭐⭐ 集群部署，自动选主" vertex="1">
+          <mxGeometry height="50" width="200" x="380" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#e74c3c;" value="⭐⭐⭐ 依赖MySQL" vertex="1">
+          <mxGeometry height="50" width="200" x="580" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r1s" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#2ecc71;" value="4.0" vertex="1">
+          <mxGeometry height="50" width="100" x="780" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#0f172a;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="50" width="840" x="40" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="r2n" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f8fafc;" value="Zookeeper" vertex="1">
+          <mxGeometry height="50" width="140" x="40" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="r2p" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#cbd5e1;" value="⭐⭐⭐ 中高吞吐，稳定" vertex="1">
+          <mxGeometry height="50" width="200" x="180" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="r2a" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#cbd5e1;" value="⭐⭐⭐⭐⭐ ZAB协议保证" vertex="1">
+          <mxGeometry height="50" width="200" x="380" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#e74c3c;" value="⭐⭐ Java运维复杂" vertex="1">
+          <mxGeometry height="50" width="200" x="580" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="r2s" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#e67e22;" value="3.3" vertex="1">
+          <mxGeometry height="50" width="100" x="780" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#1e293b;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="50" width="840" x="40" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="r3n" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f8fafc;" value="Consul" vertex="1">
+          <mxGeometry height="50" width="140" x="40" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="r3p" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#cbd5e1;" value="⭐⭐⭐⭐ 高性能Raft" vertex="1">
+          <mxGeometry height="50" width="200" x="180" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="r3a" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#cbd5e1;" value="⭐⭐⭐⭐ 健康检查完善" vertex="1">
+          <mxGeometry height="50" width="200" x="380" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="r3c" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#e67e22;" value="⭐⭐⭐ Go开发，运维友好" vertex="1">
+          <mxGeometry height="50" width="200" x="580" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="r3s" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#3498db;" value="3.7" vertex="1">
+          <mxGeometry height="50" width="100" x="780" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" parent="1" style="rounded=0;whiteSpace=wrap=1;html=1;fillColor=#0f172a;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="50" width="840" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r4n" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#f8fafc;" value="Etcd" vertex="1">
+          <mxGeometry height="50" width="140" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r4p" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#cbd5e1;" value="⭐⭐⭐⭐⭐ 极致读写性能" vertex="1">
+          <mxGeometry height="50" width="200" x="180" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r4a" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#cbd5e1;" value="⭐⭐⭐⭐ Raft强一致性" vertex="1">
+          <mxGeometry height="50" width="200" x="380" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r4c" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#2ecc71;" value="⭐⭐⭐⭐ 轻量级，易维护" vertex="1">
+          <mxGeometry height="50" width="200" x="580" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r4s" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=13;fontStyle=1;fontColor=#2ecc71;" value="4.3" vertex="1">
+          <mxGeometry height="50" width="100" x="780" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;fontColor=#cbd5e1;fontSize=11;" value="评分标准：⭐⭐⭐⭐⭐=5分  综合评分基于性能、可用性、维护成本加权计算" vertex="1">
+          <mxGeometry height="36" width="580" x="160" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

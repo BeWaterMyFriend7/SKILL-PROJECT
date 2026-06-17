@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="里程碑图-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" pageWidth="1000" pageHeight="410" pageBackground="#f8f9fa">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#e0e0e0;" value="" vertex="1">
+          <mxGeometry height="410" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=18;fontStyle=1;fontColor=#333333;" value="项目里程碑图" vertex="1">
+          <mxGeometry height="25" width="300" x="350" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=9;fontColor=#666666;" value="Milestones - Alpha / Beta / RC / GA" vertex="1">
+          <mxGeometry height="15" width="220" x="390" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="tl-bar" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#555555;strokeColor=#555555;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="3" width="860" x="70" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;fontColor=#ffffff;fontSize=10;fontStyle=1;" value="Alpha" vertex="1">
+          <mxGeometry height="40" width="40" x="100" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;fontColor=#0f172a;fontSize=10;fontStyle=1;" value="Beta" vertex="1">
+          <mxGeometry height="40" width="40" x="330" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;fontColor=#ffffff;fontSize=10;fontStyle=1;" value="RC" vertex="1">
+          <mxGeometry height="40" width="40" x="560" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="m4" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#2ecc71;fontColor=#0f172a;fontSize=10;fontStyle=1;" value="GA" vertex="1">
+          <mxGeometry height="40" width="40" x="790" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="m1_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontStyle=1;fontColor=#e74c3c;" value="Alpha 版本" vertex="1">
+          <mxGeometry height="20" width="100" x="70" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="m2_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontStyle=1;fontColor=#e67e22;" value="Beta 版本" vertex="1">
+          <mxGeometry height="20" width="100" x="300" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="m3_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontStyle=1;fontColor=#3498db;" value="RC 版本" vertex="1">
+          <mxGeometry height="20" width="100" x="530" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="m4_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontStyle=1;fontColor=#2ecc71;" value="GA 版本" vertex="1">
+          <mxGeometry height="20" width="100" x="760" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="m1_desc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#666666;fontSize=9;align=center;" value="内部测试&#10;核心功能完成" vertex="1">
+          <mxGeometry height="40" width="120" x="60" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="m2_desc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#666666;fontSize=9;align=center;" value="公测&#10;反馈收集" vertex="1">
+          <mxGeometry height="40" width="120" x="290" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="m3_desc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#666666;fontSize=9;align=center;" value="候选发布&#10;稳定版本" vertex="1">
+          <mxGeometry height="40" width="120" x="520" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="m4_desc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontColor=#666666;fontSize=9;align=center;" value="正式发布&#10;全量上线" vertex="1">
+          <mxGeometry height="40" width="120" x="750" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" edge="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" source="m1" target="m2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" edge="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" source="m2" target="m3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" edge="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#999999;strokeWidth=2;endArrow=classic;endFill=1;" source="m3" target="m4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wave_box" parent="1" style="rounded=1;whiteSpace=wrap=html=1;fillColor=#ffffff;strokeColor=#e0e0e0;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="60" width="880" x="60" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="wave_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=9;fontColor=#333333;fontStyle=1;" value="阶段说明" vertex="1">
+          <mxGeometry height="20" width="80" x="460" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="wave1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=8;fontColor=#666666;" value="1. Alpha: 内部可用版本，功能基本完成" vertex="1">
+          <mxGeometry height="18" width="230" x="80" y="343" as="geometry" />
+        </mxCell>
+        <mxCell id="wave2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=8;fontColor=#666666;" value="2. Beta: 公开测试版本，收集外部反馈" vertex="1">
+          <mxGeometry height="18" width="230" x="320" y="343" as="geometry" />
+        </mxCell>
+        <mxCell id="wave3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=8;fontColor=#666666;" value="3. RC: 发布候选版本，进入稳定期" vertex="1">
+          <mxGeometry height="18" width="230" x="560" y="343" as="geometry" />
+        </mxCell>
+        <mxCell id="wave4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=8;fontColor=#666666;" value="4. GA: 正式发布版本，全量上线" vertex="1">
+          <mxGeometry height="18" width="230" x="710" y="343" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

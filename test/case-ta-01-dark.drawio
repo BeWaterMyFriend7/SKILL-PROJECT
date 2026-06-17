@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-ta-01-dark" name="AI Agent平台技术架构图-深色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#334155;" value="" vertex="1">
+          <mxGeometry height="760" width="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#f8fafc;" value="AI Agent平台技术架构图" vertex="1">
+          <mxGeometry height="35" width="300" x="450" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="presentation-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="90" width="1140" x="30" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="presentation-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#3498db;" value="展示层 (Presentation)" vertex="1">
+          <mxGeometry height="25" width="180" x="50" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="portal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=14;fontStyle=1;" value="Portal&#xa;━━━━━&#xa;管理台 · 工作台" vertex="1">
+          <mxGeometry height="56" width="160" x="60" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e74c3c;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="90" width="1140" x="30" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#e74c3c;" value="网关与编排层" vertex="1">
+          <mxGeometry height="25" width="160" x="50" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="planner" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#dc2626;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="Planner&#xa;任务规划" vertex="1">
+          <mxGeometry height="56" width="130" x="60" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="workflow-engine" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#dc2626;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="Workflow Engine&#xa;工作流引擎" vertex="1">
+          <mxGeometry height="56" width="150" x="210" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="service-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111827;strokeColor=#2ecc71;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="220" width="1140" x="30" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="service-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#2ecc71;" value="核心服务层" vertex="1">
+          <mxGeometry height="25" width="120" x="50" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="memory" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" value="Memory&#xa;━━━━━&#xa;记忆管理 &#xa;上下文管理" vertex="1">
+          <mxGeometry height="80" width="160" x="60" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="tool-hub" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" value="Tool Hub&#xa;━━━━━━&#xa;工具注册 &#xa;工具调用" vertex="1">
+          <mxGeometry height="80" width="160" x="250" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="llm-gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e67e22;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" value="LLM Gateway&#xa;━━━━━━━━&#xa;模型路由 &#xa;Prompt管理" vertex="1">
+          <mxGeometry height="80" width="160" x="440" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="observability" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#9b59b6;strokeWidth=2;fontColor=#cbd5e1;fontSize=13;fontStyle=1;" value="Observability&#xa;━━━━━━━━&#xa;监控 · 日志 &#xa;链路 · 告警" vertex="1">
+          <mxGeometry height="80" width="160" x="630" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;fontColor=#cbd5e1;fontSize=11;" value=" 蓝色=展示  红色=网关/编排  绿色=核心服务  橙色=AI/LLM  紫色=观测" vertex="1">
+          <mxGeometry height="36" width="560" x="320" y="700" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

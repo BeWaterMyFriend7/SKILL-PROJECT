@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="xml-diagram" version="24.7.17">
+  <diagram id="case-tl-02-light" name="数据平台建设时间线-浅色">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="680" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;" value="" vertex="1">
+          <mxGeometry height="680" width="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#0f172a;" value="数据平台建设时间线" vertex="1">
+          <mxGeometry height="34" width="320" x="340" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="line" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cbd5e1;strokeColor=#cbd5e1;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="3" width="880" x="60" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="数据接入&#xa;第1-4周" vertex="1">
+          <mxGeometry height="55" width="160" x="60" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#2ecc71;strokeWidth=0;fontColor=#0f172a;fontSize=13;fontStyle=1;" value="数据治理&#xa;第5-10周" vertex="1">
+          <mxGeometry height="55" width="160" x="250" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="数据计算&#xa;第8-14周" vertex="1">
+          <mxGeometry height="55" width="160" x="440" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="数据服务&#xa;第12-18周" vertex="1">
+          <mxGeometry height="55" width="160" x="630" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9b59b6;strokeWidth=0;fontColor=#ffffff;fontSize=13;fontStyle=1;" value="数据运营&#xa;第16-24周" vertex="1">
+          <mxGeometry height="55" width="160" x="780" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#3498db;strokeWidth=0;" vertex="1">
+          <mxGeometry height="10" width="10" x="135" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#2ecc71;strokeWidth=0;" vertex="1">
+          <mxGeometry height="10" width="10" x="325" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#e67e22;strokeWidth=0;" vertex="1">
+          <mxGeometry height="10" width="10" x="515" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="m4" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#e74c3c;strokeWidth=0;" vertex="1">
+          <mxGeometry height="10" width="10" x="705" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="m5" parent="1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9b59b6;strokeWidth=0;" vertex="1">
+          <mxGeometry height="10" width="10" x="855" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cbd5e1;fontColor=#334155;fontSize=11;" value="图例： 🔵接入  🟢治理  🟠计算  🔴服务  🟣运营" vertex="1">
+          <mxGeometry height="36" width="480" x="260" y="625" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

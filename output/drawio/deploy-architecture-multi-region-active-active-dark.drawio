@@ -1,0 +1,76 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="多地域双活部署架构图-深色" id="0">
+    <mxGraphModel dx="1200" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="940" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="940" width="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=24;fontStyle=1;fontColor=#ffffff;fontFamily=Microsoft YaHei;" value="多地域双活部署架构图" vertex="1">
+          <mxGeometry height="36" width="360" x="420" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dns" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;fontColor=#ffffff;fontSize=13;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=10;" value="全局负载均衡&#10;(DNS/GTM)" vertex="1">
+          <mxGeometry height="60" width="180" x="510" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="region-bj" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111827;strokeColor=#334155;strokeWidth=2;fontColor=#ffffff;fontSize=18;fontStyle=1;align=left;verticalAlign=top;spacingLeft=20;spacingTop=14;fontFamily=Microsoft YaHei;arcSize=12;" value="北京区域" vertex="1">
+          <mxGeometry height="460" width="530" x="30" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-lb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="LB / Ingress" vertex="1">
+          <mxGeometry height="50" width="120" x="65" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-gw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="Gateway&#10;鉴权 / 限流" vertex="1">
+          <mxGeometry height="60" width="120" x="65" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="业务服务&#10;应用Pod" vertex="1">
+          <mxGeometry height="60" width="120" x="65" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-mq" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#9b59b6;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="MQ&#10;RocketMQ" vertex="1">
+          <mxGeometry height="50" width="120" x="220" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#1abc9c;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="数据库&#10;MySQL主库" vertex="1">
+          <mxGeometry height="50" width="120" x="220" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="bj-sync" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e74c3c;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="数据同步&#10;DTS / Canal" vertex="1">
+          <mxGeometry height="50" width="120" x="220" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="region-sh" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#111827;strokeColor=#334155;strokeWidth=2;fontColor=#ffffff;fontSize=18;fontStyle=1;align=left;verticalAlign=top;spacingLeft=20;spacingTop=14;fontFamily=Microsoft YaHei;arcSize=12;" value="上海区域" vertex="1">
+          <mxGeometry height="460" width="530" x="640" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-lb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="LB / Ingress" vertex="1">
+          <mxGeometry height="50" width="120" x="665" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-gw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="Gateway&#10;鉴权 / 限流" vertex="1">
+          <mxGeometry height="60" width="120" x="665" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#2ecc71;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="业务服务&#10;应用Pod" vertex="1">
+          <mxGeometry height="60" width="120" x="665" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-mq" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#9b59b6;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="MQ&#10;RocketMQ" vertex="1">
+          <mxGeometry height="50" width="120" x="825" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#1abc9c;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="数据库&#10;MySQL从库" vertex="1">
+          <mxGeometry height="50" width="120" x="825" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="sh-sync" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e74c3c;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" value="数据同步&#10;DTS / Canal" vertex="1">
+          <mxGeometry height="50" width="120" x="825" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="e-dns-bj" edge="1" parent="1" source="dns" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498db;strokeWidth=3;endArrow=block;endFill=1;" target="bj-lb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-dns-sh" edge="1" parent="1" source="dns" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498db;strokeWidth=3;endArrow=block;endFill=1;" target="sh-lb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-bj-mq" edge="1" parent="1" source="bj-mq" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9b59b6;strokeWidth=2;dashed=1;endArrow=block;endFill=1;" target="sh-mq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-bj-db" edge="1" parent="1" source="bj-db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1abc9c;strokeWidth=2;dashed=1;endArrow=block;endFill=1;" target="sh-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#334155;strokeWidth=1;fontColor=#cbd5e1;fontSize=12;fontFamily=Microsoft YaHei;arcSize=8;" value="图例：蓝色粗线=用户流量　紫色虚线=MQ同步　青色虚线=数据库同步" vertex="1">
+          <mxGeometry height="54" width="500" x="350" y="740" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

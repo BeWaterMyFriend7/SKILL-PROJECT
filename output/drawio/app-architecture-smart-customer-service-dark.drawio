@@ -1,0 +1,115 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="智能客服系统应用架构图-深色" id="0">
+    <mxGraphModel dx="1027" dy="599" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="890" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="890" width="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=22;fontStyle=1;fontColor=#ffffff;" value="智能客服系统应用架构图" vertex="1">
+          <mxGeometry height="30" width="280" x="460" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#3498db;strokeWidth=2;opacity=80;" value="" vertex="1">
+          <mxGeometry height="680" width="260" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend-layer-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#3498db;" value="接入层" vertex="1">
+          <mxGeometry height="25" width="120" x="50" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="web-app" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=0;" value="Web端&#10;━━━━━━━&#10;React | TypeScript&#10;智能对话UI" vertex="1">
+          <mxGeometry height="100" width="230" x="45" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mobile-app" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=0;" value="移动端&#10;━━━━━━━&#10;Flutter | Dart&#10;原生SDK接入" vertex="1">
+          <mxGeometry height="100" width="230" x="45" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="app-sdk" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=0;" value="第三方SDK&#10;━━━━━━━&#10;微信 | 企业微信&#10;小程序客服" vertex="1">
+          <mxGeometry height="100" width="230" x="45" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="phone-channel" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2563eb;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=0;" value="电话渠道&#10;━━━━━━━&#10;IVR导航 | 语音转文字&#10;CTI集成" vertex="1">
+          <mxGeometry height="100" width="230" x="45" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e74c3c;strokeWidth=2;opacity=80;" value="" vertex="1">
+          <mxGeometry height="400" width="140" x="320" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-layer-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#e74c3c;" value="API网关" vertex="1">
+          <mxGeometry height="25" width="80" x="350" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-core" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e74c3c;strokeColor=#c62828;fontColor=#ffffff;fontSize=14;fontStyle=1;shadow=0;" value="Gateway&#10;━━━━━━━━━&#10;路由转发&#10;身份认证&#10;限流熔断&#10;协议转换" vertex="1">
+          <mxGeometry height="180" width="110" x="335" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="backend-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#2ecc71;strokeWidth=2;opacity=80;" value="" vertex="1">
+          <mxGeometry height="680" width="380" x="490" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="backend-layer-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#2ecc71;" value="核心服务层" vertex="1">
+          <mxGeometry height="25" width="100" x="510" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="session-service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=0;" value="会话服务&#10;━━━━━&#10;Session Service&#10;会话路由管理" vertex="1">
+          <mxGeometry height="80" width="165" x="505" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="knowledge-service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=0;" value="知识库服务&#10;━━━━━&#10;Knowledge Base&#10;FAQ检索 | 文档匹配" vertex="1">
+          <mxGeometry height="80" width="165" x="690" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="llm-service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=0;" value="大模型服务&#10;━━━━━&#10;LLM Service&#10;对话生成 | 意图识别" vertex="1">
+          <mxGeometry height="80" width="165" x="505" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ticket-service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=0;" value="工单系统&#10;━━━━━&#10;Ticket System&#10;工单流转 | 升级处理" vertex="1">
+          <mxGeometry height="80" width="165" x="690" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="sentiment-service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=0;" value="情感分析&#10;━━━━━&#10;Sentiment Analysis&#10;情绪识别 | 满意度" vertex="1">
+          <mxGeometry height="80" width="165" x="505" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="quality-service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9b59b6;strokeColor=#9333ea;fontColor=#ffffff;fontSize=13;fontStyle=1;shadow=0;" value="质检服务&#10;━━━━━&#10;Quality Check&#10;人工质检 | 自动评分" vertex="1">
+          <mxGeometry height="80" width="165" x="690" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="data-storage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#16a34a;fontColor=#0f172a;fontSize=14;fontStyle=1;shadow=0;" value="数据存储层&#10;━━━━━━━━━━━━━━━&#10;MySQL | Redis&#10;Elasticsearch | MongoDB&#10;对象存储" vertex="1">
+          <mxGeometry height="150" width="350" x="505" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="external-layer-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#e67e22;strokeWidth=2;opacity=80;" value="" vertex="1">
+          <mxGeometry height="680" width="270" x="900" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="external-layer-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap=1;rounded=0;fontSize=16;fontStyle=1;fontColor=#e67e22;" value="外部集成层" vertex="1">
+          <mxGeometry height="25" width="100" x="920" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="wechat-platform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d97706;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=0;" value="微信生态&#10;━━━━━━━━━━━━&#10;公众号 | 小程序&#10;企业微信" vertex="1">
+          <mxGeometry height="90" width="240" x="915" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="sms-platform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d97706;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=0;" value="短信/邮件&#10;━━━━━━━━━━━━&#10;阿里云短信 | SendGrid&#10;邮件推送" vertex="1">
+          <mxGeometry height="90" width="240" x="915" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-platform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d97706;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=0;" value="AI平台&#10;━━━━━━━━━━━━&#10;OpenAI | 文心一言&#10;通义千问 | DeepSeek" vertex="1">
+          <mxGeometry height="90" width="240" x="915" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="crm-platform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d97706;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=0;" value="CRM系统&#10;━━━━━━━━━━━━&#10;Salesforce | 纷享销客&#10;客户信息同步" vertex="1">
+          <mxGeometry height="90" width="240" x="915" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="monitoring" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d97706;fontColor=#0f172a;fontSize=13;fontStyle=1;shadow=0;" value="监控运维&#10;━━━━━━━━━━━━&#10;Prometheus | Grafana&#10;ELK日志" vertex="1">
+          <mxGeometry height="80" width="240" x="915" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="conn1" edge="1" parent="1" source="web-app" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3498db;strokeWidth=2;endArrow=classic;endFill=1;" target="gateway-core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn2" edge="1" parent="1" source="gateway-core" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=classic;endFill=1;" target="session-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="35" width="500" x="30" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#aaaaaa;" value="调用链路：" vertex="1">
+          <mxGeometry height="25" width="80" x="40" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="legend1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#3498db;" value="接入层 →" vertex="1">
+          <mxGeometry height="25" width="100" x="110" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#e74c3c;" value="网关 →" vertex="1">
+          <mxGeometry height="25" width="80" x="200" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#2ecc71;" value="核心服务 →" vertex="1">
+          <mxGeometry height="25" width="110" x="280" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="legend4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap=1;rounded=0;fontSize=12;fontColor=#e67e22;" value="外部集成" vertex="1">
+          <mxGeometry height="25" width="80" x="390" y="760" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
