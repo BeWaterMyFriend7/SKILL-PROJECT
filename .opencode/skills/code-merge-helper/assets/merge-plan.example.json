@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "plan_id": "merge-20260617-example",
+  "status": "WAITING_FOR_APPROVAL",
+  "report_path": ".git/codex-merge-review/merge-20260617-example/merge-resolution-report.md",
+  "generated_at": "2026-06-17T09:00:00+08:00",
+  "repository": {
+    "root": "/path/to/repo",
+    "branch": "feature/example",
+    "head": "0123456789abcdef",
+    "existing_worktree_changes": []
+  },
+  "git_snapshot": {
+    "operation": "merge",
+    "operation_head": "fedcba9876543210",
+    "common_base": "1111111111111111",
+    "conflict_files": [
+      "src/service/example.go"
+    ],
+    "stages": [
+      {
+        "path": "src/service/example.go",
+        "base_blob": "aaaaaaa",
+        "stage_2_blob": "bbbbbbb",
+        "stage_3_blob": "ccccccc"
+      }
+    ]
+  },
+  "approval": {
+    "status": "WAITING_FOR_APPROVAL",
+    "scope": [],
+    "approved_by": null,
+    "approved_at": null,
+    "notes": "Planner must not self-approve."
+  },
+  "decisions": [
+    {
+      "id": "D-01",
+      "conflict_ids": [
+        "C-01"
+      ],
+      "strategy": "semantic-merge",
+      "summary": "保留 stage-2 校验和 stage-3 观测逻辑。",
+      "preserve": [
+        {
+          "behavior_id": "B-01",
+          "source": "stage-2",
+          "description": "非法参数在调用下游前返回错误。",
+          "evidence": [
+            "commit abc",
+            "test TestInvalidInput"
+          ],
+          "validation_ids": [
+            "V-02"
+          ]
+        },
+        {
+          "behavior_id": "B-02",
+          "source": "stage-3",
+          "description": "成功路径记录指标。",
+          "evidence": [
+            "commit def"
+          ],
+          "validation_ids": [
+            "V-03"
+          ]
+        }
+      ],
+      "discard": [],
+      "risks": [
+        "指标不得记录校验失败请求"
+      ]
+    }
+  ],
+  "allowed_changes": [
+    {
+      "id": "A-01",
+      "path": "src/service/example.go",
+      "action": "modify",
+      "decision_ids": [
+        "D-01"
+      ],
+      "instructions": [
+        "先执行参数校验，再进入业务逻辑。",
+        "仅在成功返回前记录成功指标。"
+      ],
+      "must_preserve": [
+        "B-01",
+        "B-02"
+      ],
+      "must_not": [
+        "删除校验",
+        "在失败路径记录成功指标"
+      ],
+      "completion_criteria": [
+        "无冲突标记",
+        "两侧行为均有实现"
+      ]
+    },
+    {
+      "id": "A-02",
+      "path": "src/service/example_test.go",
+      "action": "modify",
+      "decision_ids": [
+        "D-01"
+      ],
+      "instructions": [
+        "补充非法参数和成功指标用例。"
+      ],
+      "must_preserve": [],
+      "must_not": [
+        "删除既有有效断言"
+      ],
+      "completion_criteria": [
+        "V-02 和 V-03 可执行"
+      ]
+    }
+  ],
+  "execution_steps": [
+    {
+      "order": 1,
+      "action_ids": [
+        "A-01"
+      ],
+      "preconditions": [
+        "Git 快照匹配"
+      ],
+      "post_checks": [
+        "编译目标包"
+      ],
+      "on_failure": "stop"
+    },
+    {
+      "order": 2,
+      "action_ids": [
+        "A-02"
+      ],
+      "preconditions": [
+        "A-01 完成"
+      ],
+      "post_checks": [
+        "运行目标测试"
+      ],
+      "on_failure": "stop"
+    }
+  ],
+  "validations": [
+    {
+      "id": "V-01",
+      "level": "structural",
+      "required": true,
+      "kind": "inspection",
+      "command": null,
+      "cwd": ".",
+      "covers": [
+        "无未解决冲突和残留标记"
+      ],
+      "expected": "结构检查通过"
+    },
+    {
+      "id": "V-02",
+      "level": "targeted",
+      "required": true,
+      "kind": "command",
+      "command": "go test ./src/service -run TestInvalidInput",
+      "cwd": ".",
+      "covers": [
+        "B-01"
+      ],
+      "expected": "退出码 0"
+    },
+    {
+      "id": "V-03",
+      "level": "targeted",
+      "required": true,
+      "kind": "command",
+      "command": "go test ./src/service -run TestSuccessMetric",
+      "cwd": ".",
+      "covers": [
+        "B-02"
+      ],
+      "expected": "退出码 0"
+    }
+  ],
+  "stop_conditions": [
+    "Git 快照不匹配",
+    "需要修改白名单外文件",
+    "出现新的业务决策"
+  ],
+  "prohibited_actions": [
+    "git reset --hard",
+    "git clean -fd",
+    "git commit",
+    "git push",
+    "未经批准扩大文件范围"
+  ],
+  "rollback": {
+    "conditions": [
+      "必要验证失败且无法在批准范围内修复"
+    ],
+    "steps": [
+      "停止执行并保留当前 diff",
+      "在执行报告中记录失败步骤和恢复建议"
+    ]
+  }
+}

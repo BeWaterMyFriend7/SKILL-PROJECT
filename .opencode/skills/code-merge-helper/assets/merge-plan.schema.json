@@ -1,0 +1,490 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "code-merge-plan.schema.json",
+  "title": "Semantic Merge Execution Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "plan_id",
+    "status",
+    "report_path",
+    "generated_at",
+    "repository",
+    "git_snapshot",
+    "approval",
+    "decisions",
+    "allowed_changes",
+    "execution_steps",
+    "validations",
+    "stop_conditions",
+    "prohibited_actions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "plan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "WAITING_FOR_APPROVAL",
+        "APPROVED",
+        "IMPLEMENTING",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "BLOCKED",
+        "SUPERSEDED"
+      ]
+    },
+    "report_path": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "object",
+      "required": [
+        "root",
+        "head"
+      ],
+      "properties": {
+        "root": {
+          "type": "string"
+        },
+        "head": {
+          "type": "string",
+          "minLength": 7
+        },
+        "branch": {
+          "type": "string"
+        },
+        "existing_worktree_changes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "git_snapshot": {
+      "type": "object",
+      "required": [
+        "operation",
+        "conflict_files"
+      ],
+      "properties": {
+        "operation": {
+          "enum": [
+            "merge",
+            "rebase",
+            "cherry-pick",
+            "revert",
+            "none"
+          ]
+        },
+        "operation_head": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "common_base": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "conflict_files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path"
+            ],
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "base_blob": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "stage_2_blob": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "stage_3_blob": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "required": [
+        "status",
+        "scope"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "WAITING_FOR_APPROVAL",
+            "APPROVED",
+            "REJECTED"
+          ]
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "approved_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "conflict_ids",
+          "strategy",
+          "summary",
+          "preserve",
+          "discard"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "conflict_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "strategy": {
+            "enum": [
+              "keep-stage-2",
+              "keep-stage-3",
+              "semantic-merge",
+              "refactor-and-merge",
+              "manual-decision"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "preserve": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "behavior_id",
+                "source",
+                "description",
+                "validation_ids"
+              ],
+              "properties": {
+                "behavior_id": {
+                  "type": "string"
+                },
+                "source": {
+                  "enum": [
+                    "stage-2",
+                    "stage-3",
+                    "common-base",
+                    "new"
+                  ]
+                },
+                "description": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "validation_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          "discard": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "source",
+                "description",
+                "reason"
+              ],
+              "properties": {
+                "source": {
+                  "enum": [
+                    "stage-2",
+                    "stage-3",
+                    "common-base"
+                  ]
+                },
+                "description": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "allowed_changes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "path",
+          "action",
+          "decision_ids",
+          "instructions",
+          "completion_criteria"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "action": {
+            "enum": [
+              "modify",
+              "add",
+              "delete",
+              "rename",
+              "regenerate"
+            ]
+          },
+          "from_path": {
+            "type": "string"
+          },
+          "decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instructions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "must_preserve": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "must_not": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "completion_criteria": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        }
+      }
+    },
+    "execution_steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "order",
+          "action_ids",
+          "post_checks"
+        ],
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "action_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "preconditions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "post_checks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "on_failure": {
+            "enum": [
+              "stop",
+              "rollback-step",
+              "record-and-continue-optional"
+            ]
+          }
+        }
+      }
+    },
+    "validations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "level",
+          "required",
+          "kind",
+          "covers",
+          "expected"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "level": {
+            "enum": [
+              "structural",
+              "static",
+              "targeted",
+              "integration",
+              "full",
+              "manual"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "kind": {
+            "enum": [
+              "command",
+              "inspection",
+              "manual"
+            ]
+          },
+          "command": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "cwd": {
+            "type": "string"
+          },
+          "covers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expected": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "prohibited_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "properties": {
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

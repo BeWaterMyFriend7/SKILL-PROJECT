@@ -1,6 +1,11 @@
 # 项目介绍
 
 主要skills说明：
+- 代码变更相关的skill  
+  当利用agent等工具进行团队协作开发时，经常会遇到大量的代码冲突和一些代码的更改，但是如果影响分析如果不完整，可能会出现代码合并失败和修改存在问题，覆盖他人的功能等，这两个skill是将合并的工作流进行总结的skill。   
+  - code-merge-helper  代码合并助手，分析代码冲突点，评估影响范围 [说明](.opencode/skills/code-merge-helper/README.md)
+  - code-change-plan   代码变更分析及计划，分析需要更改的需求点，确定变更影响范围，技术实现路线等  [说明](.opencode/skills/code-change-plan/README.md)
+
 - 专业级别绘图相关skill：输出示例：svg-output
   - xml-diagram[推荐] 生成drawio XML 文件，支持drawio 直接编辑
   - svg-generator[推荐] 生成svg图形，支持架构图、流程图、对比图等
