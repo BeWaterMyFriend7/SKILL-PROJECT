@@ -42,36 +42,36 @@ description: 只读分析 Git merge、rebase、cherry-pick 冲突，通过 commo
 ## 标准流程
 
 范围等级：
-- ?? 仓库级
-- ?? 核心（必扫）+ 扩展（按风险触发）
-- ?? 冲突文件 + 1 跳调用链
+- **【仓库级】**
+- **【核心（必扫）】** + 扩展（按风险触发）
+- **【冲突文件】** + 1 跳调用链
 
-### 0. 安全预检 ??
+### 0. 安全预检
 
 `git status --short --branch` → `git diff --name-only --diff-filter=U` → 检测 merge/rebase/cherry-pick 元数据 → `scripts/collect_merge_context.py`。
 
-### 1. 建立冲突清单 ??
+### 1. 建立冲突清单
 
 每个冲突记录：ID、文件、区间、类型、三方变化、耦合的自动合并文件。
 
-### 2. 分析项目逻辑 ??
+### 2. 分析项目逻辑
 
 限定冲突文件 + 直接调用者/被调用者（1 跳）。检查：完整函数/模块、调用链、关联测试、同提交配套修改、自动合并的组合错误。
 
-### 3. 追溯修改来源 ??
+### 3. 追溯修改来源
 
 按冲突文件过滤提交历史。记录：SHA、作者、时间、diff、关联 issue/PR、修改目的、证据等级（事实/高置信/低置信）。
 
-### 4. 形成候选方案 ??
+### 4. 形成候选方案
 
 每冲突评估 5 种方案（保留 stage-2、保留 stage-3、语义融合、重构融合、升级人工决策）。推荐方案必须写明保留什么、舍弃什么及理由。
 
-### 5. 评估影响范围 ??
+### 5. 评估影响范围
 
 - **核心（必扫）**：冲突文件、1 跳调用链、单元测试、同提交配套文件。
 - **扩展（按风险触发）**：风险 1-2 跳过；风险 3 加配置/脚本/文档；风险 4-5 加 CI/依赖/迁移/回滚；import 变化加依赖树；schema 变化加消费者兼容。
 
-### 6. 跨冲突检查 ??
+### 6. 跨冲突检查
 
 一致性、接口匹配、重复注册/死代码、安全校验覆盖、行为倒退。**接口消费者扫描**：对冲突涉及的符号反向搜索所有引用，检测任一侧删除而另一侧仍有引用的情况。
 
@@ -79,7 +79,7 @@ description: 只读分析 Git merge、rebase、cherry-pick 冲突，通过 commo
 
 按 `assets/merge-resolution-report.md` 模板输出单一 Markdown 文件。报告第 1-12 章供人审，第 14 章供 Agent 执行，附录 A 为 JSON 执行契约（按 `assets/merge-plan.schema.json` 约束），供脚本做确定性校验。
 
-### 8. 自检并停止 ??
+### 8. 自检并停止
 
 ```bash
 python scripts/validate_merge_plan.py --plan <plan.md> --repo . --pre-merge
@@ -87,7 +87,7 @@ python scripts/validate_merge_plan.py --plan <plan.md> --repo . --pre-merge
 
 确认 `WAITING_FOR_APPROVAL`、决策完整、行为有验证项、记录 Blob 指纹、报告自包含。
 
-> ?? **完成后必须立即停止，不得在同一 turn 内修改代码。** 提示用户审批后 Agent 按第 14 章执行。
+> **完成后必须立即停止，不得在同一 turn 内修改代码。** 提示用户审批后 Agent 按第 14 章执行。
 
 ## 交接契约
 
