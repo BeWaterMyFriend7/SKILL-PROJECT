@@ -62,7 +62,7 @@
 
 | 字段 | 内容 |
 |---|---|
-| 审批状态 | `WAITING_FOR_APPROVAL` |
+| 审批状态 | `WAITING_FOR_APPROVAL`（修订后自动重置） |
 | 审批范围 | |
 | 修订版本 | V<N> |
 | 审批人 | |

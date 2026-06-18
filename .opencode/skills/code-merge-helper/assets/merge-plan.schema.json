@@ -39,7 +39,8 @@
       ]
     },
     "report_path": {
-      "type": "string"
+      "type": "string",
+      "description": "Path to the self-contained Markdown report (this .md file). The JSON execution contract lives as appendix A within this same file. Value must be the absolute or repo-relative path to the .md report."
     },
     "generated_at": {
       "type": "string"
@@ -486,5 +487,6 @@
         }
       }
     }
-  }
+  },
+  "description": "JSON execution contract embedded as appendix A in the merge resolution report. This schema validates the JSON extracted from the markdown file, not a standalone .json file."
 }

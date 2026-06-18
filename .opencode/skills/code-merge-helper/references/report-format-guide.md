@@ -114,7 +114,10 @@ Nacos 拉取 → 解析 → 快照落盘 → 热加载 → eBPF Map 写入 → s
 
 ---
 
-## merge-plan.json 字段规范
+## 附录 A JSON block 字段规范
+
+> JSON block 嵌入在报告末尾的 ` ```json ` fenced code block 中，按 `assets/merge-plan.schema.json` 约束。
+> 验证脚本从 Markdown 文件中自动提取该 block 进行结构校验。
 
 | 字段 | 必填 | 说明 |
 |---|---|---|
@@ -134,11 +137,11 @@ Nacos 拉取 → 解析 → 快照落盘 → 热加载 → eBPF Map 写入 → s
 | `approval.scope` | ✅ | 批准后写 `["ALL"]` 或具体 ID 列表 |
 | `approval.approver` | | 批准后填写 |
 | `approval.approved_at` | | 批准后填写 |
-| `decisions[].decision_id` | ✅ | `"D-01"` 格式 |
+| `decisions[].id` | ✅ | `"D-01"` 格式 |
 | `decisions[].strategy` | ✅ | 保留策略描述 |
 | `decisions[].preserve[].behavior_id` | ✅ | `"B-01"` 格式 |
 | `decisions[].preserve[].validation_ids` | ✅ | 关联的验证项 ID |
-| `allowed_changes[].action_id` | ✅ | `"A-01"` 格式 |
+| `allowed_changes[].id` | ✅ | `"A-01"` 格式 |
 | `allowed_changes[].path` | ✅ | 文件路径 |
 | `allowed_changes[].action` | ✅ | modify / add / delete / rename / regenerate |
 | `allowed_changes[].instructions` | ✅ | 修改说明 |
@@ -146,7 +149,7 @@ Nacos 拉取 → 解析 → 快照落盘 → 热加载 → eBPF Map 写入 → s
 | `allowed_changes[].must_not` | | 禁止事项 |
 | `execution_steps[].order` | ✅ | 从 1 开始的连续整数 |
 | `execution_steps[].action_ids` | ✅ | 本步骤包含的动作 ID |
-| `validations[].validation_id` | ✅ | `"V-01"` 格式 |
+| `validations[].id` | ✅ | `"V-01"` 格式 |
 | `validations[].level` | ✅ | structural / static / targeted / integration / full / manual |
 | `validations[].required` | ✅ | true / false |
 | `stop_conditions` | ✅ | 停止条件列表 |

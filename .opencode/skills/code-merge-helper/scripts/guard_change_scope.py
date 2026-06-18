@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Check that current repository changes stay within a merge plan whitelist.
 
+Accepts a Markdown plan file (single output of code-merge-helper).
+Extracts the JSON execution contract from the appendix A fenced code block.
+
 The script is read-only. It reports changed paths outside allowed_changes and
 separately lists pre-existing protected changes declared by the plan.
 """
@@ -8,9 +11,43 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
+
+
+def extract_json_from_markdown(md_path: Path) -> dict:
+    """Extract JSON execution contract from appendix A fenced code block.
+
+    Reads raw bytes for UTF-8 safety, then locates the appendix A JSON block.
+    Prefers the JSON block immediately following the appendix A header when present.
+    """
+    raw_bytes = md_path.read_bytes()
+    try:
+        content_text = raw_bytes.decode("utf-8")
+    except UnicodeDecodeError as ude:
+        raise ValueError(f"Invalid UTF-8 in {md_path}: {ude}") from ude
+    if '�' in content_text:
+        raise ValueError(f"Unicode replacement characters found in {md_path}; file encoding is corrupted")
+
+    # Try to anchor to appendix A header first
+    appendix_idx = content_text.rfind("附录 A")
+    if appendix_idx >= 0:
+        search_from = content_text[appendix_idx:]
+    else:
+        search_from = content_text
+
+    pattern = re.compile(r'```json\s*\n(.*?)\n```', re.DOTALL)
+    matches = pattern.findall(search_from)
+    if not matches:
+        # Fallback: search whole document
+        matches = pattern.findall(content_text)
+    if not matches:
+        raise ValueError(f"No fenced JSON block found in {md_path}")
+    # Take the first json block after appendix A (or last in document as fallback)
+    raw_json = matches[0] if appendix_idx >= 0 else matches[-1]
+    return json.loads(raw_json)
 
 
 def run_git(repo: Path, args: list[str], binary: bool = False):
@@ -38,12 +75,13 @@ def changed_paths(repo: Path) -> set[str]:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--plan", required=True)
+    ap.add_argument("--plan", required=True, help="Path to plan Markdown file (JSON extracted from appendix A)")
     ap.add_argument("--repo", default=".")
     ap.add_argument("--json-output")
     args = ap.parse_args()
     try:
-        plan = json.loads(Path(args.plan).resolve().read_text(encoding="utf-8"))
+        plan_path = Path(args.plan).resolve()
+        plan = extract_json_from_markdown(plan_path)
         repo = Path(args.repo).resolve()
         root_proc = run_git(repo, ["rev-parse", "--show-toplevel"])
         if root_proc.returncode != 0:

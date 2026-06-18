@@ -1,8 +1,8 @@
-﻿# Git 语义合并分析报告
+# Git 语义合并分析报告
 
 > **计划 ID**：`<plan-id>`
 > **状态**：`WAITING_FOR_APPROVAL | APPROVED | SUPERSEDED | BLOCKED`
-> **执行契约**：`<path>/merge-plan.json`
+> **执行契约**：本文件附录 A
 
 ---
 
@@ -195,7 +195,7 @@
 - [ ] 实施顺序合理
 - [ ] 验证计划可覆盖所有应保留行为
 - [ ] 回滚方案可执行
-- [ ] `merge-plan.json` 与本报告一致
+- [ ] 附录 A JSON 执行契约通过结构校验，与本报告一致
 
 | 审批字段 | 内容 |
 |---|---|
@@ -222,7 +222,7 @@
 | HEAD | 与第 1 章一致 | | |
 | Git 操作对象 | 与第 1 章一致 | | |
 | 未解决冲突文件集合 | 与计划一致 | | |
-| 各冲突文件 stage-1/2/3 Blob | 与 JSON 一致 | | |
+| 各冲突文件 stage-1/2/3 Blob | 与附录 A 一致 | | |
 | 工作区无未知改动 | 无 | | |
 
 > 任一不一致 → **立即停止**，报告 `PLAN_DRIFT`，要求重新运行本 Skill 分析。
@@ -243,7 +243,7 @@
 
 每完成一个执行步骤后运行：
 ```bash
-python scripts/guard_change_scope.py --plan <merge-plan.json> --repo .
+python scripts/guard_change_scope.py --plan <plan.md> --repo .
 ```
 出现白名单外文件 → **立即停止**，生成修正请求。
 
@@ -303,3 +303,50 @@ python scripts/verify_merge_state.py --repo . [--command "..."]
 - 双侧行为保留结果、偏差与修正记录
 - 未验证项、残余风险和回滚建议
 - 是否执行了 `git add/commit/push` 及原因
+
+---
+
+## 附录 A：执行契约（机器可读）
+
+> 以下 JSON block 按 `assets/merge-plan.schema.json` 约束，供脚本做确定性校验。
+> 字段规范详见 `references/report-format-guide.md` 附录 A 章节。
+
+```json
+{
+  "schema_version": "1.0",
+  "plan_id": "<plan-id>",
+  "status": "WAITING_FOR_APPROVAL",
+  "report_path": ".git/codex-merge-review/<plan-id>/merge-plan.md",
+  "generated_at": "<ISO-8601>",
+  "repository": {
+    "root": "",
+    "branch": "",
+    "head": "",
+    "existing_worktree_changes": []
+  },
+  "git_snapshot": {
+    "operation": "merge",
+    "operation_head": "",
+    "common_base": "",
+    "conflict_files": [],
+    "stages": []
+  },
+  "approval": {
+    "status": "WAITING_FOR_APPROVAL",
+    "scope": [],
+    "approved_by": null,
+    "approved_at": null,
+    "notes": "Planner must not self-approve."
+  },
+  "decisions": [],
+  "allowed_changes": [],
+  "execution_steps": [],
+  "validations": [],
+  "stop_conditions": [],
+  "prohibited_actions": [],
+  "rollback": {
+    "conditions": [],
+    "steps": []
+  }
+}
+```

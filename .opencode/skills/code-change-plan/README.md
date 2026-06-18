@@ -16,7 +16,8 @@ code-change-plan/
 │   ├── report-structure.md
 │   └── quality-checklist.md
 └── scripts/
-    └── validate_change_plan.py
+    ├── validate_change_plan.py
+    └── check_utf8.py
 ```
 
 ## 二、安装
@@ -72,21 +73,15 @@ $code-change-plan
 .codex/change-plans/<plan-id>.md
 ```
 
-方案中已包含：
+方案包含 7 个章节：
 
-- 需求分析
-- 当前实现
-- 目标方案
-- 修改前后变化
-- 全项目影响矩阵
-- 旧逻辑退役矩阵
-- 文件变更清单
-- 实施步骤
-- 测试验证
-- 执行契约
-- 完成状态
-- 审批记录
-- 后续直接执行提示词
+1. 基本信息与需求分析：基线 + 业务目标 + 功能需求 + 验收标准 + 待决策项
+2. 当前实现与差距：模块职责 + 当前流程 + 差距分析
+3. 目标方案与对比：方案概述 + 设计决策 + 目标流程 + 修改前后对比
+4. 影响范围与文件清单：修改单元 + 影响矩阵 + 旧逻辑退役 + 文件清单
+5. 实施顺序：按依赖关系的步骤表
+6. 测试、验证与完成：验证方案 + 追踪矩阵 + 发布回滚 + 完成条件
+7. 执行契约与审批：执行规则 + 停止条件 + 风险 + 审批 + 执行提示词
 
 ## 六、执行方式
 
@@ -113,3 +108,14 @@ APPROVED
 7. 不执行 git add、git commit 或 git push
 8. 最后报告实际修改、旧逻辑清理、验证结果、未执行项和残余风险
 ```
+
+## 七、Windows 环境注意
+
+- 本 Skill 所有 `.md` 文件均为 UTF-8 编码
+- 若在 PowerShell 中用 `Get-Content` 读到乱码，改用 `[System.IO.File]::ReadAllText("<path>", [System.Text.Encoding]::UTF8)`
+- Skill 仅生成方案，不修改业务代码；方案执行时参考执行契约中的 Windows 文件编辑指南（规则 12、13）
+
+## 八、与其他 Skill 的协作
+
+- **code-merge-helper**：当变更涉及分支合并且存在冲突时，建议暂停本方案执行，先使用 `code-merge-helper` 完成三方合并分析。合并完成后再回到本方案继续执行。
+- 可以在合并分析报告（code-merge-helper 产出）的第 10 章人工决策项中引用本方案的 plan-id，建立追溯链。

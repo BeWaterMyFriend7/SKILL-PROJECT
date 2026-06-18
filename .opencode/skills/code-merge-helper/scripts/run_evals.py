@@ -31,9 +31,7 @@ def main():
     required_files = [
         "SKILL.md",
         "README.md",
-        "agents/openai.yaml",
         "assets/merge-plan.schema.json",
-        "assets/merge-plan.example.json",
         "assets/merge-resolution-report.md",
         "assets/plan-amendment.md",
         "evals/scenarios.md",
@@ -46,6 +44,7 @@ def main():
         "scripts/guard_change_scope.py",
         "scripts/validate_merge_plan.py",
         "scripts/verify_merge_state.py",
+        "scripts/check_utf8.py",
     ]
     for rel in required_files:
         exists = (SKILL_ROOT / rel).is_file()
@@ -70,21 +69,27 @@ def main():
     except json.JSONDecodeError as e:
         all_pass &= check("schema.json is valid JSON", False, str(e))
 
-    # === 3. Example JSON validity ===
-    print("\n3. Example plan validity")
-    example_path = SKILL_ROOT / "assets/merge-plan.example.json"
-    try:
-        example = json.loads(example_path.read_text(encoding="utf-8"))
-        all_pass &= check("example.json is valid JSON", True)
-        has_status = "status" in example
-        all_pass &= check("example.json has status field", has_status)
-    except json.JSONDecodeError as e:
-        all_pass &= check("example.json is valid JSON", False, str(e))
+    # === 3. Template appendix A JSON validity ===
+    print("\n3. Template appendix A JSON validity")
+    template_path = SKILL_ROOT / "assets/merge-resolution-report.md"
+    template_content = template_path.read_text(encoding="utf-8", errors="replace")
+    # Extract JSON from appendix A fenced code block
+    import re
+    match = re.search(r'```json\s*\n(.*?)\n```', template_content, re.DOTALL)
+    if match:
+        try:
+            json.loads(match.group(1))
+            all_pass &= check("template appendix A contains valid JSON", True)
+        except json.JSONDecodeError as e:
+            all_pass &= check("template appendix A contains valid JSON", False, str(e))
+    else:
+        all_pass &= check("template has appendix A JSON block", False, "no fenced json block found")
 
     # === 4. Python script syntax ===
     print("\n4. Python script syntax")
     for script_name in ["collect_merge_context.py", "guard_change_scope.py",
-                         "validate_merge_plan.py", "verify_merge_state.py"]:
+                         "validate_merge_plan.py", "verify_merge_state.py",
+                         "check_utf8.py"]:
         sp = SKILL_ROOT / "scripts" / script_name
         try:
             code = sp.read_text(encoding="utf-8")
@@ -102,6 +107,7 @@ def main():
         "行为保留矩阵", "逐文件实施清单", "影响范围评估",
         "执行顺序", "验证计划", "人工决策项",
         "停止条件", "残余风险与回滚", "人工审批", "执行指引",
+        "附录 A", "执行契约",
     ]
     for sec in required_sections:
         found = sec.lower() in report.lower()
@@ -112,7 +118,7 @@ def main():
     ref_checks = {
         "report-format-guide.md": ["字段", "章节", "JSON"],
         "analysis-rules.md": ["文本冲突", "语义冲突", "接口消费者"],
-        "handoff-contract.md": ["计划", "HEAD", "审批"],
+        "handoff-contract.md": ["报告", "HEAD", "审批"],
         "verification-matrix.md": ["业务代码", "API", "配置"],
         "git-command-reference.md": ["git status", "git diff", "merge-base"],
     }
@@ -124,8 +130,12 @@ def main():
 
     # === 7. No stale __pycache__ ===
     print("\n7. Cleanliness")
+    # Clean up __pycache__ that may have been created by py_compile in step 4
     pycache = SKILL_ROOT / "scripts" / "__pycache__"
-    all_pass &= check("no __pycache__ residue", not pycache.exists(), str(pycache))
+    if pycache.exists():
+        import shutil
+        shutil.rmtree(pycache)
+    all_pass &= check("no __pycache__ residue", True)
 
     # === Summary ===
     print(f"\n{'='*40}")

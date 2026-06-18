@@ -1,6 +1,6 @@
 ---
 name: code-merge-helper
-description: 只读分析 Git merge、rebase、cherry-pick 冲突，通过 common-base、stage-2、stage-3 三方语义分析追溯修改目的，输出可人工审核的合并报告与 merge-plan.json。报告获批后 Agent 直接按第 14 章执行指引实施。适用于"分析合并冲突、制定冲突方案、评估两侧改动、生成合并报告"。
+description: 只读分析 Git merge、rebase、cherry-pick 冲突，通过 common-base、stage-2、stage-3 三方语义分析追溯修改目的，输出自包含合并报告（含附录 A JSON 执行契约）。报告获批后 Agent 直接按第 14 章执行指引实施。适用于"分析合并冲突、制定冲突方案、评估两侧改动、生成合并报告"。
 ---
 
 # Code Merge Helper
@@ -11,11 +11,13 @@ description: 只读分析 Git merge、rebase、cherry-pick 冲突，通过 commo
 
 ## 职责边界
 
-**负责**：找冲突 → 分析逻辑 → 追溯目的 → 形成方案 → 评估影响 → 输出报告 + JSON。
+**负责**：找冲突 → 分析逻辑 → 追溯目的 → 形成方案 → 评估影响 → 输出自包含 Markdown 报告（含附录 A JSON 执行契约）。
 
 **禁止**：修改业务文件、解决冲突标记、git add/commit/push、自行标记已批准、替用户决定互斥规则、**输出后在同一 turn 内继续修改代码**。
 
 产物写入 `.git/codex-merge-review/<plan-id>/`。
+
+> plan-id 格式：`merge-YYYYMMDD-HHMMSS`（如 `merge-20260618-143052`），基于生成时间戳保证唯一性。
 
 ## 强制原则
 
@@ -24,7 +26,12 @@ description: 只读分析 Git merge、rebase、cherry-pick 冲突，通过 commo
 - 编译通过 ≠ 语义正确，方案必须覆盖两侧应保留行为。
 - 生成文件/锁文件从源定义重新生成。
 - 不可逆变更、安全冲突、接口不兼容、互斥规则 → 列入人工决策项。
-- 报告与 JSON 必须一致；不一致时以报告为准，阻止执行。
+- 报告与附录 A JSON 执行契约必须一致；由同一文件构造保证一致性。
+- **所有输出文件必须使用 UTF-8 编码（无 BOM）**：报告 `.md` 以及任何中间产物。
+  - Windows 环境禁止使用 PowerShell `Set-Content` / `Out-File` 直接覆写含中文的文件；必须通过 Python 临时脚本显式指定 `encoding="utf-8"`。
+  - 写入完成后必须回读校验：读取文件前 3 字节确认无 BOM `\xef\xbb\xbf`，全文不得出现 Unicode 替换字符 `\ufffd`。
+  - 校验命令：`python scripts/check_utf8.py <file>`
+  - 校验失败 → 以 UTF-8 重新生成，不得输出含乱码的文件。
 
 ## 输入识别
 
@@ -68,27 +75,27 @@ description: 只读分析 Git merge、rebase、cherry-pick 冲突，通过 commo
 
 一致性、接口匹配、重复注册/死代码、安全校验覆盖、行为倒退。**接口消费者扫描**：对冲突涉及的符号反向搜索所有引用，检测任一侧删除而另一侧仍有引用的情况。
 
-### 7. 输出双产物
+### 7. 输出报告
 
-按 `assets/merge-resolution-report.md` 模板输出报告，按 `assets/merge-plan.schema.json` 约束 JSON。报告第 1-12 章供人审，第 14 章供 Agent 执行。
+按 `assets/merge-resolution-report.md` 模板输出单一 Markdown 文件。报告第 1-12 章供人审，第 14 章供 Agent 执行，附录 A 为 JSON 执行契约（按 `assets/merge-plan.schema.json` 约束），供脚本做确定性校验。
 
 ### 8. 自检并停止 ??
 
 ```bash
-python scripts/validate_merge_plan.py --plan <plan.json> --repo . --pre-merge
+python scripts/validate_merge_plan.py --plan <plan.md> --repo . --pre-merge
 ```
 
-确认 `WAITING_FOR_APPROVAL`、决策完整、行为有验证项、记录 Blob 指纹、报告与 JSON 一致。
+确认 `WAITING_FOR_APPROVAL`、决策完整、行为有验证项、记录 Blob 指纹、报告自包含。
 
 > ?? **完成后必须立即停止，不得在同一 turn 内修改代码。** 提示用户审批后 Agent 按第 14 章执行。
 
 ## 交接契约
 
-报告和 JSON 的内容要求详见 `references/report-format-guide.md`。核心要点：
+报告的内容要求详见 `references/report-format-guide.md`。核心要点：
 
 - 报告第 10 章人工决策项必须包含：功能、数据流、改动点明细（谁在什么时候为什么改）、合并建议、影响范围、功能影响、待决策问题。
 - 报告第 14 章执行指引必须包含：前置校验、执行约束、范围守卫、分层验证、偏差处理、最终复核、执行结论。
-- JSON 必须记录 HEAD、操作对象、冲突集合和 stage Blob，Planner 不得写 `APPROVED`。
+- 附录 A JSON 执行契约必须记录 HEAD、操作对象、冲突集合和 stage Blob，Planner 不得写 `APPROVED`。
 
 ## 完成条件
 
@@ -96,14 +103,24 @@ python scripts/validate_merge_plan.py --plan <plan.json> --repo . --pre-merge
 - 行为保留矩阵完整，每个行为有关联验证项。
 - 修改文件均进入白名单。
 - 人工决策项信息完整。
-- 报告与 JSON 一致且通过 `--pre-merge` 校验。
+- 报告通过 `--pre-merge` 校验，附录 A JSON 执行契约结构合法。
 - 执行指引章节完整。
 - **已停止修改，等待审批。**
+
+## 执行中修正
+
+当报告审批结果为 `APPROVED_WITH_CHANGES` 或执行中出现偏差（见报告第 14.5 节），使用 `assets/plan-amendment.md` 模板生成修正请求，而非全量重新分析。
+
+规则：
+- 保留原 plan-id 不变
+- 仅更新变更涉及的章节和附录 A JSON block
+- 修正后报告状态重置为 `WAITING_FOR_APPROVAL`
+- 修正批准前停止一切修改
 
 ## 推荐调用
 
 ```
-分析当前 merge 冲突，生成报告和 merge-plan.json，不修改代码。
+分析当前 merge 冲突，生成报告，不修改代码。
 ```
 
 ```
