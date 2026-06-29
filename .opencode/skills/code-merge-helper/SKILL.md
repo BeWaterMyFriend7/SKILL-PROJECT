@@ -1,11 +1,11 @@
 ---
 name: code-merge-helper
-description: 只读分析 Git merge、rebase、cherry-pick 冲突，通过 common-base、stage-2、stage-3 三方语义分析追溯修改目的，输出自包含合并报告（含附录 A JSON 执行契约）。报告获批后 Agent 直接按第 14 章执行指引实施。适用于"分析合并冲突、制定冲突方案、评估两侧改动、生成合并报告"。
+description: 合并冲突决策：当用户要求分析 Git merge/rebase/cherry-pick 冲突、制定冲突方案或评估两侧改动时，只读追溯 common-base/stage-2/stage-3，输出自包含 Markdown 报告和附录 A JSON 执行契约；报告获批后才按第 14 章实施。
 ---
 
 # Code Merge Helper
 
-把冲突处理视为"三方语义决策"，产出**自包含的可执行契约**——报告获批后无需加载其他 Skill。
+把冲突处理视为“三方语义决策”，产出**自包含的可执行契约**：报告获批后无需加载其他 Skill。
 
 > 报告各章节的详细填写规范见 `references/report-format-guide.md`。
 
@@ -27,10 +27,12 @@ description: 只读分析 Git merge、rebase、cherry-pick 冲突，通过 commo
 - 生成文件/锁文件从源定义重新生成。
 - 不可逆变更、安全冲突、接口不兼容、互斥规则 → 列入人工决策项。
 - 报告与附录 A JSON 执行契约必须一致；由同一文件构造保证一致性。
-- **所有输出文件必须使用 UTF-8 编码（无 BOM）**：报告 `.md` 以及任何中间产物。
+- **所有输出文件与会话摘录必须保持可读 UTF-8**：报告 `.md` 以及任何中间产物。
   - Windows 环境禁止使用 PowerShell `Set-Content` / `Out-File` 直接覆写含中文的文件；必须通过 Python 临时脚本显式指定 `encoding="utf-8"`。
-  - 写入完成后必须回读校验：读取文件前 3 字节确认无 BOM `\xef\xbb\xbf`，全文不得出现 Unicode 替换字符 `\ufffd`。
-  - 校验命令：`python scripts/check_utf8.py <file>`
+  - 在 Codex/PowerShell 会话中查看或摘录中文 Markdown 时，禁止用 `Get-Content`、`type`、`more` 直接输出到会话；使用 Python 读取并打印，例如：`python -c "from pathlib import Path; print(Path(r'<file>').read_text(encoding='utf-8'))"`。
+  - 如果会话输出出现 `鍦`、`鈥`、`銆`、`锛`、`U+FFFD` 等乱码特征，立即停止使用该输出；必须重新用 Python 回读原文件后再总结、复制或写入。
+  - 写入完成后必须回读校验：读取文件前 3 字节确认无 BOM `\xef\xbb\xbf`，全文不得出现 Unicode 替换字符 `\ufffd` 或可疑 mojibake 片段。
+  - 校验命令：`python scripts/check_utf8.py --strict-mojibake <file>`
   - 校验失败 → 以 UTF-8 重新生成，不得输出含乱码的文件。
 
 ## 输入识别

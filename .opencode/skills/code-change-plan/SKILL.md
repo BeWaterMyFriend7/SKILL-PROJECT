@@ -2,13 +2,13 @@
 
 name: code-change-plan
 
-description: 在修改软件代码前，对用户需求和整个代码仓库进行分析，产出一份完整、可评审、可直接执行的 Markdown 变更方案；适用于功能开发、重构、行为调整、配置修改、数据迁移、接口变更和跨模块改造。
+description: 变更方案规划：当用户明确要求 code change plan、变更方案、实施方案或先规划再改代码时，分析需求和仓库现状，生成可评审、可直接执行的 Markdown 计划；只规划，不修改业务代码。
 
 ---
 
 # Code Change Plan
 
-将用户提出的代码修改需求，转换为一份完整、可评审、可直接交给 Codex 执行的 Markdown 变更方案。
+将用户提出的代码修改需求，转换为一份可审、可执行、可追踪的 Markdown 变更方案。运行关键词：先分析、闭环、可执行；方案获批前不改业务代码。
 
 > 标准工作流程详见 `references/workflow-detail.md`，报告结构详见 `references/report-structure.md`，质量检查详见 `references/quality-checklist.md`。
 
@@ -68,15 +68,19 @@ assets/change-plan-template.md
 
 ```
 
-### 2.1 文件编码强制规则
+### 2.1 文件编码与会话输出规则
 
-**所有输出文件必须使用 UTF-8 编码（无 BOM）**。方案 `.md` 文件不得包含 BOM 头，全文不得出现 Unicode 替换字符 `\ufffd`。
+**所有输出文件必须使用 UTF-8 编码（无 BOM）**。方案 `.md` 文件不得包含 BOM 头，全文不得出现 Unicode 替换字符 `\ufffd` 或可疑 mojibake 片段。
 
 - Windows 环境禁止使用 PowerShell `Set-Content` / `Out-File` 直接覆写含中文的文件；必须通过 Python 临时脚本显式指定 `encoding="utf-8"`。
 
-- 写入完成后必须回读校验：读取文件前 3 字节确认无 BOM `\xef\xbb\xbf`，全文不得出现 Unicode 替换字符 `\ufffd`。
+- 在 Codex/PowerShell 会话中查看或摘录中文 Markdown 时，禁止用 `Get-Content`、`type`、`more` 直接输出到会话；使用 Python 读取并打印，例如：`python -c "from pathlib import Path; print(Path(r'<file>').read_text(encoding='utf-8'))"`。
 
-- 校验命令：`python scripts/check_utf8.py <file>`
+- 如果会话输出出现 `鍦`、`鈥`、`銆`、`锛`、`U+FFFD` 等乱码特征，立即停止使用该输出；必须重新用 Python 回读原文件后再总结、复制或写入。
+
+- 写入完成后必须回读校验：读取文件前 3 字节确认无 BOM `\xef\xbb\xbf`，全文不得出现 Unicode 替换字符 `\ufffd` 或可疑 mojibake 片段。
+
+- 校验命令：`python scripts/check_utf8.py --strict-mojibake <file>`
 
 - 校验失败 → 以 UTF-8 重新生成，不得输出含乱码的文件。
 

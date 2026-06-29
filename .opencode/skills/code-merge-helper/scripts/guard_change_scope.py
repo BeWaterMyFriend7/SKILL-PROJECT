@@ -28,7 +28,7 @@ def extract_json_from_markdown(md_path: Path) -> dict:
         content_text = raw_bytes.decode("utf-8")
     except UnicodeDecodeError as ude:
         raise ValueError(f"Invalid UTF-8 in {md_path}: {ude}") from ude
-    if '�' in content_text:
+    if '\ufffd' in content_text:
         raise ValueError(f"Unicode replacement characters found in {md_path}; file encoding is corrupted")
 
     # Try to anchor to appendix A header first

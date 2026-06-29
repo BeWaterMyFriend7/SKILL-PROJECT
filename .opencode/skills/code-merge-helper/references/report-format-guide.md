@@ -1,4 +1,4 @@
-﻿# 报告与 JSON 格式填写指南
+# 报告与 JSON 格式填写指南
 
 > 配合 `assets/merge-resolution-report.md` 模板使用。SKILL.md 仅保留流程与约束，本章提供各章节的详细填写规范。
 
