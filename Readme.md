@@ -68,36 +68,17 @@
 
 ### 高质量开发流程增强 Skills
 
-#### grill-me【需求分析、方案设计提升】
-这个 skill 会针对你的方案逐条和你对，把你考虑不明确的地方基本都能覆盖到，能够帮你把设计考虑得更全，边界更清晰。
-
-**项目地址：** https://github.com/mattpocock/skills
-
-#### codegraph【代码结构图谱 / 依赖关系分析工具，节省 token】
-对代码仓库进行结构化分析，生成模块依赖关系图、调用链路图以及跨文件引用关系，帮助 AI 理解复杂项目的架构。
-
-如果没有它，你的 Agent 分析代码一般都是 grep 文件，非常耗 token，有了它会节省不少 token。
-
-**项目地址：** https://github.com/colbymchenry/codegraph
-
-#### graphify【数据/代码关系可视化图生成工具】
-和上面的功能基本一致，相比于上面的工具，它还建立文档的索引。
-
-**项目地址：** https://github.com/Graphify-Labs/graphify
-
-#### superpowers【Agent 能力增强框架】
-一套面向 AI 编程助手的能力增强框架，提供如规划（planning）、代码生成规范、项目结构管理、prompt 模板化等能力，用于提升 Codex / Claude Code / Cursor 等 Agent 的执行质量与一致性。
-
-**项目地址：** https://github.com/obra/superpowers
-
-#### openspec【Spec 驱动开发框架】
-通过结构化 PRD/Spec 文档驱动 AI 完成设计、拆解任务与代码生成，实现从需求→设计→实现的闭环开发流程。
-
-**项目地址：** https://github.com/Fission-AI/OpenSpec
+| Skill 名称 | 功能简介 | GitHub 地址 |
+| --- | --- | --- |
+| grill-me | 需求分析、方案设计提升工具。针对方案逐条审查，帮助把设计考虑得更全面，边界更清晰 | https://github.com/mattpocock/skills |
+| codegraph | 代码结构图谱/依赖关系分析工具。生成模块依赖关系图、调用链路图，帮助 AI 理解复杂项目架构，节省 token | https://github.com/colbymchenry/codegraph |
+| graphify | 数据/代码关系可视化图生成工具。功能类似 codegraph，额外提供文档索引功能 | https://github.com/Graphify-Labs/graphify |
+| superpowers | Agent 能力增强框架。提供规划、代码生成规范、项目结构管理、prompt 模板化等能力，提升 Agent 执行质量 | https://github.com/obra/superpowers |
+| openspec | Spec 驱动开发框架。通过结构化 PRD/Spec 文档驱动 AI 完成设计、拆解任务与代码生成，实现需求→设计→实现闭环 | https://github.com/Fission-AI/OpenSpec |
 
 ---
 
-以下是整合后的技能清单表格，按”名称、功能、地址”顺序排列：
+### 通用 Agent Skills 推荐
 
 | Skill 名称 | 功能简介 | GitHub 地址 |
 | --- | --- | --- |
