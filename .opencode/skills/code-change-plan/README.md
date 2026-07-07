@@ -1,115 +1,145 @@
 # code-change-plan
 
-这是一个用于代码修改前分析和设计的 Codex Skill。它只负责生成一个完整的 Markdown 变更方案，不修改业务代码，也不生成单独 JSON。
+代码变更分析及计划 Skill - 将需求转换为可执行的代码变更方案。
 
-## 一、目录结构
+**支持平台：** OpenCode、Codex、Cursor、Aider 等兼容 Agent Skills 规范的 AI 编程工具。
+
+## 核心原则
+
+**先分析 → 再设计 → 产出方案 → 等待审批**
+
+只负责生成变更方案，不修改业务代码。
+
+## 一、快速开始
+
+### 调用方式
+
+**OpenCode / Cursor / Aider:**
+```text
+/code-change-plan
+
+需求：实现用户登录功能
+- 支持用户名密码登录
+- 返回 JWT token
+```
+
+**Codex:**
+```text
+$code-change-plan
+
+需求：实现用户登录功能
+- 支持用户名密码登录
+- 返回 JWT token
+```
+
+### 输出位置
+
+```text
+.code/change-plans/<需求描述>-<YYYYMMDD-HHMMSS>.md
+```
+
+## 二、报告结构（4 章简洁版）
+
+```
+代码变更方案
+├── 1️⃣ 要做什么 (What)
+│   ├── 需求列表 (checkbox)
+│   ├── 验收标准
+│   └── 待决策问题
+│
+├── 2️⃣ 怎么做 (How)
+│   ├── 技术方案
+│   ├── 关键决策
+│   └── 流程对比
+│
+├── 3️⃣ 改哪些 (Where)
+│   ├── 文件清单（白名单）
+│   └── 影响范围
+│
+└── 4️⃣ 如何验证 (Verify)
+    ├── 验证步骤
+    ├── 验证清单
+    └── 风险与回滚
+```
+
+**特点：**
+- 📄 **3-5 页** - 简洁易读
+- ⏱️ **3 分钟** - 快速审批
+- ✅ **直观** - Emoji + Checkbox
+- 🎯 **实用** - 直接可执行
+
+## 三、执行方式
+
+人工审核方案后，将状态改为 `APPROVED`，然后新建 AI 助手会话：
+
+```text
+读取并执行以下代码变更方案：
+.code/change-plans/<plan-id>.md
+
+要求：
+1. 按文件清单修改代码
+2. 每步完成后运行对应验证
+3. 发现问题立即停止
+4. 验证全部通过后报告完成
+```
+
+## 四、目录结构
 
 ```text
 code-change-plan/
-├── SKILL.md
-├── README.md
+├── SKILL.md                         # 核心执行规范
+├── README.md                        # 本文件
+├── requirements.txt                 # Python 依赖（仅标准库）
 ├── assets/
-│   ├── change-plan-template.md
-│   └── change-plan-amendment.md
+│   ├── change-plan-template.md     # 简洁方案模板
+│   └── change-plan-amendment.md    # 修订模板
 ├── references/
-│   ├── workflow-detail.md
-│   ├── report-structure.md
-│   └── quality-checklist.md
+│   ├── workflow-detail.md          # 详细工作流程
+│   ├── report-structure.md         # 报告结构说明
+│   └── quality-checklist.md        # 质量检查清单
 └── scripts/
-    └── validate_change_plan.py
+    ├── validate_change_plan.py     # 方案验证脚本
+    ├── check_utf8.py               # UTF-8 编码检查
+    └── write_utf8.py               # UTF-8 文件写入工具
+
+Python 要求：Python 3.7+ （无第三方依赖）
 ```
 
-## 二、安装
+## 五、安装
 
-复制到 Codex 全局 Skill 目录：
-
+### OpenCode
 ```text
-C:\Users\BeWater\.codex\skills\code-change-plan\
+# 全局
+~/.config/opencode/skills/code-change-plan/
+
+# 项目级
+<project>/.opencode/skills/code-change-plan/
 ```
 
-安装完成后应存在：
-
+### Codex
 ```text
-C:\Users\BeWater\.codex\skills\code-change-plan\SKILL.md
+~/.codex/skills/code-change-plan/
 ```
 
-## 三、调用方式
-
-在项目根目录启动 Codex，然后输入：
-
+### 通用 Agent Skills
 ```text
-$code-change-plan
-
-请分析以下需求并生成完整代码变更方案，只生成一个 Markdown，不修改业务代码：
-<需求内容>
+<repo>/.agents/skills/code-change-plan/
 ```
 
-## 四、推荐提示词
+## 六、与其他 Skill 的协作
 
-```text
-$code-change-plan
+- **code-merge-helper**：当变更涉及分支合并且存在冲突时，建议暂停本方案执行，先使用 `code-merge-helper` 完成三方合并分析。合并完成后再回到本方案继续执行。
 
-请分析以下需求并产出完整的代码变更方案：
+## 七、Windows 环境注意
 
-<需求内容>
+- 本 Skill 所有 `.md` 文件均为 UTF-8 编码
+- 若在 PowerShell 中用 `Get-Content` 读到乱码，改用 `[System.IO.File]::ReadAllText("<path>", [System.Text.Encoding]::UTF8)`
+- Skill 仅生成方案，不修改业务代码
 
-要求：
-1. 只分析和生成方案，不修改业务代码
-2. 分析当前功能流程、调用链、数据流和配置流
-3. 设计目标功能流程、调用链、数据流和配置流
-4. 明确修改前后差异
-5. 全项目评估代码、测试、配置、脚本、数据、接口、文档和监控影响
-6. 列出需要删除、替换、迁移或限期兼容的旧逻辑
-7. 不允许无规则保留新旧两套实现
-8. 给出准确文件清单、实施顺序和验证命令
-9. 把执行约束、停止条件和所有校验项写入同一个 Markdown
-10. 初始审批状态必须为 WAITING_FOR_APPROVAL
+## 八、自检
+
+```bash
+python scripts/validate_change_plan.py
 ```
 
-## 五、输出位置
-
-```text
-.codex/change-plans/<plan-id>.md
-```
-
-方案中已包含：
-
-- 需求分析
-- 当前实现
-- 目标方案
-- 修改前后变化
-- 全项目影响矩阵
-- 旧逻辑退役矩阵
-- 文件变更清单
-- 实施步骤
-- 测试验证
-- 执行契约
-- 完成状态
-- 审批记录
-- 后续直接执行提示词
-
-## 六、执行方式
-
-人工审核方案后，将状态改为：
-
-```text
-APPROVED
-```
-
-然后新建 Codex 会话，输入：
-
-```text
-读取并严格执行以下已批准的代码变更方案：
-
-.codex/change-plans/<plan-id>.md
-
-要求：
-1. 严格按照修改单元、文件清单和实施顺序执行
-2. 完整处理旧逻辑退役矩阵
-3. 不得出现未经批准的新旧逻辑双活
-4. 每个修改单元完成后运行局部验证
-5. 完成后运行全部必需验证
-6. 发现计划外影响时停止，并标记 PLAN_AMENDMENT_REQUIRED
-7. 不执行 git add、git commit 或 git push
-8. 最后报告实际修改、旧逻辑清理、验证结果、未执行项和残余风险
-```
+检查方案文件的完整性和结构合法性。

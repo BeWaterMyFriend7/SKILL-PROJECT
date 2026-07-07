@@ -3,8 +3,12 @@
 主要skills说明：
 - 代码变更相关的skill  
   当利用agent等工具进行团队协作开发时，经常会遇到大量的代码冲突和一些代码的更改，但是如果影响分析如果不完整，可能会出现代码合并失败和修改存在问题，覆盖他人的功能等，这两个skill是将合并的工作流进行总结的skill。   
-  - code-merge-helper  代码合并助手，分析代码冲突点，评估影响范围 [说明](.opencode/skills/code-merge-helper/README.md)
-  - code-change-plan   代码变更分析及计划，分析需要更改的需求点，确定变更影响范围，技术实现路线等  [说明](.opencode/skills/code-change-plan/README.md)
+  - **code-merge-helper** 代码合并助手，分析代码冲突点，评估影响范围
+    - [说明文档](.opencode/skills/code-merge-helper/README.md)
+    - [输出示例](output/code-merge-helper/示例-合并feature-login到main.md)
+  - **code-change-plan** 代码变更分析及计划，分析需要更改的需求点，确定变更影响范围，技术实现路线等
+    - [说明文档](.opencode/skills/code-change-plan/README.md)
+    - [输出示例](output/code-change-plan/示例-新增用户登录功能.md)
 
 - 专业级别绘图相关skill：输出示例：svg-output
   - xml-diagram[推荐] 生成drawio XML 文件，支持drawio 直接编辑
@@ -59,7 +63,21 @@
 ```
 
 # 网上优秀的skill 推荐
-以下是整合后的技能清单表格，按“名称、功能、地址”顺序排列：
+
+## 202607 Update 一些项目开发过程中的skill推荐
+
+### 高质量开发流程增强 Skills 或者 插件
+
+| Skill 名称 | 功能简介 | GitHub 地址 |
+| --- | --- | --- |
+| grill-me | 需求分析、方案设计提升工具。针对方案逐条审查，帮助把设计考虑得更全面，边界更清晰 | https://github.com/mattpocock/skills |
+| codegraph | 代码结构图谱/依赖关系分析工具。生成模块依赖关系图、调用链路图，帮助 AI 理解复杂项目架构，节省 token | https://github.com/colbymchenry/codegraph |
+| graphify | 数据/代码关系可视化图生成工具。功能类似 codegraph，额外提供文档索引功能 | https://github.com/Graphify-Labs/graphify |
+| Understand-Anything | 理解项目代码代码，建立图谱，进行影响分析、可视化展示 | https://github.com/Egonex-AI/Understand-Anything/blob/main/READMEs/README.zh-CN.md |
+
+---
+
+### 通用 Agent Skills 推荐
 
 | Skill 名称 | 功能简介 | GitHub 地址 |
 | --- | --- | --- |

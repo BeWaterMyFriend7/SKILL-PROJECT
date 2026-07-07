@@ -1,6 +1,0 @@
-interface:
-  display_name: "Code Merge Helper"
-  short_description: "只读分析三方冲突并生成可执行合并计划"
-  default_prompt: "分析当前 Git merge/rebase/cherry-pick 冲突，输出人工审核报告和 merge-plan.json，不修改代码�?
-policy:
-  allow_implicit_invocation: true
