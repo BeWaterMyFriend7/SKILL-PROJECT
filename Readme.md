@@ -66,15 +66,14 @@
 
 ## 202607 Update 一些项目开发过程中的skill推荐
 
-### 高质量开发流程增强 Skills
+### 高质量开发流程增强 Skills 或者 插件
 
 | Skill 名称 | 功能简介 | GitHub 地址 |
 | --- | --- | --- |
 | grill-me | 需求分析、方案设计提升工具。针对方案逐条审查，帮助把设计考虑得更全面，边界更清晰 | https://github.com/mattpocock/skills |
 | codegraph | 代码结构图谱/依赖关系分析工具。生成模块依赖关系图、调用链路图，帮助 AI 理解复杂项目架构，节省 token | https://github.com/colbymchenry/codegraph |
 | graphify | 数据/代码关系可视化图生成工具。功能类似 codegraph，额外提供文档索引功能 | https://github.com/Graphify-Labs/graphify |
-| superpowers | Agent 能力增强框架。提供规划、代码生成规范、项目结构管理、prompt 模板化等能力，提升 Agent 执行质量 | https://github.com/obra/superpowers |
-| openspec | Spec 驱动开发框架。通过结构化 PRD/Spec 文档驱动 AI 完成设计、拆解任务与代码生成，实现需求→设计→实现闭环 | https://github.com/Fission-AI/OpenSpec |
+| Understand-Anything | 理解项目代码代码，建立图谱，进行影响分析、可视化展示 | https://github.com/Egonex-AI/Understand-Anything/blob/main/READMEs/README.zh-CN.md |
 
 ---
 
