@@ -1,14 +1,31 @@
 # 项目介绍
 
-主要skills说明：
+## Skill 索引
+
+| 分类 | Skill | 主要用途 | 文档/示例 |
+| --- | --- | --- | --- |
+| 代码变更 | code-change-plan | 变更前分析需求、影响范围和实施路线 | [说明文档](.opencode/skills/code-change-plan/README.md) / [输出示例](output/code-change-plan/示例-新增用户登录功能.md) |
+| 代码变更 | diff-review | 变更后审查当前 diff，发现正确性、简化复用和效率问题 | [说明文档](.opencode/skills/diff-review/SKILL.md) / [输出示例](output/diff-review/示例-审查当前代码变更.md) |
+| 代码变更 | code-merge-helper | 合并时分析冲突点、影响范围和处理方案 | [说明文档](.opencode/skills/code-merge-helper/README.md) / [输出示例](output/code-merge-helper/示例-合并feature-login到main.md) |
+| 专业绘图 | xml-diagram | 生成可在 drawio 直接编辑的 XML 架构图 | [示例目录](.opencode/skills/xml-diagram/examples) |
+| 专业绘图 | svg-generator | 生成 SVG 架构图、流程图、对比图等 | [示例目录](.opencode/skills/svg-generator/examples) |
+| 专业绘图 | drawio-diagram | 绘制流程图、架构图等 drawio 图形 | [示例目录](svg-output) |
+| 编码辅助 | requirements-analysis / requirements-review / prototype-design / technical-design | 需求分析、需求评审、原型设计和技术设计 | [输出目录](output) |
+
+## 主要 skills 说明
+
 - 代码变更相关的skill  
-  当利用agent等工具进行团队协作开发时，经常会遇到大量的代码冲突和一些代码的更改，但是如果影响分析如果不完整，可能会出现代码合并失败和修改存在问题，覆盖他人的功能等，这两个skill是将合并的工作流进行总结的skill。   
+  当利用agent等工具进行团队协作开发时，经常会遇到大量的代码冲突和一些代码的更改，但是如果影响分析如果不完整，可能会出现代码合并失败和修改存在问题，覆盖他人的功能等，这些skill是将变更规划、变更审查和合并处理工作流进行总结的skill。
   - **code-merge-helper** 代码合并助手，分析代码冲突点，评估影响范围
     - [说明文档](.opencode/skills/code-merge-helper/README.md)
     - [输出示例](output/code-merge-helper/示例-合并feature-login到main.md)
   - **code-change-plan** 代码变更分析及计划，分析需要更改的需求点，确定变更影响范围，技术实现路线等
     - [说明文档](.opencode/skills/code-change-plan/README.md)
     - [输出示例](output/code-change-plan/示例-新增用户登录功能.md)
+  - **diff-review** 代码变更审查助手，审查当前 `git diff`，重点发现正确性缺陷、可复用/可简化空间和效率问题
+    - [说明文档](.opencode/skills/diff-review/SKILL.md)
+    - [输出示例](output/diff-review/示例-审查当前代码变更.md)
+    - 默认使用单智能体快速审查；对于较大 diff、高风险变更或需要更高覆盖率的场景，可使用 `--multi` 启用多智能体协作审查
 
 - 专业级别绘图相关skill：输出示例：svg-output
   - xml-diagram[推荐] 生成drawio XML 文件，支持drawio 直接编辑
@@ -17,7 +34,7 @@
 其中上面两个skill 生成的图形基本风格一致，xml-diagram 生成的图形可以直接在drawio中编辑，推荐使用这个skill。实际使用过程中，使用相关skill 生成复杂的流程图效果都不太好，尤其是分支较多的情况下，如果是流程图，建议还是使用mermaid等代码绘图，绘图完再进行相关格式的转换。 
 生成的图形 可以参考 相关skill 的示例目录或者svg-output目录
   - [.opencode\skills\xml-diagram\examples](.opencode/skills/xml-diagram/examples)
-  - [.opencode\skills\svg-generator\examples](.opencode/skills/xml-diagram/examples)
+  - [.opencode\skills\svg-generator\examples](.opencode/skills/svg-generator/examples)
   - [svg-output](svg-output)
 
 部分图形预览：
