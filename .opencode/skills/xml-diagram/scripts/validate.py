@@ -15,18 +15,53 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_TEMPLATES = {
     "architecture.drawio",
-    "flow.drawio",
+    "comparison.drawio",
+    "decision-matrix.drawio",
+    "flow-branching.drawio",
+    "flow-linear.drawio",
+    "lifecycle.drawio",
+    "relationship-dependency.drawio",
+    "relationship-er.drawio",
+    "relationship-knowledge.drawio",
+    "roadmap.drawio",
     "sequence.drawio",
-    "relationship.drawio",
-    "structured-content.drawio",
+    "state.drawio",
+    "summary.drawio",
+    "swot.drawio",
+    "timeline.drawio",
 }
-PLACEHOLDER_RE = re.compile(r"(标题|一级区域|分组卡片|内容标签|参与者 [ABC]|处理步骤|实体 [AB]|内容区域 [AB]|结构化内容)$")
+EXPECTED_EXAMPLE_MARKERS = {
+    "architecture-application-",
+    "architecture-business-",
+    "architecture-deployment-",
+    "architecture-technical-",
+    "comparison-",
+    "decision-matrix-",
+    "flow-branching-",
+    "flow-linear-",
+    "lifecycle-",
+    "relationship-dependency-",
+    "relationship-er-",
+    "relationship-knowledge-",
+    "roadmap-",
+    "sequence-",
+    "state-",
+    "summary-",
+    "swot-",
+    "timeline-",
+}
+PLACEHOLDER_RE = re.compile(
+    r"(图形标题|区域标题|卡片标题|内容标签|参与者 [ABCD]|处理步骤|实体 [AB]|阶段 [AB]|主题节点|"
+    r"能力[一二三]|目标[一二三]|要点[一二三]|关键因素[一二三])$"
+)
 MOJIBAKE = ("锟", "�", "鐢", "鍥", "绋", "瑙")
+TITLE_RE = re.compile(r"(^|[-_])(title|diagram-title)([-_]|$)", re.IGNORECASE)
 
 
 @dataclass(frozen=True)
 class Box:
     cell_id: str
+    parent_id: str
     x: float
     y: float
     width: float
@@ -87,37 +122,28 @@ def intersects(first: Box, second: Box) -> bool:
     return first.x < second.right and first.right > second.x and first.y < second.bottom and first.bottom > second.y
 
 
-def contains(first: Box, second: Box) -> bool:
-    return first.x <= second.x and first.y <= second.y and first.right >= second.right and first.bottom >= second.bottom
+def contains(first: Box, second: Box, tolerance: float = 0.01) -> bool:
+    return (
+        first.x - tolerance <= second.x
+        and first.y - tolerance <= second.y
+        and first.right + tolerance >= second.right
+        and first.bottom + tolerance >= second.bottom
+    )
 
 
-def visible_boxes(cells: list[ET.Element]) -> list[Box]:
-    boxes: list[Box] = []
-    for cell in cells:
-        if cell.get("vertex") != "1":
-            continue
-        style = cell.get("style", "")
-        if "shape=line" in style:
-            continue
-        geometry = cell.find("mxGeometry")
-        if geometry is None:
-            continue
-        width = number(geometry.get("width"))
-        height = number(geometry.get("height"))
-        if width <= 0 or height <= 0:
-            continue
-        boxes.append(
-            Box(
-                cell.get("id", ""),
-                number(geometry.get("x")),
-                number(geometry.get("y")),
-                width,
-                height,
-                style,
-                cell.get("value", ""),
-            )
-        )
-    return boxes
+def is_background(box: Box, page_width: float, page_height: float) -> bool:
+    cell_id = box.cell_id.lower()
+    return cell_id in {"bg", "background", "canvas"} or (
+        math.isclose(box.x, 0.0)
+        and math.isclose(box.y, 0.0)
+        and math.isclose(box.width, page_width)
+        and math.isclose(box.height, page_height)
+    )
+
+
+def is_title(box: Box) -> bool:
+    font_size = number(style_map(box.style).get("fontSize"), 12)
+    return bool(TITLE_RE.search(box.cell_id)) or font_size >= 20
 
 
 def point_pair(cell: ET.Element) -> tuple[ET.Element | None, ET.Element | None]:
@@ -125,6 +151,118 @@ def point_pair(cell: ET.Element) -> tuple[ET.Element | None, ET.Element | None]:
     if geometry is None:
         return None, None
     return geometry.find("mxPoint[@as='sourcePoint']"), geometry.find("mxPoint[@as='targetPoint']")
+
+
+def build_boxes(cells: list[ET.Element], errors: list[str]) -> tuple[list[Box], dict[str, Box]]:
+    cell_by_id = {cell.get("id", ""): cell for cell in cells if cell.get("id")}
+    raw: dict[str, tuple[float, float, float, float]] = {}
+
+    for cell in cells:
+        if cell.get("vertex") != "1":
+            continue
+        cell_id = cell.get("id", "<unknown>")
+        geometry = cell.find("mxGeometry")
+        style = cell.get("style", "")
+        if geometry is None:
+            errors.append(f"{cell_id}: 可见节点缺少 mxGeometry")
+            continue
+        parent = cell_by_id.get(cell.get("parent", ""))
+        if parent is not None and parent.get("edge") == "1" and geometry.get("relative") == "1":
+            # Draw.io edge labels are relative vertices and do not have box dimensions.
+            continue
+        if geometry.get("w") is not None or geometry.get("h") is not None:
+            errors.append(f"{cell_id}: mxGeometry 禁止使用 w/h，必须使用 width/height")
+            continue
+        if "shape=line" in style:
+            width = number(geometry.get("width"), 1.0)
+            height = number(geometry.get("height"))
+        else:
+            if geometry.get("width") is None or geometry.get("height") is None:
+                errors.append(f"{cell_id}: 可见节点必须包含 width 和 height")
+                continue
+            width = number(geometry.get("width"))
+            height = number(geometry.get("height"))
+        if width <= 0 or height <= 0:
+            errors.append(f"{cell_id}: 可见节点宽高必须为正数")
+            continue
+        raw[cell_id] = (number(geometry.get("x")), number(geometry.get("y")), width, height)
+
+    absolute: dict[str, tuple[float, float, float, float]] = {}
+    resolving: set[str] = set()
+
+    def resolve(cell_id: str) -> tuple[float, float, float, float]:
+        if cell_id in absolute:
+            return absolute[cell_id]
+        if cell_id in resolving:
+            errors.append(f"{cell_id}: parent 引用形成循环")
+            return raw[cell_id]
+        resolving.add(cell_id)
+        x, y, width, height = raw[cell_id]
+        parent_id = cell_by_id[cell_id].get("parent", "")
+        if parent_id in raw:
+            parent_x, parent_y, _, _ = resolve(parent_id)
+            x += parent_x
+            y += parent_y
+        resolving.remove(cell_id)
+        absolute[cell_id] = (x, y, width, height)
+        return absolute[cell_id]
+
+    boxes: list[Box] = []
+    for cell_id in raw:
+        cell = cell_by_id[cell_id]
+        x, y, width, height = resolve(cell_id)
+        boxes.append(
+            Box(
+                cell_id,
+                cell.get("parent", ""),
+                x,
+                y,
+                width,
+                height,
+                cell.get("style", ""),
+                cell.get("value", ""),
+            )
+        )
+    return boxes, {box.cell_id: box for box in boxes}
+
+
+def edge_points(cell: ET.Element, box_by_id: dict[str, Box]) -> list[tuple[float, float]]:
+    geometry = cell.find("mxGeometry")
+    points: list[tuple[float, float]] = []
+    if geometry is not None:
+        for point in geometry.findall(".//mxPoint"):
+            if point.get("x") is not None and point.get("y") is not None:
+                points.append((number(point.get("x")), number(point.get("y"))))
+    for key in ("source", "target"):
+        reference = cell.get(key)
+        if reference in box_by_id:
+            box = box_by_id[reference]
+            points.append((box.x + box.width / 2, box.y + box.height / 2))
+    return points
+
+
+def diagram_kind(path: Path, diagram_name: str) -> str:
+    name = f"{path.name.lower()} {diagram_name.lower()}"
+    for kind in (
+        "flow-linear",
+        "flow-branching",
+        "sequence",
+        "state",
+        "lifecycle",
+        "relationship-er",
+        "relationship-dependency",
+        "relationship-knowledge",
+        "roadmap",
+        "timeline",
+        "decision-matrix",
+        "comparison",
+        "swot",
+        "summary",
+        "architecture",
+    ):
+        if kind in name:
+            return kind
+    return ""
 
 
 def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[str], list[str]]:
@@ -147,9 +285,12 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
 
     if root.tag not in {"mxfile", "mxGraphModel"}:
         errors.append("根节点必须是 mxfile 或 mxGraphModel")
-    model = root if root.tag == "mxGraphModel" else root.find(".//mxGraphModel")
-    if model is None:
+    models = [root] if root.tag == "mxGraphModel" else list(root.findall(".//mxGraphModel"))
+    if not models:
         return errors + ["缺少 mxGraphModel"], warnings
+    if len(models) > 1:
+        errors.append("每个示例或模板只允许一个 mxGraphModel，避免多页匹配歧义")
+    model = models[0]
     if model.get("grid") != "0":
         errors.append("mxGraphModel 必须显式设置 grid=0")
 
@@ -159,11 +300,26 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
         errors.append("pageWidth 和 pageHeight 必须为正数")
 
     cells = list(model.findall(".//mxCell"))
+    cell_by_id = {cell.get("id", ""): cell for cell in cells if cell.get("id")}
     ids = [cell.get("id", "") for cell in cells]
     duplicate_ids = sorted({cell_id for cell_id in ids if cell_id and ids.count(cell_id) > 1})
     if duplicate_ids:
         errors.append("mxCell id 重复: " + ", ".join(duplicate_ids))
     known_ids = set(ids)
+
+    def effective_background(cell: ET.Element) -> str | None:
+        current: ET.Element | None = cell
+        visited: set[str] = set()
+        while current is not None:
+            fill = style_map(current.get("style", "")).get("fillColor")
+            if fill not in {None, "none"}:
+                return fill
+            parent_id = current.get("parent", "")
+            if not parent_id or parent_id in visited:
+                break
+            visited.add(parent_id)
+            current = cell_by_id.get(parent_id)
+        return model.get("background")
 
     for cell in cells:
         cell_id = cell.get("id", "<unknown>")
@@ -184,81 +340,163 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
             errors.append(f"{cell_id}: 禁止标题或文字下划线")
         if style.get("shadow") == "1" or model.get("shadow") == "1":
             warnings.append(f"{cell_id}: 检测到阴影，应确认仅为浅色轻微阴影")
-
         foreground = style.get("fontColor")
-        background = style.get("fillColor")
-        if background in {None, "none"}:
-            background = model.get("background")
-        if foreground and background:
+        background = effective_background(cell)
+        if cell.get("value", "").strip() and foreground and background:
             ratio = contrast(foreground, background)
             threshold = 3.0 if font_size >= 18 or (font_size >= 14 and "fontStyle=1" in raw_style) else 4.5
             if ratio is not None and ratio + 1e-6 < threshold:
                 errors.append(f"{cell_id}: 文字对比度 {ratio:.2f}:1 低于 {threshold:.1f}:1")
 
-    boxes = visible_boxes(cells)
-    for box in boxes:
-        is_title = box.cell_id == "title"
-        minimum = 20 if is_title else 30
+    boxes, box_by_id = build_boxes(cells, errors)
+    content_boxes = [box for box in boxes if not is_background(box, page_width, page_height) and "shape=line" not in box.style]
+
+    for box in content_boxes:
+        minimum = 20 if is_title(box) else 30
         if box.x < minimum or box.y < minimum or box.right > page_width - minimum or box.bottom > page_height - minimum:
             errors.append(f"{box.cell_id}: 超出画布安全边距")
+        parent = box_by_id.get(box.parent_id)
+        if parent is not None and not contains(parent, box):
+            errors.append(f"{box.cell_id}: 超出父容器 {parent.cell_id}")
 
-    for index, first in enumerate(boxes):
-        for second in boxes[index + 1 :]:
-            if not intersects(first, second):
+    for index, first in enumerate(content_boxes):
+        for second in content_boxes[index + 1 :]:
+            if first.parent_id != second.parent_id or not intersects(first, second):
                 continue
             if contains(first, second) or contains(second, first):
                 continue
-            errors.append(f"元素重叠: {first.cell_id} 与 {second.cell_id}")
+            errors.append(f"同级元素重叠: {first.cell_id} 与 {second.cell_id}")
 
-    architecture_name = path.name.lower()
+    horizontal_groups: dict[tuple[str, int, int], list[Box]] = {}
+    for box in content_boxes:
+        if is_title(box):
+            continue
+        horizontal_groups.setdefault((box.parent_id, round(box.y / 4), round(box.width / 4)), []).append(box)
+    for group in horizontal_groups.values():
+        if len(group) < 3:
+            continue
+        ordered = sorted(group, key=lambda item: item.x)
+        gaps = [ordered[index + 1].x - ordered[index].right for index in range(len(ordered) - 1)]
+        if min(gaps) >= 0 and max(gaps) - min(gaps) > 4:
+            warnings.append("同级元素间距不均匀: " + ", ".join(box.cell_id for box in ordered))
+
     diagram = root.find("diagram")
-    diagram_name = diagram.get("name", "").lower() if diagram is not None else ""
-    if "architecture" in architecture_name or "architecture" in diagram_name:
-        for card in boxes:
-            card_style = style_map(card.style)
-            if card_style.get("arcSize") != "10" or card.height < 100:
-                continue
-            children = [child for child in boxes if child.cell_id != card.cell_id and contains(card, child)]
-            if not children:
-                continue
-            if card.value.strip():
-                errors.append(f"{card.cell_id}: 架构分组卡片容器不得承载标题文字")
-            text_titles = [child for child in children if child.style.startswith("text;") and child.value.strip()]
-            if not text_titles:
+    diagram_name = diagram.get("name", "") if diagram is not None else ""
+    kind = diagram_kind(path, diagram_name)
+    edges = [cell for cell in cells if cell.get("edge") == "1"]
+
+    for edge in edges:
+        for x, y in edge_points(edge, box_by_id):
+            if x < 0 or y < 0 or x > page_width or y > page_height:
+                errors.append(f"{edge.get('id', '<unknown>')}: 连线路径超出画布")
+                break
+
+        source = box_by_id.get(edge.get("source", ""))
+        target = box_by_id.get(edge.get("target", ""))
+        if source is not None and target is not None:
+            source_center = (source.x + source.width / 2, source.y + source.height / 2)
+            target_center = (target.x + target.width / 2, target.y + target.height / 2)
+            horizontal = math.isclose(source_center[1], target_center[1], abs_tol=1.0)
+            vertical = math.isclose(source_center[0], target_center[0], abs_tol=1.0)
+            if horizontal or vertical:
+                for box in content_boxes:
+                    if box.cell_id in {source.cell_id, target.cell_id}:
+                        continue
+                    if horizontal:
+                        low, high = sorted((source_center[0], target_center[0]))
+                        crosses = low < box.right and high > box.x and box.y < source_center[1] < box.bottom
+                    else:
+                        low, high = sorted((source_center[1], target_center[1]))
+                        crosses = low < box.bottom and high > box.y and box.x < source_center[0] < box.right
+                    if crosses:
+                        errors.append(f"{edge.get('id', '<unknown>')}: 连线穿越无关节点 {box.cell_id}")
+                        break
+
+        source_point, target_point = point_pair(edge)
+        if source_point is not None and target_point is not None and kind not in {
+            "relationship-er",
+            "relationship-dependency",
+            "relationship-knowledge",
+        }:
+            dx = abs(number(source_point.get("x")) - number(target_point.get("x")))
+            dy = abs(number(source_point.get("y")) - number(target_point.get("y")))
+            if dx > 80 and dy > 80:
+                errors.append(f"{edge.get('id', '<unknown>')}: 存在长斜线风险，应改用正交折线")
+
+    if kind == "architecture":
+        cards = [box for box in boxes if box.cell_id.startswith("card-") and box.value.strip() == ""]
+        for card in cards:
+            children = [box for box in boxes if box.parent_id == card.cell_id]
+            if not any("title" in child.cell_id and child.value.strip() for child in children):
                 errors.append(f"{card.cell_id}: 架构分组卡片缺少独立文字标题")
 
-    if boxes and page_width > 0 and page_height > 0 and not allow_placeholders:
-        min_x = min(box.x for box in boxes)
-        min_y = min(box.y for box in boxes)
-        max_x = max(box.right for box in boxes)
-        max_y = max(box.bottom for box in boxes)
-        utilization = ((max_x - min_x) * (max_y - min_y)) / (page_width * page_height)
-        if utilization < 0.45:
-            warnings.append(f"内容包围盒利用率 {utilization:.1%}，需检查大面积空白")
-        elif utilization > 0.85:
-            warnings.append(f"内容包围盒利用率 {utilization:.1%}，需检查拥挤或裁切")
+    if kind in {"flow-linear", "flow-branching"}:
+        if "flow-start" not in known_ids or "flow-end" not in known_ids:
+            errors.append("流程图必须包含 flow-start 和 flow-end")
+        if len(edges) < 2:
+            errors.append("流程图缺少完整流程连线")
+        adjacency: dict[str, list[str]] = {}
+        for edge in edges:
+            source_id, target_id = edge.get("source", ""), edge.get("target", "")
+            if source_id and target_id:
+                adjacency.setdefault(source_id, []).append(target_id)
+        pending, reached = ["flow-start"], set()
+        while pending:
+            current = pending.pop()
+            if current in reached:
+                continue
+            reached.add(current)
+            pending.extend(adjacency.get(current, []))
+        if "flow-start" in known_ids and "flow-end" in known_ids and "flow-end" not in reached:
+            errors.append("流程图从 flow-start 无法到达 flow-end")
 
-    values = [re.sub(r"<[^>]+>", "", cell.get("value", "")).strip() for cell in cells]
-    if not allow_placeholders:
-        placeholders = [value for value in values if value and PLACEHOLDER_RE.search(value)]
-        if placeholders:
-            errors.append("示例或输出残留模板占位内容: " + ", ".join(sorted(set(placeholders))))
+        start_box, end_box = box_by_id.get("flow-start"), box_by_id.get("flow-end")
+        if start_box is not None and end_box is not None:
+            start_center = (start_box.x + start_box.width / 2, start_box.y + start_box.height / 2)
+            end_center = (end_box.x + end_box.width / 2, end_box.y + end_box.height / 2)
+            horizontal_main = abs(end_center[0] - start_center[0]) >= abs(end_center[1] - start_center[1])
+            for edge in edges:
+                if edge.get("target", "").startswith("error-"):
+                    continue
+                source_box = box_by_id.get(edge.get("source", ""))
+                target_box = box_by_id.get(edge.get("target", ""))
+                if source_box is None or target_box is None:
+                    continue
+                source_axis = source_box.x + source_box.width / 2 if horizontal_main else source_box.y + source_box.height / 2
+                target_axis = target_box.x + target_box.width / 2 if horizontal_main else target_box.y + target_box.height / 2
+                if target_axis + 1 < source_axis:
+                    errors.append(f"{edge.get('id', '<unknown>')}: 主流程沿主轴反向，存在蛇形折返")
+            for box in boxes:
+                if not box.cell_id.startswith("error-"):
+                    continue
+                offset = abs((box.y + box.height / 2) - start_center[1]) if horizontal_main else abs((box.x + box.width / 2) - start_center[0])
+                if offset < 32:
+                    errors.append(f"{box.cell_id}: 异常分支应明显偏离主流程轴线")
 
-    filename = path.name.lower()
-    edges = [cell for cell in cells if cell.get("edge") == "1"]
-    if "state" in filename:
+        for decision in (box for box in boxes if box.cell_id.startswith("decision-")):
+            outgoing = [edge for edge in edges if edge.get("source") == decision.cell_id]
+            if len(outgoing) < 2:
+                errors.append(f"{decision.cell_id}: 判断节点至少需要两个出口")
+            unlabeled = [edge.get("id", "") for edge in outgoing if not edge.get("value", "").strip()]
+            if unlabeled:
+                errors.append(f"{decision.cell_id}: 判断出口必须有标签: " + ", ".join(unlabeled))
+
+    if kind == "state":
         unlabeled = [cell.get("id", "") for cell in edges if not cell.get("value", "").strip()]
         if unlabeled:
             errors.append("状态图转换必须有标签: " + ", ".join(unlabeled))
-    if "sequence" in filename or "sequence" in diagram_name:
-        lifelines = [cell for cell in cells if cell.get("id", "").startswith("life-")]
-        participants = [cell for cell in cells if cell.get("id", "").startswith("actor-") or cell.get("id", "") in {"user", "gateway", "auth", "store"}]
-        if len(lifelines) < max(2, len(participants)):
+
+    if kind == "sequence":
+        participants = [cell for cell in cells if cell.get("id", "").startswith("participant-")]
+        lifelines = [cell for cell in cells if cell.get("id", "").startswith("lifeline-")]
+        if len(participants) < 2:
+            errors.append("时序图至少需要两个参与者")
+        if len(lifelines) != len(participants):
             errors.append("时序图每个参与者都必须具有完整竖向生命线")
         for line in lifelines:
+            geometry = line.find("mxGeometry")
             if line.get("vertex") == "1":
-                geometry = line.find("mxGeometry")
-                if geometry is not None and number(geometry.get("height")) <= number(geometry.get("width")):
+                if geometry is None or number(geometry.get("height")) <= number(geometry.get("width"), 1.0):
                     errors.append(f"{line.get('id')}: 生命线必须竖向")
             else:
                 source_point, target_point = point_pair(line)
@@ -266,19 +504,127 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
                     errors.append(f"{line.get('id')}: 生命线缺少完整起止点")
                 elif not math.isclose(number(source_point.get("x")), number(target_point.get("x")), abs_tol=1.0):
                     errors.append(f"{line.get('id')}: 生命线必须竖向")
-        if not any(cell.get("id") == "sequence-start" for cell in cells):
-            errors.append("时序图缺少起点表示 sequence-start")
-        if not any(cell.get("id") == "sequence-end" for cell in cells):
-            errors.append("时序图缺少终点表示 sequence-end")
-        message_edges = [cell for cell in edges if cell.get("id", "").startswith("message-") or cell.get("id", "").startswith("m")]
+        if "sequence-start" not in known_ids:
+            errors.append("时序图缺少起点 sequence-start")
+        if "sequence-end" not in known_ids:
+            errors.append("时序图缺少终点 sequence-end")
+        message_edges = [cell for cell in edges if cell.get("id", "").startswith(("message-", "return-"))]
         if len(message_edges) < 4:
             errors.append("时序图横向请求和返回消息不完整")
         for edge in message_edges:
             source_point, target_point = point_pair(edge)
-            if source_point is not None and target_point is not None:
-                if not math.isclose(number(source_point.get("y")), number(target_point.get("y")), abs_tol=1.0):
-                    errors.append(f"{edge.get('id')}: 时序消息必须横向")
+            if source_point is None or target_point is None:
+                errors.append(f"{edge.get('id')}: 时序消息缺少明确起止点")
+            elif not math.isclose(number(source_point.get("y")), number(target_point.get("y")), abs_tol=1.0):
+                errors.append(f"{edge.get('id')}: 时序消息必须横向")
+        if not any(cell.get("id", "").startswith("return-") for cell in message_edges):
+            errors.append("时序图必须包含至少一条返回消息")
+
+        participant_boxes = {
+            box.cell_id.removeprefix("participant-"): box
+            for box in boxes
+            if box.cell_id.startswith("participant-")
+        }
+        lifeline_cells = {
+            cell.get("id", "").removeprefix("lifeline-"): cell
+            for cell in lifelines
+        }
+        endpoint_x: set[float] = set()
+        last_message_y = 0.0
+        for edge in message_edges:
+            source_point, target_point = point_pair(edge)
+            if source_point is None or target_point is None:
+                continue
+            endpoint_x.update((round(number(source_point.get("x")), 1), round(number(target_point.get("x")), 1)))
+            last_message_y = max(last_message_y, number(source_point.get("y")), number(target_point.get("y")))
+        for suffix, participant in participant_boxes.items():
+            line = lifeline_cells.get(suffix)
+            if line is None:
+                errors.append(f"participant-{suffix}: 缺少对应 lifeline-{suffix}")
+                continue
+            source_point, target_point = point_pair(line)
+            if source_point is None or target_point is None:
+                continue
+            center_x = participant.x + participant.width / 2
+            if not math.isclose(number(source_point.get("x")), center_x, abs_tol=1.0):
+                errors.append(f"lifeline-{suffix}: 生命线必须位于参与者中心")
+            if not math.isclose(number(source_point.get("y")), participant.bottom, abs_tol=1.0):
+                errors.append(f"lifeline-{suffix}: 生命线必须从参与者底部开始")
+            if number(target_point.get("y")) + 1 < last_message_y:
+                errors.append(f"lifeline-{suffix}: 生命线必须覆盖最后一条消息")
+            if round(center_x, 1) not in endpoint_x:
+                errors.append(f"participant-{suffix}: 未参与任何请求或返回消息")
+
+    if content_boxes and page_width > 0 and page_height > 0 and not allow_placeholders:
+        min_x = min(box.x for box in content_boxes)
+        min_y = min(box.y for box in content_boxes)
+        max_x = max(box.right for box in content_boxes)
+        max_y = max(box.bottom for box in content_boxes)
+        utilization = ((max_x - min_x) * (max_y - min_y)) / (page_width * page_height)
+        if utilization < 0.45:
+            warnings.append(f"内容包围盒利用率 {utilization:.1%}，需检查大面积空白")
+        elif utilization > 0.85:
+            warnings.append(f"内容包围盒利用率 {utilization:.1%}，需检查拥挤或裁切")
+        left, right = min_x, page_width - max_x
+        top, bottom = min_y, page_height - max_y
+        if abs(left - right) > 120:
+            warnings.append(f"左右留白失衡: 左 {left:g}px / 右 {right:g}px")
+        if abs(top - bottom) > 120:
+            warnings.append(f"上下留白失衡: 上 {top:g}px / 下 {bottom:g}px")
+
+    values = [re.sub(r"<[^>]+>", "", cell.get("value", "")).strip() for cell in cells]
+    if not allow_placeholders:
+        placeholders = [value for value in values if value and PLACEHOLDER_RE.search(value)]
+        if placeholders:
+            errors.append("示例或输出残留模板占位内容: " + ", ".join(sorted(set(placeholders))))
     return errors, warnings
+
+
+def geometry_signature(path: Path) -> tuple[tuple[str, ...], ...]:
+    root = ET.fromstring(path.read_text(encoding="utf-8"))
+    model = root if root.tag == "mxGraphModel" else root.find(".//mxGraphModel")
+    if model is None:
+        return ()
+    result: list[tuple[str, ...]] = []
+    for cell in model.findall(".//mxCell"):
+        geometry = cell.find("mxGeometry")
+        if geometry is None:
+            continue
+        points = tuple(
+            f"{point.get('as', '')}:{point.get('x', '')}:{point.get('y', '')}"
+            for point in geometry.findall(".//mxPoint")
+        )
+        style = style_map(cell.get("style", ""))
+        structural_style = tuple(
+            f"{key}={style.get(key, '')}"
+            for key in (
+                "rounded",
+                "arcSize",
+                "dashed",
+                "endArrow",
+                "startArrow",
+                "edgeStyle",
+                "strokeWidth",
+                "shape",
+                "align",
+            )
+        )
+        result.append(
+            (
+                cell.get("id", ""),
+                cell.get("parent", ""),
+                cell.get("source", ""),
+                cell.get("target", ""),
+                geometry.get("x", ""),
+                geometry.get("y", ""),
+                geometry.get("width", ""),
+                geometry.get("height", ""),
+                geometry.get("relative", ""),
+                *structural_style,
+                *points,
+            )
+        )
+    return tuple(result)
 
 
 def collect_files(target: Path) -> list[tuple[Path, bool]]:
@@ -305,12 +651,20 @@ def validate_catalog(target: Path) -> list[str]:
             errors.append("缺少模板: " + ", ".join(missing))
         if extra:
             errors.append("存在非目标模板: " + ", ".join(extra))
+    example_names = {path.name for path in examples_dir.glob("*.drawio")}
+    for marker in sorted(EXPECTED_EXAMPLE_MARKERS):
+        if not any(name.startswith(marker) for name in example_names):
+            errors.append(f"缺少示例类型: {marker.rstrip('-')}")
     extra_example_files = [path for path in examples_dir.rglob("*") if path.is_file() and path.suffix.lower() != ".drawio"]
     if extra_example_files:
         errors.append("examples 只能包含 .drawio: " + ", ".join(str(path.relative_to(target)) for path in extra_example_files))
     lock_files = [path for path in target.rglob(".*") if path.is_file() and path.name.startswith(".$")]
     if lock_files:
         errors.append("存在临时锁文件: " + ", ".join(str(path.relative_to(target)) for path in lock_files))
+    for light in examples_dir.glob("*-light-*.drawio"):
+        dark = light.with_name(light.name.replace("-light-", "-dark-"))
+        if dark.exists() and geometry_signature(light) != geometry_signature(dark):
+            errors.append(f"浅深版本几何不一致: {light.name} / {dark.name}")
     return errors
 
 
@@ -334,10 +688,8 @@ def main() -> int:
     for path, allow_placeholders in files:
         errors, warnings = validate_file(path, allow_placeholders)
         label = str(path.relative_to(target)) if target.is_dir() else path.name
-        for item in errors:
-            total_errors.append(f"{label}: {item}")
-        for item in warnings:
-            total_warnings.append(f"{label}: {item}")
+        total_errors.extend(f"{label}: {item}" for item in errors)
+        total_warnings.extend(f"{label}: {item}" for item in warnings)
 
     for item in total_errors:
         print("错误: " + item)

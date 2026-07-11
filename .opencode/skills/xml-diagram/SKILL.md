@@ -1,6 +1,6 @@
 ---
 name: xml-diagram
-description: 生成可在 Draw.io/diagrams.net 中继续编辑的 UTF-8 `.drawio` XML 图形。用于业务、应用、技术和部署架构图，线性或复杂流程图、状态图、生命周期图、时序图、ER/依赖/知识关系图，以及对比、决策矩阵、SWOT、时间线和总结图。适用于用户明确要求 Draw.io、diagrams.net、mxGraph、XML 图或可编辑图；不用于 Mermaid、静态 SVG、位图插画、统计图表或 UI 原型。
+description: 生成可在 Draw.io/diagrams.net 中继续编辑的 UTF-8 `.drawio` XML 图形。用于架构图、流程图、状态图、生命周期图、时序图、ER/依赖/知识关系图、对比、决策矩阵、SWOT、时间线、路线图和总结图；不用于 Mermaid、静态 SVG、位图插画、统计图表或 UI 原型。
 ---
 
 # Draw.io XML 图形生成器
@@ -11,66 +11,70 @@ description: 生成可在 Draw.io/diagrams.net 中继续编辑的 UTF-8 `.drawio
 
 ### 1. 分析需求
 
-明确图形用途、目标受众、核心结论、内容范围、图形类型、主要实体或步骤、阅读方向和主题。区分用户确认内容、合理推断和需要确认的业务事实。
+明确用途、受众、核心结论、内容范围、图形类型、主要实体或步骤、阅读方向和浅色/深色主题。区分用户确认内容、合理推断和待确认事实。
 
-完成条件：能够用一段完整自然语言说明“这张图向谁说明什么、按什么顺序阅读”。
+完成条件：能够用一段自然语言说明“这张图向谁说明什么，按什么顺序阅读”。
 
 ### 2. 生成详细 DSL
 
-读取 `references/diagram-dsl.md`，在内部生成完整 DSL。DSL 必须覆盖叙事、布局、区域、节点、关系、颜色语义、图例、假设和质量预期。
+读取 `references/diagram-dsl.md`。DSL 必须覆盖叙事、布局、区域、节点、关系、颜色语义、假设和质量预期，并明确模板名称、布局模式、间距和画布策略。
 
 完成条件：只阅读 DSL 即可还原图形，XML 阶段不再猜测业务语义或布局意图。
 
-### 3. 生成 XML
+### 3. 精确选择模板并生成 XML
 
-按图形家族选择一个模板：
+按图形类型精确匹配一个模板：
 
-| 家族 | 模板 | 类型 |
-| --- | --- | --- |
-| 架构 | `templates/architecture.drawio` | 业务、应用、技术、部署架构 |
-| 流程 | `templates/flow.drawio` | 线性流程、复杂流程、状态、生命周期 |
-| 时序 | `templates/sequence.drawio` | 时序图 |
-| 关系 | `templates/relationship.drawio` | ER、依赖、知识关系 |
-| 结构化内容 | `templates/structured-content.drawio` | 对比、决策矩阵、SWOT、时间线、总结 |
+| 图形类型 | 模板 |
+| --- | --- |
+| 业务、应用、技术、部署架构 | `templates/architecture.drawio` |
+| 线性流程 | `templates/flow-linear.drawio` |
+| 分支或异常流程 | `templates/flow-branching.drawio` |
+| 状态图 | `templates/state.drawio` |
+| 生命周期 | `templates/lifecycle.drawio` |
+| 时序图 | `templates/sequence.drawio` |
+| ER 图 | `templates/relationship-er.drawio` |
+| 依赖关系 | `templates/relationship-dependency.drawio` |
+| 知识关系 | `templates/relationship-knowledge.drawio` |
+| 对比 | `templates/comparison.drawio` |
+| 决策矩阵 | `templates/decision-matrix.drawio` |
+| SWOT | `templates/swot.drawio` |
+| 时间线或里程碑 | `templates/timeline.drawio` |
+| 路线图 | `templates/roadmap.drawio` |
+| 总结图 | `templates/summary.drawio` |
 
-模板只提供中性骨架。根据 DSL 创建或调整全部区域、节点、标签和连线，删除占位内容，动态计算画布。所有内容必须是独立可编辑的 `mxCell`，不得内嵌图片。
+必须读取并复用模板骨架：保留标准画布、必要语义元素、正确的 `mxGeometry` 写法和基础布局，再替换内容、增删节点并动态调整坐标。禁止只参考配色后凭空重建一份相似 XML。
 
 强制设置：
 
-- 使用 UTF-8 无 BOM；
+- UTF-8 无 BOM；
 - `mxGraphModel` 显式设置 `grid="0"`；
 - 每个 `mxGeometry` 包含 `as="geometry"`；
-- 所有 ID 唯一，边引用存在节点；
-- 标题不使用下划线或装饰横线；
-- 浅色和深色使用相同布局，只映射颜色；
-- 架构图优先使用包含、分组和对齐，默认减少箭头。
-- 架构分组卡片的容器与标题必须拆成两个 `mxCell`，内容标签可保持文字与矩形为同一元素；
-- 时序图必须包含起点、终点、每个参与者的完整竖向生命线，以及覆盖主要参与者的横向请求和返回消息。
+- 可见节点只使用 `width/height`，禁止 `w/h`；
+- 可见节点宽高为正数；
+- ID 唯一，边引用存在节点；
+- 标题不用下划线或装饰横线；
+- 浅色和深色使用相同坐标、尺寸、圆角、间距和连线；
+- 架构分组容器与标题拆成两个 `mxCell`；
+- 架构图默认减少箭头；
+- 时序图包含起点、终点、所有参与者的完整生命线、请求链和返回链。
 
 ### 4. 执行自动检查
 
 读取 `references/quality-rules.md`，运行：
 
 ```bash
-python -X utf8 scripts/validate.py <file.drawio> --strict
+python -X utf8 scripts/validate.py <file-or-directory> --strict
 ```
 
-自动检查 XML、编码、ID、引用、几何、网格、字体、颜色、边距、重叠、画布利用率、占位内容和明显的连线问题。错误必须修复；警告在严格模式下也必须修复。
+错误和严格模式警告必须修复。不得通过删除必要内容或缩小字体规避问题。
 
 ### 5. 渲染检查并交付
 
-将 `.drawio` 渲染为临时预览，检查：
+将 `.drawio` 渲染或在 diagrams.net 中打开，检查颜色、布局、重叠、字体、线条、图例和空白。发现问题时返回 DSL 或布局阶段修正。
 
-- 颜色搭配是否协调、对比是否清晰；
-- 布局是否平衡、阅读方向是否明确；
-- 元素、文字、图例是否重叠或裁切；
-- 字体在常用缩放下是否清晰；
-- 箭头是否必要，连线是否交叉、穿越或绕行混乱；
-- 是否存在大面积无意义空白或局部过度拥挤；
-- 浅色与深色是否保持同一组件和布局体系。
-
-发现问题时返回 DSL 或布局阶段修正，不得通过删除必要内容或缩小字体规避。
+环境无法渲染时，必须明确说明“仅完成 XML 和结构检查，未完成视觉验收”，不得声称最终视觉质量已通过。
 
 ## 输出
 
-默认只交付最终 `.drawio` 文件；用户要求时再交付 DSL 或预览。输出到用户指定目录，未指定时输出到当前任务工作目录，不把运行产物写入本 skill 文件夹。
+默认只交付最终 `.drawio`。用户要求时再交付 DSL 或预览。输出到用户指定目录；未指定时输出到当前任务目录，不把运行产物写进本 skill。

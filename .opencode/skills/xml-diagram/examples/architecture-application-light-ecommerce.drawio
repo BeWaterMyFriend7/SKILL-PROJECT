@@ -5,49 +5,49 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="diagram-title" value="电商业务架构" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=24;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="diagram-title" value="电商应用架构" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=24;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="360" y="20" width="480" height="42" as="geometry" />
         </mxCell>
         <mxCell id="region-1" value="" style="rounded=1;arcSize=14;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="40" y="90" width="1120" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="region-1-title" value="业务场景" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=18;fontColor=#2563EB;fontStyle=1;" vertex="1" parent="region-1">
+        <mxCell id="region-1-title" value="入口层" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=18;fontColor=#2563EB;fontStyle=1;" vertex="1" parent="region-1">
           <mxGeometry x="20" y="10" width="360" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="region-1-tag-1" value="商品浏览" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-1">
+        <mxCell id="region-1-tag-1" value="移动端" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-1">
           <mxGeometry x="32" y="64" width="248" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="region-1-tag-2" value="营销活动" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-1">
+        <mxCell id="region-1-tag-2" value="Web 端" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-1">
           <mxGeometry x="312" y="64" width="248" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="region-1-tag-3" value="购物结算" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-1">
+        <mxCell id="region-1-tag-3" value="开放 API" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-1">
           <mxGeometry x="592" y="64" width="248" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="region-1-tag-4" value="售后服务" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-1">
+        <mxCell id="region-1-tag-4" value="合作渠道" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-1">
           <mxGeometry x="872" y="64" width="248" height="44" as="geometry" />
         </mxCell>
         <mxCell id="region-2" value="" style="rounded=1;arcSize=14;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="40" y="272" width="1120" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="region-2-title" value="核心业务能力" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=18;fontColor=#2563EB;fontStyle=1;" vertex="1" parent="region-2">
+        <mxCell id="region-2-title" value="核心分组" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=18;fontColor=#2563EB;fontStyle=1;" vertex="1" parent="region-2">
           <mxGeometry x="20" y="10" width="360" height="30" as="geometry" />
         </mxCell>
         <mxCell id="card-1" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="region-2">
           <mxGeometry x="32" y="54" width="240" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="card-1-title" value="用户与会员" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-1">
+        <mxCell id="card-1-title" value="用户中心" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-1">
           <mxGeometry x="16" y="12" width="208" height="30" as="geometry" />
         </mxCell>
         <mxCell id="card-1-tag-1" value="账户" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-1">
           <mxGeometry x="16" y="62" width="96" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="card-1-tag-2" value="权益" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-1">
+        <mxCell id="card-1-tag-2" value="会员" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-1">
           <mxGeometry x="128" y="62" width="96" height="34" as="geometry" />
         </mxCell>
         <mxCell id="card-2" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="region-2">
           <mxGeometry x="304" y="54" width="240" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="card-2-title" value="商品与库存" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-2">
+        <mxCell id="card-2-title" value="商品中心" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-2">
           <mxGeometry x="16" y="12" width="208" height="30" as="geometry" />
         </mxCell>
         <mxCell id="card-2-tag-1" value="商品" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-2">
@@ -59,7 +59,7 @@
         <mxCell id="card-3" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="region-2">
           <mxGeometry x="576" y="54" width="240" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="card-3-title" value="交易与订单" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-3">
+        <mxCell id="card-3-title" value="交易中心" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-3">
           <mxGeometry x="16" y="12" width="208" height="30" as="geometry" />
         </mxCell>
         <mxCell id="card-3-tag-1" value="购物车" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-3">
@@ -71,31 +71,31 @@
         <mxCell id="card-4" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="region-2">
           <mxGeometry x="848" y="54" width="240" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="card-4-title" value="营销与履约" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-4">
+        <mxCell id="card-4-title" value="履约中心" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-4">
           <mxGeometry x="16" y="12" width="208" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="card-4-tag-1" value="优惠" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-4">
+        <mxCell id="card-4-tag-1" value="配送" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-4">
           <mxGeometry x="16" y="62" width="96" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="card-4-tag-2" value="配送" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-4">
+        <mxCell id="card-4-tag-2" value="售后" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-4">
           <mxGeometry x="128" y="62" width="96" height="34" as="geometry" />
         </mxCell>
         <mxCell id="region-3" value="" style="rounded=1;arcSize=14;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="40" y="524" width="1120" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="region-3-title" value="业务资源" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=18;fontColor=#2563EB;fontStyle=1;" vertex="1" parent="region-3">
+        <mxCell id="region-3-title" value="基础支撑" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=18;fontColor=#2563EB;fontStyle=1;" vertex="1" parent="region-3">
           <mxGeometry x="20" y="10" width="360" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="region-3-tag-1" value="用户数据" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-3">
+        <mxCell id="region-3-tag-1" value="可观测性" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-3">
           <mxGeometry x="32" y="64" width="248" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="region-3-tag-2" value="商品资源" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-3">
+        <mxCell id="region-3-tag-2" value="安全治理" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-3">
           <mxGeometry x="312" y="64" width="248" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="region-3-tag-3" value="资金渠道" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-3">
+        <mxCell id="region-3-tag-3" value="配置中心" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-3">
           <mxGeometry x="592" y="64" width="248" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="region-3-tag-4" value="规则策略" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-3">
+        <mxCell id="region-3-tag-4" value="持续交付" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="region-3">
           <mxGeometry x="872" y="64" width="248" height="44" as="geometry" />
         </mxCell>
       </root>

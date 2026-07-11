@@ -1,219 +1,106 @@
 # 图形 DSL
 
-## 目录
+DSL 是生成 XML 前的内部蓝图，使用自然语言即可，不要求 JSON。目标是让 XML 阶段只做确定性排版，不再猜测内容或布局。
 
-- 通用结构
-- 自然语言要求
-- 图形类型
-- 布局与内容
-- 连线计划
-- 专项结构
-- DSL 完成检查
-
-## 通用结构
-
-生成 XML 前在内部整理以下 YAML 风格 DSL。它是思考和生成契约，不要求默认保存为文件。
-
-```yaml
-diagram:
-  type: architecture.business
-  title: 电商平台业务架构
-  subtitle: 可选副标题
-  theme: light
-  purpose: 向业务和技术评审人员说明平台场景、能力及核心业务对象。
-  audience: 业务负责人、产品经理、架构师
-  narrative: 从上到下阅读，先看业务场景，再看核心能力，最后看业务对象与资源。
-  reading_direction: top-to-bottom
-  canvas:
-    width: 1200
-    height: 760
-    margin: 40
-  layout:
-    pattern: layered
-    density: standard
-    alignment: grid
-  sections: []
-  nodes: []
-  edges: []
-  legend: null
-  assumptions:
-    confirmed: []
-    inferred: []
-    needs_confirmation: []
-  quality_expectations:
-    edge_policy: minimal
-    target_utilization: 0.65
-    avoid_crossings: true
-    avoid_large_empty_areas: true
-```
-
-统一字段名称：
-
-- 使用 `theme`，不使用 `mode`；
-- 使用 `canvas.margin`，不使用顶层 `margin`；
-- 边使用 `source` 和 `target`，不使用 `from` 和 `to`；
-- 节点显示文本统一使用 `label`；
-- `theme` 只能是 `light` 或 `dark`。
-
-## 自然语言要求
-
-- `purpose` 说明图形要帮助谁理解或决定什么。
-- `narrative` 说明阅读顺序和核心结论，不写“展示系统架构”之类空泛短句。
-- 节点名称使用明确实体，不使用“模块一”“处理器”等无业务含义名称。
-- 节点说明回答“负责什么”，不重复标题。
-- 连线标签使用“主体动作对象”式动词短语，如“提交订单”“发布事件”“查询库存”。
-- 推断内容写入 `assumptions.inferred`，不得伪装为用户确认事实。
-- 影响业务边界的未知内容写入 `needs_confirmation`。
-
-## 图形类型
+## 必填结构
 
 ```text
-architecture.business       业务架构图
-architecture.application    应用架构图
-architecture.technical      技术架构图
-architecture.deployment     部署架构图
+图形目标：向谁说明什么，核心结论是什么
+图形类型：精确到模板名称
+主题：light / dark
+阅读方向：左到右 / 上到下 / 中心向外
+画布策略：固定范围 / 根据节点数量扩展
 
-flow.linear                 线性步骤流程图
-flow.structured             结构化复杂流程图
-flow.state                  状态图
-flow.lifecycle              生命周期图
-
-interaction.sequence        时序图
-
-relationship.er             ER 实体关系图
-relationship.dependency     依赖关系图
-relationship.knowledge      知识关系图
-
-structured.comparison       对比图
-structured.decision-matrix  决策矩阵
-structured.swot             SWOT 分析图
-structured.timeline         时间线或路线图
-structured.summary          总结图
-```
-
-## 布局与内容
+叙事：
+  - 起点或入口
+  - 主阅读路径
+  - 分支、异常或辅助关系
+  - 终点或结论
 
 区域：
-
-```yaml
-sections:
-  - id: capability
-    label: 业务能力层
-    role: primary-region
-    order: 2
-    layout: grid
-    children: [user-domain, product-domain]
-```
+  - 区域名称、层级和语义
+  - 布局模式：distributed / grid / centered / stack / nested
+  - 行列数量、等宽要求
+  - 内边距、标题安全区和区域间距
 
 节点：
+  - ID、名称、类型、所属区域
+  - 标题、正文或标签
+  - 重要程度和颜色角色
+  - 尺寸约束和换行预期
 
-```yaml
-nodes:
-  - id: user-domain
-    parent: capability
-    kind: group-card
-    label: 用户管理域
-    description: 管理身份、资料、会员与权益。
-    emphasis: primary
-    items:
-      - { id: identity, label: 注册认证, kind: tag }
-      - { id: membership, label: 会员权益, kind: tag }
+关系：
+  - 起点、终点、方向和标签
+  - 同步、异步、返回、异常或普通关系
+  - 是否允许折线、汇聚或自调用
+
+质量预期：
+  - 不重叠、不越界、文字清晰
+  - 同级均匀分布，内容整体居中
+  - 连线不穿过无关节点或标题
+  - 无无意义大面积空白或局部拥挤
+  - 浅色和深色保持相同几何结构
+
+假设：
+  - 已确认事实
+  - 合理推断
+  - 需要用户确认的内容
 ```
 
-`group-card` 的 `label` 是语义标题。渲染 XML 时必须拆成两个元素：一个无文字的圆角卡片容器和一个独立纯文字标题 `mxCell`。标题位于卡片顶部安全区，内容标签从标题安全区下方开始。`tag` 可将矩形和内部文字保留为同一个 `mxCell`。
+## 布局模式
 
-布局模式：
+- `distributed`：同级元素等宽或按规律宽度，在容器内均匀分布。
+- `grid`：按明确行列排布，同行同列对齐。
+- `centered`：内容较少时作为整体居中，不从左侧堆放。
+- `stack`：使用单一纵向或横向主轴分层。
+- `nested`：用于部署边界、网络、集群和节点的嵌套包含。
 
-- `layered`：架构分层、依赖分层；
-- `lanes`：跨角色流程和阶段；
-- `flow`：线性流程、复杂流程、状态；
-- `sequence`：横向参与者、纵向时间；
-- `network`：知识关系和中心辐射；
-- `grid`：对比、矩阵、SWOT、总结；
-- `timeline`：时间线和生命周期。
+DSL 必须明确使用哪一种模式，不使用“合理排列”“适当留白”等无法执行的描述。
 
-先决定信息密度，再决定画布。内容不足时补充合理语义或询问用户，不使用大卡片和大留白伪装丰富；内容过多时分组、扩画布或拆图，不缩小字体。
+## 图形类型补充字段
 
-## 连线计划
+### 架构图
 
-```yaml
-edges:
-  - id: submit-order
-    source: client
-    target: gateway
-    relation: synchronous
-    label: 提交订单
-    importance: primary
-    required: true
-    routing: orthogonal
-```
+- 分层依据：场景、能力、应用、技术、区域或资源。
+- 核心层和视觉中心。
+- 哪些关系必须画箭头，其余通过包含、邻近和对齐表达。
+- 分组卡片标题和内容标签分别列出。
 
-每条边必须说明：
+### 流程图
 
-- 为什么必须存在；
-- 方向和关系类型；
-- 是否属于主链路；
-- 是否可由包含、分组或邻近关系替代；
-- 标签是否足够简短明确。
+- 唯一主方向。
+- 主流程节点顺序。
+- 判断条件及每个出口标签。
+- 异常分支位于主轴哪一侧。
+- 节点过多时扩大画布还是改成纵向流程。
 
-关系类型：`normal`、`primary`、`async`、`error`、`return`、`dependency`、`state-transition`、`relationship`。
+### 状态图与生命周期
 
-架构图默认 `edge_policy: minimal`。可由层级或包含表达的关系不画箭头。
-
-## 专项结构
-
-### 状态图
-
-```yaml
-state:
-  direction: left-to-right
-  initial: pending
-  terminal: [completed, cancelled]
-  main_path: [pending, paid, processing, completed]
-  side_states: [cancelled, failed]
-```
-
-主状态沿一个轴排列；失败、取消和回退放在主轴外侧。每条转换必须有触发条件。双向转换不得使用完全重合路径。
+- 初始、终止状态。
+- 主状态链。
+- 每条转换的触发条件或动作。
+- 回退、取消和异常状态的位置。
 
 ### 时序图
 
-```yaml
-sequence:
-  start: { label: 开始交互 }
-  end: { label: 结束交互 }
-  participants:
-    - { id: user, label: 用户 }
-    - { id: api, label: API 网关 }
-    - { id: service, label: 认证服务 }
-  messages:
-    - { id: m1, source: user, target: api, type: sync, label: 提交登录, order: 1 }
-    - { id: m2, source: api, target: service, type: sync, label: 校验凭证, order: 2 }
-    - { id: m3, source: service, target: api, type: return, label: 返回结果, order: 3 }
-  activations:
-    - { participant: api, start: 1, end: 4 }
-```
-
-参与者横向排列；每个参与者都必须具有完整、可见的竖向生命线；时间自上而下；消息箭头横向连接；返回消息使用虚线；主要处理者使用激活条。时序图必须显式表示起点和终点，并用横向消息把起点接入首个参与者、把最终响应连接到终点。模板至少示范一次 A→B→C 调用和 C→B→A 返回，避免生成时漏掉末端参与者或下游消息。
+- 参与者顺序。
+- 每个参与者的完整生命线范围。
+- 请求、返回、异步、异常消息及其纵向顺序。
+- 激活条和自调用。
+- 起点连接首个参与者，最终消息连接终点。
 
 ### 关系图
 
-```yaml
-relationship:
-  direction: left-to-right
-  groups: [identity, transaction]
-  hub_nodes: []
-  show_transitive_dependencies: false
-```
+- 使用分层、网格、中心辐射还是分组。
+- 主关系与可省略的间接关系。
+- ER 图列出主外键和基数。
+- 依赖图统一方向并标识循环依赖。
+- 知识图限制跨组连接。
 
-相关节点邻近放置，优先分层、分组或网格。默认不展示可推导的间接依赖，不允许随机散点和蜘蛛网式连接。
+### 结构化内容
 
-## DSL 完成检查
-
-- 图形目的、受众、叙事和阅读方向明确；
-- 图形类型属于支持范围；
-- 每个区域和节点有稳定 ID、明确标签和职责；
-- 所有边引用存在节点且有存在理由；
-- 已规划颜色语义和图例需求；
-- 已识别潜在交叉、拥挤和大面积空白；
-- 状态图、时序图和关系图包含对应专项结构；
-- XML 阶段不再需要猜测业务事实或布局。
+- 对比和矩阵明确行列含义。
+- SWOT 固定四象限。
+- 时间线明确时间轴、节点和卡片方向。
+- 路线图明确阶段顺序、持续时间和上下交错规则。
+- 总结图明确卡片网格和视觉重点。
