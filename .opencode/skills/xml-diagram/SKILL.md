@@ -1,116 +1,76 @@
 ---
 name: xml-diagram
-description: 生成可在 Draw.io/diagrams.net 中继续编辑的 UTF-8 `.drawio` XML 图形。适用于用户明确要求 Draw.io、diagrams.net、mxGraph、XML 图或可编辑图，支持业务/应用/技术/部署/系统架构、简约步骤流程、结构化复杂流程、时序、状态、ER、对比、时间线、生命周期和总结图。不用于静态 SVG 或 Mermaid/Markdown 图表。
+description: 生成可在 Draw.io/diagrams.net 中继续编辑的 UTF-8 `.drawio` XML 图形。用于业务、应用、技术和部署架构图，线性或复杂流程图、状态图、生命周期图、时序图、ER/依赖/知识关系图，以及对比、决策矩阵、SWOT、时间线和总结图。适用于用户明确要求 Draw.io、diagrams.net、mxGraph、XML 图或可编辑图；不用于 Mermaid、静态 SVG、位图插画、统计图表或 UI 原型。
 ---
 
 # Draw.io XML 图形生成器
 
-本 skill 是完全自包含的 Draw.io 渲染模块。所有规范、模板、示例和脚本都位于本文件夹内，禁止读取其他 skill 的文件。
+生成可编辑、可复核的 Draw.io XML。禁止从用户自然语言直接跳到 XML；必须先完成需求分析和详细图形 DSL。
 
-## 接口
+## 工作流程
 
-输入：用户的图形主题、内容、可选主题和可编辑性要求。
-输出：可由 Draw.io/diagrams.net 打开和编辑的 `.drawio` 文件，默认保存到 `output/drawio/`。
+### 1. 分析需求
 
-先读取 `assets/routing.md`。用户明确要求 SVG 或 Mermaid 时停止使用本 skill。
+明确图形用途、目标受众、核心结论、内容范围、图形类型、主要实体或步骤、阅读方向和主题。区分用户确认内容、合理推断和需要确认的业务事实。
 
-## 强制流程
+完成条件：能够用一段完整自然语言说明“这张图向谁说明什么、按什么顺序阅读”。
 
-```text
-用户输入
--> 本地路由判断
--> DiagramPlan
--> 模板选择
--> 内容充实
--> 布局/样式/连线计划
--> mxGraph XML
--> 结构与对比度校验
--> 渲染检查
--> 交付
-```
+### 2. 生成详细 DSL
 
-禁止从自然语言一步生成 XML。
+读取 `references/diagram-dsl.md`，在内部生成完整 DSL。DSL 必须覆盖叙事、布局、区域、节点、关系、颜色语义、图例、假设和质量预期。
 
-### 1. 整理 DiagramPlan
+完成条件：只阅读 DSL 即可还原图形，XML 阶段不再猜测业务语义或布局意图。
 
-按 `assets/diagram-plan.schema.json` 整理本地中间结构。架构图必须在 `enrichment` 中区分 confirmed、inferred 和 needs_confirmation。
+### 3. 生成 XML
 
-### 2. 选择模板
+按图形家族选择一个模板：
 
-| 意图 | 模板 |
-| --- | --- |
-| 业务架构 | `templates/architecture/business-layered.drawio` |
-| 应用架构 | `templates/architecture/application-pipeline.drawio` |
-| 技术架构 | `templates/architecture/technical-layered.drawio` |
-| 部署架构 | `templates/architecture/deployment-region.drawio` |
-| 系统上下文 | `templates/architecture/system-context.drawio` |
-| 简约步骤流程 | `templates/flow/simple-step-flow.drawio` |
-| 结构化复杂流程 | `templates/flow/structured-flow.drawio` |
-| 时序图 | `templates/sequence/sequence-login.drawio` |
-| 时间线/生命周期 | `templates/project/` |
-| 对比、矩阵、SWOT | `templates/analysis/` |
-| 总结与知识结构 | `templates/summary/` |
+| 家族 | 模板 | 类型 |
+| --- | --- | --- |
+| 架构 | `templates/architecture.drawio` | 业务、应用、技术、部署架构 |
+| 流程 | `templates/flow.drawio` | 线性流程、复杂流程、状态、生命周期 |
+| 时序 | `templates/sequence.drawio` | 时序图 |
+| 关系 | `templates/relationship.drawio` | ER、依赖、知识关系 |
+| 结构化内容 | `templates/structured-content.drawio` | 对比、决策矩阵、SWOT、时间线、总结 |
 
-模板是中性骨架，examples 是业务完成品。禁止用完全相同内容冒充不同模板意图。
+模板只提供中性骨架。根据 DSL 创建或调整全部区域、节点、标签和连线，删除占位内容，动态计算画布。所有内容必须是独立可编辑的 `mxCell`，不得内嵌图片。
 
-### 3. 加载本地规则
+强制设置：
 
-必须读取：
+- 使用 UTF-8 无 BOM；
+- `mxGraphModel` 显式设置 `grid="0"`；
+- 每个 `mxGeometry` 包含 `as="geometry"`；
+- 所有 ID 唯一，边引用存在节点；
+- 标题不使用下划线或装饰横线；
+- 浅色和深色使用相同布局，只映射颜色；
+- 架构图优先使用包含、分组和对齐，默认减少箭头。
+- 架构分组卡片的容器与标题必须拆成两个 `mxCell`，内容标签可保持文字与矩形为同一元素；
+- 时序图必须包含起点、终点、每个参与者的完整竖向生命线，以及覆盖主要参与者的横向请求和返回消息。
 
-- `assets/visual-tokens.md`：基础视觉值唯一来源；
-- `assets/quality-contract.md`：交付阈值；
-- `assets/dsl-schema.md`：mxGraph 中间结构说明。
+### 4. 执行自动检查
 
-按任务读取：
-
-- `assets/architecture-system.md`
-- `assets/typography-rules.md`
-- `assets/component-rules.md`
-- `assets/layout-rules.md`
-- `assets/edge-rules.md`
-- `assets/legend-rules.md`
-- `assets/validation-rules.md`
-
-`assets/design-system.md` 和 `assets/theme-tokens.md` 只解释媒介实现，不得重新定义与 `visual-tokens.md` 冲突的基础值。
-
-### 4. 生成规则
-
-- 架构图先充实内容，再计算画布；三级信息必须是独立可编辑小标签。
-- 页面标题、区域标题、卡片标题、小标签形成四级层次。
-- 简约流程使用 4-8 个主步骤，禁止复杂回环。
-- 复杂分支、循环和错误/异步路径必须使用 `structured-flow` 模板。
-- 默认正交连线；错误路径红色实线；异步路径紫色虚线。
-- 深色模式禁止阴影；浅色只允许轻微阴影。
-- 每个 `mxGeometry` 必须包含 `as="geometry"`。
-- 禁止内嵌图片，保持所有内容可编辑。
-
-### 5. UTF-8 和 XML
-
-- 所有 `.drawio`、`.md`、`.json`、`.py` 使用 UTF-8 无 BOM。
-- Python 必须显式指定 `encoding="utf-8"`。
-- 禁止把 UTF-8 字节按 GBK 解码后写回。
-- XML 注释不得包含 `--`。
-- `mxCell` id 唯一，source/target 必须引用存在节点。
-
-### 6. 校验
-
-交付前运行：
+读取 `references/quality-rules.md`，运行：
 
 ```bash
-python -X utf8 scripts/validate_plan.py <diagram-plan.json>
-python -X utf8 scripts/validate_drawio.py output/drawio/文件名.drawio --fail-on-warning
-python -X utf8 scripts/check_contrast.py output/drawio/文件名.drawio --fail-on-warning
-python -X utf8 scripts/render_drawio_preview.py output/drawio/文件名.drawio output/drawio/文件名-preview.png --scale 1
+python -X utf8 scripts/validate.py <file.drawio> --strict
 ```
 
-模板或示例变更还必须运行：
+自动检查 XML、编码、ID、引用、几何、网格、字体、颜色、边距、重叠、画布利用率、占位内容和明显的连线问题。错误必须修复；警告在严格模式下也必须修复。
 
-```bash
-python -X utf8 scripts/validate_catalog.py
-```
+### 5. 渲染检查并交付
 
-渲染结果必须满足：无裁切、无重叠、无穿线、文字清晰、画布利用率 50%-85%（目标 60%-80%）。
+将 `.drawio` 渲染为临时预览，检查：
 
-## 输出说明
+- 颜色搭配是否协调、对比是否清晰；
+- 布局是否平衡、阅读方向是否明确；
+- 元素、文字、图例是否重叠或裁切；
+- 字体在常用缩放下是否清晰；
+- 箭头是否必要，连线是否交叉、穿越或绕行混乱；
+- 是否存在大面积无意义空白或局部过度拥挤；
+- 浅色与深色是否保持同一组件和布局体系。
 
-交付时说明文件路径、使用的模板、主题模式和全部校验结果。
+发现问题时返回 DSL 或布局阶段修正，不得通过删除必要内容或缩小字体规避。
+
+## 输出
+
+默认只交付最终 `.drawio` 文件；用户要求时再交付 DSL 或预览。输出到用户指定目录，未指定时输出到当前任务工作目录，不把运行产物写入本 skill 文件夹。

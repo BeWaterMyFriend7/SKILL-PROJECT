@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Sequence">
+    <mxGraphModel grid="0" page="1" pageScale="1" pageWidth="1200" pageHeight="760" background="#F6F8FB" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="时序图标题" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=26;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="360" y="24" width="480" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor-a" value="参与者 A" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8E1EA;strokeWidth=2;fontColor=#172033;fontSize=15;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="100" width="180" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor-b" value="参与者 B" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8E1EA;strokeWidth=2;fontColor=#172033;fontSize=15;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="100" width="180" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor-c" value="参与者 C" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8E1EA;strokeWidth=2;fontColor=#172033;fontSize=15;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="100" width="180" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="life-a" value="" style="edgeStyle=none;html=1;strokeColor=#94A3B8;dashed=1;dashPattern=6 4;startArrow=none;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="154" as="sourcePoint"/><mxPoint x="210" y="660" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="life-b" value="" style="edgeStyle=none;html=1;strokeColor=#94A3B8;dashed=1;dashPattern=6 4;startArrow=none;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="600" y="154" as="sourcePoint"/><mxPoint x="600" y="660" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="life-c" value="" style="edgeStyle=none;html=1;strokeColor=#94A3B8;dashed=1;dashPattern=6 4;startArrow=none;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="990" y="154" as="sourcePoint"/><mxPoint x="990" y="660" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="sequence-start" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;" vertex="1" parent="1">
+          <mxGeometry x="66" y="216" width="16" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="sequence-start-label" value="开始" style="text;html=1;strokeColor=none;fillColor=none;align=right;fontSize=11;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="30" y="208" width="32" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="sequence-end" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="66" y="584" width="16" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="sequence-end-core" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;" vertex="1" parent="1">
+          <mxGeometry x="71" y="589" width="6" height="6" as="geometry"/>
+        </mxCell>
+        <mxCell id="sequence-end-label" value="结束" style="text;html=1;strokeColor=none;fillColor=none;align=right;fontSize=11;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="30" y="576" width="32" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="activation-b" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;" vertex="1" parent="1">
+          <mxGeometry x="594" y="278" width="12" height="236" as="geometry"/>
+        </mxCell>
+        <mxCell id="activation-c" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;" vertex="1" parent="1">
+          <mxGeometry x="984" y="352" width="12" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="message-start" value="开始交互" style="edgeStyle=none;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="82" y="224" as="sourcePoint"/><mxPoint x="210" y="224" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="message-1" value="1. 发起请求" style="edgeStyle=none;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="288" as="sourcePoint"/><mxPoint x="600" y="288" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="message-2" value="2. 调用下游" style="edgeStyle=none;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="600" y="362" as="sourcePoint"/><mxPoint x="990" y="362" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="message-3" value="3. 返回结果" style="edgeStyle=none;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=open;fontSize=12;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="990" y="442" as="sourcePoint"/><mxPoint x="600" y="442" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="message-4" value="4. 返回响应" style="edgeStyle=none;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=open;fontSize=12;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="600" y="514" as="sourcePoint"/><mxPoint x="210" y="514" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="message-end" value="结束交互" style="edgeStyle=none;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="592" as="sourcePoint"/><mxPoint x="82" y="592" as="targetPoint"/></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
