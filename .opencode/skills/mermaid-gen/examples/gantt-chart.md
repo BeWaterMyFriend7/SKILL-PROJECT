@@ -1,6 +1,7 @@
 - example1
 产品发布倒排期
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 gantt
     title 发布会筹备
     dateFormat YYYY-MM-DD

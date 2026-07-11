@@ -3,6 +3,7 @@
 2025年各产品线销售数据分布。
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 pie
     title 产品销量占比
     "产品A" : 40

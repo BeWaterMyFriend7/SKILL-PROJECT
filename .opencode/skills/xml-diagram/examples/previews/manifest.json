@@ -1,0 +1,78 @@
+{
+  "renderer": {
+    "name": "draw.io Desktop",
+    "version": "29.6.1"
+  },
+  "snapshots": {
+    "application-architecture-100.png": {
+      "source": "../架构图-应用架构图-light-智能客服.drawio",
+      "source_sha256": "93b3aa2e7d8694a26bab42e94a62e4182758bc578d3431c3105e43aee2c5cdab",
+      "sha256": "1591edc699281c1091a80098033e61191b68349beaa0c91eb73962cd790ded02",
+      "width": 1202,
+      "height": 762
+    },
+    "application-architecture-25.png": {
+      "source": "../架构图-应用架构图-light-智能客服.drawio",
+      "source_sha256": "93b3aa2e7d8694a26bab42e94a62e4182758bc578d3431c3105e43aee2c5cdab",
+      "sha256": "15f5b8b98edd3da868a6305fc3841d80cc01b548d6cf1f1b31365a418bf0429c",
+      "width": 302,
+      "height": 192
+    },
+    "business-architecture-100.png": {
+      "source": "../架构图-业务架构图-light-电商平台.drawio",
+      "source_sha256": "b25789be0805a1871bd2cd3853917b5563bebbe58d33e2cfe1df91da9d107e92",
+      "sha256": "ea5195cde48f38ead0d86e5d46031542eabf69a177ebab1aebe9d8df98164b5d",
+      "width": 1202,
+      "height": 762
+    },
+    "business-architecture-25.png": {
+      "source": "../架构图-业务架构图-light-电商平台.drawio",
+      "source_sha256": "b25789be0805a1871bd2cd3853917b5563bebbe58d33e2cfe1df91da9d107e92",
+      "sha256": "9ecc1ecc8badf904bffcd203879a53c549f5fee60b3df9756138841e16cd98ef",
+      "width": 302,
+      "height": 192
+    },
+    "deployment-architecture-100.png": {
+      "source": "../架构图-部署架构图-light-微服务集群.drawio",
+      "source_sha256": "eff6b7cfe5467edc1a2a309b040a95bb01f583c1ea1a777f0f32c1cb919ac7e1",
+      "sha256": "6fa1eb1506d87527288b77058c9639b06fe51148fef4eb7b7cd8c19cb995bb3d",
+      "width": 1202,
+      "height": 762
+    },
+    "deployment-architecture-25.png": {
+      "source": "../架构图-部署架构图-light-微服务集群.drawio",
+      "source_sha256": "eff6b7cfe5467edc1a2a309b040a95bb01f583c1ea1a777f0f32c1cb919ac7e1",
+      "sha256": "fe8f6761ad04a4da26542e4db27f320891adb733cae1742090edf5460a1ade13",
+      "width": 302,
+      "height": 192
+    },
+    "system-context-100.png": {
+      "source": "../架构图-系统上下文图-light-支付平台.drawio",
+      "source_sha256": "d8d4dd188a529734cedc794da1bee24481d9fc323613fc73ee51e54d40180a4a",
+      "sha256": "3d03d50955db0c971fe1e971cd408fdb96b00cf6a98d049a32d3c0d5b535ec88",
+      "width": 1202,
+      "height": 762
+    },
+    "system-context-25.png": {
+      "source": "../架构图-系统上下文图-light-支付平台.drawio",
+      "source_sha256": "d8d4dd188a529734cedc794da1bee24481d9fc323613fc73ee51e54d40180a4a",
+      "sha256": "7b86ed92ba46d01c7555886072af5a9201086786c154342b0d81bc42503fbfb3",
+      "width": 302,
+      "height": 192
+    },
+    "technical-architecture-100.png": {
+      "source": "../架构图-技术架构图-light-分层系统.drawio",
+      "source_sha256": "639398f1b39ff0bacff54e290bd1143d860d63e9c056c78c16c0520ea04f9031",
+      "sha256": "9a99020f251c2c4c1621aaac863430d55f7108ceffa150ba6ea470b07a8271f4",
+      "width": 1202,
+      "height": 762
+    },
+    "technical-architecture-25.png": {
+      "source": "../架构图-技术架构图-light-分层系统.drawio",
+      "source_sha256": "639398f1b39ff0bacff54e290bd1143d860d63e9c056c78c16c0520ea04f9031",
+      "sha256": "773672c5d48f4da13e5f652ec9ac665c71cd6bccde01c7ef65847edc0a13f633",
+      "width": 302,
+      "height": 192
+    }
+  }
+}

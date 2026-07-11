@@ -2,6 +2,7 @@
 竖向流程图
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 flowchart TD
     A[开始] --> B{是否已登录?}
     B -->|是| C[跳转主页]
@@ -16,6 +17,7 @@ flowchart TD
 - example2
 横向流程图
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 flowchart LR
     A[用户下单] --> B[扣减库存]
     B --> C[生成订单]

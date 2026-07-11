@@ -1,5 +1,6 @@
 - example1
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 erDiagram
     学生 ||--o{ 选课 : 拥有
     课程 ||--o{ 选课 : 包含
@@ -23,6 +24,7 @@ erDiagram
 
 - example 2
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 erDiagram
     读者 ||--o{ 借书记录 : 产生
     图书 ||--o{ 借书记录 : 被借

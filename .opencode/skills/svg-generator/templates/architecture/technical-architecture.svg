@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">技术架构模板</title><desc id="desc">分层技术架构与跨切治理能力骨架</desc><rect width="1200" height="760" fill="#F6F8FB"/>
+  <g font-family="Inter, Noto Sans SC, Microsoft YaHei, sans-serif"><text x="600" y="44" text-anchor="middle" font-size="26" font-weight="700" fill="#172033">技术架构图</text>
+    <rect x="40" y="80" width="930" height="620" rx="14" fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"/>
+    <g font-size="18" font-weight="700" fill="#2563EB"><text x="68" y="120">接入层</text><text x="68" y="238">服务层</text><text x="68" y="356">中间件层</text><text x="68" y="474">数据层</text><text x="68" y="592">基础设施层</text></g>
+    <g fill="#EEF3F8" stroke="#D8E1EA"><rect x="180" y="96" width="760" height="70" rx="10"/><rect x="180" y="214" width="760" height="70" rx="10"/><rect x="180" y="332" width="760" height="70" rx="10"/><rect x="180" y="450" width="760" height="70" rx="10"/><rect x="180" y="568" width="760" height="70" rx="10"/></g>
+    <g font-size="14" fill="#172033" text-anchor="middle"><text x="560" y="138">客户端 · 网关 · 协议 · 认证</text><text x="560" y="256">运行时 · 服务框架 · 接口治理</text><text x="560" y="374">缓存 · 消息 · 搜索 · 调度</text><text x="560" y="492">关系库 · 文档库 · 对象存储</text><text x="560" y="610">容器 · 编排 · 网络 · 计算</text></g>
+    <rect x="1006" y="80" width="154" height="620" rx="14" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/><text x="1083" y="120" text-anchor="middle" font-size="18" font-weight="700" fill="#2563EB">跨切能力</text>
+    <g fill="#EEF3F8" stroke="#D8E1EA"><rect x="1030" y="158" width="106" height="70" rx="10"/><rect x="1030" y="256" width="106" height="70" rx="10"/><rect x="1030" y="354" width="106" height="70" rx="10"/><rect x="1030" y="452" width="106" height="70" rx="10"/></g>
+    <g font-size="13" fill="#172033" text-anchor="middle"><text x="1083" y="200">安全</text><text x="1083" y="298">治理</text><text x="1083" y="396">观测</text><text x="1083" y="494">交付</text></g>
+  </g>
+</svg>

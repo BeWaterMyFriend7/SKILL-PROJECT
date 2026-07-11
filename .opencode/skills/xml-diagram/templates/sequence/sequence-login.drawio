@@ -14,7 +14,7 @@
           <mxGeometry x="35" y="58" width="970" height="22" as="geometry" />
         </mxCell>
 
-        <mxCell id="p1" parent="1" value="参与者 A" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f3ff;strokeColor=#3498db;fontColor=#1d4ed8;fontSize=14;fontStyle=1;shadow=1;">
+        <mxCell id="p1" parent="1" value="参与者 A" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e8f3ff;strokeColor=#1D4ED8;fontColor=#1d4ed8;fontSize=14;fontStyle=1;shadow=1;">
           <mxGeometry x="70" y="100" width="140" height="48" as="geometry" />
         </mxCell>
         <mxCell id="p2" parent="1" value="参与者 B" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#eafaf1;strokeColor=#2ecc71;fontColor=#15803d;fontSize=14;fontStyle=1;shadow=1;">
@@ -53,7 +53,7 @@
           <mxGeometry x="514" y="260" width="12" height="260" as="geometry" />
         </mxCell>
 
-        <mxCell id="msg1" parent="1" edge="1" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#3498db;strokeWidth=2;">
+        <mxCell id="msg1" parent="1" edge="1" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#1D4ED8;strokeWidth=2;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="140" y="220" as="sourcePoint" />
             <mxPoint x="330" y="220" as="targetPoint" />

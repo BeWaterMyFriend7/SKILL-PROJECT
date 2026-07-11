@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">支付平台系统上下文示例</title><desc id="desc">消费者、商户运营、统一支付平台与外部渠道关系</desc><rect width="1200" height="760" fill="#F6F8FB"/>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748B"/></marker></defs>
+  <g font-family="Inter, Noto Sans SC, Microsoft YaHei, sans-serif"><text x="600" y="44" text-anchor="middle" font-size="26" font-weight="700" fill="#172033">支付平台系统上下文图</text>
+    <rect x="390" y="224" width="420" height="300" rx="14" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/><text x="600" y="278" text-anchor="middle" font-size="18" font-weight="700" fill="#2563EB">统一支付平台</text><text x="600" y="320" text-anchor="middle" font-size="13" fill="#475569">收单、路由、清结算与风险控制</text>
+    <g fill="#EEF3F8" stroke="#D8E1EA"><rect x="430" y="360" width="150" height="72" rx="10"/><rect x="620" y="360" width="150" height="72" rx="10"/></g><g font-size="14" fill="#172033" text-anchor="middle"><text x="505" y="402">支付编排</text><text x="695" y="402">清结算</text></g>
+    <g fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"><rect x="60" y="150" width="220" height="110" rx="12"/><rect x="60" y="500" width="220" height="110" rx="12"/></g><g fill="#FFF7ED" stroke="#D97706" stroke-width="1.5"><rect x="920" y="150" width="220" height="110" rx="12"/><rect x="920" y="500" width="220" height="110" rx="12"/></g>
+    <g font-size="15" font-weight="600" fill="#172033" text-anchor="middle"><text x="170" y="210">消费者</text><text x="170" y="560">商户运营</text><text x="1030" y="210">银行与支付渠道</text><text x="1030" y="560">财务与风控系统</text></g>
+    <g fill="none" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"><path d="M280 205 H350 V300 H390"/><path d="M280 555 H350 V470 H390"/><path d="M810 300 H850 V205 H920"/><path d="M810 470 H850 V555 H920"/></g>
+    <g font-size="12" fill="#475569"><text x="296" y="190">发起支付</text><text x="296" y="576">运营配置</text><text x="830" y="190">渠道路由</text><text x="824" y="576">对账与风控</text></g>
+  </g>
+</svg>

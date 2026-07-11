@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mermaid-diagram-plan-v1",
+  "title": "Mermaid DiagramPlan",
+  "type": "object",
+  "required": ["designSystemVersion", "renderer", "type", "theme", "title", "nodes", "edges"],
+  "properties": {
+    "designSystemVersion": { "const": "1.0" },
+    "renderer": { "const": "mermaid" },
+    "type": {
+      "enum": [
+        "flowchart", "sequence_diagram", "class_diagram", "er_diagram", "state_diagram",
+        "gantt", "git_graph", "journey", "pie", "mindmap", "timeline", "quadrant",
+        "xy_chart", "sankey", "block_diagram"
+      ]
+    },
+    "theme": { "enum": ["light", "dark"] },
+    "direction": { "enum": ["TD", "LR", "RL", "BT"] },
+    "title": { "type": "string", "minLength": 1 },
+    "nodes": { "type": "array", "maxItems": 20, "items": { "type": "object", "required": ["id", "label"], "properties": { "id": { "type": "string", "minLength": 1 }, "label": { "type": "string", "minLength": 1 } } } },
+    "edges": { "type": "array", "items": { "type": "object", "required": ["id", "source", "target"], "properties": { "id": { "type": "string", "minLength": 1 }, "source": { "type": "string", "minLength": 1 }, "target": { "type": "string", "minLength": 1 } } } },
+    "sections": { "type": "array", "maxItems": 8, "default": [], "items": { "type": "object", "required": ["id", "title"], "properties": { "id": { "type": "string", "minLength": 1 }, "title": { "type": "string", "minLength": 1 } } } },
+    "assumptions": { "type": "array", "default": [] }
+  },
+  "additionalProperties": false
+}

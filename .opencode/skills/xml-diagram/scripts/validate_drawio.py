@@ -303,7 +303,7 @@ def architecture_semantic_warnings(cells: list[ET.Element]) -> list[str]:
                 inline_detail_count += 1
                 warnings.append(f"{cell_id}: 架构图三级内容应拆成小矩形标签，不要内联在卡片文字中")
 
-    if card_count >= 4 and tag_count < max(4, card_count // 2):
+    if card_count >= 4 and 0 < tag_count < max(4, card_count // 2):
         warnings.append("架构图小矩形标签数量偏少，三级内容可能仍是纯文字或语义密度不足")
     if inline_detail_count >= 3:
         warnings.append("架构图存在多处卡片内联明细，建议统一改为可编辑小矩形标签")
@@ -390,6 +390,15 @@ def validate(path: Path) -> tuple[list[str], list[str]]:
         style = parse_style(cell.attrib.get("style", ""))
         label = (cell.attrib.get("value") or "").lower()
 
+        if cell.attrib.get("vertex") == "1" and cell_text(cell):
+            try:
+                font_size = float(style.get("fontSize", "12"))
+            except ValueError:
+                font_size = 12
+            minimum = 11 if style.get("textRole") == "auxiliary" else 12
+            if font_size < minimum:
+                warnings.append(f"{cell.attrib.get('id')}: 文字字号过小 {font_size:g}")
+
         if cell.attrib.get("edge") == "1":
             source = cell.attrib.get("source")
             target = cell.attrib.get("target")
@@ -403,6 +412,12 @@ def validate(path: Path) -> tuple[list[str], list[str]]:
                 warnings.append(f"{cell.attrib.get('id')}: 不是正交连线 {style.get('edgeStyle')}")
             if ("error" in label or "失败" in label or "异常" in label or "否" in label) and style.get("dashed") == "1":
                 errors.append(f"{cell.attrib.get('id')}: 错误或失败路径必须使用实线")
+            if any(marker in label for marker in ("error", "失败", "异常")):
+                color = (style.get("strokeColor") or "").lower()
+                if color not in {"#dc2626", "#b91c1c", "#e74c3c"}:
+                    errors.append(f"{cell.attrib.get('id')}: 错误或失败路径必须使用红色")
+            if any(marker in label for marker in ("async", "异步", "回调")) and style.get("dashed") != "1":
+                warnings.append(f"{cell.attrib.get('id')}: 异步或回调路径应使用虚线")
 
     for model in models:
         try:
@@ -430,6 +445,10 @@ def validate(path: Path) -> tuple[list[str], list[str]]:
                 warnings.append(f"画布利用率过低: {usage:.0%}")
             if usage > 0.85:
                 warnings.append(f"内容过满: {usage:.0%}")
+            if x < 30 or x + w > page_w - 30:
+                warnings.append("左右页面边距小于 30px")
+            if y < 20 or y + h > page_h - 30:
+                warnings.append("上下页面边距不足")
 
         boxes: list[tuple[str, tuple[float, float, float, float]]] = []
         for cell in cells:

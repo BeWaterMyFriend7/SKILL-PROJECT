@@ -1,65 +1,95 @@
 ---
 name: mermaid-gen
-description: 使用 Mermaid 语法生成各种类型的图表。支持流程图(flowchart)、时序图(sequence diagram)、类图(class diagram)、ER图(er diagram)、状态图(state diagram)、甘特图(gantt chart)、Git图(git graph)、用户旅程图(user journey)、饼图(pie chart)、思维导图(mindmap)、时间线(timeline)、象限图(quadrant chart)、XY图表(xy chart)、桑基图(sankey)、框图(block diagram)等。当用户提到 mermaid、流程图、时序图、类图、ER图、甘特图、思维导图、饼图、状态图、时间线、桑基图、象限图、用户旅程、Git图、框图、生成图表、画一个图等时触发。
+description: 生成 Mermaid 源码或包含 Mermaid fence 的 Markdown 图表，适用于用户明确要求 Mermaid、Markdown 图表、文档即代码或可 diff 图形。支持 flowchart、sequence、class、ER、state、gantt、gitGraph、journey、pie、mindmap、timeline、quadrant、xy、sankey 和 block。优先保证语法与文档可维护性，不用于 Draw.io 可编辑 XML 或像素级高级 SVG 视觉。
 ---
 
-# Mermaid 图表生成
+# Mermaid 图表生成器
 
-## 工作流程
+本 skill 是完全自包含的 Mermaid 渲染模块。所有规则、参考、示例和校验脚本都位于本文件夹内，禁止读取其他 skill 的文件。
 
-1. 识别用户描述对应的图表类型
-2. 提取参与者、节点、实体或状态
-3. 确定元素间关系和连接
-4. 生成 Mermaid 代码块输出
+## 接口
 
-## 图表类型选择
+输入：用户的图表语义、可选图类型、方向和主题。
+输出：`mermaid` 代码块或保存到 `output/mermaid/` 的 Markdown 文件。
 
-| 用户意图 | 图表类型 | 关键词 |
-|---------|---------|--------|
-| 流程/步骤/决策 | Flowchart | 流程、步骤、判断 |
-| 交互/调用/消息 | Sequence Diagram | 时序、交互、调用、消息 |
-| 类/接口/继承 | Class Diagram | 类图、继承、接口 |
-| 实体/数据库/关系 | ER Diagram | ER、实体、数据库表 |
-| 状态变化/生命周期 | State Diagram | 状态、流转、生命周期 |
-| 排期/计划/进度 | Gantt Chart | 甘特、排期、进度 |
-| 分支/合并 | Git Graph | git、分支、合并 |
-| 占比/分布 | Pie Chart | 饼图、占比、比例 |
-| 脑图/层级结构 | Mindmap | 思维导图、脑图、层级 |
-| 里程碑/版本 | Timeline | 时间线、里程碑 |
-| 优先级/评估矩阵 | Quadrant Chart | 象限、优先级、矩阵 |
-| 趋势/对比数值 | XY Chart | 趋势、柱状图、折线图 |
-| 流向/转化漏斗 | Sankey | 桑基、流向、转化 |
-| 系统框图/模块 | Block Diagram | 框图、模块、方块图 |
+先读取 `assets/routing.md`。明确要求 SVG 或 Draw.io 时停止使用本 skill。
 
-## 输出
+## 强制流程
 
-以 ` ```mermaid ` 代码块直接输出，或保存为 `.md` 文件至 `output/mermaid/`。
-
-文件命名：`<图类型>-<描述>.md`
-
-### 输出模板
-```markdown
-# <图表标题>
-
-<简要描述>
-
-\`\`\`mermaid
-<Mermaid 代码>
-\`\`\`
-
-## 说明
-- 节点说明
-- 关键关系解释
+```text
+用户输入
+-> 本地路由判断
+-> DiagramPlan
+-> 图类型选择
+-> 复杂度预算
+-> Mermaid 源码
+-> 结构/语法/渲染校验
+-> 交付
 ```
 
-## 验证清单
+### 1. 整理 DiagramPlan
 
-- [ ] 语法正确，Mermaid 可解析
-- [ ] 节点和关系名称清晰有意义
-- [ ] 图表方向（TD/LR）适合内容布局
-- [ ] 代码块使用 ` ```mermaid ` 包裹
+按 `assets/diagram-plan.schema.json` 整理类型、主题、方向、标题、节点、关系和分区。
 
-## 参考
+### 2. 选择图类型
 
-- 各类型语法速查见 `references/mermaid-syntax.md`
-- 完整示例见 `examples/` 目录下对应文件
+| 意图 | Mermaid 类型 |
+| --- | --- |
+| 流程、步骤、判断 | `flowchart` |
+| 调用、消息、交互 | `sequenceDiagram` |
+| 类、接口、继承 | `classDiagram` |
+| 实体、数据库关系 | `erDiagram` |
+| 状态变化 | `stateDiagram-v2` |
+| 排期与进度 | `gantt` |
+| Git 分支与合并 | `gitGraph` |
+| 用户体验旅程 | `journey` |
+| 占比 | `pie` |
+| 层级思维结构 | `mindmap` |
+| 里程碑 | `timeline` |
+| 优先级矩阵 | `quadrantChart` |
+| 数值趋势 | `xychart-beta` |
+| 流量迁移 | `sankey-beta` |
+| 系统框图 | `block-beta` |
+
+详细语法只读取本目录的 `references/mermaid-syntax.md` 和对应 `examples/*.md`。
+
+### 3. 主题和复杂度
+
+- 使用 `assets/visual-tokens.md` 中的本地颜色和字体。
+- 输出固定 `%%{init: ...}%%`，不要依赖 renderer 默认主题。
+- 默认节点不超过 20，分区不超过 8，嵌套不超过 4 层。
+- 单标签建议不超过 24 个中英文字符；超出时换行、缩写或拆图。
+- 不使用大量临时 `style`；语义样式用少量 `classDef`。
+- 用户要求精确布局、品牌化或高级展示时应改用 SVG。
+
+### 4. 输出格式
+
+````markdown
+# 图表标题
+
+简要描述。
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {}}}%%
+<Mermaid 源码>
+```
+
+## 说明
+
+- 关键节点或关系说明。
+````
+
+### 5. 校验
+
+交付前运行：
+
+```bash
+python -X utf8 scripts/validate_plan.py <diagram-plan.json>
+python -X utf8 scripts/validate_mermaid.py <Markdown 文件或目录> --require-render
+```
+
+若 renderer 不可用，只能报告“结构通过、渲染未验证”，不得宣称完整通过。
+
+## 输出说明
+
+交付时说明图类型、主题、文件路径和结构/渲染校验状态。

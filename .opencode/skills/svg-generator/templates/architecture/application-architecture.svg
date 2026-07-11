@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">应用架构模板</title><desc id="desc">左入口、中核心、右外部的应用架构骨架</desc>
+  <rect width="1200" height="760" fill="#F6F8FB"/>
+  <g font-family="Inter, Noto Sans SC, Microsoft YaHei, sans-serif"><text x="600" y="44" text-anchor="middle" font-size="26" font-weight="700" fill="#172033">应用架构图</text>
+    <rect x="40" y="80" width="230" height="620" rx="14" fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"/><text x="68" y="118" font-size="18" font-weight="700" fill="#2563EB">入口与终端</text>
+    <g fill="#EEF3F8" stroke="#D8E1EA"><rect x="68" y="150" width="174" height="84" rx="10"/><rect x="68" y="262" width="174" height="84" rx="10"/><rect x="68" y="374" width="174" height="84" rx="10"/><rect x="68" y="486" width="174" height="84" rx="10"/></g>
+    <g font-size="14" fill="#172033" text-anchor="middle"><text x="155" y="198">Web 应用</text><text x="155" y="310">移动应用</text><text x="155" y="422">管理端</text><text x="155" y="534">开放接口</text></g>
+    <rect x="306" y="80" width="586" height="620" rx="14" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/><text x="334" y="118" font-size="18" font-weight="700" fill="#2563EB">核心系统</text>
+    <rect x="334" y="146" width="530" height="84" rx="10" fill="#EEF3F8" stroke="#D8E1EA"/><text x="599" y="180" text-anchor="middle" font-size="15" font-weight="600" fill="#172033">接入与网关</text><text x="599" y="205" text-anchor="middle" font-size="12" fill="#475569">认证 · 路由 · 限流 · 协议转换</text>
+    <g fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"><rect x="334" y="262" width="250" height="140" rx="10"/><rect x="614" y="262" width="250" height="140" rx="10"/><rect x="334" y="430" width="250" height="140" rx="10"/><rect x="614" y="430" width="250" height="140" rx="10"/></g>
+    <g font-size="15" font-weight="600" fill="#172033" text-anchor="middle"><text x="459" y="298">业务服务 A</text><text x="739" y="298">业务服务 B</text><text x="459" y="466">数据与缓存</text><text x="739" y="466">消息与搜索</text></g>
+    <g font-size="12" fill="#475569" text-anchor="middle"><text x="459" y="334">能力标签 · 能力标签</text><text x="459" y="362">能力标签 · 能力标签</text><text x="739" y="334">能力标签 · 能力标签</text><text x="739" y="362">能力标签 · 能力标签</text><text x="459" y="502">数据库 · 缓存</text><text x="739" y="502">事件 · 索引</text></g>
+    <rect x="928" y="80" width="232" height="620" rx="14" fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"/><text x="956" y="118" font-size="18" font-weight="700" fill="#D97706">外部系统</text>
+    <g fill="#FFF7ED" stroke="#FED7AA"><rect x="956" y="150" width="176" height="84" rx="10"/><rect x="956" y="262" width="176" height="84" rx="10"/><rect x="956" y="374" width="176" height="84" rx="10"/><rect x="956" y="486" width="176" height="84" rx="10"/></g>
+    <g font-size="14" fill="#172033" text-anchor="middle"><text x="1044" y="198">支付平台</text><text x="1044" y="310">消息平台</text><text x="1044" y="422">合作系统</text><text x="1044" y="534">观测平台</text></g>
+  </g>
+</svg>

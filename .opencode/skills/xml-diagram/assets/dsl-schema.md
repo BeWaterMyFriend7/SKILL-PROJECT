@@ -6,6 +6,8 @@
 
 ```yaml
 diagram:
+  designSystemVersion: "1.0"
+  renderer: drawio
   type: business_architecture
   mode: light
   palette: standard
@@ -15,7 +17,7 @@ diagram:
   canvas:
     width: 1200
     height: 860
-    margin: 32
+  margin: 40
   sections: []
   nodes: []
   edges: []

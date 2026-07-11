@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">业务架构模板</title><desc id="desc">场景层、能力层、对象资源层三段式业务架构骨架</desc>
+  <rect width="1200" height="760" fill="#F6F8FB"/>
+  <text x="600" y="44" text-anchor="middle" font-family="Inter, Noto Sans SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#172033">业务架构图</text>
+  <g font-family="Inter, Noto Sans SC, Microsoft YaHei, sans-serif">
+    <rect x="40" y="76" width="1120" height="170" rx="14" fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"/>
+    <text x="68" y="112" font-size="18" font-weight="700" fill="#2563EB">业务场景层</text>
+    <g fill="#EEF3F8" stroke="#D8E1EA"><rect x="68" y="136" width="250" height="76" rx="10"/><rect x="350" y="136" width="250" height="76" rx="10"/><rect x="632" y="136" width="250" height="76" rx="10"/><rect x="914" y="136" width="218" height="76" rx="10"/></g>
+    <g font-size="15" font-weight="600" fill="#172033" text-anchor="middle"><text x="193" y="180">场景 A</text><text x="475" y="180">场景 B</text><text x="757" y="180">场景 C</text><text x="1023" y="180">场景 D</text></g>
+    <rect x="40" y="278" width="1120" height="240" rx="14" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="68" y="314" font-size="18" font-weight="700" fill="#2563EB">业务能力层</text>
+    <g fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"><rect x="68" y="340" width="244" height="144" rx="10"/><rect x="340" y="340" width="244" height="144" rx="10"/><rect x="612" y="340" width="244" height="144" rx="10"/><rect x="884" y="340" width="248" height="144" rx="10"/></g>
+    <g font-size="15" font-weight="600" fill="#172033" text-anchor="middle"><text x="190" y="372">能力域 A</text><text x="462" y="372">能力域 B</text><text x="734" y="372">能力域 C</text><text x="1008" y="372">能力域 D</text></g>
+    <g font-size="12" fill="#475569" text-anchor="middle"><text x="190" y="414">能力标签 · 能力标签</text><text x="190" y="444">能力标签 · 能力标签</text><text x="462" y="414">能力标签 · 能力标签</text><text x="462" y="444">能力标签 · 能力标签</text><text x="734" y="414">能力标签 · 能力标签</text><text x="734" y="444">能力标签 · 能力标签</text><text x="1008" y="414">能力标签 · 能力标签</text><text x="1008" y="444">能力标签 · 能力标签</text></g>
+    <rect x="40" y="550" width="1120" height="150" rx="14" fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"/>
+    <text x="68" y="586" font-size="18" font-weight="700" fill="#2563EB">业务对象与资源层</text>
+    <g fill="#EEF3F8" stroke="#D8E1EA"><rect x="68" y="614" width="200" height="54" rx="10"/><rect x="290" y="614" width="200" height="54" rx="10"/><rect x="512" y="614" width="200" height="54" rx="10"/><rect x="734" y="614" width="200" height="54" rx="10"/><rect x="956" y="614" width="176" height="54" rx="10"/></g>
+    <g font-size="14" fill="#172033" text-anchor="middle"><text x="168" y="647">对象 A</text><text x="390" y="647">对象 B</text><text x="612" y="647">对象 C</text><text x="834" y="647">对象 D</text><text x="1044" y="647">资源</text></g>
+  </g>
+</svg>

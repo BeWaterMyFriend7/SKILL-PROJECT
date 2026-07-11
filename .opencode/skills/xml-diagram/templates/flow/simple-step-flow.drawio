@@ -17,10 +17,10 @@
           <mxGeometry x="40" y="96" width="820" height="1" as="geometry" />
         </mxCell>
 
-        <mxCell id="step1" value="1. 输入采集&#xa;━━━━━━&#xa;接收用户输入或外部信号" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+        <mxCell id="step1" value="1. 输入采集&#xa;━━━━━━&#xa;接收用户输入或外部信号" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1D4ED8;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="55" y="125" width="170" height="92" as="geometry" />
         </mxCell>
-        <mxCell id="step2" value="2. 预处理&#xa;━━━━━━&#xa;清洗、归一化、补全上下文" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3498db;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
+        <mxCell id="step2" value="2. 预处理&#xa;━━━━━━&#xa;清洗、归一化、补全上下文" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1D4ED8;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="265" y="125" width="170" height="92" as="geometry" />
         </mxCell>
         <mxCell id="step3" value="3. 核心识别&#xa;━━━━━━&#xa;抽取目标、意图或关键参数" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2ecc71;strokeWidth=2;fontColor=#334155;fontSize=12;fontStyle=1;fontFamily=Microsoft YaHei;arcSize=8;" vertex="1" parent="1">
@@ -50,10 +50,10 @@
           <mxGeometry x="480" y="430" width="350" height="92" as="geometry" />
         </mxCell>
 
-        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498db;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step1" target="step2">
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1D4ED8;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step1" target="step2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3498db;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step2" target="step3">
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1D4ED8;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step2" target="step3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2ecc71;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="step3" target="step4">

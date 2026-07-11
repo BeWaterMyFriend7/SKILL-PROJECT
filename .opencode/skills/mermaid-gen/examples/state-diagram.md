@@ -1,5 +1,6 @@
 - example 1
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 stateDiagram-v2
     [*] --> 待支付
     待支付 --> 已支付 : 支付成功
@@ -13,6 +14,7 @@ stateDiagram-v2
 
 - example 2
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 stateDiagram-v2
     [*] --> 静止
     静止 --> 上升 : 按上行按钮

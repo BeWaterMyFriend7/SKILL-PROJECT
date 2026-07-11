@@ -1,5 +1,13 @@
 # Mermaid 语法参考
 
+每个 Mermaid fence 的第一行必须使用本 skill 固定主题：
+
+```text
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
+```
+
+通用限制：标签尽量不超过 16 个汉字；流程节点建议不超过 12 个；优先 `LR` 或 `TD` 单向布局；虚线只表示异步或返回；结构过密时拆图，不缩小文字。
+
 ## 1. Flowchart (流程图)
 
 方向：`TD`(默认)/`LR`/`RL`/`BT`
@@ -8,11 +16,12 @@
 - `[矩形]` `[/圆角矩形/]` `((圆形))` `{菱形}` `[/平行四边形/]` `[[子程序]]`
 
 连接线：
-- `-->` 实线箭头 | `---` 无箭头 | `-.->` 虚线箭头 | `==>` 粗实线箭头 | `-- 标签 -->` 带标签
+
+- `-->` 实线箭头 | `---` 无箭头 | `-.->` 异步虚线箭头 | `==>` 粗实线箭头 | `-- 标签 -->` 带标签
 
 ## 2. Sequence Diagram (时序图)
 
-箭头类型：`->>` 实线实心 | `-->>` 虚线实心 | `->` 实线无填充 | `-->` 虚线无填充 | `-x` 叉尾 | `-)` 异步
+箭头类型：`->>` 同步请求 | `-->>` 返回 | `->` 实线无填充 | `-->` 虚线无填充 | `-x` 失败终止 | `-)` 异步
 
 激活区间：`activate B` ... `deactivate B`
 

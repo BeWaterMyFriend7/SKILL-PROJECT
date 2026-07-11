@@ -3,6 +3,7 @@
 2025年产品开发路线图。
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 timeline
     title 项目里程碑 2025
     2025-Q1 : 需求调研 : 技术选型 : 原型设计

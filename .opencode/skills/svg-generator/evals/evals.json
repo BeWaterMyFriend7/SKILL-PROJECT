@@ -1,65 +1,70 @@
 {
   "skill_name": "svg-generator",
+  "design_system_version": "1.0",
   "evals": [
     {
-      "id": 1,
-      "prompt": "生成一个简单的流程图，包含开始、处理、结束三个节点",
-      "expected_output": "一个包含三个矩形节点和连接线的SVG流程图，使用浅色模式配色",
-      "files": []
+      "id": "architecture-application",
+      "prompt": "生成电商平台应用架构图，包含终端、核心系统和外部依赖。",
+      "template": "templates/architecture/application-architecture.svg",
+      "output_file": "output/svg/application-architecture.svg",
+      "validator": "python scripts/validate_svg.py output/svg/application-architecture.svg --fail-on-warning",
+      "assertions": ["存在且仅有一个主标题", "核心系统为视觉焦点", "正文不小于 12px", "元素不重叠且边距至少 30px", "画布利用率介于 60% 和 80%"]
     },
     {
-      "id": 2,
-      "prompt": "创建一个对比图，展示产品A和产品B的功能对比",
-      "expected_output": "一个并排布局的对比图，左侧展示产品A特性，右侧展示产品B特性，中间有VS标识",
-      "files": []
+      "id": "architecture-business",
+      "prompt": "生成零售业务架构图，区分业务场景、业务能力和业务对象。",
+      "template": "templates/architecture/business-architecture.svg",
+      "output_file": "output/svg/business-architecture.svg",
+      "validator": "python scripts/validate_svg.py output/svg/business-architecture.svg --fail-on-warning",
+      "assertions": ["三层结构从上到下排列", "各层标题清晰", "卡片文字无占位重复", "颜色来自本 skill 视觉标记", "无裁切和遮挡"]
     },
     {
-      "id": 3,
-      "prompt": "生成一个应用架构图，包含表现层、业务层和数据层",
-      "expected_output": "一个三层架构图，从上到下分别表示表现层、业务层、数据层，每层包含相应的组件",
-      "files": []
+      "id": "architecture-technical",
+      "prompt": "生成分层技术架构图，包含接入、服务、中间件、数据、基础设施与横切能力。",
+      "template": "templates/architecture/technical-architecture.svg",
+      "output_file": "output/svg/technical-architecture.svg",
+      "validator": "python scripts/validate_svg.py output/svg/technical-architecture.svg --fail-on-warning",
+      "assertions": ["技术层级顺序正确", "横切能力独立成区", "容器与卡片层级明确", "普通正文不小于 12px", "无元素越界"]
     },
     {
-      "id": 4,
-      "prompt": "生成一个用户登录的时序图，展示用户界面、认证服务和数据库之间的交互",
-      "expected_output": "一个带有生命线和消息箭头的时序图，生命线等距分布，消息从上到下按时间顺序排列，箭头清晰无交叉",
-      "files": []
+      "id": "architecture-deployment",
+      "prompt": "生成跨可用区部署架构图，体现网络边界、计算子网和数据子网。",
+      "template": "templates/architecture/deployment-architecture.svg",
+      "output_file": "output/svg/deployment-architecture.svg",
+      "validator": "python scripts/validate_svg.py output/svg/deployment-architecture.svg --fail-on-warning",
+      "assertions": ["区域边界嵌套正确", "计算与数据域分离", "虚线只表示边界或异步语义", "节点间距一致", "无裁切和拥挤"]
     },
     {
-      "id": 5,
-      "prompt": "创建一个订单处理的状态流转图，展示从订单创建到完成或取消的各种状态和转换条件",
-      "expected_output": "一个包含状态节点、决策菱形和带条件标注的连接线的状态流转图，连接线使用直线优先，避免斜线交叉",
-      "files": []
+      "id": "architecture-context",
+      "prompt": "生成支付平台系统上下文图，展示用户、核心系统和外部系统。",
+      "template": "templates/architecture/system-context.svg",
+      "output_file": "output/svg/system-context.svg",
+      "validator": "python scripts/validate_svg.py output/svg/system-context.svg --fail-on-warning",
+      "assertions": ["核心系统居中突出", "外部参与者分区清楚", "关系标签可读", "连线不穿过节点", "语义色使用一致"]
     },
     {
-      "id": 6,
-      "prompt": "生成一个用户订单系统的ER图，包含用户、订单、订单项和产品实体及其关系",
-      "expected_output": "一个包含实体、属性、关系和连接线的ER图，展示实体之间的关联和基数",
-      "files": []
+      "id": "architecture-application-dark-content",
+      "prompt": "使用统一浅色设计语言生成智能客服应用架构图，不使用大面积高饱和色块。",
+      "template": "templates/architecture/application-architecture.svg",
+      "output_file": "output/svg/customer-service-application.svg",
+      "validator": "python scripts/validate_svg.py output/svg/customer-service-application.svg --fail-on-warning",
+      "assertions": ["保持浅色专业主题", "主色不超过三种", "核心系统占据主要视觉面积", "文字对比清晰", "标题和说明完整"]
     },
     {
-      "id": 7,
-      "prompt": "生成一个深色背景的用户登录时序图",
-      "expected_output": "一个带有深色背景（#1a1a2e）和适合深色模式的颜色的时序图，生命线等距分布",
-      "files": []
+      "id": "architecture-business-density",
+      "prompt": "生成包含四个业务域的供应链业务架构图，控制信息密度。",
+      "template": "templates/architecture/business-architecture.svg",
+      "output_file": "output/svg/supply-chain-business.svg",
+      "validator": "python scripts/validate_svg.py output/svg/supply-chain-business.svg --fail-on-warning",
+      "assertions": ["每卡片最多两行说明", "同层卡片等宽等距", "普通正文不小于 12px", "层间留白一致", "无重复占位内容"]
     },
     {
-      "id": 8,
-      "prompt": "创建一个深色背景的ER图",
-      "expected_output": "一个深色背景（#1a1a2e）的ER图，使用适合深色模式的颜色",
-      "files": []
-    },
-    {
-      "id": 9,
-      "prompt": "生成一个文章总结教程图，包含4个步骤和注意事项",
-      "expected_output": "使用文章总结图规范：步骤卡片从左到右排列，箭头连接，底部包含注意事项框",
-      "files": []
-    },
-    {
-      "id": 10,
-      "prompt": "生成一个深色背景的文章总结教程图",
-      "expected_output": "使用深色模式文章总结图规范：背景#1a1a2e，卡片#16213e，箭头#666666",
-      "files": []
+      "id": "architecture-deployment-resilience",
+      "prompt": "生成高可用票务系统部署架构图，突出弹性、数据与审计能力。",
+      "template": "templates/architecture/deployment-architecture.svg",
+      "output_file": "output/svg/ticket-deployment.svg",
+      "validator": "python scripts/validate_svg.py output/svg/ticket-deployment.svg --fail-on-warning",
+      "assertions": ["高可用边界表达明确", "计算与数据节点不混排", "存储使用青色语义", "边界留白至少 30px", "浏览器可直接渲染"]
     }
   ]
 }

@@ -1,0 +1,78 @@
+{
+  "renderer": {
+    "name": "Google Chrome",
+    "version": "150.0.7871.102"
+  },
+  "snapshots": {
+    "application-architecture-100.png": {
+      "source": "../application-architecture.svg",
+      "source_sha256": "b745b35b86852cb74a3ed8fa5e0db4e24bbd17303d1d1d89b2ba5c3576b5acd5",
+      "sha256": "ce9277165cba19dec421d07658565e5f683f73c235bdc84b9cf6328bf2212215",
+      "width": 1200,
+      "height": 760
+    },
+    "application-architecture-25.png": {
+      "source": "../application-architecture.svg",
+      "source_sha256": "b745b35b86852cb74a3ed8fa5e0db4e24bbd17303d1d1d89b2ba5c3576b5acd5",
+      "sha256": "caad4b6eab4cd6ddf9f80bc461d875c28db44d92a47490fa34fdad1f13fcf8e3",
+      "width": 300,
+      "height": 190
+    },
+    "business-architecture-100.png": {
+      "source": "../business-architecture.svg",
+      "source_sha256": "656b9d48a7812981b2d3278a5347e4fce35b435cff059a964bbc3b39c0ea47f5",
+      "sha256": "33aaece3035a07ed32a2df802ec932a57c756b161a657c2ed5fa2bf4b2aa5342",
+      "width": 1200,
+      "height": 760
+    },
+    "business-architecture-25.png": {
+      "source": "../business-architecture.svg",
+      "source_sha256": "656b9d48a7812981b2d3278a5347e4fce35b435cff059a964bbc3b39c0ea47f5",
+      "sha256": "817d93b29a781689931641155c942d2b137c44efad0ab325e41c71152842d48a",
+      "width": 300,
+      "height": 190
+    },
+    "deployment-architecture-100.png": {
+      "source": "../architecture-train-ticket.svg",
+      "source_sha256": "f00da621a44c3a8915dc8ddaad55c0345ef1c3411246362c8e4d7454b19f50ef",
+      "sha256": "472178e33c70e640c4cd00dd625efd1a0b3ea7a21924d1c6483cf8b57526a977",
+      "width": 1200,
+      "height": 760
+    },
+    "deployment-architecture-25.png": {
+      "source": "../architecture-train-ticket.svg",
+      "source_sha256": "f00da621a44c3a8915dc8ddaad55c0345ef1c3411246362c8e4d7454b19f50ef",
+      "sha256": "5b39cc3468b190b79b1ace2e35b3be4faa6deb4f6f47517d6de579ccb1b3cdc3",
+      "width": 300,
+      "height": 190
+    },
+    "system-context-100.png": {
+      "source": "../system-context-payment.svg",
+      "source_sha256": "890534a9ab450f1210168d6800b316278c945e76e982bd02f07c5428e589964d",
+      "sha256": "57bc2cce52131b95ff24713cb207be89c331b5616fb33f37f4abb7b0f2145bfc",
+      "width": 1200,
+      "height": 760
+    },
+    "system-context-25.png": {
+      "source": "../system-context-payment.svg",
+      "source_sha256": "890534a9ab450f1210168d6800b316278c945e76e982bd02f07c5428e589964d",
+      "sha256": "0c2b9860b3415f338a1709519625e3690f1c34d723eaaad50f54dc352f152fda",
+      "width": 300,
+      "height": 190
+    },
+    "technical-architecture-100.png": {
+      "source": "../system-architecture.svg",
+      "source_sha256": "abf3a7fd9dce1cdd04e8c36045af14175a668b888e89b69a255685fbc6c7f964",
+      "sha256": "845a176f63fdd24b6b8cf83e314c21e5a7ff7c8b0b82d7ca8f4be0adcfd807e0",
+      "width": 1200,
+      "height": 760
+    },
+    "technical-architecture-25.png": {
+      "source": "../system-architecture.svg",
+      "source_sha256": "abf3a7fd9dce1cdd04e8c36045af14175a668b888e89b69a255685fbc6c7f964",
+      "sha256": "63343e723c7ca63095024a0d0f7c276fa151257b15018cbb8d7cdf7fe0caca3f",
+      "width": 300,
+      "height": 190
+    }
+  }
+}
