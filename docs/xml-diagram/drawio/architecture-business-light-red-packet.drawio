@@ -1,0 +1,127 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Business Architecture - Light" id="light-rp-001">
+    <mxGraphModel dx="1422" dy="762" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="抢红包系统业务架构" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=24;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="360" y="20" as="geometry" width="480" height="42" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8E1EA;arcSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="78" as="geometry" width="1120" height="142" />
+        </mxCell>
+        <mxCell id="4" value="业务场景" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontStyle=1;fontColor=#2563EB;" vertex="1" parent="1">
+          <mxGeometry x="60" y="86" as="geometry" width="120" height="28" />
+        </mxCell>
+        <mxCell id="5" value="群聊抢红包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#475569;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="72" y="128" as="geometry" width="240" height="36" />
+        </mxCell>
+        <mxCell id="6" value="个人红包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#475569;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="344" y="128" as="geometry" width="240" height="36" />
+        </mxCell>
+        <mxCell id="7" value="活动红包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#475569;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="616" y="128" as="geometry" width="240" height="36" />
+        </mxCell>
+        <mxCell id="8" value="企业红包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#475569;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="888" y="128" as="geometry" width="240" height="36" />
+        </mxCell>
+        <mxCell id="9" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;arcSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="248" as="geometry" width="1120" height="270" />
+        </mxCell>
+        <mxCell id="10" value="核心业务能力" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontStyle=1;fontColor=#2563EB;" vertex="1" parent="1">
+          <mxGeometry x="60" y="258" as="geometry" width="180" height="28" />
+        </mxCell>
+        <mxCell id="11" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8E1EA;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="72" y="320" as="geometry" width="240" height="178" />
+        </mxCell>
+        <mxCell id="12" value="红包管理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontStyle=1;fontColor=#172033;" vertex="1" parent="11">
+          <mxGeometry x="16" y="18" as="geometry" width="208" height="28" />
+        </mxCell>
+        <mxCell id="13" value="创建红包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="11">
+          <mxGeometry x="16" y="70" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="14" value="拆分红包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="11">
+          <mxGeometry x="16" y="98" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="15" value="发送红包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="11">
+          <mxGeometry x="16" y="126" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="16" value="红包模板" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="11">
+          <mxGeometry x="16" y="154" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="17" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8E1EA;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="344" y="320" as="geometry" width="240" height="178" />
+        </mxCell>
+        <mxCell id="18" value="抢红包引擎" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontStyle=1;fontColor=#172033;" vertex="1" parent="17">
+          <mxGeometry x="16" y="18" as="geometry" width="208" height="28" />
+        </mxCell>
+        <mxCell id="19" value="高并发抢红包" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="17">
+          <mxGeometry x="16" y="70" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="20" value="实时分配" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="17">
+          <mxGeometry x="16" y="98" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="21" value="排队机制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="17">
+          <mxGeometry x="16" y="126" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="22" value="防刷风控" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="17">
+          <mxGeometry x="16" y="154" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="23" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8E1EA;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="616" y="320" as="geometry" width="240" height="178" />
+        </mxCell>
+        <mxCell id="24" value="资金结算" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontStyle=1;fontColor=#172033;" vertex="1" parent="23">
+          <mxGeometry x="16" y="18" as="geometry" width="208" height="28" />
+        </mxCell>
+        <mxCell id="25" value="账户余额" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="23">
+          <mxGeometry x="16" y="70" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="26" value="提现转账" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="23">
+          <mxGeometry x="16" y="98" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="27" value="对账清算" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="23">
+          <mxGeometry x="16" y="126" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="28" value="资金冻结" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="23">
+          <mxGeometry x="16" y="154" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="29" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8E1EA;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="888" y="320" as="geometry" width="240" height="178" />
+        </mxCell>
+        <mxCell id="30" value="运营与风控" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontStyle=1;fontColor=#172033;" vertex="1" parent="29">
+          <mxGeometry x="16" y="18" as="geometry" width="208" height="28" />
+        </mxCell>
+        <mxCell id="31" value="活动配置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="29">
+          <mxGeometry x="16" y="70" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="32" value="数据统计" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="29">
+          <mxGeometry x="16" y="98" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="33" value="异常监控" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="29">
+          <mxGeometry x="16" y="126" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="34" value="反作弊" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=6;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="29">
+          <mxGeometry x="16" y="154" as="geometry" width="208" height="24" />
+        </mxCell>
+        <mxCell id="35" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8E1EA;arcSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="546" as="geometry" width="1120" height="148" />
+        </mxCell>
+        <mxCell id="36" value="业务对象与资源" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontStyle=1;fontColor=#2563EB;" vertex="1" parent="1">
+          <mxGeometry x="60" y="556" as="geometry" width="200" height="28" />
+        </mxCell>
+        <mxCell id="37" value="用户与账户" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=10;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="72" y="610" as="geometry" width="240" height="50" />
+        </mxCell>
+        <mxCell id="38" value="红包与订单" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=10;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="344" y="610" as="geometry" width="240" height="50" />
+        </mxCell>
+        <mxCell id="39" value="资金与渠道" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=10;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="616" y="610" as="geometry" width="240" height="50" />
+        </mxCell>
+        <mxCell id="40" value="规则与策略" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D8E1EA;arcSize=10;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="888" y="610" as="geometry" width="240" height="50" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

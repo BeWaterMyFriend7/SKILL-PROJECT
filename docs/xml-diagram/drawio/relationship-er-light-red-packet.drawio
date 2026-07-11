@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Light ER">
+    <mxGraphModel grid="0" page="1" pageScale="1" pageWidth="1200" pageHeight="720" background="#F6F8FB" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="抢红包系统实体关系图" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=26;fontStyle=1;fontColor=#172033;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="360" y="24" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="group-label-1" value="用户域" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#2563EB;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="80" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="group-label-2" value="红包域" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#2563EB;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="440" y="70" width="80" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="group-label-3" value="资金域" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#2563EB;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="820" y="70" width="80" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="group-label-4" value="社交域" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1;fontColor=#2563EB;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="60" y="350" width="80" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="user-header" value="用户 (User)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="280" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="user-body" value="PK user_id BIGINT&#10;nickname VARCHAR(50)&#10;avatar_url VARCHAR(255)&#10;phone VARCHAR(20)&#10;created_at DATETIME" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1;fontColor=#475569;fontSize=12;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="136" width="280" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="redpacket-header" value="红包 (RedPacket)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="440" y="100" width="300" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="redpacket-body" value="PK packet_id BIGINT&#10;FK sender_id BIGINT&#10;type ENUM&#10;total_amount DECIMAL(10,2)&#10;total_count INT&#10;remain_amount DECIMAL(10,2)&#10;remain_count INT&#10;status ENUM&#10;created_at DATETIME&#10;expire_at DATETIME" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1;fontColor=#475569;fontSize=12;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="136" width="300" height="224" as="geometry" />
+        </mxCell>
+        <mxCell id="account-header" value="账户 (Account)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="820" y="100" width="280" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="account-body" value="PK account_id BIGINT&#10;FK user_id BIGINT&#10;balance DECIMAL(12,2)&#10;frozen_amount DECIMAL(12,2)&#10;updated_at DATETIME" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1;fontColor=#475569;fontSize=12;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="820" y="136" width="280" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="group-header" value="群组 (Group)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="60" y="380" width="280" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="group-body" value="PK group_id BIGINT&#10;group_name VARCHAR(100)&#10;FK owner_id BIGINT&#10;member_count INT&#10;created_at DATETIME" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1;fontColor=#475569;fontSize=12;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="416" width="280" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="grabrecord-header" value="红包领取记录 (GrabRecord)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="440" y="420" width="300" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="grabrecord-body" value="PK record_id BIGINT&#10;FK packet_id BIGINT&#10;FK user_id BIGINT&#10;grab_amount DECIMAL(10,2)&#10;grab_time DATETIME&#10;status ENUM" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1;fontColor=#475569;fontSize=12;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="456" width="300" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="fundflow-header" value="资金流水 (FundFlow)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontColor=#FFFFFF;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" parent="1">
+          <mxGeometry x="820" y="380" width="280" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="fundflow-body" value="PK flow_id BIGINT&#10;FK account_id BIGINT&#10;type ENUM&#10;amount DECIMAL(10,2)&#10;related_id BIGINT&#10;created_at DATETIME" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1;fontColor=#475569;fontSize=12;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="820" y="416" width="280" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-1" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" edge="1" parent="1" source="user-body" target="redpacket-body">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-1-label" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#475569;fontSize=12;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" connectable="0" parent="rel-1">
+          <mxGeometry x="-0.6" relative="1" as="geometry">
+            <mxPoint x="20" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" edge="1" parent="1" source="user-body" target="grabrecord-header">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="228" />
+              <mxPoint x="380" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-3" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" edge="1" parent="1" source="redpacket-body" target="grabrecord-header">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-3-label" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#475569;fontSize=12;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" connectable="0" parent="rel-3">
+          <mxGeometry x="-0.6" relative="1" as="geometry">
+            <mxPoint x="20" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" edge="1" parent="1" source="user-header" target="account-body">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="96" />
+              <mxPoint x="780" y="96" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-5" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" edge="1" parent="1" source="account-body" target="fundflow-header">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-5-label" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#475569;fontSize=12;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" connectable="0" parent="rel-5">
+          <mxGeometry x="-0.6" relative="1" as="geometry">
+            <mxPoint x="20" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-6" value="N" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;fontSize=12;fontColor=#475569;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" edge="1" parent="1" source="user-body" target="group-header">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-6-label" value="M" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#475569;fontSize=12;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;" vertex="1" connectable="0" parent="rel-6">
+          <mxGeometry x="-0.6" relative="1" as="geometry">
+            <mxPoint x="20" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

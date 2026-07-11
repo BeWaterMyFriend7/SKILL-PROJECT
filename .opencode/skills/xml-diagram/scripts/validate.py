@@ -376,7 +376,22 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
         if len(group) < 3:
             continue
         ordered = sorted(group, key=lambda item: item.x)
-        gaps = [ordered[index + 1].x - ordered[index].right for index in range(len(ordered) - 1)]
+        gaps = []
+        for index in range(len(ordered) - 1):
+            first, second = ordered[index], ordered[index + 1]
+            intervening = any(
+                candidate.parent_id == first.parent_id
+                and candidate.cell_id not in {first.cell_id, second.cell_id}
+                and candidate.y < first.bottom
+                and candidate.bottom > first.y
+                and candidate.x >= first.right
+                and candidate.right <= second.x
+                for candidate in content_boxes
+            )
+            if not intervening:
+                gaps.append(second.x - first.right)
+        if len(gaps) < 2:
+            continue
         if min(gaps) >= 0 and max(gaps) - min(gaps) > 4:
             warnings.append("同级元素间距不均匀: " + ", ".join(box.cell_id for box in ordered))
 
