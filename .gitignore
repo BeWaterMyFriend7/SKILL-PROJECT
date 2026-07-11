@@ -8,6 +8,8 @@ output-*
 *.log
 __pycache__/
 *.pyc
+.code/*
+test/*
 
 # Editor autosave / backup temp files
 *.bkp
