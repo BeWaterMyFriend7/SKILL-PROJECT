@@ -1,6 +1,6 @@
 ---
 name: xml-diagram
-description: 生成可在 Draw.io/diagrams.net 中继续编辑的 UTF-8 `.drawio` XML 图形。用于架构图、流程图、状态图、生命周期图、时序图、ER/依赖/知识关系图、对比、决策矩阵、SWOT、时间线、路线图和总结图；不用于 Mermaid、静态 SVG、位图插画、统计图表或 UI 原型。
+description: 生成可在 Draw.io/diagrams.net 中继续编辑的 UTF-8 `.drawio` XML 图形。用于业务/应用/技术/部署/数据架构图、流程图、状态图、生命周期图、时序图、ER/依赖/知识关系图、对比、决策矩阵、SWOT、时间线、路线图和总结图；不用于 Mermaid、静态 SVG、位图插画、统计图表或 UI 原型。
 ---
 
 # Draw.io XML 图形生成器
@@ -28,6 +28,7 @@ description: 生成可在 Draw.io/diagrams.net 中继续编辑的 UTF-8 `.drawio
 | 图形类型 | 模板 |
 | --- | --- |
 | 业务、应用、技术、部署架构 | `templates/architecture.drawio` |
+| 数据架构 | `templates/architecture-data.drawio` |
 | 线性流程 | `templates/flow-linear.drawio` |
 | 分支或异常流程 | `templates/flow-branching.drawio` |
 | 状态图 | `templates/state.drawio` |
@@ -59,6 +60,10 @@ description: 生成可在 Draw.io/diagrams.net 中继续编辑的 UTF-8 `.drawio
 - 架构二级卡片标题使用独立、居中的标题条，内容标签从标题条下方开始；
 - 架构同级卡片等宽、等高、等距，末行不足时整体居中，容器高度随实际内容行数调整；
 - 架构图默认减少箭头；
+- 数据架构先根据需求对候选层执行保留、合并、删除、拆分或新增，禁止输出空层；
+- 数据架构必须复用通用架构图的一级标题、一级容器、二级分组卡片、独立标题条和内容标签规范；示例层级只是候选内容，不得据此另造视觉骨架；
+- 数据治理、安全、运维等贯穿能力使用同款架构分组区域表达，不使用窄而高的彩色长柱；
+- 数据架构只保留一条主数据流或少量必要的实时/离线分支，详细表级或字段级血缘应拆为关系图；
 - 时序图包含起点、终点、所有参与者的完整生命线、请求链和返回链。
 
 ### 4. 执行自动检查

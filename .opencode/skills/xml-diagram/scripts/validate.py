@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_TEMPLATES = {
     "architecture.drawio",
+    "architecture-data.drawio",
     "comparison.drawio",
     "decision-matrix.drawio",
     "flow-branching.drawio",
@@ -31,6 +32,7 @@ EXPECTED_TEMPLATES = {
     "timeline.drawio",
 }
 EXPECTED_EXAMPLE_MARKERS = {
+    "architecture-data-",
     "architecture-application-",
     "architecture-business-",
     "architecture-deployment-",
@@ -244,6 +246,7 @@ def edge_points(cell: ET.Element, box_by_id: dict[str, Box]) -> list[tuple[float
 def diagram_kind(path: Path, diagram_name: str) -> str:
     name = f"{path.name.lower()} {diagram_name.lower()}"
     for kind in (
+        "architecture-data",
         "flow-linear",
         "flow-branching",
         "sequence",
@@ -438,8 +441,8 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
             if dx > 80 and dy > 80:
                 errors.append(f"{edge.get('id', '<unknown>')}: 存在长斜线风险，应改用正交折线")
 
-    if kind == "architecture":
-        regions = [box for box in boxes if re.fullmatch(r"region-\d+", box.cell_id)]
+    if kind in {"architecture", "architecture-data"}:
+        regions = [box for box in boxes if re.fullmatch(r"region-(?:\d+|crosscut)", box.cell_id)]
         for region in regions:
             title = box_by_id.get(f"{region.cell_id}-title")
             if title is None or not title.value.strip():
@@ -479,6 +482,43 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
                 content_gap = min(child.y for child in content) - title.bottom
                 if content_gap < 12 or content_gap > 16:
                     warnings.append(f"{card.cell_id}: 二级标题到内容间距应为 12～16px，当前 {content_gap:g}px")
+
+    if kind == "architecture-data":
+        layers = sorted(
+            (box for box in boxes if re.fullmatch(r"region-\d+", box.cell_id)),
+            key=lambda box: box.y,
+        )
+        if len(layers) < 3:
+            errors.append("数据架构图至少需要 3 个有效主层")
+        for index, layer in enumerate(layers):
+            cards = [box for box in boxes if box.parent_id == layer.cell_id and box.cell_id.startswith("card-")]
+            if not cards:
+                errors.append(f"{layer.cell_id}: 禁止保留空层")
+            if index:
+                previous = layers[index - 1]
+                if layer.y <= previous.y:
+                    errors.append(f"{layer.cell_id}: 主层必须自上而下排列")
+                if layer.y - previous.bottom < 20:
+                    errors.append(f"{layer.cell_id}: 主层间距不足 20px")
+                if not math.isclose(layer.x, previous.x, abs_tol=2.0) or not math.isclose(layer.width, previous.width, abs_tol=2.0):
+                    errors.append(f"{layer.cell_id}: 主层必须等宽并纵向对齐")
+
+        data_flows = [edge for edge in edges if edge.get("id", "").startswith("data-flow-")]
+        if layers and not data_flows:
+            errors.append("数据架构图缺少聚合主数据流")
+        if len(data_flows) > 3:
+            warnings.append("数据架构图连线过多，应合并为聚合数据流或拆分血缘关系图")
+        for flow in data_flows:
+            source_point, target_point = point_pair(flow)
+            if source_point is None or target_point is None:
+                errors.append(f"{flow.get('id')}: 主数据流必须具有明确起止点")
+                continue
+            source_x, source_y = number(source_point.get("x")), number(source_point.get("y"))
+            target_x, target_y = number(target_point.get("x")), number(target_point.get("y"))
+            if target_y <= source_y:
+                errors.append(f"{flow.get('id')}: 主数据流必须总体向下")
+            if not math.isclose(source_x, target_x, abs_tol=1.0) and style_map(flow.get("style", "")).get("edgeStyle") != "orthogonalEdgeStyle":
+                errors.append(f"{flow.get('id')}: 主数据流必须使用正交路径")
 
     if kind in {"flow-linear", "flow-branching"}:
         if "flow-start" not in known_ids or "flow-end" not in known_ids:
@@ -687,6 +727,15 @@ def collect_files(target: Path) -> list[tuple[Path, bool]]:
     return [(path, False) for path in sorted(target.rglob("*.drawio"))]
 
 
+def validate_theme_pairs(target: Path) -> list[str]:
+    errors: list[str] = []
+    for light in target.rglob("*-light-*.drawio"):
+        dark = light.with_name(light.name.replace("-light-", "-dark-"))
+        if dark.exists() and geometry_signature(light) != geometry_signature(dark):
+            errors.append(f"浅深版本几何不一致: {light.relative_to(target)} / {dark.relative_to(target)}")
+    return errors
+
+
 def validate_catalog(target: Path) -> list[str]:
     errors: list[str] = []
     if not (target / "SKILL.md").exists():
@@ -711,10 +760,7 @@ def validate_catalog(target: Path) -> list[str]:
     lock_files = [path for path in target.rglob(".*") if path.is_file() and path.name.startswith(".$")]
     if lock_files:
         errors.append("存在临时锁文件: " + ", ".join(str(path.relative_to(target)) for path in lock_files))
-    for light in examples_dir.glob("*-light-*.drawio"):
-        dark = light.with_name(light.name.replace("-light-", "-dark-"))
-        if dark.exists() and geometry_signature(light) != geometry_signature(dark):
-            errors.append(f"浅深版本几何不一致: {light.name} / {dark.name}")
+    errors.extend(validate_theme_pairs(examples_dir))
     return errors
 
 
@@ -731,6 +777,8 @@ def main() -> int:
         return 1
 
     total_errors = validate_catalog(target)
+    if target.is_dir() and not (target / "SKILL.md").exists():
+        total_errors.extend(validate_theme_pairs(target))
     total_warnings: list[str] = []
     files = collect_files(target)
     if not files:
