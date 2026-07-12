@@ -1,3 +1,5 @@
+# mermaid-gen 示例与验证
+
 > 现在有一个抢红包系统，请使用 mermaid-gen 绘制系统框图、用户抢红包主要流程图、用户抢红包时序图、ER 图、红包活动状态图和系统开发计划。
 
 测试环境：Mermaid CLI 11.16.0，Chrome Headless。
