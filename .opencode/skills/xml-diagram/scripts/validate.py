@@ -439,11 +439,46 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
                 errors.append(f"{edge.get('id', '<unknown>')}: 存在长斜线风险，应改用正交折线")
 
     if kind == "architecture":
+        regions = [box for box in boxes if re.fullmatch(r"region-\d+", box.cell_id)]
+        for region in regions:
+            title = box_by_id.get(f"{region.cell_id}-title")
+            if title is None or not title.value.strip():
+                errors.append(f"{region.cell_id}: 架构一级区域缺少独立标题")
+                continue
+            if title.parent_id == region.cell_id:
+                errors.append(f"{title.cell_id}: 架构一级标题必须位于容器外部")
+            if title.bottom > region.y:
+                errors.append(f"{title.cell_id}: 架构一级标题必须位于对应容器上方")
+            title_gap = region.y - title.bottom
+            if title_gap < 8 or title_gap > 12:
+                warnings.append(f"{title.cell_id}: 一级标题与容器间距应为 8～12px，当前 {title_gap:g}px")
+            if abs(title.x - region.x) > 20:
+                warnings.append(f"{title.cell_id}: 一级标题应与容器内容左边缘对齐")
+
+            region_cards = [box for box in boxes if box.parent_id == region.cell_id and box.cell_id.startswith("card-")]
+            if region_cards:
+                top_gap = min(card.y for card in region_cards) - region.y
+                if top_gap > 24:
+                    warnings.append(f"{region.cell_id}: 首行卡片距容器顶部 {top_gap:g}px，存在过多留白")
+
         cards = [box for box in boxes if box.cell_id.startswith("card-") and box.value.strip() == ""]
         for card in cards:
             children = [box for box in boxes if box.parent_id == card.cell_id]
-            if not any("title" in child.cell_id and child.value.strip() for child in children):
+            titles = [child for child in children if "title" in child.cell_id and child.value.strip()]
+            if not titles:
                 errors.append(f"{card.cell_id}: 架构分组卡片缺少独立文字标题")
+                continue
+            title = titles[0]
+            title_style = style_map(title.style)
+            if title_style.get("align") != "center":
+                errors.append(f"{title.cell_id}: 架构二级标题必须水平居中")
+            if not math.isclose(title.x + title.width / 2, card.x + card.width / 2, abs_tol=2.0):
+                errors.append(f"{title.cell_id}: 架构二级标题条必须与卡片共用中心轴")
+            content = [child for child in children if child.cell_id != title.cell_id and child.value.strip()]
+            if content:
+                content_gap = min(child.y for child in content) - title.bottom
+                if content_gap < 12 or content_gap > 16:
+                    warnings.append(f"{card.cell_id}: 二级标题到内容间距应为 12～16px，当前 {content_gap:g}px")
 
     if kind in {"flow-linear", "flow-branching"}:
         if "flow-start" not in known_ids or "flow-end" not in known_ids:
