@@ -14,12 +14,14 @@
 
 ### 主要变化
 
-- 新增 `mermaid-gen`、`prototype-design-html`、`prototype-design-xml`、`code-change-plan` 和 `code-merge-helper`。
+- 新增 `code-change-plan` 和 `code-merge-helper`。
 - `svg-generator` 统一视觉风格并扩展架构、流程、时序和关系图能力。
 - `xml-diagram` 统一架构图布局并强化数据架构图支持。
+- 重构绘图和原型绘图skill生成逻辑、生图更稳，主要逻辑增加dsl自然语言描述层，校验更强，模板更规范，设计规范也更强。
 - 建立 `docs/<skill>/` 使用说明、示例产物和验证记录体系。
 - 删除已被新 Skill 替代的 `drawio-diagram`、`prototype-design`、`requirements-analysis`、`requirements-review` 和 `technical-design`。
-- 删除过期的根目录图片、旧输出目录和 `graphify` gitlink。
+- 删除过期的根目录图片、旧输出目录
+
 
 ## 2026-07-07
 
