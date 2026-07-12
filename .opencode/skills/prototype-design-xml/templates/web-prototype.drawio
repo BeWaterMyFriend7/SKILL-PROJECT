@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="26.0.9">
+  <diagram id="web-prototype-template" name="页面模板">
+    <mxGraphModel dx="1200" dy="760" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0" background="#F7F8FA">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="page-frame" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D5DD;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="1120" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="sidebar" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#172033;strokeColor=none;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="210" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="brand" value="产品名称" style="text;html=1;strokeColor=none;fillColor=#172033;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=18;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="62" y="52" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nav-current" value="当前页面" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#26344D;strokeColor=none;align=left;spacingLeft=12;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#FFFFFF;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="56" y="112" width="178" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nav-item-2" value="其他页面" style="text;html=1;strokeColor=none;fillColor=#172033;align=left;verticalAlign=middle;spacingLeft=12;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#CBD5E1;" vertex="1" parent="1">
+          <mxGeometry x="56" y="158" width="178" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="topbar-line" value="" style="shape=line;strokeColor=#D0D5DD;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="85" width="910" height="1" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="当前用户" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#667085;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="48" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="page-title" value="页面标题" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=24;fontStyle=1;fontColor=#101828;" vertex="1" parent="1">
+          <mxGeometry x="290" y="116" width="420" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="page-description" value="一句话说明当前页面的主要任务。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#667085;" vertex="1" parent="1">
+          <mxGeometry x="290" y="154" width="480" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="primary-action" value="主要操作" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#FFFFFF;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="122" width="120" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="content-panel" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D5DD;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="208" width="840" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="section-title" value="内容区域" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=17;fontStyle=1;fontColor=#101828;" vertex="1" parent="1">
+          <mxGeometry x="314" y="226" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="field-label" value="筛选条件" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=13;fontStyle=1;fontColor=#344054;" vertex="1" parent="1">
+          <mxGeometry x="314" y="278" width="120" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="field-input" value="请输入内容" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D5DD;align=left;spacingLeft=10;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#667085;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="314" y="306" width="240" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="table-head" value="&lt;table style=&quot;width:100%;table-layout:fixed;&quot;&gt;&lt;tr&gt;&lt;td style=&quot;width:45%;&quot;&gt;名称&lt;/td&gt;&lt;td style=&quot;width:25%;&quot;&gt;状态&lt;/td&gt;&lt;td style=&quot;width:30%;&quot;&gt;更新时间&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFBFC;strokeColor=#D0D5DD;align=left;spacingLeft=12;spacingRight=12;fontFamily=Microsoft YaHei;fontSize=13;fontStyle=1;fontColor=#667085;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="314" y="382" width="792" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="table-row" value="&lt;table style=&quot;width:100%;table-layout:fixed;&quot;&gt;&lt;tr&gt;&lt;td style=&quot;width:45%;&quot;&gt;示例内容&lt;/td&gt;&lt;td style=&quot;width:25%;&quot;&gt;进行中&lt;/td&gt;&lt;td style=&quot;width:30%;&quot;&gt;2026-07-12&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D5DD;align=left;spacingLeft=12;spacingRight=12;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#344054;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="314" y="422" width="792" height="44" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
