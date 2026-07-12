@@ -85,24 +85,6 @@
   </tbody>
 </table>
 
-### 示例预览
-
-#### 架构图
-
-![Draw.io 业务架构图](docs/xml-diagram/images/architecture-business-dark-red-packet.png)
-
-![Draw.io 技术架构图](docs/xml-diagram/images/architecture-technical-light-red-packet.png)
-
-![SVG 数据架构图](docs/svg-generator/images/architecture-data-dark-red-packet.png)
-
-![红包时序图](docs/xml-diagram/images/sequence-grab-light-red-packet.png)
-
-#### HTML 原型
-
-![红包运营后台概览](docs/prototype-design-html/images/red-packet-overview.png)
-
-![消息聊天原型](docs/prototype-design-html/images/chat-prototype.png)
-
 ### 项目结构
 
 ```text
@@ -138,6 +120,24 @@
 ### 项目变化
 
 项目的重要变化见 [CHANGELOG.md](CHANGELOG.md)。
+
+### 示例预览
+
+#### 架构图
+
+![Draw.io 业务架构图](docs/xml-diagram/images/architecture-business-dark-red-packet.png)
+
+![Draw.io 技术架构图](docs/xml-diagram/images/architecture-technical-light-red-packet.png)
+
+![SVG 数据架构图](docs/svg-generator/images/architecture-data-dark-red-packet.png)
+
+![红包时序图](docs/xml-diagram/images/sequence-grab-light-red-packet.png)
+
+#### HTML 原型
+
+![红包运营后台概览](docs/prototype-design-html/images/red-packet-overview.png)
+
+![消息聊天原型](docs/prototype-design-html/images/chat-prototype.png)
 
 ## 第二部分：网上优秀的 Skill 推荐
 
