@@ -21,13 +21,13 @@
     <tr>
       <td rowspan="3">绘图相关</td>
       <td><code>xml-diagram</code></td>
-      <td>需要在 Draw.io 中继续编辑的技术图</td>
+      <td>生成支持在 Draw.io 中编辑的技术图，包括架构图、流程图、时序图、时间规划图、对比图等，支持深色和浅色背景</td>
       <td>Draw.io XML</td>
       <td colspan="2"><a href="docs/xml-diagram/README.md">文档与示例</a></td>
     </tr>
     <tr>
       <td><code>svg-generator</code></td>
-      <td>高质量、可缩放的矢量架构图和技术图</td>
+      <td>高质量、可缩放的矢量架构图和技术图，包括架构图、流程图、时序图、时间规划图、对比图等，支持深色和浅色背景</td>
       <td>SVG</td>
       <td colspan="2"><a href="docs/svg-generator/README.md">文档与示例</a></td>
     </tr>
@@ -40,20 +40,20 @@
     <tr>
       <td rowspan="2">原型相关</td>
       <td><code>prototype-design-html</code></td>
-      <td>验证按钮、表单、弹窗和页面切换</td>
+      <td>可交互的html原型图</td>
       <td>自包含 HTML</td>
       <td colspan="2"><a href="docs/prototype-design-html/README.md">文档与示例</a></td>
     </tr>
     <tr>
       <td><code>prototype-design-xml</code></td>
-      <td>在 Draw.io 中评审和调整页面原型</td>
+      <td>支持drawio编辑的页面原型</td>
       <td>Draw.io XML</td>
       <td colspan="2"><a href="docs/prototype-design-xml/README.md">文档与示例</a></td>
     </tr>
     <tr>
       <td rowspan="2">代码变更相关</td>
       <td><code>code-change-plan</code></td>
-      <td>需求分析、技术方案和变更范围规划</td>
+      <td>在项目中新增需求或者需求变化时的技术方案、影响范围、实施计划</td>
       <td>Markdown 变更计划</td>
       <td><a href="docs/code-change-plan/README.md">文档</a></td>
       <td><a href="docs/code-change-plan/examples.md">报告示例</a></td>
@@ -75,25 +75,27 @@
     <tr><th>分类</th><th>需求</th><th>推荐 Skill</th></tr>
   </thead>
   <tbody>
-    <tr><td rowspan="3">绘图相关</td><td>生成可在 Draw.io 中编辑的技术图</td><td><code>xml-diagram</code></td></tr>
+    <tr><td rowspan="3">绘图相关</td><td>生成可在 Draw.io 中编辑的技术图、架构图</td><td><code>xml-diagram</code></td></tr>
     <tr><td>生成高质量 SVG 图形</td><td><code>svg-generator</code></td></tr>
     <tr><td>在 Markdown 中维护复杂流程、时序或 ER 图</td><td><code>mermaid-gen</code></td></tr>
-    <tr><td rowspan="2">原型相关</td><td>验证页面交互</td><td><code>prototype-design-html</code></td></tr>
-    <tr><td>评审可编辑的页面结构</td><td><code>prototype-design-xml</code></td></tr>
-    <tr><td rowspan="2">代码变更相关</td><td>先分析需求、方案和影响范围，不直接改代码</td><td><code>code-change-plan</code></td></tr>
+    <tr><td rowspan="2">原型相关</td><td>具备交互逻辑的html原型</td><td><code>prototype-design-html</code></td></tr>
+    <tr><td>drawio可编辑的原型页面</td><td><code>prototype-design-xml</code></td></tr>
+    <tr><td rowspan="2">代码变更相关</td><td>需求变化或者新增需求，与现有实现路径不一致，分析需求、方案和影响范围和实施计划</td><td><code>code-change-plan</code></td></tr>
     <tr><td>合并前分析冲突点和解决方案</td><td><code>code-merge-helper</code></td></tr>
   </tbody>
 </table>
 
-## 示例预览
+### 示例预览
 
 #### 架构图
 
-![SVG 业务架构图](docs/svg-generator/images/architecture-business-light-red-packet.png)
+![Draw.io 业务架构图](docs\xml-diagram\images\architecture-business-dark-red-packet.png)
 
 ![Draw.io 技术架构图](docs/xml-diagram/images/architecture-technical-light-red-packet.png)
 
 ![SVG 数据架构图](docs/svg-generator/images/architecture-data-dark-red-packet.png)
+
+![红包时序图](docs\xml-diagram\images\sequence-grab-light-red-packet.png)
 
 #### HTML 原型
 
@@ -101,7 +103,7 @@
 
 ![消息聊天原型](docs/prototype-design-html/images/chat-prototype.png)
 
-## 项目结构
+### 项目结构
 
 ```text
 .
@@ -118,7 +120,7 @@
 └── README.md                   # 项目总索引
 ```
 
-## 项目使用
+### 项目使用
 
 1. 安装并配置 OpenCode，按需安装 VS Code OpenCode 插件。
 2. 通过对话框安装 Skill：
@@ -132,6 +134,8 @@
 ```text
 请使用 XXXX skill 为我 XXX
 ```
+
+### 项目变化
 
 项目的重要变化见 [CHANGELOG.md](CHANGELOG.md)。
 
