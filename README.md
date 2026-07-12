@@ -89,13 +89,13 @@
 
 #### 架构图
 
-![Draw.io 业务架构图](docs\xml-diagram\images\architecture-business-dark-red-packet.png)
+![Draw.io 业务架构图](docs/xml-diagram/images/architecture-business-dark-red-packet.png)
 
 ![Draw.io 技术架构图](docs/xml-diagram/images/architecture-technical-light-red-packet.png)
 
 ![SVG 数据架构图](docs/svg-generator/images/architecture-data-dark-red-packet.png)
 
-![红包时序图](docs\xml-diagram\images\sequence-grab-light-red-packet.png)
+![红包时序图](docs/xml-diagram/images/sequence-grab-light-red-packet.png)
 
 #### HTML 原型
 
