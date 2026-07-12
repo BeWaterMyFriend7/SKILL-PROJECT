@@ -1,37 +1,32 @@
 ---
 name: mermaid-gen
-description: 生成 Mermaid 源码或包含 Mermaid fence 的 Markdown 图表，适用于用户明确要求 Mermaid、Markdown 图表、文档即代码或可 diff 图形。支持 flowchart、sequence、class、ER、state、gantt、gitGraph、journey、pie、mindmap、timeline、quadrant、xy、sankey 和 block。优先保证语法与文档可维护性，不用于 Draw.io 可编辑 XML 或像素级高级 SVG 视觉。
+description: 生成 Mermaid 源码或包含 Mermaid fence 的 Markdown 图表，适用于用户明确要求 Mermaid、Markdown 图表、文档即代码或可 diff 图形。支持 flowchart、sequence、class、ER、state、gantt、gitGraph、journey、pie、mindmap、timeline、quadrant、xy、sankey 和 block。优先保证类型选择、语法、自动布局和文档可维护性，不用于 Draw.io 可编辑 XML、精确坐标 SVG 或照片插画。
 ---
 
 # Mermaid 图表生成器
 
-本 skill 是完全自包含的 Mermaid 渲染模块。所有规则、参考、示例和校验脚本都位于本文件夹内，禁止读取其他 skill 的文件。
+生成 Mermaid 代码块或 Markdown 文件。用户未指定目录时保存到项目根目录 `output/mermaid/`。明确要求 SVG 时使用 `svg-generator`，明确要求 Draw.io 时使用 `xml-diagram`。
 
-## 接口
+## 必读资源
 
-输入：用户的图表语义、可选图类型、方向和主题。
-输出：`mermaid` 代码块或保存到 `output/mermaid/` 的 Markdown 文件。
-
-先读取 `assets/routing.md`。明确要求 SVG 或 Draw.io 时停止使用本 skill。
+- 分析需求和规划图形前读取 `references/mermaid-dsl.md`。
+- 遇到具体语法、特殊字符或 beta 图型时读取 `references/mermaid-syntax.md`。
+- 读取对应的 `examples/*.md`；示例用于理解图型结构，禁止只替换标题后交付。
 
 ## 强制流程
 
 ```text
-用户输入
--> 本地路由判断
--> DiagramPlan
--> 图类型选择
--> 复杂度预算
--> Mermaid 源码
--> 结构/语法/渲染校验
--> 交付
+分析需求 → 选择图型 → 自然语言 Mermaid DSL → 控制方向和复杂度
+        → 生成 Mermaid → 结构/语义校验 → CLI 真实渲染 → 简化并交付
 ```
 
-### 1. 整理 DiagramPlan
+### 1. 分析需求
 
-按 `assets/diagram-plan.schema.json` 整理类型、主题、方向、标题、节点、关系和分区。
+确定图表目的、受众、输出形式、浅色或深色主题、阅读方向、核心节点、关系、分区和输出路径。区分用户事实与合理补充，不擅自增加业务关系。
 
-### 2. 选择图类型
+Mermaid 适合自动布局和文档即代码，不承诺精确坐标。用户强调品牌化、复杂部署边界、像素级布局或高级展示时改用 SVG 或 Draw.io。
+
+### 2. 选择图型
 
 | 意图 | Mermaid 类型 |
 | --- | --- |
@@ -49,47 +44,59 @@ description: 生成 Mermaid 源码或包含 Mermaid fence 的 Markdown 图表，
 | 优先级矩阵 | `quadrantChart` |
 | 数值趋势 | `xychart-beta` |
 | 流量迁移 | `sankey-beta` |
-| 系统框图 | `block-beta` |
+| 系统模块框图 | `block-beta` |
 
-详细语法只读取本目录的 `references/mermaid-syntax.md` 和对应 `examples/*.md`。
+- 静态系统分层优先 `block-beta`；带判断和流转关系时使用 `flowchart`。
+- 调用关系复杂时使用 `sequenceDiagram`，不要在架构图中堆积箭头。
+- 数据实体关系使用 `erDiagram`，不要用普通方框模拟。
 
-### 3. 主题和复杂度
+### 3. 生成自然语言 DSL
 
-- 使用 `assets/visual-tokens.md` 中的本地颜色和字体。
-- 输出固定 `%%{init: ...}%%`，不要依赖 renderer 默认主题。
-- 默认节点不超过 20，分区不超过 8，嵌套不超过 4 层。
-- 单标签建议不超过 24 个中英文字符；超出时换行、缩写或拆图。
-- 不使用大量临时 `style`；语义样式用少量 `classDef`。
-- 用户要求精确布局、品牌化或高级展示时应改用 SVG。
+按 `references/mermaid-dsl.md` 描述图型、主题、方向、节点或参与者、关系、分区、复杂度和检查要求。DSL 不强制落盘，不使用 JSON、JSON Schema 或 DiagramPlan。
 
-### 4. 输出格式
+### 4. 控制方向和复杂度
 
-````markdown
-# 图表标题
+- 阶段流程优先 `LR`，层级和判断较多时优先 `TD`。
+- 默认节点不超过 20，分区不超过 8，嵌套不超过 3 层。
+- 单个标签尽量不超过 24 个中英文字符；过长时换行、精简或拆图。
+- 避免多条回线、跨分区长线和大量中心发散连线。
+- 自动布局出现拥挤时，优先减少关系、调整方向或拆图，不堆叠 `style` 修补。
 
-简要描述。
+### 5. 生成 Mermaid
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {}}}%%
-<Mermaid 源码>
+每个交付文件默认只包含一个主 Mermaid block。Markdown 结构使用：标题、简短说明、完整 Mermaid fence、必要说明。
+
+浅色主题：
+
+```text
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 ```
 
-## 说明
+深色主题：
 
-- 关键节点或关系说明。
-````
+```text
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#172033","primaryBorderColor":"#60A5FA","primaryTextColor":"#F8FAFC","lineColor":"#94A3B8","background":"#0F172A"}}}%%
+```
 
-### 5. 校验
+一张图只使用一个主色和不超过三种语义色。避免逐节点 `style`；需要语义样式时使用少量 `classDef`。
+
+### 6. 校验和渲染
 
 交付前运行：
 
 ```bash
-python -X utf8 scripts/validate_plan.py <diagram-plan.json>
 python -X utf8 scripts/validate_mermaid.py <Markdown 文件或目录> --require-render
 ```
 
-若 renderer 不可用，只能报告“结构通过、渲染未验证”，不得宣称完整通过。
+修改 skill 示例时运行：
 
-## 输出说明
+```bash
+python -X utf8 scripts/validate_mermaid.py examples --check-coverage --require-render
+python -m unittest discover -s tests -v
+```
 
-交付时说明图类型、主题、文件路径和结构/渲染校验状态。
+校验后查看真实渲染，检查节点拥挤、文字截断、线条交叉、回线过长和大面积不均衡。renderer 不可用时只能报告“结构通过、渲染未验证”。
+
+## 交付
+
+交付 Mermaid 代码块或最终 Markdown 路径，并说明图型、主题和结构/渲染校验状态。不交付中间 DSL 或临时渲染文件，除非用户明确要求。

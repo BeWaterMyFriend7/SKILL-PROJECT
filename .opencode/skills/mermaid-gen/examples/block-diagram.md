@@ -1,25 +1,24 @@
-# 应用模块框图
+# 应用系统框图
+
+适用于表达静态系统模块和分层关系。
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 block-beta
-    columns 3
-    frontend["前端应用"]
-    gateway["接入网关"]
-    external["外部系统"]
-    services["核心服务"]:2
-    events["事件总线"]
-    database["数据存储"]:2
-    observe["观测平台"]
-    frontend --> gateway
-    gateway --> services
-    services --> database
-    services --> events
-    events --> external
-    services --> observe
+    columns 4
+    channels["用户渠道"]:4
+    web["Web"]
+    app["App"]
+    openapi["开放接口"]
+    admin["运营后台"]
+    access["接入与网关"]:4
+    gateway["API 网关"]:2
+    auth["认证鉴权"]:2
+    services["核心业务服务"]:4
+    data["数据与中间件"]:4
 ```
 
 ## 说明
 
-- 三列网格保持结构紧凑。
-- 复杂调用链应改用时序图。
+- 使用四列网格表达纵向分层和层内横排。
+- 静态框图默认不增加箭头；复杂调用关系改用时序图。

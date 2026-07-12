@@ -1,6 +1,6 @@
 # 需求优先级象限
 
-用于按实施成本和业务价值对需求进行分类。
+适用于按两个维度比较候选项的位置和优先级。
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
@@ -20,5 +20,5 @@ quadrantChart
 
 ## 说明
 
-- 左上象限优先实施。
-- 右上象限需要拆分里程碑。
+- 坐标值位于 0-1 范围。
+- 横纵轴含义和方向必须明确。

@@ -1,5 +1,7 @@
 # 用户转化流向
 
+适用于表达来源、去向和流量数量。
+
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 sankey-beta
@@ -14,5 +16,5 @@ Submit Order,Payment Failed,50
 
 ## 说明
 
-- 数值表示“访问—浏览商品—加购—下单—支付”各阶段间的用户数量。
-- Sankey 当前解析器对非 ASCII 标签兼容性不稳定，示例用英文标签保证跨版本渲染。
+- 数值必须为非负数。
+- 当前解析器对非 ASCII 标签兼容性不稳定，示例使用英文标签。

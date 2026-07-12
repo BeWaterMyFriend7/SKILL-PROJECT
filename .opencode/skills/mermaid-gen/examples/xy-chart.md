@@ -1,5 +1,7 @@
 # 月度请求量趋势
 
+适用于比较离散类别上的柱状值和趋势值。
+
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 xychart-beta
@@ -12,5 +14,5 @@ xychart-beta
 
 ## 说明
 
-- 柱形表示实际请求量。
-- 折线表示趋势值。
+- 每个序列的数据数量与横轴类别一致。
+- 轴标题包含必要的单位。

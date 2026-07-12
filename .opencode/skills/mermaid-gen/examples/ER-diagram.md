@@ -1,48 +1,38 @@
-- example1
+# 用户订单 ER 图
+
+适用于表达数据库实体、核心字段、外键和关系基数。
+
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 erDiagram
-    学生 ||--o{ 选课 : 拥有
-    课程 ||--o{ 选课 : 包含
-    学生 {
-        int 学号 PK
-        string 姓名
-        string 班级
+    用户 ||--o{ 订单 : 创建
+    订单 ||--|{ 订单项 : 包含
+    商品 ||--o{ 订单项 : 对应
+    用户 {
+        string 用户ID PK
+        string 用户名
+        string 手机号
     }
-    课程 {
-        int 课程号 PK
-        string 课程名
-        int 学分
+    订单 {
+        string 订单ID PK
+        string 用户ID FK
+        decimal 总金额
+        string 状态
     }
-    选课 {
-        int 学号 FK
-        int 课程号 FK
-        float 成绩
+    订单项 {
+        string 订单项ID PK
+        string 订单ID FK
+        string 商品ID FK
+        int 数量
     }
-```
-
-
-- example 2
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
-erDiagram
-    读者 ||--o{ 借书记录 : 产生
-    图书 ||--o{ 借书记录 : 被借
-    图书 }o--|| 出版社 : 属于
-    读者 {
-        int 读者证号 PK
-        string 姓名
-        string 电话
-    }
-    图书 {
-        string ISBN PK
-        string 书名
-        string 作者
-    }
-    借书记录 {
-        int 记录ID PK
-        date 借出日期
-        date 应还日期
+    商品 {
+        string 商品ID PK
+        string 名称
+        decimal 售价
     }
 ```
 
+## 说明
+
+- 每条关系包含明确基数。
+- 只展示理解关系所需的核心字段。

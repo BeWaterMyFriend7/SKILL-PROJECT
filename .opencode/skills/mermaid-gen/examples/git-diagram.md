@@ -1,29 +1,22 @@
+# 功能分支开发图
+
+适用于表达 Git 主干、功能分支、提交和合并顺序。
+
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
 gitGraph
-    commit id: "初始提交"
+    commit id: "初始化"
     branch feature-login
     checkout feature-login
-    commit id: "添加登录框"
-    commit id: "实现验证逻辑"
+    commit id: "实现登录页面"
+    commit id: "接入认证服务"
     checkout main
-    commit id: "修复首页bug"
+    commit id: "修复首页问题"
     merge feature-login
-    commit id: "发布v1.0"
+    commit id: "发布版本"
 ```
 
+## 说明
 
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"fontFamily":"Inter, Noto Sans SC, Microsoft YaHei, sans-serif","primaryColor":"#FFFFFF","primaryBorderColor":"#2563EB","primaryTextColor":"#172033","lineColor":"#64748B","background":"#F6F8FB"}}}%%
-gitGraph
-    commit id: "v1.0"
-    branch hotfix-security
-    checkout hotfix-security
-    commit id: "修复安全漏洞"
-    checkout main
-    merge hotfix-security tag: "v1.0.1"
-    branch feature-new-ui
-    checkout feature-new-ui
-    commit id: "重构前端"
-    commit id: "更新样式"
-```
+- 只展示影响理解的关键提交。
+- 分支创建、切换和合并顺序保持明确。
