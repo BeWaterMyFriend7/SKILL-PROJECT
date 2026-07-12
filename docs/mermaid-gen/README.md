@@ -6,12 +6,6 @@
 - 需要自动布局、可版本管理且可由 Mermaid CLI 真实渲染的图形。
 - 精确坐标和高级视觉使用 `svg-generator`；需要 Draw.io 编辑时使用 `xml-diagram`。
 
-## 输入输出
-
-- 输入：图表目的、内容、可选图型、方向和浅色或深色主题。
-- 输出：Mermaid 代码块或自包含 Markdown 文件。
-- 未指定目录时默认输出到项目根目录 `output/mermaid`。
-
 ## 快速使用
 
 ```text

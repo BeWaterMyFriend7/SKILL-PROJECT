@@ -6,12 +6,6 @@
 - 验证按钮、表单、弹窗、查询和页面切换。
 - 需要在 Draw.io 中二次编辑时使用 `prototype-design-xml`。
 
-## 输入输出
-
-- 输入：原型目的、用户角色、页面范围、核心任务、设备类型和可选主题。
-- 输出：默认生成一个内嵌 CSS 与 JavaScript 的自包含 HTML。
-- 未指定目录时默认输出到项目根目录 `output/prototype/html`。
-
 ## 快速使用
 
 ```text
