@@ -1,36 +1,107 @@
 # SKILL-PROJECT
 
-面向 OpenCode 等 Agent 工具的本地 Skill 集合，覆盖代码变更分析、合并冲突分析、知识图谱、技术绘图和交互原型生成。
+面向 OpenCode 等 Agent 工具的本地 Skill 集合，覆盖技术绘图、交互原型、代码变更分析和合并冲突分析。
 
 ## 第一部分：项目 Skills
 
 ### Skill 索引
 
-| Skill | 适用场景 | 主要输出 | 使用说明 | 示例与验证 |
-| --- | --- | --- | --- | --- |
-| `code-change-plan` | 需求分析、技术方案和变更范围规划 | Markdown 变更计划 | [文档](docs/code-change-plan/README.md) | [示例](docs/code-change-plan/examples.md) |
-| `code-merge-helper` | Git 冲突分析、三方对比和解决方案评估 | Markdown 合并分析报告 | [文档](docs/code-merge-helper/README.md) | [示例](docs/code-merge-helper/examples.md) |
-| `graphify` | 为代码和文档建立可查询的知识图谱 | 图数据、报告和可视化 | 不维护仓库级说明文档 | — |
-| `mermaid-gen` | 复杂流程、时序、ER、状态等自动布局图 | Mermaid Markdown | [文档](docs/mermaid-gen/README.md) | [示例](docs/mermaid-gen/examples.md) |
-| `svg-generator` | 高质量、可缩放的矢量架构图和技术图 | SVG | [文档](docs/svg-generator/README.md) | [示例](docs/svg-generator/examples.md) |
-| `xml-diagram` | 需要在 Draw.io 中继续编辑的技术图 | Draw.io XML | [文档](docs/xml-diagram/README.md) | [示例](docs/xml-diagram/examples.md) |
-| `prototype-design-html` | 验证按钮、表单、弹窗和页面切换 | 自包含 HTML | [文档](docs/prototype-design-html/README.md) | [示例](docs/prototype-design-html/examples.md) |
-| `prototype-design-xml` | 在 Draw.io 中评审和调整页面原型 | Draw.io XML | [文档](docs/prototype-design-xml/README.md) | [示例](docs/prototype-design-xml/examples.md) |
+<table>
+  <thead>
+    <tr>
+      <th>分类</th>
+      <th>Skill</th>
+      <th>适用场景</th>
+      <th>主要输出</th>
+      <th>使用说明</th>
+      <th>示例与验证</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">绘图相关</td>
+      <td><code>xml-diagram</code></td>
+      <td>需要在 Draw.io 中继续编辑的技术图</td>
+      <td>Draw.io XML</td>
+      <td colspan="2"><a href="docs/xml-diagram/README.md">文档与示例</a></td>
+    </tr>
+    <tr>
+      <td><code>svg-generator</code></td>
+      <td>高质量、可缩放的矢量架构图和技术图</td>
+      <td>SVG</td>
+      <td colspan="2"><a href="docs/svg-generator/README.md">文档与示例</a></td>
+    </tr>
+    <tr>
+      <td><code>mermaid-gen</code></td>
+      <td>复杂流程、时序、ER、状态等自动布局图</td>
+      <td>Mermaid Markdown</td>
+      <td colspan="2"><a href="docs/mermaid-gen/README.md">文档与示例</a></td>
+    </tr>
+    <tr>
+      <td rowspan="2">原型相关</td>
+      <td><code>prototype-design-html</code></td>
+      <td>验证按钮、表单、弹窗和页面切换</td>
+      <td>自包含 HTML</td>
+      <td colspan="2"><a href="docs/prototype-design-html/README.md">文档与示例</a></td>
+    </tr>
+    <tr>
+      <td><code>prototype-design-xml</code></td>
+      <td>在 Draw.io 中评审和调整页面原型</td>
+      <td>Draw.io XML</td>
+      <td colspan="2"><a href="docs/prototype-design-xml/README.md">文档与示例</a></td>
+    </tr>
+    <tr>
+      <td rowspan="2">代码变更相关</td>
+      <td><code>code-change-plan</code></td>
+      <td>需求分析、技术方案和变更范围规划</td>
+      <td>Markdown 变更计划</td>
+      <td><a href="docs/code-change-plan/README.md">文档</a></td>
+      <td><a href="docs/code-change-plan/examples.md">报告示例</a></td>
+    </tr>
+    <tr>
+      <td><code>code-merge-helper</code></td>
+      <td>Git 冲突分析、三方对比和解决方案评估</td>
+      <td>Markdown 合并分析报告</td>
+      <td><a href="docs/code-merge-helper/README.md">文档</a></td>
+      <td><a href="docs/code-merge-helper/examples.md">报告示例</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ### 如何选择
 
-| 需求 | 推荐 Skill |
-| --- | --- |
-| 先分析需求、方案和影响范围，不直接改代码 | `code-change-plan` |
-| 合并前分析冲突点和解决方案 | `code-merge-helper` |
-| 理解代码或文档之间的关系 | `graphify` |
-| 在 Markdown 中维护复杂流程、时序或 ER 图 | `mermaid-gen` |
-| 生成高质量 SVG 图形 | `svg-generator` |
-| 生成可在 Draw.io 中编辑的技术图 | `xml-diagram` |
-| 验证页面交互 | `prototype-design-html` |
-| 评审可编辑的页面结构 | `prototype-design-xml` |
+<table>
+  <thead>
+    <tr><th>分类</th><th>需求</th><th>推荐 Skill</th></tr>
+  </thead>
+  <tbody>
+    <tr><td rowspan="3">绘图相关</td><td>生成可在 Draw.io 中编辑的技术图</td><td><code>xml-diagram</code></td></tr>
+    <tr><td>生成高质量 SVG 图形</td><td><code>svg-generator</code></td></tr>
+    <tr><td>在 Markdown 中维护复杂流程、时序或 ER 图</td><td><code>mermaid-gen</code></td></tr>
+    <tr><td rowspan="2">原型相关</td><td>验证页面交互</td><td><code>prototype-design-html</code></td></tr>
+    <tr><td>评审可编辑的页面结构</td><td><code>prototype-design-xml</code></td></tr>
+    <tr><td rowspan="2">代码变更相关</td><td>先分析需求、方案和影响范围，不直接改代码</td><td><code>code-change-plan</code></td></tr>
+    <tr><td>合并前分析冲突点和解决方案</td><td><code>code-merge-helper</code></td></tr>
+  </tbody>
+</table>
 
-### 项目结构
+## 示例预览
+
+#### 架构图
+
+![SVG 业务架构图](docs/svg-generator/images/architecture-business-light-red-packet.png)
+
+![Draw.io 技术架构图](docs/xml-diagram/images/architecture-technical-light-red-packet.png)
+
+![SVG 数据架构图](docs/svg-generator/images/architecture-data-dark-red-packet.png)
+
+#### HTML 原型
+
+![红包运营后台概览](docs/prototype-design-html/images/red-packet-overview.png)
+
+![消息聊天原型](docs/prototype-design-html/images/chat-prototype.png)
+
+## 项目结构
 
 ```text
 .
@@ -38,16 +109,16 @@
 │   └── skills/                 # Skill 执行规则、模板、参考资料和校验脚本
 ├── docs/
 │   └── <skill>/
-│       ├── README.md           # 使用说明
-│       ├── examples.md         # 示例文件索引和验证记录
+│       ├── README.md           # 使用说明；绘图/原型类同时包含示例输出
+│       ├── examples.md         # 报告型 Skill 的独立输出示例
 │       └── images|svg|drawio|html|markdown/
 │                               # 示例产物与预览资源（按 Skill 类型存在）
-├── CHANGELOG.md                # 项目变更记录
+├── CHANGELOG.md                # 项目阶段状态与重要变化
 ├── LICENSE
 └── README.md                   # 项目总索引
 ```
 
-### 项目使用
+## 项目使用
 
 1. 安装并配置 OpenCode，按需安装 VS Code OpenCode 插件。
 2. 通过对话框安装 Skill：
@@ -72,7 +143,6 @@
 | --- | --- | --- |
 | grill-me | 需求分析、方案设计提升工具。针对方案逐条审查，帮助把设计考虑得更全面，边界更清晰 | https://github.com/mattpocock/skills |
 | codegraph | 代码结构图谱/依赖关系分析工具。生成模块依赖关系图、调用链路图，帮助 AI 理解复杂项目架构，节省 token | https://github.com/colbymchenry/codegraph |
-| graphify | 数据/代码关系可视化图生成工具。功能类似 codegraph，额外提供文档索引功能 | https://github.com/Graphify-Labs/graphify |
 | Understand-Anything | 理解项目代码，建立图谱，进行影响分析和可视化展示 | https://github.com/Egonex-AI/Understand-Anything/blob/main/READMEs/README.zh-CN.md |
 
 ### 通用 Agent Skills 推荐
