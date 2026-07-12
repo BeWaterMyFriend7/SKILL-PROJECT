@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>消息聊天原型</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --border: #d0d5dd;
+      --primary: #2563eb;
+      --primary-soft: #eff6ff;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --radius: 6px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--text); background: var(--bg); font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+
+    .app { display: flex; height: 100vh; }
+
+    /* ===== 左侧会话列表 ===== */
+    .sidebar { width: 300px; min-width: 300px; display: flex; flex-direction: column; border-right: 1px solid var(--border); background: var(--surface); }
+    .sidebar-header { padding: 20px 16px 12px; border-bottom: 1px solid var(--border); }
+    .sidebar-header h2 { margin: 0 0 12px; font-size: 20px; }
+    .search-box { width: 100%; min-height: 36px; padding: 7px 12px; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); background: var(--bg); outline: none; }
+    .search-box:focus { border-color: var(--primary); }
+    .conversation-list { flex: 1; overflow-y: auto; }
+    .conv-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #f0f0f0; transition: background .15s; }
+    .conv-item:hover { background: #f9fafb; }
+    .conv-item.active { background: var(--primary-soft); }
+    .avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 15px; color: #fff; flex-shrink: 0; }
+    .avatar.blue { background: #3b82f6; }
+    .avatar.green { background: #22c55e; }
+    .avatar.purple { background: #a855f7; }
+    .avatar.orange { background: #f97316; }
+    .avatar.pink { background: #ec4899; }
+    .avatar.teal { background: #14b8a6; }
+    .conv-info { flex: 1; min-width: 0; }
+    .conv-name { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .conv-preview { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+    .conv-meta { text-align: right; flex-shrink: 0; }
+    .conv-time { font-size: 12px; color: var(--muted); }
+    .conv-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--danger); color: #fff; font-size: 11px; font-weight: 600; margin-top: 4px; }
+
+    /* ===== 右侧聊天区 ===== */
+    .chat { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .chat-header { height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 24px; border-bottom: 1px solid var(--border); background: var(--surface); flex-shrink: 0; }
+    .chat-header .avatar { width: 34px; height: 34px; font-size: 13px; }
+    .chat-header-info { flex: 1; }
+    .chat-header-name { font-weight: 600; font-size: 15px; }
+    .chat-header-status { font-size: 12px; color: var(--muted); }
+    .header-actions { display: flex; gap: 8px; }
+    .icon-btn { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--muted); }
+    .icon-btn:hover { background: #f3f4f6; }
+
+    /* ===== 消息区 ===== */
+    .messages { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .msg-row { display: flex; gap: 10px; max-width: 75%; }
+    .msg-row.self { align-self: flex-end; flex-direction: row-reverse; }
+    .msg-avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #fff; flex-shrink: 0; align-self: flex-end; }
+    .msg-bubble { padding: 10px 14px; border-radius: 12px; line-height: 1.5; word-break: break-word; }
+    .msg-row:not(.self) .msg-bubble { background: var(--surface); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+    .msg-row.self .msg-bubble { background: var(--primary); color: #fff; border-bottom-right-radius: 4px; }
+    .msg-time { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    .msg-row.self .msg-time { text-align: right; }
+    .msg-status { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .msg-row.self .msg-status { text-align: right; color: var(--primary); }
+    .date-divider { text-align: center; font-size: 12px; color: var(--muted); padding: 8px 0; }
+    .date-divider span { background: var(--bg); padding: 0 12px; position: relative; z-index: 1; }
+    .date-divider::before { content: ''; display: block; height: 1px; background: #e5e7eb; position: relative; top: 9px; }
+    .typing-indicator { display: flex; gap: 4px; align-items: center; padding: 8px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; border-bottom-left-radius: 4px; width: fit-content; }
+    .typing-dot { width: 6px; height: 6px; border-radius: 50%; background: #9ca3af; animation: typingBounce 1.2s ease-in-out infinite; }
+    .typing-dot:nth-child(2) { animation-delay: .2s; }
+    .typing-dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes typingBounce { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }
+
+    /* ===== 输入区 ===== */
+    .chat-input { padding: 12px 24px; border-top: 1px solid var(--border); background: var(--surface); display: flex; align-items: flex-end; gap: 12px; flex-shrink: 0; }
+    .input-wrapper { flex: 1; position: relative; }
+    .chat-input-box { width: 100%; min-height: 40px; max-height: 120px; padding: 9px 14px; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); background: var(--bg); outline: none; resize: none; line-height: 1.5; font-family: inherit; font-size: 14px; }
+    .chat-input-box:focus { border-color: var(--primary); }
+    .chat-input-box::placeholder { color: #9ca3af; }
+    .chat-tools { display: flex; gap: 4px; padding-bottom: 3px; }
+    .tool-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: none; border-radius: var(--radius); background: transparent; color: var(--muted); font-size: 18px; }
+    .tool-btn:hover { background: #f3f4f6; color: var(--text); }
+    .send-btn { min-height: 40px; padding: 0 18px; border: none; border-radius: var(--radius); background: var(--primary); color: #fff; font-weight: 600; font-size: 14px; white-space: nowrap; }
+    .send-btn:hover { background: #1d4ed8; }
+    .send-btn:disabled { background: #93c5fd; cursor: not-allowed; }
+
+    /* ===== 空状态 ===== */
+    .empty-state { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--muted); }
+    .empty-icon { font-size: 48px; margin-bottom: 12px; opacity: .5; }
+    .empty-text { font-size: 15px; }
+
+    /* ===== 已读状态 ===== */
+    .read-receipt { display: flex; gap: 4px; justify-content: flex-end; margin-top: 2px; }
+    .read-receipt span { font-size: 11px; color: var(--primary); }
+
+    /* ===== 图片消息 ===== */
+    .msg-image { max-width: 220px; border-radius: 8px; border: 1px solid var(--border); display: block; }
+    .msg-row.self .msg-image { border-color: transparent; }
+    .toast { position: fixed; right: 24px; bottom: 24px; z-index: 10; display: none; padding: 10px 14px; border: 1px solid #bfdbfe; border-radius: var(--radius); color: #1d4ed8; background: #eff6ff; }
+    .toast.show { display: block; }
+
+    @media (max-width: 768px) {
+      .sidebar { width: 72px; min-width: 72px; }
+      .sidebar-header h2, .conv-info, .conv-meta { display: none; }
+      .sidebar-header { padding: 12px 8px; }
+      .search-box { display: none; }
+      .conv-item { padding: 10px 8px; justify-content: center; }
+      .chat-input-box { min-height: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- 左侧会话列表 -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>消息</h2>
+        <input class="search-box" type="text" placeholder="搜索联系人..." id="searchInput">
+      </div>
+      <div class="conversation-list" id="convList">
+        <!-- JS 渲染 -->
+      </div>
+    </aside>
+
+    <!-- 右侧聊天区 -->
+    <main class="chat" id="chatArea">
+      <!-- JS 渲染 -->
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    // ===== 数据 =====
+    const contacts = [
+      { id: 1, name: '张三', color: 'blue', status: '在线', unread: 2 },
+      { id: 2, name: '李四', color: 'green', status: '在线', unread: 0 },
+      { id: 3, name: '王五', color: 'purple', status: '离线', unread: 5 },
+      { id: 4, name: '赵六', color: 'orange', status: '在线', unread: 0 },
+      { id: 5, name: '小红', color: 'pink', status: '忙碌', unread: 1 },
+      { id: 6, name: '陈七', color: 'teal', status: '离线', unread: 0 },
+    ];
+
+    const allMessages = {
+      1: [
+        { id: 1, sender: '张三', text: '你好，项目文档准备好了吗？', time: '09:15', self: false },
+        { id: 2, sender: '我', text: '正在整理，预计下午发你。', time: '09:18', self: true, status: '已读' },
+        { id: 3, sender: '张三', text: '好的，需要我帮忙吗？', time: '09:20', self: false },
+        { id: 4, sender: '我', text: '暂时不用，有需要再说。', time: '09:22', self: true, status: '已读' },
+        { id: 5, sender: '张三', text: '对了，下午三点的会议还记得吗？', time: '09:25', self: false },
+        { id: 6, sender: '我', text: '记得，已经准备好了议题。', time: '09:26', self: true, status: '已读' },
+        { id: 7, sender: '张三', text: '太好了，会议结束后把文档也发给大家吧', time: '09:28', self: false },
+        { id: 8, sender: '张三', text: '另外，客户那边反馈了一些新的需求变更，你看一下邮件', time: '09:28', self: false },
+      ],
+      2: [
+        { id: 1, sender: '李四', text: '周末有空吗？想约个饭', time: '昨天 18:30', self: false },
+        { id: 2, sender: '我', text: '周六下午可以，几点？', time: '昨天 18:45', self: true, status: '已读' },
+        { id: 3, sender: '李四', text: '那就周六 6 点，老地方', time: '昨天 18:50', self: false },
+        { id: 4, sender: '我', text: '没问题，不见不散', time: '昨天 19:00', self: true, status: '已读' },
+      ],
+      3: [
+        { id: 1, sender: '王五', text: '代码审查发现几个问题', time: '周一 10:00', self: false },
+        { id: 2, sender: '我', text: '哪几个文件？', time: '周一 10:05', self: true, status: '已读' },
+        { id: 3, sender: '王五', text: 'auth.js 和 utils.js，主要是空指针问题', time: '周一 10:08', self: false },
+        { id: 4, sender: '我', text: '好的，我今天修', time: '周一 10:10', self: true, status: '已读' },
+        { id: 5, sender: '王五', text: '还有一个性能问题，查询那块需要加索引', time: '周一 10:15', self: false },
+        { id: 6, sender: '王五', text: '另外测试覆盖率偏低，补一些单测', time: '周一 10:15', self: false },
+        { id: 7, sender: '王五', text: '紧急！线上有个 bug 需要马上修', time: '周一 14:30', self: false },
+        { id: 8, sender: '王五', text: '用户登录偶尔会 500 错误', time: '周一 14:31', self: false },
+        { id: 9, sender: '王五', text: '在吗？', time: '周一 14:35', self: false },
+        { id: 10, sender: '王五', text: '需要你帮忙看一下日志', time: '周一 14:40', self: false },
+      ],
+      4: [
+        { id: 1, sender: '我', text: '需求文档看了吗？', time: '周三 11:00', self: true, status: '已读' },
+        { id: 2, sender: '赵六', text: '看了，功能点比较多，需要分阶段做', time: '周三 11:15', self: false },
+        { id: 3, sender: '我', text: '同意，第一期先做核心功能', time: '周三 11:20', self: true, status: '已读' },
+      ],
+      5: [
+        { id: 1, sender: '小红', text: '设计稿更新了，你看看', time: '周四 15:00', self: false },
+        { id: 2, sender: '我', text: '收到，我看看', time: '周四 15:10', self: true, status: '已读' },
+        { id: 3, sender: '小红', text: '有几个交互细节需要确认一下', time: '周四 15:15', self: false },
+      ],
+      6: [
+        { id: 1, sender: '陈七', text: '服务器带宽需要扩容', time: '周五 09:00', self: false },
+        { id: 2, sender: '我', text: '目前流量多少？', time: '周五 09:10', self: true, status: '已读' },
+        { id: 3, sender: '陈七', text: '峰值已经到 80% 了', time: '周五 09:12', self: false },
+      ],
+    };
+
+    let activeConvId = 1;
+
+    function escapeHtml(value) {
+      const node = document.createElement('div');
+      node.textContent = value;
+      return node.innerHTML;
+    }
+
+    // ===== 渲染会话列表 =====
+    function renderConvList(filter = '') {
+      const el = document.getElementById('convList');
+      const filtered = contacts.filter(c => c.name.includes(filter));
+      el.innerHTML = filtered.map(c => {
+        const msgs = allMessages[c.id];
+        const lastMsg = msgs[msgs.length - 1];
+        const preview = lastMsg ? (lastMsg.self ? '我: ' : '') + lastMsg.text : '';
+        return `
+          <div class="conv-item ${c.id === activeConvId ? 'active' : ''}" data-id="${c.id}">
+            <div class="avatar ${c.color}">${c.name[0]}</div>
+            <div class="conv-info">
+              <div class="conv-name">${c.name}</div>
+              <div class="conv-preview">${preview.length > 24 ? preview.slice(0, 24) + '...' : preview}</div>
+            </div>
+            <div class="conv-meta">
+              <div class="conv-time">${lastMsg ? lastMsg.time : ''}</div>
+              ${c.unread > 0 ? `<div class="conv-badge">${c.unread}</div>` : ''}
+            </div>
+          </div>`;
+      }).join('');
+
+      el.querySelectorAll('.conv-item').forEach(item => {
+        item.addEventListener('click', () => {
+          activeConvId = parseInt(item.dataset.id);
+          contacts.find(c => c.id === activeConvId).unread = 0;
+          renderConvList(document.getElementById('searchInput').value);
+          renderChat();
+        });
+      });
+    }
+
+    // ===== 渲染聊天区 =====
+    function renderChat() {
+      const contact = contacts.find(c => c.id === activeConvId);
+      const msgs = allMessages[activeConvId] || [];
+      const chatArea = document.getElementById('chatArea');
+
+      chatArea.innerHTML = `
+        <div class="chat-header">
+          <div class="avatar ${contact.color}" style="width:34px;height:34px;font-size:13px">${contact.name[0]}</div>
+          <div class="chat-header-info">
+            <div class="chat-header-name">${contact.name}</div>
+            <div class="chat-header-status">${contact.status === '在线' ? '● 在线' : contact.status === '忙碌' ? '● 忙碌' : '○ 离线'}</div>
+          </div>
+          <div class="header-actions">
+            <button class="icon-btn" id="headerSearch" type="button" title="搜索">🔍</button>
+            <button class="icon-btn" id="moreButton" type="button" title="更多">⋯</button>
+          </div>
+        </div>
+        <div class="messages" id="msgContainer">
+          <div class="date-divider"><span>今天</span></div>
+          ${msgs.map(m => `
+            <div class="msg-row ${m.self ? 'self' : ''}">
+              ${!m.self ? `<div class="msg-avatar" style="background:${contact.color === 'blue' ? '#3b82f6' : contact.color === 'green' ? '#22c55e' : contact.color === 'purple' ? '#a855f7' : contact.color === 'orange' ? '#f97316' : contact.color === 'pink' ? '#ec4899' : '#14b8a6'}">${contact.name[0]}</div>` : ''}
+              <div>
+                <div class="msg-bubble">${escapeHtml(m.text)}</div>
+                <div class="msg-time">${m.time}</div>
+                ${m.self && m.status === '已读' ? '<div class="msg-status">已读</div>' : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        <div class="chat-input">
+          <div class="chat-tools">
+            <button class="tool-btn" id="emojiButton" type="button" title="表情">😊</button>
+            <button class="tool-btn" id="attachmentButton" type="button" title="附件">📎</button>
+            <button class="tool-btn" id="imageButton" type="button" title="图片">🖼</button>
+          </div>
+          <div class="input-wrapper">
+            <textarea class="chat-input-box" id="msgInput" placeholder="输入消息..." rows="1"></textarea>
+          </div>
+          <button class="send-btn" id="sendBtn">发送</button>
+        </div>
+      `;
+
+      const container = document.getElementById('msgContainer');
+      container.scrollTop = container.scrollHeight;
+
+      const input = document.getElementById('msgInput');
+      const sendBtn = document.getElementById('sendBtn');
+      const toast = document.getElementById('toast');
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        window.clearTimeout(showToast.timer);
+        showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 1600);
+      }
+
+      input.addEventListener('input', () => {
+        input.style.height = 'auto';
+        input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+      });
+
+      function sendMessage() {
+        const text = input.value.trim();
+        if (!text) return;
+        const now = new Date();
+        const time = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+        msgs.push({ id: msgs.length + 1, sender: '我', text, time, self: true, status: '已读' });
+        allMessages[activeConvId] = msgs;
+        renderChat();
+        renderConvList(document.getElementById('searchInput').value);
+      }
+
+      sendBtn.addEventListener('click', sendMessage);
+      document.getElementById('headerSearch').addEventListener('click', () => document.getElementById('searchInput').focus());
+      document.getElementById('moreButton').addEventListener('click', () => showToast('更多会话操作暂未展开'));
+      document.getElementById('emojiButton').addEventListener('click', () => {
+        input.value += '😊';
+        input.dispatchEvent(new Event('input'));
+        input.focus();
+      });
+      document.getElementById('attachmentButton').addEventListener('click', () => showToast('已打开附件选择入口'));
+      document.getElementById('imageButton').addEventListener('click', () => showToast('已打开图片选择入口'));
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+      });
+
+      input.focus();
+    }
+
+    // ===== 搜索 =====
+    document.getElementById('searchInput').addEventListener('input', e => {
+      renderConvList(e.target.value);
+    });
+
+    // ===== 初始化 =====
+    renderConvList();
+    renderChat();
+  </script>
+</body>
+</html>

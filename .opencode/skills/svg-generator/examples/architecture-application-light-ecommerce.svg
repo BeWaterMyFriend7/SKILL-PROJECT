@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif">
+<title id="title">电商系统应用架构示例</title><desc id="desc">整体纵向分层、层内横向排列的电商系统应用架构示例。</desc>
+<rect width="1200" height="720" fill="#F5F7FB"/><text x="48" y="50" font-size="26" font-weight="700" fill="#172033">电商系统应用架构</text><text x="48" y="76" font-size="12" fill="#64748B">一级层纵向排列 · 二级标题居中 · 三级卡片紧凑</text>
+<g fill="#FFFFFF" stroke="#D7E0EA">
+<rect x="48" y="100" width="1104" height="118" rx="16"/><rect x="48" y="234" width="1104" height="132" rx="16"/><rect x="48" y="382" width="1104" height="132" rx="16"/><rect x="48" y="530" width="1104" height="132" rx="16"/>
+</g>
+<g fill="#172033" font-size="16" font-weight="700" text-anchor="middle"><text x="600" y="128">用户与渠道层</text><text x="600" y="262">应用与订单中心层</text><text x="600" y="410">数据与支撑层</text><text x="600" y="558">基础设施层</text></g>
+<g fill="#EEF3F8" stroke="#D7E0EA">
+<rect id="a1" data-role="node" x="92" y="158" width="240" height="32" rx="8"/><rect id="a2" data-role="node" x="360" y="158" width="240" height="32" rx="8"/><rect id="a3" data-role="node" x="628" y="158" width="240" height="32" rx="8"/><rect id="a4" data-role="node" x="896" y="158" width="212" height="32" rx="8"/>
+<rect id="b1" data-role="node" x="92" y="300" width="240" height="32" rx="8"/><rect id="b2" data-role="node" x="360" y="300" width="240" height="32" rx="8"/><rect id="b3" data-role="node" x="628" y="300" width="240" height="32" rx="8"/><rect id="b4" data-role="node" x="896" y="300" width="212" height="32" rx="8"/>
+<rect id="c1" data-role="node" x="92" y="448" width="240" height="32" rx="8"/><rect id="c2" data-role="node" x="360" y="448" width="240" height="32" rx="8"/><rect id="c3" data-role="node" x="628" y="448" width="240" height="32" rx="8"/><rect id="c4" data-role="node" x="896" y="448" width="212" height="32" rx="8"/>
+<rect id="d1" data-role="node" x="92" y="596" width="240" height="32" rx="8"/><rect id="d2" data-role="node" x="360" y="596" width="240" height="32" rx="8"/><rect id="d3" data-role="node" x="628" y="596" width="240" height="32" rx="8"/><rect id="d4" data-role="node" x="896" y="596" width="212" height="32" rx="8"/>
+</g>
+<g fill="#475569" font-size="13" font-weight="600" text-anchor="middle"><text x="212" y="179">商城 Web</text><text x="480" y="179">移动商城</text><text x="748" y="179">商家开放平台</text><text x="1002" y="179">运营后台</text><text x="212" y="321">商品中心</text><text x="480" y="321">订单中心</text><text x="748" y="321">会员中心</text><text x="1002" y="321">营销中心</text><text x="212" y="469">业务数据库</text><text x="480" y="469">缓存与搜索</text><text x="748" y="469">消息与文件</text><text x="1002" y="469">数据服务</text><text x="212" y="617">计算资源</text><text x="480" y="617">容器平台</text><text x="748" y="617">网络与存储</text><text x="1002" y="617">监控与安全</text></g>
+</svg>

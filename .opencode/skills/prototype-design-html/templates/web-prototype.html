@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Web 原型模板</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --border: #d0d5dd;
+      --primary: #2563eb;
+      --primary-soft: #eff6ff;
+      --danger: #dc2626;
+      --radius: 6px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--text); background: var(--bg); font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    .app { min-height: 100vh; display: grid; grid-template-columns: 216px minmax(0, 1fr); }
+    .sidebar { padding: 24px 16px; color: #fff; background: #172033; }
+    .brand { margin: 0 8px 24px; font-size: 18px; font-weight: 700; }
+    .nav { display: grid; gap: 4px; }
+    .nav-item { width: 100%; padding: 10px 12px; color: #cbd5e1; text-align: left; border-radius: var(--radius); }
+    .nav-item.active { color: #fff; background: #26344d; }
+    .main { min-width: 0; }
+    .topbar { height: 56px; display: flex; align-items: center; justify-content: flex-end; padding: 0 32px; border-bottom: 1px solid var(--border); background: var(--surface); }
+    .content { max-width: 1180px; margin: 0 auto; padding: 32px; }
+    .page-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+    h1 { margin: 0 0 4px; font-size: 24px; line-height: 1.3; }
+    h2 { margin: 0 0 16px; font-size: 17px; }
+    p { margin: 0; color: var(--muted); }
+    .button { min-height: 36px; padding: 7px 14px; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); background: var(--surface); }
+    .button.primary { color: #fff; border-color: var(--primary); background: var(--primary); }
+    .panel { padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+    .field { display: grid; gap: 6px; }
+    .field label { font-weight: 600; }
+    .field input, .field select { min-height: 38px; padding: 7px 10px; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e7eaf0; }
+    th { color: var(--muted); font-size: 13px; font-weight: 600; background: #fafbfc; }
+    .badge { display: inline-flex; padding: 2px 8px; border: 1px solid #bfdbfe; border-radius: 999px; color: #1d4ed8; background: var(--primary-soft); font-size: 12px; }
+    .modal-backdrop { position: fixed; inset: 0; display: none; place-items: center; padding: 24px; background: rgba(16, 24, 40, .42); }
+    .modal-backdrop.open { display: grid; }
+    .modal { width: min(480px, 100%); padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px; }
+    @media (max-width: 900px) { .app { grid-template-columns: 176px minmax(0, 1fr); } .content { padding: 24px; } }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">产品名称</div>
+      <nav class="nav" aria-label="主导航">
+        <div class="nav-item active">页面一</div>
+        <div class="nav-item">页面二</div>
+        <div class="nav-item">页面三</div>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar">当前用户</header>
+      <div class="content">
+        <div class="page-head">
+          <div><h1>页面标题</h1><p>一句话说明当前页面的任务。</p></div>
+          <button class="button primary" id="openModal" type="button">主要操作</button>
+        </div>
+        <section class="panel">
+          <h2>内容区域</h2>
+          <table>
+            <thead><tr><th>名称</th><th>状态</th><th>更新时间</th></tr></thead>
+            <tbody><tr><td>示例内容</td><td><span class="badge">进行中</span></td><td>2026-07-12</td></tr></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <h2 id="modalTitle">操作标题</h2>
+      <p>说明操作结果或需要填写的内容。</p>
+      <div class="modal-actions"><button class="button" id="closeModal" type="button">取消</button><button class="button primary" id="confirmModal" type="button">确认</button></div>
+    </div>
+  </div>
+  <script>
+    const modal = document.querySelector('#modal');
+    document.querySelector('#openModal').addEventListener('click', () => modal.classList.add('open'));
+    document.querySelector('#closeModal').addEventListener('click', () => modal.classList.remove('open'));
+    document.querySelector('#confirmModal').addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', event => { if (event.target === modal) modal.classList.remove('open'); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.opencode/node_modules
+.opencode/package.json
+.opencode/bun.lock
+*.zip
+output-*
+.vscode
+.vscode/*
+*.log
+__pycache__/
+*.pyc
+.code/*
+test/*
+
+# Editor autosave / backup temp files
+*.bkp
+.$*.drawio*

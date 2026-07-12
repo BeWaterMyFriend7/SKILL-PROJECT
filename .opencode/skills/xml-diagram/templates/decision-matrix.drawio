@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="decision-matrix template" id="decision-matrix-template">
+    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="650" math="0" shadow="0" background="#F6F8FB">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="diagram-title" value="图形标题" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=24;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="20" width="480" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="header-1" value="内容标签" style="rounded=1;arcSize=10;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="110" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="header-2" value="内容标签" style="rounded=1;arcSize=10;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="110" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="header-3" value="内容标签" style="rounded=1;arcSize=10;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="110" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="header-4" value="内容标签" style="rounded=1;arcSize=10;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="110" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-1-1" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-1-2" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="340" y="190" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-1-3" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="600" y="190" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-1-4" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="860" y="190" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-2-1" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-2-2" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="340" y="300" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-2-3" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="600" y="300" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-2-4" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="860" y="300" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-3-1" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="410" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-3-2" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="340" y="410" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-3-3" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="600" y="410" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cell-3-4" value="内容标签" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=13;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="860" y="410" width="240" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

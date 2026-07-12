@@ -1,0 +1,196 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="抢红包系统开发路线图" id="red-packet-roadmap-light">
+    <mxGraphModel dx="1200" dy="760" grid="0" gridsize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1260" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" value="" style="rounded=0;fillColor=#F6F8FB;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1200" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="抢红包系统开发路线图" style="text;html=1;fontSize=24;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#172033;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="390" y="20" width="480" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1" value="" style="rounded=1;arcSize=14;fillColor=#FFFFFF;strokeColor=#D8E1EA;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="260" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1_title" value="第一阶段 - MVP" style="text;html=1;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#2563EB;align=left;verticalAlign=top;" vertex="1" parent="phase1">
+          <mxGeometry x="16" y="12" width="228" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1_dur" value="Month 1-2" style="text;html=1;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#475569;align=left;verticalAlign=top;" vertex="1" parent="phase1">
+          <mxGeometry x="16" y="38" width="228" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1_t1" value="基础红包创建" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase1">
+          <mxGeometry x="20" y="66" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1_t2" value="简单抢红包逻辑" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase1">
+          <mxGeometry x="20" y="96" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1_t3" value="用户账户体系" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase1">
+          <mxGeometry x="20" y="126" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1_t4" value="基础API接口" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase1">
+          <mxGeometry x="20" y="156" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2" value="" style="rounded=1;arcSize=14;fillColor=#FFFFFF;strokeColor=#D8E1EA;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="420" width="260" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2_title" value="第二阶段 - 核心能力" style="text;html=1;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#16A34A;align=left;verticalAlign=top;" vertex="1" parent="phase2">
+          <mxGeometry x="16" y="12" width="228" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2_dur" value="Month 3-4" style="text;html=1;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#475569;align=left;verticalAlign=top;" vertex="1" parent="phase2">
+          <mxGeometry x="16" y="38" width="228" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2_t1" value="高并发引擎" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase2">
+          <mxGeometry x="20" y="66" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2_t2" value="二倍均值算法" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase2">
+          <mxGeometry x="20" y="96" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2_t3" value="Redis分布式锁" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase2">
+          <mxGeometry x="20" y="126" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2_t4" value="实时消息推送" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase2">
+          <mxGeometry x="20" y="156" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3" value="" style="rounded=1;arcSize=14;fillColor=#FFFFFF;strokeColor=#D8E1EA;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="90" width="260" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3_title" value="第三阶段 - 安全加固" style="text;html=1;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#D97706;align=left;verticalAlign=top;" vertex="1" parent="phase3">
+          <mxGeometry x="16" y="12" width="228" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3_dur" value="Month 5" style="text;html=1;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#475569;align=left;verticalAlign=top;" vertex="1" parent="phase3">
+          <mxGeometry x="16" y="38" width="228" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3_t1" value="风控系统上线" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase3">
+          <mxGeometry x="20" y="66" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3_t2" value="反作弊引擎" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase3">
+          <mxGeometry x="20" y="96" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3_t3" value="设备指纹" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase3">
+          <mxGeometry x="20" y="126" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3_t4" value="行为分析" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase3">
+          <mxGeometry x="20" y="156" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase4" value="" style="rounded=1;arcSize=14;fillColor=#FFFFFF;strokeColor=#D8E1EA;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="700" y="420" width="260" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="phase4_title" value="第四阶段 - 运营优化" style="text;html=1;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#7C3AED;align=left;verticalAlign=top;" vertex="1" parent="phase4">
+          <mxGeometry x="16" y="12" width="228" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="phase4_dur" value="Month 6" style="text;html=1;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#475569;align=left;verticalAlign=top;" vertex="1" parent="phase4">
+          <mxGeometry x="16" y="38" width="228" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="phase4_t1" value="数据看板" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase4">
+          <mxGeometry x="20" y="66" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase4_t2" value="运营配置中心" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase4">
+          <mxGeometry x="20" y="96" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase4_t3" value="活动模板" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase4">
+          <mxGeometry x="20" y="126" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase4_t4" value="自动化运营" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase4">
+          <mxGeometry x="20" y="156" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase5" value="" style="rounded=1;arcSize=14;fillColor=#FFFFFF;strokeColor=#D8E1EA;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="920" y="90" width="260" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="phase5_title" value="第五阶段 - 生态扩展" style="text;html=1;fontSize=14;fontStyle=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#0891B2;align=left;verticalAlign=top;" vertex="1" parent="phase5">
+          <mxGeometry x="16" y="12" width="228" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="phase5_dur" value="Month 7+" style="text;html=1;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontColor=#475569;align=left;verticalAlign=top;" vertex="1" parent="phase5">
+          <mxGeometry x="16" y="38" width="228" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="phase5_t1" value="开放API" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase5">
+          <mxGeometry x="20" y="66" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase5_t2" value="企业红包" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase5">
+          <mxGeometry x="20" y="96" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase5_t3" value="跨境红包" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase5">
+          <mxGeometry x="20" y="126" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="phase5_t4" value="生态合作" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;fontColor=#475569;fontSize=11;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;align=center;verticalAlign=middle;" vertex="1" parent="phase5">
+          <mxGeometry x="20" y="156" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="timeline" value="" style="endArrow=none;strokeWidth=2;strokeColor=#CBD5E1;strokeCap=round;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="340" as="sourcePoint" />
+            <mxPoint x="1140" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="marker1" value="" style="ellipse;fillColor=#2563EB;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="164" y="334" width="12" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="marker2" value="" style="ellipse;fillColor=#16A34A;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="384" y="334" width="12" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="marker3" value="" style="ellipse;fillColor=#D97706;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="604" y="334" width="12" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="marker4" value="" style="ellipse;fillColor=#7C3AED;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="824" y="334" width="12" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="marker5" value="" style="ellipse;fillColor=#0891B2;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1044" y="334" width="12" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="conn1" value="" style="endArrow=none;strokeWidth=1;strokeColor=#CBD5E1;strokeDashPattern=4 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="330" as="sourcePoint" />
+            <mxPoint x="170" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn2" value="" style="endArrow=none;strokeWidth=1;strokeColor=#CBD5E1;strokeDashPattern=4 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="420" as="sourcePoint" />
+            <mxPoint x="390" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn3" value="" style="endArrow=none;strokeWidth=1;strokeColor=#CBD5E1;strokeDashPattern=4 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="330" as="sourcePoint" />
+            <mxPoint x="610" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn4" value="" style="endArrow=none;strokeWidth=1;strokeColor=#CBD5E1;strokeDashPattern=4 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="420" as="sourcePoint" />
+            <mxPoint x="830" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn5" value="" style="endArrow=none;strokeWidth=1;strokeColor=#CBD5E1;strokeDashPattern=4 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1050" y="330" as="sourcePoint" />
+            <mxPoint x="1050" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow1" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=block;endFill=1;rounded=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="176" y="340" as="sourcePoint" />
+            <mxPoint x="384" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow2" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=block;endFill=1;rounded=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="396" y="340" as="sourcePoint" />
+            <mxPoint x="604" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow3" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=block;endFill=1;rounded=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="616" y="340" as="sourcePoint" />
+            <mxPoint x="824" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow4" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=block;endFill=1;rounded=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="836" y="340" as="sourcePoint" />
+            <mxPoint x="1044" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

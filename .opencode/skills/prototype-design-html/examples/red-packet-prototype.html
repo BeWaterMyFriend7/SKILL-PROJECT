@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>红包运营后台原型</title>
+  <style>
+    :root { --bg:#f7f8fa; --surface:#fff; --text:#101828; --muted:#667085; --border:#d0d5dd; --primary:#2563eb; --primary-soft:#eff6ff; --success:#16a34a; --warning:#d97706; --danger:#dc2626; --radius:6px; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--text); background:var(--bg); font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif; }
+    button,input,select { font:inherit; }
+    button { cursor:pointer; }
+    .app { min-height:100vh; display:grid; grid-template-columns:216px minmax(0,1fr); }
+    .sidebar { padding:24px 16px; color:#fff; background:#172033; }
+    .brand { margin:0 8px 6px; font-size:18px; font-weight:700; }
+    .brand-note { margin:0 8px 24px; color:#94a3b8; font-size:12px; }
+    .nav { display:grid; gap:4px; }
+    .nav button { width:100%; padding:10px 12px; color:#cbd5e1; text-align:left; border:0; border-radius:var(--radius); background:transparent; }
+    .nav button:hover,.nav button.active { color:#fff; background:#26344d; }
+    .main { min-width:0; }
+    .topbar { height:56px; display:flex; align-items:center; justify-content:space-between; padding:0 32px; border-bottom:1px solid var(--border); background:var(--surface); }
+    .breadcrumb { color:var(--muted); font-size:13px; }
+    .user { display:flex; align-items:center; gap:8px; }
+    .avatar { width:28px; height:28px; display:grid; place-items:center; border-radius:50%; color:#fff; background:#475467; font-size:12px; }
+    .content { max-width:1180px; margin:0 auto; padding:32px; }
+    .view { display:none; }
+    .view.active { display:block; }
+    .page-head { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; margin-bottom:24px; }
+    h1 { margin:0 0 4px; font-size:24px; line-height:1.3; }
+    h2 { margin:0 0 16px; font-size:17px; }
+    h3 { margin:0 0 4px; font-size:15px; }
+    p { margin:0; color:var(--muted); }
+    .button { min-height:36px; padding:7px 14px; border:1px solid var(--border); border-radius:var(--radius); color:var(--text); background:var(--surface); }
+    .button:hover { border-color:#98a2b3; background:#fafbfc; }
+    .button.primary { color:#fff; border-color:var(--primary); background:var(--primary); }
+    .button.danger { color:#b42318; border-color:#fda29b; background:#fff; }
+    .button.link { min-height:auto; padding:0; color:var(--primary); border:0; background:transparent; }
+    .stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-bottom:20px; }
+    .stat,.panel { border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); }
+    .stat { padding:18px; }
+    .stat-label { color:var(--muted); font-size:13px; }
+    .stat-value { margin-top:8px; font-size:26px; font-weight:700; }
+    .stat-note { margin-top:4px; color:var(--success); font-size:12px; }
+    .panel { padding:20px; }
+    .panel + .panel { margin-top:16px; }
+    .panel-head { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:16px; }
+    .toolbar { display:flex; flex-wrap:wrap; align-items:end; gap:12px; margin-bottom:16px; }
+    .field { display:grid; gap:6px; }
+    .field label { font-size:13px; font-weight:600; }
+    .field input,.field select { min-height:38px; padding:7px 10px; border:1px solid var(--border); border-radius:var(--radius); color:var(--text); background:var(--surface); }
+    .field input:focus,.field select:focus { outline:2px solid #bfdbfe; border-color:var(--primary); }
+    .field .error { display:none; color:var(--danger); font-size:12px; }
+    .field.invalid input { border-color:var(--danger); }
+    .field.invalid .error { display:block; }
+    .toolbar .field { min-width:180px; }
+    .toolbar .search { min-width:260px; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { padding:12px; text-align:left; border-bottom:1px solid #e7eaf0; vertical-align:middle; }
+    th { color:var(--muted); font-size:13px; font-weight:600; background:#fafbfc; }
+    tbody tr:hover { background:#fafbfc; }
+    .badge { display:inline-flex; padding:2px 8px; border:1px solid; border-radius:999px; font-size:12px; }
+    .badge.running { color:#1d4ed8; border-color:#bfdbfe; background:var(--primary-soft); }
+    .badge.done { color:#15803d; border-color:#bbf7d0; background:#f0fdf4; }
+    .badge.draft { color:#475467; border-color:#d0d5dd; background:#f9fafb; }
+    .progress { height:8px; overflow:hidden; border-radius:999px; background:#eaecf0; }
+    .progress span { display:block; height:100%; background:var(--primary); }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .form-grid .wide { grid-column:1/-1; }
+    .form-actions { display:flex; justify-content:flex-end; gap:8px; padding-top:20px; border-top:1px solid #eaecf0; grid-column:1/-1; }
+    .hint { padding:12px 14px; border-left:3px solid var(--primary); color:#344054; background:#f8fafc; }
+    .empty { padding:48px 24px; text-align:center; border:1px dashed var(--border); border-radius:var(--radius); }
+    .empty strong { display:block; margin-bottom:6px; }
+    .modal-backdrop { position:fixed; inset:0; display:none; place-items:center; padding:24px; background:rgba(16,24,40,.42); }
+    .modal-backdrop.open { display:grid; }
+    .modal { width:min(480px,100%); padding:24px; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); }
+    .modal-actions { display:flex; justify-content:flex-end; gap:8px; margin-top:24px; }
+    .toast { position:fixed; right:24px; bottom:24px; display:none; padding:12px 16px; border:1px solid #bbf7d0; border-radius:var(--radius); color:#166534; background:#f0fdf4; }
+    .toast.show { display:block; }
+    @media (max-width:1000px) { .stats { grid-template-columns:repeat(2,1fr); } .grid-2 { grid-template-columns:1fr; } }
+    @media (max-width:760px) { .app { grid-template-columns:168px minmax(0,1fr); } .content { padding:22px; } .topbar { padding:0 22px; } .form-grid { grid-template-columns:1fr; } .form-grid .wide,.form-actions { grid-column:1; } }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">红包运营台</div>
+      <div class="brand-note">中低保真交互原型</div>
+      <nav class="nav" aria-label="主导航">
+        <button type="button" class="active" data-view="overview">概览</button>
+        <button type="button" data-view="activities">红包活动</button>
+        <button type="button" data-view="create">创建红包</button>
+        <button type="button" data-view="records">领取记录</button>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar"><span class="breadcrumb" id="breadcrumb">运营管理 / 概览</span><span class="user"><span class="avatar">管</span>运营管理员</span></header>
+      <div class="content">
+        <section class="view active" id="overview">
+          <div class="page-head"><div><h1>运营概览</h1><p>查看今日红包活动和领取情况。</p></div><button class="button primary" type="button" data-go="create">创建红包</button></div>
+          <div class="stats">
+            <div class="stat"><div class="stat-label">进行中活动</div><div class="stat-value">6</div><div class="stat-note">较昨日 +2</div></div>
+            <div class="stat"><div class="stat-label">今日领取人数</div><div class="stat-value">8,426</div><div class="stat-note">较昨日 +12.4%</div></div>
+            <div class="stat"><div class="stat-label">今日发放金额</div><div class="stat-value">¥32,680</div><div class="stat-note">预算使用 64%</div></div>
+            <div class="stat"><div class="stat-label">领取成功率</div><div class="stat-value">96.8%</div><div class="stat-note">运行正常</div></div>
+          </div>
+          <div class="grid-2">
+            <section class="panel"><div class="panel-head"><h2>重点活动</h2><button class="button link" type="button" data-go="activities">查看全部</button></div><table><thead><tr><th>活动</th><th>状态</th><th>领取进度</th></tr></thead><tbody><tr><td>七夕惊喜红包</td><td><span class="badge running">进行中</span></td><td><div class="progress"><span style="width:72%"></span></div></td></tr><tr><td>新用户见面礼</td><td><span class="badge running">进行中</span></td><td><div class="progress"><span style="width:48%"></span></div></td></tr><tr><td>周年庆福利</td><td><span class="badge draft">草稿</span></td><td>尚未开始</td></tr></tbody></table></section>
+            <section class="panel"><div class="panel-head"><h2>待处理事项</h2></div><table><thead><tr><th>事项</th><th>数量</th><th>操作</th></tr></thead><tbody><tr><td>待审核活动</td><td>2</td><td><button class="button link" type="button" data-go="activities">去处理</button></td></tr><tr><td>异常领取记录</td><td>5</td><td><button class="button link" type="button" data-go="records">查看记录</button></td></tr><tr><td>即将结束活动</td><td>1</td><td><button class="button link" type="button" data-go="activities">查看活动</button></td></tr></tbody></table></section>
+          </div>
+        </section>
+
+        <section class="view" id="activities">
+          <div class="page-head"><div><h1>红包活动</h1><p>查询、查看和管理红包活动。</p></div><button class="button primary" type="button" data-go="create">创建红包</button></div>
+          <section class="panel">
+            <div class="toolbar"><div class="field search"><label for="keyword">活动名称</label><input id="keyword" placeholder="输入活动名称"></div><div class="field"><label for="status">活动状态</label><select id="status"><option value="all">全部状态</option><option value="running">进行中</option><option value="draft">草稿</option><option value="done">已结束</option></select></div><button class="button" id="searchButton" type="button">查询</button><button class="button" id="resetButton" type="button">重置</button></div>
+          <table><thead><tr><th>活动名称</th><th>时间</th><th>总金额</th><th>领取进度</th><th>状态</th><th>操作</th></tr></thead><tbody id="activityRows"><tr data-name="七夕惊喜红包" data-status="running"><td>七夕惊喜红包</td><td>07-10 至 07-20</td><td>¥20,000</td><td>72%</td><td><span class="badge running">进行中</span></td><td><button class="button link details" type="button">查看</button></td></tr><tr data-name="新用户见面礼" data-status="running"><td>新用户见面礼</td><td>长期</td><td>¥50,000</td><td>48%</td><td><span class="badge running">进行中</span></td><td><button class="button link details" type="button">查看</button></td></tr><tr data-name="周年庆福利" data-status="draft"><td>周年庆福利</td><td>08-01 至 08-05</td><td>¥30,000</td><td>—</td><td><span class="badge draft">草稿</span></td><td><button class="button link" type="button" data-go="create">编辑</button></td></tr><tr data-name="端午签到红包" data-status="done"><td>端午签到红包</td><td>06-08 至 06-10</td><td>¥12,000</td><td>100%</td><td><span class="badge done">已结束</span></td><td><button class="button link details" type="button">查看</button></td></tr></tbody></table>
+            <div class="empty" id="activityEmpty" hidden><strong>没有匹配的活动</strong><p>请调整活动名称或状态后重新查询。</p></div>
+          </section>
+        </section>
+
+        <section class="view" id="create">
+          <div class="page-head"><div><h1>创建红包</h1><p>填写基础信息并提交审核。</p></div></div>
+          <section class="panel">
+            <h2>基础信息</h2>
+            <form class="form-grid" id="createForm" novalidate>
+              <div class="field" id="nameField"><label for="activityName">活动名称 *</label><input id="activityName" maxlength="30" placeholder="例如：七夕惊喜红包"><span class="error">请输入活动名称</span></div>
+              <div class="field"><label for="packetType">红包类型 *</label><select id="packetType"><option>随机金额</option><option>固定金额</option></select></div>
+              <div class="field" id="budgetField"><label for="budget">活动预算 *</label><input id="budget" type="number" min="1" placeholder="输入总金额"><span class="error">请输入大于 0 的预算</span></div>
+              <div class="field"><label for="count">红包数量 *</label><input id="count" type="number" min="1" value="1000"></div>
+              <div class="field"><label for="startTime">开始日期 *</label><input id="startTime" type="date" value="2026-07-15"></div>
+              <div class="field"><label for="endTime">结束日期 *</label><input id="endTime" type="date" value="2026-07-20"></div>
+              <div class="wide hint">提交后活动进入“待审核”状态，审核通过后按开始时间自动生效。</div>
+              <div class="form-actions"><button class="button" id="saveDraft" type="button">保存草稿</button><button class="button primary" type="submit">提交审核</button></div>
+            </form>
+          </section>
+        </section>
+
+        <section class="view" id="records">
+          <div class="page-head"><div><h1>领取记录</h1><p>查看用户领取结果和异常原因。</p></div><button class="button" id="exportRecords" type="button">导出当前结果</button></div>
+          <section class="panel"><div class="toolbar"><div class="field search"><label for="recordKeyword">用户或流水号</label><input id="recordKeyword" placeholder="输入用户昵称或流水号"></div><div class="field"><label for="recordStatus">领取结果</label><select id="recordStatus"><option>全部结果</option><option>领取成功</option><option>领取失败</option></select></div><button class="button" id="searchRecords" type="button">查询</button></div><table><thead><tr><th>流水号</th><th>用户</th><th>活动</th><th>金额</th><th>结果</th><th>领取时间</th></tr></thead><tbody><tr><td>RP202607120018</td><td>用户 1028</td><td>七夕惊喜红包</td><td>¥6.88</td><td><span class="badge done">领取成功</span></td><td>07-12 14:32</td></tr><tr><td>RP202607120017</td><td>用户 2031</td><td>新用户见面礼</td><td>—</td><td><span class="badge draft">资格不符</span></td><td>07-12 14:31</td></tr><tr><td>RP202607120016</td><td>用户 8362</td><td>七夕惊喜红包</td><td>¥2.16</td><td><span class="badge done">领取成功</span></td><td>07-12 14:30</td></tr></tbody></table></section>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal"><h2 id="modalTitle">七夕惊喜红包</h2><p>活动编号：RP-ACT-20260710<br>领取规则：每个用户限领 1 次<br>当前进度：已领取 7,218 / 10,000 个</p><div class="modal-actions"><button class="button" id="closeModal" type="button">关闭</button><button class="button danger" id="stopActivity" type="button">停止活动</button></div></div>
+  </div>
+  <div class="toast" id="toast" role="status">操作成功</div>
+
+  <script>
+    const names = { overview:'概览', activities:'红包活动', create:'创建红包', records:'领取记录' };
+    const navButtons = [...document.querySelectorAll('[data-view]')];
+    function showView(id) {
+      document.querySelectorAll('.view').forEach(view => view.classList.toggle('active', view.id === id));
+      navButtons.forEach(button => button.classList.toggle('active', button.dataset.view === id));
+      document.querySelector('#breadcrumb').textContent = `运营管理 / ${names[id]}`;
+      window.scrollTo(0, 0);
+    }
+    navButtons.forEach(button => button.addEventListener('click', () => showView(button.dataset.view)));
+    document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click', () => showView(button.dataset.go)));
+
+    const modal = document.querySelector('#detailModal');
+    document.querySelectorAll('.details').forEach(button => button.addEventListener('click', () => {
+      document.querySelector('#modalTitle').textContent = button.closest('tr').dataset.name;
+      modal.classList.add('open');
+    }));
+    document.querySelector('#closeModal').addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', event => { if (event.target === modal) modal.classList.remove('open'); });
+
+    function filterRows() {
+      const keyword = document.querySelector('#keyword').value.trim();
+      const status = document.querySelector('#status').value;
+      const rows = [...document.querySelectorAll('#activityRows tr')];
+      let visible = 0;
+      rows.forEach(row => {
+        const match = (!keyword || row.dataset.name.includes(keyword)) && (status === 'all' || row.dataset.status === status);
+        row.hidden = !match;
+        if (match) visible += 1;
+      });
+      document.querySelector('#activityEmpty').hidden = visible !== 0;
+      document.querySelector('#activityRows').closest('table').hidden = visible === 0;
+    }
+    document.querySelector('#searchButton').addEventListener('click', filterRows);
+    document.querySelector('#resetButton').addEventListener('click', () => { document.querySelector('#keyword').value=''; document.querySelector('#status').value='all'; filterRows(); });
+
+    const toast = document.querySelector('#toast');
+    function showToast(message) { toast.textContent=message; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 1800); }
+    document.querySelector('#stopActivity').addEventListener('click', () => { modal.classList.remove('open'); showToast('活动已停止'); });
+    document.querySelector('#searchRecords').addEventListener('click', () => showToast('已更新领取记录'));
+    document.querySelector('#exportRecords').addEventListener('click', () => showToast('已生成导出任务'));
+    document.querySelector('#saveDraft').addEventListener('click', () => showToast('草稿已保存'));
+    document.querySelector('#createForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const name = document.querySelector('#activityName');
+      const budget = document.querySelector('#budget');
+      document.querySelector('#nameField').classList.toggle('invalid', !name.value.trim());
+      document.querySelector('#budgetField').classList.toggle('invalid', Number(budget.value) <= 0);
+      if (name.value.trim() && Number(budget.value) > 0) { showToast('已提交审核'); setTimeout(() => showView('activities'), 700); }
+    });
+  </script>
+</body>
+</html>
