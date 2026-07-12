@@ -33,4 +33,9 @@
 - 需要在 Draw.io 中二次编辑时使用 `prototype-design-xml`。
 - 两种原型共享简约的页面层级、配色和组件尺寸，但验证方式不同。
 
+## 示例
+
+- [红包运营后台原型](html/red-packet-prototype.html)：覆盖概览、列表、表单、弹窗和状态反馈。
+- [消息聊天原型](html/chat-prototype.html)：覆盖联系人搜索、会话切换、消息列表和消息发送。
+
 代表性测试案例、文件索引和浏览器截图见 [test-example.md](test-example.md)。

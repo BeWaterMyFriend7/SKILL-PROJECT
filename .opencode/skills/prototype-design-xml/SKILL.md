@@ -15,7 +15,7 @@ description: 根据自然语言需求或需求文档生成简约、可在 Draw.i
 
 ## 强制流程
 
-需求分析 → 页面与任务规划 → 详细自然语言 DSL → 匹配基础模板 → 生成 Draw.io XML → 结构检查 → Draw.io 渲染检查 → 修正并交付
+需求分析 → 页面与任务规划 → 内部自然语言 DSL → 匹配基础模板 → 生成 Draw.io XML → 结构检查 → Draw.io 渲染检查 → 修正并交付
 
 ### 1. 分析需求
 
@@ -27,9 +27,9 @@ description: 根据自然语言需求或需求文档生成简约、可在 Draw.i
 
 普通页面原型不使用大量跳转箭头。需要表达页面关系时优先使用编号、文字注释或单独的页面索引；只有用户明确要求页面流程视图时才增加少量连线。
 
-### 3. 生成详细自然语言 DSL
+### 3. 在内部形成详细自然语言 DSL
 
-按 `references/prototype-dsl.md` 描述页面、画框、导航、组件、文案、状态、布局和检查要求。DSL 不强制落盘，不使用 JSON、JSON Schema 或 DiagramPlan。
+按 `references/prototype-dsl.md` 在当前上下文中描述页面、画框、导航、组件、文案、状态、布局和检查要求。DSL 仅作为内部生成依据，默认不得创建、输出或交付 `.dsl`、Markdown、JSON、JSON Schema 或 DiagramPlan 等中间文件。
 
 完成条件：只阅读 DSL 即可还原所有页面画框和主要组件，XML 阶段不再猜测布局意图。
 
@@ -67,4 +67,4 @@ description: 根据自然语言需求或需求文档生成简约、可在 Draw.i
 
 ## 输出
 
-输出到用户指定目录；未指定时输出到项目根目录 `output/prototype/drawio`。默认只交付最终 `.drawio` 路径，并说明页面范围、主题及结构和渲染验证结果。不交付 README、中间 DSL 或临时图片，除非用户明确要求。
+输出到用户指定目录；未指定时输出到项目根目录 `output/prototype/drawio`。只交付最终 `.drawio` 路径，并说明页面范围、主题及结构和渲染验证结果。默认不创建 README、DSL、Markdown、JSON 或临时图片等中间产物。
