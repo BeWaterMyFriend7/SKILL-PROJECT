@@ -1,20 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">业务架构模板</title><desc id="desc">场景层、能力层、对象资源层三段式业务架构骨架</desc>
-  <rect width="1200" height="760" fill="#F6F8FB"/>
-  <text x="600" y="44" text-anchor="middle" font-family="Inter, Noto Sans SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#172033">业务架构图</text>
-  <g font-family="Inter, Noto Sans SC, Microsoft YaHei, sans-serif">
-    <rect x="40" y="76" width="1120" height="170" rx="14" fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"/>
-    <text x="68" y="112" font-size="18" font-weight="700" fill="#2563EB">业务场景层</text>
-    <g fill="#EEF3F8" stroke="#D8E1EA"><rect x="68" y="136" width="250" height="76" rx="10"/><rect x="350" y="136" width="250" height="76" rx="10"/><rect x="632" y="136" width="250" height="76" rx="10"/><rect x="914" y="136" width="218" height="76" rx="10"/></g>
-    <g font-size="15" font-weight="600" fill="#172033" text-anchor="middle"><text x="193" y="180">场景 A</text><text x="475" y="180">场景 B</text><text x="757" y="180">场景 C</text><text x="1023" y="180">场景 D</text></g>
-    <rect x="40" y="278" width="1120" height="240" rx="14" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
-    <text x="68" y="314" font-size="18" font-weight="700" fill="#2563EB">业务能力层</text>
-    <g fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"><rect x="68" y="340" width="244" height="144" rx="10"/><rect x="340" y="340" width="244" height="144" rx="10"/><rect x="612" y="340" width="244" height="144" rx="10"/><rect x="884" y="340" width="248" height="144" rx="10"/></g>
-    <g font-size="15" font-weight="600" fill="#172033" text-anchor="middle"><text x="190" y="372">能力域 A</text><text x="462" y="372">能力域 B</text><text x="734" y="372">能力域 C</text><text x="1008" y="372">能力域 D</text></g>
-    <g font-size="12" fill="#475569" text-anchor="middle"><text x="190" y="414">能力标签 · 能力标签</text><text x="190" y="444">能力标签 · 能力标签</text><text x="462" y="414">能力标签 · 能力标签</text><text x="462" y="444">能力标签 · 能力标签</text><text x="734" y="414">能力标签 · 能力标签</text><text x="734" y="444">能力标签 · 能力标签</text><text x="1008" y="414">能力标签 · 能力标签</text><text x="1008" y="444">能力标签 · 能力标签</text></g>
-    <rect x="40" y="550" width="1120" height="150" rx="14" fill="#FFFFFF" stroke="#D8E1EA" stroke-width="1.5"/>
-    <text x="68" y="586" font-size="18" font-weight="700" fill="#2563EB">业务对象与资源层</text>
-    <g fill="#EEF3F8" stroke="#D8E1EA"><rect x="68" y="614" width="200" height="54" rx="10"/><rect x="290" y="614" width="200" height="54" rx="10"/><rect x="512" y="614" width="200" height="54" rx="10"/><rect x="734" y="614" width="200" height="54" rx="10"/><rect x="956" y="614" width="176" height="54" rx="10"/></g>
-    <g font-size="14" fill="#172033" text-anchor="middle"><text x="168" y="647">对象 A</text><text x="390" y="647">对象 B</text><text x="612" y="647">对象 C</text><text x="834" y="647">对象 D</text><text x="1044" y="647">资源</text></g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif">
+<title id="title">系统架构模板</title><desc id="desc">整体纵向分层、层内横向排列的系统或应用架构模板。</desc>
+<rect width="1200" height="720" fill="#F5F7FB"/><text x="48" y="50" font-size="26" font-weight="700" fill="#172033">系统架构图</text><text x="48" y="76" font-size="12" fill="#64748B">一级层纵向排列 · 二级标题居中 · 三级卡片紧凑</text>
+<g fill="#FFFFFF" stroke="#D7E0EA">
+<rect x="48" y="100" width="1104" height="118" rx="16"/><rect x="48" y="234" width="1104" height="132" rx="16"/><rect x="48" y="382" width="1104" height="132" rx="16"/><rect x="48" y="530" width="1104" height="132" rx="16"/>
+</g>
+<g fill="#172033" font-size="16" font-weight="700" text-anchor="middle"><text x="600" y="128">访问与入口层</text><text x="600" y="262">应用与服务层</text><text x="600" y="410">数据与支撑层</text><text x="600" y="558">基础设施层</text></g>
+<g fill="#EEF3F8" stroke="#D7E0EA">
+<rect id="a1" data-role="node" x="92" y="158" width="240" height="32" rx="8"/><rect id="a2" data-role="node" x="360" y="158" width="240" height="32" rx="8"/><rect id="a3" data-role="node" x="628" y="158" width="240" height="32" rx="8"/><rect id="a4" data-role="node" x="896" y="158" width="212" height="32" rx="8"/>
+<rect id="b1" data-role="node" x="92" y="300" width="240" height="32" rx="8"/><rect id="b2" data-role="node" x="360" y="300" width="240" height="32" rx="8"/><rect id="b3" data-role="node" x="628" y="300" width="240" height="32" rx="8"/><rect id="b4" data-role="node" x="896" y="300" width="212" height="32" rx="8"/>
+<rect id="c1" data-role="node" x="92" y="448" width="240" height="32" rx="8"/><rect id="c2" data-role="node" x="360" y="448" width="240" height="32" rx="8"/><rect id="c3" data-role="node" x="628" y="448" width="240" height="32" rx="8"/><rect id="c4" data-role="node" x="896" y="448" width="212" height="32" rx="8"/>
+<rect id="d1" data-role="node" x="92" y="596" width="240" height="32" rx="8"/><rect id="d2" data-role="node" x="360" y="596" width="240" height="32" rx="8"/><rect id="d3" data-role="node" x="628" y="596" width="240" height="32" rx="8"/><rect id="d4" data-role="node" x="896" y="596" width="212" height="32" rx="8"/>
+</g>
+<g fill="#475569" font-size="13" font-weight="600" text-anchor="middle"><text x="212" y="179">入口组件</text><text x="480" y="179">渠道组件</text><text x="748" y="179">开放接口</text><text x="1002" y="179">外部接入</text><text x="212" y="321">核心应用</text><text x="480" y="321">业务服务</text><text x="748" y="321">支撑服务</text><text x="1002" y="321">任务与事件</text><text x="212" y="469">业务数据库</text><text x="480" y="469">缓存与搜索</text><text x="748" y="469">消息与文件</text><text x="1002" y="469">数据服务</text><text x="212" y="617">计算资源</text><text x="480" y="617">容器平台</text><text x="748" y="617">网络与存储</text><text x="1002" y="617">监控与安全</text></g>
 </svg>

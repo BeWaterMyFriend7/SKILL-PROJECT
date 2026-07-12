@@ -20,7 +20,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_TEMPLATES = {
     "architecture.svg",
+    "architecture-business.svg",
     "architecture-data.svg",
+    "architecture-deployment.svg",
+    "architecture-technical.svg",
     "comparison.svg",
     "decision-matrix.svg",
     "flow-branching.svg",
@@ -275,9 +278,12 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
     boxes: list[Box] = []
     node_boxes: list[Box] = []
     edge_segments: list[tuple[str, float, float, float, float]] = []
+    edge_element_count = 0
     colors: set[str] = set()
     for element, offset_x, offset_y, inherited_size in walk(root):
         tag = local_name(element)
+        if element.get("data-role") == "edge":
+            edge_element_count += 1
         fill, stroke = attr(element, "fill"), attr(element, "stroke")
         for color in (fill, stroke):
             if color and HEX_RE.fullmatch(color):
@@ -321,6 +327,8 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
 
     if len(colors) > 20:
         warnings.append(f"颜色数量偏多: {len(colors)}")
+    if not node_boxes:
+        errors.append("缺少 data-role=node，无法执行节点重叠和布局检查")
     if node_boxes:
         for index, left in enumerate(node_boxes):
             for right in node_boxes[index + 1:]:
@@ -346,6 +354,34 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
             warnings.append(f"左右留白失衡: 左 {left:g}px / 右 {width - right:g}px")
         if abs(top - (height - bottom)) > height * 0.20:
             warnings.append(f"上下留白失衡: 上 {top:g}px / 下 {height - bottom:g}px")
+
+    name = path.name.lower()
+    if name.startswith("architecture"):
+        tall_nodes = [item for item in node_boxes if item.height > 40]
+        if tall_nodes:
+            warnings.append("架构图三级卡片过高: " + ", ".join(item.element_id or "<node>" for item in tall_nodes[:5]))
+        if edge_element_count > 4:
+            warnings.append(f"架构图连线过多: {edge_element_count}，应优先使用分层和容器表达")
+    if name.startswith("flow-"):
+        visible_text = " ".join("".join(item.itertext()) for item in all_elements if local_name(item) == "text")
+        if "开始" not in visible_text or "结束" not in visible_text:
+            errors.append("流程图必须包含明确的开始和结束")
+    if name.startswith("sequence"):
+        participant_count = sum(1 for item in all_elements if (item.get("id") or "").startswith("participant-") and item.get("data-role") == "node")
+        lifeline_count = sum(1 for item in all_elements if item.get("data-role") == "lifeline")
+        if participant_count < 2:
+            errors.append("时序图至少需要两个参与者")
+        if lifeline_count != participant_count:
+            errors.append(f"时序图生命线不完整: 参与者 {participant_count} / 生命线 {lifeline_count}")
+        visible_text = " ".join("".join(item.itertext()) for item in all_elements if local_name(item) == "text")
+        if "开始" not in visible_text or "结束" not in visible_text:
+            errors.append("时序图必须包含起点和终点语义")
+    if name.startswith("relationship-er"):
+        if edge_element_count < 1:
+            errors.append("ER 图缺少带 data-role=edge 的实体关系")
+        cardinalities = ["".join(item.itertext()).strip() for item in all_elements if local_name(item) == "text"]
+        if not any(item in {"1", "N", "M", "0..1", "1..N"} for item in cardinalities):
+            errors.append("ER 图缺少关系基数标记")
 
     if not allow_placeholders and PLACEHOLDER_RE.search(" ".join("".join(item.itertext()) for item in all_elements if local_name(item) == "text")):
         errors.append("示例或输出残留模板占位内容")

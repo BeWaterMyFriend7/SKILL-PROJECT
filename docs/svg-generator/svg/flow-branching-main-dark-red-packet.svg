@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif">
+  <title id="title">用户抢红包主要流程</title><desc id="desc">用户进入活动后完成资格、库存和幂等校验，成功或失败均进入明确终态。</desc>
+  <defs><filter id="shadow" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.07"/></filter><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#94A3B8"/></marker></defs>
+  <rect width="1200" height="700" fill="#0B1220"/><text x="48" y="58" font-size="28" font-weight="700" fill="#F8FAFC">用户抢红包主要流程</text><text x="48" y="84" font-size="13" fill="#94A3B8">判断出口在同一层展开，分支使用独立通道并在结束前汇聚</text>
+  <rect x="48" y="120" width="1104" height="510" rx="18" fill="#121C2E" stroke="#31415E" filter="url(#shadow)"/>
+  <g fill="none" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#arrow)"><line id="branch-edge-1" data-role="edge" x1="200" y1="250" x2="270" y2="250"/><line id="branch-edge-2" data-role="edge" x1="440" y1="250" x2="508" y2="250"/><path id="branch-edge-pass" data-role="edge" d="M592 250H680"/><path id="branch-edge-revise" data-role="edge" d="M550 292V440H680"/><path id="branch-edge-pass-merge" data-role="edge" d="M850 250H940V352"/><path id="branch-edge-revise-merge" data-role="edge" d="M850 440H940V368"/><line id="branch-edge-end" data-role="edge" x1="940" y1="368" x2="940" y2="480"/></g>
+  <rect id="flow-start" data-role="node" x="82" y="216" width="118" height="68" rx="34" fill="#1A2740" stroke="#60A5FA" stroke-width="2"/>
+  <rect id="branch-submit" data-role="node" x="270" y="202" width="170" height="96" rx="14" fill="#121C2E" stroke="#31415E"/>
+  <polygon id="branch-decision" data-role="node" points="550,202 608,250 550,298 492,250" fill="#3A2A18" stroke="#F59E0B" stroke-width="2"/>
+  <rect id="branch-pass" data-role="node" x="680" y="202" width="170" height="96" rx="14" fill="#153629" stroke="#4ADE80"/>
+  <rect id="branch-revise" data-role="node" x="680" y="392" width="170" height="96" rx="14" fill="#3B1D24" stroke="#F87171"/>
+  <circle cx="940" cy="360" r="9" fill="#121C2E" stroke="#94A3B8" stroke-width="2"/>
+  <rect id="flow-end" data-role="node" x="881" y="480" width="118" height="68" rx="34" fill="#153629" stroke="#4ADE80" stroke-width="2"/>
+  <g text-anchor="middle"><text x="141" y="256" font-size="14" font-weight="600" fill="#60A5FA">开始</text><text x="355" y="242" font-size="15" font-weight="600" fill="#F8FAFC">发起抢红包</text><text x="355" y="270" font-size="12" fill="#94A3B8">提交用户与活动信息</text><text x="550" y="255" font-size="13" font-weight="600" fill="#FBBF24">资格与库存通过？</text><text x="765" y="242" font-size="15" font-weight="600" fill="#4ADE80">原子扣减库存</text><text x="765" y="270" font-size="12" fill="#94A3B8">生成抢包记录</text><text x="765" y="432" font-size="15" font-weight="600" fill="#F87171">返回失败结果</text><text x="765" y="460" font-size="12" fill="#94A3B8">无资格或红包已抢完</text><text x="940" y="520" font-size="14" font-weight="600" fill="#4ADE80">结束</text></g>
+  <text x="636" y="238" font-size="12" fill="#4ADE80">是</text><text x="566" y="374" font-size="12" fill="#F87171">否</text>
+</svg>

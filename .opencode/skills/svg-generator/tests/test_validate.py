@@ -64,6 +64,25 @@ class SvgValidatorTests(unittest.TestCase):
         errors, _ = self.validate(source)
         self.assertTrue(any("节点重叠" in item for item in errors))
 
+    def test_requires_node_metadata(self):
+        source = VALID_SVG.replace(' data-role="node"', "")
+        errors, _ = self.validate(source)
+        self.assertTrue(any("data-role=node" in item for item in errors))
+
+    def test_architecture_warns_for_tall_third_level_cards(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "architecture-test.svg"
+            path.write_text(VALID_SVG.replace('height="70"', 'height="54"'), encoding="utf-8")
+            _, warnings = VALIDATOR.validate_svg(path)
+        self.assertTrue(any("三级卡片过高" in item for item in warnings))
+
+    def test_flow_requires_start_and_end(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "flow-linear-test.svg"
+            path.write_text(VALID_SVG, encoding="utf-8")
+            errors, _ = VALIDATOR.validate_svg(path)
+        self.assertTrue(any("开始和结束" in item for item in errors))
+
     def test_rejects_multiple_gradients(self):
         definitions = '<defs><linearGradient id="a"/><linearGradient id="b"/></defs>'
         source = VALID_SVG.replace('<rect width="400"', definitions + '<rect width="400"')
