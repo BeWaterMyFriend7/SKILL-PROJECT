@@ -14,3 +14,6 @@ test/*
 # Editor autosave / backup temp files
 *.bkp
 .$*.drawio*
+
+# Skill 本地配置（含用户路径，不入库）
+.opencode/skills/*/settings.json
