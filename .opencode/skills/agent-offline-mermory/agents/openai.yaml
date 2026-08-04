@@ -1,0 +1,7 @@
+interface:
+  display_name: "Agent Offline Mermory"
+  short_description: "将 AI 记录写入或查询本地 Obsidian / 纯 Markdown 记忆（需先初始化）"
+  default_prompt: "使用 $agent-offline-mermory 查询本地记忆中尚未完成的任务。"
+
+policy:
+  allow_implicit_invocation: true

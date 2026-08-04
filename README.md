@@ -1,6 +1,6 @@
 # SKILL-PROJECT
 
-面向 OpenCode 等 Agent 工具的本地 Skill 集合，覆盖技术绘图、交互原型、代码变更分析和合并冲突分析。
+面向 OpenCode 等 Agent 工具的本地 Skill 集合，覆盖技术绘图、交互原型、代码变更分析、合并冲突分析和记忆协作。
 
 ## 目录
 
@@ -82,6 +82,13 @@
       <td><a href="docs/code-merge-helper/README.md">文档</a></td>
       <td><a href="docs/code-merge-helper/examples.md">报告示例</a></td>
     </tr>
+    <tr>
+      <td>记忆协作相关</td>
+      <td><code>agent-offline-mermory</code></td>
+      <td>管理本地 Obsidian 或纯 Markdown 文件夹中的 AI 协作记忆：任务交接、待办、可复用经验，支持自动/手动经验加载</td>
+      <td>Markdown 记忆笔记与索引</td>
+      <td colspan="2"><a href="docs/agent-offline-mermory/README.md">文档与示例</a></td>
+    </tr>
   </tbody>
 </table>
 
@@ -99,6 +106,7 @@
     <tr><td>drawio可编辑的原型页面</td><td><code>prototype-design-xml</code></td></tr>
     <tr><td rowspan="2">代码变更相关</td><td>需求变化或者新增需求，与现有实现路径不一致，分析需求、方案和影响范围和实施计划</td><td><code>code-change-plan</code></td></tr>
     <tr><td>合并前分析冲突点和解决方案</td><td><code>code-merge-helper</code></td></tr>
+    <tr><td>记忆协作相关</td><td>跨会话管理任务交接、待办和可复用经验，需要自动风险提醒或手动加载</td><td><code>agent-offline-mermory</code></td></tr>
   </tbody>
 </table>
 
