@@ -9,34 +9,44 @@ description: 管理用户配置的本地 AI 协作记忆（Obsidian 仓库或纯
 
 ## 首次使用必读：初始化
 
-安装后必须初始化记忆根目录，否则查询和写入都会被拒绝，只允许执行 `status` 和 `init`。初始化时一次性确认三件事：
+安装后必须初始化记忆根目录，否则查询和写入都会被拒绝。未初始化时不得自动猜测路径，必须停下，优先用对话引导用户完成初始化。初始化只需确认三件事：
 
 - 记忆根目录绝对路径；
 - 是否要求位于 Obsidian 仓库内（`require_obsidian`，默认 `true`，可选 `false` 使用纯文件夹）；
 - 经验加载模式（`experience_mode`，默认 `auto`，可选 `manual`）。
 
-Windows：
+推荐按以下顺序选择初始化方式：
+
+### 方式一：对话初始化（首选）
+
+用户只需要说“初始化 agent-offline-mermory”或首次使用时要求查询/写入，Agent 通过对话确认上面三件事（例如：请用户提供或帮助选择记忆根目录路径，确认是否使用 Obsidian，确认经验模式），然后代为调用写入器完成初始化。全程用户不需要敲任何命令。完成后用中文向用户报告记忆根目录、模式选择和后续用法。
+
+### 方式二：命令行交互式
+
+用户运行短命令，写入器会逐步提问（路径、是否 Obsidian、经验模式），不需要一次输入所有参数：
 
 ```powershell
-& "<Skill目录>\scripts\write-memory.ps1" -Action Init -MemoryRoot "<绝对路径>" -RequireObsidian True -ExperienceMode Auto
-& "<Skill目录>\scripts\write-memory.ps1" -Action Status
+& "<Skill目录>\scripts\write-memory.ps1" -Action Init
 ```
-
-Linux 或 macOS：
 
 ```sh
-sh "<Skill目录>/scripts/write-memory.sh" --action init --memory-root "<绝对路径>" --require-obsidian true --experience-mode auto
-sh "<Skill目录>/scripts/write-memory.sh" --action status
+sh "<Skill目录>/scripts/write-memory.sh" --action init
 ```
 
-初始化会创建 `Inbox`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及各目录的 `_index.md` 索引。之后每次写入或更新记录，写入器会自动刷新 `Tasks/` 和 `Knowledge/` 的索引。未初始化时不得自动猜测路径，必须停下询问用户，由用户提供记忆根目录后再继续。
+### 方式三：编辑配置文件
+
+1. 将 `settings.example.json` 复制为 `settings.json`；
+2. 修改其中的 `memory_root`（记忆根目录绝对路径）、`require_obsidian`、`experience_mode`；
+3. 运行 `-Action Init`（短命令），写入器读取配置并确认后完成初始化。
+
+初始化会创建 `Inbox`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及各目录的 `_index.md` 索引。之后每次写入或更新记录，写入器会自动刷新 `Tasks/` 和 `Knowledge/` 的索引。
 
 ## 经验加载模式
 
 - `auto`（默认）：当前任务确实涉及 Git、代码修改、测试、构建、部署、环境配置、迁移或其他可重复技术流程时，执行一次只读检索 `Knowledge`，严格相关性过滤、最多 3 条，作为风险提醒；不写入任何内容。
 - `manual`：只有用户明确调用 `$agent-offline-mermory` 时才加载经验，其余任务完全不检索，减少不必要的调用和 token 消耗。
 - 对话内可临时覆盖：用户说“这次不用加载经验”时，单次跳过检索，不需要改配置。
-- 修改方式：重新执行 `init`，或用 `set-root` / `SetRoot` 配合 `--experience-mode` / `-ExperienceMode` 调整。
+- 修改方式：通过对话让 Agent 重新执行 `init`，或运行 `set-root` / `SetRoot` 短命令，写入器会沿用已有配置并逐步提问。
 
 ## 判断触发模式
 
@@ -74,9 +84,13 @@ $agent-offline-mermory 记录这次 Git 提交踩坑
 
 触发示例：
 
+- `初始化 agent-offline-mermory`：未初始化时触发，通过对话确认三件事并完成初始化。
 - `$agent-offline-mermory 把当前任务整理成交接文档`：明确触发，创建 `Task`。
 - `$agent-offline-mermory 有哪些待办需要处理`：明确触发，只读查询 `Tasks`。
 - `$agent-offline-mermory 查询 Git 提交经验`：明确触发，只读查询 `Knowledge`。
+- `$agent-offline-mermory 记录这次部署踩坑`：明确触发，先预检 `Knowledge`，再新建知识记录。
+- `把经验加载模式改成 manual`：明确触发，重新初始化或 `set-root` 时切换模式。
+- `这次不用加载经验`：对话内临时跳过本次经验检索，不修改配置。
 - `请修改这个函数并补测试`：`auto` 模式下如果确实开始执行代码修改，可自动回忆相关 `Knowledge`，但不能写入记忆；`manual` 模式下不检索。
 - `总结一下刚才的聊天`、`有哪些待办`：没有明确触发，不读取记忆目录。
 
@@ -148,27 +162,27 @@ sh "<Skill目录>/scripts/write-memory.sh" \
 
 ## 初始化或修改记忆目录
 
-首次使用时，如果不存在 `settings.json`，询问用户希望使用的记忆根目录，并确认 `require_obsidian` 与 `experience_mode`。
+首次使用时，如果不存在 `settings.json`，优先通过对话询问用户希望使用的记忆根目录，并确认 `require_obsidian` 与 `experience_mode`，然后代为执行。用户也可以自行运行短命令进入交互式提问：
 
 Windows：
 
 ```powershell
-& "<Skill目录>\scripts\write-memory.ps1" -Action Init -MemoryRoot "<绝对路径>" -RequireObsidian True -ExperienceMode Auto
+& "<Skill目录>\scripts\write-memory.ps1" -Action Init
 & "<Skill目录>\scripts\write-memory.ps1" -Action Status
-& "<Skill目录>\scripts\write-memory.ps1" -Action SetRoot -MemoryRoot "<新绝对路径>"
+& "<Skill目录>\scripts\write-memory.ps1" -Action SetRoot
 ```
 
 Linux 或 macOS：
 
 ```sh
-sh "<Skill目录>/scripts/write-memory.sh" --action init --memory-root "<绝对路径>" --require-obsidian true --experience-mode auto
+sh "<Skill目录>/scripts/write-memory.sh" --action init
 sh "<Skill目录>/scripts/write-memory.sh" --action status
-sh "<Skill目录>/scripts/write-memory.sh" --action set-root --memory-root "<新绝对路径>"
+sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 ```
 
 - `require_obsidian` 为 `true` 时，目标目录本身或其某一级父目录必须包含 `.obsidian`；为 `false` 时，任意 Markdown 文件夹即可，纯文件夹模式下 `[[Tasks/example]]` 链接按相对路径解析，同样可用。
 - 初始化会创建 `Inbox`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及 `Tasks/_index.md`、`Knowledge/_index.md` 索引。
-- `set-root` / `SetRoot` 默认沿用已有配置（`require_obsidian`、`experience_mode`），除非显式传入对应参数。
+- `set-root` / `SetRoot` 默认沿用已有配置（`require_obsidian`、`experience_mode`）；Agent 代为调用时可以直接传参数避免交互式阻塞。
 
 ## 判断记录类型
 

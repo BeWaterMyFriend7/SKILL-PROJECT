@@ -176,6 +176,97 @@ def initialize_memory_root(
     }
 
 
+def _enable_utf8_console() -> None:
+    if os.name != "nt":
+        return
+    try:
+        import ctypes
+
+        kernel32 = ctypes.windll.kernel32
+        kernel32.SetConsoleOutputCP(65001)
+        kernel32.SetConsoleCP(65001)
+    except Exception:
+        pass
+
+
+def _ask(prompt: str, default: str = "") -> str:
+    suffix = f"（默认：{default}）" if default else ""
+    try:
+        value = input(f"{prompt}{suffix}：").strip()
+    except EOFError:
+        return default
+    return value or default
+
+
+def _ask_bool(prompt: str, default: bool) -> bool:
+    default_text = "y" if default else "n"
+    while True:
+        value = _ask(f"{prompt}（y/n）", default_text).lower()
+        if value in {"y", "yes", "true", "是", "1"}:
+            return True
+        if value in {"n", "no", "false", "否", "0"}:
+            return False
+        print(f"无法识别“{value}”，请输入 y 或 n。")
+
+
+def _ask_choice(prompt: str, choices: Sequence[str], default: str) -> str:
+    while True:
+        value = _ask(f"{prompt}（{'/'.join(choices)}）", default).lower()
+        if value in choices:
+            return value
+        print(f"无法识别“{value}”，请输入 {' 或 '.join(choices)}。")
+
+
+def interactive_setup(action: str) -> Dict[str, Any]:
+    """init/set-root 未提供参数时，通过交互式提问完成初始化。"""
+    _enable_utf8_console()
+    title = "初始化" if action == "init" else "修改记忆根目录"
+    print(f"=== agent-offline-mermory {title} ===")
+    print(f"配置文件：{SETTINGS_PATH}")
+
+    existing = None
+    if SETTINGS_PATH.is_file():
+        try:
+            existing = get_settings()
+        except WriterError:
+            existing = None
+
+    memory_root = None
+    require_obsidian = DEFAULT_REQUIRE_OBSIDIAN
+    experience_mode = DEFAULT_EXPERIENCE_MODE
+    if existing is not None:
+        require_obsidian = bool(existing.get("require_obsidian", True))
+        experience_mode = str(existing.get("experience_mode", "auto"))
+        print(
+            "检测到已有配置：\n"
+            f"  记忆根目录：{existing.get('memory_root')}\n"
+            f"  要求 Obsidian：{'是' if require_obsidian else '否'}\n"
+            f"  经验模式：{experience_mode}"
+        )
+        if _ask_bool("是否沿用现有配置？", True):
+            memory_root = str(existing["memory_root"])
+
+    if memory_root is None:
+        memory_root = _ask("请输入记忆根目录绝对路径")
+        while not memory_root.strip():
+            print("路径不能为空。")
+            memory_root = _ask("请输入记忆根目录绝对路径")
+        require_obsidian = _ask_bool(
+            "是否要求记忆根目录位于 Obsidian 仓库内？",
+            require_obsidian,
+        )
+        experience_mode = _ask_choice(
+            "经验加载模式",
+            ("auto", "manual"),
+            experience_mode,
+        )
+
+    result = initialize_memory_root(memory_root, require_obsidian, experience_mode)
+    if action == "set-root":
+        result["action"] = "root-changed"
+    return result
+
+
 def refresh_memory_indexes(root: Path) -> None:
     now = utc_now()
     for directory_name, index_title in (("Tasks", "任务索引"), ("Knowledge", "知识索引")):
@@ -577,7 +668,12 @@ def parse_args() -> argparse.Namespace:
 def run(args: argparse.Namespace) -> Dict[str, Any]:
     if args.action in {"init", "set-root"}:
         if not args.memory_root:
-            raise WriterError(f"{args.action} 操作必须提供 --memory-root。")
+            if not sys.stdin.isatty():
+                raise WriterError(
+                    f"{args.action} 未提供 --memory-root，且当前不是交互式终端；"
+                    "请在终端中运行以进入交互式提问，或直接提供 --memory-root 参数。"
+                )
+            return interactive_setup(args.action)
         require_obsidian = DEFAULT_REQUIRE_OBSIDIAN
         experience_mode = DEFAULT_EXPERIENCE_MODE
         if args.action == "set-root" and SETTINGS_PATH.is_file():

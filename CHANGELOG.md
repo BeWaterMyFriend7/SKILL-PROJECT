@@ -16,6 +16,8 @@
 - 每次写入或更新记录后自动刷新 `Tasks/_index.md` 和 `Knowledge/_index.md`。
 - `settings.json` 不再入库，改为 `settings.example.json` 模板并加入 .gitignore，避免本地路径泄露。
 - 根 README 的 Skill 索引与如何选择新增“记忆协作相关”分类，并新增 `docs/agent-offline-mermory/README.md`。
+- 初始化支持对话引导、命令行交互式提问、编辑配置文件三种方式，无需再手敲长参数命令。
+- 使用手册改为对话式示例，覆盖初始化、查询待办、任务交接、经验记录、更新文档、切换模式等场景。
 
 
 ## 2026-07-12
