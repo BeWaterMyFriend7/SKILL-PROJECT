@@ -37,7 +37,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action init
 
 1. 将 `settings.example.json` 复制为 `settings.json`；
 2. 修改其中的 `memory_root`（记忆根目录绝对路径）、`require_obsidian`、`experience_mode`；
-3. 运行 `-Action Init`（短命令），写入器读取配置并确认后完成初始化。
+3. 在终端运行 `-Action Init`（短命令）交互确认，或让 Agent 读取配置后代为完成初始化。
 
 初始化会创建 `Inbox`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及各目录的 `_index.md` 索引。之后每次写入或更新记录，写入器会自动刷新 `Tasks/` 和 `Knowledge/` 的索引。
 
@@ -89,7 +89,7 @@ $agent-offline-mermory 记录这次 Git 提交踩坑
 - `$agent-offline-mermory 有哪些待办需要处理`：明确触发，只读查询 `Tasks`。
 - `$agent-offline-mermory 查询 Git 提交经验`：明确触发，只读查询 `Knowledge`。
 - `$agent-offline-mermory 记录这次部署踩坑`：明确触发，先预检 `Knowledge`，再新建知识记录。
-- `把经验加载模式改成 manual`：明确触发，重新初始化或 `set-root` 时切换模式。
+- `$agent-offline-mermory 把经验加载模式改成 manual`：明确触发，重新初始化或 `set-root` 时切换模式。
 - `这次不用加载经验`：对话内临时跳过本次经验检索，不修改配置。
 - `请修改这个函数并补测试`：`auto` 模式下如果确实开始执行代码修改，可自动回忆相关 `Knowledge`，但不能写入记忆；`manual` 模式下不检索。
 - `总结一下刚才的聊天`、`有哪些待办`：没有明确触发，不读取记忆目录。
