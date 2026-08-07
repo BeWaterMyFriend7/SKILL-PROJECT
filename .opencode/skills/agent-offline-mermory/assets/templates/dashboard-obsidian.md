@@ -1,6 +1,6 @@
 ---
 type: agent-memory-index
-dashboard_version: 6
+dashboard_version: 7
 created: "{{timestamp}}"
 updated: "{{timestamp}}"
 ---
@@ -33,12 +33,21 @@ const card = (icon, label, value) =>
      <div style="font-size:26px;font-weight:700;margin-top:2px;color:#2f343d">${value}</div>
    </div>`;
 
+const memoryFolder = String(dv.current()?.file?.path ?? '')
+  .split('/')
+  .slice(0, -1)
+  .join('/');
+const pagesIn = (directory) => {
+  const path = [memoryFolder, directory].filter(Boolean).join('/');
+  return dv.pages(`"${path}"`);
+};
 const pageType = (page) => String(page.type ?? '').toLowerCase();
 const isMemoryRecord = (page, directory, expectedType) => {
   const path = String(page.file?.path ?? '');
   const name = String(page.file?.name ?? '');
   const type = pageType(page);
-  return path.startsWith(`${directory}/`) &&
+  const directoryPrefix = `${[memoryFolder, directory].filter(Boolean).join('/')}/`;
+  return path.startsWith(directoryPrefix) &&
     name !== '_index' &&
     (!type || type === expectedType);
 };
@@ -46,13 +55,13 @@ const isDailySummary = (page) =>
   pageType(page) === 'agent-daily' ||
   /^\d{4}-\d{2}-\d{2}$/.test(String(page.file?.name ?? ''));
 
-const tasks = dv.pages('"Tasks"')
+const tasks = pagesIn('Tasks')
   .where(p => isMemoryRecord(p, 'Tasks', 'agent-task'))
   .array();
-const knowledge = dv.pages('"Knowledge"')
+const knowledge = pagesIn('Knowledge')
   .where(p => isMemoryRecord(p, 'Knowledge', 'agent-knowledge'))
   .array();
-const dailies = dv.pages('"Daily"')
+const dailies = pagesIn('Daily')
   .where(isDailySummary)
   .array();
 const tagSet = new Set(knowledge.flatMap(normalizeTags));
@@ -68,16 +77,25 @@ dv.paragraph(
 ```
 
 ```dataviewjs
+const memoryFolder = String(dv.current()?.file?.path ?? '')
+  .split('/')
+  .slice(0, -1)
+  .join('/');
+const pagesIn = (directory) => {
+  const path = [memoryFolder, directory].filter(Boolean).join('/');
+  return dv.pages(`"${path}"`);
+};
 const pageType = (page) => String(page.type ?? '').toLowerCase();
 const isMemoryRecord = (page, directory, expectedType) => {
   const path = String(page.file?.path ?? '');
   const name = String(page.file?.name ?? '');
   const type = pageType(page);
-  return path.startsWith(`${directory}/`) &&
+  const directoryPrefix = `${[memoryFolder, directory].filter(Boolean).join('/')}/`;
+  return path.startsWith(directoryPrefix) &&
     name !== '_index' &&
     (!type || type === expectedType);
 };
-const dailyPages = dv.pages('"Daily"')
+const dailyPages = pagesIn('Daily')
   .where(p =>
     pageType(p) === 'agent-daily' ||
     /^\d{4}-\d{2}-\d{2}$/.test(String(p.file?.name ?? ''))
@@ -186,12 +204,21 @@ const addTable = (container, headers, rows) => {
   container.appendChild(table);
 };
 
+const memoryFolder = String(dv.current()?.file?.path ?? '')
+  .split('/')
+  .slice(0, -1)
+  .join('/');
+const pagesIn = (directory) => {
+  const path = [memoryFolder, directory].filter(Boolean).join('/');
+  return dv.pages(`"${path}"`);
+};
 const pageType = (page) => String(page.type ?? '').toLowerCase();
 const isMemoryRecord = (page, directory, expectedType) => {
   const path = String(page.file?.path ?? '');
   const name = String(page.file?.name ?? '');
   const type = pageType(page);
-  return path.startsWith(`${directory}/`) &&
+  const directoryPrefix = `${[memoryFolder, directory].filter(Boolean).join('/')}/`;
+  return path.startsWith(directoryPrefix) &&
     name !== '_index' &&
     (!type || type === expectedType);
 };
@@ -199,19 +226,19 @@ const isDailySummary = (page) =>
   pageType(page) === 'agent-daily' ||
   /^\d{4}-\d{2}-\d{2}$/.test(String(page.file?.name ?? ''));
 
-const taskPages = dv.pages('"Tasks"')
+const taskPages = pagesIn('Tasks')
   .where(p => isMemoryRecord(p, 'Tasks', 'agent-task'))
   .sort(p => p.file.mtime, 'desc')
   .array()
   .slice(0, 15);
 
-const allKnowledgePages = dv.pages('"Knowledge"')
+const allKnowledgePages = pagesIn('Knowledge')
   .where(p => isMemoryRecord(p, 'Knowledge', 'agent-knowledge'))
   .sort(p => p.file.mtime, 'desc')
   .array();
 const knowledgePages = allKnowledgePages.slice(0, 8);
 
-const dailyPages = dv.pages('"Daily"')
+const dailyPages = pagesIn('Daily')
   .where(isDailySummary)
   .sort(p => p.file.name, 'desc')
   .array()
