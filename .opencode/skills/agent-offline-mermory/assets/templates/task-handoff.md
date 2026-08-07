@@ -1,6 +1,7 @@
 ---
 type: agent-task
 status: active
+tags: []
 created: "{{timestamp}}"
 updated: "{{timestamp}}"
 ---

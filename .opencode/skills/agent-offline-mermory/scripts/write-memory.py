@@ -40,6 +40,7 @@ WINDOWS_RESERVED_NAMES = {
 DEFAULT_REQUIRE_OBSIDIAN = True
 DEFAULT_EXPERIENCE_MODE = "auto"
 INDEX_FILENAME = "_index.md"
+DASHBOARD_VERSION = 2
 
 
 class WriterError(RuntimeError):
@@ -83,6 +84,19 @@ def find_obsidian_vault(start_path: Path) -> Path:
             break
         cursor = cursor.parent
     raise WriterError(f"目标路径及其父目录中未找到 .obsidian：{start_path}")
+
+
+def dashboard_version(path: Path) -> int:
+    """读取入口文档的 dashboard_version，缺失时视为旧版（1）。"""
+    try:
+        content = path.read_text(encoding="utf-8-sig")
+    except OSError:
+        return 0
+    raw = parse_frontmatter(content).get("dashboard_version", "1")
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        return 1
 
 
 def write_utf8(path: Path, value: str) -> None:
@@ -157,9 +171,16 @@ def initialize_memory_root(
 
     root_name = root.name or "AgentMemory"
     dashboard_path = root / f"{root_name}.md"
-    if not dashboard_path.exists():
+    dashboard_template = (
+        "dashboard-obsidian.md" if require_obsidian else "dashboard.md"
+    )
+    expected_version = DASHBOARD_VERSION if require_obsidian else 1
+    if (
+        not dashboard_path.exists()
+        or dashboard_version(dashboard_path) < expected_version
+    ):
         dashboard = render_template(
-            "dashboard.md",
+            dashboard_template,
             {"timestamp": iso_timestamp(utc_now()), "name": root_name},
         )
         write_utf8(dashboard_path, dashboard.rstrip() + "\n")

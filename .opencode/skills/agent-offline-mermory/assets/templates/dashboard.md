@@ -1,5 +1,6 @@
 ---
 type: agent-memory-index
+dashboard_version: 1
 created: "{{timestamp}}"
 ---
 

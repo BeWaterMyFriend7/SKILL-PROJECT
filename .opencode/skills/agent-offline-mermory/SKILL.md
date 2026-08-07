@@ -196,6 +196,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 
 - `require_obsidian` 为 `true` 时，目标目录本身或其某一级父目录必须包含 `.obsidian`；为 `false` 时，任意 Markdown 文件夹即可，纯文件夹模式下 `[[Tasks/example]]` 链接按相对路径解析，同样可用。
 - 初始化会创建 `Daily`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及 `Tasks/_index.md`、`Knowledge/_index.md` 索引。
+- Obsidian 模式下入口文档是带 Dataview 统计的仪表盘（需启用社区插件 Dataview）；重新执行 `init` 或 `set-root` 时，检测到旧版入口会自动升级，不影响已有记录。
 - `set-root` / `SetRoot` 默认沿用已有配置（`require_obsidian`、`experience_mode`）；Agent 代为调用时可以直接传参数避免交互式阻塞。
 
 ## 判断记录类型
@@ -268,6 +269,8 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 ## 注意事项
 - 纯文本模式不校验 Obsidian，链接按相对路径解析
 ```
+
+可在知识或任务文档的 frontmatter 中添加 `tags: [git, 部署]`，仪表盘会按标签统计。
 
 每日总结文档按日期一个文件，优先使用：
 

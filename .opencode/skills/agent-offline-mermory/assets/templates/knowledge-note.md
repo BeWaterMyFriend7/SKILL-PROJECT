@@ -1,5 +1,6 @@
 ---
 type: agent-knowledge
+tags: []
 created: "{{timestamp}}"
 updated: "{{timestamp}}"
 ---
