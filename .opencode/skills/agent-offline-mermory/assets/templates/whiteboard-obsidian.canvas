@@ -1,0 +1,79 @@
+{
+  "nodes": [
+    {
+      "id": "title",
+      "type": "text",
+      "text": "# {{name}} 白板\n\n用白板快速进入任务、知识和每日总结。数据统计仍由仪表盘负责。",
+      "x": -520,
+      "y": -360,
+      "width": 1040,
+      "height": 150
+    },
+    {
+      "id": "dashboard",
+      "type": "file",
+      "file": "{{name}}.md",
+      "x": -520,
+      "y": -120,
+      "width": 420,
+      "height": 300
+    },
+    {
+      "id": "tasks",
+      "type": "file",
+      "file": "Tasks/_index.md",
+      "x": 20,
+      "y": -120,
+      "width": 420,
+      "height": 300
+    },
+    {
+      "id": "knowledge",
+      "type": "file",
+      "file": "Knowledge/_index.md",
+      "x": -520,
+      "y": 300,
+      "width": 420,
+      "height": 300
+    },
+    {
+      "id": "daily",
+      "type": "text",
+      "text": "## 📅 每日总结\n\n每日总结会按日期写入 `Daily/`，从仪表盘的“最近总结”打开。\n\n记录时仍需手动调用：\n`$agent-offline-mermory 记录今天的每日总结`",
+      "x": 20,
+      "y": 300,
+      "width": 420,
+      "height": 300
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-title-dashboard",
+      "fromNode": "title",
+      "toNode": "dashboard",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-dashboard-tasks",
+      "fromNode": "dashboard",
+      "toNode": "tasks",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-dashboard-knowledge",
+      "fromNode": "dashboard",
+      "toNode": "knowledge",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-dashboard-daily",
+      "fromNode": "dashboard",
+      "toNode": "daily",
+      "fromSide": "bottom",
+      "toSide": "top"
+    }
+  ]
+}

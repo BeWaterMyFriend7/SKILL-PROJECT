@@ -1,6 +1,6 @@
 ---
 type: agent-memory-index
-dashboard_version: 2
+dashboard_version: 3
 created: "{{timestamp}}"
 updated: "{{timestamp}}"
 ---
@@ -8,22 +8,35 @@ updated: "{{timestamp}}"
 # {{name}}
 
 > 仪表盘数据由 Obsidian 社区插件 **Dataview** 渲染，请在设置 → 第三方插件中启用（含 JS 查询）。未启用时，可查看 [任务索引](Tasks/_index.md) 与 [知识索引](Knowledge/_index.md)。
+> [[{{name}}.canvas|打开白板入口]]
 
 ## 概览
 
 ```dataviewjs
+const toArray = (value) => {
+  if (value == null) return [];
+  if (Array.isArray(value)) return value;
+  if (typeof value.array === "function") return value.array();
+  if (typeof value.values === "function") return Array.from(value.values());
+  if (typeof value === "string") return [value];
+  try { return Array.from(value); } catch (_) { return [value]; }
+};
+
+const normalizeTags = (page) =>
+  toArray(page.file?.tags ?? page.tags)
+    .map(tag => String(tag).replace(/^#/, "").trim())
+    .filter(Boolean);
+
 const card = (icon, label, value) =>
   `<div style="flex:1;min-width:110px;padding:12px 8px;border-radius:10px;background:#f4f6f8;border:1px solid #e3e6ea;text-align:center">
      <div style="font-size:13px;color:#8a919c">${icon} ${label}</div>
      <div style="font-size:26px;font-weight:700;margin-top:2px;color:#2f343d">${value}</div>
    </div>`;
 
-const tasks = dv.pages('"Tasks"').where(p => p.type === 'agent-task');
-const knowledge = dv.pages('"Knowledge"').where(p => p.type === 'agent-knowledge');
-const dailies = dv.pages('"Daily"');
-const tagSet = new Set(
-  knowledge.flatMap(p => (p.tags || []).map(t => String(t).replace(/^#/, '')))
-);
+const tasks = dv.pages('"Tasks"').where(p => p.type === 'agent-task').array();
+const knowledge = dv.pages('"Knowledge"').where(p => p.type === 'agent-knowledge').array();
+const dailies = dv.pages('"Daily"').array();
+const tagSet = new Set(knowledge.flatMap(normalizeTags));
 
 dv.paragraph(
   '<div style="display:flex;gap:10px;flex-wrap:wrap">' +
@@ -36,74 +49,171 @@ dv.paragraph(
 ```
 
 ```dataviewjs
+const dailyPages = dv.pages('"Daily"').array();
 const lines = [];
+
 for (let i = 6; i >= 0; i--) {
   const day = dv.date('today').minus({ days: i });
   const key = day.toFormat('yyyy-MM-dd');
-  const count = dv.pages('"Daily"')
-    .where(p => p.file.day && p.file.day.toFormat('yyyy-MM-dd') === key).length;
+  const count = dailyPages.filter(p =>
+    p.file.day && p.file.day.toFormat('yyyy-MM-dd') === key
+  ).length;
   lines.push(`${day.toFormat('MM-dd')} ${'█'.repeat(Math.min(count, 12))} ${count}`);
 }
+
 dv.paragraph('**近 7 天每日总结**\n\n' + lines.join('\n'));
 ```
 
 ## 任务与动态
 
-<div style="display:flex;gap:20px;flex-wrap:wrap">
-
-<div style="flex:1 1 300px;min-width:280px">
-
-### 任务表
-
-```dataview
-TABLE WITHOUT ID file.link AS 任务, status AS 状态, file.mtime AS 更新时间
-FROM "Tasks"
-WHERE type = "agent-task"
-SORT file.mtime DESC
-LIMIT 15
-```
-
-</div>
-
-<div style="flex:1 1 300px;min-width:280px">
-
-### 最近知识
-
-```dataview
-TABLE WITHOUT ID file.link AS 知识, file.mtime AS 更新时间
-FROM "Knowledge"
-WHERE type = "agent-knowledge"
-SORT file.mtime DESC
-LIMIT 8
-```
-
-### 最近总结
-
-```dataview
-TABLE WITHOUT ID file.link AS 日期
-FROM "Daily"
-SORT file.name DESC
-LIMIT 8
-```
-
-### 标签统计
-
 ```dataviewjs
-const counts = {};
-dv.pages('"Knowledge"')
-  .where(p => p.type === 'agent-knowledge')
-  .flatMap(p => p.tags || [])
-  .forEach(t => {
-    const key = String(t).replace(/^#/, '');
-    counts[key] = (counts[key] || 0) + 1;
+const root = dv.container;
+root.innerHTML = '';
+root.style.display = 'grid';
+root.style.gridTemplateColumns = 'minmax(0, 1.1fr) minmax(280px, 0.9fr)';
+root.style.gap = '20px';
+root.style.alignItems = 'start';
+
+const toArray = (value) => {
+  if (value == null) return [];
+  if (Array.isArray(value)) return value;
+  if (typeof value.array === 'function') return value.array();
+  if (typeof value.values === 'function') return Array.from(value.values());
+  if (typeof value === 'string') return [value];
+  try { return Array.from(value); } catch (_) { return [value]; }
+};
+
+const textValue = (value, fallback = '—') => {
+  if (value == null || value === '') return fallback;
+  return String(value);
+};
+
+const formatDate = (value) => {
+  if (!value) return '—';
+  if (typeof value.toFormat === 'function') return value.toFormat('yyyy-MM-dd HH:mm');
+  return textValue(value);
+};
+
+const addHeading = (container, text) => {
+  const heading = document.createElement('h3');
+  heading.textContent = text;
+  heading.style.marginTop = '0.8em';
+  container.appendChild(heading);
+};
+
+const addLink = (container, page, label) => {
+  const link = document.createElement('a');
+  link.className = 'internal-link';
+  link.dataset.href = page.file.path;
+  link.textContent = label || page.file.name;
+  link.href = '#';
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    app.workspace.openLinkText(page.file.path, dv.current().file.path, false);
   });
-const top = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-dv.paragraph(top.length ? top.map(([k, n]) => `#${k} × ${n}`).join('　') : '（暂无标签）');
+  container.appendChild(link);
+};
+
+const addTable = (container, headers, rows) => {
+  const table = document.createElement('table');
+  table.className = 'table-view-table';
+  table.style.width = '100%';
+  table.style.fontSize = '0.9em';
+
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  headers.forEach(header => {
+    const cell = document.createElement('th');
+    cell.textContent = header;
+    headerRow.appendChild(cell);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  rows.forEach(row => {
+    const tableRow = document.createElement('tr');
+    row.forEach((value, index) => {
+      const cell = document.createElement('td');
+      if (index === 0 && value?.page) {
+        addLink(cell, value.page, value.label);
+      } else {
+        cell.textContent = textValue(value);
+      }
+      tableRow.appendChild(cell);
+    });
+    tbody.appendChild(tableRow);
+  });
+  table.appendChild(tbody);
+  container.appendChild(table);
+};
+
+const taskPages = dv.pages('"Tasks"')
+  .where(p => p.type === 'agent-task')
+  .sort(p => p.file.mtime, 'desc')
+  .array()
+  .slice(0, 15);
+
+const knowledgePages = dv.pages('"Knowledge"')
+  .where(p => p.type === 'agent-knowledge')
+  .sort(p => p.file.mtime, 'desc')
+  .array()
+  .slice(0, 8);
+
+const dailyPages = dv.pages('"Daily"')
+  .sort(p => p.file.name, 'desc')
+  .array()
+  .slice(0, 8);
+
+const left = document.createElement('div');
+const right = document.createElement('div');
+root.appendChild(left);
+root.appendChild(right);
+
+addHeading(left, '任务表');
+addTable(left, ['任务', '状态', '更新时间'], taskPages.map(page => [
+  { page, label: page.file.name },
+  textValue(page.status, 'active'),
+  formatDate(page.file.mtime)
+]));
+
+addHeading(right, '最近知识');
+addTable(right, ['知识', '更新时间'], knowledgePages.map(page => [
+  { page, label: page.file.name },
+  formatDate(page.file.mtime)
+]));
+
+addHeading(right, '最近总结');
+addTable(right, ['日期'], dailyPages.map(page => [
+  { page, label: page.file.name }
+]));
+
+addHeading(right, '标签统计');
+const counts = {};
+knowledgePages.forEach(page => {
+  toArray(page.file?.tags ?? page.tags)
+    .map(tag => String(tag).replace(/^#/, '').trim())
+    .filter(Boolean)
+    .forEach(tag => { counts[tag] = (counts[tag] || 0) + 1; });
+});
+
+const topTags = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+const tagText = topTags.length
+  ? topTags.map(([tag, count]) => `#${tag} × ${count}`).join('　')
+  : '（暂无标签）';
+const tagParagraph = document.createElement('p');
+tagParagraph.textContent = tagText;
+right.appendChild(tagParagraph);
+
+const mediaQuery = window.matchMedia('(max-width: 700px)');
+const applyResponsiveLayout = () => {
+  root.style.gridTemplateColumns = mediaQuery.matches
+    ? 'minmax(0, 1fr)'
+    : 'minmax(0, 1.1fr) minmax(280px, 0.9fr)';
+};
+applyResponsiveLayout();
+if (mediaQuery.addEventListener) mediaQuery.addEventListener('change', applyResponsiveLayout);
 ```
-
-</div>
-
-</div>
 
 ---
 
