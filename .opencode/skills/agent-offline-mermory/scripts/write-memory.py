@@ -22,12 +22,12 @@ if hasattr(sys.stderr, "reconfigure"):
 SKILL_ROOT = Path(__file__).resolve().parent.parent
 SETTINGS_PATH = SKILL_ROOT / "settings.json"
 TEMPLATE_ROOT = SKILL_ROOT / "assets" / "templates"
-RECORD_TYPES = {"inbox": "Inbox", "task": "Task", "knowledge": "Knowledge"}
+RECORD_TYPES = {"daily": "Daily", "task": "Task", "knowledge": "Knowledge"}
 QUERY_DIRECTORIES = {
-    "inbox": ("Inbox",),
+    "daily": ("Daily",),
     "task": ("Tasks",),
     "knowledge": ("Knowledge",),
-    "all": ("Inbox", "Tasks", "Knowledge"),
+    "all": ("Daily", "Tasks", "Knowledge"),
 }
 WINDOWS_RESERVED_NAMES = {
     "CON",
@@ -102,7 +102,8 @@ def render_template(template_name: str, values: Dict[str, str]) -> str:
     rendered = template_path.read_text(encoding="utf-8")
     for key, value in values.items():
         rendered = rendered.replace("{{" + key + "}}", value)
-    return rendered
+    # 模板中的 <!-- 示例 --> 注释仅供阅读模板时参考，写入记录前移除。
+    return re.sub(r"<!--.*?-->", "", rendered, flags=re.S)
 
 
 def save_settings(
@@ -151,7 +152,7 @@ def initialize_memory_root(
         vault_root = ""
 
     root.mkdir(parents=True, exist_ok=True)
-    for directory_name in ("Inbox", "Tasks", "Knowledge"):
+    for directory_name in ("Daily", "Tasks", "Knowledge"):
         (root / directory_name).mkdir(parents=True, exist_ok=True)
 
     root_name = root.name or "AgentMemory"
@@ -373,7 +374,7 @@ def capture_note(
     now = utc_now()
     timestamp = iso_timestamp(now)
     default_titles = {
-        "Inbox": "临时记录",
+        "Daily": "每日总结",
         "Task": "任务交接",
         "Knowledge": "知识记录",
     }
@@ -394,24 +395,26 @@ def capture_note(
         }
     else:
         title_for_filename = safe_title(record_title)
-        if record_type == "Inbox":
-            inbox_directory = assert_path_within_root(root / "Inbox", root)
-            inbox_directory.mkdir(parents=True, exist_ok=True)
-            target_path = inbox_directory / f"{now.strftime('%Y-%m-%d')}.md"
-            entry = render_template(
-                "inbox-entry.md",
-                {
-                    "timestamp": timestamp,
-                    "title": record_title,
-                    "content": content.strip(),
-                },
-            )
+        if record_type == "Daily":
+            daily_directory = assert_path_within_root(root / "Daily", root)
+            daily_directory.mkdir(parents=True, exist_ok=True)
+            target_path = daily_directory / f"{now.strftime('%Y-%m-%d')}.md"
             if target_path.exists():
-                append_utf8(target_path, "\n\n" + entry.rstrip() + "\n")
+                update = (
+                    f"\n\n## 补充 - {now.strftime('%H:%M')}\n\n"
+                    f"{content.strip()}\n"
+                )
+                append_utf8(target_path, update)
                 result_action = "updated"
             else:
-                document = f"# {now.strftime('%Y-%m-%d')}\n\n{entry.rstrip()}\n"
-                write_utf8(target_path, document)
+                document = render_template(
+                    "daily-summary.md",
+                    {
+                        "date": now.strftime("%Y-%m-%d"),
+                        "content": content.strip(),
+                    },
+                )
+                write_utf8(target_path, document.rstrip() + "\n")
                 result_action = "created"
         else:
             directory_name = "Tasks" if record_type == "Task" else "Knowledge"
@@ -567,7 +570,7 @@ def query_notes(
 
             modified = resolved.stat().st_mtime
             record_type = {
-                "Inbox": "Inbox",
+                "Daily": "Daily",
                 "Tasks": "Task",
                 "Knowledge": "Knowledge",
             }[directory_name]

@@ -39,7 +39,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action init
 2. 修改其中的 `memory_root`（记忆根目录绝对路径）、`require_obsidian`、`experience_mode`；
 3. 在终端运行 `-Action Init`（短命令）交互确认，或让 Agent 读取配置后代为完成初始化。
 
-初始化会创建 `Inbox`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及各目录的 `_index.md` 索引。之后每次写入或更新记录，写入器会自动刷新 `Tasks/` 和 `Knowledge/` 的索引。
+初始化会创建 `Daily`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及各目录的 `_index.md` 索引。之后每次写入或更新记录，写入器会自动刷新 `Tasks/` 和 `Knowledge/` 的索引。
 
 ## 经验加载模式
 
@@ -52,7 +52,8 @@ sh "<Skill目录>/scripts/write-memory.sh" --action init
 
 - 明确触发包括：用户输入 `$agent-offline-mermory`、从 Skill 菜单选择本 Skill，或明确说“使用 agent-offline-mermory”。明确触发后，除纯状态查询和初始化外，先执行一次相关经验预检，再按用户要求执行写入或主动查询。
 - 自动回忆（仅 `auto` 模式）只在当前任务确实涉及 Git、代码修改、测试、构建、部署、环境配置、迁移或其他可重复技术流程时执行，并且只能查询 `Knowledge`；`manual` 模式下不得执行自动回忆。
-- 自动回忆模式不得写入、更新、初始化或修改任何文件，也不得查询 `Tasks` 或 `Inbox`。
+- 自动回忆模式不得写入、更新、初始化或修改任何文件，也不得查询 `Tasks` 或 `Daily`。
+- 每日总结只能在用户明确调用本 Skill 时写入，不得在任务结束后自动生成或追加总结。
 - 普通的“总结一下”“记住这个”“有哪些待办”或“某类操作有哪些经验”等请求，如果没有明确触发，只在当前上下文中回答，不读取记忆目录。
 - 不得写入已配置记忆根目录之外的位置。
 - 不得自行推断应该更新某个已有任务或知识文档。
@@ -89,6 +90,7 @@ $agent-offline-mermory 记录这次 Git 提交踩坑
 - `$agent-offline-mermory 有哪些待办需要处理`：明确触发，只读查询 `Tasks`。
 - `$agent-offline-mermory 查询 Git 提交经验`：明确触发，只读查询 `Knowledge`。
 - `$agent-offline-mermory 记录这次部署踩坑`：明确触发，先预检 `Knowledge`，再新建知识记录。
+- `$agent-offline-mermory 记录今天的每日总结`：明确触发，写入或追加当天的 `Daily` 总结。
 - `$agent-offline-mermory 把经验加载模式改成 manual`：明确触发，重新初始化或 `set-root` 时切换模式。
 - `这次不用加载经验`：对话内临时跳过本次经验检索，不修改配置。
 - `请修改这个函数并补测试`：`auto` 模式下如果确实开始执行代码修改，可自动回忆相关 `Knowledge`，但不能写入记忆；`manual` 模式下不检索。
@@ -108,7 +110,7 @@ PowerShell 和 Shell 文件只是同一 Python 核心的启动入口。三种入
 
 ## 只读查询
 
-查询只扫描已配置记忆根目录中的 `Inbox`、`Tasks` 和 `Knowledge` Markdown 文件，不修改任何内容，并且跳过 `_index.md` 索引文件本身。想了解全貌时，可以直接阅读 `Tasks/_index.md` 或 `Knowledge/_index.md`。
+查询只扫描已配置记忆根目录中的 `Daily`、`Tasks` 和 `Knowledge` Markdown 文件，不修改任何内容，并且跳过 `_index.md` 索引文件本身。想了解全貌时，可以直接阅读 `Tasks/_index.md` 或 `Knowledge/_index.md`。
 
 按用户意图选择范围：
 
@@ -130,6 +132,12 @@ Windows：
   -Type Knowledge `
   -Query "git 提交" `
   -Limit 5
+
+& "<Skill目录>\scripts\write-memory.ps1" `
+  -Action Query `
+  -Type Daily `
+  -Query "今日总结" `
+  -Limit 5
 ```
 
 Linux 或 macOS：
@@ -145,6 +153,12 @@ sh "<Skill目录>/scripts/write-memory.sh" \
   --action query \
   --type knowledge \
   --query "git 提交" \
+  --limit 5
+
+sh "<Skill目录>/scripts/write-memory.sh" \
+  --action query \
+  --type daily \
+  --query "今日总结" \
   --limit 5
 ```
 
@@ -181,7 +195,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 ```
 
 - `require_obsidian` 为 `true` 时，目标目录本身或其某一级父目录必须包含 `.obsidian`；为 `false` 时，任意 Markdown 文件夹即可，纯文件夹模式下 `[[Tasks/example]]` 链接按相对路径解析，同样可用。
-- 初始化会创建 `Inbox`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及 `Tasks/_index.md`、`Knowledge/_index.md` 索引。
+- 初始化会创建 `Daily`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及 `Tasks/_index.md`、`Knowledge/_index.md` 索引。
 - `set-root` / `SetRoot` 默认沿用已有配置（`require_obsidian`、`experience_mode`）；Agent 代为调用时可以直接传参数避免交互式阻塞。
 
 ## 判断记录类型
@@ -191,7 +205,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 1. 用户明确指定记录位置或类型时，遵从用户要求。
 2. 未完成事项、当前进度、阻塞问题、后续步骤和可恢复的交接内容记录到 `Task`。
 3. 可复用的问题原因、解决方案、验证方法、工作流程、提示词或经验教训记录到 `Knowledge`。
-4. 内容零散、暂时无法分类、只是一般摘要或临时备忘时记录到 `Inbox`。
+4. 内容零散、暂时无法分类、一般摘要或当天进展统一记录到当天的 `Daily` 每日总结。
 
 只有当会话中同时存在“未完成任务”和“可以独立复用的经验”时，才分别创建任务文档和知识文档。不得在两个文档中重复堆放相同内容。
 
@@ -203,33 +217,84 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 
 ```markdown
 ## 目标
-## 当前状态
-## 已完成
+## 进度与下一步
 ## 阻塞与风险
-## 下一步
 ## 关键文件与命令
 ```
 
 省略空章节。保留恢复任务所需的准确路径、命令、已经确认的决定和尚未解决的问题。
 
+示例：
+
+```markdown
+## 目标
+- 完成 write-memory.py 的 Inbox 到 Daily 迁移并提交
+
+## 进度与下一步
+- 已完成：脚本与模板改造、本地验证
+- 下一步：提交并推送远程
+
+## 阻塞与风险
+- 无
+
+## 关键文件与命令
+- .opencode/skills/agent-offline-mermory/scripts/write-memory.py
+- git push origin dev
+```
+
 知识文档优先使用：
 
 ```markdown
 ## 场景
-## 问题
-## 原因
-## 解决方案
-## 验证
+## 问题与原因
+## 解决方案与验证
 ## 注意事项
 ```
 
 省略空章节。记录可复用结论，不要照搬完整聊天记录。
 
-临时记录应保持简洁，但必须包含足够的上下文，方便以后重新分类。
+示例：
+
+```markdown
+## 场景
+- 在 Windows 上运行跨平台 Python 脚本时
+
+## 问题与原因
+- 脚本报路径错误；原因是硬编码了反斜杠分隔符
+
+## 解决方案与验证
+- 改用 pathlib.Path 拼接路径，测试通过
+
+## 注意事项
+- 纯文本模式不校验 Obsidian，链接按相对路径解析
+```
+
+每日总结文档按日期一个文件，优先使用：
+
+```markdown
+## 完成
+## 问题
+## 明日计划
+```
+
+省略空章节。只记录当天实际发生或计划的内容，不重复搬运 Task 和 Knowledge 中的细节。
+
+示例：
+
+```markdown
+## 完成
+- 完成 write-memory.py 的 Inbox 到 Daily 重命名，临时目录验证通过
+
+## 问题
+- Windows 控制台中文乱码；原因：编码未切换；处理：脚本已用 UTF-8 输出，已解决
+
+## 明日计划
+- 提交并推送本次改动，同步安装副本
+```
 
 ## 新建记录
 
-如果用户没有明确指定已有目标文档，不传目标文件参数。`Task` 和 `Knowledge` 每次新建独立文档，`Inbox` 追加到当天的日记录中。写入完成后，写入器自动刷新 `Tasks/_index.md` 和 `Knowledge/_index.md`。
+如果用户没有明确指定已有目标文档，不传目标文件参数。`Task` 和 `Knowledge` 每次新建独立文档，`Daily` 追加到当天的每日总结中（首次创建、之后追加“补充”小节）。写入完成后，写入器自动刷新 `Tasks/_index.md` 和 `Knowledge/_index.md`。
 
 Windows：
 
@@ -242,6 +307,12 @@ $content = @'
   -Type Task `
   -Title "<标题>" `
   -Content $content
+
+& "<Skill目录>\scripts\write-memory.ps1" `
+  -Action Capture `
+  -Type Daily `
+  -Title "每日总结" `
+  -Content $content
 ```
 
 Linux 或 macOS：
@@ -251,6 +322,14 @@ sh "<Skill目录>/scripts/write-memory.sh" \
   --action capture \
   --type task \
   --title "<标题>" \
+  --content-stdin <<'EOF'
+<Markdown 内容>
+EOF
+
+sh "<Skill目录>/scripts/write-memory.sh" \
+  --action capture \
+  --type daily \
+  --title "每日总结" \
   --content-stdin <<'EOF'
 <Markdown 内容>
 EOF

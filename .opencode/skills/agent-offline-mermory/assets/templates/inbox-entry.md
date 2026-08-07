@@ -1,3 +1,0 @@
-## {{timestamp}} · {{title}}
-
-{{content}}
