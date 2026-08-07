@@ -1,6 +1,6 @@
 ---
 type: agent-memory-index
-dashboard_version: 3
+dashboard_version: 6
 created: "{{timestamp}}"
 updated: "{{timestamp}}"
 ---
@@ -33,31 +33,69 @@ const card = (icon, label, value) =>
      <div style="font-size:26px;font-weight:700;margin-top:2px;color:#2f343d">${value}</div>
    </div>`;
 
-const tasks = dv.pages('"Tasks"').where(p => p.type === 'agent-task').array();
-const knowledge = dv.pages('"Knowledge"').where(p => p.type === 'agent-knowledge').array();
-const dailies = dv.pages('"Daily"').array();
+const pageType = (page) => String(page.type ?? '').toLowerCase();
+const isMemoryRecord = (page, directory, expectedType) => {
+  const path = String(page.file?.path ?? '');
+  const name = String(page.file?.name ?? '');
+  const type = pageType(page);
+  return path.startsWith(`${directory}/`) &&
+    name !== '_index' &&
+    (!type || type === expectedType);
+};
+const isDailySummary = (page) =>
+  pageType(page) === 'agent-daily' ||
+  /^\d{4}-\d{2}-\d{2}$/.test(String(page.file?.name ?? ''));
+
+const tasks = dv.pages('"Tasks"')
+  .where(p => isMemoryRecord(p, 'Tasks', 'agent-task'))
+  .array();
+const knowledge = dv.pages('"Knowledge"')
+  .where(p => isMemoryRecord(p, 'Knowledge', 'agent-knowledge'))
+  .array();
+const dailies = dv.pages('"Daily"')
+  .where(isDailySummary)
+  .array();
 const tagSet = new Set(knowledge.flatMap(normalizeTags));
 
 dv.paragraph(
   '<div style="display:flex;gap:10px;flex-wrap:wrap">' +
     card('📋', '任务数', tasks.length) +
     card('📚', '知识数', knowledge.length) +
-    card('📅', '日记天数', dailies.length) +
+    card('📅', '每日总结数', dailies.length) +
     card('🏷️', '标签数', tagSet.size) +
   '</div>'
 );
 ```
 
 ```dataviewjs
-const dailyPages = dv.pages('"Daily"').array();
+const pageType = (page) => String(page.type ?? '').toLowerCase();
+const isMemoryRecord = (page, directory, expectedType) => {
+  const path = String(page.file?.path ?? '');
+  const name = String(page.file?.name ?? '');
+  const type = pageType(page);
+  return path.startsWith(`${directory}/`) &&
+    name !== '_index' &&
+    (!type || type === expectedType);
+};
+const dailyPages = dv.pages('"Daily"')
+  .where(p =>
+    pageType(p) === 'agent-daily' ||
+    /^\d{4}-\d{2}-\d{2}$/.test(String(p.file?.name ?? ''))
+  )
+  .array();
+const dailyKey = (page) => {
+  if (page.file?.day && typeof page.file.day.toFormat === 'function') {
+    return page.file.day.toFormat('yyyy-MM-dd');
+  }
+  const match = String(page.file?.name ?? '').match(/^(\d{4}-\d{2}-\d{2})$/);
+  return match ? match[1] : null;
+};
 const lines = [];
 
 for (let i = 6; i >= 0; i--) {
   const day = dv.date('today').minus({ days: i });
   const key = day.toFormat('yyyy-MM-dd');
-  const count = dailyPages.filter(p =>
-    p.file.day && p.file.day.toFormat('yyyy-MM-dd') === key
-  ).length;
+  const count = dailyPages.filter(p => dailyKey(p) === key).length;
   lines.push(`${day.toFormat('MM-dd')} ${'█'.repeat(Math.min(count, 12))} ${count}`);
 }
 
@@ -148,19 +186,33 @@ const addTable = (container, headers, rows) => {
   container.appendChild(table);
 };
 
+const pageType = (page) => String(page.type ?? '').toLowerCase();
+const isMemoryRecord = (page, directory, expectedType) => {
+  const path = String(page.file?.path ?? '');
+  const name = String(page.file?.name ?? '');
+  const type = pageType(page);
+  return path.startsWith(`${directory}/`) &&
+    name !== '_index' &&
+    (!type || type === expectedType);
+};
+const isDailySummary = (page) =>
+  pageType(page) === 'agent-daily' ||
+  /^\d{4}-\d{2}-\d{2}$/.test(String(page.file?.name ?? ''));
+
 const taskPages = dv.pages('"Tasks"')
-  .where(p => p.type === 'agent-task')
+  .where(p => isMemoryRecord(p, 'Tasks', 'agent-task'))
   .sort(p => p.file.mtime, 'desc')
   .array()
   .slice(0, 15);
 
-const knowledgePages = dv.pages('"Knowledge"')
-  .where(p => p.type === 'agent-knowledge')
+const allKnowledgePages = dv.pages('"Knowledge"')
+  .where(p => isMemoryRecord(p, 'Knowledge', 'agent-knowledge'))
   .sort(p => p.file.mtime, 'desc')
-  .array()
-  .slice(0, 8);
+  .array();
+const knowledgePages = allKnowledgePages.slice(0, 8);
 
 const dailyPages = dv.pages('"Daily"')
+  .where(isDailySummary)
   .sort(p => p.file.name, 'desc')
   .array()
   .slice(0, 8);
@@ -190,7 +242,7 @@ addTable(right, ['日期'], dailyPages.map(page => [
 
 addHeading(right, '标签统计');
 const counts = {};
-knowledgePages.forEach(page => {
+allKnowledgePages.forEach(page => {
   toArray(page.file?.tags ?? page.tags)
     .map(tag => String(tag).replace(/^#/, '').trim())
     .filter(Boolean)
