@@ -40,7 +40,7 @@ WINDOWS_RESERVED_NAMES = {
 DEFAULT_REQUIRE_OBSIDIAN = True
 DEFAULT_EXPERIENCE_MODE = "auto"
 INDEX_FILENAME = "_index.md"
-DASHBOARD_VERSION = 8
+DASHBOARD_VERSION = 9
 
 
 class WriterError(RuntimeError):
@@ -120,20 +120,6 @@ def render_template(template_name: str, values: Dict[str, str]) -> str:
     return re.sub(r"<!--.*?-->", "", rendered, flags=re.S)
 
 
-def ensure_obsidian_canvas(root: Path, root_name: str) -> Path:
-    """首次初始化或升级时创建白板入口，不覆盖用户已有白板。"""
-    canvas_path = root / f"{root_name}.canvas"
-    if canvas_path.exists():
-        return canvas_path
-
-    canvas = render_template(
-        "whiteboard-obsidian.canvas",
-        {"name": root_name},
-    )
-    write_utf8(canvas_path, canvas.rstrip() + "\n")
-    return canvas_path
-
-
 def save_settings(
     root: Path,
     vault_root: Path,
@@ -199,7 +185,6 @@ def initialize_memory_root(
         )
         write_utf8(dashboard_path, dashboard.rstrip() + "\n")
 
-    canvas_path = ensure_obsidian_canvas(root, root_name) if require_obsidian else None
     refresh_memory_indexes(root)
     save_settings(root, vault_root, require_obsidian, experience_mode)
     result = {
@@ -211,8 +196,6 @@ def initialize_memory_root(
         "experience_mode": experience_mode,
         "dashboard": str(dashboard_path),
     }
-    if canvas_path is not None:
-        result["whiteboard"] = str(canvas_path)
     return result
 
 
