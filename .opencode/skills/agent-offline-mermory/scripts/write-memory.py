@@ -40,7 +40,7 @@ WINDOWS_RESERVED_NAMES = {
 DEFAULT_REQUIRE_OBSIDIAN = True
 DEFAULT_EXPERIENCE_MODE = "auto"
 INDEX_FILENAME = "_index.md"
-DASHBOARD_VERSION = 9
+DASHBOARD_VERSION = 12
 
 
 class WriterError(RuntimeError):
@@ -292,7 +292,12 @@ def interactive_setup(action: str) -> Dict[str, Any]:
 
 def refresh_memory_indexes(root: Path) -> None:
     now = utc_now()
-    for directory_name, index_title in (("Tasks", "任务索引"), ("Knowledge", "知识索引")):
+    index_specs = (
+        ("Tasks", "任务索引", True),
+        ("Knowledge", "知识索引", False),
+        ("Daily", "每日总结索引", False),
+    )
+    for directory_name, index_title, include_status in index_specs:
         directory = root / directory_name
         if not directory.is_dir():
             continue
@@ -307,6 +312,15 @@ def refresh_memory_indexes(root: Path) -> None:
                 continue
             content = resolved.read_text(encoding="utf-8-sig")
             frontmatter = parse_frontmatter(content)
+            if directory_name == "Daily":
+                is_daily_type = (
+                    frontmatter.get("type", "").strip().lower() == "agent-daily"
+                )
+                is_daily_name = bool(
+                    re.fullmatch(r"\d{4}-\d{2}-\d{2}", resolved.stem)
+                )
+                if not is_daily_type and not is_daily_name:
+                    continue
             title = note_title(resolved, content)
             status = note_status(frontmatter)
             modified = datetime.fromtimestamp(
@@ -316,13 +330,22 @@ def refresh_memory_indexes(root: Path) -> None:
             rows.append((modified, status, title, relative))
 
         rows.sort(key=lambda row: row[0], reverse=True)
-        lines = ["| 状态 | 标题 | 更新时间 | 文件 |", "| --- | --- | --- | --- |"]
+        if include_status:
+            lines = ["| 状态 | 标题 | 更新时间 | 文件 |", "| --- | --- | --- | --- |"]
+        else:
+            lines = ["| 标题 | 更新时间 | 文件 |", "| --- | --- | --- |"]
         for modified, status, title, relative in rows:
             safe_title = title.replace("|", "\\|")
-            lines.append(
-                f"| {status} | {safe_title} | {modified.strftime('%Y-%m-%d %H:%M')} "
-                f"| [{title}]({relative}) |"
-            )
+            if include_status:
+                lines.append(
+                    f"| {status} | {safe_title} | {modified.strftime('%Y-%m-%d %H:%M')} "
+                    f"| [{title}]({relative}) |"
+                )
+            else:
+                lines.append(
+                    f"| {safe_title} | {modified.strftime('%Y-%m-%d %H:%M')} "
+                    f"| [{title}]({relative}) |"
+                )
         body = "\n".join(lines) + "\n" if rows else "（暂无记录）\n"
         document = (
             "---\n"
@@ -433,6 +456,7 @@ def capture_note(
                     "daily-summary.md",
                     {
                         "date": now.strftime("%Y-%m-%d"),
+                        "timestamp": timestamp,
                         "content": content.strip(),
                     },
                 )
@@ -581,6 +605,15 @@ def query_notes(
 
             content = resolved.read_text(encoding="utf-8-sig")
             frontmatter = parse_frontmatter(content)
+            if directory_name == "Daily":
+                is_daily_type = (
+                    frontmatter.get("type", "").strip().lower() == "agent-daily"
+                )
+                is_daily_name = bool(
+                    re.fullmatch(r"\d{4}-\d{2}-\d{2}", resolved.stem)
+                )
+                if not is_daily_type and not is_daily_name:
+                    continue
             current_status = note_status(frontmatter)
             if status != "all" and current_status != status:
                 continue

@@ -1,8 +1,8 @@
 ---
 type: agent-daily
 date: "{{date}}"
-created: "{{date}}"
-updated: "{{date}}"
+created: "{{timestamp}}"
+updated: "{{timestamp}}"
 ---
 
 # {{date}}

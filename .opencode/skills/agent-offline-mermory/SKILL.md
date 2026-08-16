@@ -39,7 +39,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action init
 2. 修改其中的 `memory_root`（记忆根目录绝对路径）、`require_obsidian`、`experience_mode`；
 3. 在终端运行 `-Action Init`（短命令）交互确认，或让 Agent 读取配置后代为完成初始化。
 
-初始化会创建 `Daily`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及各目录的 `_index.md` 索引。之后每次写入或更新记录，写入器会自动刷新 `Tasks/` 和 `Knowledge/` 的索引。
+初始化会创建 `Daily`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及三个目录各自的 `_index.md` 索引。之后每次写入或更新记录，写入器会自动刷新全部索引。
 
 ## 经验加载模式
 
@@ -98,7 +98,7 @@ $agent-offline-mermory 记录这次 Git 提交踩坑
 
 ## 使用 Skill 自带的写入器
 
-以本 `SKILL.md` 所在目录为 Skill 根目录解析所有路径。所有配置和记忆写入操作都必须使用自带写入器，不得绕过其路径检查直接写入文件。
+以本 `SKILL.md` 所在目录为 Skill 根目录解析所有路径。Agent 发起的配置和记忆写入操作都必须使用自带写入器，不得绕过其路径检查直接写入文件。唯一例外是 Obsidian 首页中的“手动记录”：它只在用户点击、选择类型并确认后，使用 Obsidian Vault API 在当前记忆根目录的 `Daily`、`Tasks` 或 `Knowledge` 中按内置模板创建文件并刷新该目录的 `_index.md`；不得后台触发、不得写到其他目录、不得覆盖已有的当天总结。
 
 根据当前平台选择入口：
 
@@ -110,7 +110,7 @@ PowerShell 和 Shell 文件只是同一 Python 核心的启动入口。三种入
 
 ## 只读查询
 
-查询只扫描已配置记忆根目录中的 `Daily`、`Tasks` 和 `Knowledge` Markdown 文件，不修改任何内容，并且跳过 `_index.md` 索引文件本身。想了解全貌时，可以直接阅读 `Tasks/_index.md` 或 `Knowledge/_index.md`。
+查询只扫描已配置记忆根目录中的 `Daily`、`Tasks` 和 `Knowledge` Markdown 文件，不修改任何内容，并且跳过 `_index.md` 索引文件本身。想了解全貌时，可以直接阅读 `Tasks/_index.md`、`Knowledge/_index.md` 或 `Daily/_index.md`。
 
 按用户意图选择范围：
 
@@ -195,7 +195,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 ```
 
 - `require_obsidian` 为 `true` 时，目标目录本身或其某一级父目录必须包含 `.obsidian`；为 `false` 时，任意 Markdown 文件夹即可，纯文件夹模式下 `[[Tasks/example]]` 链接按相对路径解析，同样可用。
-- 初始化会创建 `Daily`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及 `Tasks/_index.md`、`Knowledge/_index.md` 索引。
+- 初始化会创建 `Daily`、`Tasks`、`Knowledge` 三个目录、一个与记忆根目录同名的入口文档，以及 `Tasks/_index.md`、`Knowledge/_index.md`、`Daily/_index.md` 索引。
 - Obsidian 模式下入口文档是带 Dataview 统计的仪表盘（需启用社区插件 Dataview）；重新执行 `init` 或 `set-root` 时，检测到旧版入口会自动升级，不影响已有记录。
 - `set-root` / `SetRoot` 默认沿用已有配置（`require_obsidian`、`experience_mode`）；Agent 代为调用时可以直接传参数避免交互式阻塞。
 
@@ -297,7 +297,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 
 ## 新建记录
 
-如果用户没有明确指定已有目标文档，不传目标文件参数。`Task` 和 `Knowledge` 每次新建独立文档，`Daily` 追加到当天的每日总结中（首次创建、之后追加“补充”小节）。写入完成后，写入器自动刷新 `Tasks/_index.md` 和 `Knowledge/_index.md`。
+如果用户没有明确指定已有目标文档，不传目标文件参数。`Task` 和 `Knowledge` 每次新建独立文档，`Daily` 追加到当天的每日总结中（首次创建、之后追加“补充”小节）。写入完成后，写入器自动刷新 `Tasks/_index.md`、`Knowledge/_index.md` 和 `Daily/_index.md`。Obsidian 首页的“手动记录”是显式人工入口：选择任务或知识时要求填写标题并新建独立文件；选择总结时创建或打开当天文件；三类文件都直接预置对应章节，不复制 Agent 提示词。
 
 Windows：
 
