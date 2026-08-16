@@ -4,12 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import math
 import re
 import sys
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import unquote_to_bytes
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -52,12 +54,24 @@ EXPECTED_EXAMPLE_MARKERS = {
     "swot-",
     "timeline-",
 }
+REQUIRED_SUPPORT_FILES = {
+    "references/theme-tokens.md",
+    "references/icon-policy.md",
+    "scripts/palette.py",
+    "tests/test_palette.py",
+    "tests/test_validate.py",
+}
 PLACEHOLDER_RE = re.compile(
     r"(图形标题|区域标题|卡片标题|内容标签|参与者 [ABCD]|处理步骤|实体 [AB]|阶段 [AB]|主题节点|"
     r"能力[一二三]|目标[一二三]|要点[一二三]|关键因素[一二三])$"
 )
 MOJIBAKE = ("锟", "�", "鐢", "鍥", "绋", "瑙")
 TITLE_RE = re.compile(r"(^|[-_])(title|diagram-title)([-_]|$)", re.IGNORECASE)
+EMOJI_RE = re.compile("[\u2600-\u27BF\U0001F300-\U0001FAFF]")
+ICON_FONTS = ("font awesome", "material icons", "segoe mdl2 assets", "bootstrap icons")
+ALLOWED_THEMES = {"tech-blue", "vibrant", "focused"}
+ALLOWED_MODULES = {"top-band", "aux-column", "callout", "numbered-flow", "focus-node", "footer-band"}
+OPTIONAL_MODULES = "top-band aux-column callout numbered-flow focus-node footer-band"
 
 
 @dataclass(frozen=True)
@@ -87,6 +101,45 @@ def style_map(raw: str) -> dict[str, str]:
             key, value = part.split("=", 1)
             result[key] = value
     return result
+
+
+def validate_embedded_svg(image: str, cell_id: str, errors: list[str]) -> None:
+    """Validate that a Draw.io image is a self-contained, parseable SVG data URI."""
+    if not image.lower().startswith("data:image/svg+xml"):
+        errors.append(f"{cell_id}: 图片必须使用内嵌 SVG data URI，禁止外部、相对或本地路径")
+        return
+    if "," not in image:
+        errors.append(f"{cell_id}: 内嵌 SVG data URI 缺少内容")
+        return
+    metadata, payload = image.split(",", 1)
+    try:
+        raw = base64.b64decode(payload, validate=True) if ";base64" in metadata.lower() else unquote_to_bytes(payload)
+        source = raw.decode("utf-8")
+        root = ET.fromstring(source)
+    except (ValueError, UnicodeDecodeError, ET.ParseError) as exc:
+        errors.append(f"{cell_id}: 内嵌 SVG 无法解析: {exc}")
+        return
+    if root.tag.rsplit("}", 1)[-1].lower() != "svg":
+        errors.append(f"{cell_id}: 内嵌图片根节点必须是 SVG")
+        return
+    namespace_free = re.sub(r"xmlns(?::\w+)?=[\"']https?://[^\"']+[\"']", "", source, flags=re.IGNORECASE)
+    lowered = namespace_free.lower()
+    if "http://" in lowered or "https://" in lowered or "@import" in lowered or "@font-face" in lowered:
+        errors.append(f"{cell_id}: 内嵌 SVG 禁止远程资源、外部 CSS 或字体")
+    for element in root.iter():
+        element_name = element.tag.rsplit("}", 1)[-1].lower()
+        if element_name == "image":
+            errors.append(f"{cell_id}: 内嵌 SVG 禁止嵌套 image")
+        if element_name in {"script", "foreignobject"}:
+            errors.append(f"{cell_id}: 内嵌 SVG 禁止 script 或 foreignObject")
+        for attribute, value in element.attrib.items():
+            name = attribute.rsplit("}", 1)[-1].lower()
+            stripped = value.strip()
+            if name == "href" and stripped and not stripped.startswith("#"):
+                errors.append(f"{cell_id}: 内嵌 SVG href 只允许本地 #id 引用")
+            for reference in re.findall(r"url\(([^)]+)\)", stripped, re.IGNORECASE):
+                if not reference.strip(" '\"").startswith("#"):
+                    errors.append(f"{cell_id}: 内嵌 SVG url() 只允许本地 #id 引用")
 
 
 def number(value: str | None, default: float = 0.0) -> float:
@@ -288,6 +341,16 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
 
     if root.tag not in {"mxfile", "mxGraphModel"}:
         errors.append("根节点必须是 mxfile 或 mxGraphModel")
+    diagram = root.find("diagram") if root.tag == "mxfile" else None
+    if diagram is not None:
+        theme = diagram.get("theme")
+        if theme and theme not in ALLOWED_THEMES:
+            errors.append(f"未知主题键: {theme}")
+        if path.parent.name == "templates" and path.name in {"architecture.drawio", "architecture-data.drawio"}:
+            if diagram.get("layout") != "vertical-stack":
+                errors.append("架构模板必须声明 layout=vertical-stack")
+            if diagram.get("optionalModules") != OPTIONAL_MODULES:
+                errors.append("架构模板缺少完整的可选模块声明")
     models = [root] if root.tag == "mxGraphModel" else list(root.findall(".//mxGraphModel"))
     if not models:
         return errors + ["缺少 mxGraphModel"], warnings
@@ -335,10 +398,21 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
                 if reference and reference not in known_ids:
                     errors.append(f"{cell_id}: {key} 引用不存在节点 {reference}")
         style = style_map(cell.get("style", ""))
+        module = cell.get("module")
+        if module and module not in ALLOWED_MODULES:
+            errors.append(f"{cell_id}: 未知附加模块 {module}")
         font_size = number(style.get("fontSize"), 12)
         if cell.get("value") and font_size < 11:
             errors.append(f"{cell_id}: 字号 {font_size:g} 小于 11")
         raw_style = cell.get("style", "")
+        image = style.get("image", "").strip()
+        if image:
+            validate_embedded_svg(image, cell_id, errors)
+        font_family = style.get("fontFamily", "").lower()
+        if any(name in font_family for name in ICON_FONTS):
+            errors.append(f"{cell_id}: 禁止使用图标字体")
+        if EMOJI_RE.search(cell.get("value", "")):
+            errors.append(f"{cell_id}: 禁止使用 Emoji 代替图标")
         if "underline" in raw_style.lower() or "fontStyle=4" in raw_style:
             errors.append(f"{cell_id}: 禁止标题或文字下划线")
         if style.get("shadow") == "1" or model.get("shadow") == "1":
@@ -740,6 +814,16 @@ def validate_catalog(target: Path) -> list[str]:
     errors: list[str] = []
     if not (target / "SKILL.md").exists():
         return errors
+    missing_support = sorted(path for path in REQUIRED_SUPPORT_FILES if not (target / path).is_file())
+    if missing_support:
+        errors.append("缺少主题或图标支持文件: " + ", ".join(missing_support))
+    representative = target / "examples" / "architecture-application-light-ecommerce.drawio"
+    if representative.is_file():
+        tree = ET.parse(representative)
+        if not tree.findall(".//mxCell[@module='focus-node']"):
+            errors.append("代表架构示例缺少 focus-node 附加模块")
+        if not tree.findall(".//mxCell[@role='icon']"):
+            errors.append("代表架构示例缺少语义图标")
     templates_dir = target / "templates"
     examples_dir = target / "examples"
     template_names = {path.name for path in templates_dir.glob("*.drawio")}

@@ -60,12 +60,23 @@ EXPECTED_EXAMPLE_PREFIXES = {
     "swot-",
     "timeline-",
 }
+REQUIRED_SUPPORT_FILES = {
+    "references/theme-tokens.md",
+    "references/icon-policy.md",
+    "scripts/palette.py",
+    "tests/test_palette.py",
+}
 
 NUMBER_RE = re.compile(r"-?\d+(?:\.\d+)?")
 URL_REF_RE = re.compile(r"url\(\s*#([^)\s]+)\s*\)")
 TRANSLATE_RE = re.compile(r"translate\(\s*(-?\d+(?:\.\d+)?)\s*(?:[, ]\s*(-?\d+(?:\.\d+)?))?\s*\)")
 PLACEHOLDER_RE = re.compile(r"示例|占位|TODO|待填写|\{\{[^}]+\}\}", re.IGNORECASE)
 HEX_RE = re.compile(r"^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$")
+EMOJI_RE = re.compile("[\u2600-\u27BF\U0001F300-\U0001FAFF]")
+ICON_FONTS = ("font awesome", "material icons", "segoe mdl2 assets", "bootstrap icons")
+ALLOWED_THEMES = {"tech-blue", "vibrant", "focused"}
+ALLOWED_MODULES = {"top-band", "aux-column", "callout", "numbered-flow", "focus-node", "footer-band"}
+OPTIONAL_MODULES = "top-band aux-column callout numbered-flow focus-node footer-band"
 
 
 @dataclass(frozen=True)
@@ -206,6 +217,21 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
     if local_name(root) != "svg":
         errors.append("根节点不是 svg")
         return errors, warnings
+    theme = root.get("data-theme")
+    if theme and theme not in ALLOWED_THEMES:
+        errors.append(f"未知主题键: {theme}")
+    if path.parent.name == "templates" and path.name in {
+        "architecture.svg",
+        "architecture-business.svg",
+        "architecture-data.svg",
+        "architecture-technical.svg",
+        "architecture-deployment.svg",
+    }:
+        metadata = next((item for item in root if local_name(item) == "metadata"), None)
+        if metadata is None or metadata.get("data-layout") != "vertical-stack":
+            errors.append("架构模板必须声明 data-layout=vertical-stack")
+        if metadata is None or metadata.get("data-optional-modules") != OPTIONAL_MODULES:
+            errors.append("架构模板缺少完整的可选模块声明")
 
     width, height = number(root.get("width")), number(root.get("height"))
     viewbox = [float(item) for item in NUMBER_RE.findall(root.get("viewBox") or "")]
@@ -235,6 +261,10 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
             warnings.append("title/desc 应通过 aria-labelledby 关联")
 
     all_elements = list(root.iter())
+    for element in all_elements:
+        module = element.get("data-module")
+        if module and module not in ALLOWED_MODULES:
+            errors.append(f"未知附加模块: {module}")
     ids = [item.get("id") for item in all_elements if item.get("id")]
     duplicates = sorted({item for item in ids if ids.count(item) > 1})
     if duplicates:
@@ -262,6 +292,10 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
         errors.append("禁止嵌入位图 image")
     if "@font-face" in source or "http://" in source.replace("http://www.w3.org/2000/svg", "") or "https://" in source:
         errors.append("禁止外部字体、样式或网络资源")
+    for element in all_elements:
+        family = attr(element, "font-family") or ""
+        if any(name in family.lower() for name in ICON_FONTS):
+            errors.append(f"禁止使用图标字体: {element.get('id', f'<{local_name(element)}>')}")
 
     defs_types = {"marker", "filter", "linearGradient", "radialGradient", "clipPath", "mask"}
     definitions = [item for item in all_elements if local_name(item) in defs_types and item.get("id")]
@@ -294,6 +328,8 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
             if size < minimum:
                 warnings.append(f"文字字号过小: {element.get('id', '<text>')}={size:g}px")
             family = attr(element, "font-family") or ""
+            if EMOJI_RE.search("".join(element.itertext())):
+                errors.append(f"禁止使用 Emoji 代替图标: {element.get('id', '<text>')}")
             if family and "sans-serif" not in family.lower():
                 warnings.append(f"字体缺少通用 fallback: {element.get('id', '<text>')}")
             foreground = fill or ""
@@ -446,6 +482,16 @@ def render(svg: Path) -> tuple[bool, str]:
 
 def validate_catalog(target: Path) -> list[str]:
     errors: list[str] = []
+    missing_support = sorted(path for path in REQUIRED_SUPPORT_FILES if not (target / path).is_file())
+    if missing_support:
+        errors.append("缺少主题或图标支持文件: " + ", ".join(missing_support))
+    representative = target / "examples" / "architecture-application-light-ecommerce.svg"
+    if representative.is_file():
+        root = ET.parse(representative).getroot()
+        if not any(item.get("data-module") == "focus-node" for item in root.iter()):
+            errors.append("代表架构示例缺少 focus-node 附加模块")
+        if not any(item.get("data-role") == "icon" for item in root.iter()):
+            errors.append("代表架构示例缺少语义图标")
     templates = target / "templates"
     examples = target / "examples"
     names = {item.name for item in templates.glob("*.svg")}

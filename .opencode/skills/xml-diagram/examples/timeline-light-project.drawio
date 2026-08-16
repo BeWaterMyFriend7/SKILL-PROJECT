@@ -17,31 +17,31 @@
         <mxCell id="milestone-1" value="需求确认" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="80" y="110" width="160" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="marker-1" value="1" style="ellipse;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="marker-1" value="1" style="ellipse;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="148" y="286" width="24" height="24" as="geometry" />
         </mxCell>
         <mxCell id="milestone-2" value="方案评审" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="360" width="160" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="marker-2" value="2" style="ellipse;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="marker-2" value="2" style="ellipse;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="368" y="286" width="24" height="24" as="geometry" />
         </mxCell>
         <mxCell id="milestone-3" value="开发完成" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="520" y="110" width="160" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="marker-3" value="3" style="ellipse;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="marker-3" value="3" style="ellipse;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="588" y="286" width="24" height="24" as="geometry" />
         </mxCell>
         <mxCell id="milestone-4" value="灰度发布" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="740" y="360" width="160" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="marker-4" value="4" style="ellipse;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="marker-4" value="4" style="ellipse;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="808" y="286" width="24" height="24" as="geometry" />
         </mxCell>
         <mxCell id="milestone-5" value="正式上线" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="960" y="110" width="160" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="marker-5" value="5" style="ellipse;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="marker-5" value="5" style="ellipse;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="1028" y="286" width="24" height="24" as="geometry" />
         </mxCell>
       </root>

@@ -17,10 +17,10 @@ SPEC.loader.exec_module(VALIDATOR)
 
 VALID_SVG = """<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240" role="img" aria-labelledby="title desc" font-family="Arial, sans-serif">
 <title id="title">测试图</title><desc id="desc">验证基础结构。</desc>
-<rect width="400" height="240" fill="#F5F7FB"/>
-<rect x="24" y="32" width="352" height="176" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
-<rect id="node-a" data-role="node" x="40" y="70" width="120" height="70" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
-<rect id="node-b" data-role="node" x="240" y="70" width="120" height="70" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+<rect width="400" height="240" fill="#F6F8FB"/>
+<rect x="24" y="32" width="352" height="176" rx="12" fill="#FFFFFF" stroke="#D8E1EA"/>
+<rect id="node-a" data-role="node" x="40" y="70" width="120" height="70" rx="10" fill="#FFFFFF" stroke="#D8E1EA"/>
+<rect id="node-b" data-role="node" x="240" y="70" width="120" height="70" rx="10" fill="#FFFFFF" stroke="#D8E1EA"/>
 <text x="100" y="112" text-anchor="middle" font-size="14" fill="#172033">节点 A</text>
 <text x="300" y="112" text-anchor="middle" font-size="14" fill="#172033">节点 B</text>
 </svg>"""
@@ -45,7 +45,7 @@ class SvgValidatorTests(unittest.TestCase):
         self.assertTrue(any("desc" in item for item in errors))
 
     def test_rejects_missing_reference(self):
-        source = VALID_SVG.replace('stroke="#D7E0EA"', 'stroke="url(#missing)"', 1)
+        source = VALID_SVG.replace('stroke="#D8E1EA"', 'stroke="url(#missing)"', 1)
         errors, _ = self.validate(source)
         self.assertIn("引用不存在: missing", errors)
 
@@ -53,6 +53,27 @@ class SvgValidatorTests(unittest.TestCase):
         source = VALID_SVG.replace("</svg>", '<image href="https://example.com/a.png"/></svg>')
         errors, _ = self.validate(source)
         self.assertTrue(any("外部资源" in item or "网络资源" in item for item in errors))
+
+    def test_rejects_icon_font(self):
+        source = VALID_SVG.replace("Arial, sans-serif", "Font Awesome 6 Free, sans-serif")
+        errors, _ = self.validate(source)
+        matches = [item for item in errors if "图标字体" in item]
+        self.assertEqual(1, len(matches))
+
+    def test_rejects_symbol_emoji(self):
+        source = VALID_SVG.replace("节点 A", "☁️ 节点 A")
+        errors, _ = self.validate(source)
+        self.assertTrue(any("Emoji" in item for item in errors))
+
+    def test_rejects_unknown_theme(self):
+        source = VALID_SVG.replace('role="img"', 'role="img" data-theme="custom"')
+        errors, _ = self.validate(source)
+        self.assertTrue(any("未知主题键" in item for item in errors))
+
+    def test_rejects_unknown_optional_module(self):
+        source = VALID_SVG.replace('data-role="node"', 'data-role="node" data-module="sidebar"', 1)
+        errors, _ = self.validate(source)
+        self.assertTrue(any("未知附加模块" in item for item in errors))
 
     def test_warns_for_small_text(self):
         source = VALID_SVG.replace('font-size="14"', 'font-size="9"', 1)

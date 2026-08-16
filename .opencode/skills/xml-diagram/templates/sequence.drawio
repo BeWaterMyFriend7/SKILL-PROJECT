@@ -44,31 +44,31 @@
             <mxPoint x="920" y="636" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="sequence-start" value="" style="ellipse;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+        <mxCell id="sequence-start" value="" style="ellipse;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="90" y="220" width="16" height="16" as="geometry" />
         </mxCell>
-        <mxCell id="sequence-end" value="" style="ellipse;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+        <mxCell id="sequence-end" value="" style="ellipse;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="90" y="620" width="16" height="16" as="geometry" />
         </mxCell>
-        <mxCell id="message-start" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+        <mxCell id="message-start" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="98" y="228" as="sourcePoint" />
             <mxPoint x="170" y="228" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="message-1" value="1. 发起请求" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+        <mxCell id="message-1" value="1. 发起请求" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="170" y="270" as="sourcePoint" />
             <mxPoint x="420" y="270" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="message-2" value="2. 转发认证" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+        <mxCell id="message-2" value="2. 转发认证" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="420" y="320" as="sourcePoint" />
             <mxPoint x="670" y="320" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="message-3" value="3. 查询用户" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+        <mxCell id="message-3" value="3. 查询用户" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="670" y="370" as="sourcePoint" />
             <mxPoint x="920" y="370" as="targetPoint" />
@@ -92,7 +92,7 @@
             <mxPoint x="170" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="message-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+        <mxCell id="message-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="170" y="628" as="sourcePoint" />
             <mxPoint x="98" y="628" as="targetPoint" />

@@ -8,37 +8,37 @@
         <mxCell id="diagram-title" value="图形标题" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=24;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="360" y="20" width="480" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="knowledge-center" value="主题节点" style="rounded=1;arcSize=10;fillColor=#2563EB;strokeColor=#2563EB;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=18;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="knowledge-center" value="主题节点" style="rounded=1;arcSize=10;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=18;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="470" y="300" width="260" height="100" as="geometry" />
         </mxCell>
         <mxCell id="concept-1" value="主题节点" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="130" width="220" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="knowledge-edge-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-1">
+        <mxCell id="knowledge-edge-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="concept-2" value="主题节点" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="840" y="130" width="220" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="knowledge-edge-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-2">
+        <mxCell id="knowledge-edge-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="concept-3" value="主题节点" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="510" width="220" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="knowledge-edge-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-3">
+        <mxCell id="knowledge-edge-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="concept-4" value="主题节点" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="840" y="510" width="220" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="knowledge-edge-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-4">
+        <mxCell id="knowledge-edge-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="concept-5" value="主题节点" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="470" y="600" width="220" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="knowledge-edge-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-5">
+        <mxCell id="knowledge-edge-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="knowledge-center" target="concept-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
