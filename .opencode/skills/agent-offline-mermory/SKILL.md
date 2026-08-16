@@ -270,7 +270,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 - 纯文本模式不校验 Obsidian，链接按相对路径解析
 ```
 
-可在知识或任务文档的 frontmatter 中添加 `tags: [git, 部署]`，仪表盘会按标签统计。
+可在知识或任务文档的 frontmatter 中添加 `tags: [git, 部署]`，供 Obsidian 搜索、Dataview 查询或其他视图使用。
 
 每日总结文档按日期一个文件，优先使用：
 
