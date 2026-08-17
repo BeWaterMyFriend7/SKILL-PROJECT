@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="tech-blue" data-mode="dark">
+  <title id="title">用户登录时序图</title>
+  <desc id="desc">用户登录时序图，使用科技蓝主题的dark模式。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#2E69E1" />
+    </marker>
+    <marker id="return-arrow" markerWidth="8" markerHeight="8" refX="1" refY="4" orient="auto">
+      <path d="M8 0L0 4L8 8Z" fill="#94A3B8" />
+    </marker>
+  </defs>
+  <rect width="1200" height="760" fill="#0F172A" />
+  <text x="48" y="58" font-size="28" font-weight="700" fill="#F8FAFC">用户登录时序图</text>
+  <text x="48" y="84" font-size="13" fill="#94A3B8">参与者横向等距，生命线竖直，消息按时间自上而下</text>
+  <rect x="48" y="116" width="1104" height="580" rx="18" fill="#172033" stroke="#334155" />
+  <circle id="sequence-start" cx="80" cy="160" r="8" fill="#2E69E1" />
+  <text x="80" y="190" font-size="12" fill="#94A3B8" text-anchor="middle">开始</text>
+  <g fill="#1D3464" stroke="#254D9F">
+    <rect id="participant-user" data-role="node" x="118" y="150" width="180" height="62" rx="12" />
+    <rect id="participant-client" data-role="node" x="380" y="150" width="180" height="62" rx="12" />
+    <rect id="participant-auth" data-role="node" x="642" y="150" width="180" height="62" rx="12" />
+    <rect id="participant-db" data-role="node" x="904" y="150" width="180" height="62" rx="12" />
+  </g>
+  <g text-anchor="middle" fill="#F8FAFC" font-size="14" font-weight="600">
+    <text x="208" y="188">用户</text>
+    <text x="470" y="188">客户端</text>
+    <text x="732" y="188">认证服务</text>
+    <text x="994" y="188">数据库</text>
+  </g>
+  <g stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="6 7">
+    <line id="lifeline-user" data-role="lifeline" x1="208" y1="212" x2="208" y2="650" />
+    <line id="lifeline-client" data-role="lifeline" x1="470" y1="212" x2="470" y2="650" />
+    <line id="lifeline-auth" data-role="lifeline" x1="732" y1="212" x2="732" y2="650" />
+    <line id="lifeline-db" data-role="lifeline" x1="994" y1="212" x2="994" y2="650" />
+  </g>
+  <g fill="#1D3464" stroke="#5C8AE8">
+    <rect x="461" y="278" width="18" height="246" rx="5" />
+    <rect x="723" y="332" width="18" height="150" rx="5" />
+    <rect x="985" y="386" width="18" height="54" rx="5" />
+  </g>
+  <g fill="none" stroke="#2E69E1" stroke-width="2" marker-end="url(#arrow)">
+    <line id="message-1" data-role="edge" x1="208" y1="258" x2="470" y2="258" />
+    <line id="message-2" data-role="edge" x1="470" y1="312" x2="732" y2="312" />
+    <line id="message-3" data-role="edge" x1="732" y1="366" x2="994" y2="366" />
+  </g>
+  <g fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="7 6" marker-start="url(#return-arrow)">
+    <line id="return-1" data-role="edge" x1="732" y1="458" x2="994" y2="458" />
+    <line id="return-2" data-role="edge" x1="470" y1="512" x2="732" y2="512" />
+    <line id="return-3" data-role="edge" x1="208" y1="566" x2="470" y2="566" />
+  </g>
+  <g font-size="12" fill="#334155">
+    <text x="224" y="248">1. 输入账号与密码</text>
+    <text x="486" y="302">2. 提交登录请求</text>
+    <text x="748" y="356">3. 查询用户凭证</text>
+    <text x="748" y="448">4. 返回凭证摘要</text>
+    <text x="486" y="502">5. 返回认证结果</text>
+    <text x="224" y="556">6. 展示登录结果</text>
+  </g>
+  <circle id="sequence-end" cx="1116" cy="650" r="10" fill="#172033" stroke="#4ADE80" stroke-width="3" />
+  <circle cx="1116" cy="650" r="4" fill="#4ADE80" />
+  <text x="1080" y="655" font-size="12" fill="#94A3B8" text-anchor="end">结束</text>
+</svg>

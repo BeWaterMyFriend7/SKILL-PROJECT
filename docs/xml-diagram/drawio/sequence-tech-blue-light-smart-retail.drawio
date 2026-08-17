@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="用户登录时序图" id="sequence-example" theme="tech-blue" mode="light">
+    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="720" math="0" shadow="0" background="#F6F8FB">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="diagram-title" value="用户登录时序图" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=24;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="20" width="480" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="participant-1" value="用户" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="100" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeline-1" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#64748B;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="154" as="sourcePoint" />
+            <mxPoint x="170" y="636" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="participant-2" value="API 网关" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="100" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeline-2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#64748B;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="154" as="sourcePoint" />
+            <mxPoint x="420" y="636" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="participant-3" value="认证服务" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="100" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeline-3" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#64748B;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="670" y="154" as="sourcePoint" />
+            <mxPoint x="670" y="636" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="participant-4" value="用户库" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=14;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="100" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeline-4" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#64748B;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="154" as="sourcePoint" />
+            <mxPoint x="920" y="636" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sequence-start" value="" style="ellipse;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="90" y="220" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="sequence-end" value="" style="ellipse;fillColor=#2E69E1;strokeColor=#2E69E1;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="90" y="620" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="message-start" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="98" y="228" as="sourcePoint" />
+            <mxPoint x="170" y="228" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-1" value="1. 发起请求" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="270" as="sourcePoint" />
+            <mxPoint x="420" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-2" value="2. 转发认证" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="320" as="sourcePoint" />
+            <mxPoint x="670" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-3" value="3. 查询用户" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="670" y="370" as="sourcePoint" />
+            <mxPoint x="920" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="return-1" value="4. 返回用户" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;dashed=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="420" as="sourcePoint" />
+            <mxPoint x="670" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="return-2" value="5. 返回令牌" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;dashed=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="670" y="470" as="sourcePoint" />
+            <mxPoint x="420" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="return-3" value="6. 登录成功" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;dashed=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="520" as="sourcePoint" />
+            <mxPoint x="170" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-end" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="628" as="sourcePoint" />
+            <mxPoint x="98" y="628" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

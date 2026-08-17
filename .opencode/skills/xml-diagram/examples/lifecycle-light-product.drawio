@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mxfile host="app.diagrams.net">
-  <diagram name="lifecycle example" id="lifecycle-example">
+  <diagram name="lifecycle example" id="lifecycle-example" theme="vibrant" mode="light">
     <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="420" math="0" shadow="0" background="#F6F8FB">
       <root>
         <mxCell id="0" />
@@ -23,16 +23,16 @@
         <mxCell id="phase-5" value="持续优化" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="940" y="210" width="180" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="lifecycle-edge-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="phase-1" target="phase-2">
+        <mxCell id="lifecycle-edge-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1B9CDE;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="phase-1" target="phase-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lifecycle-edge-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="phase-2" target="phase-3">
+        <mxCell id="lifecycle-edge-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1B9CDE;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="phase-2" target="phase-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lifecycle-edge-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="phase-3" target="phase-4">
+        <mxCell id="lifecycle-edge-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1B9CDE;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="phase-3" target="phase-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lifecycle-edge-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E69E1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="phase-4" target="phase-5">
+        <mxCell id="lifecycle-edge-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1B9CDE;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="phase-4" target="phase-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="lifecycle-feedback" value="反馈" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#7C3AED;strokeWidth=2;endArrow=block;endFill=1;dashed=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">

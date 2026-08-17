@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="零售平台演进路线图" id="roadmap-example" theme="focused" mode="light">
+    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="700" math="0" shadow="0" background="#F6F8FB">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="diagram-title" value="零售平台演进路线图" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=24;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="20" width="480" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="roadmap-axis" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=11;fontColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="350" as="sourcePoint" />
+            <mxPoint x="1120" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="phase-1" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="200" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-1-title" value="MVP" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="phase-1">
+          <mxGeometry x="16" y="14" width="168" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-1-body" value="商品上架&#10;基础交易&#10;账户体系" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="phase-1">
+          <mxGeometry x="16" y="66" width="168" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="roadmap-marker-1" value="1" style="ellipse;fillColor=#1F5CD7;strokeColor=#1F5CD7;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="128" y="338" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-2" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="270" y="420" width="200" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-2-title" value="核心能力" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="phase-2">
+          <mxGeometry x="16" y="14" width="168" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-2-body" value="高并发&#10;分布式锁&#10;实时推送" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="phase-2">
+          <mxGeometry x="16" y="66" width="168" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="roadmap-marker-2" value="2" style="ellipse;fillColor=#1F5CD7;strokeColor=#1F5CD7;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="358" y="338" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-3" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="500" y="100" width="200" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-3-title" value="安全加固" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="phase-3">
+          <mxGeometry x="16" y="14" width="168" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-3-body" value="风控规则&#10;设备指纹&#10;行为分析" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="phase-3">
+          <mxGeometry x="16" y="66" width="168" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="roadmap-marker-3" value="3" style="ellipse;fillColor=#1F5CD7;strokeColor=#1F5CD7;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="588" y="338" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-4" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="730" y="420" width="200" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-4-title" value="运营优化" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="phase-4">
+          <mxGeometry x="16" y="14" width="168" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-4-body" value="数据看板&#10;活动模板&#10;配置中心" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="phase-4">
+          <mxGeometry x="16" y="66" width="168" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="roadmap-marker-4" value="4" style="ellipse;fillColor=#1F5CD7;strokeColor=#1F5CD7;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="818" y="338" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-5" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="960" y="100" width="200" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-5-title" value="生态扩展" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=15;fontColor=#172033;fontStyle=1;" vertex="1" parent="phase-5">
+          <mxGeometry x="16" y="14" width="168" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-5-body" value="开放 API&#10;企业采购&#10;合作渠道" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="phase-5">
+          <mxGeometry x="16" y="66" width="168" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="roadmap-marker-5" value="5" style="ellipse;fillColor=#1F5CD7;strokeColor=#1F5CD7;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1048" y="338" width="24" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

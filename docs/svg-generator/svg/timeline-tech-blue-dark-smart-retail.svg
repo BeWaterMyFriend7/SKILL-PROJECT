@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="tech-blue" data-mode="dark">
+  <title id="title">零售平台交付里程碑</title>
+  <desc id="desc">零售平台交付里程碑，使用科技蓝主题的dark模式。</desc>
+  <rect width="1200" height="620" fill="#0F172A" />
+  <text x="48" y="58" font-size="28" font-weight="700" fill="#F8FAFC">零售平台交付里程碑</text>
+  <text x="48" y="84" font-size="13" fill="#94A3B8">里程碑等距排列，事件说明上下交错以保持可读性</text>
+  <line x1="110" y1="320" x2="1090" y2="320" stroke="#CBD5E1" stroke-width="4" />
+  <g fill="#2E69E1" stroke="#172033" stroke-width="5">
+    <circle cx="150" cy="320" r="14" />
+    <circle cx="375" cy="320" r="14" />
+    <circle cx="600" cy="320" r="14" />
+    <circle cx="825" cy="320" r="14" />
+    <circle cx="1050" cy="320" r="14" />
+  </g>
+  <g stroke="#CBD5E1" stroke-width="2">
+    <line x1="150" y1="306" x2="150" y2="242" />
+    <line x1="375" y1="334" x2="375" y2="398" />
+    <line x1="600" y1="306" x2="600" y2="242" />
+    <line x1="825" y1="334" x2="825" y2="398" />
+    <line x1="1050" y1="306" x2="1050" y2="242" />
+  </g>
+  <g fill="#172033" stroke="#334155">
+    <rect id="time-1" data-role="node" x="72" y="150" width="156" height="92" rx="12" />
+    <rect id="time-2" data-role="node" x="297" y="398" width="156" height="92" rx="12" />
+    <rect id="time-3" data-role="node" x="522" y="150" width="156" height="92" rx="12" />
+    <rect id="time-4" data-role="node" x="747" y="398" width="156" height="92" rx="12" />
+    <rect id="time-5" data-role="node" x="972" y="150" width="156" height="92" rx="12" />
+  </g>
+  <g text-anchor="middle">
+    <g font-size="12" fill="#2E69E1" font-weight="600">
+      <text x="150" y="178">第 1 周</text>
+      <text x="375" y="426">第 3 周</text>
+      <text x="600" y="178">第 6 周</text>
+      <text x="825" y="426">第 9 周</text>
+      <text x="1050" y="178">第 12 周</text>
+    </g>
+    <g font-size="14" fill="#F8FAFC" font-weight="600">
+      <text x="150" y="210">需求确认</text>
+      <text x="375" y="458">方案评审</text>
+      <text x="600" y="210">核心开发</text>
+      <text x="825" y="458">验收测试</text>
+      <text x="1050" y="210">正式发布</text>
+    </g>
+  </g>
+</svg>

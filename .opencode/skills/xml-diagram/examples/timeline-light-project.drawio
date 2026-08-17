@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mxfile host="app.diagrams.net">
-  <diagram name="timeline example" id="timeline-example">
+  <diagram name="timeline example" id="timeline-example" theme="tech-blue" mode="light">
     <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="600" math="0" shadow="0" background="#F6F8FB">
       <root>
         <mxCell id="0" />

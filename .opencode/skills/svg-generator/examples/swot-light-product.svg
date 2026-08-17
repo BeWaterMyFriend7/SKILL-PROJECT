@@ -1,7 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="720" viewBox="0 0 1000 720" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif">
-  <title id="title">产品 SWOT 分析</title><desc id="desc">从优势、劣势、机会和威胁四个象限总结产品现状。</desc>
-  <rect width="1000" height="720" fill="#F6F8FB"/><text x="48" y="58" font-size="28" font-weight="700" fill="#172033">产品 SWOT 分析</text><text x="48" y="84" font-size="13" fill="#64748B">四个象限保持等宽等高，结论使用简短要点表达</text>
-  <g><rect id="swot-s" data-role="node" x="48" y="126" width="438" height="244" rx="16" fill="#F0FDF4" stroke="#BBF7D0"/><rect id="swot-w" data-role="node" x="514" y="126" width="438" height="244" rx="16" fill="#FFF7ED" stroke="#FED7AA"/><rect id="swot-o" data-role="node" x="48" y="398" width="438" height="244" rx="16" fill="#E6EDFB" stroke="#BFDBFE"/><rect id="swot-t" data-role="node" x="514" y="398" width="438" height="244" rx="16" fill="#FEF2F2" stroke="#FECACA"/></g>
-  <g font-size="18" font-weight="700"><text x="76" y="168" fill="#15803D">S · 优势</text><text x="542" y="168" fill="#C2410C">W · 劣势</text><text x="76" y="440" fill="#2656B8">O · 机会</text><text x="542" y="440" fill="#B91C1C">T · 威胁</text></g>
-  <g font-size="14" fill="#334155"><text x="76" y="210">• 核心业务流程成熟</text><text x="76" y="246">• 用户体验稳定一致</text><text x="76" y="282">• 数据资产持续积累</text><text x="542" y="210">• 新场景覆盖不足</text><text x="542" y="246">• 交付链路仍然较长</text><text x="542" y="282">• 生态集成能力有限</text><text x="76" y="482">• 行业数字化需求增长</text><text x="76" y="518">• AI 降低服务成本</text><text x="76" y="554">• 新渠道带来增量用户</text><text x="542" y="482">• 同类产品竞争加剧</text><text x="542" y="518">• 合规要求持续变化</text><text x="542" y="554">• 技术替代速度加快</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="720" viewBox="0 0 1000 720" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="vibrant" data-mode="light">
+  <title id="title">产品 SWOT 分析</title>
+  <desc id="desc">从优势、劣势、机会和威胁四个象限总结产品现状。</desc>
+  <rect width="1000" height="720" fill="#F6F8FB" />
+  <text x="48" y="58" font-size="28" font-weight="700" fill="#172033">产品 SWOT 分析</text>
+  <text x="48" y="84" font-size="13" fill="#64748B">四个象限保持等宽等高，结论使用简短要点表达</text>
+  <g>
+    <rect id="swot-s" data-role="node" x="48" y="126" width="438" height="244" rx="16" fill="#F0FDF4" stroke="#BBF7D0" />
+    <rect id="swot-w" data-role="node" x="514" y="126" width="438" height="244" rx="16" fill="#FFF7ED" stroke="#FED7AA" />
+    <rect id="swot-o" data-role="node" x="48" y="398" width="438" height="244" rx="16" fill="#D9E7EE" stroke="#BFDBFE" />
+    <rect id="swot-t" data-role="node" x="514" y="398" width="438" height="244" rx="16" fill="#FEF2F2" stroke="#FECACA" />
+  </g>
+  <g font-size="18" font-weight="700">
+    <text x="76" y="168" fill="#16A34A">S · 优势</text>
+    <text x="542" y="168" fill="#D97706">W · 劣势</text>
+    <text x="76" y="440" fill="#1680B6">O · 机会</text>
+    <text x="542" y="440" fill="#DC2626">T · 威胁</text>
+  </g>
+  <g font-size="14" fill="#D8E1EA">
+    <text x="76" y="210">• 核心业务流程成熟</text>
+    <text x="76" y="246">• 用户体验稳定一致</text>
+    <text x="76" y="282">• 数据资产持续积累</text>
+    <text x="542" y="210">• 新场景覆盖不足</text>
+    <text x="542" y="246">• 交付链路仍然较长</text>
+    <text x="542" y="282">• 生态集成能力有限</text>
+    <text x="76" y="482">• 行业数字化需求增长</text>
+    <text x="76" y="518">• AI 降低服务成本</text>
+    <text x="76" y="554">• 新渠道带来增量用户</text>
+    <text x="542" y="482">• 同类产品竞争加剧</text>
+    <text x="542" y="518">• 合规要求持续变化</text>
+    <text x="542" y="554">• 技术替代速度加快</text>
+  </g>
 </svg>

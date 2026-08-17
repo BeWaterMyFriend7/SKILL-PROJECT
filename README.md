@@ -38,13 +38,13 @@
     <tr>
       <td rowspan="3">绘图相关</td>
       <td><code>xml-diagram</code></td>
-      <td>生成支持在 Draw.io 中编辑的技术图，包括架构图、流程图、时序图、时间规划图、对比图等，支持深色和浅色背景</td>
+      <td>生成可在 Draw.io 中编辑的技术图，支持三套主题、浅色/深色模式和纵向分层架构</td>
       <td>Draw.io XML</td>
       <td colspan="2"><a href="docs/xml-diagram/README.md">文档与示例</a></td>
     </tr>
     <tr>
       <td><code>svg-generator</code></td>
-      <td>高质量、可缩放的矢量架构图和技术图，包括架构图、流程图、时序图、时间规划图、对比图等，支持深色和浅色背景</td>
+      <td>生成自包含、可缩放的 SVG 技术图，支持三套主题、浅色/深色模式和浏览器渲染校验</td>
       <td>SVG</td>
       <td colspan="2"><a href="docs/svg-generator/README.md">文档与示例</a></td>
     </tr>
@@ -150,13 +150,13 @@
 
 #### 架构图
 
-![Draw.io 业务架构图](docs/xml-diagram/images/architecture-business-dark-red-packet.png)
+![Draw.io 科技蓝业务架构图](docs/xml-diagram/images/architecture-business-tech-blue-dark-smart-retail.png)
 
-![Draw.io 技术架构图](docs/xml-diagram/images/architecture-technical-light-red-packet.png)
+![Draw.io 稳健聚焦技术架构图](docs/xml-diagram/images/architecture-technical-focused-light-smart-retail.png)
 
-![SVG 数据架构图](docs/svg-generator/images/architecture-data-dark-red-packet.png)
+![SVG 活力多彩流程图](docs/svg-generator/images/flow-branching-vibrant-dark-smart-retail.png)
 
-![红包时序图](docs/xml-diagram/images/sequence-grab-light-red-packet.png)
+![智慧零售时序图](docs/xml-diagram/images/sequence-tech-blue-light-smart-retail.png)
 
 #### HTML 原型
 

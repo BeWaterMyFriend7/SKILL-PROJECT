@@ -1,103 +1,77 @@
 # svg-generator 使用说明
 
-## 第一部分：Skill 使用说明
+`svg-generator` 生成可直接在浏览器、网页和文档中展示的自包含 SVG，适合架构、流程、时序、关系、规划和结构化信息图。需要在 Draw.io 中拖拽编辑时使用 `xml-diagram`。
 
-### 适用场景
-
-- 生成可在浏览器、文档和网页中展示的高质量 SVG。
-- 绘制业务、技术、部署、数据架构，以及流程、时序、ER、关系、对比和路线图。
-- 需要 Draw.io 二次编辑时使用 `xml-diagram`；复杂自动布局优先使用 `mermaid-gen`。
-
-### 快速使用
+## 快速使用
 
 ```text
-请使用 svg-generator 绘制抢红包系统的业务架构图和主要流程图，同时生成浅色与深色版本。
+请使用 svg-generator 绘制智慧零售平台的技术架构图。
+使用稳健聚焦深色主题，保持纵向分层，并输出自包含 SVG。
 ```
 
-### 支持的图类型
+未提供颜色信号时，Skill 会询问一次主题；仍未指定则使用默认科技蓝浅色模式。
 
-- 业务架构图、应用架构图、技术架构图、部署架构图、数据架构图
-- 线性流程图、分支流程图、生命周期图、状态图
-- 时序图
-- ER 图、依赖关系图、知识关系图
-- 对比图、决策矩阵、SWOT 分析图
-- 时间线、路线图、总结图
-- 更多
+## 主题
 
-### 核心流程
-
-1. 确定图形类型、信息层级、主题、阅读方向和输出目录。
-2. 规划区域、分组、内容、尺寸、间距和必要连线。
-3. 匹配模板并计算画布。
-4. 生成带校验元数据的自包含 SVG。
-5. 检查颜色、布局、重叠、字号、连线和留白。
-6. 使用真实浏览器渲染并修正问题。
-
-## 第二部分：Skill 示例输出
-
-> 现在有一个抢红包的系统，请使用 svg-generator 绘制系统的业务架构图、技术架构图、部署架构图、主要流程图、用户抢红包的时序图、ER 图、功能总结图、系统开发关键节点图、系统开发路线图和数据架构图。深色背景和浅色背景都需要。
-
-测试环境：Codex Desktop，本机 Google Chrome SVG 渲染。
-
-本轮使用同一套统一视觉风格生成浅色和深色版本。两种主题的内容、节点关系和主要几何结构保持一致，只切换画布、表面、边框、文字和语义颜色。
-
-### SVG 文件索引
-
-| 图形类型 | 浅色 | 深色 |
+| 主题 | 键 | 适合的视觉感受 |
 | --- | --- | --- |
-| 业务架构图 | [architecture-business-light-red-packet.svg](svg/architecture-business-light-red-packet.svg) | [architecture-business-dark-red-packet.svg](svg/architecture-business-dark-red-packet.svg) |
-| 技术架构图 | [architecture-technical-light-red-packet.svg](svg/architecture-technical-light-red-packet.svg) | [architecture-technical-dark-red-packet.svg](svg/architecture-technical-dark-red-packet.svg) |
-| 部署架构图 | [architecture-deployment-light-red-packet.svg](svg/architecture-deployment-light-red-packet.svg) | [architecture-deployment-dark-red-packet.svg](svg/architecture-deployment-dark-red-packet.svg) |
-| 数据架构图 | [architecture-data-light-red-packet.svg](svg/architecture-data-light-red-packet.svg) | [architecture-data-dark-red-packet.svg](svg/architecture-data-dark-red-packet.svg) |
-| 主要流程图 | [flow-branching-main-light-red-packet.svg](svg/flow-branching-main-light-red-packet.svg) | [flow-branching-main-dark-red-packet.svg](svg/flow-branching-main-dark-red-packet.svg) |
-| 用户抢红包时序图 | [sequence-grab-light-red-packet.svg](svg/sequence-grab-light-red-packet.svg) | [sequence-grab-dark-red-packet.svg](svg/sequence-grab-dark-red-packet.svg) |
-| ER 图 | [relationship-er-light-red-packet.svg](svg/relationship-er-light-red-packet.svg) | [relationship-er-dark-red-packet.svg](svg/relationship-er-dark-red-packet.svg) |
-| 功能总结图 | [summary-function-light-red-packet.svg](svg/summary-function-light-red-packet.svg) | [summary-function-dark-red-packet.svg](svg/summary-function-dark-red-packet.svg) |
-| 开发关键节点图 | [timeline-project-milestones-light-red-packet.svg](svg/timeline-project-milestones-light-red-packet.svg) | [timeline-project-milestones-dark-red-packet.svg](svg/timeline-project-milestones-dark-red-packet.svg) |
-| 开发路线图 | [project-roadmap-light-red-packet.svg](svg/project-roadmap-light-red-packet.svg) | [project-roadmap-dark-red-packet.svg](svg/project-roadmap-dark-red-packet.svg) |
+| 科技蓝（默认） | `tech-blue` | 清晰、专业、统一 |
+| 活力多彩 | `vibrant` | 多角色、多分支、强调区分 |
+| 稳健聚焦 | `focused` | 克制、结构化、突出重点 |
 
-### 代表性截图
+每个主题都包含 primary、secondary、tertiary、accent 多个结构色。用户可以覆盖部分或全部色槽；浅色与深色版本保持相同内容和几何结构。
 
-#### 业务架构图
+## 生成流程
 
-![浅色业务架构图](images/architecture-business-light-red-packet.png)
+1. 明确图形类型、核心结论、内容层级和阅读方向。
+2. 选择主题与显示模式，生成自然语言 DSL。
+3. 匹配 SVG 模板并计算画布、区域、卡片和连线。
+4. 生成可访问、自包含 SVG，执行严格源文件校验。
+5. 使用真实浏览器渲染，修正重叠、文字、连线和空白。
 
-![深色业务架构图](images/architecture-business-dark-red-packet.png)
+架构图固定使用 `vertical-stack` 纵向分层。顶部信息带、辅助列、说明卡片、编号流程、焦点节点和底部总结带只在内容需要时加入。图标通常 0～4 个，但不设置硬上限。
 
-#### 技术架构图
+## 智慧零售示例集
 
-![浅色技术架构图](images/architecture-technical-light-red-packet.png)
+以下 10 类示例均重新生成浅色和深色版本，共 20 个 SVG 文件。
 
-#### 部署架构图
+| 图形类型 | 主题 | 浅色 | 深色 |
+| --- | --- | --- | --- |
+| 业务架构 | 科技蓝 | [文件](svg/architecture-business-tech-blue-light-smart-retail.svg) | [文件](svg/architecture-business-tech-blue-dark-smart-retail.svg) |
+| 技术架构 | 稳健聚焦 | [文件](svg/architecture-technical-focused-light-smart-retail.svg) | [文件](svg/architecture-technical-focused-dark-smart-retail.svg) |
+| 部署架构 | 科技蓝 | [文件](svg/architecture-deployment-tech-blue-light-smart-retail.svg) | [文件](svg/architecture-deployment-tech-blue-dark-smart-retail.svg) |
+| 数据架构 | 稳健聚焦 | [文件](svg/architecture-data-focused-light-smart-retail.svg) | [文件](svg/architecture-data-focused-dark-smart-retail.svg) |
+| 分支流程 | 活力多彩 | [文件](svg/flow-branching-vibrant-light-smart-retail.svg) | [文件](svg/flow-branching-vibrant-dark-smart-retail.svg) |
+| 时序图 | 科技蓝 | [文件](svg/sequence-tech-blue-light-smart-retail.svg) | [文件](svg/sequence-tech-blue-dark-smart-retail.svg) |
+| ER 图 | 稳健聚焦 | [文件](svg/relationship-er-focused-light-smart-retail.svg) | [文件](svg/relationship-er-focused-dark-smart-retail.svg) |
+| 核心能力 | 活力多彩 | [文件](svg/summary-vibrant-light-smart-retail.svg) | [文件](svg/summary-vibrant-dark-smart-retail.svg) |
+| 交付里程碑 | 科技蓝 | [文件](svg/timeline-tech-blue-light-smart-retail.svg) | [文件](svg/timeline-tech-blue-dark-smart-retail.svg) |
+| 演进路线图 | 稳健聚焦 | [文件](svg/roadmap-focused-light-smart-retail.svg) | [文件](svg/roadmap-focused-dark-smart-retail.svg) |
 
-![浅色部署架构图](images/architecture-deployment-light-red-packet.png)
+## 主题截图
 
-#### 数据架构图
+### 科技蓝
 
-![浅色数据架构图](images/architecture-data-light-red-packet.png)
+![科技蓝浅色业务架构](images/architecture-business-tech-blue-light-smart-retail.png)
 
-![深色数据架构图](images/architecture-data-dark-red-packet.png)
+![科技蓝深色业务架构](images/architecture-business-tech-blue-dark-smart-retail.png)
 
-#### 主要流程图
+### 活力多彩
 
-![浅色主要流程图](images/flow-branching-main-light-red-packet.png)
+![活力多彩浅色流程](images/flow-branching-vibrant-light-smart-retail.png)
 
-#### 用户抢红包时序图
+![活力多彩深色流程](images/flow-branching-vibrant-dark-smart-retail.png)
 
-![浅色时序图](images/sequence-grab-light-red-packet.png)
+### 稳健聚焦
 
-#### ER 图
+![稳健聚焦浅色技术架构](images/architecture-technical-focused-light-smart-retail.png)
 
-![浅色 ER 图](images/relationship-er-light-red-packet.png)
+![稳健聚焦深色技术架构](images/architecture-technical-focused-dark-smart-retail.png)
 
-#### 开发路线图
+其他截图覆盖部署、数据、时序、ER、总结、时间线和路线图，位于 [images](images/)。
 
-![浅色开发路线图](images/project-roadmap-light-red-packet.png)
+## 验证结果
 
-### 验证范围
-
-- 检查 SVG XML、引用、唯一 id、可访问性信息和外部资源。
-- 检查节点元数据、元素重叠、字号、颜色数量、画布利用率和留白均衡。
-- 检查架构三级卡片高度和箭头数量。
-- 检查流程起止节点、时序参与者生命线和 ER 关系基数。
-- 使用本机 Chrome 对全部 SVG 进行真实渲染。
+- Skill 内 21 个示例和文档侧 20 个 SVG 文件均通过严格校验。
+- 文档截图由本机 Chrome 从对应 SVG 文件重新渲染。
+- 已检查可访问性元数据、外部资源、浅色/深色一致性、主题色角色、元素重叠、文字对比度、连线和画布利用率。
