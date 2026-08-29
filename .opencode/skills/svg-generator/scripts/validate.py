@@ -74,7 +74,7 @@ PLACEHOLDER_RE = re.compile(r"示例|占位|TODO|待填写|\{\{[^}]+\}\}", re.IG
 HEX_RE = re.compile(r"^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$")
 EMOJI_RE = re.compile("[\u2600-\u27BF\U0001F300-\U0001FAFF]")
 ICON_FONTS = ("font awesome", "material icons", "segoe mdl2 assets", "bootstrap icons")
-ALLOWED_THEMES = {"tech-blue", "vibrant", "focused"}
+ALLOWED_THEMES = {"tech-blue", "vibrant", "mint-green", "steady-red-blue"}
 ALLOWED_MODULES = {"top-band", "aux-column", "callout", "numbered-flow", "focus-node", "footer-band"}
 OPTIONAL_MODULES = "top-band aux-column callout numbered-flow focus-node footer-band"
 

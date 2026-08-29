@@ -6,18 +6,19 @@
 
 ```text
 请使用 xml-diagram 绘制智慧零售平台的业务架构图。
-使用科技蓝浅色主题，保持纵向分层，只为入口和核心能力添加少量图标。
+使用 Tech Blue｜科技蓝（默认）浅色主题，保持纵向分层，只为入口和核心能力添加少量图标。
 ```
 
 未提供颜色信号时，Skill 会询问一次主题；仍未指定则使用默认科技蓝浅色模式。
 
 ## 主题
 
-| 主题 | 键 | 适合的视觉感受 |
+| 主题名称（严格按用户文字） | 键 | 适合的视觉感受 |
 | --- | --- | --- |
-| 科技蓝（默认） | `tech-blue` | 清晰、专业、统一 |
-| 活力多彩 | `vibrant` | 多角色、多分支、强调区分 |
-| 稳健聚焦 | `focused` | 克制、结构化、突出重点 |
+| Tech Blue｜科技蓝（默认） | `tech-blue` | 专业、清晰、企业科技感 |
+| Vibrant ｜活力 | `vibrant` | 颜色丰富但克制，不使用彩虹式随机配色 |
+| Mint green｜清爽绿 | `mint-green` | 轻盈、清爽、数据感 |
+| Steady Red & Blue｜稳重红蓝 | `steady-red-blue` | 稳重、清晰、企业感 |
 
 每个主题都包含 primary、secondary、tertiary、accent 多个结构色。用户可以覆盖部分或全部色槽；浅色与深色版本保持相同内容和几何结构。
 
@@ -38,35 +39,41 @@
 | 图形类型 | 主题 | 浅色 | 深色 |
 | --- | --- | --- | --- |
 | 业务架构 | 科技蓝 | [文件](drawio/architecture-business-tech-blue-light-smart-retail.drawio) | [文件](drawio/architecture-business-tech-blue-dark-smart-retail.drawio) |
-| 技术架构 | 稳健聚焦 | [文件](drawio/architecture-technical-focused-light-smart-retail.drawio) | [文件](drawio/architecture-technical-focused-dark-smart-retail.drawio) |
+| 技术架构 | Steady Red & Blue｜稳重红蓝 | [文件](drawio/architecture-technical-steady-red-blue-light-smart-retail.drawio) | [文件](drawio/architecture-technical-steady-red-blue-dark-smart-retail.drawio) |
 | 部署架构 | 科技蓝 | [文件](drawio/architecture-deployment-tech-blue-light-smart-retail.drawio) | [文件](drawio/architecture-deployment-tech-blue-dark-smart-retail.drawio) |
-| 数据架构 | 稳健聚焦 | [文件](drawio/architecture-data-focused-light-smart-retail.drawio) | [文件](drawio/architecture-data-focused-dark-smart-retail.drawio) |
-| 分支流程 | 活力多彩 | [文件](drawio/flow-branching-vibrant-light-smart-retail.drawio) | [文件](drawio/flow-branching-vibrant-dark-smart-retail.drawio) |
+| 数据架构 | Mint green｜清爽绿 | [文件](drawio/architecture-data-mint-green-light-smart-retail.drawio) | [文件](drawio/architecture-data-mint-green-dark-smart-retail.drawio) |
+| 分支流程 | Vibrant ｜活力 | [文件](drawio/flow-branching-vibrant-light-smart-retail.drawio) | [文件](drawio/flow-branching-vibrant-dark-smart-retail.drawio) |
 | 时序图 | 科技蓝 | [文件](drawio/sequence-tech-blue-light-smart-retail.drawio) | [文件](drawio/sequence-tech-blue-dark-smart-retail.drawio) |
-| ER 图 | 稳健聚焦 | [文件](drawio/relationship-er-focused-light-smart-retail.drawio) | [文件](drawio/relationship-er-focused-dark-smart-retail.drawio) |
-| 核心能力 | 活力多彩 | [文件](drawio/summary-vibrant-light-smart-retail.drawio) | [文件](drawio/summary-vibrant-dark-smart-retail.drawio) |
+| ER 图 | Mint green｜清爽绿 | [文件](drawio/relationship-er-mint-green-light-smart-retail.drawio) | [文件](drawio/relationship-er-mint-green-dark-smart-retail.drawio) |
+| 核心能力 | Vibrant ｜活力 | [文件](drawio/summary-vibrant-light-smart-retail.drawio) | [文件](drawio/summary-vibrant-dark-smart-retail.drawio) |
 | 交付里程碑 | 科技蓝 | [文件](drawio/timeline-tech-blue-light-smart-retail.drawio) | [文件](drawio/timeline-tech-blue-dark-smart-retail.drawio) |
-| 演进路线图 | 稳健聚焦 | [文件](drawio/roadmap-focused-light-smart-retail.drawio) | [文件](drawio/roadmap-focused-dark-smart-retail.drawio) |
+| 演进路线图 | Steady Red & Blue｜稳重红蓝 | [文件](drawio/roadmap-steady-red-blue-light-smart-retail.drawio) | [文件](drawio/roadmap-steady-red-blue-dark-smart-retail.drawio) |
 
 ## 主题截图
 
-### 科技蓝
+### Tech Blue｜科技蓝（默认）
 
 ![科技蓝浅色业务架构](images/architecture-business-tech-blue-light-smart-retail.png)
 
 ![科技蓝深色业务架构](images/architecture-business-tech-blue-dark-smart-retail.png)
 
-### 活力多彩
+### Vibrant ｜活力
 
-![活力多彩浅色流程](images/flow-branching-vibrant-light-smart-retail.png)
+![Vibrant ｜活力浅色流程](images/flow-branching-vibrant-light-smart-retail.png)
 
-![活力多彩深色流程](images/flow-branching-vibrant-dark-smart-retail.png)
+![Vibrant ｜活力深色流程](images/flow-branching-vibrant-dark-smart-retail.png)
 
-### 稳健聚焦
+### Mint green｜清爽绿
 
-![稳健聚焦浅色技术架构](images/architecture-technical-focused-light-smart-retail.png)
+![Mint green｜清爽绿浅色数据架构](images/architecture-data-mint-green-light-smart-retail.png)
 
-![稳健聚焦深色技术架构](images/architecture-technical-focused-dark-smart-retail.png)
+![Mint green｜清爽绿深色数据架构](images/architecture-data-mint-green-dark-smart-retail.png)
+
+### Steady Red & Blue｜稳重红蓝
+
+![Steady Red & Blue｜稳重红蓝浅色技术架构](images/architecture-technical-steady-red-blue-light-smart-retail.png)
+
+![Steady Red & Blue｜稳重红蓝深色技术架构](images/architecture-technical-steady-red-blue-dark-smart-retail.png)
 
 其他截图覆盖部署、数据、时序、ER、总结、时间线和路线图，位于 [images](images/)。
 

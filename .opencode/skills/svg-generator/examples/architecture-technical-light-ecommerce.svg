@@ -1,24 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc" data-theme="focused" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-mode="light" data-layout="vertical-stack">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc" data-theme="steady-red-blue" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-mode="light" data-layout="vertical-stack">
   <title id="title">电商技术架构示例</title>
   <desc id="desc">纵向技术分层、层内组件均匀横排的电商技术架构示例。</desc>
-  <rect width="1200" height="760" fill="#F6F8FB" />
-  <text x="48" y="50" font-size="26" font-weight="700" fill="#172033">电商技术架构</text>
+  <rect width="1200" height="760" fill="#F6F7FB" />
+  <text x="48" y="50" font-size="26" font-weight="700" fill="#243B63">电商技术架构</text>
   <text x="48" y="76" font-size="12" fill="#64748B">终端、接入、服务、数据与基础设施纵向分层</text>
   <g>
-    <rect x="48" y="100" width="1104" height="104" rx="16" fill="#E4EBFA" stroke="#A1BBEE" />
-    <rect x="48" y="220" width="1104" height="104" rx="16" fill="#E3F2F3" stroke="#9BD2D6" />
-    <rect x="48" y="340" width="1104" height="130" rx="16" fill="#DDE6DE" stroke="#B3D3B7" />
-    <rect x="48" y="486" width="1104" height="104" rx="16" fill="#F2E1D9" stroke="#FFC19F" />
-    <rect x="48" y="606" width="1104" height="104" rx="16" fill="#E4EBFA" stroke="#A1BBEE" />
+    <rect x="48" y="100" width="1104" height="104" rx="16" fill="#F8E5E5" stroke="#E7A5A5" />
+    <rect x="48" y="220" width="1104" height="104" rx="16" fill="#E3F2F3" stroke="#A3ADBD" />
+    <rect x="48" y="340" width="1104" height="130" rx="16" fill="#DDE6EF" stroke="#B3D0F3" />
+    <rect x="48" y="486" width="1104" height="104" rx="16" fill="#F8E5E5" stroke="#E7A5A5" />
+    <rect x="48" y="606" width="1104" height="104" rx="16" fill="#F8E5E5" stroke="#E7A5A5" />
   </g>
-  <g fill="#172033" font-size="16" font-weight="700" text-anchor="middle">
+  <g fill="#243B63" font-size="16" font-weight="700" text-anchor="middle">
     <text x="600" y="128">终端与渠道层</text>
     <text x="600" y="248">网关与协议层</text>
     <text x="600" y="368">服务与计算层</text>
     <text x="600" y="514">数据与中间件层</text>
     <text x="600" y="634">基础设施与保障层</text>
   </g>
-  <g fill="#EEF3F8" stroke="#D8E1EA">
+  <g fill="#E9EEF5" stroke="#CAD3DF">
     <rect id="t1" data-role="node" x="92" y="152" width="240" height="32" rx="8" />
     <rect id="t2" data-role="node" x="360" y="152" width="240" height="32" rx="8" />
     <rect id="t3" data-role="node" x="628" y="152" width="240" height="32" rx="8" />

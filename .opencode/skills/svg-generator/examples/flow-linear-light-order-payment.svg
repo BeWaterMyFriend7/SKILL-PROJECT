@@ -3,38 +3,38 @@
   <desc id="desc">从提交订单到完成支付的线性主流程。</desc>
   <defs>
     <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
-      <feDropShadow dy="5" stdDeviation="8" flood-color="#F6F8FB" flood-opacity="0.07" />
+      <feDropShadow dy="5" stdDeviation="8" flood-color="#F4F7FC" flood-opacity="0.07" />
     </filter>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
       <path d="M0 0L8 4L0 8Z" fill="#64748B" />
     </marker>
   </defs>
-  <rect width="1120" height="560" fill="#F6F8FB" />
-  <text x="48" y="58" font-size="28" font-weight="700" fill="#172033">订单支付主流程</text>
+  <rect width="1120" height="560" fill="#F4F7FC" />
+  <text x="48" y="58" font-size="28" font-weight="700" fill="#1F2937">订单支付主流程</text>
   <text x="48" y="84" font-size="13" fill="#64748B">单一主轴表达核心步骤，异常处理从主流程向下分离</text>
-  <rect x="48" y="128" width="1024" height="340" rx="18" fill="#FFFFFF" stroke="#D8E1EA" filter="url(#shadow)" />
+  <rect x="48" y="128" width="1024" height="340" rx="18" fill="#FDFEFF" stroke="#C9D7EA" filter="url(#shadow)" />
   <g stroke="#64748B" stroke-width="2.2" fill="none" marker-end="url(#arrow)">
     <line id="flow-edge-1" data-role="edge" x1="210" y1="270" x2="270" y2="270" />
     <line id="flow-edge-2" data-role="edge" x1="430" y1="270" x2="490" y2="270" />
     <line id="flow-edge-3" data-role="edge" x1="650" y1="270" x2="710" y2="270" />
     <line id="flow-edge-4" data-role="edge" x1="870" y1="270" x2="930" y2="270" />
   </g>
-  <rect id="flow-start" data-role="node" x="82" y="236" width="128" height="68" rx="34" fill="#DAE1EE" stroke="#2656B8" stroke-width="2" />
-  <rect id="flow-step-1" data-role="node" x="270" y="222" width="160" height="96" rx="14" fill="#FFFFFF" stroke="#CBD5E1" />
-  <rect id="flow-step-2" data-role="node" x="490" y="222" width="160" height="96" rx="14" fill="#FFFFFF" stroke="#CBD5E1" />
-  <rect id="flow-step-3" data-role="node" x="710" y="222" width="160" height="96" rx="14" fill="#FFFFFF" stroke="#CBD5E1" />
-  <rect id="flow-end" data-role="node" x="930" y="236" width="108" height="68" rx="34" fill="#ECFDF5" stroke="#16A34A" stroke-width="2" />
+  <rect id="flow-start" data-role="node" x="82" y="236" width="128" height="68" rx="34" fill="#DBE2EE" stroke="#305AB4" stroke-width="2" />
+  <rect id="flow-step-1" data-role="node" x="270" y="222" width="160" height="96" rx="14" fill="#FDFEFF" stroke="#CBD5E1" />
+  <rect id="flow-step-2" data-role="node" x="490" y="222" width="160" height="96" rx="14" fill="#FDFEFF" stroke="#CBD5E1" />
+  <rect id="flow-step-3" data-role="node" x="710" y="222" width="160" height="96" rx="14" fill="#FDFEFF" stroke="#CBD5E1" />
+  <rect id="flow-end" data-role="node" x="930" y="236" width="108" height="68" rx="34" fill="#ECFDF5" stroke="#22C55E" stroke-width="2" />
   <g text-anchor="middle">
-    <text x="146" y="276" font-size="14" font-weight="600" fill="#2656B8">开始</text>
-    <text x="350" y="262" font-size="15" font-weight="600" fill="#172033">提交订单</text>
+    <text x="146" y="276" font-size="14" font-weight="600" fill="#305AB4">开始</text>
+    <text x="350" y="262" font-size="15" font-weight="600" fill="#1F2937">提交订单</text>
     <text x="350" y="286" font-size="12" fill="#64748B">确认商品与地址</text>
-    <text x="570" y="262" font-size="15" font-weight="600" fill="#172033">创建支付</text>
+    <text x="570" y="262" font-size="15" font-weight="600" fill="#1F2937">创建支付</text>
     <text x="570" y="286" font-size="12" fill="#64748B">生成支付凭证</text>
-    <text x="790" y="262" font-size="15" font-weight="600" fill="#172033">确认结果</text>
+    <text x="790" y="262" font-size="15" font-weight="600" fill="#1F2937">确认结果</text>
     <text x="790" y="286" font-size="12" fill="#64748B">更新订单状态</text>
-    <text x="984" y="276" font-size="14" font-weight="600" fill="#16A34A">结束</text>
+    <text x="984" y="276" font-size="14" font-weight="600" fill="#22C55E">结束</text>
   </g>
   <rect x="270" y="358" width="600" height="62" rx="12" fill="#FFF7ED" stroke="#FED7AA" />
-  <circle cx="298" cy="389" r="6" fill="#D97706" />
-  <text x="318" y="394" font-size="13" fill="#D97706">异常处理：支付失败或超时进入重试/关闭订单，不与主流程箭头交叉</text>
+  <circle cx="298" cy="389" r="6" fill="#F59E0B" />
+  <text x="318" y="394" font-size="13" fill="#F59E0B">异常处理：支付失败或超时进入重试/关闭订单，不与主流程箭头交叉</text>
 </svg>

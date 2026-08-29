@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="vibrant" data-mode="light">
   <title id="title">知识关系图</title>
   <desc id="desc">以订单履约为中心组织角色、规则、资源和结果概念。</desc>
-  <rect width="1100" height="700" fill="#F6F8FB" />
-  <text x="48" y="58" font-size="28" font-weight="700" fill="#172033">知识关系图</text>
+  <rect width="1100" height="700" fill="#FAFBFC" />
+  <text x="48" y="58" font-size="28" font-weight="700" fill="#1F2937">知识关系图</text>
   <text x="48" y="84" font-size="13" fill="#64748B">中心主题、一级概念与二级知识点采用稳定分区，不使用自由散点</text>
   <g stroke="#CBD5E1" stroke-width="2" fill="none">
     <path d="M550 350H310" />
@@ -14,8 +14,8 @@
     <path d="M790 350L910 230" />
     <path d="M790 350L910 470" />
   </g>
-  <rect id="knowledge-center" data-role="node" x="440" y="304" width="220" height="92" rx="18" fill="#1B9CDE" stroke="#1680B6" />
-  <g fill="#FFFFFF" stroke="#D8E1EA">
+  <rect id="knowledge-center" data-role="node" x="440" y="304" width="220" height="92" rx="18" fill="#3B82F6" stroke="#306BCA" />
+  <g fill="#FFFFFF" stroke="#D1D5DB">
     <rect id="knowledge-role" data-role="node" x="210" y="310" width="200" height="80" rx="14" />
     <rect id="knowledge-resource" data-role="node" x="690" y="310" width="200" height="80" rx="14" />
     <rect id="knowledge-rule" data-role="node" x="450" y="144" width="200" height="80" rx="14" />
@@ -27,10 +27,10 @@
   </g>
   <g font-size="14" font-weight="600" text-anchor="middle">
     <text x="550" y="354" fill="#000000" font-size="18">订单履约</text>
-    <text x="310" y="356" fill="#172033">参与角色</text>
-    <text x="790" y="356" fill="#172033">业务资源</text>
-    <text x="550" y="190" fill="#172033">业务规则</text>
-    <text x="550" y="522" fill="#172033">履约结果</text>
+    <text x="310" y="356" fill="#1F2937">参与角色</text>
+    <text x="790" y="356" fill="#1F2937">业务资源</text>
+    <text x="550" y="190" fill="#1F2937">业务规则</text>
+    <text x="550" y="522" fill="#1F2937">履约结果</text>
     <text x="190" y="230" fill="#475569">用户</text>
     <text x="190" y="482" fill="#475569">运营人员</text>
     <text x="910" y="230" fill="#475569">库存</text>

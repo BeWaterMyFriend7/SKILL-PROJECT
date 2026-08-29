@@ -7,7 +7,7 @@
 ```text
 图形目标：受众、要说明的问题、核心结论
 图形类型：精确到模板
-视觉主题：tech-blue（默认）/ vibrant / focused
+视觉主题：Tech Blue｜科技蓝（默认）/ Vibrant ｜活力 / Mint green｜清爽绿 / Steady Red & Blue｜稳重红蓝
 显示模式：light / dark
 颜色覆盖：primary / secondary / tertiary / accent（可选，#RRGGBB）
 阅读方向：左到右 / 上到下 / 中心向外

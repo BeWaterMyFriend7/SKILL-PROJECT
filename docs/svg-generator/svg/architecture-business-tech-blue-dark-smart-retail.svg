@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="tech-blue" data-mode="dark" data-layout="vertical-stack">
   <title id="title">智慧零售业务架构图</title>
-  <desc id="desc">智慧零售业务架构图，使用科技蓝主题的dark模式。</desc>
+  <desc id="desc">智慧零售业务架构图，使用 Tech Blue｜科技蓝（默认）主题的dark模式。</desc>
   <rect width="1200" height="690" fill="#0F172A" />
   <text x="48" y="50" font-size="26" font-weight="700" fill="#F8FAFC">智慧零售业务架构图</text>
   <text x="48" y="76" font-size="12" fill="#94A3B8">通过分层与分组表达业务关系，默认不使用箭头</text>

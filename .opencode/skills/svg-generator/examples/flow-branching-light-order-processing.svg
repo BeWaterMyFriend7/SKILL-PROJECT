@@ -3,16 +3,16 @@
   <desc id="desc">订单校验通过后进入处理流程，不通过时进入修正并汇聚到结束节点。</desc>
   <defs>
     <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
-      <feDropShadow dy="5" stdDeviation="8" flood-color="#F6F8FB" flood-opacity="0.07" />
+      <feDropShadow dy="5" stdDeviation="8" flood-color="#FAFBFC" flood-opacity="0.07" />
     </filter>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
       <path d="M0 0L8 4L0 8Z" fill="#64748B" />
     </marker>
   </defs>
-  <rect width="1200" height="700" fill="#F6F8FB" />
-  <text x="48" y="58" font-size="28" font-weight="700" fill="#172033">订单处理分支流程</text>
+  <rect width="1200" height="700" fill="#FAFBFC" />
+  <text x="48" y="58" font-size="28" font-weight="700" fill="#1F2937">订单处理分支流程</text>
   <text x="48" y="84" font-size="13" fill="#64748B">判断出口在同一层展开，分支使用独立通道并在结束前汇聚</text>
-  <rect x="48" y="120" width="1104" height="510" rx="18" fill="#FFFFFF" stroke="#D8E1EA" filter="url(#shadow)" />
+  <rect x="48" y="120" width="1104" height="510" rx="18" fill="#FFFFFF" stroke="#D1D5DB" filter="url(#shadow)" />
   <g fill="none" stroke="#64748B" stroke-width="2.2" marker-end="url(#arrow)">
     <line id="branch-edge-1" data-role="edge" x1="200" y1="250" x2="270" y2="250" />
     <line id="branch-edge-2" data-role="edge" x1="440" y1="250" x2="508" y2="250" />
@@ -22,24 +22,24 @@
     <path id="branch-edge-revise-merge" data-role="edge" d="M850 440H940V368" />
     <line id="branch-edge-end" data-role="edge" x1="940" y1="368" x2="940" y2="480" />
   </g>
-  <rect id="flow-start" data-role="node" x="82" y="216" width="118" height="68" rx="34" fill="#D9E7EE" stroke="#9FD5F1" stroke-width="2" />
-  <rect id="branch-submit" data-role="node" x="270" y="202" width="170" height="96" rx="14" fill="#F4E7F7" stroke="#D7ACE2" />
-  <polygon id="branch-decision" data-role="node" points="550,202 608,250 550,298 492,250" fill="#F2E6D9" stroke="#F2C69A" stroke-width="2" />
-  <rect id="branch-pass" data-role="node" x="680" y="202" width="170" height="96" rx="14" fill="#DBE9DF" stroke="#ACDBBA" />
-  <rect id="branch-revise" data-role="node" x="680" y="392" width="170" height="96" rx="14" fill="#FEF2F2" stroke="#DC2626" />
+  <rect id="flow-start" data-role="node" x="82" y="216" width="118" height="68" rx="34" fill="#DBE4F1" stroke="#ADCAFB" stroke-width="2" />
+  <rect id="branch-submit" data-role="node" x="270" y="202" width="170" height="96" rx="14" fill="#F1EBFE" stroke="#CEBBFB" />
+  <polygon id="branch-decision" data-role="node" points="550,202 608,250 550,298 492,250" fill="#D9ECE0" stroke="#9ADBB2" stroke-width="2" />
+  <rect id="branch-pass" data-role="node" x="680" y="202" width="170" height="96" rx="14" fill="#D6EAEE" stroke="#8ED5E1" />
+  <rect id="branch-revise" data-role="node" x="680" y="392" width="170" height="96" rx="14" fill="#FEF2F2" stroke="#EF4444" />
   <circle cx="940" cy="360" r="9" fill="#FFFFFF" stroke="#64748B" stroke-width="2" />
-  <rect id="flow-end" data-role="node" x="881" y="480" width="118" height="68" rx="34" fill="#DBE9DF" stroke="#ACDBBA" stroke-width="2" />
+  <rect id="flow-end" data-role="node" x="881" y="480" width="118" height="68" rx="34" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="2" />
   <g text-anchor="middle">
-    <text x="141" y="256" font-size="14" font-weight="600" fill="#1680B6">开始</text>
-    <text x="355" y="242" font-size="15" font-weight="600" fill="#172033">提交订单</text>
+    <text x="141" y="256" font-size="14" font-weight="600" fill="#306BCA">开始</text>
+    <text x="355" y="242" font-size="15" font-weight="600" fill="#1F2937">提交订单</text>
     <text x="355" y="270" font-size="12" fill="#64748B">校验基础信息</text>
-    <text x="550" y="255" font-size="13" font-weight="600" fill="#D97706">校验通过？</text>
-    <text x="765" y="242" font-size="15" font-weight="600" fill="#16A34A">进入处理</text>
+    <text x="550" y="255" font-size="13" font-weight="600" fill="#F59E0B">校验通过？</text>
+    <text x="765" y="242" font-size="15" font-weight="600" fill="#22C55E">进入处理</text>
     <text x="765" y="270" font-size="12" fill="#64748B">锁定资源并执行</text>
-    <text x="765" y="432" font-size="15" font-weight="600" fill="#DC2626">修正信息</text>
+    <text x="765" y="432" font-size="15" font-weight="600" fill="#EF4444">修正信息</text>
     <text x="765" y="460" font-size="12" fill="#64748B">补充后重新提交</text>
-    <text x="940" y="520" font-size="14" font-weight="600" fill="#16A34A">结束</text>
+    <text x="940" y="520" font-size="14" font-weight="600" fill="#22C55E">结束</text>
   </g>
-  <text x="636" y="238" font-size="12" fill="#16A34A">是</text>
-  <text x="566" y="374" font-size="12" fill="#DC2626">否</text>
+  <text x="636" y="238" font-size="12" fill="#22C55E">是</text>
+  <text x="566" y="374" font-size="12" fill="#EF4444">否</text>
 </svg>

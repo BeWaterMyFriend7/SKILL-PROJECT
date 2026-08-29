@@ -1,32 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="tech-blue" data-mode="light" data-layout="vertical-stack">
   <title id="title">智慧零售部署架构图</title>
-  <desc id="desc">智慧零售部署架构图，使用科技蓝主题的light模式。</desc>
-  <rect width="1200" height="760" fill="#F6F8FB" />
-  <text x="48" y="50" font-size="26" font-weight="700" fill="#172033">智慧零售部署架构图</text>
+  <desc id="desc">智慧零售部署架构图，使用 Tech Blue｜科技蓝（默认）主题的light模式。</desc>
+  <rect width="1200" height="760" fill="#F4F7FC" />
+  <text x="48" y="50" font-size="26" font-weight="700" fill="#1F2937">智慧零售部署架构图</text>
   <text x="48" y="76" font-size="12" fill="#64748B">部署边界与运维保障分离，仅保留关键访问路径</text>
-  <g fill="#FFFFFF" stroke="#D8E1EA">
+  <g fill="#FDFEFF" stroke="#C9D7EA">
     <rect x="48" y="100" width="1104" height="96" rx="16" />
     <rect x="48" y="212" width="1104" height="96" rx="16" />
     <rect x="48" y="324" width="1104" height="178" rx="16" />
     <rect x="48" y="518" width="1104" height="96" rx="16" />
     <rect x="48" y="630" width="1104" height="82" rx="16" />
   </g>
-  <g fill="#172033" font-size="16" font-weight="700" text-anchor="middle">
+  <g fill="#1F2937" font-size="16" font-weight="700" text-anchor="middle">
     <text x="600" y="128">访问入口</text>
     <text x="600" y="240">流量接入</text>
     <text x="600" y="352">应用部署区域</text>
     <text x="600" y="546">数据资源</text>
     <text x="600" y="658">平台运维与安全</text>
   </g>
-  <g fill="#EEF3F8" stroke="#D8E1EA">
+  <g fill="#E9EFF8" stroke="#C9D7EA">
     <rect id="u1" data-role="node" x="170" y="148" width="250" height="32" rx="8" />
     <rect id="u2" data-role="node" x="475" y="148" width="250" height="32" rx="8" />
     <rect id="u3" data-role="node" x="780" y="148" width="250" height="32" rx="8" />
     <rect id="e1" data-role="node" x="170" y="260" width="250" height="32" rx="8" />
     <rect id="e2" data-role="node" x="475" y="260" width="250" height="32" rx="8" />
     <rect id="e3" data-role="node" x="780" y="260" width="250" height="32" rx="8" />
-    <rect x="80" y="374" width="500" height="104" rx="12" fill="#FFFFFF" />
-    <rect x="620" y="374" width="500" height="104" rx="12" fill="#FFFFFF" />
+    <rect x="80" y="374" width="500" height="104" rx="12" fill="#FDFEFF" />
+    <rect x="620" y="374" width="500" height="104" rx="12" fill="#FDFEFF" />
     <rect id="p1" data-role="node" x="104" y="422" width="138" height="32" rx="8" />
     <rect id="p2" data-role="node" x="260" y="422" width="138" height="32" rx="8" />
     <rect id="p3" data-role="node" x="416" y="422" width="138" height="32" rx="8" />

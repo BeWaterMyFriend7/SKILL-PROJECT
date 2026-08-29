@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="focused" data-mode="light">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="steady-red-blue" data-mode="light">
   <title id="title">产品开发路线图</title>
   <desc id="desc">按季度和工作流展示产品、技术与运营关键任务。</desc>
-  <rect width="1200" height="720" fill="#F6F8FB" />
-  <text x="48" y="58" font-size="28" font-weight="700" fill="#172033">产品开发路线图</text>
+  <rect width="1200" height="720" fill="#F6F7FB" />
+  <text x="48" y="58" font-size="28" font-weight="700" fill="#243B63">产品开发路线图</text>
   <text x="48" y="84" font-size="13" fill="#64748B">时间轴与工作流双向对齐，突出阶段目标和关键交付</text>
-  <rect x="48" y="120" width="1104" height="526" rx="18" fill="#FFFFFF" stroke="#D8E1EA" />
-  <g fill="#172033" font-size="14" font-weight="700" text-anchor="middle">
+  <rect x="48" y="120" width="1104" height="526" rx="18" fill="#FFFFFF" stroke="#CAD3DF" />
+  <g fill="#243B63" font-size="14" font-weight="700" text-anchor="middle">
     <text x="310" y="160">Q1 · 基础建设</text>
     <text x="550" y="160">Q2 · 核心能力</text>
     <text x="790" y="160">Q3 · 规模增长</text>
@@ -16,14 +16,14 @@
     <text x="72" y="374">技术</text>
     <text x="72" y="510">运营</text>
   </g>
-  <g stroke="#D8E1EA">
+  <g stroke="#CAD3DF">
     <line x1="190" y1="184" x2="190" y2="610" />
     <line x1="430" y1="184" x2="430" y2="610" />
     <line x1="670" y1="184" x2="670" y2="610" />
     <line x1="910" y1="184" x2="910" y2="610" />
     <line x1="1128" y1="184" x2="1128" y2="610" />
   </g>
-  <g fill="#E4EBFA" stroke="#BFDBFE">
+  <g fill="#F8E5E5" stroke="#BFDBFE">
     <rect id="road-product-1" data-role="node" x="214" y="202" width="192" height="74" rx="12" />
     <rect id="road-product-2" data-role="node" x="454" y="202" width="192" height="74" rx="12" />
     <rect id="road-product-3" data-role="node" x="694" y="202" width="192" height="74" rx="12" />
@@ -41,7 +41,7 @@
     <rect id="road-ops-3" data-role="node" x="694" y="474" width="192" height="74" rx="12" />
     <rect id="road-ops-4" data-role="node" x="934" y="474" width="170" height="74" rx="12" />
   </g>
-  <g fill="#D8E1EA" font-size="13" text-anchor="middle">
+  <g fill="#CAD3DF" font-size="13" text-anchor="middle">
     <text x="310" y="246">核心流程 MVP</text>
     <text x="550" y="246">会员与营销</text>
     <text x="790" y="246">多端体验升级</text>

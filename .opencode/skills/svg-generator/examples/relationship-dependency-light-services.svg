@@ -6,8 +6,8 @@
       <path d="M0 0L8 4L0 8Z" fill="#64748B" />
     </marker>
   </defs>
-  <rect width="1100" height="700" fill="#F6F8FB" />
-  <text x="48" y="58" font-size="28" font-weight="700" fill="#172033">服务依赖关系</text>
+  <rect width="1100" height="700" fill="#F4F7FC" />
+  <text x="48" y="58" font-size="28" font-weight="700" fill="#1F2937">服务依赖关系</text>
   <text x="48" y="84" font-size="13" fill="#64748B">按层级收敛依赖方向，减少跨层长连线</text>
   <g fill="#64748B" font-size="14" font-weight="600">
     <text x="54" y="178">入口层</text>
@@ -15,7 +15,7 @@
     <text x="54" y="466">基础层</text>
     <text x="54" y="610">资源层</text>
   </g>
-  <g fill="#FFFFFF" stroke="#D8E1EA">
+  <g fill="#FDFEFF" stroke="#C9D7EA">
     <rect id="dep-gateway" data-role="node" x="260" y="130" width="580" height="70" rx="12" />
     <rect id="dep-order" data-role="node" x="190" y="274" width="220" height="70" rx="12" />
     <rect id="dep-payment" data-role="node" x="440" y="274" width="220" height="70" rx="12" />
@@ -26,7 +26,7 @@
     <rect id="dep-db" data-role="node" x="315" y="562" width="220" height="70" rx="12" />
     <rect id="dep-cache" data-role="node" x="565" y="562" width="220" height="70" rx="12" />
   </g>
-  <g fill="#172033" font-size="14" font-weight="600" text-anchor="middle">
+  <g fill="#1F2937" font-size="14" font-weight="600" text-anchor="middle">
     <text x="550" y="172">统一网关</text>
     <text x="300" y="316">订单服务</text>
     <text x="550" y="316">支付服务</text>

@@ -10,25 +10,72 @@ import re
 
 THEMES = {
     "tech-blue": {
-        "name": "科技蓝",
-        "primary": "#2E69E1",
-        "secondary": "#1A388D",
-        "tertiary": "#819FDE",
-        "accent": "#1A388D",
+        "name": "Tech Blue｜科技蓝（默认）",
+        "primary": "#3B6EDC",
+        "secondary": "#2D56B3",
+        "tertiary": "#5B8FF9",
+        "accent": "#2AA7C8",
+        "palette": {
+            "background": "#F4F7FC",
+            "container": "#E9EFF8",
+            "card": "#FDFEFF",
+            "main-blue": "#3B6EDC",
+            "deep-blue": "#2D56B3",
+            "medium-blue": "#5B8FF9",
+            "data-cyan": "#2AA7C8",
+            "border": "#C9D7EA",
+        },
     },
     "vibrant": {
-        "name": "活力多彩",
-        "primary": "#1B9CDE",
-        "secondary": "#A039B9",
-        "tertiary": "#39A95B",
-        "accent": "#FE9022",
+        "name": "Vibrant ｜活力",
+        "primary": "#3B82F6",
+        "secondary": "#8B5CF6",
+        "tertiary": "#06B6D4",
+        "accent": "#22C55E",
+        "palette": {
+            "blue": "#3B82F6",
+            "purple": "#8B5CF6",
+            "cyan": "#06B6D4",
+            "green": "#22C55E",
+            "orange": "#F59E0B",
+            "red": "#EF4444",
+            "background": "#FAFBFC",
+            "border": "#D1D5DB",
+        },
     },
-    "focused": {
-        "name": "稳健聚焦",
-        "primary": "#1F5CD7",
-        "secondary": "#12939D",
-        "tertiary": "#4B9654",
-        "accent": "#FF6B1A",
+    "mint-green": {
+        "name": "Mint green｜清爽绿",
+        "primary": "#2E8B57",
+        "secondary": "#14B8A6",
+        "tertiary": "#2E8B57",
+        "accent": "#14B8A6",
+        "palette": {
+            "background": "#F8FAFC",
+            "container": "#EEF6F4",
+            "card": "#FFFFFF",
+            "mint-green": "#2E8B57",
+            "light-green": "#DDF5E8",
+            "teal-green": "#14B8A6",
+            "light-cyan": "#CCFBF1",
+            "border": "#C7D2D9",
+        },
+    },
+    "steady-red-blue": {
+        "name": "Steady Red & Blue｜稳重红蓝",
+        "primary": "#C62828",
+        "secondary": "#243B63",
+        "tertiary": "#4A90E2",
+        "accent": "#C62828",
+        "palette": {
+            "background": "#F6F7FB",
+            "container": "#E9EEF5",
+            "card": "#FFFFFF",
+            "red": "#C62828",
+            "navy": "#243B63",
+            "light-red": "#FBE4E4",
+            "accent-blue": "#4A90E2",
+            "border": "#CAD3DF",
+        },
     },
 }
 SLOTS = ("primary", "secondary", "tertiary", "accent")
@@ -89,12 +136,13 @@ def build_palette(theme: str = "tech-blue", mode: str = "light", **overrides: st
 
     base = {slot: normalize_hex(overrides.get(slot) or THEMES[theme][slot]) for slot in SLOTS}
     if mode == "light":
+        palette = THEMES[theme]["palette"]
         neutral = {
-            "canvas": "#F6F8FB",
-            "surface": "#FFFFFF",
-            "surface-muted": "#EEF3F8",
-            "border": "#D8E1EA",
-            "text-strong": "#172033",
+            "canvas": palette["background"],
+            "surface": palette.get("card", "#FFFFFF"),
+            "surface-muted": palette.get("container", "#F5F7FA"),
+            "border": palette["border"],
+            "text-strong": "#243B63" if theme == "steady-red-blue" else "#1F2937",
             "text": "#475569",
             "text-muted": "#64748B",
         }
@@ -135,11 +183,12 @@ def build_palette(theme: str = "tech-blue", mode: str = "light", **overrides: st
         "mode": mode,
         "neutral": neutral,
         "colors": derived,
+        "palette": THEMES[theme]["palette"],
         "semantic": {
-            "success": "#16A34A" if mode == "light" else "#4ADE80",
-            "warning": "#D97706" if mode == "light" else "#FBBF24",
-            "error": "#DC2626" if mode == "light" else "#F87171",
-            "async": "#7C3AED" if mode == "light" else "#A78BFA",
+            "success": "#22C55E" if mode == "light" else "#4ADE80",
+            "warning": "#F59E0B" if mode == "light" else "#FBBF24",
+            "error": "#EF4444" if mode == "light" else "#F87171",
+            "async": "#8B5CF6" if mode == "light" else "#A78BFA",
         },
     }
 

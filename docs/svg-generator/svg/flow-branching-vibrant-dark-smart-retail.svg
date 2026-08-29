@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="vibrant" data-mode="dark">
   <title id="title">订单履约分支流程</title>
-  <desc id="desc">订单履约分支流程，使用活力多彩主题的dark模式。</desc>
+  <desc id="desc">订单履约分支流程，使用 Vibrant ｜活力主题的dark模式。</desc>
   <defs>
     <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
       <feDropShadow dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.07" />
@@ -22,15 +22,15 @@
     <path id="branch-edge-revise-merge" data-role="edge" d="M850 440H940V368" />
     <line id="branch-edge-end" data-role="edge" x1="940" y1="368" x2="940" y2="480" />
   </g>
-  <rect id="flow-start" data-role="node" x="82" y="216" width="118" height="68" rx="34" fill="#184363" stroke="#196D9D" stroke-width="2" />
-  <rect id="branch-submit" data-role="node" x="270" y="202" width="170" height="96" rx="14" fill="#3D2759" stroke="#6C3086" />
-  <polygon id="branch-decision" data-role="node" points="550,202 608,250 550,298 492,250" fill="#583F2E" stroke="#A66528" stroke-width="2" />
-  <rect id="branch-pass" data-role="node" x="680" y="202" width="170" height="96" rx="14" fill="#21463E" stroke="#2C754C" />
+  <rect id="flow-start" data-role="node" x="82" y="216" width="118" height="68" rx="34" fill="#213B6A" stroke="#2D5DAC" stroke-width="2" />
+  <rect id="branch-submit" data-role="node" x="270" y="202" width="170" height="96" rx="14" fill="#37316A" stroke="#5F45AC" />
+  <polygon id="branch-decision" data-role="node" points="550,202 608,250 550,298 492,250" fill="#1A4E3F" stroke="#1E864E" stroke-width="2" />
+  <rect id="branch-pass" data-role="node" x="680" y="202" width="170" height="96" rx="14" fill="#124A60" stroke="#0C7D97" />
   <rect id="branch-revise" data-role="node" x="680" y="392" width="170" height="96" rx="14" fill="#40252A" stroke="#F87171" />
   <circle cx="940" cy="360" r="9" fill="#172033" stroke="#94A3B8" stroke-width="2" />
-  <rect id="flow-end" data-role="node" x="881" y="480" width="118" height="68" rx="34" fill="#21463E" stroke="#2C754C" stroke-width="2" />
+  <rect id="flow-end" data-role="node" x="881" y="480" width="118" height="68" rx="34" fill="#124A60" stroke="#0C7D97" stroke-width="2" />
   <g text-anchor="middle">
-    <text x="141" y="256" font-size="14" font-weight="600" fill="#4DB2E5">开始</text>
+    <text x="141" y="256" font-size="14" font-weight="600" fill="#669EF8">开始</text>
     <text x="355" y="242" font-size="15" font-weight="600" fill="#F8FAFC">提交订单</text>
     <text x="355" y="270" font-size="12" fill="#94A3B8">校验基础信息</text>
     <text x="550" y="255" font-size="13" font-weight="600" fill="#FBBF24">校验通过？</text>

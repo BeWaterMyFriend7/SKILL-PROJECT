@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="focused" data-mode="light" data-layout="vertical-stack">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="mint-green" data-mode="light" data-layout="vertical-stack">
   <title id="title">数据平台架构示例</title>
   <desc id="desc">七个候选数据主层纵向排列，治理、安全和运维作为侧边保障域。</desc>
-  <rect width="1400" height="900" fill="#F6F8FB" />
-  <text x="44" y="48" font-size="26" font-weight="700" fill="#172033">企业数据平台架构</text>
+  <rect width="1400" height="900" fill="#F8FAFC" />
+  <text x="44" y="48" font-size="26" font-weight="700" fill="#1F2937">企业数据平台架构</text>
   <text x="44" y="74" font-size="12" fill="#64748B">主数据层按需求增减 · 保障域独立表达 · 不逐卡片串联</text>
-  <g fill="#FFFFFF" stroke="#D8E1EA">
+  <g fill="#FFFFFF" stroke="#C7D2D9">
     <rect x="44" y="96" width="1050" height="94" rx="15" />
     <rect x="44" y="202" width="1050" height="94" rx="15" />
     <rect x="44" y="308" width="1050" height="94" rx="15" />
@@ -16,7 +16,7 @@
     <rect x="1110" y="342" width="246" height="230" rx="15" />
     <rect x="1110" y="588" width="246" height="238" rx="15" />
   </g>
-  <g fill="#172033" font-size="15" font-weight="700" text-anchor="middle">
+  <g fill="#1F2937" font-size="15" font-weight="700" text-anchor="middle">
     <text x="569" y="122">数据源层</text>
     <text x="569" y="228">数据接入层</text>
     <text x="569" y="334">传输与缓冲层</text>
@@ -28,7 +28,7 @@
     <text x="1233" y="372">数据安全</text>
     <text x="1233" y="618">平台运维</text>
   </g>
-  <g fill="#EEF3F8" stroke="#D8E1EA">
+  <g fill="#EEF6F4" stroke="#C7D2D9">
     <rect id="a1" data-role="node" x="76" y="144" width="170" height="30" rx="7" />
     <rect id="a2" data-role="node" x="262" y="144" width="170" height="30" rx="7" />
     <rect id="a3" data-role="node" x="448" y="144" width="170" height="30" rx="7" />

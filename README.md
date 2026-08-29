@@ -38,13 +38,13 @@
     <tr>
       <td rowspan="3">绘图相关</td>
       <td><code>xml-diagram</code></td>
-      <td>生成可在 Draw.io 中编辑的技术图，支持三套主题、浅色/深色模式和纵向分层架构</td>
+      <td>生成可在 Draw.io 中编辑的技术图，支持四套主题、浅色/深色模式和纵向分层架构</td>
       <td>Draw.io XML</td>
       <td colspan="2"><a href="docs/xml-diagram/README.md">文档与示例</a></td>
     </tr>
     <tr>
       <td><code>svg-generator</code></td>
-      <td>生成自包含、可缩放的 SVG 技术图，支持三套主题、浅色/深色模式和浏览器渲染校验</td>
+      <td>生成自包含、可缩放的 SVG 技术图，支持四套主题、浅色/深色模式和浏览器渲染校验</td>
       <td>SVG</td>
       <td colspan="2"><a href="docs/svg-generator/README.md">文档与示例</a></td>
     </tr>
@@ -152,9 +152,9 @@
 
 ![Draw.io 科技蓝业务架构图](docs/xml-diagram/images/architecture-business-tech-blue-dark-smart-retail.png)
 
-![Draw.io 稳健聚焦技术架构图](docs/xml-diagram/images/architecture-technical-focused-light-smart-retail.png)
+![Draw.io Steady Red & Blue｜稳重红蓝技术架构图](docs/xml-diagram/images/architecture-technical-steady-red-blue-light-smart-retail.png)
 
-![SVG 活力多彩流程图](docs/svg-generator/images/flow-branching-vibrant-dark-smart-retail.png)
+![SVG Vibrant ｜活力流程图](docs/svg-generator/images/flow-branching-vibrant-dark-smart-retail.png)
 
 ![智慧零售时序图](docs/xml-diagram/images/sequence-tech-blue-light-smart-retail.png)
 

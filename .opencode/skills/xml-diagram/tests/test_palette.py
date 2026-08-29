@@ -14,15 +14,17 @@ class PaletteTests(unittest.TestCase):
     def test_default_theme(self):
         result = PALETTE.build_palette()
         self.assertEqual("tech-blue", result["theme"])
-        self.assertEqual("科技蓝", result["theme-name"])
-        self.assertEqual("#2E69E1", result["colors"]["primary"]["base"])
+        self.assertEqual("Tech Blue｜科技蓝（默认）", result["theme-name"])
+        self.assertEqual("#3B6EDC", result["colors"]["primary"]["base"])
+        self.assertEqual("#F4F7FC", result["neutral"]["canvas"])
 
     def test_all_theme_anchors(self):
         self.assertEqual(
             {
-                "tech-blue": {"name": "科技蓝", "primary": "#2E69E1", "secondary": "#1A388D", "tertiary": "#819FDE", "accent": "#1A388D"},
-                "vibrant": {"name": "活力多彩", "primary": "#1B9CDE", "secondary": "#A039B9", "tertiary": "#39A95B", "accent": "#FE9022"},
-                "focused": {"name": "稳健聚焦", "primary": "#1F5CD7", "secondary": "#12939D", "tertiary": "#4B9654", "accent": "#FF6B1A"},
+                "tech-blue": {"name": "Tech Blue｜科技蓝（默认）", "primary": "#3B6EDC", "secondary": "#2D56B3", "tertiary": "#5B8FF9", "accent": "#2AA7C8", "palette": {"background": "#F4F7FC", "container": "#E9EFF8", "card": "#FDFEFF", "main-blue": "#3B6EDC", "deep-blue": "#2D56B3", "medium-blue": "#5B8FF9", "data-cyan": "#2AA7C8", "border": "#C9D7EA"}},
+                "vibrant": {"name": "Vibrant ｜活力", "primary": "#3B82F6", "secondary": "#8B5CF6", "tertiary": "#06B6D4", "accent": "#22C55E", "palette": {"blue": "#3B82F6", "purple": "#8B5CF6", "cyan": "#06B6D4", "green": "#22C55E", "orange": "#F59E0B", "red": "#EF4444", "background": "#FAFBFC", "border": "#D1D5DB"}},
+                "mint-green": {"name": "Mint green｜清爽绿", "primary": "#2E8B57", "secondary": "#14B8A6", "tertiary": "#2E8B57", "accent": "#14B8A6", "palette": {"background": "#F8FAFC", "container": "#EEF6F4", "card": "#FFFFFF", "mint-green": "#2E8B57", "light-green": "#DDF5E8", "teal-green": "#14B8A6", "light-cyan": "#CCFBF1", "border": "#C7D2D9"}},
+                "steady-red-blue": {"name": "Steady Red & Blue｜稳重红蓝", "primary": "#C62828", "secondary": "#243B63", "tertiary": "#4A90E2", "accent": "#C62828", "palette": {"background": "#F6F7FB", "container": "#E9EEF5", "card": "#FFFFFF", "red": "#C62828", "navy": "#243B63", "light-red": "#FBE4E4", "accent-blue": "#4A90E2", "border": "#CAD3DF"}},
             },
             PALETTE.THEMES,
         )
@@ -30,11 +32,11 @@ class PaletteTests(unittest.TestCase):
     def test_partial_override_is_preserved(self):
         result = PALETTE.build_palette("tech-blue", primary="#123456")
         self.assertEqual("#123456", result["colors"]["primary"]["base"])
-        self.assertEqual("#1A388D", result["colors"]["secondary"]["base"])
+        self.assertEqual("#2D56B3", result["colors"]["secondary"]["base"])
 
     def test_dark_mode_keeps_geometry_independent_tokens(self):
-        light = PALETTE.build_palette("focused", "light")
-        dark = PALETTE.build_palette("focused", "dark")
+        light = PALETTE.build_palette("mint-green", "light")
+        dark = PALETTE.build_palette("mint-green", "dark")
         self.assertEqual(light["colors"]["accent"]["base"], dark["colors"]["accent"]["base"])
         self.assertNotEqual(light["neutral"]["canvas"], dark["neutral"]["canvas"])
 

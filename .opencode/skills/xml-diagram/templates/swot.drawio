@@ -1,47 +1,47 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mxfile host="app.diagrams.net">
   <diagram name="swot template" id="swot-template">
-    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="650" math="0" shadow="0" background="#F6F8FB">
+    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="650" math="0" shadow="0" background="#F4F7FC">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="diagram-title" value="图形标题" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=24;fontColor=#172033;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="diagram-title" value="图形标题" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=24;fontColor=#1F2937;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="360" y="20" width="480" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="card-1" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+        <mxCell id="card-1" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#C9D7EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="80" y="100" width="500" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="card-1-title" value="卡片标题" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=16;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-1">
+        <mxCell id="card-1-title" value="卡片标题" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=16;fontColor=#1F2937;fontStyle=1;" vertex="1" parent="card-1">
           <mxGeometry x="20" y="16" width="460" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="card-1-body" value="内容标签" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-1">
+        <mxCell id="card-1-body" value="内容标签" style="rounded=1;arcSize=6;fillColor=#E9EFF8;strokeColor=#C9D7EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-1">
           <mxGeometry x="20" y="70" width="460" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="card-2" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+        <mxCell id="card-2" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#C9D7EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="620" y="100" width="500" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="card-2-title" value="卡片标题" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=16;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-2">
+        <mxCell id="card-2-title" value="卡片标题" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=16;fontColor=#1F2937;fontStyle=1;" vertex="1" parent="card-2">
           <mxGeometry x="20" y="16" width="460" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="card-2-body" value="内容标签" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-2">
+        <mxCell id="card-2-body" value="内容标签" style="rounded=1;arcSize=6;fillColor=#E9EFF8;strokeColor=#C9D7EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-2">
           <mxGeometry x="20" y="70" width="460" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="card-3" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+        <mxCell id="card-3" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#C9D7EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="80" y="370" width="500" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="card-3-title" value="卡片标题" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=16;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-3">
+        <mxCell id="card-3-title" value="卡片标题" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=16;fontColor=#1F2937;fontStyle=1;" vertex="1" parent="card-3">
           <mxGeometry x="20" y="16" width="460" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="card-3-body" value="内容标签" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-3">
+        <mxCell id="card-3-body" value="内容标签" style="rounded=1;arcSize=6;fillColor=#E9EFF8;strokeColor=#C9D7EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-3">
           <mxGeometry x="20" y="70" width="460" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="card-4" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#D8E1EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+        <mxCell id="card-4" value="" style="rounded=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#C9D7EA;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="620" y="370" width="500" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="card-4-title" value="卡片标题" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=16;fontColor=#172033;fontStyle=1;" vertex="1" parent="card-4">
+        <mxCell id="card-4-title" value="卡片标题" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=16;fontColor=#1F2937;fontStyle=1;" vertex="1" parent="card-4">
           <mxGeometry x="20" y="16" width="460" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="card-4-body" value="内容标签" style="rounded=1;arcSize=6;fillColor=#EEF3F8;strokeColor=#D8E1EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-4">
+        <mxCell id="card-4-body" value="内容标签" style="rounded=1;arcSize=6;fillColor=#E9EFF8;strokeColor=#C9D7EA;align=center;verticalAlign=middle;html=1;whiteSpace=wrap;fontFamily=Inter, Noto Sans SC, Microsoft YaHei, sans-serif;fontSize=12;fontColor=#475569;" vertex="1" parent="card-4">
           <mxGeometry x="20" y="70" width="460" height="120" as="geometry" />
         </mxCell>
       </root>
