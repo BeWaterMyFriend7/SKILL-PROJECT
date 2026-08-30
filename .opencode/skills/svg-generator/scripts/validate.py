@@ -61,6 +61,7 @@ EXPECTED_EXAMPLE_PREFIXES = {
     "timeline-",
 }
 REQUIRED_SUPPORT_FILES = {
+    "references/catalog.md",
     "references/theme-tokens.md",
     "references/visual-style.md",
     "references/icon-policy.md",
@@ -68,6 +69,7 @@ REQUIRED_SUPPORT_FILES = {
     "scripts/style_map.py",
     "tests/test_palette.py",
     "tests/test_style_map.py",
+    "tests/test_catalog_contract.py",
 }
 
 NUMBER_RE = re.compile(r"-?\d+(?:\.\d+)?")
@@ -440,7 +442,13 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
 
     name = path.name.lower()
     if name.startswith("architecture"):
-        tall_nodes = [item for item in node_boxes if item.height > 40]
+        visual_v2 = root.get("data-visual-contract") == VISUAL_CONTRACT
+        tall_nodes = [
+            item
+            for item in node_boxes
+            if item.height > (84 if visual_v2 else 40)
+            and not (visual_v2 and (item.element_id or "").startswith(("footer-", "layer-title-")))
+        ]
         if tall_nodes:
             warnings.append("架构图三级卡片过高: " + ", ".join(item.element_id or "<node>" for item in tall_nodes[:5]))
         if edge_element_count > 4:
@@ -532,8 +540,8 @@ def validate_catalog(target: Path) -> list[str]:
     missing_support = sorted(path for path in REQUIRED_SUPPORT_FILES if not (target / path).is_file())
     if missing_support:
         errors.append("缺少主题或图标支持文件: " + ", ".join(missing_support))
-    representative = target / "examples" / "architecture-application-light-ecommerce.svg"
-    if representative.is_file():
+    representative = next((item for item in sorted((target / "examples").glob("architecture-application-*.svg"))), None)
+    if representative is not None:
         root = ET.parse(representative).getroot()
         if not any(item.get("data-module") == "focus-node" for item in root.iter()):
             errors.append("代表架构示例缺少 focus-node 附加模块")
@@ -549,9 +557,25 @@ def validate_catalog(target: Path) -> list[str]:
         if extra:
             errors.append("存在非目标模板: " + ", ".join(extra))
     example_names = {item.name for item in examples.glob("*.svg")}
+    if len(example_names) != len(EXPECTED_EXAMPLE_PREFIXES):
+        errors.append(f"示例数量必须为 {len(EXPECTED_EXAMPLE_PREFIXES)}，实际为 {len(example_names)}")
     for prefix in sorted(EXPECTED_EXAMPLE_PREFIXES):
-        if not any(name.startswith(prefix) for name in example_names):
+        matches = [name for name in example_names if name.startswith(prefix)]
+        if not matches:
             errors.append("缺少示例类型: " + prefix.rstrip("-"))
+        elif len(matches) > 1:
+            errors.append("示例类型重复: " + prefix.rstrip("-"))
+    expected_types = {prefix.rstrip("-") for prefix in EXPECTED_EXAMPLE_PREFIXES}
+    actual_types: set[str] = set()
+    for item in sorted(templates.glob("*.svg")) + sorted(examples.glob("*.svg")):
+        root = ET.parse(item).getroot()
+        if root.get("data-generation") != "fresh-catalog-v1":
+            errors.append(f"{item.relative_to(target)}: 缺少 fresh-catalog-v1 生成标记")
+        diagram_type = root.get("data-diagram-type", "")
+        if diagram_type:
+            actual_types.add(diagram_type)
+    if actual_types != expected_types:
+        errors.append("图形类型目录不完整或包含未知类型")
     extra_files = [item for item in examples.rglob("*") if item.is_file() and item.suffix.lower() != ".svg"]
     if extra_files:
         errors.append("examples 只能包含 SVG: " + ", ".join(str(item.relative_to(target)) for item in extra_files))

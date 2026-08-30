@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "diagram-catalog-request-v1",
+  "generationMode": "fresh-catalog-v1",
+  "items": [
+    {
+      "id": "architecture-application", "label": "应用架构", "skeleton": "layered", "theme": "tech-blue", "layout": "vertical-stack", "dominantAxis": "y",
+      "title": "智能交易平台应用架构", "request": "为架构评审绘制智能交易平台应用架构，纵向展示渠道、应用、服务、数据与基础设施，突出统一接入与交易编排，右侧补充治理保障。", "conclusion": "统一接入连接业务应用与领域服务，并由治理能力保障稳定运行。",
+      "groups": [{"title":"渠道层","items":["Web 门户","移动端","合作方"]},{"title":"应用层","items":["订单中心","客户中心","运营中心"]},{"title":"服务层","items":["账户服务","交易服务","通知服务"]},{"title":"数据与基础设施","items":["业务数据库","缓存 Redis","消息队列"]}],
+      "focus": "交易编排中心", "sideRail": ["身份安全","配置中心","可观测性","发布治理"], "footer": ["统一入口","领域解耦","弹性扩展","闭环治理"]
+    },
+    {
+      "id": "architecture-business", "label": "业务架构", "skeleton": "layered", "theme": "vibrant", "layout": "vertical-stack", "dominantAxis": "y",
+      "title": "客户运营业务架构", "request": "绘制客户运营业务架构，按触点、业务能力、运营协同和支撑能力分层，突出客户洞察与营销决策。", "conclusion": "客户数据驱动洞察、决策、触达和效果反馈形成运营闭环。",
+      "groups": [{"title":"客户触点","items":["品牌官网","会员小程序","线下门店"]},{"title":"核心业务能力","items":["客户洞察","权益管理","营销自动化"]},{"title":"运营协同","items":["活动编排","内容运营","渠道协同"]},{"title":"支撑能力","items":["指标体系","数据服务","规则平台"]}],
+      "focus": "智能营销决策", "sideRail": ["组织权限","流程治理","经营分析","风险控制"], "footer": ["客户统一视图","策略自动化","全渠道协同","效果可度量"]
+    },
+    {
+      "id": "architecture-data", "label": "数据架构", "skeleton": "layered", "theme": "mint-green", "layout": "vertical-stack", "dominantAxis": "y",
+      "title": "企业实时数据架构", "request": "绘制企业实时数据架构，纵向表现数据源、采集计算、数据资产和数据服务，突出实时湖仓与数据治理。", "conclusion": "多源数据经实时加工沉淀为可信资产，并以统一服务支撑业务。",
+      "groups": [{"title":"数据源层","items":["业务系统","设备日志","第三方数据"]},{"title":"采集计算层","items":["实时采集","流式计算","批量处理"]},{"title":"数据资产层","items":["主题数据","指标中心","特征平台"]},{"title":"数据服务层","items":["查询服务","标签服务","模型服务"]}],
+      "focus": "实时湖仓平台", "sideRail": ["元数据","数据质量","血缘分析","权限审计"], "footer": ["实时汇聚","资产沉淀","统一口径","可信服务"]
+    },
+    {
+      "id": "architecture-deployment", "label": "部署架构", "skeleton": "layered", "theme": "tech-blue", "layout": "vertical-stack", "dominantAxis": "y",
+      "title": "云原生多可用区部署架构", "request": "绘制云原生系统部署架构，分层展示流量入口、容器平台、服务工作负载与数据资源，体现双可用区和运维保障。", "conclusion": "流量跨可用区调度，工作负载弹性部署，数据资源具备高可用保护。",
+      "groups": [{"title":"流量入口","items":["全局 DNS","Web 防护","负载均衡"]},{"title":"容器平台","items":["可用区 A","可用区 B","弹性调度"]},{"title":"服务工作负载","items":["网关服务","业务服务","异步任务"]},{"title":"数据资源","items":["主从数据库","分布式缓存","对象存储"]}],
+      "focus": "多可用区调度", "sideRail": ["发布流水线","日志平台","指标告警","备份恢复"], "footer": ["跨区容灾","弹性伸缩","自动发布","统一运维"]
+    },
+    {
+      "id": "architecture-technical", "label": "技术架构", "skeleton": "layered", "theme": "steady-red-blue", "layout": "vertical-stack", "dominantAxis": "y",
+      "title": "企业级交易系统技术架构", "request": "绘制企业级交易系统技术架构，分层展示接入、网关、服务、数据和基础设施，突出安全交易内核。", "conclusion": "稳定接入经过安全网关与交易服务，依托可靠数据和云基础设施运行。",
+      "groups": [{"title":"接入层","items":["Web 客户端","移动 App","开放 API"]},{"title":"网关层","items":["身份认证","请求路由","限流熔断"]},{"title":"服务层","items":["账户服务","交易服务","风控服务"]},{"title":"数据与基础设施","items":["关系数据库","缓存集群","容器平台"]}],
+      "focus": "安全交易内核", "sideRail": ["密钥管理","审计追踪","灾备切换","容量治理"], "footer": ["安全可信","高可用","低延迟","可运营"]
+    },
+    {
+      "id": "comparison", "label": "对比图", "skeleton": "matrix", "theme": "vibrant", "layout": "matrix", "dominantAxis": "grid",
+      "title": "三种集成方案对比", "request": "对比点对点、企业服务总线和事件驱动三种集成方案，从耦合度、扩展性、实时性和治理成本进行评估并突出推荐方案。", "conclusion": "事件驱动方案在扩展性和实时性上更优，适合持续演进的平台。",
+      "columns": [{"title":"点对点集成","items":["耦合度：高","扩展性：低","实时性：中","治理成本：高"]},{"title":"企业服务总线","items":["耦合度：中","扩展性：中","实时性：中","治理成本：中"]},{"title":"事件驱动","items":["耦合度：低","扩展性：高","实时性：高","治理成本：可控"]}],
+      "focus": "事件驱动", "footer": ["解耦能力","扩展效率","实时响应","治理投入"]
+    },
+    {
+      "id": "decision-matrix", "label": "决策矩阵", "skeleton": "matrix", "theme": "mint-green", "layout": "matrix", "dominantAxis": "grid",
+      "title": "数据平台技术选型矩阵", "request": "用决策矩阵评估湖仓一体、传统数仓和实时数仓，从实时性、成本、生态与治理能力打分。", "conclusion": "湖仓一体在综合能力与长期演进之间取得最佳平衡。",
+      "columns": [{"title":"湖仓一体","items":["实时性：4.5","成本：4.0","生态：4.5","治理：4.5"]},{"title":"传统数仓","items":["实时性：2.5","成本：3.0","生态：4.0","治理：4.0"]},{"title":"实时数仓","items":["实时性：5.0","成本：3.0","生态：3.5","治理：3.5"]}],
+      "focus": "湖仓一体", "footer": ["能力匹配","成本可控","生态成熟","长期演进"]
+    },
+    {
+      "id": "flow-branching", "label": "分支流程", "skeleton": "flow-branching", "theme": "vibrant", "layout": "horizontal-flow", "dominantAxis": "x",
+      "title": "智能订单处理流程", "request": "绘制智能订单处理分支流程，从订单提交、库存校验进入风险判断，分别走自动履约、人工复核和失败补偿。", "conclusion": "订单按库存与风险结果分流，并在异常路径完成补偿闭环。",
+      "steps": ["订单提交","库存校验","风险判断","自动履约","完成通知"], "branches": ["人工复核","失败补偿"], "focus": "风险判断", "footer": ["自动分流","异常隔离","人工兜底","结果闭环"]
+    },
+    {
+      "id": "flow-linear", "label": "线性流程", "skeleton": "flow-linear", "theme": "tech-blue", "layout": "horizontal-flow", "dominantAxis": "x",
+      "title": "企业付款审批流程", "request": "绘制从付款申请、材料校验、负责人审批、财务复核到银行支付和结果归档的线性流程。", "conclusion": "付款申请经过逐级校验和审批后执行支付并完整归档。",
+      "steps": ["付款申请","材料校验","负责人审批","财务复核","银行支付","结果归档"], "focus": "财务复核", "footer": ["过程透明","职责清晰","风险可控","全程留痕"]
+    },
+    {
+      "id": "lifecycle", "label": "生命周期", "skeleton": "flow-cycle", "theme": "vibrant", "layout": "mixed-axis", "dominantAxis": "mixed",
+      "title": "产品能力生命周期", "request": "绘制产品能力从洞察、规划、设计、交付、运营到复盘的闭环生命周期，突出持续运营。", "conclusion": "能力从需求洞察进入交付运营，并通过复盘反馈持续迭代。",
+      "steps": ["需求洞察","产品规划","方案设计","研发交付","上线运营","数据复盘"], "focus": "上线运营", "footer": ["持续洞察","快速交付","数据运营","闭环迭代"]
+    },
+    {
+      "id": "relationship-dependency", "label": "依赖关系", "skeleton": "relationship", "theme": "steady-red-blue", "layout": "network", "dominantAxis": "radial",
+      "title": "核心服务依赖关系", "request": "绘制交易服务与账户、库存、支付、风控、通知和数据平台之间的依赖关系，突出核心服务。", "conclusion": "交易服务位于依赖中心，通过清晰边界协调关键领域能力。",
+      "nodes": ["账户服务","库存服务","支付服务","风控服务","通知服务","数据平台"], "focus": "交易服务", "footer": ["依赖透明","边界清晰","故障隔离","影响可追踪"]
+    },
+    {
+      "id": "relationship-er", "label": "ER 关系", "skeleton": "relationship", "theme": "mint-green", "layout": "network", "dominantAxis": "radial",
+      "title": "订单领域实体关系", "request": "绘制客户、订单、订单项、商品、支付单和地址之间的实体关系，突出订单聚合根。", "conclusion": "订单聚合客户、商品、支付和履约信息，形成一致的交易数据模型。",
+      "nodes": ["客户","订单项","商品","支付单","收货地址","优惠记录"], "focus": "订单", "footer": ["聚合边界","主外键清晰","关系可追踪","模型可演进"]
+    },
+    {
+      "id": "relationship-knowledge", "label": "知识关系", "skeleton": "relationship", "theme": "mint-green", "layout": "network", "dominantAxis": "radial",
+      "title": "客户服务知识图谱", "request": "绘制客户问题与产品、故障、解决方案、工单、专家和知识文档的关联网络。", "conclusion": "问题主题连接产品、故障与解决方案，支撑知识检索和智能推荐。",
+      "nodes": ["产品能力","故障现象","解决方案","历史工单","领域专家","知识文档"], "focus": "客户问题", "footer": ["知识关联","语义检索","经验复用","智能推荐"]
+    },
+    {
+      "id": "roadmap", "label": "路线图", "skeleton": "timeline", "theme": "steady-red-blue", "layout": "timeline", "dominantAxis": "x",
+      "title": "数据能力演进路线图", "request": "绘制数据能力从基础治理、统一指标、实时分析到智能决策的四阶段路线图。", "conclusion": "数据能力按治理、统一、实时和智能四阶段渐进演进。",
+      "stages": [{"title":"阶段一","items":["数据标准","质量治理"]},{"title":"阶段二","items":["统一指标","主题资产"]},{"title":"阶段三","items":["实时计算","自助分析"]},{"title":"阶段四","items":["智能预测","自动决策"]}],
+      "focus": "阶段四", "footer": ["基础治理","资产统一","实时洞察","智能决策"]
+    },
+    {
+      "id": "sequence", "label": "时序图", "skeleton": "sequence", "theme": "tech-blue", "layout": "horizontal-flow", "dominantAxis": "x",
+      "title": "统一登录认证时序", "request": "绘制用户、前端应用、认证中心、账户服务和审计平台参与的统一登录认证时序。", "conclusion": "登录请求经过身份校验和令牌签发后访问账户，并记录完整审计事件。",
+      "participants": ["用户","前端应用","认证中心","账户服务","审计平台"], "messages": ["提交登录","发起认证","校验身份","签发令牌","读取账户","记录审计"], "focus": "认证中心", "footer": ["身份统一","令牌可信","访问受控","行为留痕"]
+    },
+    {
+      "id": "state", "label": "状态图", "skeleton": "flow-cycle", "theme": "tech-blue", "layout": "mixed-axis", "dominantAxis": "mixed",
+      "title": "订单状态流转", "request": "绘制订单从待支付、已支付、处理中、已完成到已关闭的状态变化，并体现取消与退款路径。", "conclusion": "订单围绕支付和履约主链路流转，异常状态拥有明确退出路径。",
+      "steps": ["待支付","已支付","处理中","已完成","已关闭","已退款"], "focus": "处理中", "footer": ["状态唯一","转换受控","异常可退","结果可追踪"]
+    },
+    {
+      "id": "summary", "label": "总结图", "skeleton": "summary", "theme": "vibrant", "layout": "mixed-axis", "dominantAxis": "mixed",
+      "title": "智能运营平台核心能力", "request": "用总结图展示智能运营平台的洞察、决策、触达、协同、度量和治理六项核心能力。", "conclusion": "平台以智能决策为中心，连接洞察、触达和度量形成运营闭环。",
+      "nodes": ["客户洞察","策略编排","全域触达","运营协同","效果度量","平台治理"], "focus": "智能决策", "footer": ["洞察精准","策略敏捷","触达统一","效果量化"]
+    },
+    {
+      "id": "swot", "label": "SWOT 分析", "skeleton": "matrix", "theme": "steady-red-blue", "layout": "matrix", "dominantAxis": "grid",
+      "title": "企业数据平台 SWOT 分析", "request": "用 SWOT 四象限分析企业数据平台的优势、劣势、机会和威胁，并突出治理行动。", "conclusion": "平台应发挥数据资产优势，同时通过治理投入降低复杂度与合规风险。",
+      "columns": [{"title":"优势 Strengths","items":["数据资产丰富","业务场景完整","技术团队稳定"]},{"title":"劣势 Weaknesses","items":["系统烟囱较多","口径仍需统一","历史成本偏高"]},{"title":"机会 Opportunities","items":["AI 应用增长","实时决策需求","政策支持增强"]},{"title":"威胁 Threats","items":["合规要求提高","技术迭代加速","人才竞争激烈"]}],
+      "focus": "治理行动", "footer": ["发挥优势","补齐短板","把握机会","控制风险"]
+    },
+    {
+      "id": "timeline", "label": "时间线", "skeleton": "timeline", "theme": "steady-red-blue", "layout": "timeline", "dominantAxis": "x",
+      "title": "平台建设交付时间线", "request": "绘制平台建设从立项、蓝图设计、核心开发、试点上线到全面推广的交付时间线。", "conclusion": "项目通过五个里程碑逐步完成设计、验证和规模化推广。",
+      "stages": [{"title":"1 月","items":["项目立项","团队组建"]},{"title":"2 月","items":["蓝图设计","技术选型"]},{"title":"3-4 月","items":["核心开发","联调测试"]},{"title":"5 月","items":["试点上线","效果评估"]},{"title":"6 月","items":["全面推广","运营移交"]}],
+      "focus": "5 月", "footer": ["目标明确","节奏可控","试点验证","规模推广"]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import importlib.util
+import base64
 import sys
 import tempfile
 import unittest
@@ -52,6 +53,13 @@ class XmlValidatorTests(unittest.TestCase):
 
     def test_accepts_valid_embedded_svg(self):
         source = self.embedded_svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 12h20"/></svg>')
+        errors, _ = self.validate(source)
+        self.assertFalse(any("内嵌 SVG" in item for item in errors))
+
+    def test_accepts_base64_embedded_svg(self):
+        payload = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 12h20"/></svg>'
+        encoded = base64.b64encode(payload.encode("utf-8")).decode("ascii")
+        source = BASE.replace("rounded=1;", f"shape=image;image=data:image/svg+xml;base64,{encoded};")
         errors, _ = self.validate(source)
         self.assertFalse(any("内嵌 SVG" in item for item in errors))
 

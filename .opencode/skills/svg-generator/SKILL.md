@@ -10,6 +10,7 @@ description: 生成浏览器可直接展示、缩放和嵌入网页或文档的�
 ## 资源使用
 
 - 生成前读取 `references/svg-dsl.md`。
+- 选择图形类型与视觉骨架时读取 `references/catalog.md`。
 - 选择颜色时读取 `references/theme-tokens.md`，需要图标时读取 `references/icon-policy.md`。
 - 排版前读取 `references/visual-style.md`，验收时读取 `references/quality-rules.md`。
 - 读取同类型 `templates/*.svg` 和 `examples/*.svg` 作为骨架参考，按实际内容、主轴和视觉合同重算画布；不得只替换标题或颜色。
@@ -19,7 +20,7 @@ description: 生成浏览器可直接展示、缩放和嵌入网页或文档的�
 1. 明确受众、核心结论、图形类型、内容范围、阅读方向、显示模式和输出位置。
 2. 按 `references/theme-tokens.md` 处理主题选择；识别主叙事轴、交叉轴、侧栏、焦点和数据流。
 3. 用 `references/svg-dsl.md` 写出区域、节点、关系、尺寸、间距、视觉骨架、结构颜色角色、图标和质量预期。
-4. 运行 `scripts/style_map.py` 或按同一合同将主题色板映射到结构角色；选择模板并重算画布，禁止从旧示例批量换色。
+4. 运行 `scripts/style_map.py` 或按同一合同将主题色板映射到结构角色；选择 `fresh-catalog-v1` 模板并重算画布，禁止从旧示例批量换色。
 5. 按背景、区域、连线、节点、文字、图例顺序生成 SVG。
 6. 运行严格校验和浏览器渲染，修复颜色、布局、重叠、文字、连线和空白问题。
 7. 只交付最终 SVG，除非用户明确要求 PNG 预览或中间 DSL。

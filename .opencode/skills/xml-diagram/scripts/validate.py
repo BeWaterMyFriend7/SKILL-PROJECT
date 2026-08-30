@@ -17,7 +17,10 @@ from urllib.parse import unquote_to_bytes
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_TEMPLATES = {
     "architecture.drawio",
+    "architecture-business.drawio",
     "architecture-data.drawio",
+    "architecture-deployment.drawio",
+    "architecture-technical.drawio",
     "comparison.drawio",
     "decision-matrix.drawio",
     "flow-branching.drawio",
@@ -55,6 +58,7 @@ EXPECTED_EXAMPLE_MARKERS = {
     "timeline-",
 }
 REQUIRED_SUPPORT_FILES = {
+    "references/catalog.md",
     "references/theme-tokens.md",
     "references/visual-style.md",
     "references/icon-policy.md",
@@ -63,6 +67,7 @@ REQUIRED_SUPPORT_FILES = {
     "tests/test_palette.py",
     "tests/test_style_map.py",
     "tests/test_validate.py",
+    "tests/test_catalog_contract.py",
 }
 PLACEHOLDER_RE = re.compile(
     r"(图形标题|区域标题|卡片标题|内容标签|参与者 [ABCD]|处理步骤|实体 [AB]|阶段 [AB]|主题节点|"
@@ -115,6 +120,9 @@ def style_map(raw: str) -> dict[str, str]:
         if "=" in part:
             key, value = part.split("=", 1)
             result[key] = value
+    embedded = re.search(r"(?:^|;)image=(data:image/svg\+xml(?:;base64)?,[^;]+)(?:;|$)", raw, re.IGNORECASE)
+    if embedded:
+        result["image"] = embedded.group(1)
     return result
 
 
@@ -361,7 +369,13 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
         theme = diagram.get("theme")
         if theme and theme not in ALLOWED_THEMES:
             errors.append(f"未知主题键: {theme}")
-        if path.parent.name == "templates" and path.name in {"architecture.drawio", "architecture-data.drawio"}:
+        if path.parent.name == "templates" and path.name in {
+            "architecture.drawio",
+            "architecture-business.drawio",
+            "architecture-data.drawio",
+            "architecture-deployment.drawio",
+            "architecture-technical.drawio",
+        }:
             if diagram.get("layout") != "vertical-stack":
                 errors.append("架构模板必须声明 layout=vertical-stack")
             if diagram.get("optionalModules") != OPTIONAL_MODULES:
@@ -543,6 +557,10 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
                 for box in content_boxes:
                     if box.cell_id in {source.cell_id, target.cell_id}:
                         continue
+                    if diagram is not None and diagram.get("visualContract") == VISUAL_CONTRACT:
+                        candidate = cell_by_id.get(box.cell_id)
+                        if candidate is not None and candidate.get("role") == "region":
+                            continue
                     if horizontal:
                         low, high = sorted((source_center[0], target_center[0]))
                         crosses = low < box.right and high > box.x and box.y < source_center[1] < box.bottom
@@ -606,7 +624,22 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
                 if content_gap < 12 or content_gap > 16:
                     warnings.append(f"{card.cell_id}: 二级标题到内容间距应为 12～16px，当前 {content_gap:g}px")
 
-    if kind == "architecture-data":
+    if kind == "architecture-data" and diagram is not None and diagram.get("visualContract") == VISUAL_CONTRACT:
+        layers = sorted(
+            (box for box in boxes if re.fullmatch(r"layer-\d+", box.cell_id)),
+            key=lambda box: box.y,
+        )
+        if len(layers) < 3:
+            errors.append("数据架构图至少需要 3 个有效主层")
+        for index, layer in enumerate(layers[1:], start=1):
+            previous = layers[index - 1]
+            if layer.y <= previous.y:
+                errors.append(f"{layer.cell_id}: 主层必须自上而下排列")
+            if layer.y - previous.bottom < 20:
+                errors.append(f"{layer.cell_id}: 主层间距不足 20px")
+            if not math.isclose(layer.x, previous.x, abs_tol=2.0) or not math.isclose(layer.width, previous.width, abs_tol=2.0):
+                errors.append(f"{layer.cell_id}: 主层必须等宽并纵向对齐")
+    elif kind == "architecture-data":
         layers = sorted(
             (box for box in boxes if re.fullmatch(r"region-\d+", box.cell_id)),
             key=lambda box: box.y,
@@ -768,15 +801,16 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
             if round(center_x, 1) not in endpoint_x:
                 errors.append(f"participant-{suffix}: 未参与任何请求或返回消息")
 
-    if content_boxes and page_width > 0 and page_height > 0 and not allow_placeholders:
-        min_x = min(box.x for box in content_boxes)
-        min_y = min(box.y for box in content_boxes)
-        max_x = max(box.right for box in content_boxes)
-        max_y = max(box.bottom for box in content_boxes)
+    utilization_boxes = [box for box in content_boxes if box.cell_id not in {"main-shell", "footer-band"}]
+    if utilization_boxes and page_width > 0 and page_height > 0 and not allow_placeholders:
+        min_x = min(box.x for box in utilization_boxes)
+        min_y = min(box.y for box in utilization_boxes)
+        max_x = max(box.right for box in utilization_boxes)
+        max_y = max(box.bottom for box in utilization_boxes)
         utilization = ((max_x - min_x) * (max_y - min_y)) / (page_width * page_height)
         if utilization < 0.45:
             warnings.append(f"内容包围盒利用率 {utilization:.1%}，需检查大面积空白")
-        elif utilization > 0.85:
+        elif utilization > (0.88 if diagram is not None and diagram.get("visualContract") == VISUAL_CONTRACT else 0.85):
             warnings.append(f"内容包围盒利用率 {utilization:.1%}，需检查拥挤或裁切")
         left, right = min_x, page_width - max_x
         top, bottom = min_y, page_height - max_y
@@ -866,8 +900,8 @@ def validate_catalog(target: Path) -> list[str]:
     missing_support = sorted(path for path in REQUIRED_SUPPORT_FILES if not (target / path).is_file())
     if missing_support:
         errors.append("缺少主题或图标支持文件: " + ", ".join(missing_support))
-    representative = target / "examples" / "architecture-application-light-ecommerce.drawio"
-    if representative.is_file():
+    representative = next((item for item in sorted((target / "examples").glob("architecture-application-*.drawio"))), None)
+    if representative is not None:
         tree = ET.parse(representative)
         if not tree.findall(".//mxCell[@module='focus-node']"):
             errors.append("代表架构示例缺少 focus-node 附加模块")
@@ -884,9 +918,27 @@ def validate_catalog(target: Path) -> list[str]:
         if extra:
             errors.append("存在非目标模板: " + ", ".join(extra))
     example_names = {path.name for path in examples_dir.glob("*.drawio")}
+    if len(example_names) != len(EXPECTED_EXAMPLE_MARKERS):
+        errors.append(f"示例数量必须为 {len(EXPECTED_EXAMPLE_MARKERS)}，实际为 {len(example_names)}")
     for marker in sorted(EXPECTED_EXAMPLE_MARKERS):
-        if not any(name.startswith(marker) for name in example_names):
+        matches = [name for name in example_names if name.startswith(marker)]
+        if not matches:
             errors.append(f"缺少示例类型: {marker.rstrip('-')}")
+        elif len(matches) > 1:
+            errors.append(f"示例类型重复: {marker.rstrip('-')}")
+    expected_types = {marker.rstrip("-") for marker in EXPECTED_EXAMPLE_MARKERS}
+    actual_types: set[str] = set()
+    for path in sorted(templates_dir.glob("*.drawio")) + sorted(examples_dir.glob("*.drawio")):
+        root = ET.parse(path).getroot()
+        diagram = root if root.tag == "diagram" else root.find("diagram")
+        if diagram is None or diagram.get("generation") != "fresh-catalog-v1":
+            errors.append(f"{path.relative_to(target)}: 缺少 fresh-catalog-v1 生成标记")
+            continue
+        diagram_type = diagram.get("diagramType", "")
+        if diagram_type:
+            actual_types.add(diagram_type)
+    if actual_types != expected_types:
+        errors.append("图形类型目录不完整或包含未知类型")
     extra_example_files = [path for path in examples_dir.rglob("*") if path.is_file() and path.suffix.lower() != ".drawio"]
     if extra_example_files:
         errors.append("examples 只能包含 .drawio: " + ", ".join(str(path.relative_to(target)) for path in extra_example_files))

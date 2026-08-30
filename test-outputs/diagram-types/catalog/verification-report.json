@@ -1,0 +1,1977 @@
+{
+  "schemaVersion": "fresh-catalog-verification-v1",
+  "status": "passed",
+  "startedAtUtc": "2026-08-30T10:47:14.929989+00:00",
+  "completedAtUtc": "2026-08-30T10:48:40.449812+00:00",
+  "generationMode": "fresh-catalog-v1",
+  "legacyInputFiles": [],
+  "removedSourceTargets": [
+    "test-outputs/diagram-types/catalog/dsl/architecture-application.md",
+    "test-outputs/diagram-types/catalog/dsl/architecture-business.md",
+    "test-outputs/diagram-types/catalog/dsl/architecture-data.md",
+    "test-outputs/diagram-types/catalog/dsl/architecture-deployment.md",
+    "test-outputs/diagram-types/catalog/dsl/architecture-technical.md",
+    "test-outputs/diagram-types/catalog/dsl/comparison.md",
+    "test-outputs/diagram-types/catalog/dsl/decision-matrix.md",
+    "test-outputs/diagram-types/catalog/dsl/flow-branching.md",
+    "test-outputs/diagram-types/catalog/dsl/flow-linear.md",
+    "test-outputs/diagram-types/catalog/dsl/lifecycle.md",
+    "test-outputs/diagram-types/catalog/dsl/relationship-dependency.md",
+    "test-outputs/diagram-types/catalog/dsl/relationship-er.md",
+    "test-outputs/diagram-types/catalog/dsl/relationship-knowledge.md",
+    "test-outputs/diagram-types/catalog/dsl/roadmap.md",
+    "test-outputs/diagram-types/catalog/dsl/sequence.md",
+    "test-outputs/diagram-types/catalog/dsl/state.md",
+    "test-outputs/diagram-types/catalog/dsl/summary.md",
+    "test-outputs/diagram-types/catalog/dsl/swot.md",
+    "test-outputs/diagram-types/catalog/dsl/timeline.md",
+    "test-outputs/diagram-types/catalog/svg/architecture-application-tech-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/architecture-business-vibrant-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/architecture-data-mint-green-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/architecture-deployment-tech-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/architecture-technical-steady-red-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/comparison-vibrant-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/decision-matrix-mint-green-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/flow-branching-vibrant-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/flow-linear-tech-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/lifecycle-vibrant-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/relationship-dependency-steady-red-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/relationship-er-mint-green-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/relationship-knowledge-mint-green-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/roadmap-steady-red-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/sequence-tech-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/state-tech-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/summary-vibrant-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/swot-steady-red-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/svg/timeline-steady-red-blue-light-enterprise.svg",
+    "test-outputs/diagram-types/catalog/xml/architecture-application-tech-blue-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/architecture-business-vibrant-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/architecture-data-mint-green-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/architecture-deployment-tech-blue-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/architecture-technical-steady-red-blue-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/comparison-vibrant-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/decision-matrix-mint-green-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/flow-branching-vibrant-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/flow-linear-tech-blue-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/lifecycle-vibrant-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/relationship-dependency-steady-red-blue-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/relationship-er-mint-green-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/relationship-knowledge-mint-green-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/roadmap-steady-red-blue-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/sequence-tech-blue-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/state-tech-blue-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/summary-vibrant-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/swot-steady-red-blue-light-enterprise.drawio",
+    "test-outputs/diagram-types/catalog/xml/timeline-steady-red-blue-light-enterprise.drawio",
+    ".opencode/skills/svg-generator/templates/architecture-business.svg",
+    ".opencode/skills/svg-generator/templates/architecture-data.svg",
+    ".opencode/skills/svg-generator/templates/architecture-deployment.svg",
+    ".opencode/skills/svg-generator/templates/architecture-technical.svg",
+    ".opencode/skills/svg-generator/templates/architecture.svg",
+    ".opencode/skills/svg-generator/templates/comparison.svg",
+    ".opencode/skills/svg-generator/templates/decision-matrix.svg",
+    ".opencode/skills/svg-generator/templates/flow-branching.svg",
+    ".opencode/skills/svg-generator/templates/flow-linear.svg",
+    ".opencode/skills/svg-generator/templates/lifecycle.svg",
+    ".opencode/skills/svg-generator/templates/relationship-dependency.svg",
+    ".opencode/skills/svg-generator/templates/relationship-er.svg",
+    ".opencode/skills/svg-generator/templates/relationship-knowledge.svg",
+    ".opencode/skills/svg-generator/templates/roadmap.svg",
+    ".opencode/skills/svg-generator/templates/sequence.svg",
+    ".opencode/skills/svg-generator/templates/state.svg",
+    ".opencode/skills/svg-generator/templates/summary.svg",
+    ".opencode/skills/svg-generator/templates/swot.svg",
+    ".opencode/skills/svg-generator/templates/timeline.svg",
+    ".opencode/skills/svg-generator/examples/architecture-application-tech-blue-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/architecture-business-vibrant-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/architecture-data-mint-green-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/architecture-deployment-tech-blue-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/architecture-technical-steady-red-blue-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/comparison-vibrant-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/decision-matrix-mint-green-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/flow-branching-vibrant-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/flow-linear-tech-blue-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/lifecycle-vibrant-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/relationship-dependency-steady-red-blue-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/relationship-er-mint-green-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/relationship-knowledge-mint-green-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/roadmap-steady-red-blue-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/sequence-tech-blue-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/state-tech-blue-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/summary-vibrant-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/swot-steady-red-blue-light-enterprise.svg",
+    ".opencode/skills/svg-generator/examples/timeline-steady-red-blue-light-enterprise.svg",
+    ".opencode/skills/xml-diagram/templates/architecture-business.drawio",
+    ".opencode/skills/xml-diagram/templates/architecture-data.drawio",
+    ".opencode/skills/xml-diagram/templates/architecture-deployment.drawio",
+    ".opencode/skills/xml-diagram/templates/architecture-technical.drawio",
+    ".opencode/skills/xml-diagram/templates/architecture.drawio",
+    ".opencode/skills/xml-diagram/templates/comparison.drawio",
+    ".opencode/skills/xml-diagram/templates/decision-matrix.drawio",
+    ".opencode/skills/xml-diagram/templates/flow-branching.drawio",
+    ".opencode/skills/xml-diagram/templates/flow-linear.drawio",
+    ".opencode/skills/xml-diagram/templates/lifecycle.drawio",
+    ".opencode/skills/xml-diagram/templates/relationship-dependency.drawio",
+    ".opencode/skills/xml-diagram/templates/relationship-er.drawio",
+    ".opencode/skills/xml-diagram/templates/relationship-knowledge.drawio",
+    ".opencode/skills/xml-diagram/templates/roadmap.drawio",
+    ".opencode/skills/xml-diagram/templates/sequence.drawio",
+    ".opencode/skills/xml-diagram/templates/state.drawio",
+    ".opencode/skills/xml-diagram/templates/summary.drawio",
+    ".opencode/skills/xml-diagram/templates/swot.drawio",
+    ".opencode/skills/xml-diagram/templates/timeline.drawio",
+    ".opencode/skills/xml-diagram/examples/architecture-application-tech-blue-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/architecture-business-vibrant-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/architecture-data-mint-green-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/architecture-deployment-tech-blue-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/architecture-technical-steady-red-blue-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/comparison-vibrant-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/decision-matrix-mint-green-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/flow-branching-vibrant-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/flow-linear-tech-blue-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/lifecycle-vibrant-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/relationship-dependency-steady-red-blue-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/relationship-er-mint-green-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/relationship-knowledge-mint-green-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/roadmap-steady-red-blue-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/sequence-tech-blue-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/state-tech-blue-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/summary-vibrant-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/swot-steady-red-blue-light-enterprise.drawio",
+    ".opencode/skills/xml-diagram/examples/timeline-steady-red-blue-light-enterprise.drawio",
+    "docs/svg-generator/svg/architecture-application-tech-blue-light-enterprise.svg",
+    "docs/svg-generator/svg/architecture-business-vibrant-light-enterprise.svg",
+    "docs/svg-generator/svg/architecture-data-mint-green-light-enterprise.svg",
+    "docs/svg-generator/svg/architecture-deployment-tech-blue-light-enterprise.svg",
+    "docs/svg-generator/svg/architecture-technical-steady-red-blue-light-enterprise.svg",
+    "docs/svg-generator/svg/comparison-vibrant-light-enterprise.svg",
+    "docs/svg-generator/svg/decision-matrix-mint-green-light-enterprise.svg",
+    "docs/svg-generator/svg/flow-branching-vibrant-light-enterprise.svg",
+    "docs/svg-generator/svg/flow-linear-tech-blue-light-enterprise.svg",
+    "docs/svg-generator/svg/lifecycle-vibrant-light-enterprise.svg",
+    "docs/svg-generator/svg/relationship-dependency-steady-red-blue-light-enterprise.svg",
+    "docs/svg-generator/svg/relationship-er-mint-green-light-enterprise.svg",
+    "docs/svg-generator/svg/relationship-knowledge-mint-green-light-enterprise.svg",
+    "docs/svg-generator/svg/roadmap-steady-red-blue-light-enterprise.svg",
+    "docs/svg-generator/svg/sequence-tech-blue-light-enterprise.svg",
+    "docs/svg-generator/svg/state-tech-blue-light-enterprise.svg",
+    "docs/svg-generator/svg/summary-vibrant-light-enterprise.svg",
+    "docs/svg-generator/svg/swot-steady-red-blue-light-enterprise.svg",
+    "docs/svg-generator/svg/timeline-steady-red-blue-light-enterprise.svg",
+    "docs/xml-diagram/drawio/architecture-application-tech-blue-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/architecture-business-vibrant-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/architecture-data-mint-green-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/architecture-deployment-tech-blue-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/architecture-technical-steady-red-blue-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/comparison-vibrant-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/decision-matrix-mint-green-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/flow-branching-vibrant-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/flow-linear-tech-blue-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/lifecycle-vibrant-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/relationship-dependency-steady-red-blue-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/relationship-er-mint-green-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/relationship-knowledge-mint-green-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/roadmap-steady-red-blue-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/sequence-tech-blue-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/state-tech-blue-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/summary-vibrant-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/swot-steady-red-blue-light-enterprise.drawio",
+    "docs/xml-diagram/drawio/timeline-steady-red-blue-light-enterprise.drawio"
+  ],
+  "removedImageTargets": [
+    "test-outputs/diagram-types/catalog/images/svg/architecture-application-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/architecture-business-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/architecture-data-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/architecture-deployment-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/architecture-technical-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/comparison-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/decision-matrix-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/flow-branching-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/flow-linear-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/lifecycle-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/relationship-dependency-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/relationship-er-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/relationship-knowledge-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/roadmap-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/sequence-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/state-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/summary-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/swot-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/svg/timeline-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/architecture-application-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/architecture-business-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/architecture-data-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/architecture-deployment-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/architecture-technical-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/comparison-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/decision-matrix-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/flow-branching-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/flow-linear-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/lifecycle-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/relationship-dependency-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/relationship-er-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/relationship-knowledge-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/roadmap-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/sequence-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/state-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/summary-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/swot-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/images/xml/timeline-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/architecture-application-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/architecture-business-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/svg/architecture-data-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/svg/architecture-deployment-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/architecture-technical-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/comparison-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/svg/decision-matrix-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/svg/flow-branching-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/svg/flow-linear-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/lifecycle-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/svg/relationship-dependency-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/relationship-er-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/svg/relationship-knowledge-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/svg/roadmap-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/sequence-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/state-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/summary-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/svg/swot-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/svg/timeline-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/architecture-application-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/architecture-business-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/xml/architecture-data-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/xml/architecture-deployment-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/architecture-technical-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/comparison-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/xml/decision-matrix-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/xml/flow-branching-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/xml/flow-linear-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/lifecycle-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/xml/relationship-dependency-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/relationship-er-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/xml/relationship-knowledge-mint-green-light-enterprise.png",
+    "test-outputs/diagram-types/xml/roadmap-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/sequence-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/state-tech-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/summary-vibrant-light-enterprise.png",
+    "test-outputs/diagram-types/xml/swot-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/xml/timeline-steady-red-blue-light-enterprise.png",
+    "docs/svg-generator/images/architecture-application-tech-blue-light-enterprise.png",
+    "docs/svg-generator/images/architecture-business-vibrant-light-enterprise.png",
+    "docs/svg-generator/images/architecture-data-mint-green-light-enterprise.png",
+    "docs/svg-generator/images/architecture-deployment-tech-blue-light-enterprise.png",
+    "docs/svg-generator/images/architecture-technical-steady-red-blue-light-enterprise.png",
+    "docs/svg-generator/images/comparison-vibrant-light-enterprise.png",
+    "docs/svg-generator/images/decision-matrix-mint-green-light-enterprise.png",
+    "docs/svg-generator/images/flow-branching-vibrant-light-enterprise.png",
+    "docs/svg-generator/images/flow-linear-tech-blue-light-enterprise.png",
+    "docs/svg-generator/images/lifecycle-vibrant-light-enterprise.png",
+    "docs/svg-generator/images/relationship-dependency-steady-red-blue-light-enterprise.png",
+    "docs/svg-generator/images/relationship-er-mint-green-light-enterprise.png",
+    "docs/svg-generator/images/relationship-knowledge-mint-green-light-enterprise.png",
+    "docs/svg-generator/images/roadmap-steady-red-blue-light-enterprise.png",
+    "docs/svg-generator/images/sequence-tech-blue-light-enterprise.png",
+    "docs/svg-generator/images/state-tech-blue-light-enterprise.png",
+    "docs/svg-generator/images/summary-vibrant-light-enterprise.png",
+    "docs/svg-generator/images/swot-steady-red-blue-light-enterprise.png",
+    "docs/svg-generator/images/timeline-steady-red-blue-light-enterprise.png",
+    "docs/xml-diagram/images/architecture-application-tech-blue-light-enterprise.png",
+    "docs/xml-diagram/images/architecture-business-vibrant-light-enterprise.png",
+    "docs/xml-diagram/images/architecture-data-mint-green-light-enterprise.png",
+    "docs/xml-diagram/images/architecture-deployment-tech-blue-light-enterprise.png",
+    "docs/xml-diagram/images/architecture-technical-steady-red-blue-light-enterprise.png",
+    "docs/xml-diagram/images/comparison-vibrant-light-enterprise.png",
+    "docs/xml-diagram/images/decision-matrix-mint-green-light-enterprise.png",
+    "docs/xml-diagram/images/flow-branching-vibrant-light-enterprise.png",
+    "docs/xml-diagram/images/flow-linear-tech-blue-light-enterprise.png",
+    "docs/xml-diagram/images/lifecycle-vibrant-light-enterprise.png",
+    "docs/xml-diagram/images/relationship-dependency-steady-red-blue-light-enterprise.png",
+    "docs/xml-diagram/images/relationship-er-mint-green-light-enterprise.png",
+    "docs/xml-diagram/images/relationship-knowledge-mint-green-light-enterprise.png",
+    "docs/xml-diagram/images/roadmap-steady-red-blue-light-enterprise.png",
+    "docs/xml-diagram/images/sequence-tech-blue-light-enterprise.png",
+    "docs/xml-diagram/images/state-tech-blue-light-enterprise.png",
+    "docs/xml-diagram/images/summary-vibrant-light-enterprise.png",
+    "docs/xml-diagram/images/swot-steady-red-blue-light-enterprise.png",
+    "docs/xml-diagram/images/timeline-steady-red-blue-light-enterprise.png",
+    "test-outputs/diagram-types/catalog/verification-report.json"
+  ],
+  "request": {
+    "path": "requests.json",
+    "sha256": "cdd4328f710e7ca2659d9ad2917482b6a52410658291a249aabc94f5e589bd2d"
+  },
+  "renderers": {
+    "svg": "chrome.exe",
+    "drawio": "draw.io.exe"
+  },
+  "commands": [
+    {
+      "command": [
+        "python",
+        ".\\test-outputs\\diagram-types\\catalog\\generate_catalog.py"
+      ],
+      "returnCode": 0,
+      "stdout": "fresh catalog generation complete: 19 types, 57 catalog sources",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        ".\\.opencode\\skills\\svg-generator\\scripts\\validate.py",
+        ".\\.opencode\\skills\\svg-generator",
+        "--strict"
+      ],
+      "returnCode": 0,
+      "stdout": "校验通过: 38 个 SVG 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        ".\\.opencode\\skills\\xml-diagram\\scripts\\validate.py",
+        ".\\.opencode\\skills\\xml-diagram",
+        "--strict"
+      ],
+      "returnCode": 0,
+      "stdout": "校验通过: 38 个 Draw.io 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\architecture-application-tech-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/architecture-application-tech-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "121988 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-application-tech-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/architecture-application-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\architecture-application-tech-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\architecture-application-tech-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\architecture-application-tech-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\architecture-application-tech-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/architecture-application-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\architecture-business-vibrant-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/architecture-business-vibrant-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "128182 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-business-vibrant-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/architecture-business-vibrant-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\architecture-business-vibrant-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\architecture-business-vibrant-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\architecture-business-vibrant-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\architecture-business-vibrant-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/architecture-business-vibrant-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\architecture-data-mint-green-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/architecture-data-mint-green-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "126968 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-data-mint-green-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/architecture-data-mint-green-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\architecture-data-mint-green-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\architecture-data-mint-green-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\architecture-data-mint-green-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\architecture-data-mint-green-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/architecture-data-mint-green-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\architecture-deployment-tech-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/architecture-deployment-tech-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "125013 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-deployment-tech-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/architecture-deployment-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\architecture-deployment-tech-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\architecture-deployment-tech-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\architecture-deployment-tech-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\architecture-deployment-tech-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/architecture-deployment-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\architecture-technical-steady-red-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/architecture-technical-steady-red-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "134510 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-technical-steady-red-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/architecture-technical-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\architecture-technical-steady-red-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\architecture-technical-steady-red-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\architecture-technical-steady-red-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\architecture-technical-steady-red-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/architecture-technical-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\comparison-vibrant-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/comparison-vibrant-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "102182 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\comparison-vibrant-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/comparison-vibrant-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\comparison-vibrant-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\comparison-vibrant-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\comparison-vibrant-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\comparison-vibrant-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/comparison-vibrant-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\decision-matrix-mint-green-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/decision-matrix-mint-green-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "90417 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\decision-matrix-mint-green-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/decision-matrix-mint-green-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\decision-matrix-mint-green-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\decision-matrix-mint-green-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\decision-matrix-mint-green-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\decision-matrix-mint-green-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/decision-matrix-mint-green-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\flow-branching-vibrant-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/flow-branching-vibrant-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "85221 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\flow-branching-vibrant-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/flow-branching-vibrant-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\flow-branching-vibrant-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\flow-branching-vibrant-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\flow-branching-vibrant-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\flow-branching-vibrant-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/flow-branching-vibrant-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\flow-linear-tech-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/flow-linear-tech-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "86550 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\flow-linear-tech-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/flow-linear-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\flow-linear-tech-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\flow-linear-tech-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\flow-linear-tech-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\flow-linear-tech-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/flow-linear-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\lifecycle-vibrant-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/lifecycle-vibrant-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "87761 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\lifecycle-vibrant-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/lifecycle-vibrant-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\lifecycle-vibrant-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\lifecycle-vibrant-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\lifecycle-vibrant-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\lifecycle-vibrant-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/lifecycle-vibrant-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\relationship-dependency-steady-red-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/relationship-dependency-steady-red-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "101754 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\relationship-dependency-steady-red-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/relationship-dependency-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\relationship-dependency-steady-red-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\relationship-dependency-steady-red-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\relationship-dependency-steady-red-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\relationship-dependency-steady-red-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/relationship-dependency-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\relationship-er-mint-green-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/relationship-er-mint-green-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "93197 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\relationship-er-mint-green-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/relationship-er-mint-green-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\relationship-er-mint-green-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\relationship-er-mint-green-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\relationship-er-mint-green-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\relationship-er-mint-green-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/relationship-er-mint-green-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\relationship-knowledge-mint-green-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/relationship-knowledge-mint-green-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "96606 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\relationship-knowledge-mint-green-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/relationship-knowledge-mint-green-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\relationship-knowledge-mint-green-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\relationship-knowledge-mint-green-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\relationship-knowledge-mint-green-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\relationship-knowledge-mint-green-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/relationship-knowledge-mint-green-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\roadmap-steady-red-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/roadmap-steady-red-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "73674 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\roadmap-steady-red-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/roadmap-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\roadmap-steady-red-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\roadmap-steady-red-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\roadmap-steady-red-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\roadmap-steady-red-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/roadmap-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\sequence-tech-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/sequence-tech-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "77366 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\sequence-tech-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/sequence-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\sequence-tech-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\sequence-tech-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\sequence-tech-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\sequence-tech-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/sequence-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\state-tech-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/state-tech-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "81770 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\state-tech-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/state-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\state-tech-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\state-tech-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\state-tech-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\state-tech-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/state-tech-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\summary-vibrant-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/summary-vibrant-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "97997 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\summary-vibrant-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/summary-vibrant-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\summary-vibrant-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\summary-vibrant-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\summary-vibrant-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\summary-vibrant-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/summary-vibrant-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\swot-steady-red-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/swot-steady-red-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "116790 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\swot-steady-red-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/swot-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\swot-steady-red-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\swot-steady-red-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\swot-steady-red-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\swot-steady-red-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/swot-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    },
+    {
+      "command": [
+        "chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=<temporary-profile>",
+        "--screenshot=.\\test-outputs\\diagram-types\\svg\\timeline-steady-red-blue-light-enterprise.png",
+        "file:///./test-outputs/diagram-types/catalog/svg/timeline-steady-red-blue-light-enterprise.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "71647 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\timeline-steady-red-blue-light-enterprise.png",
+      "output": "test-outputs/diagram-types/svg/timeline-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        ".\\test-outputs\\diagram-types\\xml\\timeline-steady-red-blue-light-enterprise.png",
+        ".\\test-outputs\\diagram-types\\catalog\\xml\\timeline-steady-red-blue-light-enterprise.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\catalog\\xml\\timeline-steady-red-blue-light-enterprise.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\xml\\timeline-steady-red-blue-light-enterprise.png",
+      "stderr": "",
+      "output": "test-outputs/diagram-types/xml/timeline-steady-red-blue-light-enterprise.png",
+      "dimensions": [
+        1472,
+        939
+      ]
+    }
+  ],
+  "semanticPairs": [
+    {
+      "id": "architecture-application",
+      "specHash": "0c6d2c6e96995aec4fcae9b659df09b73d51da2916de23c1f9a53a308e1974d5",
+      "pair": {
+        "boxes": 37,
+        "relationsAndIcons": 3,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/architecture-application.md",
+          "sha256": "59d2bee9f3a975fad428baca36f498a2896425d88f460f0f565c82373286b380"
+        },
+        "svg": {
+          "path": "svg/architecture-application-tech-blue-light-enterprise.svg",
+          "sha256": "5ec187fea40cc34ee4e49ebd31e07d286f026117f205c11fb8de45259fb898d7"
+        },
+        "drawio": {
+          "path": "xml/architecture-application-tech-blue-light-enterprise.drawio",
+          "sha256": "4e17ca705f3d6b1ac5be32ab640da3b7255aa8867fa0709f6ecacc5b3b6acafd"
+        }
+      }
+    },
+    {
+      "id": "architecture-business",
+      "specHash": "253480f34afc25d258ddee2e0368312922acd8a9693e0361683cd61634791a5c",
+      "pair": {
+        "boxes": 37,
+        "relationsAndIcons": 3,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/architecture-business.md",
+          "sha256": "b999f4a7a6c5f70583e1d8063cb57867d1bc4c8015e559dddd7a602aa54f8317"
+        },
+        "svg": {
+          "path": "svg/architecture-business-vibrant-light-enterprise.svg",
+          "sha256": "f2d261772a5f27bee1ea6a18191c76262eabaa8f58490b7b82c0f7ac0ded4fcb"
+        },
+        "drawio": {
+          "path": "xml/architecture-business-vibrant-light-enterprise.drawio",
+          "sha256": "bc1f080ca425c8a77c7a4dee933002c67a0a7873ed107febab642eedbfad440e"
+        }
+      }
+    },
+    {
+      "id": "architecture-data",
+      "specHash": "1edf0f2ba9f72c942afc3dda26b78448a9707eb29255b105cc2a15ee7a8c0f6c",
+      "pair": {
+        "boxes": 37,
+        "relationsAndIcons": 3,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/architecture-data.md",
+          "sha256": "8b392ba7d2a6002c41dadb4a9d7f90c3e795d55984af97ed38cecd217ef6b9b4"
+        },
+        "svg": {
+          "path": "svg/architecture-data-mint-green-light-enterprise.svg",
+          "sha256": "88d8c45f50f50cca6811087d183b0bbbaec3c12767db2da6c1e13f351d52400f"
+        },
+        "drawio": {
+          "path": "xml/architecture-data-mint-green-light-enterprise.drawio",
+          "sha256": "fc75a1c07b6de6fb4f36d039b2fc8719fde9ba7563039f9a00b0fb4535bae054"
+        }
+      }
+    },
+    {
+      "id": "architecture-deployment",
+      "specHash": "f4d3c7566e2140a0b7d79c51469f34d6ac4a0777289c6aa505507e60ff6f86e0",
+      "pair": {
+        "boxes": 37,
+        "relationsAndIcons": 3,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/architecture-deployment.md",
+          "sha256": "90fbe43228d0d3cdc1c5167a98495d06d685a6853af61f9e6a1e3de255235e7d"
+        },
+        "svg": {
+          "path": "svg/architecture-deployment-tech-blue-light-enterprise.svg",
+          "sha256": "423b86e1b83d30e46935208c8f394b110bf1849d5ec178a7c0ab159489f9ddbc"
+        },
+        "drawio": {
+          "path": "xml/architecture-deployment-tech-blue-light-enterprise.drawio",
+          "sha256": "6c2586d2d86a7cb25daf5dfe9de1c994f68a59c47f5cb596b8bdb18d916df587"
+        }
+      }
+    },
+    {
+      "id": "architecture-technical",
+      "specHash": "c1244811aace3183b01ed6c2690d0768527ef623bec482fb6b7a3077f40e0188",
+      "pair": {
+        "boxes": 37,
+        "relationsAndIcons": 3,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/architecture-technical.md",
+          "sha256": "8246e68ba7c53bc3c347efeb07bee30b1dc1ffb8531b1f904df085b88e6c22e4"
+        },
+        "svg": {
+          "path": "svg/architecture-technical-steady-red-blue-light-enterprise.svg",
+          "sha256": "052d97046c73cca9b75cda0724d3d99f99cfd1ff462f7367f58faa68719b5539"
+        },
+        "drawio": {
+          "path": "xml/architecture-technical-steady-red-blue-light-enterprise.drawio",
+          "sha256": "34860e751c5dd83a902f239826f548456c64cb6a521829d1b25504092f8207c0"
+        }
+      }
+    },
+    {
+      "id": "comparison",
+      "specHash": "dc57b66a35b81c589a4bacbd224c71ee3642a34edec2fe892d8577a5910f1b94",
+      "pair": {
+        "boxes": 29,
+        "relationsAndIcons": 3,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/comparison.md",
+          "sha256": "9d182ce395e21c2a3a95c3f0e9bbfde0543350c6b4123bb1e7cc044a315b4a22"
+        },
+        "svg": {
+          "path": "svg/comparison-vibrant-light-enterprise.svg",
+          "sha256": "9c189942e7f22b8eb503b46b21e78c5035d9fd41484f8148e2840ff990618896"
+        },
+        "drawio": {
+          "path": "xml/comparison-vibrant-light-enterprise.drawio",
+          "sha256": "23ee9cf5e9ce1816ca10644d54da4750b179de259864e7296fbab9e391927b76"
+        }
+      }
+    },
+    {
+      "id": "decision-matrix",
+      "specHash": "cad96d3f2994ab7bd31d9d2e5cf21a0f533b95792e7cb1e3cdd60334283c09d0",
+      "pair": {
+        "boxes": 29,
+        "relationsAndIcons": 3,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/decision-matrix.md",
+          "sha256": "aa91c9e886e7fd1cb61cf80d3b17b8b7da5c28acf10e67636180d7c4108cf265"
+        },
+        "svg": {
+          "path": "svg/decision-matrix-mint-green-light-enterprise.svg",
+          "sha256": "11427cc16589dfb84502c7aff5aae82e96129779f711115e8f8d2c51ee49c648"
+        },
+        "drawio": {
+          "path": "xml/decision-matrix-mint-green-light-enterprise.drawio",
+          "sha256": "c9e217fdf48c2034f1d463ded2eef236b91f8679944603e07694a3bf984cd809"
+        }
+      }
+    },
+    {
+      "id": "flow-branching",
+      "specHash": "97909e4230dc39af55592da34512b77d22f9f86c54147527bdf6ba46ae3b296c",
+      "pair": {
+        "boxes": 17,
+        "relationsAndIcons": 9,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/flow-branching.md",
+          "sha256": "9bab6b02227b174f253e053ffdfcf8c13af534966292841998ff92656280ba97"
+        },
+        "svg": {
+          "path": "svg/flow-branching-vibrant-light-enterprise.svg",
+          "sha256": "acb9e91391a3b78ffae5943ba0fc60838edd4ccc152637b57066bb3ee706e778"
+        },
+        "drawio": {
+          "path": "xml/flow-branching-vibrant-light-enterprise.drawio",
+          "sha256": "8f9b6c2a3356fd2e12bc86792fa41679de5048a1611be0110166c9971df3f01d"
+        }
+      }
+    },
+    {
+      "id": "flow-linear",
+      "specHash": "b0840d889bb3654622c421723d62d08788985f1d37d6a8d42076551d443e16d9",
+      "pair": {
+        "boxes": 17,
+        "relationsAndIcons": 8,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/flow-linear.md",
+          "sha256": "a9b7327a58b8f0d4c17f5acacfc373839b3617fd3aade21acbf2ef5156633776"
+        },
+        "svg": {
+          "path": "svg/flow-linear-tech-blue-light-enterprise.svg",
+          "sha256": "8e89e1c16face6be2c86870c7b01c724a9685ba272790653d121510908406cfc"
+        },
+        "drawio": {
+          "path": "xml/flow-linear-tech-blue-light-enterprise.drawio",
+          "sha256": "9e5abc397d8b3343871c1b5b0702ffe1f0a08ce6d5e52b2da49e36846a732b1c"
+        }
+      }
+    },
+    {
+      "id": "lifecycle",
+      "specHash": "66d775d0eb53044bd34815b4cc36c381bbd903c94c2e25518015a2117f8401e0",
+      "pair": {
+        "boxes": 17,
+        "relationsAndIcons": 8,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/lifecycle.md",
+          "sha256": "38c7c64881f40c1a4bec85d2f31417a0efac5dfc154d964c8b510a4fc50aa416"
+        },
+        "svg": {
+          "path": "svg/lifecycle-vibrant-light-enterprise.svg",
+          "sha256": "91afe866500d0fa115005bebc8b0c708997ea143b1a0f730bcdeafeb00be3be0"
+        },
+        "drawio": {
+          "path": "xml/lifecycle-vibrant-light-enterprise.drawio",
+          "sha256": "556b3868d727740dd72b70f161a8f759186ed6b8f20836e29ab69e3669d1d3a3"
+        }
+      }
+    },
+    {
+      "id": "relationship-dependency",
+      "specHash": "d8366d11e5862a2e43b032cf75b02743fa7ecb48e6c80ab94eb1448277b1497e",
+      "pair": {
+        "boxes": 17,
+        "relationsAndIcons": 9,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/relationship-dependency.md",
+          "sha256": "225ba8a4464c7a282b2fb85e870d7dafe51c496a28b075e2a0a84e496c7128fd"
+        },
+        "svg": {
+          "path": "svg/relationship-dependency-steady-red-blue-light-enterprise.svg",
+          "sha256": "5e9b1c2af8becdc33cb2cb0955898adc3282448097b62cae865d2dc7b1f469c5"
+        },
+        "drawio": {
+          "path": "xml/relationship-dependency-steady-red-blue-light-enterprise.drawio",
+          "sha256": "e843e4d82daebab786d416b1e4834d205a857c573939ed837106bf7fe7936523"
+        }
+      }
+    },
+    {
+      "id": "relationship-er",
+      "specHash": "02e3f205d1e9cd50d7e3510407b03fd132a43e219b7a907d82868ffb4ee67163",
+      "pair": {
+        "boxes": 17,
+        "relationsAndIcons": 9,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/relationship-er.md",
+          "sha256": "65d881b6c57b87c812653ad26aa605ca2dd1407b221819d5322affca8211da00"
+        },
+        "svg": {
+          "path": "svg/relationship-er-mint-green-light-enterprise.svg",
+          "sha256": "fbeb4f88cfeacb6ddc5602edc7f93b5cc8c71e75ec2c3852b4d674e72460bf6b"
+        },
+        "drawio": {
+          "path": "xml/relationship-er-mint-green-light-enterprise.drawio",
+          "sha256": "7813d503d8e03c72e33852f69ab87fffb23dcde67abd53d4e7864fd83e8c152c"
+        }
+      }
+    },
+    {
+      "id": "relationship-knowledge",
+      "specHash": "c0978fbddb119d2e329910036a6088e784b16615cc48e0dcd3225efaec01fdf6",
+      "pair": {
+        "boxes": 17,
+        "relationsAndIcons": 9,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/relationship-knowledge.md",
+          "sha256": "47a7ca8b1deda29d1b025a7b75f07663eb07247a4fe0daf515b5809a69a3a1e7"
+        },
+        "svg": {
+          "path": "svg/relationship-knowledge-mint-green-light-enterprise.svg",
+          "sha256": "80106ceee485d53e10dca92edd26377750188492a94a60adf82bbb8006a07d63"
+        },
+        "drawio": {
+          "path": "xml/relationship-knowledge-mint-green-light-enterprise.drawio",
+          "sha256": "af2b0e50de9309565fddd1539c114bc15693989c1ebe5fc43ebe1686939ca463"
+        }
+      }
+    },
+    {
+      "id": "roadmap",
+      "specHash": "00b1305f3bc5de6932df57fe3ceb0a2f37afd2cb3b0b7e8f2df6337f1c2e73c4",
+      "pair": {
+        "boxes": 14,
+        "relationsAndIcons": 8,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/roadmap.md",
+          "sha256": "fbd80a3fa37c90ee84fc075d4a86da18df569adf9f8dcd37d4559a7e7eb00eb5"
+        },
+        "svg": {
+          "path": "svg/roadmap-steady-red-blue-light-enterprise.svg",
+          "sha256": "76eba813979f8f2ddb52f9b7c7b1e96457936b94ceec542a86e48e6023ccd6bf"
+        },
+        "drawio": {
+          "path": "xml/roadmap-steady-red-blue-light-enterprise.drawio",
+          "sha256": "266a17938dcbf34892e9e6a70b51c3c3aa6c59089dac49f51085943421b31bdf"
+        }
+      }
+    },
+    {
+      "id": "sequence",
+      "specHash": "6a3c13a9ebd4b6360b0538aa39c1f91687769d5edc1981c1e9cca641d05ceea6",
+      "pair": {
+        "boxes": 15,
+        "relationsAndIcons": 14,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/sequence.md",
+          "sha256": "d8f0ba8ddac0fcf5f96d62247263ffdf9e8e42724abfa78c332f946420e70b95"
+        },
+        "svg": {
+          "path": "svg/sequence-tech-blue-light-enterprise.svg",
+          "sha256": "4561a301d1c39c4b4c0e4fa0fba637fe240dc59b29a748ec8f627161917bf2f0"
+        },
+        "drawio": {
+          "path": "xml/sequence-tech-blue-light-enterprise.drawio",
+          "sha256": "9e535631874e6c49d87e037e47b967a30a5a4bd6b5113fe847ec02b985251c85"
+        }
+      }
+    },
+    {
+      "id": "state",
+      "specHash": "fea3dc7d4c0aa87737b106d99da117d12538405dc3b630fbd69027d2f98e7110",
+      "pair": {
+        "boxes": 17,
+        "relationsAndIcons": 8,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/state.md",
+          "sha256": "80f2fdeceb91bf9d179192816e6bcbe2ac2353ac216c16d331be0e4a2018b657"
+        },
+        "svg": {
+          "path": "svg/state-tech-blue-light-enterprise.svg",
+          "sha256": "0ebd0f16af7fcb3101a814f10e8c8d91f48f36d6a0e3e4125f654b726f735272"
+        },
+        "drawio": {
+          "path": "xml/state-tech-blue-light-enterprise.drawio",
+          "sha256": "b776a8de53e209798bd5b5a0e7c24018d451b6d15c6e013915229888ed0546de"
+        }
+      }
+    },
+    {
+      "id": "summary",
+      "specHash": "bc08a09dbd459563d9657cba62c5e60a783064927876cc7654fd12af0f683361",
+      "pair": {
+        "boxes": 17,
+        "relationsAndIcons": 9,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/summary.md",
+          "sha256": "00392277fa03970bf1b32d4c6d5d839874709f0fec46963e9b612161fbf85a18"
+        },
+        "svg": {
+          "path": "svg/summary-vibrant-light-enterprise.svg",
+          "sha256": "76acfa0cd372dd0708dc0467ae078307131273c0e6b5bfadb7498dcfe59d1e5c"
+        },
+        "drawio": {
+          "path": "xml/summary-vibrant-light-enterprise.drawio",
+          "sha256": "a39e356e1a4cf0166e3fa529c1084fb4fdb39f1402b0dc9928dd62f8962b9fd9"
+        }
+      }
+    },
+    {
+      "id": "swot",
+      "specHash": "08674b53a1bd2dca7541f2b8f77f1a71c2a83ac5ee33b845f810d099592792b6",
+      "pair": {
+        "boxes": 31,
+        "relationsAndIcons": 3,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/swot.md",
+          "sha256": "2a42c3c5bbb7994db013a690b0372ac1857b4022bda35897f538dec946cf6f9e"
+        },
+        "svg": {
+          "path": "svg/swot-steady-red-blue-light-enterprise.svg",
+          "sha256": "77458e03b90b7484c22c8ce4118d7faa79d0fe2849065a3783bad4f7e01fb76b"
+        },
+        "drawio": {
+          "path": "xml/swot-steady-red-blue-light-enterprise.drawio",
+          "sha256": "87aa57250da1aaf8cf955c4f0bc8bc2b5b5d2fb92304ea1fc2549f4532e3c4ba"
+        }
+      }
+    },
+    {
+      "id": "timeline",
+      "specHash": "87dc9366e4f0f0a7ad7485864863a8ed8bd47960cb89b1f88ce5d0bfab6f5539",
+      "pair": {
+        "boxes": 15,
+        "relationsAndIcons": 9,
+        "status": "matched"
+      },
+      "files": {
+        "dsl": {
+          "path": "dsl/timeline.md",
+          "sha256": "6e96dd3b3983f5811011fd320b5cf24bef9dc4643476fc0d5f8847d4ea37693e"
+        },
+        "svg": {
+          "path": "svg/timeline-steady-red-blue-light-enterprise.svg",
+          "sha256": "2b0a0bd4c2a21d3382b134e9fed2fe396f90edce6c8c7446b1c6a0e37d20ad51"
+        },
+        "drawio": {
+          "path": "xml/timeline-steady-red-blue-light-enterprise.drawio",
+          "sha256": "d0c99832a47bbc5361fceb3e6da0c5dd286f58f9b0ca5d32e6e7b21656f2a9da"
+        }
+      }
+    }
+  ],
+  "images": [
+    {
+      "id": "architecture-application",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/architecture-application-tech-blue-light-enterprise.png",
+        "sha256": "c999835b7fa611676b348517a690fd26e30e5a16034be0ab74795e17dad11653",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/architecture-application-tech-blue-light-enterprise.png",
+        "sha256": "1baca0009019b9cd3b6251a5584579e527832c1016c46136441ceae92afce686",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "architecture-business",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/architecture-business-vibrant-light-enterprise.png",
+        "sha256": "c80046269f03319cb30ca870aaeebaea7abe4c31f8b08773f313144424a653e8",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/architecture-business-vibrant-light-enterprise.png",
+        "sha256": "7b92dbfd760e3b72978147059d34fb40b5c260a97d04a7e8bac12ab36d956bf8",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "architecture-data",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/architecture-data-mint-green-light-enterprise.png",
+        "sha256": "aeac91518adbd36a3fe13c912ff5cc5dad4980496c2d8b2392ee760414b24570",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/architecture-data-mint-green-light-enterprise.png",
+        "sha256": "8992f67fd06137b0d121ee8dc50904592c8cc3c98b1ed5a3f590e5a34e31b256",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "architecture-deployment",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/architecture-deployment-tech-blue-light-enterprise.png",
+        "sha256": "7dab73dc28f305c0f999c3b8032c98995accbc3a182d54421b9ff36820cf7ed9",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/architecture-deployment-tech-blue-light-enterprise.png",
+        "sha256": "ae29611725c5624aba0599f80523e6aa4ce34dfb4cf99b026ddbed94f594b65c",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "architecture-technical",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/architecture-technical-steady-red-blue-light-enterprise.png",
+        "sha256": "3d47ab65eb987080b504bab02e0ee9616b68e8353d8bd1ad570fa77b38b2d246",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/architecture-technical-steady-red-blue-light-enterprise.png",
+        "sha256": "492c53849881f64f5edf68abe1ea60396c2d67cc4c96d805c587b7139e2656f8",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "comparison",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/comparison-vibrant-light-enterprise.png",
+        "sha256": "c2ae676a47951cffd0deb58e0b19dac9ab2417d4bd204d6e8050b33d673d813a",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/comparison-vibrant-light-enterprise.png",
+        "sha256": "32ce9ca4e7f6b140555c0a2a0594b53e3ddd37cce9907f1a31ddade1140c2e01",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "decision-matrix",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/decision-matrix-mint-green-light-enterprise.png",
+        "sha256": "ca6940885538c3d1e7be8c1d616c8c75ad3e00aa283d7261bc1daa2fd63ee0bb",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/decision-matrix-mint-green-light-enterprise.png",
+        "sha256": "a5f9e42be588245124d008698eea973d979e80a710a8898f6fb015eecdaf0ff4",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "flow-branching",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/flow-branching-vibrant-light-enterprise.png",
+        "sha256": "6c0d30771ca5ffc1e1d0d6c37bb99030799a51e28f3033f0b9ce1bfb2219e35c",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/flow-branching-vibrant-light-enterprise.png",
+        "sha256": "ac1903ca92d34e1b3d457ab9a50d369cf43a98c5310f3f31b0015b9a054eb42b",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "flow-linear",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/flow-linear-tech-blue-light-enterprise.png",
+        "sha256": "d674f67046d5d17fbf3c87478c10d823b134d5e531498b213c4de744dc6b7139",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/flow-linear-tech-blue-light-enterprise.png",
+        "sha256": "1ff482ce5a541e7900337f2ce69b78d85f982ee856036769b556363ab416a08a",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "lifecycle",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/lifecycle-vibrant-light-enterprise.png",
+        "sha256": "d7579198c7506770db0f2d469c2ebb2ffce666bf1025367e427eae05907b385f",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/lifecycle-vibrant-light-enterprise.png",
+        "sha256": "05905a14f7ec741f1390b8ab79e0a5aebf678b00ad6ad66441e96cc46cad9ee6",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "relationship-dependency",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/relationship-dependency-steady-red-blue-light-enterprise.png",
+        "sha256": "7db31a300aaa360dd6606684cfdd264b16b4ff5aefd4861101a05a52bd2fbd6a",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/relationship-dependency-steady-red-blue-light-enterprise.png",
+        "sha256": "be58bddd533ee4cb9074839bc10e3ffee9a014b8453b8be09179985d4e9e3498",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "relationship-er",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/relationship-er-mint-green-light-enterprise.png",
+        "sha256": "ffda777bb97b6d9ac366a7f3c61fc0a988fae9fd9f7c394c271c1075f6e3852b",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/relationship-er-mint-green-light-enterprise.png",
+        "sha256": "780c2921579304943ac2acb8e76b3a7b6a694fb4759e2cd195e215370367b90d",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "relationship-knowledge",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/relationship-knowledge-mint-green-light-enterprise.png",
+        "sha256": "7cc43c88a8582958c36596a66035e1eecf4e5545eae1c260b79d6845d3ebf940",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/relationship-knowledge-mint-green-light-enterprise.png",
+        "sha256": "e5f8690b861d0b3395aaac33c687974519978f725498f3ed4257de6093932f32",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "roadmap",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/roadmap-steady-red-blue-light-enterprise.png",
+        "sha256": "4d3272bc08c282851eb20d0e7c30a5933479c75c172d438da260eb4aeb29879e",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/roadmap-steady-red-blue-light-enterprise.png",
+        "sha256": "ecfdf9091c694234c0e35aa5dba0914da962d5ec13946c410af84ddfbfa36489",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "sequence",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/sequence-tech-blue-light-enterprise.png",
+        "sha256": "633da8e674f97436968e9c18a1d2c97a301053608d31029401783dfee0bde67e",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/sequence-tech-blue-light-enterprise.png",
+        "sha256": "3d61b109d6e81f5ba87ae85cf31c7dc9b4264f3744d9edfeeb20e167e390e0a2",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "state",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/state-tech-blue-light-enterprise.png",
+        "sha256": "5d07d9a2570de406358076577c9cc94cce2e6fe7d6bc706d5a2cf35ea4a1add2",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/state-tech-blue-light-enterprise.png",
+        "sha256": "9d7c11fb68a5c80d71db9b4bc99b9e39b48a4b3ecc35203f954c10b5a28eabc2",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/summary-vibrant-light-enterprise.png",
+        "sha256": "3522d113aeea6c4a3ff5add5798bcba911246107ea7b37125e08e6580a1c915b",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/summary-vibrant-light-enterprise.png",
+        "sha256": "e79119a8bcdbeaaa483489a8a130d9a0ca4dd651239ff7efc2793b5a8468d655",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "swot",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/swot-steady-red-blue-light-enterprise.png",
+        "sha256": "fceff8dc85b68a93fed4b9e2157d088cded283da54bc305595aa3f28fdc785fb",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/swot-steady-red-blue-light-enterprise.png",
+        "sha256": "6cedeae630b66afd9525294b212561c61c3925113d0f3ee3e10eb5a5c9feb82f",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    },
+    {
+      "id": "timeline",
+      "svg": {
+        "path": "test-outputs/diagram-types/svg/timeline-steady-red-blue-light-enterprise.png",
+        "sha256": "a5af2e60951ce1313092fe65f5ae9255829844dbf2aef5f01c2e0bc265d767cc",
+        "dimensions": [
+          1560,
+          1000
+        ]
+      },
+      "drawio": {
+        "path": "test-outputs/diagram-types/xml/timeline-steady-red-blue-light-enterprise.png",
+        "sha256": "3107fb0f1d25b235e3eff5d03db85e9b32d95276c08282c821f206cff22e0ac4",
+        "dimensions": [
+          1472,
+          939
+        ]
+      }
+    }
+  ]
+}

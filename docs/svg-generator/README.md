@@ -1,84 +1,38 @@
 # svg-generator 使用说明
 
-`svg-generator` 生成可直接在浏览器、网页和文档中展示的自包含 SVG，适合架构、流程、时序、关系、规划和结构化信息图。需要在 Draw.io 中拖拽编辑时使用 `xml-diagram`。
+两套绘图 Skill 共享 `enterprise-v2` 视觉合同和 19 类自然语言新生目录。主题名称与配色固定，结构颜色会按主轴、交叉轴、侧栏、焦点和数据流受控映射。
 
-## 快速使用
+## 生成与主题规则
 
-```text
-请使用 svg-generator 绘制智慧零售平台的技术架构图。
-使用 Steady Red & Blue｜稳重红蓝深色主题，保持纵向分层，并输出自包含 SVG。
-```
+- 用户未指定主题时询问一次；仍不指定则使用 Tech Blue｜科技蓝（默认）。
+- 架构图保持纵向分层主骨架；流程、关系、矩阵和时间类选择相应视觉骨架。
+- 图标由内容决定，不设硬上限，但只在具有导航、识别或焦点价值时使用。
+- 所有文件都从自然语言请求重新生成，不从旧示例批量换色。
 
-未提供颜色信号时，Skill 会询问一次主题；仍未指定则使用默认科技蓝浅色模式。
+## 19 类新生示例
 
-## 主题
-
-| 主题名称（严格按用户文字） | 键 | 适合的视觉感受 |
-| --- | --- | --- |
-| Tech Blue｜科技蓝（默认） | `tech-blue` | 专业、清晰、企业科技感 |
-| Vibrant ｜活力 | `vibrant` | 颜色丰富但克制，不使用彩虹式随机配色 |
-| Mint green｜清爽绿 | `mint-green` | 轻盈、清爽、数据感 |
-| Steady Red & Blue｜稳重红蓝 | `steady-red-blue` | 稳重、清晰、企业感 |
-
-每个主题都包含 primary、secondary、tertiary、accent 多个结构色。用户可以覆盖部分或全部色槽；浅色与深色版本保持相同内容和几何结构。
-
-## 生成流程
-
-1. 明确图形类型、核心结论、内容层级和阅读方向。
-2. 选择主题与显示模式，生成自然语言 DSL。
-3. 匹配 SVG 模板并计算画布、区域、卡片和连线。
-4. 生成可访问、自包含 SVG，执行严格源文件校验。
-5. 使用真实浏览器渲染，修正重叠、文字、连线和空白。
-
-架构图固定使用 `vertical-stack` 纵向分层。顶部信息带、辅助列、说明卡片、编号流程、焦点节点和底部总结带只在内容需要时加入。图标通常 0～4 个，但不设置硬上限。
-
-## 智慧零售示例集
-
-以下 10 类示例均重新生成浅色和深色版本，共 20 个 SVG 文件。
-
-| 图形类型 | 主题 | 浅色 | 深色 |
+| 图形类型 | 主题 | SVG 源文件 | PNG 预览 |
 | --- | --- | --- | --- |
-| 业务架构 | 科技蓝 | [文件](svg/architecture-business-tech-blue-light-smart-retail.svg) | [文件](svg/architecture-business-tech-blue-dark-smart-retail.svg) |
-| 技术架构 | Steady Red & Blue｜稳重红蓝 | [文件](svg/architecture-technical-steady-red-blue-light-smart-retail.svg) | [文件](svg/architecture-technical-steady-red-blue-dark-smart-retail.svg) |
-| 部署架构 | 科技蓝 | [文件](svg/architecture-deployment-tech-blue-light-smart-retail.svg) | [文件](svg/architecture-deployment-tech-blue-dark-smart-retail.svg) |
-| 数据架构 | Mint green｜清爽绿 | [文件](svg/architecture-data-mint-green-light-smart-retail.svg) | [文件](svg/architecture-data-mint-green-dark-smart-retail.svg) |
-| 分支流程 | Vibrant ｜活力 | [文件](svg/flow-branching-vibrant-light-smart-retail.svg) | [文件](svg/flow-branching-vibrant-dark-smart-retail.svg) |
-| 时序图 | 科技蓝 | [文件](svg/sequence-tech-blue-light-smart-retail.svg) | [文件](svg/sequence-tech-blue-dark-smart-retail.svg) |
-| ER 图 | Mint green｜清爽绿 | [文件](svg/relationship-er-mint-green-light-smart-retail.svg) | [文件](svg/relationship-er-mint-green-dark-smart-retail.svg) |
-| 核心能力 | Vibrant ｜活力 | [文件](svg/summary-vibrant-light-smart-retail.svg) | [文件](svg/summary-vibrant-dark-smart-retail.svg) |
-| 交付里程碑 | 科技蓝 | [文件](svg/timeline-tech-blue-light-smart-retail.svg) | [文件](svg/timeline-tech-blue-dark-smart-retail.svg) |
-| 演进路线图 | Steady Red & Blue｜稳重红蓝 | [文件](svg/roadmap-steady-red-blue-light-smart-retail.svg) | [文件](svg/roadmap-steady-red-blue-dark-smart-retail.svg) |
+| 应用架构 | Tech Blue｜科技蓝（默认） | [文件](svg/architecture-application-tech-blue-light-enterprise.svg) | [预览](images/architecture-application-tech-blue-light-enterprise.png) |
+| 业务架构 | Vibrant ｜活力 | [文件](svg/architecture-business-vibrant-light-enterprise.svg) | [预览](images/architecture-business-vibrant-light-enterprise.png) |
+| 数据架构 | Mint green｜清爽绿 | [文件](svg/architecture-data-mint-green-light-enterprise.svg) | [预览](images/architecture-data-mint-green-light-enterprise.png) |
+| 部署架构 | Tech Blue｜科技蓝（默认） | [文件](svg/architecture-deployment-tech-blue-light-enterprise.svg) | [预览](images/architecture-deployment-tech-blue-light-enterprise.png) |
+| 技术架构 | Steady Red & Blue｜稳重红蓝 | [文件](svg/architecture-technical-steady-red-blue-light-enterprise.svg) | [预览](images/architecture-technical-steady-red-blue-light-enterprise.png) |
+| 对比图 | Vibrant ｜活力 | [文件](svg/comparison-vibrant-light-enterprise.svg) | [预览](images/comparison-vibrant-light-enterprise.png) |
+| 决策矩阵 | Mint green｜清爽绿 | [文件](svg/decision-matrix-mint-green-light-enterprise.svg) | [预览](images/decision-matrix-mint-green-light-enterprise.png) |
+| 分支流程 | Vibrant ｜活力 | [文件](svg/flow-branching-vibrant-light-enterprise.svg) | [预览](images/flow-branching-vibrant-light-enterprise.png) |
+| 线性流程 | Tech Blue｜科技蓝（默认） | [文件](svg/flow-linear-tech-blue-light-enterprise.svg) | [预览](images/flow-linear-tech-blue-light-enterprise.png) |
+| 生命周期 | Vibrant ｜活力 | [文件](svg/lifecycle-vibrant-light-enterprise.svg) | [预览](images/lifecycle-vibrant-light-enterprise.png) |
+| 依赖关系 | Steady Red & Blue｜稳重红蓝 | [文件](svg/relationship-dependency-steady-red-blue-light-enterprise.svg) | [预览](images/relationship-dependency-steady-red-blue-light-enterprise.png) |
+| ER 关系 | Mint green｜清爽绿 | [文件](svg/relationship-er-mint-green-light-enterprise.svg) | [预览](images/relationship-er-mint-green-light-enterprise.png) |
+| 知识关系 | Mint green｜清爽绿 | [文件](svg/relationship-knowledge-mint-green-light-enterprise.svg) | [预览](images/relationship-knowledge-mint-green-light-enterprise.png) |
+| 路线图 | Steady Red & Blue｜稳重红蓝 | [文件](svg/roadmap-steady-red-blue-light-enterprise.svg) | [预览](images/roadmap-steady-red-blue-light-enterprise.png) |
+| 时序图 | Tech Blue｜科技蓝（默认） | [文件](svg/sequence-tech-blue-light-enterprise.svg) | [预览](images/sequence-tech-blue-light-enterprise.png) |
+| 状态图 | Tech Blue｜科技蓝（默认） | [文件](svg/state-tech-blue-light-enterprise.svg) | [预览](images/state-tech-blue-light-enterprise.png) |
+| 总结图 | Vibrant ｜活力 | [文件](svg/summary-vibrant-light-enterprise.svg) | [预览](images/summary-vibrant-light-enterprise.png) |
+| SWOT 分析 | Steady Red & Blue｜稳重红蓝 | [文件](svg/swot-steady-red-blue-light-enterprise.svg) | [预览](images/swot-steady-red-blue-light-enterprise.png) |
+| 时间线 | Steady Red & Blue｜稳重红蓝 | [文件](svg/timeline-steady-red-blue-light-enterprise.svg) | [预览](images/timeline-steady-red-blue-light-enterprise.png) |
 
-## 主题截图
+## 验证
 
-### Tech Blue｜科技蓝（默认）
-
-![科技蓝浅色业务架构](images/architecture-business-tech-blue-light-smart-retail.png)
-
-![科技蓝深色业务架构](images/architecture-business-tech-blue-dark-smart-retail.png)
-
-### Vibrant ｜活力
-
-![Vibrant ｜活力浅色流程](images/flow-branching-vibrant-light-smart-retail.png)
-
-![Vibrant ｜活力深色流程](images/flow-branching-vibrant-dark-smart-retail.png)
-
-### Mint green｜清爽绿
-
-![Mint green｜清爽绿浅色数据架构](images/architecture-data-mint-green-light-smart-retail.png)
-
-![Mint green｜清爽绿深色数据架构](images/architecture-data-mint-green-dark-smart-retail.png)
-
-### Steady Red & Blue｜稳重红蓝
-
-![Steady Red & Blue｜稳重红蓝浅色技术架构](images/architecture-technical-steady-red-blue-light-smart-retail.png)
-
-![Steady Red & Blue｜稳重红蓝深色技术架构](images/architecture-technical-steady-red-blue-dark-smart-retail.png)
-
-其他截图覆盖部署、数据、时序、ER、总结、时间线和路线图，位于 [images](images/)。
-
-## 验证结果
-
-- Skill 内 21 个示例和文档侧 20 个 SVG 文件均通过严格校验。
-- 文档截图由本机 Chrome 从对应 SVG 文件重新渲染。
-- 已检查可访问性元数据、外部资源、浅色/深色一致性、主题色角色、元素重叠、文字对比度、连线和画布利用率。
+本目录源文件与测试截图来自同一请求清单。完整流程会清理旧目标、生成 DSL 和两种源文件、严格校验、真实渲染，并记录 SHA-256；详情见 `test-outputs/diagram-types/catalog/verification-report.json`。
