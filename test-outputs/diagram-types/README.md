@@ -1,5 +1,7 @@
 # 图形类型测试示例
 
+> 新视觉合同的四主题全流程重生基线见 [baselines/README.md](baselines/README.md)。本页 19 类图片是历史输出，待视觉基线审批后再批量重建。
+
 本目录用于验证两套绘图 Skill 的代表性输出。每种图形类型各选取一个现有示例，分别渲染为 XML/Draw.io PNG 和 SVG PNG，共 19 种类型、38 张图片。
 
 | 图形类型 | XML/Draw.io PNG | SVG PNG |

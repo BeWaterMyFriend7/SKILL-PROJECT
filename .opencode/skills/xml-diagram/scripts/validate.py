@@ -56,9 +56,12 @@ EXPECTED_EXAMPLE_MARKERS = {
 }
 REQUIRED_SUPPORT_FILES = {
     "references/theme-tokens.md",
+    "references/visual-style.md",
     "references/icon-policy.md",
     "scripts/palette.py",
+    "scripts/style_map.py",
     "tests/test_palette.py",
+    "tests/test_style_map.py",
     "tests/test_validate.py",
 }
 PLACEHOLDER_RE = re.compile(
@@ -72,6 +75,18 @@ ICON_FONTS = ("font awesome", "material icons", "segoe mdl2 assets", "bootstrap 
 ALLOWED_THEMES = {"tech-blue", "vibrant", "mint-green", "steady-red-blue"}
 ALLOWED_MODULES = {"top-band", "aux-column", "callout", "numbered-flow", "focus-node", "footer-band"}
 OPTIONAL_MODULES = "top-band aux-column callout numbered-flow focus-node footer-band"
+VISUAL_CONTRACT = "enterprise-v2"
+ALLOWED_COLOR_ROLES = {
+    "axis-main",
+    "axis-cross",
+    "side-rail",
+    "focus",
+    "data-flow",
+    "group",
+    "connector",
+}
+ALLOWED_LAYOUTS = {"vertical-stack", "horizontal-flow", "mixed-axis", "matrix", "network", "timeline"}
+ALLOWED_DOMINANT_AXES = {"x", "y", "mixed", "grid", "radial"}
 
 
 @dataclass(frozen=True)
@@ -373,6 +388,38 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
         errors.append("mxCell id 重复: " + ", ".join(duplicate_ids))
     known_ids = set(ids)
 
+    if diagram is not None and diagram.get("visualContract") == VISUAL_CONTRACT:
+        layout = diagram.get("layout")
+        if layout not in ALLOWED_LAYOUTS:
+            errors.append(f"视觉合同缺少有效 layout: {layout or '<empty>'}")
+        dominant_axis = diagram.get("dominantAxis")
+        if dominant_axis not in ALLOWED_DOMINANT_AXES:
+            errors.append(f"视觉合同缺少有效 dominantAxis: {dominant_axis or '<empty>'}")
+
+        visual_nodes = [cell for cell in cells if cell.get("role") == "node"]
+        for cell in visual_nodes:
+            color_role = cell.get("colorRole")
+            label = cell.get("id", "<node>")
+            if not color_role:
+                errors.append(f"{label}: enterprise-v2 节点缺少 colorRole")
+            elif color_role not in ALLOWED_COLOR_ROLES:
+                errors.append(f"{label}: 未知 colorRole {color_role}")
+        if visual_nodes and not any(cell.get("visualRole") == "focus" for cell in visual_nodes):
+            warnings.append("enterprise-v2 缺少明确视觉焦点")
+
+        declared_modules = set((diagram.get("modules") or "").split())
+        actual_modules = {cell.get("module") for cell in cells if cell.get("module")}
+        for module in sorted(declared_modules - actual_modules):
+            errors.append(f"声明的附加模块 {module} 不存在实际元素")
+        for module in sorted(actual_modules - declared_modules):
+            errors.append(f"附加模块 {module} 未在 modules 中声明")
+
+        page_titles = [cell for cell in cells if cell.get("role") == "page-title"]
+        if len(page_titles) != 1:
+            errors.append("enterprise-v2 必须包含一个 role=page-title")
+        elif number(style_map(page_titles[0].get("style", "")).get("fontSize"), 0) < 32:
+            warnings.append("页面标题层级不足: enterprise-v2 建议字号不小于 32px")
+
     def effective_background(cell: ET.Element) -> str | None:
         current: ET.Element | None = cell
         visited: set[str] = set()
@@ -415,7 +462,9 @@ def validate_file(path: Path, allow_placeholders: bool = False) -> tuple[list[st
             errors.append(f"{cell_id}: 禁止使用 Emoji 代替图标")
         if "underline" in raw_style.lower() or "fontStyle=4" in raw_style:
             errors.append(f"{cell_id}: 禁止标题或文字下划线")
-        if style.get("shadow") == "1" or model.get("shadow") == "1":
+        if (style.get("shadow") == "1" or model.get("shadow") == "1") and not (
+            diagram is not None and diagram.get("visualContract") == VISUAL_CONTRACT
+        ):
             warnings.append(f"{cell_id}: 检测到阴影，应确认仅为浅色轻微阴影")
         foreground = style.get("fontColor")
         background = effective_background(cell)

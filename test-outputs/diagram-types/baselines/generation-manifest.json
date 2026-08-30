@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "fresh-generation-manifest-v1",
+  "requestFile": "requests.json",
+  "requestSha256": "df70e9bf427c9234cea2204e7d30db0dfdd9e9a06e042d052b054a8993dae7bd",
+  "generationMode": "fresh-dsl-v1",
+  "legacyInputFiles": [],
+  "artifacts": [
+    {
+      "theme": "tech-blue",
+      "themeName": "Tech Blue｜科技蓝（默认）",
+      "requestHash": "df70e9bf427c9234cea2204e7d30db0dfdd9e9a06e042d052b054a8993dae7bd",
+      "specHash": "17ff5f97ff9a65fe9bdc40cfe6c27c9f6ac72139553578aa0a8c1f61777e53d1",
+      "generationMode": "fresh-dsl-v1",
+      "legacyInputFiles": [],
+      "dsl": {
+        "path": "dsl/tech-blue.md",
+        "sha256": "e2adebcac07d1caee40d041003e20549c2e055b0e587ae9cff9a205b43780bf9"
+      },
+      "svg": {
+        "path": "svg/tech-blue.svg",
+        "sha256": "659ecc40e621b3fb426755798783cb21191b778b3e92999bcde9cdb2421e4f67"
+      },
+      "drawio": {
+        "path": "xml/tech-blue.drawio",
+        "sha256": "353cf12fd70280a95cde47ceb3c833fc8b694ccfa90c1333be05610cb6445cc5"
+      },
+      "layout": "mixed-axis",
+      "dominantAxis": "x",
+      "roleColors": {
+        "axis-main": "#5B8FF9",
+        "axis-cross": "#3B6EDC",
+        "side-rail": "#2D56B3",
+        "focus": "#3B6EDC",
+        "data-flow": "#2AA7C8",
+        "group": "#5B8FF9",
+        "connector": "#3B6EDC"
+      }
+    },
+    {
+      "theme": "vibrant",
+      "themeName": "Vibrant ｜活力",
+      "requestHash": "df70e9bf427c9234cea2204e7d30db0dfdd9e9a06e042d052b054a8993dae7bd",
+      "specHash": "56ca9348fa0c14a25934eeeaf8bdb364dc79d63f194343382f2fdb38d898abb9",
+      "generationMode": "fresh-dsl-v1",
+      "legacyInputFiles": [],
+      "dsl": {
+        "path": "dsl/vibrant.md",
+        "sha256": "be94060b4b56036d5359dada1fd927df3824e7ab3dee112e939744b748a85227"
+      },
+      "svg": {
+        "path": "svg/vibrant.svg",
+        "sha256": "efc0adf065f91ff84011db9cc1103773dd8189d5fb702483fabd0227769c4ada"
+      },
+      "drawio": {
+        "path": "xml/vibrant.drawio",
+        "sha256": "57a71ff0f853ed3bc79c7acc0fcbe11eae99f33bce943cc615b4a7f1ee6a6c75"
+      },
+      "layout": "mixed-axis",
+      "dominantAxis": "x",
+      "roleColors": {
+        "axis-main": "#3B82F6",
+        "axis-cross": "#8B5CF6",
+        "side-rail": "#06B6D4",
+        "focus": "#8B5CF6",
+        "data-flow": "#06B6D4",
+        "group": "#3B82F6",
+        "connector": "#3B82F6"
+      }
+    },
+    {
+      "theme": "mint-green",
+      "themeName": "Mint green｜清爽绿",
+      "requestHash": "df70e9bf427c9234cea2204e7d30db0dfdd9e9a06e042d052b054a8993dae7bd",
+      "specHash": "ba4d9fb490915b9b991e5714995c7c555e726d832c7eb9f7fa9a42e7fdcc37b3",
+      "generationMode": "fresh-dsl-v1",
+      "legacyInputFiles": [],
+      "dsl": {
+        "path": "dsl/mint-green.md",
+        "sha256": "a64a8e3bfa1cd1046f7ccf08124d4ef7b6fb901f9cfd0beb04bfaac597a76e5d"
+      },
+      "svg": {
+        "path": "svg/mint-green.svg",
+        "sha256": "b38e6468318455280d0e52a6dcbb1f1324b8ded6cf08cfba0ee78f30624614bd"
+      },
+      "drawio": {
+        "path": "xml/mint-green.drawio",
+        "sha256": "1a6ee4c834f7b8df6d1850671095af02f6879025b0072b51114f0706f4990109"
+      },
+      "layout": "mixed-axis",
+      "dominantAxis": "x",
+      "roleColors": {
+        "axis-main": "#2E8B57",
+        "axis-cross": "#14B8A6",
+        "side-rail": "#2E8B57",
+        "focus": "#14B8A6",
+        "data-flow": "#14B8A6",
+        "group": "#2E8B57",
+        "connector": "#14B8A6"
+      }
+    },
+    {
+      "theme": "steady-red-blue",
+      "themeName": "Steady Red & Blue｜稳重红蓝",
+      "requestHash": "df70e9bf427c9234cea2204e7d30db0dfdd9e9a06e042d052b054a8993dae7bd",
+      "specHash": "f8750bbda36d2909951cee4f6c44d48e1fbceaea4989150b5cd4a3b91186f030",
+      "generationMode": "fresh-dsl-v1",
+      "legacyInputFiles": [],
+      "dsl": {
+        "path": "dsl/steady-red-blue.md",
+        "sha256": "0b910a117321beab061ad3900406cac9b0bfd437ace52d074cdb0694b0944a17"
+      },
+      "svg": {
+        "path": "svg/steady-red-blue.svg",
+        "sha256": "ddf908448c3e2dadb8b2e140528252758441d588db33174ff65d23dd5689c140"
+      },
+      "drawio": {
+        "path": "xml/steady-red-blue.drawio",
+        "sha256": "6c5d8a3b61f79b72e39906430691f4beaf794d9e5f6b1b6ccd4d939eafb237b1"
+      },
+      "layout": "mixed-axis",
+      "dominantAxis": "x",
+      "roleColors": {
+        "axis-main": "#243B63",
+        "axis-cross": "#4A90E2",
+        "side-rail": "#243B63",
+        "focus": "#C62828",
+        "data-flow": "#4A90E2",
+        "group": "#243B63",
+        "connector": "#243B63"
+      }
+    }
+  ]
+}

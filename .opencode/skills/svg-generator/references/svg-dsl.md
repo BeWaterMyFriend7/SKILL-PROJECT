@@ -12,7 +12,12 @@
 颜色覆盖：primary / secondary / tertiary / accent（可选，#RRGGBB）
 画布：阅读方向、预估宽高、扩展策略
 主布局：架构图使用 vertical-stack；其他类型写明主轴
+视觉骨架：分层架构 / 流程行为 / 关系数据 / 矩阵对比 / 时间总结
+主叙事轴：x / y / mixed，以及承载的核心结论
+交叉轴与侧栏：结构、职责和与主轴的关系
+结构颜色角色：axis-main / axis-cross / side-rail / focus / data-flow / group / connector
 附加模块：无 / top-band / aux-column / callout / numbered-flow / focus-node / footer-band
+附加模块理由：逐项说明内容信号；无理由则不使用
 图标策略：不用图标，或列出节点与图标的信息价值
 
 一级区域：
@@ -28,7 +33,7 @@
 - 起点、终点、语义、线型、标签和路径通道
 
 检查：
-- 均匀、重叠、越界、文字、连线、空白、对比度和缩小可读性
+- 均匀、重叠、越界、文字、连线、空白、对比度、视觉中心、角色一致性和缩小可读性
 ```
 
 ## 架构图

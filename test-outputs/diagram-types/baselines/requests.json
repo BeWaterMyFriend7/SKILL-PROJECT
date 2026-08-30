@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "baseline-request-v1",
+  "visualContract": "enterprise-v2",
+  "request": "为架构评审生成一张“智能服务治理平台”混合轴架构图。保留纵向分层主骨架，同时横向展示用户入口、治理中心、服务集群，右侧增加纵向运维保障栏，底部增加核心价值带。突出策略治理引擎和状态闭环，图标适量，整体采用现代企业架构图风格。",
+  "audience": "架构评审与技术汇报",
+  "coreConclusion": "统一入口经过治理中心的策略决策后选择服务实例，并由观测反馈形成治理闭环。",
+  "layout": "mixed-axis",
+  "dominantAxis": "x",
+  "modules": [
+    "top-band",
+    "aux-column",
+    "focus-node",
+    "footer-band"
+  ],
+  "themes": [
+    "tech-blue",
+    "vibrant",
+    "mint-green",
+    "steady-red-blue"
+  ],
+  "content": {
+    "topBand": [
+      "统一服务入口",
+      "策略驱动路由",
+      "观测反馈闭环"
+    ],
+    "entry": {
+      "title": "用户与入口",
+      "items": [
+        "业务应用",
+        "开发者 / 运维"
+      ]
+    },
+    "governance": {
+      "title": "治理中心",
+      "controls": [
+        "用户态组件",
+        "策略与管理"
+      ],
+      "focus": "策略治理引擎",
+      "planeTitle": "内核数据面",
+      "planeItems": [
+        "服务发现",
+        "流量处理",
+        "状态采集"
+      ]
+    },
+    "providers": {
+      "title": "服务集群",
+      "items": [
+        "实例 A",
+        "实例 B",
+        "实例 C"
+      ]
+    },
+    "sideRail": {
+      "title": "运维保障",
+      "items": [
+        "安全控制",
+        "指标监控",
+        "异常告警",
+        "容量管理"
+      ]
+    },
+    "footer": [
+      "稳定访问入口",
+      "解耦物理地址",
+      "动态实例选择",
+      "状态与策略闭环"
+    ]
+  }
+}

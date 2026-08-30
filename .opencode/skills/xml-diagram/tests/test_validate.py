@@ -20,6 +20,14 @@ BASE = """<mxGraphModel grid="0" pageWidth="400" pageHeight="240"><root>
 <mxGeometry x="40" y="40" width="120" height="60" as="geometry"/></mxCell>
 </root></mxGraphModel>"""
 
+VISUAL_V2_XML = """<mxfile><diagram theme="tech-blue" layout="mixed-axis" dominantAxis="x" visualContract="enterprise-v2" modules="focus-node"><mxGraphModel grid="0" pageWidth="800" pageHeight="520"><root>
+<mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="title" value="智能服务治理架构" role="page-title" vertex="1" parent="1" style="text=;fontSize=38;fontStyle=1;fontColor=#1F2937;"><mxGeometry x="40" y="20" width="500" height="52" as="geometry"/></mxCell>
+<mxCell id="node-a" value="主轴区域" role="node" colorRole="axis-main" vertex="1" parent="1" style="rounded=1;fillColor=#E9EFF8;strokeColor=#5B8FF9;fontColor=#1F2937;fontSize=16;"><mxGeometry x="40" y="100" width="220" height="120" as="geometry"/></mxCell>
+<mxCell id="node-b" value="视觉焦点" role="node" visualRole="focus" colorRole="axis-cross" module="focus-node" vertex="1" parent="1" style="rounded=1;fillColor=#FDFEFF;strokeColor=#3B6EDC;fontColor=#1F2937;fontSize=16;"><mxGeometry x="290" y="100" width="220" height="120" as="geometry"/></mxCell>
+<mxCell id="node-c" value="侧栏" role="node" colorRole="side-rail" vertex="1" parent="1" style="rounded=1;fillColor=#E9EFF8;strokeColor=#2D56B3;fontColor=#1F2937;fontSize=16;"><mxGeometry x="540" y="100" width="220" height="300" as="geometry"/></mxCell>
+</root></mxGraphModel></diagram></mxfile>"""
+
 
 class XmlValidatorTests(unittest.TestCase):
     def validate(self, source: str):
@@ -77,6 +85,26 @@ class XmlValidatorTests(unittest.TestCase):
     def test_catalog_has_theme_support_files(self):
         errors = VALIDATOR.validate_catalog(Path(__file__).resolve().parents[1])
         self.assertEqual([], errors)
+
+    def test_visual_contract_requires_color_roles(self):
+        source = VISUAL_V2_XML.replace(' colorRole="axis-main"', "", 1)
+        errors, _ = self.validate(source)
+        self.assertTrue(any("colorRole" in item for item in errors))
+
+    def test_visual_contract_rejects_unknown_dominant_axis(self):
+        source = VISUAL_V2_XML.replace('dominantAxis="x"', 'dominantAxis="diagonal"', 1)
+        errors, _ = self.validate(source)
+        self.assertTrue(any("dominantAxis" in item for item in errors))
+
+    def test_visual_contract_requires_declared_module_to_exist(self):
+        source = VISUAL_V2_XML.replace(' module="focus-node"', "", 1)
+        errors, _ = self.validate(source)
+        self.assertTrue(any("focus-node" in item and "不存在" in item for item in errors))
+
+    def test_visual_contract_warns_when_page_title_is_too_small(self):
+        source = VISUAL_V2_XML.replace('fontSize=38', 'fontSize=26', 1)
+        _, warnings = self.validate(source)
+        self.assertTrue(any("页面标题层级不足" in item for item in warnings))
 
 
 if __name__ == "__main__":

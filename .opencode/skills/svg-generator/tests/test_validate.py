@@ -25,6 +25,18 @@ VALID_SVG = """<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" 
 <text x="300" y="112" text-anchor="middle" font-size="14" fill="#172033">节点 B</text>
 </svg>"""
 
+VISUAL_V2_SVG = """<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="title desc" font-family="Arial, sans-serif" data-theme="tech-blue" data-layout="mixed-axis" data-dominant-axis="x" data-visual-contract="enterprise-v2" data-modules="focus-node">
+<title id="title">智能服务治理架构</title><desc id="desc">验证新版视觉合同。</desc>
+<rect width="800" height="520" fill="#F4F7FC"/>
+<text data-role="page-title" x="40" y="58" font-size="38" font-weight="700" fill="#1F2937">智能服务治理架构</text>
+<rect id="node-a" data-role="node" data-color-role="axis-main" x="40" y="100" width="220" height="120" rx="16" fill="#E9EFF8" stroke="#5B8FF9"/>
+<rect id="node-b" data-role="node" data-color-role="axis-cross" data-visual-role="focus" data-module="focus-node" x="290" y="100" width="220" height="120" rx="16" fill="#FDFEFF" stroke="#3B6EDC"/>
+<rect id="node-c" data-role="node" data-color-role="side-rail" x="540" y="100" width="220" height="300" rx="16" fill="#E9EFF8" stroke="#2D56B3"/>
+<text x="150" y="165" text-anchor="middle" font-size="16" fill="#1F2937">主轴区域</text>
+<text x="400" y="165" text-anchor="middle" font-size="16" fill="#1F2937">视觉焦点</text>
+<text x="650" y="165" text-anchor="middle" font-size="16" fill="#1F2937">侧栏</text>
+</svg>"""
+
 
 class SvgValidatorTests(unittest.TestCase):
     def validate(self, source: str):
@@ -113,6 +125,26 @@ class SvgValidatorTests(unittest.TestCase):
     def test_catalog_matches_target_structure(self):
         errors = VALIDATOR.validate_catalog(Path(__file__).resolve().parents[1])
         self.assertEqual([], errors)
+
+    def test_visual_contract_requires_color_roles(self):
+        source = VISUAL_V2_SVG.replace(' data-color-role="axis-main"', "", 1)
+        errors, _ = self.validate(source)
+        self.assertTrue(any("data-color-role" in item for item in errors))
+
+    def test_visual_contract_rejects_unknown_dominant_axis(self):
+        source = VISUAL_V2_SVG.replace('data-dominant-axis="x"', 'data-dominant-axis="diagonal"', 1)
+        errors, _ = self.validate(source)
+        self.assertTrue(any("data-dominant-axis" in item for item in errors))
+
+    def test_visual_contract_requires_declared_module_to_exist(self):
+        source = VISUAL_V2_SVG.replace(' data-module="focus-node"', "", 1)
+        errors, _ = self.validate(source)
+        self.assertTrue(any("focus-node" in item and "不存在" in item for item in errors))
+
+    def test_visual_contract_warns_when_page_title_is_too_small(self):
+        source = VISUAL_V2_SVG.replace('font-size="38"', 'font-size="26"', 1)
+        _, warnings = self.validate(source)
+        self.assertTrue(any("页面标题层级不足" in item for item in warnings))
 
 
 if __name__ == "__main__":

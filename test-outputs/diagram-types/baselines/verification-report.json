@@ -1,0 +1,457 @@
+{
+  "schemaVersion": "fresh-generation-verification-v1",
+  "status": "passed",
+  "startedAtUtc": "2026-08-30T08:39:44.827490+00:00",
+  "completedAtUtc": "2026-08-30T08:40:08.652943+00:00",
+  "generationMode": "fresh-dsl-v1",
+  "legacyInputFiles": [],
+  "cleanedFiles": [
+    "dsl/tech-blue.md",
+    "svg/tech-blue.svg",
+    "xml/tech-blue.drawio",
+    "images/svg/tech-blue.png",
+    "images/xml/tech-blue.png",
+    "dsl/vibrant.md",
+    "svg/vibrant.svg",
+    "xml/vibrant.drawio",
+    "images/svg/vibrant.png",
+    "images/xml/vibrant.png",
+    "dsl/mint-green.md",
+    "svg/mint-green.svg",
+    "xml/mint-green.drawio",
+    "images/svg/mint-green.png",
+    "images/xml/mint-green.png",
+    "dsl/steady-red-blue.md",
+    "svg/steady-red-blue.svg",
+    "xml/steady-red-blue.drawio",
+    "images/svg/steady-red-blue.png",
+    "images/xml/steady-red-blue.png",
+    "generation-manifest.json",
+    "verification-report.json"
+  ],
+  "request": {
+    "path": "requests.json",
+    "sha256": "df70e9bf427c9234cea2204e7d30db0dfdd9e9a06e042d052b054a8993dae7bd"
+  },
+  "renderers": {
+    "svg": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "drawio": "D:\\Program Files\\draw.io\\draw.io.exe"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\BeWater\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\generate_baselines.py"
+      ],
+      "returnCode": 0,
+      "stdout": "fresh generation complete: 4 themes, 12 source artifacts",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\BeWater\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\.opencode\\skills\\svg-generator\\scripts\\validate.py",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\svg\\tech-blue.svg",
+        "--strict",
+        "--render"
+      ],
+      "returnCode": 0,
+      "stdout": "渲染通过: tech-blue.svg: chrome.exe 1560x1000\n校验通过: 1 个 SVG 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\BeWater\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\.opencode\\skills\\xml-diagram\\scripts\\validate.py",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\tech-blue.drawio",
+        "--strict"
+      ],
+      "returnCode": 0,
+      "stdout": "校验通过: 1 个 Draw.io 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=D:\\Temp\\tmphg4cdkq0\\profile",
+        "--screenshot=D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\svg\\tech-blue.png",
+        "file:///D:/DATA/0-0-PROJECT/ai/SKILL-PROJECT/test-outputs/diagram-types/baselines/svg/tech-blue.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "135921 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\svg\\tech-blue.png",
+      "output": "images/svg/tech-blue.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "D:\\Program Files\\draw.io\\draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\xml\\tech-blue.png",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\tech-blue.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\tech-blue.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\xml\\tech-blue.png",
+      "stderr": "",
+      "output": "images/xml/tech-blue.png",
+      "dimensions": [
+        1456,
+        884
+      ]
+    },
+    {
+      "command": [
+        "C:\\Users\\BeWater\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\.opencode\\skills\\svg-generator\\scripts\\validate.py",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\svg\\vibrant.svg",
+        "--strict",
+        "--render"
+      ],
+      "returnCode": 0,
+      "stdout": "渲染通过: vibrant.svg: chrome.exe 1560x1000\n校验通过: 1 个 SVG 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\BeWater\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\.opencode\\skills\\xml-diagram\\scripts\\validate.py",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\vibrant.drawio",
+        "--strict"
+      ],
+      "returnCode": 0,
+      "stdout": "校验通过: 1 个 Draw.io 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=D:\\Temp\\tmppslumvun\\profile",
+        "--screenshot=D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\svg\\vibrant.png",
+        "file:///D:/DATA/0-0-PROJECT/ai/SKILL-PROJECT/test-outputs/diagram-types/baselines/svg/vibrant.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "135796 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\svg\\vibrant.png",
+      "output": "images/svg/vibrant.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "D:\\Program Files\\draw.io\\draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\xml\\vibrant.png",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\vibrant.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\vibrant.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\xml\\vibrant.png",
+      "stderr": "",
+      "output": "images/xml/vibrant.png",
+      "dimensions": [
+        1456,
+        884
+      ]
+    },
+    {
+      "command": [
+        "C:\\Users\\BeWater\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\.opencode\\skills\\svg-generator\\scripts\\validate.py",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\svg\\mint-green.svg",
+        "--strict",
+        "--render"
+      ],
+      "returnCode": 0,
+      "stdout": "渲染通过: mint-green.svg: chrome.exe 1560x1000\n校验通过: 1 个 SVG 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\BeWater\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\.opencode\\skills\\xml-diagram\\scripts\\validate.py",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\mint-green.drawio",
+        "--strict"
+      ],
+      "returnCode": 0,
+      "stdout": "校验通过: 1 个 Draw.io 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=D:\\Temp\\tmpqsmrmmaf\\profile",
+        "--screenshot=D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\svg\\mint-green.png",
+        "file:///D:/DATA/0-0-PROJECT/ai/SKILL-PROJECT/test-outputs/diagram-types/baselines/svg/mint-green.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "135092 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\svg\\mint-green.png",
+      "output": "images/svg/mint-green.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "D:\\Program Files\\draw.io\\draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\xml\\mint-green.png",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\mint-green.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\mint-green.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\xml\\mint-green.png",
+      "stderr": "",
+      "output": "images/xml/mint-green.png",
+      "dimensions": [
+        1456,
+        884
+      ]
+    },
+    {
+      "command": [
+        "C:\\Users\\BeWater\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\.opencode\\skills\\svg-generator\\scripts\\validate.py",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\svg\\steady-red-blue.svg",
+        "--strict",
+        "--render"
+      ],
+      "returnCode": 0,
+      "stdout": "渲染通过: steady-red-blue.svg: chrome.exe 1560x1000\n校验通过: 1 个 SVG 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\BeWater\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\.opencode\\skills\\xml-diagram\\scripts\\validate.py",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\steady-red-blue.drawio",
+        "--strict"
+      ],
+      "returnCode": 0,
+      "stdout": "校验通过: 1 个 Draw.io 文件",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--disable-gpu",
+        "--force-device-scale-factor=1",
+        "--window-size=1560,1000",
+        "--user-data-dir=D:\\Temp\\tmp589hsf69\\profile",
+        "--screenshot=D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\svg\\steady-red-blue.png",
+        "file:///D:/DATA/0-0-PROJECT/ai/SKILL-PROJECT/test-outputs/diagram-types/baselines/svg/steady-red-blue.svg"
+      ],
+      "returnCode": 0,
+      "stdout": "",
+      "stderr": "136978 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\svg\\steady-red-blue.png",
+      "output": "images/svg/steady-red-blue.png",
+      "dimensions": [
+        1560,
+        1000
+      ]
+    },
+    {
+      "command": [
+        "D:\\Program Files\\draw.io\\draw.io.exe",
+        "--export",
+        "--format",
+        "png",
+        "--scale",
+        "1",
+        "--border",
+        "0",
+        "--output",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\xml\\steady-red-blue.png",
+        "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\steady-red-blue.drawio"
+      ],
+      "returnCode": 0,
+      "stdout": "D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\xml\\steady-red-blue.drawio -> D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\baselines\\images\\xml\\steady-red-blue.png",
+      "stderr": "",
+      "output": "images/xml/steady-red-blue.png",
+      "dimensions": [
+        1456,
+        884
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "theme": "tech-blue",
+      "specHash": "17ff5f97ff9a65fe9bdc40cfe6c27c9f6ac72139553578aa0a8c1f61777e53d1",
+      "files": {
+        "dsl": {
+          "path": "dsl/tech-blue.md",
+          "sha256": "e2adebcac07d1caee40d041003e20549c2e055b0e587ae9cff9a205b43780bf9"
+        },
+        "svg": {
+          "path": "svg/tech-blue.svg",
+          "sha256": "659ecc40e621b3fb426755798783cb21191b778b3e92999bcde9cdb2421e4f67"
+        },
+        "drawio": {
+          "path": "xml/tech-blue.drawio",
+          "sha256": "353cf12fd70280a95cde47ceb3c833fc8b694ccfa90c1333be05610cb6445cc5"
+        },
+        "svgPng": {
+          "path": "images/svg/tech-blue.png",
+          "sha256": "f9a562950252cc7ab05725d0dda9c5f78fb3d593f2f22c1ad005497f83ed385f",
+          "dimensions": [
+            1560,
+            1000
+          ]
+        },
+        "xmlPng": {
+          "path": "images/xml/tech-blue.png",
+          "sha256": "7ccdbae109cf66e2198e6e64b410d5816fe6e0b31b0aaf0a7e32d4b192104f98",
+          "dimensions": [
+            1456,
+            884
+          ]
+        }
+      }
+    },
+    {
+      "theme": "vibrant",
+      "specHash": "56ca9348fa0c14a25934eeeaf8bdb364dc79d63f194343382f2fdb38d898abb9",
+      "files": {
+        "dsl": {
+          "path": "dsl/vibrant.md",
+          "sha256": "be94060b4b56036d5359dada1fd927df3824e7ab3dee112e939744b748a85227"
+        },
+        "svg": {
+          "path": "svg/vibrant.svg",
+          "sha256": "efc0adf065f91ff84011db9cc1103773dd8189d5fb702483fabd0227769c4ada"
+        },
+        "drawio": {
+          "path": "xml/vibrant.drawio",
+          "sha256": "57a71ff0f853ed3bc79c7acc0fcbe11eae99f33bce943cc615b4a7f1ee6a6c75"
+        },
+        "svgPng": {
+          "path": "images/svg/vibrant.png",
+          "sha256": "0bb4720058ac834b729ccaacfb8ce0bc6502d23790fad3b8dbc8cee4b4f5d5df",
+          "dimensions": [
+            1560,
+            1000
+          ]
+        },
+        "xmlPng": {
+          "path": "images/xml/vibrant.png",
+          "sha256": "a0d0ef964e7efcd097df664fc29ca97624be47244749392f17d719074353a66b",
+          "dimensions": [
+            1456,
+            884
+          ]
+        }
+      }
+    },
+    {
+      "theme": "mint-green",
+      "specHash": "ba4d9fb490915b9b991e5714995c7c555e726d832c7eb9f7fa9a42e7fdcc37b3",
+      "files": {
+        "dsl": {
+          "path": "dsl/mint-green.md",
+          "sha256": "a64a8e3bfa1cd1046f7ccf08124d4ef7b6fb901f9cfd0beb04bfaac597a76e5d"
+        },
+        "svg": {
+          "path": "svg/mint-green.svg",
+          "sha256": "b38e6468318455280d0e52a6dcbb1f1324b8ded6cf08cfba0ee78f30624614bd"
+        },
+        "drawio": {
+          "path": "xml/mint-green.drawio",
+          "sha256": "1a6ee4c834f7b8df6d1850671095af02f6879025b0072b51114f0706f4990109"
+        },
+        "svgPng": {
+          "path": "images/svg/mint-green.png",
+          "sha256": "020202db798012e85b85f5e7911d2e4ecf7847b73b162f0b8b486d358e35b899",
+          "dimensions": [
+            1560,
+            1000
+          ]
+        },
+        "xmlPng": {
+          "path": "images/xml/mint-green.png",
+          "sha256": "d55f65b4b6f5d7d52da3712eb50ac39f8ee553fa0b5a88ad2878bfff8c2d2137",
+          "dimensions": [
+            1456,
+            884
+          ]
+        }
+      }
+    },
+    {
+      "theme": "steady-red-blue",
+      "specHash": "f8750bbda36d2909951cee4f6c44d48e1fbceaea4989150b5cd4a3b91186f030",
+      "files": {
+        "dsl": {
+          "path": "dsl/steady-red-blue.md",
+          "sha256": "0b910a117321beab061ad3900406cac9b0bfd437ace52d074cdb0694b0944a17"
+        },
+        "svg": {
+          "path": "svg/steady-red-blue.svg",
+          "sha256": "ddf908448c3e2dadb8b2e140528252758441d588db33174ff65d23dd5689c140"
+        },
+        "drawio": {
+          "path": "xml/steady-red-blue.drawio",
+          "sha256": "6c5d8a3b61f79b72e39906430691f4beaf794d9e5f6b1b6ccd4d939eafb237b1"
+        },
+        "svgPng": {
+          "path": "images/svg/steady-red-blue.png",
+          "sha256": "47fffe4271241d0019734c05269e288eb6f99f3c1af0b973055c1e254196b709",
+          "dimensions": [
+            1560,
+            1000
+          ]
+        },
+        "xmlPng": {
+          "path": "images/xml/steady-red-blue.png",
+          "sha256": "368e5d5794273470534ba48293061619dcdce5e9e3eaba43b3a1931a12811e6d",
+          "dimensions": [
+            1456,
+            884
+          ]
+        }
+      }
+    }
+  ]
+}

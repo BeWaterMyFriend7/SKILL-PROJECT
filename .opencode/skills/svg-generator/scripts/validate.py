@@ -62,9 +62,12 @@ EXPECTED_EXAMPLE_PREFIXES = {
 }
 REQUIRED_SUPPORT_FILES = {
     "references/theme-tokens.md",
+    "references/visual-style.md",
     "references/icon-policy.md",
     "scripts/palette.py",
+    "scripts/style_map.py",
     "tests/test_palette.py",
+    "tests/test_style_map.py",
 }
 
 NUMBER_RE = re.compile(r"-?\d+(?:\.\d+)?")
@@ -77,6 +80,18 @@ ICON_FONTS = ("font awesome", "material icons", "segoe mdl2 assets", "bootstrap 
 ALLOWED_THEMES = {"tech-blue", "vibrant", "mint-green", "steady-red-blue"}
 ALLOWED_MODULES = {"top-band", "aux-column", "callout", "numbered-flow", "focus-node", "footer-band"}
 OPTIONAL_MODULES = "top-band aux-column callout numbered-flow focus-node footer-band"
+VISUAL_CONTRACT = "enterprise-v2"
+ALLOWED_COLOR_ROLES = {
+    "axis-main",
+    "axis-cross",
+    "side-rail",
+    "focus",
+    "data-flow",
+    "group",
+    "connector",
+}
+ALLOWED_LAYOUTS = {"vertical-stack", "horizontal-flow", "mixed-axis", "matrix", "network", "timeline"}
+ALLOWED_DOMINANT_AXES = {"x", "y", "mixed", "grid", "radial"}
 
 
 @dataclass(frozen=True)
@@ -265,6 +280,38 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
         module = element.get("data-module")
         if module and module not in ALLOWED_MODULES:
             errors.append(f"未知附加模块: {module}")
+
+    if root.get("data-visual-contract") == VISUAL_CONTRACT:
+        layout = root.get("data-layout")
+        if layout not in ALLOWED_LAYOUTS:
+            errors.append(f"视觉合同缺少有效 data-layout: {layout or '<empty>'}")
+        dominant_axis = root.get("data-dominant-axis")
+        if dominant_axis not in ALLOWED_DOMINANT_AXES:
+            errors.append(f"视觉合同缺少有效 data-dominant-axis: {dominant_axis or '<empty>'}")
+
+        visual_nodes = [item for item in all_elements if item.get("data-role") == "node"]
+        for item in visual_nodes:
+            color_role = item.get("data-color-role")
+            label = item.get("id", "<node>")
+            if not color_role:
+                errors.append(f"{label}: enterprise-v2 节点缺少 data-color-role")
+            elif color_role not in ALLOWED_COLOR_ROLES:
+                errors.append(f"{label}: 未知 data-color-role {color_role}")
+        if visual_nodes and not any(item.get("data-visual-role") == "focus" for item in visual_nodes):
+            warnings.append("enterprise-v2 缺少明确视觉焦点")
+
+        declared_modules = set((root.get("data-modules") or "").split())
+        actual_modules = {item.get("data-module") for item in all_elements if item.get("data-module")}
+        for module in sorted(declared_modules - actual_modules):
+            errors.append(f"声明的附加模块 {module} 不存在实际元素")
+        for module in sorted(actual_modules - declared_modules):
+            errors.append(f"附加模块 {module} 未在 data-modules 中声明")
+
+        page_titles = [item for item in all_elements if item.get("data-role") == "page-title"]
+        if len(page_titles) != 1:
+            errors.append("enterprise-v2 必须包含一个 data-role=page-title")
+        elif (number(attr(page_titles[0], "font-size"), 0) or 0) < 32:
+            warnings.append("页面标题层级不足: enterprise-v2 建议字号不小于 32px")
     ids = [item.get("id") for item in all_elements if item.get("id")]
     duplicates = sorted({item for item in ids if ids.count(item) > 1})
     if duplicates:
