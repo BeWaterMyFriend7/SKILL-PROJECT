@@ -68,6 +68,21 @@ class PaletteTests(unittest.TestCase):
         for phrase in ("只询问一次", "不再追问", "tech-blue/light"):
             self.assertIn(phrase, source)
 
+    def test_each_light_theme_has_explicit_tones_and_visual_recipe(self):
+        for theme in PALETTE.THEMES:
+            result = PALETTE.build_palette(theme)
+            self.assertTrue(result["tones"], theme)
+            self.assertIn("subtle", next(iter(result["tones"].values())), theme)
+            self.assertIn("surface-policy", result["recipe"], theme)
+            self.assertIn("structure-roles", result["recipe"], theme)
+            self.assertIn("area-budget", result["recipe"], theme)
+
+    def test_vibrant_tones_do_not_share_one_generic_ramp(self):
+        result = PALETTE.build_palette("vibrant")
+        self.assertEqual("#EAF3FF", result["tones"]["blue"]["soft"])
+        self.assertEqual("#F2ECFF", result["tones"]["purple"]["soft"])
+        self.assertEqual("#EAF9EF", result["tones"]["green"]["soft"])
+
     def test_svg_palette_matches_when_both_skills_are_installed(self):
         sibling = PATH.parents[2] / "svg-generator" / "scripts" / "palette.py"
         if not sibling.is_file():

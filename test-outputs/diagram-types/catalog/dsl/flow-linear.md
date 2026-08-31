@@ -16,16 +16,16 @@
 - 布局：horizontal-flow
 - 主叙事轴：x
 - 视觉合同：enterprise-v2
-- 附加模块：focus-node、footer-band、top-band
+- 附加模块：focus-node、footer-band
 - 图标策略：仅在入口、焦点或关键区域按内容少量使用自包含线性图标，不设置硬上限
 
 ## 结构颜色映射
 
-- axis-main: #3B6EDC（来源：main-blue）
-- axis-cross: #2AA7C8（来源：data-cyan）
+- axis-main: #2AA7C8（来源：data-cyan）
+- axis-cross: #3B6EDC（来源：main-blue）
 - side-rail: #2D56B3（来源：deep-blue）
 - focus: #5B8FF9（来源：medium-blue）
-- data-flow: #2AA7C8（来源：data-cyan）
+- data-flow: #3B6EDC（来源：main-blue）
 - group: #5B8FF9（来源：medium-blue）
 - connector: #3B6EDC（来源：main-blue）
 

@@ -2,70 +2,70 @@
 <title id="title">三种集成方案对比</title>
 <desc id="desc">事件驱动方案在扩展性和实时性上更优，适合持续演进的平台。</desc>
 <metadata data-layout="matrix" data-optional-modules="top-band aux-column callout numbered-flow focus-node footer-band"/>
-<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.08"/></filter></defs>
+<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/></filter></defs>
 <rect width="1560" height="1000" fill="#FAFBFC"/>
-<rect x="52" y="36" width="8" height="76" rx="4" fill="#8B5CF6"/>
-<text id="page-title" x="82" y="74" font-size="40" font-weight="700" text-anchor="start" fill="#1F2937" data-role="page-title">三种集成方案对比</text>
+<rect x="52" y="36" width="8" height="76" rx="4" fill="#3B82F6"/>
+<text id="page-title" x="82" y="74" font-size="40" font-weight="700" text-anchor="start" fill="#306BCA" data-role="page-title">三种集成方案对比</text>
 <text id="subtitle" x="82" y="106" font-size="15" font-weight="400" text-anchor="start" fill="#475569">事件驱动方案在扩展性和实时性上更优，适合持续演进的平台。</text>
-<rect x="985" y="52" width="150" height="42" rx="21" fill="#FFFFFF" stroke="#ADCAFB" stroke-width="1.2"/>
-<text id="badge-0" x="1060" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">对比图</text>
-<rect x="1149" y="52" width="150" height="42" rx="21" fill="#FFFFFF" stroke="#CEBBFB" stroke-width="1.2"/>
-<text id="badge-1" x="1224" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">矩阵对比</text>
-<rect x="1313" y="52" width="190" height="42" rx="21" fill="#FFFFFF" stroke="#8ED5E1" stroke-width="1.2"/>
-<text id="badge-2" x="1408" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">Vibrant</text>
-<rect id="main-shell" x="40" y="140" width="1420" height="720" rx="14" fill="#FFFFFF" stroke="#ADCAFB" stroke-width="1.2" data-role="region" data-color-role="group" data-visual-role="canvas" filter="url(#softShadow)"/>
-<rect id="top-band" x="70" y="165" width="1360" height="58" rx="14" fill="#DBE4F1" stroke="#ADCAFB" stroke-width="1.2" data-role="region" data-color-role="axis-main" data-module="top-band"/>
-<rect id="top-chip-0" x="105" y="176" width="380" height="36" rx="14" fill="#DBE4F1" stroke="#ADCAFB" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="295" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">评估维度</text>
-<rect id="top-chip-1" x="545" y="176" width="380" height="36" rx="14" fill="#F1EBFE" stroke="#CEBBFB" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="735" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">方案差异</text>
-<rect id="top-chip-2" x="985" y="176" width="380" height="36" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1175" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">决策建议</text>
-<rect id="footer-band" x="40" y="890" width="1420" height="78" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="region" data-color-role="data-flow" data-module="footer-band"/>
-<rect id="footer-0" x="230" y="902" width="245" height="52" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="352" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">解耦能力</text>
-<rect id="footer-1" x="520" y="902" width="245" height="52" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="642" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">扩展效率</text>
-<rect id="footer-2" x="810" y="902" width="245" height="52" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="932" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">实时响应</text>
-<rect id="footer-3" x="1100" y="902" width="245" height="52" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1222" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">治理投入</text>
-<rect id="matrix-column-0" x="70" y="250" width="426" height="480" rx="14" fill="#DBE4F1" stroke="#ADCAFB" stroke-width="1.2" data-role="region" data-color-role="axis-main" filter="url(#softShadow)"/>
-<rect id="matrix-title-0" x="90" y="270" width="386" height="62" rx="14" fill="#3B82F6" stroke="#306BCA" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="283" y="301" font-size="17" font-weight="700" text-anchor="middle" fill="#000000">点对点集成</text>
-<rect id="matrix-0-0" x="94" y="355" width="378" height="58" rx="14" fill="#DBE4F1" stroke="#ADCAFB" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="283" y="384" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">耦合度：高</text>
-<rect id="matrix-0-1" x="94" y="433" width="378" height="58" rx="14" fill="#DBE4F1" stroke="#ADCAFB" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="283" y="462" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">扩展性：低</text>
-<rect id="matrix-0-2" x="94" y="511" width="378" height="58" rx="14" fill="#DBE4F1" stroke="#ADCAFB" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="283" y="540" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">实时性：中</text>
-<rect id="matrix-0-3" x="94" y="589" width="378" height="58" rx="14" fill="#DBE4F1" stroke="#ADCAFB" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="283" y="618" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">治理成本：高</text>
-<rect id="matrix-column-1" x="516" y="250" width="426" height="480" rx="14" fill="#F1EBFE" stroke="#CEBBFB" stroke-width="1.2" data-role="region" data-color-role="axis-cross" filter="url(#softShadow)"/>
-<rect id="matrix-title-1" x="536" y="270" width="386" height="62" rx="14" fill="#F1EBFE" stroke="#CEBBFB" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="729" y="301" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2937">企业服务总线</text>
-<rect id="matrix-1-0" x="540" y="355" width="378" height="58" rx="14" fill="#F1EBFE" stroke="#CEBBFB" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="729" y="384" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">耦合度：中</text>
-<rect id="matrix-1-1" x="540" y="433" width="378" height="58" rx="14" fill="#F1EBFE" stroke="#CEBBFB" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="729" y="462" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">扩展性：中</text>
-<rect id="matrix-1-2" x="540" y="511" width="378" height="58" rx="14" fill="#F1EBFE" stroke="#CEBBFB" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="729" y="540" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">实时性：中</text>
-<rect id="matrix-1-3" x="540" y="589" width="378" height="58" rx="14" fill="#F1EBFE" stroke="#CEBBFB" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="729" y="618" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">治理成本：中</text>
-<rect id="matrix-column-2" x="962" y="250" width="426" height="480" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="region" data-color-role="data-flow" filter="url(#softShadow)"/>
-<rect id="matrix-title-2" x="982" y="270" width="386" height="62" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1175" y="301" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2937">事件驱动</text>
-<rect id="matrix-2-0" x="986" y="355" width="378" height="58" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1175" y="384" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">耦合度：低</text>
-<rect id="matrix-2-1" x="986" y="433" width="378" height="58" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1175" y="462" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">扩展性：高</text>
-<rect id="matrix-2-2" x="986" y="511" width="378" height="58" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1175" y="540" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">实时性：高</text>
-<rect id="matrix-2-3" x="986" y="589" width="378" height="58" rx="14" fill="#D6EAEE" stroke="#8ED5E1" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1175" y="618" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">治理成本：可控</text>
-<rect id="focus" x="560" y="770" width="440" height="62" rx="14" fill="#8B5CF6" stroke="#724BCA" stroke-width="1.2" data-role="node" data-color-role="focus" data-visual-role="focus" data-module="focus-node"/>
-<text x="780" y="801" font-size="17" font-weight="700" text-anchor="middle" fill="#000000">推荐关注：事件驱动</text>
-<text id="footer-title" x="74" y="933" font-size="20" font-weight="700" text-anchor="start" fill="#0595AE">核心价值</text>
+<rect x="985" y="52" width="150" height="42" rx="21" fill="#FFFFFF" stroke="#B8D3FA" stroke-width="1.2"/>
+<text id="badge-0" x="1060" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#172033">对比图</text>
+<rect x="1149" y="52" width="150" height="42" rx="21" fill="#FFFFFF" stroke="#D2BFFA" stroke-width="1.2"/>
+<text id="badge-1" x="1224" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#172033">矩阵对比</text>
+<rect x="1313" y="52" width="190" height="42" rx="21" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2"/>
+<text id="badge-2" x="1408" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#172033">Vibrant</text>
+<rect id="main-shell" x="40" y="140" width="1420" height="720" rx="14" fill="#FFFFFF" stroke="#B8D3FA" stroke-width="1.2" data-font-color="#172033" data-role="region" data-color-role="group" data-visual-role="canvas" filter="url(#softShadow)"/>
+<rect id="top-band" x="70" y="165" width="1360" height="58" rx="14" fill="#FFFFFF" stroke="#B8D3FA" stroke-width="1.2" data-font-color="#172033" data-role="region" data-color-role="axis-main" data-module="top-band"/>
+<rect id="top-chip-0" x="105" y="176" width="380" height="36" rx="14" fill="#FFFFFF" stroke="#B8D3FA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-main"/>
+<text id="top-chip-0-label" x="295" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#172033">评估维度</text>
+<rect id="top-chip-1" x="545" y="176" width="380" height="36" rx="14" fill="#FFFFFF" stroke="#D2BFFA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-cross"/>
+<text id="top-chip-1-label" x="735" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#172033">方案差异</text>
+<rect id="top-chip-2" x="985" y="176" width="380" height="36" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="top-chip-2-label" x="1175" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#172033">决策建议</text>
+<rect id="footer-band" x="40" y="890" width="1420" height="78" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="region" data-color-role="data-flow" data-module="footer-band"/>
+<rect id="footer-0" x="230" y="902" width="245" height="52" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="footer-0-label" x="352" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">解耦能力</text>
+<rect id="footer-1" x="520" y="902" width="245" height="52" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="footer-1-label" x="642" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">扩展效率</text>
+<rect id="footer-2" x="810" y="902" width="245" height="52" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="footer-2-label" x="932" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">实时响应</text>
+<rect id="footer-3" x="1100" y="902" width="245" height="52" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="footer-3-label" x="1222" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">治理投入</text>
+<rect id="matrix-column-0" x="70" y="250" width="426" height="480" rx="14" fill="#F4F8FF" stroke="#B8D3FA" stroke-width="1.2" data-font-color="#172033" data-role="region" data-color-role="axis-main" filter="url(#softShadow)"/>
+<rect id="matrix-title-0" x="90" y="270" width="386" height="62" rx="14" fill="#FFFFFF" stroke="#B8D3FA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-main"/>
+<text id="matrix-title-0-label" x="283" y="301" font-size="17" font-weight="700" text-anchor="middle" fill="#172033">点对点集成</text>
+<rect id="matrix-0-0" x="94" y="355" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#B8D3FA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-main"/>
+<text id="matrix-0-0-label" x="283" y="384" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">耦合度：高</text>
+<rect id="matrix-0-1" x="94" y="433" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#B8D3FA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-main"/>
+<text id="matrix-0-1-label" x="283" y="462" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">扩展性：低</text>
+<rect id="matrix-0-2" x="94" y="511" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#B8D3FA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-main"/>
+<text id="matrix-0-2-label" x="283" y="540" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">实时性：中</text>
+<rect id="matrix-0-3" x="94" y="589" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#B8D3FA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-main"/>
+<text id="matrix-0-3-label" x="283" y="618" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">治理成本：高</text>
+<rect id="matrix-column-1" x="516" y="250" width="426" height="480" rx="14" fill="#F8F5FF" stroke="#D2BFFA" stroke-width="1.2" data-font-color="#172033" data-role="region" data-color-role="axis-cross" filter="url(#softShadow)"/>
+<rect id="matrix-title-1" x="536" y="270" width="386" height="62" rx="14" fill="#FFFFFF" stroke="#D2BFFA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-cross"/>
+<text id="matrix-title-1-label" x="729" y="301" font-size="17" font-weight="700" text-anchor="middle" fill="#172033">企业服务总线</text>
+<rect id="matrix-1-0" x="540" y="355" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#D2BFFA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-cross"/>
+<text id="matrix-1-0-label" x="729" y="384" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">耦合度：中</text>
+<rect id="matrix-1-1" x="540" y="433" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#D2BFFA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-cross"/>
+<text id="matrix-1-1-label" x="729" y="462" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">扩展性：中</text>
+<rect id="matrix-1-2" x="540" y="511" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#D2BFFA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-cross"/>
+<text id="matrix-1-2-label" x="729" y="540" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">实时性：中</text>
+<rect id="matrix-1-3" x="540" y="589" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#D2BFFA" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="axis-cross"/>
+<text id="matrix-1-3-label" x="729" y="618" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">治理成本：中</text>
+<rect id="matrix-column-2" x="962" y="250" width="426" height="480" rx="14" fill="#F2FCFD" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="region" data-color-role="data-flow" filter="url(#softShadow)"/>
+<rect id="matrix-title-2" x="982" y="270" width="386" height="62" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="matrix-title-2-label" x="1175" y="301" font-size="17" font-weight="700" text-anchor="middle" fill="#172033">事件驱动</text>
+<rect id="matrix-2-0" x="986" y="355" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="matrix-2-0-label" x="1175" y="384" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">耦合度：低</text>
+<rect id="matrix-2-1" x="986" y="433" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="matrix-2-1-label" x="1175" y="462" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">扩展性：高</text>
+<rect id="matrix-2-2" x="986" y="511" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="matrix-2-2-label" x="1175" y="540" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">实时性：高</text>
+<rect id="matrix-2-3" x="986" y="589" width="378" height="58" rx="14" fill="#FFFFFF" stroke="#A9DFE9" stroke-width="1.2" data-font-color="#172033" data-role="node" data-color-role="data-flow"/>
+<text id="matrix-2-3-label" x="1175" y="618" font-size="14" font-weight="700" text-anchor="middle" fill="#172033">治理成本：可控</text>
+<rect id="focus" x="560" y="770" width="440" height="62" rx="14" fill="#8B5CF6" stroke="#724BCA" stroke-width="1.2" data-font-color="#000000" data-role="node" data-color-role="focus" data-visual-role="focus" data-module="focus-node"/>
+<text id="focus-label" x="780" y="801" font-size="17" font-weight="700" text-anchor="middle" fill="#000000">推荐关注：事件驱动</text>
+<text id="footer-title" x="74" y="933" font-size="20" font-weight="700" text-anchor="start" fill="#047F94">核心价值</text>
 <g id="matrix-icon-0" data-role="icon" data-color-role="axis-main" fill="#3B82F6"><circle cx="118" cy="295" r="5"/><path d="M109 314c1-8 5-11 9-11s8 3 9 11" fill="none" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/></g>
 <g id="matrix-icon-1" data-role="icon" data-color-role="axis-cross" fill="#8B5CF6"><path d="M564 289l9 4v7c0 7-4 11-9 14-5-3-9-7-9-14V293z" fill="none" stroke="#8B5CF6" stroke-width="2.4"/><path d="M560 300l3 3 6-7" fill="none" stroke="#8B5CF6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g id="matrix-icon-2" data-role="icon" data-color-role="data-flow" fill="#06B6D4"><rect x="998" y="292" width="7" height="18" rx="2"/><rect x="1007" y="288" width="7" height="22" rx="2"/><rect x="1016" y="296" width="7" height="14" rx="2"/></g>

@@ -17,9 +17,35 @@ class StyleMapTests(unittest.TestCase):
         horizontal = STYLE_MAP.build_style_map("tech-blue", layout="horizontal-flow")
 
         self.assertEqual(vertical["palette"], horizontal["palette"])
-        self.assertEqual("#5B8FF9", vertical["roles"]["axis-cross"]["base"])
-        self.assertEqual("#2AA7C8", horizontal["roles"]["axis-cross"]["base"])
+        self.assertEqual("#2AA7C8", vertical["roles"]["axis-cross"]["base"])
+        self.assertEqual("#2AA7C8", horizontal["roles"]["axis-main"]["base"])
+        self.assertEqual("#3B6EDC", horizontal["roles"]["axis-cross"]["base"])
         self.assertNotEqual(vertical["role-colors"], horizontal["role-colors"])
+
+    def test_tech_blue_recipe_allows_cyan_as_structural_container_color(self):
+        result = STYLE_MAP.build_style_map("tech-blue", layout="mixed-axis")
+        self.assertEqual("#2AA7C8", result["roles"]["axis-main"]["base"])
+        self.assertEqual("role-subtle", result["recipe"]["surface-policy"]["top-band"])
+        self.assertIn("data-flow", result["recipe"]["layer-roles"])
+
+    def test_vibrant_exposes_controlled_domain_and_status_colors(self):
+        result = STYLE_MAP.build_style_map("vibrant", layout="vertical-stack")
+        self.assertEqual("#3B82F6", result["semantic-roles"]["domain-app"]["base"])
+        self.assertEqual("#8B5CF6", result["semantic-roles"]["domain-control"]["base"])
+        self.assertEqual("#06B6D4", result["semantic-roles"]["domain-network"]["base"])
+        self.assertEqual("#22C55E", result["semantic-roles"]["domain-data"]["base"])
+        self.assertEqual("#F59E0B", result["semantic-roles"]["status-warning"]["base"])
+        self.assertEqual("#EF4444", result["semantic-roles"]["status-error"]["base"])
+        self.assertEqual(
+            ["axis-main", "axis-cross", "data-flow"],
+            result["recipe"]["structure-roles"],
+        )
+
+    def test_steady_horizontal_backbone_stays_navy(self):
+        result = STYLE_MAP.build_style_map("steady-red-blue", layout="horizontal-flow")
+        self.assertEqual("#243B63", result["roles"]["axis-main"]["base"])
+        self.assertEqual("#243B63", result["roles"]["connector"]["base"])
+        self.assertEqual("#4A90E2", result["roles"]["axis-cross"]["base"])
 
     def test_fixed_semantics_do_not_change_with_axis_mapping(self):
         vertical = STYLE_MAP.build_style_map("vibrant", layout="vertical-stack")

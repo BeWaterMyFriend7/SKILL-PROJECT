@@ -89,6 +89,13 @@ ALLOWED_COLOR_ROLES = {
     "data-flow",
     "group",
     "connector",
+    "domain-app",
+    "domain-control",
+    "domain-network",
+    "domain-data",
+    "status-success",
+    "status-warning",
+    "status-error",
 }
 ALLOWED_LAYOUTS = {"vertical-stack", "horizontal-flow", "mixed-axis", "matrix", "network", "timeline"}
 ALLOWED_DOMINANT_AXES = {"x", "y", "mixed", "grid", "radial"}

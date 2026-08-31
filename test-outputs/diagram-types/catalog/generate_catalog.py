@@ -56,6 +56,39 @@ def load_style_module():
 STYLE = load_style_module()
 
 
+def all_style_roles(style: dict[str, object]) -> dict[str, dict[str, str]]:
+    return {**style["roles"], **style["semantic-roles"]}
+
+
+def appearance(style: dict[str, object], role_name: str, component: str, *, solid: bool = False) -> tuple[str, str, str]:
+    token = all_style_roles(style)[role_name]
+    neutral = style["neutral"]
+    policy = "role-base" if solid else style["recipe"]["surface-policy"].get(component, "surface")
+    if policy == "role-base":
+        return token["base"], token["strong"], token["foreground"]
+    if policy == "role-soft":
+        return token["soft"], token["border"], neutral["text-strong"]
+    if policy == "role-subtle":
+        return token["subtle"], token["border"], neutral["text-strong"]
+    if policy == "surface-muted":
+        return neutral["surface-muted"], token["border"], neutral["text-strong"]
+    return neutral["surface"], token["border"], neutral["text-strong"]
+
+
+def component_for(box: "Box") -> str:
+    if box.id == "main-shell":
+        return "shell"
+    if box.id == "top-band":
+        return "top-band"
+    if box.id == "footer-band":
+        return "footer-band"
+    if box.id == "side-rail":
+        return "side-rail"
+    if box.id.endswith("insight") or "control-band" in box.id or box.id == "cycle-center":
+        return "insight"
+    return "region" if box.kind == "region" else "card"
+
+
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -130,7 +163,7 @@ class Scene:
     labels: list[Label] = field(default_factory=list)
     icons: list[Icon] = field(default_factory=list)
     lines: list[Line] = field(default_factory=list)
-    modules: set[str] = field(default_factory=lambda: {"top-band", "focus-node", "footer-band"})
+    modules: set[str] = field(default_factory=set)
 
     def box(self, *args, **kwargs) -> Box:
         item = Box(*args, **kwargs)
@@ -158,26 +191,34 @@ class Scene:
 def add_common(scene: Scene) -> None:
     spec = scene.spec
     scene.box("main-shell", 40, 140, 1420, 720, color_role="group", kind="region", shadow=True, visual_role="canvas")
-    scene.box("top-band", 70, 165, 1360, 58, color_role="axis-main", kind="region", module="top-band")
-    chips = TOP_BAND_LABELS[spec["skeleton"]]
-    for index, value in enumerate(chips):
-        scene.box(f"top-chip-{index}", 105 + index * 440, 176, 380, 36, value, color_role=("axis-main", "axis-cross", "data-flow")[index], font_size=13)
-    scene.box("footer-band", 40, 890, 1420, 78, color_role="data-flow", kind="region", module="footer-band")
-    scene.label("footer-title", 74, 906, 130, 42, "核心价值", 20, "data-flow", True)
-    for index, value in enumerate(spec["footer"]):
-        scene.box(f"footer-{index}", 230 + index * 290, 902, 245, 52, value, color_role="data-flow", font_size=14)
+    if spec["skeleton"] in {"layered", "matrix"}:
+        scene.box("top-band", 70, 165, 1360, 58, color_role="axis-main", kind="region", module="top-band")
+        chips = TOP_BAND_LABELS[spec["skeleton"]]
+        badge_roles = scene.style["recipe"]["badge-roles"]
+        for index, value in enumerate(chips):
+            scene.box(f"top-chip-{index}", 105 + index * 440, 176, 380, 36, value, color_role=badge_roles[index], font_size=13)
+    if spec.get("footer"):
+        footer_role = scene.style["recipe"]["structure-roles"][-1]
+        scene.box("footer-band", 40, 890, 1420, 78, color_role=footer_role, kind="region", module="footer-band")
+        scene.label("footer-title", 74, 906, 130, 42, "核心价值", 20, footer_role, True)
+        for index, value in enumerate(spec["footer"]):
+            scene.box(f"footer-{index}", 230 + index * 290, 902, 245, 52, value, color_role=footer_role, font_size=14)
 
 
 def add_layered(scene: Scene) -> None:
     groups = scene.spec["groups"]
+    layer_roles = scene.style["recipe"]["layer-roles"]
+    solid_policy = scene.style["recipe"]["layer-title-solid"]
     for index, group in enumerate(groups):
         y = 245 + index * 108
-        scene.box(f"layer-{index}", 70, y, 1230, 88, color_role=("axis-main" if index == 0 else "group"), kind="region")
-        scene.box(f"layer-title-{index}", 88, y + 14, 205, 60, group["title"], color_role=("axis-main" if index == 0 else "axis-cross"), solid=index == 0, font_size=17)
+        role = layer_roles[index % len(layer_roles)]
+        title_solid = solid_policy == "all" or (solid_policy == "first" and index == 0)
+        scene.box(f"layer-{index}", 70, y, 1230, 88, color_role=role, kind="region")
+        scene.box(f"layer-title-{index}", 88, y + 14, 205, 60, group["title"], color_role=role, solid=title_solid, font_size=17)
         if index < 3:
-            scene.icon(f"layer-icon-{index}", 104, y + 30, ("users", "shield", "cluster")[index], ("axis-main", "axis-cross", "data-flow")[index])
+            scene.icon(f"layer-icon-{index}", 104, y + 30, ("users", "shield", "cluster")[index], role)
         for item_index, value in enumerate(group["items"]):
-            scene.box(f"layer-{index}-item-{item_index}", 320 + item_index * 245, y + 14, 220, 60, value, color_role=("axis-main" if index == 0 else "group"))
+            scene.box(f"layer-{index}-item-{item_index}", 320 + item_index * 245, y + 14, 220, 60, value, color_role=role)
         if index == 1:
             scene.box("focus", 1055, y + 14, 220, 60, scene.spec["focus"], "", "focus", solid=True, visual_role="focus", module="focus-node", font_size=15)
     scene.modules.add("aux-column")
@@ -196,9 +237,13 @@ def add_matrix(scene: Scene) -> None:
     start = 70
     for index, column in enumerate(columns):
         x = start + index * (width + gap)
-        role = ("axis-main", "axis-cross", "data-flow", "side-rail")[index]
+        recipe = scene.style["recipe"]
+        roles = recipe["structure-roles"]
+        role = roles[index % len(roles)]
+        solid_policy = recipe["layer-title-solid"]
+        title_solid = solid_policy == "all" or (solid_policy == "first" and index == 0)
         scene.box(f"matrix-column-{index}", x, 250, width, 480, color_role=role, kind="region", shadow=True)
-        scene.box(f"matrix-title-{index}", x + 20, 270, width - 40, 62, column["title"], color_role=role, solid=index == 0, font_size=17)
+        scene.box(f"matrix-title-{index}", x + 20, 270, width - 40, 62, column["title"], color_role=role, solid=title_solid, font_size=17)
         if index < 3:
             scene.icon(f"matrix-icon-{index}", x + 34, 287, ("users", "shield", "cluster")[index], role)
         for row, value in enumerate(column["items"]):
@@ -244,17 +289,20 @@ def add_flow_branching(scene: Scene) -> None:
     scene.line("edge-main-3", 1250, 460, 1300, 460, source="step-3", target="flow-end")
     for index, (value, y) in enumerate(zip(scene.spec["branches"], (270, 575))):
         branch_id = f"error-{index}"
-        scene.box(branch_id, 830, y, 190, 88, value, ("风险路径" if index == 0 else "补偿路径"), "axis-cross", font_size=15)
-        scene.line(f"edge-branch-{index}", 780, 460, 830, y + 44, "axis-cross", dashed=True, label=("复核" if index == 0 else "补偿"), source="decision-risk", target=branch_id)
+        branch_role = ("status-warning", "status-error")[index] if scene.spec["theme"] == "vibrant" else "axis-cross"
+        scene.box(branch_id, 830, y, 190, 88, value, ("风险路径" if index == 0 else "补偿路径"), branch_role, font_size=15)
+        scene.line(f"edge-branch-{index}", 780, 460, 830, y + 44, branch_role, dashed=True, label=("复核" if index == 0 else "补偿"), source="decision-risk", target=branch_id)
     scene.label("branch-note", 470, 700, 620, 54, "判断结果决定主流程、人工路径与补偿路径", 17, "data-flow", True, "center")
 
 
 def add_cycle(scene: Scene) -> None:
     positions = [(100, 300), (360, 300), (620, 300), (880, 300), (1140, 300), (1140, 580)]
+    structure_roles = scene.style["recipe"]["structure-roles"]
     for index, (value, (x, y)) in enumerate(zip(scene.spec["steps"], positions)):
         focus = value == scene.spec["focus"]
-        scene.box(f"cycle-{index}", x, y, 220, 96, value, f"阶段 {index + 1}", ("focus" if focus else ("axis-main" if index < 3 else "axis-cross")), solid=focus, visual_role=("focus" if focus else None), module=("focus-node" if focus else None), font_size=16)
-        if index in {0, 3, 5}:
+        phase_role = structure_roles[index % len(structure_roles)]
+        scene.box(f"cycle-{index}", x, y, 220, 96, value, f"阶段 {index + 1}", ("focus" if focus else phase_role), solid=focus, visual_role=("focus" if focus else None), module=("focus-node" if focus else None), font_size=16)
+        if index in {0, 5}:
             scene.icon(f"cycle-icon-{index}", x + 16, y + 16, ("users", "shield", "cluster")[len(scene.icons) % 3], ("focus" if focus else "axis-main"))
         if index:
             px, py = positions[index - 1]
@@ -271,8 +319,10 @@ def add_relationship(scene: Scene) -> None:
     positions = [(120, 270), (620, 250), (1120, 270), (120, 610), (620, 630), (1120, 610)]
     center = Box("focus", 620, 420, 320, 120, scene.spec["focus"], "核心主题", "focus", solid=True, visual_role="focus", module="focus-node", font_size=20)
     scene.boxes.append(center)
+    scene.modules.add("focus-node")
+    structure_roles = scene.style["recipe"]["structure-roles"]
     for index, (value, (x, y)) in enumerate(zip(scene.spec["nodes"], positions)):
-        role = ("axis-main", "axis-cross", "data-flow")[index % 3]
+        role = structure_roles[index % len(structure_roles)]
         scene.box(f"relation-{index}", x, y, 260, 88, value, f"关联域 {index + 1}", role, font_size=16)
         if index < 3:
             scene.icon(f"relation-icon-{index}", x + 16, y + 16, ("users", "shield", "cluster")[index], role)
@@ -401,20 +451,27 @@ def svg_text(item: Label, color: str) -> str:
 
 def build_svg(scene: Scene, spec_hash: str) -> str:
     spec, style = scene.spec, scene.style
-    n, roles = style["neutral"], style["roles"]
+    n, roles = style["neutral"], all_style_roles(style)
+    recipe = style["recipe"]
+    title_role = recipe["title-role"]
+    accent_role = recipe["accent-role"]
     modules = " ".join(sorted(scene.modules))
     lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1000" viewBox="0 0 1560 1000" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="{spec["theme"]}" data-mode="light" data-layout="{spec["layout"]}" data-dominant-axis="{spec["dominantAxis"]}" data-visual-contract="enterprise-v2" data-modules="{modules}" data-generation="{GENERATION}" data-diagram-type="{spec["id"]}" data-spec-hash="{spec_hash}">',
         f'<title id="title">{html.escape(spec["title"])}</title>',
         f'<desc id="desc">{html.escape(spec["conclusion"])}</desc>',
         f'<metadata data-layout="{spec["layout"]}" data-optional-modules="{OPTIONAL_MODULES}"/>',
-        '<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.08"/></filter>' + ('<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="context-stroke"/></marker>' if any(item.arrow for item in scene.lines) else '') + '</defs>',
+        f'<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="{recipe["shadow-opacity"]}"/></filter>' + ('<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="context-stroke"/></marker>' if any(item.arrow for item in scene.lines) else '') + '</defs>',
         f'<rect width="1560" height="1000" fill="{n["canvas"]}"/>',
-        f'<rect x="52" y="36" width="8" height="76" rx="4" fill="{roles["focus"]["base"]}"/>',
-        svg_text(Label("page-title", 82, 32, 760, 58, spec["title"], 40, bold=True, role="page-title"), n["text-strong"]),
+        f'<rect x="52" y="36" width="8" height="76" rx="4" fill="{roles[accent_role]["base"]}"/>',
+        svg_text(Label("page-title", 82, 32, 760, 58, spec["title"], 40, bold=True, role="page-title"), roles[title_role]["strong"]),
         svg_text(Label("subtitle", 82, 86, 900, 30, spec["conclusion"], 15), n["text"]),
     ]
-    badges = [(spec["label"], "axis-main", 150), (SKELETON_NAMES[spec["skeleton"]], "focus", 150), (style["theme-name"].split("｜")[0].strip(), "data-flow", 190)]
+    badges = list(zip(
+        (spec["label"], SKELETON_NAMES[spec["skeleton"]], style["theme-name"].split("｜")[0].strip()),
+        recipe["badge-roles"],
+        (150, 150, 190),
+    ))
     bx = 985
     for index, (value, role, width) in enumerate(badges):
         token = roles[role]
@@ -422,11 +479,8 @@ def build_svg(scene: Scene, spec_hash: str) -> str:
         lines.append(svg_text(Label(f"badge-{index}", bx, 52, width, 42, value, 13, bold=True, align="center"), n["text-strong"]))
         bx += width + 14
     for box in scene.boxes:
-        token = roles[box.color_role]
-        fill = token["base"] if box.solid else (n["surface"] if box.visual_role == "canvas" or (box.kind == "node" and box.color_role == "group") else token["soft"])
-        stroke = token["strong"] if box.solid else token["border"]
-        foreground = token["foreground"] if box.solid else n["text-strong"]
-        attrs = [f'id="{box.id}"', f'x="{box.x}"', f'y="{box.y}"', f'width="{box.width}"', f'height="{box.height}"', 'rx="14"', f'fill="{fill}"', f'stroke="{stroke}"', 'stroke-width="1.2"', f'data-role="{box.kind}"', f'data-color-role="{box.color_role}"']
+        fill, stroke, foreground = appearance(style, box.color_role, component_for(box), solid=box.solid)
+        attrs = [f'id="{box.id}"', f'x="{box.x}"', f'y="{box.y}"', f'width="{box.width}"', f'height="{box.height}"', 'rx="14"', f'fill="{fill}"', f'stroke="{stroke}"', 'stroke-width="1.2"', f'data-font-color="{foreground}"', f'data-role="{box.kind}"', f'data-color-role="{box.color_role}"']
         if box.visual_role:
             attrs.append(f'data-visual-role="{box.visual_role}"')
         if box.module:
@@ -437,11 +491,14 @@ def build_svg(scene: Scene, spec_hash: str) -> str:
         if box.label:
             center_x = box.x + box.width // 2
             label_y = box.y + box.height // 2 + (0 if not box.sublabel else -8)
-            lines.append(f'<text x="{center_x}" y="{label_y}" font-size="{box.font_size}" font-weight="700" text-anchor="middle" fill="{foreground}">{html.escape(box.label)}</text>')
+            lines.append(f'<text id="{box.id}-label" x="{center_x}" y="{label_y}" font-size="{box.font_size}" font-weight="700" text-anchor="middle" fill="{foreground}">{html.escape(box.label)}</text>')
             if box.sublabel:
-                lines.append(f'<text x="{center_x}" y="{label_y + 24}" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="{foreground if box.solid else n["text-muted"]}">{html.escape(box.sublabel)}</text>')
+                lines.append(f'<text id="{box.id}-sublabel" x="{center_x}" y="{label_y + 24}" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="{foreground if box.solid else n["text-muted"]}">{html.escape(box.sublabel)}</text>')
     for item in scene.labels:
-        color = roles[item.color_role]["strong"] if item.color_role else n["text"]
+        if item.id == "side-title" and item.color_role:
+            color = appearance(style, item.color_role, "side-rail")[2]
+        else:
+            color = roles[item.color_role]["strong"] if item.color_role else n["text"]
         lines.append(svg_text(item, color))
     for icon in scene.icons:
         lines.append(svg_icon(icon, roles[icon.color_role]["base"]))
@@ -471,7 +528,10 @@ def xml_style(fill: str, stroke: str, font: str, size: int, *, bold: bool = Fals
 
 def build_drawio(scene: Scene, spec_hash: str) -> str:
     spec, style = scene.spec, scene.style
-    n, roles = style["neutral"], style["roles"]
+    n, roles = style["neutral"], all_style_roles(style)
+    recipe = style["recipe"]
+    title_role = recipe["title-role"]
+    accent_role = recipe["accent-role"]
     modules = " ".join(sorted(scene.modules))
     mxfile = ET.Element("mxfile", {"host": "app.diagrams.net", "agent": "xml-diagram"})
     diagram = ET.SubElement(mxfile, "diagram", {"name": spec["title"], "id": f"catalog-{spec['id']}", "theme": spec["theme"], "mode": "light", "layout": spec["layout"], "dominantAxis": spec["dominantAxis"], "visualContract": "enterprise-v2", "modules": modules, "optionalModules": OPTIONAL_MODULES, "generation": GENERATION, "diagramType": spec["id"], "specHash": spec_hash})
@@ -486,26 +546,31 @@ def build_drawio(scene: Scene, spec_hash: str) -> str:
         ET.SubElement(item, "mxGeometry", {"x":str(x),"y":str(y),"width":str(width),"height":str(height),"as":"geometry"})
         return item
 
-    cell("accent-bar", "", 52, 36, 8, 76, xml_style(roles["focus"]["base"], roles["focus"]["base"], roles["focus"]["foreground"], 12))
-    cell("page-title", spec["title"], 82, 32, 760, 48, xml_style("none", "none", n["text-strong"], 40, bold=True, align="left"), role="page-title")
+    cell("accent-bar", "", 52, 36, 8, 76, xml_style(roles[accent_role]["base"], roles[accent_role]["base"], roles[accent_role]["foreground"], 12))
+    cell("page-title", spec["title"], 82, 32, 760, 48, xml_style("none", "none", roles[title_role]["strong"], 40, bold=True, align="left"), role="page-title")
     cell("subtitle", spec["conclusion"], 82, 84, 900, 28, xml_style("none", "none", n["text"], 15, align="left"))
-    badges = [(spec["label"], "axis-main", 150), (SKELETON_NAMES[spec["skeleton"]], "focus", 150), (style["theme-name"].split("｜")[0].strip(), "data-flow", 190)]
+    badges = list(zip(
+        (spec["label"], SKELETON_NAMES[spec["skeleton"]], style["theme-name"].split("｜")[0].strip()),
+        recipe["badge-roles"],
+        (150, 150, 190),
+    ))
     bx = 985
     for index, (value, role, width) in enumerate(badges):
         cell(f"badge-{index}", value, bx, 52, width, 42, xml_style(n["surface"], roles[role]["border"], n["text-strong"], 13, bold=True))
         bx += width + 14
     for box in scene.boxes:
-        token = roles[box.color_role]
-        fill = token["base"] if box.solid else (n["surface"] if box.visual_role == "canvas" or (box.kind == "node" and box.color_role == "group") else token["soft"])
-        stroke = token["strong"] if box.solid else token["border"]
-        foreground = token["foreground"] if box.solid else n["text-strong"]
+        fill, stroke, foreground = appearance(style, box.color_role, component_for(box), solid=box.solid)
         value = f"<b>{html.escape(box.label)}</b>" if box.label else ""
         if box.sublabel:
             value += f"<br><font style='font-size:11px;color:{foreground if box.solid else n['text-muted']}'>{html.escape(box.sublabel)}</font>"
         cell(box.id, value, box.x, box.y, box.width, box.height, xml_style(fill, stroke, foreground, box.font_size, shadow=box.shadow), role=box.kind, colorRole=box.color_role, visualRole=box.visual_role or "", module=box.module or "")
     for item in scene.labels:
-        color = roles[item.color_role]["strong"] if item.color_role else n["text"]
-        cell(item.id, item.value, item.x, item.y, item.width, item.height, xml_style("none", "none", color, item.size, bold=item.bold, align=item.align), role=item.role or "")
+        if item.id == "side-title" and item.color_role:
+            side_fill, _, color = appearance(style, item.color_role, "side-rail")
+            cell(item.id, item.value, item.x, item.y, item.width, item.height, xml_style(side_fill, side_fill, color, item.size, bold=item.bold, align=item.align), role=item.role or "")
+        else:
+            color = roles[item.color_role]["strong"] if item.color_role else n["text"]
+            cell(item.id, item.value, item.x, item.y, item.width, item.height, xml_style("none", "none", color, item.size, bold=item.bold, align=item.align), role=item.role or "")
     for icon in scene.icons:
         color = roles[icon.color_role]["base"]
         cell(icon.id, "", icon.x, icon.y, 30, 30, xml_style("none", "none", color, 12, image=icon_data(icon, color)), role="icon", colorRole=icon.color_role)

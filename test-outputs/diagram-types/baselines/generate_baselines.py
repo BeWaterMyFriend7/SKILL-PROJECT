@@ -93,11 +93,27 @@ def drawio_icon_data(color: str, kind: str) -> str:
     return "data:image/svg+xml," + quote(svg, safe="")
 
 
+def all_style_roles(style: dict[str, object]) -> dict[str, dict[str, str]]:
+    return {**style["roles"], **style["semantic-roles"]}
+
+
+def appearance(style: dict[str, object], role_name: str, component: str, *, solid: bool = False) -> tuple[str, str, str]:
+    token = all_style_roles(style)[role_name]
+    neutral = style["neutral"]
+    policy = "role-base" if solid else style["recipe"]["surface-policy"].get(component, "surface")
+    if policy == "role-base":
+        return token["base"], token["strong"], token["foreground"]
+    if policy == "role-soft":
+        return token["soft"], token["border"], neutral["text-strong"]
+    if policy == "role-subtle":
+        return token["subtle"], token["border"], neutral["text-strong"]
+    if policy == "surface-muted":
+        return neutral["surface-muted"], token["border"], neutral["text-strong"]
+    return neutral["surface"], token["border"], neutral["text-strong"]
+
+
 def add_svg_node(lines: list[str], x: int, y: int, width: int, height: int, label: str, role_name: str, style: dict[str, object], *, visual_role: str | None = None, module: str | None = None, solid: bool = False, sublabel: str | None = None, element_id: str | None = None) -> None:
-    token = style["roles"][role_name]
-    fill = token["base"] if solid else token["soft"]
-    stroke = token["strong"] if solid else token["border"]
-    foreground = token["foreground"] if solid else style["neutral"]["text-strong"]
+    fill, stroke, foreground = appearance(style, role_name, "card", solid=solid)
     lines.append(svg_rect(x, y, width, height, fill, stroke, radius=12, role="node", color_role=role_name, visual_role=visual_role, module=module, element_id=element_id))
     lines.append(svg_text(x + width // 2, y + (height // 2 if not sublabel else height // 2 - 5), label, 15 if height >= 48 else 13, foreground, weight=700, anchor="middle"))
     if sublabel:
@@ -106,21 +122,30 @@ def add_svg_node(lines: list[str], x: int, y: int, width: int, height: int, labe
 
 def build_svg(spec: dict[str, object], theme: str, style: dict[str, object], spec_hash: str) -> str:
     n = style["neutral"]
-    r = style["roles"]
+    r = all_style_roles(style)
+    recipe = style["recipe"]
+    baseline_roles = recipe["baseline-roles"]
+    entry_role = baseline_roles["entry"]
+    governance_role = baseline_roles["governance"]
+    provider_role = baseline_roles["provider"]
+    data_role = baseline_roles["data"]
+    side_role = baseline_roles["side"]
+    title_role = recipe["title-role"]
+    accent_role = recipe["accent-role"]
     c = spec["content"]
     modules = " ".join(spec["modules"])
     lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1000" viewBox="0 0 1560 1000" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="{theme}" data-mode="light" data-layout="mixed-axis" data-dominant-axis="x" data-visual-contract="enterprise-v2" data-modules="{modules}" data-generation="{GENERATOR_VERSION}" data-spec-hash="{spec_hash}">',
         f'<title id="title">{esc(c["governance"]["title"])}主题基准图</title>',
         f'<desc id="desc">{esc(spec["coreConclusion"])}</desc>',
-        '<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.08"/></filter><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="context-stroke"/></marker></defs>',
+        f'<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="{recipe["shadow-opacity"]}"/></filter><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="context-stroke"/></marker></defs>',
         f'<rect width="1560" height="1000" fill="{n["canvas"]}"/>',
-        f'<rect x="52" y="36" width="8" height="76" rx="4" fill="{r["focus"]["base"]}"/>',
-        svg_text(82, 76, "智能服务治理平台", 42, n["text-strong"], weight=800, role="page-title"),
+        f'<rect x="52" y="36" width="8" height="76" rx="4" fill="{r[accent_role]["base"]}"/>',
+        svg_text(82, 76, "智能服务治理平台", 42, r[title_role]["strong"], weight=800, role="page-title"),
         svg_text(82, 106, spec["coreConclusion"], 15, n["text"], weight=400),
     ]
     badge_labels = ["混合轴布局", "策略驱动", style["theme-name"].split("｜")[0].strip()]
-    badge_roles = ["axis-main", "focus", "data-flow"]
+    badge_roles = recipe["badge-roles"]
     bx = 1010
     for label, role_name in zip(badge_labels, badge_roles):
         token = r[role_name]
@@ -129,9 +154,11 @@ def build_svg(spec: dict[str, object], theme: str, style: dict[str, object], spe
         lines.append(svg_text(bx + width // 2, 79, label, 13, n["text-strong"], weight=700, anchor="middle"))
         bx += width + 14
 
-    lines.append(svg_rect(40, 136, 1420, 650, n["surface"], n["border"], radius=22, role="region", shadow=True))
+    shell_fill, shell_stroke, _ = appearance(style, "group", "shell")
+    lines.append(svg_rect(40, 136, 1420, 650, shell_fill, shell_stroke, radius=22, role="region", shadow=True))
     lines.append(f'<g data-module="top-band" data-color-role="axis-main">')
-    lines.append(svg_rect(70, 162, 1360, 56, r["axis-main"]["soft"], r["axis-main"]["border"], radius=14))
+    top_fill, top_stroke, _ = appearance(style, "axis-main", "top-band")
+    lines.append(svg_rect(70, 162, 1360, 56, top_fill, top_stroke, radius=14))
     top_items = c["topBand"]
     for index, item in enumerate(top_items):
         add_svg_node(lines, 105 + index * 440, 173, 380, 34, item, "axis-main", style)
@@ -140,43 +167,49 @@ def build_svg(spec: dict[str, object], theme: str, style: dict[str, object], spe
     lines.append(f'<line id="edge-entry-governance" data-role="edge" data-color-role="connector" x1="400" y1="490" x2="472" y2="490" stroke="{r["connector"]["base"]}" stroke-width="3" marker-end="url(#arrow)"/>')
     lines.append(f'<line id="edge-governance-provider" data-role="edge" data-color-role="connector" x1="938" y1="490" x2="1008" y2="490" stroke="{r["connector"]["base"]}" stroke-width="3" marker-end="url(#arrow)"/>')
 
-    lines.append(svg_rect(70, 246, 330, 500, r["axis-main"]["soft"], r["axis-main"]["border"], radius=20, role="region", color_role="axis-main", shadow=True))
-    lines.append(svg_icon(100, 278, r["axis-main"]["strong"], "users"))
-    lines.append(svg_text(142, 303, c["entry"]["title"], 22, r["axis-main"]["strong"], weight=800))
+    entry_fill, entry_stroke, entry_foreground = appearance(style, entry_role, "region")
+    lines.append(svg_rect(70, 246, 330, 500, entry_fill, entry_stroke, radius=20, role="region", color_role=entry_role, shadow=True))
+    lines.append(svg_icon(100, 278, r[entry_role]["base"], "users"))
+    lines.append(svg_text(142, 303, c["entry"]["title"], 22, r[entry_role]["strong"] if entry_foreground == n["text-strong"] else entry_foreground, weight=800))
     for index, item in enumerate(c["entry"]["items"]):
-        add_svg_node(lines, 105, 350 + index * 116, 260, 82, item, "axis-main", style, sublabel=("稳定访问入口" if index == 0 else "统一配置与观测"))
+        add_svg_node(lines, 105, 350 + index * 116, 260, 82, item, entry_role, style, sublabel=("稳定访问入口" if index == 0 else "统一配置与观测"))
     lines.append(svg_text(235, 660, "入口保持稳定，实例选择由治理策略完成", 12, n["text-muted"], anchor="middle"))
 
-    lines.append(svg_rect(472, 246, 466, 500, r["group"]["soft"], r["group"]["border"], radius=20, role="region", color_role="group", shadow=True))
-    lines.append(svg_icon(506, 278, r["focus"]["strong"], "shield"))
-    lines.append(svg_text(548, 303, c["governance"]["title"], 22, r["focus"]["strong"], weight=800))
+    governance_fill, governance_stroke, governance_foreground = appearance(style, governance_role, "region")
+    lines.append(svg_rect(472, 246, 466, 500, governance_fill, governance_stroke, radius=20, role="region", color_role=governance_role, shadow=True))
+    lines.append(svg_icon(506, 278, r[governance_role]["base"], "shield"))
+    lines.append(svg_text(548, 303, c["governance"]["title"], 22, r[governance_role]["strong"] if governance_foreground == n["text-strong"] else governance_foreground, weight=800))
     for index, item in enumerate(c["governance"]["controls"]):
-        add_svg_node(lines, 506 + index * 200, 340, 180, 68, item, "group", style)
+        add_svg_node(lines, 506 + index * 200, 340, 180, 68, item, governance_role, style)
     add_svg_node(lines, 556, 442, 300, 82, c["governance"]["focus"], "focus", style, visual_role="focus", module="focus-node", solid=True, sublabel="策略决策 · 服务发现 · 负载调节", element_id="focus-engine")
-    lines.append(svg_rect(512, 566, 386, 136, n["surface"], r["data-flow"]["border"], radius=16, role="region", color_role="data-flow"))
-    lines.append(svg_text(538, 596, c["governance"]["planeTitle"], 17, r["data-flow"]["strong"], weight=800))
+    data_fill, data_stroke, data_foreground = appearance(style, data_role, "region")
+    lines.append(svg_rect(512, 566, 386, 136, data_fill, data_stroke, radius=16, role="region", color_role=data_role))
+    lines.append(svg_text(538, 596, c["governance"]["planeTitle"], 17, r[data_role]["strong"] if data_foreground == n["text-strong"] else data_foreground, weight=800))
     for index, item in enumerate(c["governance"]["planeItems"]):
-        add_svg_node(lines, 536 + index * 120, 622, 105, 48, item, "data-flow", style)
+        add_svg_node(lines, 536 + index * 120, 622, 105, 48, item, data_role, style)
 
-    lines.append(svg_rect(1008, 246, 300, 500, r["axis-cross"]["soft"], r["axis-cross"]["border"], radius=20, role="region", color_role="axis-cross", shadow=True))
-    lines.append(svg_icon(1038, 278, r["axis-cross"]["strong"], "cluster"))
-    lines.append(svg_text(1080, 303, c["providers"]["title"], 22, r["axis-cross"]["strong"], weight=800))
+    provider_fill, provider_stroke, provider_foreground = appearance(style, provider_role, "region")
+    lines.append(svg_rect(1008, 246, 300, 500, provider_fill, provider_stroke, radius=20, role="region", color_role=provider_role, shadow=True))
+    lines.append(svg_icon(1038, 278, r[provider_role]["base"], "cluster"))
+    lines.append(svg_text(1080, 303, c["providers"]["title"], 22, r[provider_role]["strong"] if provider_foreground == n["text-strong"] else provider_foreground, weight=800))
     for index, item in enumerate(c["providers"]["items"]):
-        add_svg_node(lines, 1042, 344 + index * 100, 232, 70, item, "axis-cross", style, sublabel="服务实例 · eBPF 程序")
+        add_svg_node(lines, 1042, 344 + index * 100, 232, 70, item, provider_role, style, sublabel="服务实例 · eBPF 程序")
     lines.append(svg_text(1158, 678, "按策略动态选择实际实例", 12, n["text-muted"], weight=600, anchor="middle"))
 
-    lines.append(f'<g data-module="aux-column" data-color-role="side-rail">')
-    lines.append(svg_rect(1332, 246, 98, 500, r["side-rail"]["soft"], r["side-rail"]["border"], radius=20, role="region", color_role="side-rail", shadow=True))
-    lines.append(svg_text(1381, 286, c["sideRail"]["title"], 16, r["side-rail"]["strong"], weight=800, anchor="middle"))
+    lines.append(f'<g data-module="aux-column" data-color-role="{side_role}">')
+    side_fill, side_stroke, side_foreground = appearance(style, side_role, "side-rail")
+    lines.append(svg_rect(1332, 246, 98, 500, side_fill, side_stroke, radius=20, role="region", color_role=side_role, shadow=True))
+    lines.append(svg_text(1381, 286, c["sideRail"]["title"], 16, r[side_role]["strong"] if side_foreground == n["text-strong"] else side_foreground, weight=800, anchor="middle"))
     for index, item in enumerate(c["sideRail"]["items"]):
-        add_svg_node(lines, 1345, 330 + index * 88, 72, 58, item, "side-rail", style)
+        add_svg_node(lines, 1345, 330 + index * 88, 72, 58, item, side_role, style)
     lines.append("</g>")
 
-    lines.append(f'<g data-module="footer-band" data-color-role="data-flow">')
-    lines.append(svg_rect(40, 812, 1420, 104, r["data-flow"]["soft"], r["data-flow"]["border"], radius=20, role="region", color_role="data-flow"))
-    lines.append(svg_text(74, 850, "核心价值", 20, r["data-flow"]["strong"], weight=800))
+    lines.append(f'<g data-module="footer-band" data-color-role="{data_role}">')
+    footer_fill, footer_stroke, footer_foreground = appearance(style, data_role, "footer-band")
+    lines.append(svg_rect(40, 812, 1420, 104, footer_fill, footer_stroke, radius=20, role="region", color_role=data_role))
+    lines.append(svg_text(74, 850, "核心价值", 20, r[data_role]["strong"] if footer_foreground == n["text-strong"] else footer_foreground, weight=800))
     for index, item in enumerate(c["footer"]):
-        add_svg_node(lines, 230 + index * 290, 833, 245, 58, item, "data-flow", style)
+        add_svg_node(lines, 230 + index * 290, 833, 245, 58, item, data_role, style)
     lines.append("</g>")
     lines.append("</svg>")
     return "\n".join(lines) + "\n"
@@ -205,7 +238,16 @@ def style_string(fill: str, stroke: str, font: str, size: int = 14, *, bold: boo
 
 def build_drawio(spec: dict[str, object], theme: str, style: dict[str, object], spec_hash: str) -> str:
     n = style["neutral"]
-    r = style["roles"]
+    r = all_style_roles(style)
+    recipe = style["recipe"]
+    baseline_roles = recipe["baseline-roles"]
+    entry_role = baseline_roles["entry"]
+    governance_role = baseline_roles["governance"]
+    provider_role = baseline_roles["provider"]
+    data_role = baseline_roles["data"]
+    side_role = baseline_roles["side"]
+    title_role = recipe["title-role"]
+    accent_role = recipe["accent-role"]
     c = spec["content"]
     mxfile = ET.Element("mxfile", {"host": "app.diagrams.net", "agent": "xml-diagram"})
     diagram = ET.SubElement(mxfile, "diagram", {
@@ -278,64 +320,69 @@ def build_drawio(spec: dict[str, object], theme: str, style: dict[str, object], 
         return cell
 
     def node(cell_id: str, label: str, x: int, y: int, width: int, height: int, role_name: str, *, sublabel: str | None = None, visual_role: str | None = None, module: str | None = None, solid: bool = False) -> ET.Element:
-        token = r[role_name]
-        fill = token["base"] if solid else token["soft"]
-        stroke = token["strong"] if solid else token["border"]
-        foreground = token["foreground"] if solid else n["text-strong"]
+        fill, stroke, foreground = appearance(style, role_name, "card", solid=solid)
         value = f"<b>{html.escape(label)}</b>"
         if sublabel:
             value += f"<br><font style='font-size:11px;color:{foreground if solid else n['text-muted']}'>{html.escape(sublabel)}</font>"
         return vertex(cell_id, value, x, y, width, height, fill, stroke, foreground, size=15, bold=False, role="node", color_role=role_name, visual_role=visual_role, module=module)
 
-    vertex("accent-bar", "", 52, 36, 8, 76, r["focus"]["base"], r["focus"]["base"], r["focus"]["foreground"], rounded=True)
-    text("page-title", "智能服务治理平台", 82, 36, 700, 52, 42, n["text-strong"], bold=True, role="page-title")
+    vertex("accent-bar", "", 52, 36, 8, 76, r[accent_role]["base"], r[accent_role]["base"], r[accent_role]["foreground"], rounded=True)
+    text("page-title", "智能服务治理平台", 82, 36, 700, 52, 42, r[title_role]["strong"], bold=True, role="page-title")
     text("subtitle", spec["coreConclusion"], 82, 88, 900, 28, 15, n["text"])
 
     badge_x = 1010
-    for index, (label, role_name, width) in enumerate(zip(["混合轴布局", "策略驱动", style["theme-name"].split("｜")[0].strip()], ["axis-main", "focus", "data-flow"], [130, 130, 190])):
+    for index, (label, role_name, width) in enumerate(zip(["混合轴布局", "策略驱动", style["theme-name"].split("｜")[0].strip()], recipe["badge-roles"], [130, 130, 190])):
         token = r[role_name]
         vertex(f"badge-{index}", label, badge_x, 52, width, 42, n["surface"], token["border"], n["text-strong"], size=13, bold=True)
         badge_x += width + 14
 
-    vertex("main-shell", "", 40, 136, 1420, 650, n["surface"], n["border"], n["text"], shadow=True)
-    vertex("top-band", "", 70, 162, 1360, 56, r["axis-main"]["soft"], r["axis-main"]["border"], n["text"], module="top-band")
+    shell_fill, shell_stroke, shell_foreground = appearance(style, "group", "shell")
+    vertex("main-shell", "", 40, 136, 1420, 650, shell_fill, shell_stroke, shell_foreground, shadow=True)
+    top_fill, top_stroke, top_foreground = appearance(style, "axis-main", "top-band")
+    vertex("top-band", "", 70, 162, 1360, 56, top_fill, top_stroke, top_foreground, module="top-band")
     for index, item in enumerate(c["topBand"]):
         node(f"top-{index}", item, 105 + index * 440, 173, 380, 34, "axis-main")
 
-    left_region = vertex("entry-region", "", 70, 246, 330, 500, r["axis-main"]["soft"], r["axis-main"]["border"], n["text"], role="region", color_role="axis-main", shadow=True)
-    icon("entry-icon", "users", 100, 278, r["axis-main"]["base"], "axis-main")
-    text("entry-title", c["entry"]["title"], 142, 272, 210, 44, 22, r["axis-main"]["strong"], bold=True)
+    entry_fill, entry_stroke, entry_foreground = appearance(style, entry_role, "region")
+    vertex("entry-region", "", 70, 246, 330, 500, entry_fill, entry_stroke, entry_foreground, role="region", color_role=entry_role, shadow=True)
+    icon("entry-icon", "users", 100, 278, r[entry_role]["base"], entry_role)
+    text("entry-title", c["entry"]["title"], 142, 272, 210, 44, 22, r[entry_role]["strong"] if entry_foreground == n["text-strong"] else entry_foreground, bold=True)
     for index, item in enumerate(c["entry"]["items"]):
-        node(f"entry-{index}", item, 105, 350 + index * 116, 260, 82, "axis-main", sublabel=("稳定访问入口" if index == 0 else "统一配置与观测"))
+        node(f"entry-{index}", item, 105, 350 + index * 116, 260, 82, entry_role, sublabel=("稳定访问入口" if index == 0 else "统一配置与观测"))
     text("entry-note", "入口保持稳定，实例选择由治理策略完成", 95, 640, 280, 42, 12, n["text"], align="center")
 
-    center_region = vertex("governance-region", "", 472, 246, 466, 500, r["group"]["soft"], r["group"]["border"], n["text"], role="region", color_role="group", shadow=True)
-    icon("governance-icon", "shield", 506, 278, r["focus"]["base"], "focus")
-    text("governance-title", c["governance"]["title"], 548, 272, 230, 44, 22, r["focus"]["strong"], bold=True)
+    governance_fill, governance_stroke, governance_foreground = appearance(style, governance_role, "region")
+    vertex("governance-region", "", 472, 246, 466, 500, governance_fill, governance_stroke, governance_foreground, role="region", color_role=governance_role, shadow=True)
+    icon("governance-icon", "shield", 506, 278, r[governance_role]["base"], governance_role)
+    text("governance-title", c["governance"]["title"], 548, 272, 230, 44, 22, r[governance_role]["strong"] if governance_foreground == n["text-strong"] else governance_foreground, bold=True)
     for index, item in enumerate(c["governance"]["controls"]):
-        node(f"control-{index}", item, 506 + index * 200, 340, 180, 68, "group")
+        node(f"control-{index}", item, 506 + index * 200, 340, 180, 68, governance_role)
     node("focus-engine", c["governance"]["focus"], 556, 442, 300, 82, "focus", sublabel="策略决策 · 服务发现 · 负载调节", visual_role="focus", module="focus-node", solid=True)
-    vertex("data-plane", "", 512, 566, 386, 136, n["surface"], r["data-flow"]["border"], n["text"], role="region", color_role="data-flow")
-    text("data-plane-title", c["governance"]["planeTitle"], 538, 576, 220, 34, 17, r["data-flow"]["strong"], bold=True)
+    data_fill, data_stroke, data_foreground = appearance(style, data_role, "region")
+    vertex("data-plane", "", 512, 566, 386, 136, data_fill, data_stroke, data_foreground, role="region", color_role=data_role)
+    text("data-plane-title", c["governance"]["planeTitle"], 538, 576, 220, 34, 17, r[data_role]["strong"] if data_foreground == n["text-strong"] else data_foreground, bold=True)
     for index, item in enumerate(c["governance"]["planeItems"]):
-        node(f"plane-{index}", item, 536 + index * 120, 622, 105, 48, "data-flow")
+        node(f"plane-{index}", item, 536 + index * 120, 622, 105, 48, data_role)
 
-    right_region = vertex("provider-region", "", 1008, 246, 300, 500, r["axis-cross"]["soft"], r["axis-cross"]["border"], n["text"], role="region", color_role="axis-cross", shadow=True)
-    icon("provider-icon", "cluster", 1038, 278, r["axis-cross"]["base"], "axis-cross")
-    text("provider-title", c["providers"]["title"], 1080, 272, 190, 44, 22, r["axis-cross"]["strong"], bold=True)
+    provider_fill, provider_stroke, provider_foreground = appearance(style, provider_role, "region")
+    vertex("provider-region", "", 1008, 246, 300, 500, provider_fill, provider_stroke, provider_foreground, role="region", color_role=provider_role, shadow=True)
+    icon("provider-icon", "cluster", 1038, 278, r[provider_role]["base"], provider_role)
+    text("provider-title", c["providers"]["title"], 1080, 272, 190, 44, 22, r[provider_role]["strong"] if provider_foreground == n["text-strong"] else provider_foreground, bold=True)
     for index, item in enumerate(c["providers"]["items"]):
-        node(f"provider-{index}", item, 1042, 344 + index * 100, 232, 70, "axis-cross", sublabel="服务实例 · eBPF 程序")
+        node(f"provider-{index}", item, 1042, 344 + index * 100, 232, 70, provider_role, sublabel="服务实例 · eBPF 程序")
     text("provider-note", "按策略动态选择实际实例", 1038, 660, 240, 34, 12, n["text"], bold=True, align="center")
 
-    vertex("side-rail", "", 1332, 246, 98, 500, r["side-rail"]["soft"], r["side-rail"]["border"], n["text"], role="region", color_role="side-rail", module="aux-column", shadow=True)
-    text("side-title", c["sideRail"]["title"], 1342, 262, 78, 50, 16, r["side-rail"]["strong"], bold=True, align="center")
+    side_fill, side_stroke, side_foreground = appearance(style, side_role, "side-rail")
+    vertex("side-rail", "", 1332, 246, 98, 500, side_fill, side_stroke, side_foreground, role="region", color_role=side_role, module="aux-column", shadow=True)
+    vertex("side-title", c["sideRail"]["title"], 1342, 262, 78, 50, side_fill, side_fill, r[side_role]["strong"] if side_foreground == n["text-strong"] else side_foreground, size=16, bold=True)
     for index, item in enumerate(c["sideRail"]["items"]):
-        node(f"side-{index}", item, 1345, 330 + index * 88, 72, 58, "side-rail")
+        node(f"side-{index}", item, 1345, 330 + index * 88, 72, 58, side_role)
 
-    vertex("footer-band", "", 40, 812, 1420, 104, r["data-flow"]["soft"], r["data-flow"]["border"], n["text"], role="region", color_role="data-flow", module="footer-band")
-    text("footer-title", "核心价值", 74, 828, 130, 42, 20, r["data-flow"]["strong"], bold=True)
+    footer_fill, footer_stroke, footer_foreground = appearance(style, data_role, "footer-band")
+    vertex("footer-band", "", 40, 812, 1420, 104, footer_fill, footer_stroke, footer_foreground, role="region", color_role=data_role, module="footer-band")
+    text("footer-title", "核心价值", 74, 828, 130, 42, 20, r[data_role]["strong"] if footer_foreground == n["text-strong"] else footer_foreground, bold=True)
     for index, item in enumerate(c["footer"]):
-        node(f"footer-{index}", item, 230 + index * 290, 833, 245, 58, "data-flow")
+        node(f"footer-{index}", item, 230 + index * 290, 833, 245, 58, data_role)
 
     def arrow_line(line_id: str, x: int, y: int, width: int) -> None:
         cell = ET.SubElement(root, "mxCell", {

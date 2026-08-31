@@ -22,10 +22,10 @@
 ## 结构颜色映射
 
 - axis-main: #3B6EDC（来源：main-blue）
-- axis-cross: #5B8FF9（来源：medium-blue）
+- axis-cross: #2AA7C8（来源：data-cyan）
 - side-rail: #2D56B3（来源：deep-blue）
 - focus: #3B6EDC（来源：main-blue）
-- data-flow: #2AA7C8（来源：data-cyan）
+- data-flow: #5B8FF9（来源：medium-blue）
 - group: #5B8FF9（来源：medium-blue）
 - connector: #3B6EDC（来源：main-blue）
 

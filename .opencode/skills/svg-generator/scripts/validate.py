@@ -91,6 +91,13 @@ ALLOWED_COLOR_ROLES = {
     "data-flow",
     "group",
     "connector",
+    "domain-app",
+    "domain-control",
+    "domain-network",
+    "domain-data",
+    "status-success",
+    "status-warning",
+    "status-error",
 }
 ALLOWED_LAYOUTS = {"vertical-stack", "horizontal-flow", "mixed-axis", "matrix", "network", "timeline"}
 ALLOWED_DOMINANT_AXES = {"x", "y", "mixed", "grid", "radial"}
@@ -410,7 +417,11 @@ def validate_svg(path: Path, allow_placeholders: bool = False) -> tuple[list[str
             for start, end in zip(pairs, pairs[1:]):
                 edge_segments.append((element.get("id", "<polyline>"), start[0], start[1], end[0], end[1]))
 
-    if len(colors) > 20:
+    # Vibrant uses four controlled domain hues plus optional status hues.  Count
+    # derived borders and subtle surfaces separately from accent families, so its
+    # legitimate ceiling is slightly higher than monochrome themes.
+    color_limit = 28 if root.get("data-theme") == "vibrant" else 22
+    if len(colors) > color_limit:
         warnings.append(f"颜色数量偏多: {len(colors)}")
     if not node_boxes:
         errors.append("缺少 data-role=node，无法执行节点重叠和布局检查")

@@ -5,148 +5,148 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="accent-bar" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#8B5CF6;strokeColor=#8B5CF6;strokeWidth=1.2;fontColor=#000000;fontSize=12;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;">
+        <mxCell id="accent-bar" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#3B82F6;strokeColor=#3B82F6;strokeWidth=1.2;fontColor=#000000;fontSize=12;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;">
           <mxGeometry x="52" y="36" width="8" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="page-title" value="客户运营业务架构" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.2;fontColor=#1F2937;fontSize=40;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;fontStyle=1;" role="page-title">
+        <mxCell id="page-title" value="客户运营业务架构" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.2;fontColor=#306BCA;fontSize=40;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;fontStyle=1;" role="page-title">
           <mxGeometry x="82" y="32" width="760" height="48" as="geometry" />
         </mxCell>
         <mxCell id="subtitle" value="客户数据驱动洞察、决策、触达和效果反馈形成运营闭环。" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.2;fontColor=#475569;fontSize=15;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;">
           <mxGeometry x="82" y="84" width="900" height="28" as="geometry" />
         </mxCell>
-        <mxCell id="badge-0" value="业务架构" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;fontStyle=1;">
+        <mxCell id="badge-0" value="业务架构" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B8D3FA;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;fontStyle=1;">
           <mxGeometry x="985" y="52" width="150" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="badge-1" value="分层架构" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CEBBFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;fontStyle=1;">
+        <mxCell id="badge-1" value="分层架构" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D2BFFA;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;fontStyle=1;">
           <mxGeometry x="1149" y="52" width="150" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="badge-2" value="Vibrant" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;fontStyle=1;">
+        <mxCell id="badge-2" value="Vibrant" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;fontStyle=1;">
           <mxGeometry x="1313" y="52" width="190" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="main-shell" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;shadow=1;" role="region" colorRole="group" visualRole="canvas">
+        <mxCell id="main-shell" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B8D3FA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;shadow=1;" role="region" colorRole="group" visualRole="canvas">
           <mxGeometry x="40" y="140" width="1420" height="720" as="geometry" />
         </mxCell>
-        <mxCell id="top-band" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DBE4F1;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="axis-main" module="top-band">
+        <mxCell id="top-band" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B8D3FA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="axis-main" module="top-band">
           <mxGeometry x="70" y="165" width="1360" height="58" as="geometry" />
         </mxCell>
-        <mxCell id="top-chip-0" value="&lt;b&gt;业务入口&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DBE4F1;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-main">
+        <mxCell id="top-chip-0" value="&lt;b&gt;业务入口&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B8D3FA;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-main">
           <mxGeometry x="105" y="176" width="380" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="top-chip-1" value="&lt;b&gt;核心能力&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EBFE;strokeColor=#CEBBFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-cross">
+        <mxCell id="top-chip-1" value="&lt;b&gt;核心能力&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D2BFFA;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-cross">
           <mxGeometry x="545" y="176" width="380" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="top-chip-2" value="&lt;b&gt;治理保障&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
+        <mxCell id="top-chip-2" value="&lt;b&gt;治理保障&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
           <mxGeometry x="985" y="176" width="380" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="footer-band" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="data-flow" module="footer-band">
+        <mxCell id="footer-band" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="data-flow" module="footer-band">
           <mxGeometry x="40" y="890" width="1420" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="footer-0" value="&lt;b&gt;客户统一视图&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=14;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
+        <mxCell id="footer-0" value="&lt;b&gt;客户统一视图&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=14;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
           <mxGeometry x="230" y="902" width="245" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="footer-1" value="&lt;b&gt;策略自动化&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=14;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
+        <mxCell id="footer-1" value="&lt;b&gt;策略自动化&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=14;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
           <mxGeometry x="520" y="902" width="245" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="footer-2" value="&lt;b&gt;全渠道协同&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=14;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
+        <mxCell id="footer-2" value="&lt;b&gt;全渠道协同&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=14;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
           <mxGeometry x="810" y="902" width="245" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="footer-3" value="&lt;b&gt;效果可度量&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=14;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
+        <mxCell id="footer-3" value="&lt;b&gt;效果可度量&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=14;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="data-flow">
           <mxGeometry x="1100" y="902" width="245" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="layer-0" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DBE4F1;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="axis-main">
+        <mxCell id="layer-0" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F4F8FF;strokeColor=#B8D3FA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="domain-app">
           <mxGeometry x="70" y="245" width="1230" height="88" as="geometry" />
         </mxCell>
-        <mxCell id="layer-title-0" value="&lt;b&gt;客户触点&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#3B82F6;strokeColor=#306BCA;strokeWidth=1.2;fontColor=#000000;fontSize=17;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-main">
+        <mxCell id="layer-title-0" value="&lt;b&gt;客户触点&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B8D3FA;strokeWidth=1.2;fontColor=#172033;fontSize=17;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-app">
           <mxGeometry x="88" y="259" width="205" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-0-item-0" value="&lt;b&gt;品牌官网&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DBE4F1;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-main">
+        <mxCell id="layer-0-item-0" value="&lt;b&gt;品牌官网&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B8D3FA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-app">
           <mxGeometry x="320" y="259" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-0-item-1" value="&lt;b&gt;会员小程序&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DBE4F1;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-main">
+        <mxCell id="layer-0-item-1" value="&lt;b&gt;会员小程序&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B8D3FA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-app">
           <mxGeometry x="565" y="259" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-0-item-2" value="&lt;b&gt;线下门店&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DBE4F1;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-main">
+        <mxCell id="layer-0-item-2" value="&lt;b&gt;线下门店&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B8D3FA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-app">
           <mxGeometry x="810" y="259" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-1" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DBE4F1;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="group">
+        <mxCell id="layer-1" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F8F5FF;strokeColor=#D2BFFA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="domain-control">
           <mxGeometry x="70" y="353" width="1230" height="88" as="geometry" />
         </mxCell>
-        <mxCell id="layer-title-1" value="&lt;b&gt;核心业务能力&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EBFE;strokeColor=#CEBBFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=17;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-cross">
+        <mxCell id="layer-title-1" value="&lt;b&gt;核心业务能力&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D2BFFA;strokeWidth=1.2;fontColor=#172033;fontSize=17;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-control">
           <mxGeometry x="88" y="367" width="205" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-1-item-0" value="&lt;b&gt;客户洞察&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="group">
+        <mxCell id="layer-1-item-0" value="&lt;b&gt;客户洞察&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D2BFFA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-control">
           <mxGeometry x="320" y="367" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-1-item-1" value="&lt;b&gt;权益管理&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="group">
+        <mxCell id="layer-1-item-1" value="&lt;b&gt;权益管理&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D2BFFA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-control">
           <mxGeometry x="565" y="367" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-1-item-2" value="&lt;b&gt;营销自动化&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="group">
+        <mxCell id="layer-1-item-2" value="&lt;b&gt;营销自动化&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D2BFFA;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-control">
           <mxGeometry x="810" y="367" width="220" height="60" as="geometry" />
         </mxCell>
         <mxCell id="focus" value="&lt;b&gt;智能营销决策&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#8B5CF6;strokeColor=#724BCA;strokeWidth=1.2;fontColor=#000000;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="focus" visualRole="focus" module="focus-node">
           <mxGeometry x="1055" y="367" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-2" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DBE4F1;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="group">
+        <mxCell id="layer-2" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F2FCFD;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="domain-network">
           <mxGeometry x="70" y="461" width="1230" height="88" as="geometry" />
         </mxCell>
-        <mxCell id="layer-title-2" value="&lt;b&gt;运营协同&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EBFE;strokeColor=#CEBBFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=17;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-cross">
+        <mxCell id="layer-title-2" value="&lt;b&gt;运营协同&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=17;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-network">
           <mxGeometry x="88" y="475" width="205" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-2-item-0" value="&lt;b&gt;活动编排&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="group">
+        <mxCell id="layer-2-item-0" value="&lt;b&gt;活动编排&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-network">
           <mxGeometry x="320" y="475" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-2-item-1" value="&lt;b&gt;内容运营&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="group">
+        <mxCell id="layer-2-item-1" value="&lt;b&gt;内容运营&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-network">
           <mxGeometry x="565" y="475" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-2-item-2" value="&lt;b&gt;渠道协同&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="group">
+        <mxCell id="layer-2-item-2" value="&lt;b&gt;渠道协同&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-network">
           <mxGeometry x="810" y="475" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-3" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#DBE4F1;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="group">
+        <mxCell id="layer-3" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F3FCF6;strokeColor=#AFE2BF;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="domain-data">
           <mxGeometry x="70" y="569" width="1230" height="88" as="geometry" />
         </mxCell>
-        <mxCell id="layer-title-3" value="&lt;b&gt;支撑能力&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1EBFE;strokeColor=#CEBBFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=17;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="axis-cross">
+        <mxCell id="layer-title-3" value="&lt;b&gt;支撑能力&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#AFE2BF;strokeWidth=1.2;fontColor=#172033;fontSize=17;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-data">
           <mxGeometry x="88" y="583" width="205" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-3-item-0" value="&lt;b&gt;指标体系&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="group">
+        <mxCell id="layer-3-item-0" value="&lt;b&gt;指标体系&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#AFE2BF;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-data">
           <mxGeometry x="320" y="583" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-3-item-1" value="&lt;b&gt;数据服务&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="group">
+        <mxCell id="layer-3-item-1" value="&lt;b&gt;数据服务&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#AFE2BF;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-data">
           <mxGeometry x="565" y="583" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="layer-3-item-2" value="&lt;b&gt;规则平台&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADCAFB;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="group">
+        <mxCell id="layer-3-item-2" value="&lt;b&gt;规则平台&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#AFE2BF;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="domain-data">
           <mxGeometry x="810" y="583" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="side-rail" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;shadow=1;" role="region" colorRole="side-rail" module="aux-column">
+        <mxCell id="side-rail" value="" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=15;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;shadow=1;" role="region" colorRole="side-rail" module="aux-column">
           <mxGeometry x="1325" y="245" width="105" height="565" as="geometry" />
         </mxCell>
-        <mxCell id="side-0" value="&lt;b&gt;组织权限&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="side-rail">
+        <mxCell id="side-0" value="&lt;b&gt;组织权限&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="side-rail">
           <mxGeometry x="1339" y="320" width="77" height="54" as="geometry" />
         </mxCell>
-        <mxCell id="side-1" value="&lt;b&gt;流程治理&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="side-rail">
+        <mxCell id="side-1" value="&lt;b&gt;流程治理&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="side-rail">
           <mxGeometry x="1339" y="400" width="77" height="54" as="geometry" />
         </mxCell>
-        <mxCell id="side-2" value="&lt;b&gt;经营分析&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="side-rail">
+        <mxCell id="side-2" value="&lt;b&gt;经营分析&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="side-rail">
           <mxGeometry x="1339" y="480" width="77" height="54" as="geometry" />
         </mxCell>
-        <mxCell id="side-3" value="&lt;b&gt;风险控制&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="side-rail">
+        <mxCell id="side-3" value="&lt;b&gt;风险控制&lt;/b&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=13;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="node" colorRole="side-rail">
           <mxGeometry x="1339" y="560" width="77" height="54" as="geometry" />
         </mxCell>
-        <mxCell id="layer-insight" value="&lt;b&gt;客户数据驱动洞察、决策、触达和效果反馈形成运营闭环。&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px;color:#64748B'&gt;架构能力形成统一承载、弹性扩展与闭环治理&lt;/font&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#D6EAEE;strokeColor=#8ED5E1;strokeWidth=1.2;fontColor=#1F2937;fontSize=18;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="data-flow">
+        <mxCell id="layer-insight" value="&lt;b&gt;客户数据驱动洞察、决策、触达和效果反馈形成运营闭环。&lt;/b&gt;&lt;br&gt;&lt;font style='font-size:11px;color:#64748B'&gt;架构能力形成统一承载、弹性扩展与闭环治理&lt;/font&gt;" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A9DFE9;strokeWidth=1.2;fontColor=#172033;fontSize=18;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;" role="region" colorRole="data-flow">
           <mxGeometry x="70" y="690" width="1230" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="footer-title" value="核心价值" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.2;fontColor=#0595AE;fontSize=20;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;fontStyle=1;">
+        <mxCell id="footer-title" value="核心价值" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.2;fontColor=#047F94;fontSize=20;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;fontStyle=1;">
           <mxGeometry x="74" y="906" width="130" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="side-title" value="治理保障" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.2;fontColor=#0595AE;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;fontStyle=1;">
+        <mxCell id="side-title" value="治理保障" vertex="1" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FFFFFF;strokeWidth=1.2;fontColor=#172033;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;fontStyle=1;">
           <mxGeometry x="1336" y="260" width="82" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="layer-icon-0" value="" vertex="1" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%3E%3Cg%20id%3D%22layer-icon-0%22%20data-role%3D%22icon%22%20data-color-role%3D%22axis-main%22%20fill%3D%22%233B82F6%22%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%228%22%20r%3D%225%22%2F%3E%3Cpath%20d%3D%22M5%2027c1-8%205-11%209-11s8%203%209%2011%22%20fill%3D%22none%22%20stroke%3D%22%233B82F6%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" role="icon" colorRole="axis-main">
+        <mxCell id="layer-icon-0" value="" vertex="1" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%3E%3Cg%20id%3D%22layer-icon-0%22%20data-role%3D%22icon%22%20data-color-role%3D%22domain-app%22%20fill%3D%22%233B82F6%22%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%228%22%20r%3D%225%22%2F%3E%3Cpath%20d%3D%22M5%2027c1-8%205-11%209-11s8%203%209%2011%22%20fill%3D%22none%22%20stroke%3D%22%233B82F6%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" role="icon" colorRole="domain-app">
           <mxGeometry x="104" y="275" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="layer-icon-1" value="" vertex="1" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%3E%3Cg%20id%3D%22layer-icon-1%22%20data-role%3D%22icon%22%20data-color-role%3D%22axis-cross%22%20fill%3D%22%238B5CF6%22%3E%3Cpath%20d%3D%22M14%202l9%204v7c0%207-4%2011-9%2014-5-3-9-7-9-14V6z%22%20fill%3D%22none%22%20stroke%3D%22%238B5CF6%22%20stroke-width%3D%222.4%22%2F%3E%3Cpath%20d%3D%22M10%2013l3%203%206-7%22%20fill%3D%22none%22%20stroke%3D%22%238B5CF6%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" role="icon" colorRole="axis-cross">
+        <mxCell id="layer-icon-1" value="" vertex="1" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%3E%3Cg%20id%3D%22layer-icon-1%22%20data-role%3D%22icon%22%20data-color-role%3D%22domain-control%22%20fill%3D%22%238B5CF6%22%3E%3Cpath%20d%3D%22M14%202l9%204v7c0%207-4%2011-9%2014-5-3-9-7-9-14V6z%22%20fill%3D%22none%22%20stroke%3D%22%238B5CF6%22%20stroke-width%3D%222.4%22%2F%3E%3Cpath%20d%3D%22M10%2013l3%203%206-7%22%20fill%3D%22none%22%20stroke%3D%22%238B5CF6%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" role="icon" colorRole="domain-control">
           <mxGeometry x="104" y="383" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="layer-icon-2" value="" vertex="1" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%3E%3Cg%20id%3D%22layer-icon-2%22%20data-role%3D%22icon%22%20data-color-role%3D%22data-flow%22%20fill%3D%22%2306B6D4%22%3E%3Crect%20x%3D%222%22%20y%3D%225%22%20width%3D%227%22%20height%3D%2218%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%2211%22%20y%3D%221%22%20width%3D%227%22%20height%3D%2222%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%2220%22%20y%3D%229%22%20width%3D%227%22%20height%3D%2214%22%20rx%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" role="icon" colorRole="data-flow">
+        <mxCell id="layer-icon-2" value="" vertex="1" parent="1" style="shape=image;html=1;imageAspect=0;aspect=fixed;strokeColor=none;fillColor=none;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%3E%3Cg%20id%3D%22layer-icon-2%22%20data-role%3D%22icon%22%20data-color-role%3D%22domain-network%22%20fill%3D%22%2306B6D4%22%3E%3Crect%20x%3D%222%22%20y%3D%225%22%20width%3D%227%22%20height%3D%2218%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%2211%22%20y%3D%221%22%20width%3D%227%22%20height%3D%2222%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%2220%22%20y%3D%229%22%20width%3D%227%22%20height%3D%2214%22%20rx%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;" role="icon" colorRole="domain-network">
           <mxGeometry x="104" y="491" width="30" height="30" as="geometry" />
         </mxCell>
       </root>

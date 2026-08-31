@@ -27,7 +27,7 @@
 - side-rail: #243B63（来源：navy）
 - focus: #C62828（来源：red）
 - data-flow: #4A90E2（来源：accent-blue）
-- group: #243B63（来源：navy）
+- group: #4A90E2（来源：accent-blue）
 - connector: #243B63（来源：navy）
 
 ## 质量预期

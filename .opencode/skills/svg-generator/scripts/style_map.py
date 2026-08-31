@@ -38,28 +38,28 @@ ROLE_KEYS = {
     "tech-blue": {
         "vertical-stack": {
             "axis-main": "main-blue",
-            "axis-cross": "medium-blue",
+            "axis-cross": "data-cyan",
             "side-rail": "deep-blue",
             "focus": "main-blue",
-            "data-flow": "data-cyan",
+            "data-flow": "medium-blue",
             "group": "medium-blue",
             "connector": "main-blue",
         },
         "horizontal-flow": {
-            "axis-main": "main-blue",
-            "axis-cross": "data-cyan",
+            "axis-main": "data-cyan",
+            "axis-cross": "main-blue",
             "side-rail": "deep-blue",
             "focus": "medium-blue",
-            "data-flow": "data-cyan",
+            "data-flow": "main-blue",
             "group": "medium-blue",
             "connector": "main-blue",
         },
         "mixed-axis": {
-            "axis-main": "medium-blue",
+            "axis-main": "data-cyan",
             "axis-cross": "main-blue",
             "side-rail": "deep-blue",
             "focus": "main-blue",
-            "data-flow": "data-cyan",
+            "data-flow": "medium-blue",
             "group": "medium-blue",
             "connector": "main-blue",
         },
@@ -129,17 +129,17 @@ ROLE_KEYS = {
             "side-rail": "navy",
             "focus": "red",
             "data-flow": "accent-blue",
-            "group": "navy",
+            "group": "accent-blue",
             "connector": "navy",
         },
         "horizontal-flow": {
-            "axis-main": "accent-blue",
-            "axis-cross": "navy",
+            "axis-main": "navy",
+            "axis-cross": "accent-blue",
             "side-rail": "navy",
             "focus": "red",
             "data-flow": "accent-blue",
-            "group": "navy",
-            "connector": "accent-blue",
+            "group": "accent-blue",
+            "connector": "navy",
         },
         "mixed-axis": {
             "axis-main": "navy",
@@ -147,11 +147,50 @@ ROLE_KEYS = {
             "side-rail": "navy",
             "focus": "red",
             "data-flow": "accent-blue",
-            "group": "navy",
+            "group": "accent-blue",
             "connector": "navy",
         },
     },
 }
+
+SEMANTIC_ROLE_KEYS = {
+    "tech-blue": {
+        "domain-app": "main-blue",
+        "domain-control": "deep-blue",
+        "domain-network": "data-cyan",
+        "domain-data": "medium-blue",
+    },
+    "vibrant": {
+        "domain-app": "blue",
+        "domain-control": "purple",
+        "domain-network": "cyan",
+        "domain-data": "green",
+        "status-success": "green",
+        "status-warning": "orange",
+        "status-error": "red",
+    },
+    "mint-green": {
+        "domain-app": "mint-green",
+        "domain-control": "teal-green",
+        "domain-network": "teal-green",
+        "domain-data": "mint-green",
+    },
+    "steady-red-blue": {
+        "domain-app": "red",
+        "domain-control": "navy",
+        "domain-network": "accent-blue",
+        "domain-data": "navy",
+    },
+}
+SEMANTIC_ROLES = (
+    "domain-app",
+    "domain-control",
+    "domain-network",
+    "domain-data",
+    "status-success",
+    "status-warning",
+    "status-error",
+)
 
 
 def _profile(theme: str, layout: str) -> dict[str, str]:
@@ -174,11 +213,17 @@ def _derive(base: str, mode: str, neutral: dict[str, str]) -> dict[str, str]:
     if mode == "light":
         return {
             "base": base,
-            "strong": PALETTE.mix(base, "#000000", 0.18),
+            "strong": PALETTE.ensure_contrast(PALETTE.mix(base, "#000000", 0.18), "#FFFFFF", 4.5, "#000000"),
             "soft": PALETTE.ensure_contrast(
                 PALETTE.mix(base, "#FFFFFF", 0.88),
                 neutral["canvas"],
                 1.12,
+                "#000000",
+            ),
+            "subtle": PALETTE.ensure_contrast(
+                PALETTE.mix(base, "#FFFFFF", 0.94),
+                neutral["canvas"],
+                1.06,
                 "#000000",
             ),
             "border": PALETTE.ensure_contrast(
@@ -196,6 +241,12 @@ def _derive(base: str, mode: str, neutral: dict[str, str]) -> dict[str, str]:
             PALETTE.mix(base, neutral["surface"], 0.72),
             neutral["canvas"],
             1.12,
+            "#FFFFFF",
+        ),
+        "subtle": PALETTE.ensure_contrast(
+            PALETTE.mix(base, neutral["surface"], 0.84),
+            neutral["canvas"],
+            1.06,
             "#FFFFFF",
         ),
         "border": PALETTE.ensure_contrast(
@@ -236,7 +287,24 @@ def build_style_map(
             palette_key = profile[role]
             base = palette["palette"][palette_key]
             sources[role] = palette_key
-        roles[role] = _derive(base, mode, palette["neutral"])
+        roles[role] = _derive(base, mode, palette["neutral"]) if override else dict(palette["tones"][palette_key])
+
+    semantic_roles: dict[str, dict[str, str]] = {}
+    semantic_sources: dict[str, str] = {}
+    semantic_profile = SEMANTIC_ROLE_KEYS[theme]
+    status_colors = {
+        "status-success": palette["semantic"]["success"],
+        "status-warning": palette["semantic"]["warning"],
+        "status-error": palette["semantic"]["error"],
+    }
+    for role in SEMANTIC_ROLES:
+        palette_key = semantic_profile.get(role)
+        if palette_key:
+            semantic_roles[role] = dict(palette["tones"][palette_key])
+            semantic_sources[role] = palette_key
+        else:
+            semantic_roles[role] = _derive(status_colors[role], mode, palette["neutral"])
+            semantic_sources[role] = role.replace("status-", "semantic-")
 
     return {
         "theme": theme,
@@ -247,9 +315,13 @@ def build_style_map(
         "palette": palette["palette"],
         "neutral": palette["neutral"],
         "semantic": palette["semantic"],
+        "recipe": palette["recipe"],
         "role-colors": {role: values["base"] for role, values in roles.items()},
         "role-sources": sources,
         "roles": roles,
+        "semantic-role-colors": {role: values["base"] for role, values in semantic_roles.items()},
+        "semantic-role-sources": semantic_sources,
+        "semantic-roles": semantic_roles,
     }
 
 

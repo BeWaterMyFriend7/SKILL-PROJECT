@@ -1,8 +1,8 @@
 {
   "schemaVersion": "fresh-catalog-verification-v1",
   "status": "passed",
-  "startedAtUtc": "2026-08-30T10:47:14.929989+00:00",
-  "completedAtUtc": "2026-08-30T10:48:40.449812+00:00",
+  "startedAtUtc": "2026-08-31T01:35:51.609838+00:00",
+  "completedAtUtc": "2026-08-31T01:36:57.235334+00:00",
   "generationMode": "fresh-catalog-v1",
   "legacyInputFiles": [],
   "removedSourceTargets": [
@@ -349,7 +349,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "121988 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-application-tech-blue-light-enterprise.png",
+      "stderr": "123330 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-application-tech-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/architecture-application-tech-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -393,7 +393,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "128182 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-business-vibrant-light-enterprise.png",
+      "stderr": "124853 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-business-vibrant-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/architecture-business-vibrant-light-enterprise.png",
       "dimensions": [
         1560,
@@ -437,7 +437,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "126968 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-data-mint-green-light-enterprise.png",
+      "stderr": "122843 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-data-mint-green-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/architecture-data-mint-green-light-enterprise.png",
       "dimensions": [
         1560,
@@ -481,7 +481,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "125013 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-deployment-tech-blue-light-enterprise.png",
+      "stderr": "126421 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-deployment-tech-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/architecture-deployment-tech-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -525,7 +525,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "134510 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-technical-steady-red-blue-light-enterprise.png",
+      "stderr": "133789 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\architecture-technical-steady-red-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/architecture-technical-steady-red-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -569,7 +569,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "102182 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\comparison-vibrant-light-enterprise.png",
+      "stderr": "91294 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\comparison-vibrant-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/comparison-vibrant-light-enterprise.png",
       "dimensions": [
         1560,
@@ -613,7 +613,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "90417 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\decision-matrix-mint-green-light-enterprise.png",
+      "stderr": "84752 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\decision-matrix-mint-green-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/decision-matrix-mint-green-light-enterprise.png",
       "dimensions": [
         1560,
@@ -657,7 +657,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "85221 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\flow-branching-vibrant-light-enterprise.png",
+      "stderr": "78113 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\flow-branching-vibrant-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/flow-branching-vibrant-light-enterprise.png",
       "dimensions": [
         1560,
@@ -701,7 +701,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "86550 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\flow-linear-tech-blue-light-enterprise.png",
+      "stderr": "79376 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\flow-linear-tech-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/flow-linear-tech-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -745,7 +745,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "87761 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\lifecycle-vibrant-light-enterprise.png",
+      "stderr": "79747 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\lifecycle-vibrant-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/lifecycle-vibrant-light-enterprise.png",
       "dimensions": [
         1560,
@@ -789,7 +789,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "101754 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\relationship-dependency-steady-red-blue-light-enterprise.png",
+      "stderr": "90616 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\relationship-dependency-steady-red-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/relationship-dependency-steady-red-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -833,7 +833,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "93197 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\relationship-er-mint-green-light-enterprise.png",
+      "stderr": "84750 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\relationship-er-mint-green-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/relationship-er-mint-green-light-enterprise.png",
       "dimensions": [
         1560,
@@ -877,7 +877,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "96606 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\relationship-knowledge-mint-green-light-enterprise.png",
+      "stderr": "87858 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\relationship-knowledge-mint-green-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/relationship-knowledge-mint-green-light-enterprise.png",
       "dimensions": [
         1560,
@@ -921,7 +921,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "73674 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\roadmap-steady-red-blue-light-enterprise.png",
+      "stderr": "67086 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\roadmap-steady-red-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/roadmap-steady-red-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -965,7 +965,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "77366 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\sequence-tech-blue-light-enterprise.png",
+      "stderr": "71058 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\sequence-tech-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/sequence-tech-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -1009,7 +1009,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "81770 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\state-tech-blue-light-enterprise.png",
+      "stderr": "74050 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\state-tech-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/state-tech-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -1053,7 +1053,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "97997 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\summary-vibrant-light-enterprise.png",
+      "stderr": "89059 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\summary-vibrant-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/summary-vibrant-light-enterprise.png",
       "dimensions": [
         1560,
@@ -1097,7 +1097,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "116790 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\swot-steady-red-blue-light-enterprise.png",
+      "stderr": "114153 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\swot-steady-red-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/swot-steady-red-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -1141,7 +1141,7 @@
       ],
       "returnCode": 0,
       "stdout": "",
-      "stderr": "71647 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\timeline-steady-red-blue-light-enterprise.png",
+      "stderr": "64956 bytes written to file D:\\DATA\\0-0-PROJECT\\ai\\SKILL-PROJECT\\test-outputs\\diagram-types\\svg\\timeline-steady-red-blue-light-enterprise.png",
       "output": "test-outputs/diagram-types/svg/timeline-steady-red-blue-light-enterprise.png",
       "dimensions": [
         1560,
@@ -1181,18 +1181,46 @@
         "relationsAndIcons": 3,
         "status": "matched"
       },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group",
+          "side-rail"
+        ],
+        "requiredRoles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0286,
+          "focusAreaRatio": 0.0061,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 0.8444
+        },
+        "budgets": {
+          "strong": 0.2,
+          "focus": 0.08,
+          "status": 0.0
+        }
+      },
       "files": {
         "dsl": {
           "path": "dsl/architecture-application.md",
-          "sha256": "59d2bee9f3a975fad428baca36f498a2896425d88f460f0f565c82373286b380"
+          "sha256": "29b858246787050ffbbdf42f9721926c6b1bab42f33ba94e2a6f617690a898ff"
         },
         "svg": {
           "path": "svg/architecture-application-tech-blue-light-enterprise.svg",
-          "sha256": "5ec187fea40cc34ee4e49ebd31e07d286f026117f205c11fb8de45259fb898d7"
+          "sha256": "b87b7908aba981a34fa874e3cfb3c73f6fb8df8b91c073b9076964e781342e62"
         },
         "drawio": {
           "path": "xml/architecture-application-tech-blue-light-enterprise.drawio",
-          "sha256": "4e17ca705f3d6b1ac5be32ab640da3b7255aa8867fa0709f6ecacc5b3b6acafd"
+          "sha256": "4fdff23c6fe894987581f883e0612510069dfcc454591950e53dc218351f30b4"
         }
       }
     },
@@ -1204,6 +1232,39 @@
         "relationsAndIcons": 3,
         "status": "matched"
       },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "domain-app",
+          "domain-control",
+          "domain-data",
+          "domain-network",
+          "focus",
+          "group",
+          "side-rail"
+        ],
+        "requiredRoles": [
+          "domain-app",
+          "domain-control",
+          "domain-data",
+          "domain-network",
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0061,
+          "focusAreaRatio": 0.0061,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.06
+        }
+      },
       "files": {
         "dsl": {
           "path": "dsl/architecture-business.md",
@@ -1211,11 +1272,11 @@
         },
         "svg": {
           "path": "svg/architecture-business-vibrant-light-enterprise.svg",
-          "sha256": "f2d261772a5f27bee1ea6a18191c76262eabaa8f58490b7b82c0f7ac0ded4fcb"
+          "sha256": "7f59079a3e14e641a800fbcbf6a8a95302d34a4d572d17009f9d856d8274faa2"
         },
         "drawio": {
           "path": "xml/architecture-business-vibrant-light-enterprise.drawio",
-          "sha256": "bc1f080ca425c8a77c7a4dee933002c67a0a7873ed107febab642eedbfad440e"
+          "sha256": "b6de57b2b4ab74eb1ab60deb02f44fd929d7d70fab4a6c0ddfc907c69b9adcfc"
         }
       }
     },
@@ -1227,6 +1288,31 @@
         "relationsAndIcons": 3,
         "status": "matched"
       },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group",
+          "side-rail"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0061,
+          "focusAreaRatio": 0.0061,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.12,
+          "focus": 0.07,
+          "status": 0.0
+        }
+      },
       "files": {
         "dsl": {
           "path": "dsl/architecture-data.md",
@@ -1234,11 +1320,11 @@
         },
         "svg": {
           "path": "svg/architecture-data-mint-green-light-enterprise.svg",
-          "sha256": "88d8c45f50f50cca6811087d183b0bbbaec3c12767db2da6c1e13f351d52400f"
+          "sha256": "c3c872e4225cf3cf19299f6786bbbba2a22519a1df54ec0014718ac6bd336929"
         },
         "drawio": {
           "path": "xml/architecture-data-mint-green-light-enterprise.drawio",
-          "sha256": "fc75a1c07b6de6fb4f36d039b2fc8719fde9ba7563039f9a00b0fb4535bae054"
+          "sha256": "e83450a3f5aea8db4f678c2261b9bc16710d62fde8d7a23f10799abe944a6295"
         }
       }
     },
@@ -1250,18 +1336,46 @@
         "relationsAndIcons": 3,
         "status": "matched"
       },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group",
+          "side-rail"
+        ],
+        "requiredRoles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0286,
+          "focusAreaRatio": 0.0061,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 0.8444
+        },
+        "budgets": {
+          "strong": 0.2,
+          "focus": 0.08,
+          "status": 0.0
+        }
+      },
       "files": {
         "dsl": {
           "path": "dsl/architecture-deployment.md",
-          "sha256": "90fbe43228d0d3cdc1c5167a98495d06d685a6853af61f9e6a1e3de255235e7d"
+          "sha256": "f1d87be05186168f6019bd11904afa5f1f07ff1696992710281e39991a09118e"
         },
         "svg": {
           "path": "svg/architecture-deployment-tech-blue-light-enterprise.svg",
-          "sha256": "423b86e1b83d30e46935208c8f394b110bf1849d5ec178a7c0ab159489f9ddbc"
+          "sha256": "a45d813c09c11d32f26ba254e28bff45722cdcb9d9fc1645744f6693563fc563"
         },
         "drawio": {
           "path": "xml/architecture-deployment-tech-blue-light-enterprise.drawio",
-          "sha256": "6c2586d2d86a7cb25daf5dfe9de1c994f68a59c47f5cb596b8bdb18d916df587"
+          "sha256": "dc6c11e81495d0afddcf181cd14e8f7f9f03e56f3577d707935e6f2a37b1d98c"
         }
       }
     },
@@ -1273,18 +1387,45 @@
         "relationsAndIcons": 3,
         "status": "matched"
       },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group",
+          "side-rail"
+        ],
+        "requiredRoles": [
+          "axis-cross",
+          "focus",
+          "side-rail"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0558,
+          "focusAreaRatio": 0.0061,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 0.8444
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.0
+        }
+      },
       "files": {
         "dsl": {
           "path": "dsl/architecture-technical.md",
-          "sha256": "8246e68ba7c53bc3c347efeb07bee30b1dc1ffb8531b1f904df085b88e6c22e4"
+          "sha256": "94e46adfaa7e8742dcf1934d4091b4e4dfbab8896950f085ed703f769f2da611"
         },
         "svg": {
           "path": "svg/architecture-technical-steady-red-blue-light-enterprise.svg",
-          "sha256": "052d97046c73cca9b75cda0724d3d99f99cfd1ff462f7367f58faa68719b5539"
+          "sha256": "cc7181b471287d1b231434589ac0aff21a4c0764591bdfdf7edea3a6804e2631"
         },
         "drawio": {
           "path": "xml/architecture-technical-steady-red-blue-light-enterprise.drawio",
-          "sha256": "34860e751c5dd83a902f239826f548456c64cb6a521829d1b25504092f8207c0"
+          "sha256": "25d8b68ee882f93e508c6233b011d87179def7bd11a694f053b44a8dbd1c947f"
         }
       }
     },
@@ -1296,6 +1437,30 @@
         "relationsAndIcons": 3,
         "status": "matched"
       },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.012,
+          "focusAreaRatio": 0.012,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.06
+        }
+      },
       "files": {
         "dsl": {
           "path": "dsl/comparison.md",
@@ -1303,11 +1468,11 @@
         },
         "svg": {
           "path": "svg/comparison-vibrant-light-enterprise.svg",
-          "sha256": "9c189942e7f22b8eb503b46b21e78c5035d9fd41484f8148e2840ff990618896"
+          "sha256": "d0b1ef8bf8157564750c6263f57478275e4b8ab3bff47c5eb4e2d53e18ef9191"
         },
         "drawio": {
           "path": "xml/comparison-vibrant-light-enterprise.drawio",
-          "sha256": "23ee9cf5e9ce1816ca10644d54da4750b179de259864e7296fbab9e391927b76"
+          "sha256": "6377c0e5bf7028c42d58d2b52b8f89646e6dee12fb1ea4c7a25b1b0b9e5dce37"
         }
       }
     },
@@ -1319,6 +1484,30 @@
         "relationsAndIcons": 3,
         "status": "matched"
       },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.012,
+          "focusAreaRatio": 0.012,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.12,
+          "focus": 0.07,
+          "status": 0.0
+        }
+      },
       "files": {
         "dsl": {
           "path": "dsl/decision-matrix.md",
@@ -1326,11 +1515,11 @@
         },
         "svg": {
           "path": "svg/decision-matrix-mint-green-light-enterprise.svg",
-          "sha256": "11427cc16589dfb84502c7aff5aae82e96129779f711115e8f8d2c51ee49c648"
+          "sha256": "258a8e7ec35c1fa7d2f423d717ae795f384e9287b7616b87be21f14e9c992f7a"
         },
         "drawio": {
           "path": "xml/decision-matrix-mint-green-light-enterprise.drawio",
-          "sha256": "c9e217fdf48c2034f1d463ded2eef236b91f8679944603e07694a3bf984cd809"
+          "sha256": "52ee482909ec09d0381b6dac3ebb73dcc56f9c74b9cf840f9ab938b40b088492"
         }
       }
     },
@@ -1338,22 +1527,49 @@
       "id": "flow-branching",
       "specHash": "97909e4230dc39af55592da34512b77d22f9f86c54147527bdf6ba46ae3b296c",
       "pair": {
-        "boxes": 17,
+        "boxes": 13,
         "relationsAndIcons": 9,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group",
+          "status-error",
+          "status-warning"
+        ],
+        "requiredRoles": [
+          "focus",
+          "status-error",
+          "status-warning"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0153,
+          "focusAreaRatio": 0.0153,
+          "statusAreaRatio": 0.0256,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.06
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/flow-branching.md",
-          "sha256": "9bab6b02227b174f253e053ffdfcf8c13af534966292841998ff92656280ba97"
+          "sha256": "f0ae485263ea86138703d8bc130d7e2fa89896bfc0b38dcb700d3b2c8f62c346"
         },
         "svg": {
           "path": "svg/flow-branching-vibrant-light-enterprise.svg",
-          "sha256": "acb9e91391a3b78ffae5943ba0fc60838edd4ccc152637b57066bb3ee706e778"
+          "sha256": "0bb6be0d588247f2b15fe227a884e6adf696ffb0f3f6caa4564d923173dedc29"
         },
         "drawio": {
           "path": "xml/flow-branching-vibrant-light-enterprise.drawio",
-          "sha256": "8f9b6c2a3356fd2e12bc86792fa41679de5048a1611be0110166c9971df3f01d"
+          "sha256": "67a72b90cacd34405e8cd8c6d7d2ba4f2d394a64884186173b8bbd8186865d8c"
         }
       }
     },
@@ -1361,22 +1577,46 @@
       "id": "flow-linear",
       "specHash": "b0840d889bb3654622c421723d62d08788985f1d37d6a8d42076551d443e16d9",
       "pair": {
-        "boxes": 17,
+        "boxes": 13,
         "relationsAndIcons": 8,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0145,
+          "focusAreaRatio": 0.0145,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.2,
+          "focus": 0.08,
+          "status": 0.0
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/flow-linear.md",
-          "sha256": "a9b7327a58b8f0d4c17f5acacfc373839b3617fd3aade21acbf2ef5156633776"
+          "sha256": "3643a5af9baeca6a87d2f1db522c89b868e3c3422ddc0c58922fcb1d1b34721c"
         },
         "svg": {
           "path": "svg/flow-linear-tech-blue-light-enterprise.svg",
-          "sha256": "8e89e1c16face6be2c86870c7b01c724a9685ba272790653d121510908406cfc"
+          "sha256": "58f252546ec89e451739964ad2048df7baf57d77e154562fc1652c94e337e4b3"
         },
         "drawio": {
           "path": "xml/flow-linear-tech-blue-light-enterprise.drawio",
-          "sha256": "9e5abc397d8b3343871c1b5b0702ffe1f0a08ce6d5e52b2da49e36846a732b1c"
+          "sha256": "b69107594937fe0546034c3f6b4fb650ecac0e01d09a67ec6433f1c55f5414d5"
         }
       }
     },
@@ -1384,22 +1624,46 @@
       "id": "lifecycle",
       "specHash": "66d775d0eb53044bd34815b4cc36c381bbd903c94c2e25518015a2117f8401e0",
       "pair": {
-        "boxes": 17,
-        "relationsAndIcons": 8,
+        "boxes": 13,
+        "relationsAndIcons": 7,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0157,
+          "focusAreaRatio": 0.0157,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.06
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/lifecycle.md",
-          "sha256": "38c7c64881f40c1a4bec85d2f31417a0efac5dfc154d964c8b510a4fc50aa416"
+          "sha256": "7ca8e0cf37513a5030764df467637031c763bbff0c9ac29132912b91fceb36d7"
         },
         "svg": {
           "path": "svg/lifecycle-vibrant-light-enterprise.svg",
-          "sha256": "91afe866500d0fa115005bebc8b0c708997ea143b1a0f730bcdeafeb00be3be0"
+          "sha256": "5601e6ec092ba0470d28166a0fbac0389ba3e277798f18287f0f8dd64cdaced8"
         },
         "drawio": {
           "path": "xml/lifecycle-vibrant-light-enterprise.drawio",
-          "sha256": "556b3868d727740dd72b70f161a8f759186ed6b8f20836e29ab69e3669d1d3a3"
+          "sha256": "b491dfa6c136abdc60e35f4ae1aef1ed2325f4ea69f74198cb8a38d34ac1b0e2"
         }
       }
     },
@@ -1407,22 +1671,45 @@
       "id": "relationship-dependency",
       "specHash": "d8366d11e5862a2e43b032cf75b02743fa7ecb48e6c80ab94eb1448277b1497e",
       "pair": {
-        "boxes": 17,
+        "boxes": 13,
         "relationsAndIcons": 9,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "focus",
+          "group",
+          "side-rail"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0282,
+          "focusAreaRatio": 0.0282,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.0
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/relationship-dependency.md",
-          "sha256": "225ba8a4464c7a282b2fb85e870d7dafe51c496a28b075e2a0a84e496c7128fd"
+          "sha256": "efda66cf19db1ab35c9d90841f94a9307c6bf2be780eebd9db578cac0ff6f571"
         },
         "svg": {
           "path": "svg/relationship-dependency-steady-red-blue-light-enterprise.svg",
-          "sha256": "5e9b1c2af8becdc33cb2cb0955898adc3282448097b62cae865d2dc7b1f469c5"
+          "sha256": "f0406bec0fafafea17bfba402fb33354ed59c09d96cf1106e0a5c21091ba4c19"
         },
         "drawio": {
           "path": "xml/relationship-dependency-steady-red-blue-light-enterprise.drawio",
-          "sha256": "e843e4d82daebab786d416b1e4834d205a857c573939ed837106bf7fe7936523"
+          "sha256": "816dad195bd808d0a6ba792810b8dd4238e2e4c985849e16dfb123ab1ee4cae1"
         }
       }
     },
@@ -1430,22 +1717,46 @@
       "id": "relationship-er",
       "specHash": "02e3f205d1e9cd50d7e3510407b03fd132a43e219b7a907d82868ffb4ee67163",
       "pair": {
-        "boxes": 17,
+        "boxes": 13,
         "relationsAndIcons": 9,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0282,
+          "focusAreaRatio": 0.0282,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.12,
+          "focus": 0.07,
+          "status": 0.0
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/relationship-er.md",
-          "sha256": "65d881b6c57b87c812653ad26aa605ca2dd1407b221819d5322affca8211da00"
+          "sha256": "68edd5eeed7138bac2b43d9671085cba9b9d7010c3d4d0985bb5288f5ecdce21"
         },
         "svg": {
           "path": "svg/relationship-er-mint-green-light-enterprise.svg",
-          "sha256": "fbeb4f88cfeacb6ddc5602edc7f93b5cc8c71e75ec2c3852b4d674e72460bf6b"
+          "sha256": "9f3eff53f698a9898d3c5ff12e2939e25d37c5415e0345f2825867dbeeb5b9ca"
         },
         "drawio": {
           "path": "xml/relationship-er-mint-green-light-enterprise.drawio",
-          "sha256": "7813d503d8e03c72e33852f69ab87fffb23dcde67abd53d4e7864fd83e8c152c"
+          "sha256": "bbf5e27432899bb50cec60f1fbf34c56660e9f2caf5d6e78a39ce42a58ae4276"
         }
       }
     },
@@ -1453,22 +1764,46 @@
       "id": "relationship-knowledge",
       "specHash": "c0978fbddb119d2e329910036a6088e784b16615cc48e0dcd3225efaec01fdf6",
       "pair": {
-        "boxes": 17,
+        "boxes": 13,
         "relationsAndIcons": 9,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0282,
+          "focusAreaRatio": 0.0282,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.12,
+          "focus": 0.07,
+          "status": 0.0
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/relationship-knowledge.md",
-          "sha256": "47a7ca8b1deda29d1b025a7b75f07663eb07247a4fe0daf515b5809a69a3a1e7"
+          "sha256": "776a9c7c4bf0b5c8edbdcce4f3248ca8b5a35e82979a29e81a74f470ff9df9be"
         },
         "svg": {
           "path": "svg/relationship-knowledge-mint-green-light-enterprise.svg",
-          "sha256": "80106ceee485d53e10dca92edd26377750188492a94a60adf82bbb8006a07d63"
+          "sha256": "e80b11947517ed4575aec4bf11d4fffd7f522cd7ec0622aca973b04a87256857"
         },
         "drawio": {
           "path": "xml/relationship-knowledge-mint-green-light-enterprise.drawio",
-          "sha256": "af2b0e50de9309565fddd1539c114bc15693989c1ebe5fc43ebe1686939ca463"
+          "sha256": "23425f7509ede097a05738e741a1739ac95623fc9fbda2b7253473bfc801ec60"
         }
       }
     },
@@ -1476,22 +1811,45 @@
       "id": "roadmap",
       "specHash": "00b1305f3bc5de6932df57fe3ceb0a2f37afd2cb3b0b7e8f2df6337f1c2e73c4",
       "pair": {
-        "boxes": 14,
+        "boxes": 10,
         "relationsAndIcons": 8,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0232,
+          "focusAreaRatio": 0.0232,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.0
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/roadmap.md",
-          "sha256": "fbd80a3fa37c90ee84fc075d4a86da18df569adf9f8dcd37d4559a7e7eb00eb5"
+          "sha256": "74e53b9db5fae23ad8dcfdd6a9649049eeff54478b42759297e36599f7f1e36e"
         },
         "svg": {
           "path": "svg/roadmap-steady-red-blue-light-enterprise.svg",
-          "sha256": "76eba813979f8f2ddb52f9b7c7b1e96457936b94ceec542a86e48e6023ccd6bf"
+          "sha256": "89eed4e135bdca55667125c7d54539de303e878363e1324d10bdd595b1282fb3"
         },
         "drawio": {
           "path": "xml/roadmap-steady-red-blue-light-enterprise.drawio",
-          "sha256": "266a17938dcbf34892e9e6a70b51c3c3aa6c59089dac49f51085943421b31bdf"
+          "sha256": "5bd354302707d728125495dd5f6979b144345e68b64d249a05cbf6a27bc95c7a"
         }
       }
     },
@@ -1499,22 +1857,45 @@
       "id": "sequence",
       "specHash": "6a3c13a9ebd4b6360b0538aa39c1f91687769d5edc1981c1e9cca641d05ceea6",
       "pair": {
-        "boxes": 15,
+        "boxes": 11,
         "relationsAndIcons": 14,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0109,
+          "focusAreaRatio": 0.0109,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.2,
+          "focus": 0.08,
+          "status": 0.0
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/sequence.md",
-          "sha256": "d8f0ba8ddac0fcf5f96d62247263ffdf9e8e42724abfa78c332f946420e70b95"
+          "sha256": "56e453df7e7e3892849247c4c91060a6d6bb367645b77f3425bd3e3a771dc020"
         },
         "svg": {
           "path": "svg/sequence-tech-blue-light-enterprise.svg",
-          "sha256": "4561a301d1c39c4b4c0e4fa0fba637fe240dc59b29a748ec8f627161917bf2f0"
+          "sha256": "b58da6c087db6243a19ed0a9d3f2635c4d7a0257499d1f313ee39706ffed2722"
         },
         "drawio": {
           "path": "xml/sequence-tech-blue-light-enterprise.drawio",
-          "sha256": "9e535631874e6c49d87e037e47b967a30a5a4bd6b5113fe847ec02b985251c85"
+          "sha256": "d3d23b92244d1ab477a174e5b884491b7d77d23b95cf5e49a380ec1d8584d20a"
         }
       }
     },
@@ -1522,22 +1903,46 @@
       "id": "state",
       "specHash": "fea3dc7d4c0aa87737b106d99da117d12538405dc3b630fbd69027d2f98e7110",
       "pair": {
-        "boxes": 17,
-        "relationsAndIcons": 8,
+        "boxes": 13,
+        "relationsAndIcons": 7,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0157,
+          "focusAreaRatio": 0.0157,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.2,
+          "focus": 0.08,
+          "status": 0.0
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/state.md",
-          "sha256": "80f2fdeceb91bf9d179192816e6bcbe2ac2353ac216c16d331be0e4a2018b657"
+          "sha256": "3b287e7d5bbd806c7be187d963d94d06a3d20ed42e7d03176b3133ca44f661da"
         },
         "svg": {
           "path": "svg/state-tech-blue-light-enterprise.svg",
-          "sha256": "0ebd0f16af7fcb3101a814f10e8c8d91f48f36d6a0e3e4125f654b726f735272"
+          "sha256": "d23821a31101de392844c02d61e96e66a8eb7a8c0ea6089f9ad5ded2ef8e5fe5"
         },
         "drawio": {
           "path": "xml/state-tech-blue-light-enterprise.drawio",
-          "sha256": "b776a8de53e209798bd5b5a0e7c24018d451b6d15c6e013915229888ed0546de"
+          "sha256": "b27beb9e06f3fb43723ee26a4ccb7a14759d31e48b7dd6d78d6b13b995c48f9b"
         }
       }
     },
@@ -1545,22 +1950,46 @@
       "id": "summary",
       "specHash": "bc08a09dbd459563d9657cba62c5e60a783064927876cc7654fd12af0f683361",
       "pair": {
-        "boxes": 17,
+        "boxes": 13,
         "relationsAndIcons": 9,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "data-flow",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0282,
+          "focusAreaRatio": 0.0282,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.06
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/summary.md",
-          "sha256": "00392277fa03970bf1b32d4c6d5d839874709f0fec46963e9b612161fbf85a18"
+          "sha256": "f50b2a222fa427ce9cda0a5fd4b24cbefc072e26a2f2a9b05fc0e92ccef1adcc"
         },
         "svg": {
           "path": "svg/summary-vibrant-light-enterprise.svg",
-          "sha256": "76acfa0cd372dd0708dc0467ae078307131273c0e6b5bfadb7498dcfe59d1e5c"
+          "sha256": "801c3786f74aecd3bb588ab2ff6a2f71d35fdfc8d3c4bd642d0ebf30d3f637cc"
         },
         "drawio": {
           "path": "xml/summary-vibrant-light-enterprise.drawio",
-          "sha256": "a39e356e1a4cf0166e3fa529c1084fb4fdb39f1402b0dc9928dd62f8962b9fd9"
+          "sha256": "0cc0397917c17a99b95ec83dff427e72c7bd48bb336d741e8cf915021a37b6b8"
         }
       }
     },
@@ -1572,18 +2001,42 @@
         "relationsAndIcons": 3,
         "status": "matched"
       },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "focus",
+          "group",
+          "side-rail"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0436,
+          "focusAreaRatio": 0.0125,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 0.8029
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.0
+        }
+      },
       "files": {
         "dsl": {
           "path": "dsl/swot.md",
-          "sha256": "2a42c3c5bbb7994db013a690b0372ac1857b4022bda35897f538dec946cf6f9e"
+          "sha256": "8c1db4d0ac6e9a8a7b2f57e709c9705c51930e7647e1c6a7364b52cb60a90bef"
         },
         "svg": {
           "path": "svg/swot-steady-red-blue-light-enterprise.svg",
-          "sha256": "77458e03b90b7484c22c8ce4118d7faa79d0fe2849065a3783bad4f7e01fb76b"
+          "sha256": "67ceee98f9122708918697de2f3f6e67518de1644e743dfcd9af76d0bbf2e022"
         },
         "drawio": {
           "path": "xml/swot-steady-red-blue-light-enterprise.drawio",
-          "sha256": "87aa57250da1aaf8cf955c4f0bc8bc2b5b5d2fb92304ea1fc2549f4532e3c4ba"
+          "sha256": "0a1eb0a674ce1d291bc122b9768db60a677894caa4eeb2a59ac5e7540054168d"
         }
       }
     },
@@ -1591,22 +2044,45 @@
       "id": "timeline",
       "specHash": "87dc9366e4f0f0a7ad7485864863a8ed8bd47960cb89b1f88ce5d0bfab6f5539",
       "pair": {
-        "boxes": 15,
+        "boxes": 11,
         "relationsAndIcons": 9,
         "status": "matched"
+      },
+      "recipe": {
+        "status": "matched",
+        "roles": [
+          "axis-cross",
+          "axis-main",
+          "focus",
+          "group"
+        ],
+        "requiredRoles": [
+          "focus"
+        ],
+        "metrics": {
+          "strongAreaRatio": 0.0226,
+          "focusAreaRatio": 0.0226,
+          "statusAreaRatio": 0.0,
+          "surfaceCardRatio": 1.0
+        },
+        "budgets": {
+          "strong": 0.18,
+          "focus": 0.08,
+          "status": 0.0
+        }
       },
       "files": {
         "dsl": {
           "path": "dsl/timeline.md",
-          "sha256": "6e96dd3b3983f5811011fd320b5cf24bef9dc4643476fc0d5f8847d4ea37693e"
+          "sha256": "cfffa0f76e1cd3753e3b4f7639dcbbd5e53384b7b7a88fc3baf11ea2a6e3a13f"
         },
         "svg": {
           "path": "svg/timeline-steady-red-blue-light-enterprise.svg",
-          "sha256": "2b0a0bd4c2a21d3382b134e9fed2fe396f90edce6c8c7446b1c6a0e37d20ad51"
+          "sha256": "22320c093a788e46cd1c22c9fe1492fb7fdaa5c4e9d4494e4160d78a361a5029"
         },
         "drawio": {
           "path": "xml/timeline-steady-red-blue-light-enterprise.drawio",
-          "sha256": "d0c99832a47bbc5361fceb3e6da0c5dd286f58f9b0ca5d32e6e7b21656f2a9da"
+          "sha256": "ab228eae3c5a51ef49f07fbe2f9ed61411c22272a2b9c241814994cb5f92d35b"
         }
       }
     }
@@ -1616,7 +2092,7 @@
       "id": "architecture-application",
       "svg": {
         "path": "test-outputs/diagram-types/svg/architecture-application-tech-blue-light-enterprise.png",
-        "sha256": "c999835b7fa611676b348517a690fd26e30e5a16034be0ab74795e17dad11653",
+        "sha256": "c11c13bf7d9908acdbcdf7a64bebade0d2473fb2b06b8d9105a3f290dbf65b66",
         "dimensions": [
           1560,
           1000
@@ -1624,7 +2100,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/architecture-application-tech-blue-light-enterprise.png",
-        "sha256": "1baca0009019b9cd3b6251a5584579e527832c1016c46136441ceae92afce686",
+        "sha256": "82da2f561566d79b5e606f9725dc6e3ebf1fa13f475e88daa17ff92ff6b222ea",
         "dimensions": [
           1472,
           939
@@ -1635,7 +2111,7 @@
       "id": "architecture-business",
       "svg": {
         "path": "test-outputs/diagram-types/svg/architecture-business-vibrant-light-enterprise.png",
-        "sha256": "c80046269f03319cb30ca870aaeebaea7abe4c31f8b08773f313144424a653e8",
+        "sha256": "49a0bb2ad470221e0f7cfd81ebbd831bc400c77948ed20524f221e3b25230a30",
         "dimensions": [
           1560,
           1000
@@ -1643,7 +2119,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/architecture-business-vibrant-light-enterprise.png",
-        "sha256": "7b92dbfd760e3b72978147059d34fb40b5c260a97d04a7e8bac12ab36d956bf8",
+        "sha256": "9925929894b8e330c63b1ff596d0365eff43ee62aaebeda5fe92c5d79d88a79d",
         "dimensions": [
           1472,
           939
@@ -1654,7 +2130,7 @@
       "id": "architecture-data",
       "svg": {
         "path": "test-outputs/diagram-types/svg/architecture-data-mint-green-light-enterprise.png",
-        "sha256": "aeac91518adbd36a3fe13c912ff5cc5dad4980496c2d8b2392ee760414b24570",
+        "sha256": "dfa7ca5596b3d2062ea071925623451a4267f168b0ebbebefe828e49c7c63299",
         "dimensions": [
           1560,
           1000
@@ -1662,7 +2138,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/architecture-data-mint-green-light-enterprise.png",
-        "sha256": "8992f67fd06137b0d121ee8dc50904592c8cc3c98b1ed5a3f590e5a34e31b256",
+        "sha256": "b2bcf1e1fb3c893ed61087ebbd78d82b09b0a2390c54c26d5aec97c7b63a49b7",
         "dimensions": [
           1472,
           939
@@ -1673,7 +2149,7 @@
       "id": "architecture-deployment",
       "svg": {
         "path": "test-outputs/diagram-types/svg/architecture-deployment-tech-blue-light-enterprise.png",
-        "sha256": "7dab73dc28f305c0f999c3b8032c98995accbc3a182d54421b9ff36820cf7ed9",
+        "sha256": "77e3196e1abbcaf8d3033dfb99ade7e4e1d1ada5edbcb704ff97ceec3a26345f",
         "dimensions": [
           1560,
           1000
@@ -1681,7 +2157,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/architecture-deployment-tech-blue-light-enterprise.png",
-        "sha256": "ae29611725c5624aba0599f80523e6aa4ce34dfb4cf99b026ddbed94f594b65c",
+        "sha256": "63d5777951e56370688ce3d46b208853d30890dfc243a478875f394af9880fb1",
         "dimensions": [
           1472,
           939
@@ -1692,7 +2168,7 @@
       "id": "architecture-technical",
       "svg": {
         "path": "test-outputs/diagram-types/svg/architecture-technical-steady-red-blue-light-enterprise.png",
-        "sha256": "3d47ab65eb987080b504bab02e0ee9616b68e8353d8bd1ad570fa77b38b2d246",
+        "sha256": "cf3ce4293726f7cbfffd055908cb644182837016fa98d679988fb8e439985181",
         "dimensions": [
           1560,
           1000
@@ -1700,7 +2176,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/architecture-technical-steady-red-blue-light-enterprise.png",
-        "sha256": "492c53849881f64f5edf68abe1ea60396c2d67cc4c96d805c587b7139e2656f8",
+        "sha256": "de0ff194bc42391a9b9dfcdf19d1b13fd001f9c56fefd430b2955c848b51e3a8",
         "dimensions": [
           1472,
           939
@@ -1711,7 +2187,7 @@
       "id": "comparison",
       "svg": {
         "path": "test-outputs/diagram-types/svg/comparison-vibrant-light-enterprise.png",
-        "sha256": "c2ae676a47951cffd0deb58e0b19dac9ab2417d4bd204d6e8050b33d673d813a",
+        "sha256": "4a7490f5d772354d1e9521d7a7d50cbce5158caf3294c808b0388ffd35f17d5b",
         "dimensions": [
           1560,
           1000
@@ -1719,7 +2195,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/comparison-vibrant-light-enterprise.png",
-        "sha256": "32ce9ca4e7f6b140555c0a2a0594b53e3ddd37cce9907f1a31ddade1140c2e01",
+        "sha256": "dd541a20df3b17767e4b3067b07264b519720a45a78ff826adc6dea40817e39f",
         "dimensions": [
           1472,
           939
@@ -1730,7 +2206,7 @@
       "id": "decision-matrix",
       "svg": {
         "path": "test-outputs/diagram-types/svg/decision-matrix-mint-green-light-enterprise.png",
-        "sha256": "ca6940885538c3d1e7be8c1d616c8c75ad3e00aa283d7261bc1daa2fd63ee0bb",
+        "sha256": "89eaa71cec5ba02d8b241101b9c028192afa3ab9bd2a617a5530bac5fbd4f290",
         "dimensions": [
           1560,
           1000
@@ -1738,7 +2214,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/decision-matrix-mint-green-light-enterprise.png",
-        "sha256": "a5f9e42be588245124d008698eea973d979e80a710a8898f6fb015eecdaf0ff4",
+        "sha256": "82b70a2b62126ae61c1411f76dae035a686946291afacc82c242f4fccad05547",
         "dimensions": [
           1472,
           939
@@ -1749,7 +2225,7 @@
       "id": "flow-branching",
       "svg": {
         "path": "test-outputs/diagram-types/svg/flow-branching-vibrant-light-enterprise.png",
-        "sha256": "6c0d30771ca5ffc1e1d0d6c37bb99030799a51e28f3033f0b9ce1bfb2219e35c",
+        "sha256": "6060be82636108016c7bab89df099a584e87eaafc971b5d95785b30878413c66",
         "dimensions": [
           1560,
           1000
@@ -1757,7 +2233,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/flow-branching-vibrant-light-enterprise.png",
-        "sha256": "ac1903ca92d34e1b3d457ab9a50d369cf43a98c5310f3f31b0015b9a054eb42b",
+        "sha256": "0013ef0c6cf010a783029b5dd7788c042e67653c323f4458a7fd9d36a6f925a4",
         "dimensions": [
           1472,
           939
@@ -1768,7 +2244,7 @@
       "id": "flow-linear",
       "svg": {
         "path": "test-outputs/diagram-types/svg/flow-linear-tech-blue-light-enterprise.png",
-        "sha256": "d674f67046d5d17fbf3c87478c10d823b134d5e531498b213c4de744dc6b7139",
+        "sha256": "cb0b9d3e737cfecd9c1e3f846c4883df824ced68b9413978ad15ef428154335f",
         "dimensions": [
           1560,
           1000
@@ -1776,7 +2252,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/flow-linear-tech-blue-light-enterprise.png",
-        "sha256": "1ff482ce5a541e7900337f2ce69b78d85f982ee856036769b556363ab416a08a",
+        "sha256": "6459781913e0deeda5572e1da2914f51b1d2d97d710ba4d43d165dcbad572c98",
         "dimensions": [
           1472,
           939
@@ -1787,7 +2263,7 @@
       "id": "lifecycle",
       "svg": {
         "path": "test-outputs/diagram-types/svg/lifecycle-vibrant-light-enterprise.png",
-        "sha256": "d7579198c7506770db0f2d469c2ebb2ffce666bf1025367e427eae05907b385f",
+        "sha256": "9e42be08de7f4e1c58e6dc9277a103d88e5878d7d1f04ec58cb6cc083a3b3a99",
         "dimensions": [
           1560,
           1000
@@ -1795,7 +2271,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/lifecycle-vibrant-light-enterprise.png",
-        "sha256": "05905a14f7ec741f1390b8ab79e0a5aebf678b00ad6ad66441e96cc46cad9ee6",
+        "sha256": "1b1b6876ee9fe4daf3630671b9a93929e95ccb772a6413ef1829216cd52fa425",
         "dimensions": [
           1472,
           939
@@ -1806,7 +2282,7 @@
       "id": "relationship-dependency",
       "svg": {
         "path": "test-outputs/diagram-types/svg/relationship-dependency-steady-red-blue-light-enterprise.png",
-        "sha256": "7db31a300aaa360dd6606684cfdd264b16b4ff5aefd4861101a05a52bd2fbd6a",
+        "sha256": "f2ebd423cb9fb9e6752d17575e842f017442c28507210691e6d2091eb5314bb5",
         "dimensions": [
           1560,
           1000
@@ -1814,7 +2290,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/relationship-dependency-steady-red-blue-light-enterprise.png",
-        "sha256": "be58bddd533ee4cb9074839bc10e3ffee9a014b8453b8be09179985d4e9e3498",
+        "sha256": "a2116bac786f7949adce88daa2c12191eaf9f3e7b73039e5ea2890dfe7a81322",
         "dimensions": [
           1472,
           939
@@ -1825,7 +2301,7 @@
       "id": "relationship-er",
       "svg": {
         "path": "test-outputs/diagram-types/svg/relationship-er-mint-green-light-enterprise.png",
-        "sha256": "ffda777bb97b6d9ac366a7f3c61fc0a988fae9fd9f7c394c271c1075f6e3852b",
+        "sha256": "8ab58d07e7518d0129b3f1ca8bda884845ede784fb1cb1b6d4dda7ebe9ce011f",
         "dimensions": [
           1560,
           1000
@@ -1833,7 +2309,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/relationship-er-mint-green-light-enterprise.png",
-        "sha256": "780c2921579304943ac2acb8e76b3a7b6a694fb4759e2cd195e215370367b90d",
+        "sha256": "9a5f671f05929e29de94715a4ba5db15b0508e973f10ed182904f8c32997f1d6",
         "dimensions": [
           1472,
           939
@@ -1844,7 +2320,7 @@
       "id": "relationship-knowledge",
       "svg": {
         "path": "test-outputs/diagram-types/svg/relationship-knowledge-mint-green-light-enterprise.png",
-        "sha256": "7cc43c88a8582958c36596a66035e1eecf4e5545eae1c260b79d6845d3ebf940",
+        "sha256": "776105cce1953c43cd6538c0396f38e55a3174a1b655d245011597cf25f903a9",
         "dimensions": [
           1560,
           1000
@@ -1852,7 +2328,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/relationship-knowledge-mint-green-light-enterprise.png",
-        "sha256": "e5f8690b861d0b3395aaac33c687974519978f725498f3ed4257de6093932f32",
+        "sha256": "64ffdf834765af598df8775b267897fb07e503da94b9ab11ff3e1229c93b4bee",
         "dimensions": [
           1472,
           939
@@ -1863,7 +2339,7 @@
       "id": "roadmap",
       "svg": {
         "path": "test-outputs/diagram-types/svg/roadmap-steady-red-blue-light-enterprise.png",
-        "sha256": "4d3272bc08c282851eb20d0e7c30a5933479c75c172d438da260eb4aeb29879e",
+        "sha256": "cf65c8ec2b57e8fa19c64b6402c125d0dcc7818a7f7ae7e594d5d2f8d48bf7f1",
         "dimensions": [
           1560,
           1000
@@ -1871,7 +2347,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/roadmap-steady-red-blue-light-enterprise.png",
-        "sha256": "ecfdf9091c694234c0e35aa5dba0914da962d5ec13946c410af84ddfbfa36489",
+        "sha256": "4c1a1b435f3c4036f4c3bb87c1ec17dc6935c17de17f8386effb48be7ea67176",
         "dimensions": [
           1472,
           939
@@ -1882,7 +2358,7 @@
       "id": "sequence",
       "svg": {
         "path": "test-outputs/diagram-types/svg/sequence-tech-blue-light-enterprise.png",
-        "sha256": "633da8e674f97436968e9c18a1d2c97a301053608d31029401783dfee0bde67e",
+        "sha256": "9d99741fe393cd1f99b296da8fed31e292adb63e1cd2379cf9d02d3cce3e76fa",
         "dimensions": [
           1560,
           1000
@@ -1890,7 +2366,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/sequence-tech-blue-light-enterprise.png",
-        "sha256": "3d61b109d6e81f5ba87ae85cf31c7dc9b4264f3744d9edfeeb20e167e390e0a2",
+        "sha256": "b463df3c84708eaddd9644756466e1b12137f7ea706b53c7ec1d3d4cbd723977",
         "dimensions": [
           1472,
           939
@@ -1901,7 +2377,7 @@
       "id": "state",
       "svg": {
         "path": "test-outputs/diagram-types/svg/state-tech-blue-light-enterprise.png",
-        "sha256": "5d07d9a2570de406358076577c9cc94cce2e6fe7d6bc706d5a2cf35ea4a1add2",
+        "sha256": "1677d511530f9b616d2b9d9b16e994efd9eae14f9f00d6ebcc3b873dd88a7bb8",
         "dimensions": [
           1560,
           1000
@@ -1909,7 +2385,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/state-tech-blue-light-enterprise.png",
-        "sha256": "9d7c11fb68a5c80d71db9b4bc99b9e39b48a4b3ecc35203f954c10b5a28eabc2",
+        "sha256": "9d8e4ab49ca733c7477b63651592533f5da1fe65f3b11e3518eea744d3cc5a87",
         "dimensions": [
           1472,
           939
@@ -1920,7 +2396,7 @@
       "id": "summary",
       "svg": {
         "path": "test-outputs/diagram-types/svg/summary-vibrant-light-enterprise.png",
-        "sha256": "3522d113aeea6c4a3ff5add5798bcba911246107ea7b37125e08e6580a1c915b",
+        "sha256": "f7e6c236a98eb7862ebd364244531facc0e58eedf7e72710065601379145bc9c",
         "dimensions": [
           1560,
           1000
@@ -1928,7 +2404,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/summary-vibrant-light-enterprise.png",
-        "sha256": "e79119a8bcdbeaaa483489a8a130d9a0ca4dd651239ff7efc2793b5a8468d655",
+        "sha256": "457bafab0485b0cf5e7d8e27a29e00c5866432208836721dcfeaa456b155908e",
         "dimensions": [
           1472,
           939
@@ -1939,7 +2415,7 @@
       "id": "swot",
       "svg": {
         "path": "test-outputs/diagram-types/svg/swot-steady-red-blue-light-enterprise.png",
-        "sha256": "fceff8dc85b68a93fed4b9e2157d088cded283da54bc305595aa3f28fdc785fb",
+        "sha256": "37a04b444ffecdb62b251650d870c851d59de7463a04e0249e4d8ebb86ddbce7",
         "dimensions": [
           1560,
           1000
@@ -1947,7 +2423,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/swot-steady-red-blue-light-enterprise.png",
-        "sha256": "6cedeae630b66afd9525294b212561c61c3925113d0f3ee3e10eb5a5c9feb82f",
+        "sha256": "5bd967b52bd85b977903c542b351d471f37aaf076e465974113e4051e48ee257",
         "dimensions": [
           1472,
           939
@@ -1958,7 +2434,7 @@
       "id": "timeline",
       "svg": {
         "path": "test-outputs/diagram-types/svg/timeline-steady-red-blue-light-enterprise.png",
-        "sha256": "a5af2e60951ce1313092fe65f5ae9255829844dbf2aef5f01c2e0bc265d767cc",
+        "sha256": "fe4c97bd1d7587850e338233c1b07c2e0f163a584c804028d3748d0136a3f8ff",
         "dimensions": [
           1560,
           1000
@@ -1966,7 +2442,7 @@
       },
       "drawio": {
         "path": "test-outputs/diagram-types/xml/timeline-steady-red-blue-light-enterprise.png",
-        "sha256": "3107fb0f1d25b235e3eff5d03db85e9b32d95276c08282c821f206cff22e0ac4",
+        "sha256": "30f4fef8903945d5206e81d133eb590caad88a9a20071c91799bd385b80aa007",
         "dimensions": [
           1472,
           939

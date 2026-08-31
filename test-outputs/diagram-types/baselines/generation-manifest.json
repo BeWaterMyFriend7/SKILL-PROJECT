@@ -14,24 +14,24 @@
       "legacyInputFiles": [],
       "dsl": {
         "path": "dsl/tech-blue.md",
-        "sha256": "e2adebcac07d1caee40d041003e20549c2e055b0e587ae9cff9a205b43780bf9"
+        "sha256": "19e710c8840e9a63e126e4b16750a89a93e6977421544830c958957d88e38da1"
       },
       "svg": {
         "path": "svg/tech-blue.svg",
-        "sha256": "659ecc40e621b3fb426755798783cb21191b778b3e92999bcde9cdb2421e4f67"
+        "sha256": "60f06219f45e6ac26d996e33e76217f031ffb6c73e530d19306df762e6491150"
       },
       "drawio": {
         "path": "xml/tech-blue.drawio",
-        "sha256": "353cf12fd70280a95cde47ceb3c833fc8b694ccfa90c1333be05610cb6445cc5"
+        "sha256": "15de9f7f213881739b6e56f028b5e777e3341faf40044096e535d14beed83fce"
       },
       "layout": "mixed-axis",
       "dominantAxis": "x",
       "roleColors": {
-        "axis-main": "#5B8FF9",
+        "axis-main": "#2AA7C8",
         "axis-cross": "#3B6EDC",
         "side-rail": "#2D56B3",
         "focus": "#3B6EDC",
-        "data-flow": "#2AA7C8",
+        "data-flow": "#5B8FF9",
         "group": "#5B8FF9",
         "connector": "#3B6EDC"
       }
@@ -49,11 +49,11 @@
       },
       "svg": {
         "path": "svg/vibrant.svg",
-        "sha256": "efc0adf065f91ff84011db9cc1103773dd8189d5fb702483fabd0227769c4ada"
+        "sha256": "e7ebe9c743708f7f67c569c35f44548bcb98763f69866be8248f2dc691685174"
       },
       "drawio": {
         "path": "xml/vibrant.drawio",
-        "sha256": "57a71ff0f853ed3bc79c7acc0fcbe11eae99f33bce943cc615b4a7f1ee6a6c75"
+        "sha256": "09bc92c33c39e1548b64d75d1f1522f48039a07aba6a50ab940fec5213e84b81"
       },
       "layout": "mixed-axis",
       "dominantAxis": "x",
@@ -80,11 +80,11 @@
       },
       "svg": {
         "path": "svg/mint-green.svg",
-        "sha256": "b38e6468318455280d0e52a6dcbb1f1324b8ded6cf08cfba0ee78f30624614bd"
+        "sha256": "e3982fa1cc2e099f7d3615334d2c4fe4f1c733e59f71f4022ebef66a5d84103c"
       },
       "drawio": {
         "path": "xml/mint-green.drawio",
-        "sha256": "1a6ee4c834f7b8df6d1850671095af02f6879025b0072b51114f0706f4990109"
+        "sha256": "d7aaaac294d1c86ecce235d97ac511410f39c03fd7b15214ae4ee40b846c69be"
       },
       "layout": "mixed-axis",
       "dominantAxis": "x",
@@ -107,15 +107,15 @@
       "legacyInputFiles": [],
       "dsl": {
         "path": "dsl/steady-red-blue.md",
-        "sha256": "0b910a117321beab061ad3900406cac9b0bfd437ace52d074cdb0694b0944a17"
+        "sha256": "dbc145c23518f988a3dc4bb893c1433a4952714870bf51375b4a3f301d9dd1eb"
       },
       "svg": {
         "path": "svg/steady-red-blue.svg",
-        "sha256": "ddf908448c3e2dadb8b2e140528252758441d588db33174ff65d23dd5689c140"
+        "sha256": "18bddb1b99ebeb63795076f124620b64aea2e1101d2046c12adfb4798e572713"
       },
       "drawio": {
         "path": "xml/steady-red-blue.drawio",
-        "sha256": "6c5d8a3b61f79b72e39906430691f4beaf794d9e5f6b1b6ccd4d939eafb237b1"
+        "sha256": "0e7b08ab0ba89c7fbcf01de0207a011fc1763a113be465306de89e8b99dd9412"
       },
       "layout": "mixed-axis",
       "dominantAxis": "x",
@@ -125,7 +125,7 @@
         "side-rail": "#243B63",
         "focus": "#C62828",
         "data-flow": "#4A90E2",
-        "group": "#243B63",
+        "group": "#4A90E2",
         "connector": "#243B63"
       }
     }

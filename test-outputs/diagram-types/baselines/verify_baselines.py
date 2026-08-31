@@ -14,6 +14,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,6 +27,7 @@ REPORT_PATH = HERE / "verification-report.json"
 GENERATOR_PATH = HERE / "generate_baselines.py"
 SVG_VALIDATOR = REPO / ".opencode" / "skills" / "svg-generator" / "scripts" / "validate.py"
 XML_VALIDATOR = REPO / ".opencode" / "skills" / "xml-diagram" / "scripts" / "validate.py"
+STYLE_MAP_PATH = REPO / ".opencode" / "skills" / "svg-generator" / "scripts" / "style_map.py"
 
 
 def sha256(path: Path) -> str:
@@ -59,6 +61,14 @@ def import_svg_validator():
     module = importlib.util.module_from_spec(spec)
     assert spec.loader
     sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def import_style_map():
+    spec = importlib.util.spec_from_file_location("baseline_style_map", STYLE_MAP_PATH)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader
     spec.loader.exec_module(module)
     return module
 
@@ -170,6 +180,80 @@ def clean_expected_outputs(themes: list[str]) -> list[str]:
     return removed
 
 
+def verify_theme_recipe(theme: str, path: Path) -> dict[str, object]:
+    root = ET.parse(path).getroot()
+    style = import_style_map().build_style_map(theme, layout="mixed-axis", dominant_axis="x")
+    tokens = {**style["roles"], **style["semantic-roles"]}
+    neutral = style["neutral"]
+    roles = {
+        item.get("data-color-role")
+        for item in root.iter()
+        if item.get("data-color-role")
+    }
+    required_roles = {
+        "tech-blue": {"axis-main", "axis-cross", "focus", "data-flow"},
+        "vibrant": {"domain-app", "domain-control", "domain-network", "domain-data"},
+        "mint-green": {"axis-main", "axis-cross", "focus", "data-flow"},
+        "steady-red-blue": {"focus", "side-rail", "axis-cross"},
+    }[theme]
+    missing = sorted(required_roles - roles)
+    if missing:
+        raise RuntimeError(f"theme recipe roles missing for {theme}: {missing}")
+    source = path.read_text(encoding="utf-8").upper()
+    required_colors = {
+        "tech-blue": {"#3B6EDC", "#2AA7C8"},
+        # Green is verified through the domain-data role; this baseline uses its
+        # subtle/border/strong tones rather than painting a large solid green area.
+        "vibrant": {"#3B82F6", "#8B5CF6", "#06B6D4"},
+        "mint-green": {"#2E8B57", "#14B8A6"},
+        "steady-red-blue": {"#C62828", "#243B63", "#4A90E2"},
+    }[theme]
+    missing_colors = sorted(color for color in required_colors if color not in source)
+    if missing_colors:
+        raise RuntimeError(f"theme recipe colors missing for {theme}: {missing_colors}")
+    boxes = [
+        item
+        for item in root.iter()
+        if item.get("data-role") in {"node", "region"} and item.get("data-color-role")
+    ]
+    total_area = strong_area = focus_area = status_area = 0.0
+    ordinary_card_area = surface_card_area = 0.0
+    for item in boxes:
+        role = item.get("data-color-role")
+        token = tokens[role]
+        fill = item.get("fill")
+        allowed_fills = {neutral["surface"], neutral["surface-muted"], token["base"], token["soft"], token["subtle"]}
+        if fill not in allowed_fills:
+            raise RuntimeError(f"unexpected baseline fill for {theme}/{item.get('id')}: {fill}")
+        area = float(item.get("width", 0)) * float(item.get("height", 0))
+        total_area += area
+        strong_area += area if fill == token["base"] else 0
+        focus_area += area if item.get("data-visual-role") == "focus" else 0
+        status_area += area if role.startswith("status-") else 0
+        if item.get("data-role") == "node" and item.get("data-visual-role") != "focus" and not role.startswith("status-"):
+            ordinary_card_area += area
+            surface_card_area += area if fill in {neutral["surface"], neutral["surface-muted"]} else 0
+    metrics = {
+        "strongAreaRatio": round(strong_area / total_area, 4),
+        "focusAreaRatio": round(focus_area / total_area, 4),
+        "statusAreaRatio": round(status_area / total_area, 4),
+        "surfaceCardRatio": round(surface_card_area / ordinary_card_area, 4) if ordinary_card_area else 1.0,
+    }
+    budgets = style["recipe"]["area-budget"]
+    for metric, budget_key in (("strongAreaRatio", "strong"), ("focusAreaRatio", "focus"), ("statusAreaRatio", "status")):
+        if metrics[metric] > budgets[budget_key]:
+            raise RuntimeError(f"{metric} budget exceeded for {theme}: {metrics[metric]} > {budgets[budget_key]}")
+    if metrics["surfaceCardRatio"] < 0.70:
+        raise RuntimeError(f"white/surface card ratio too low for {theme}: {metrics['surfaceCardRatio']}")
+    return {
+        "status": "matched",
+        "roles": sorted(roles),
+        "requiredColors": sorted(required_colors),
+        "metrics": metrics,
+        "budgets": budgets,
+    }
+
+
 def verify_manifest(themes: list[str]) -> tuple[dict[str, object], list[dict[str, object]]]:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     if manifest.get("generationMode") != "fresh-dsl-v1" or manifest.get("legacyInputFiles") != []:
@@ -209,7 +293,8 @@ def verify_manifest(themes: list[str]) -> tuple[dict[str, object], list[dict[str
                 "sha256": sha256(image),
                 "dimensions": list(size),
             }
-        verified.append({"theme": item["theme"], "specHash": item["specHash"], "files": theme_files})
+        recipe = verify_theme_recipe(item["theme"], HERE / item["svg"]["path"])
+        verified.append({"theme": item["theme"], "specHash": item["specHash"], "recipe": recipe, "files": theme_files})
     return manifest, verified
 
 

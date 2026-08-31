@@ -2,87 +2,87 @@
 <title id="title">云原生多可用区部署架构</title>
 <desc id="desc">流量跨可用区调度，工作负载弹性部署，数据资源具备高可用保护。</desc>
 <metadata data-layout="vertical-stack" data-optional-modules="top-band aux-column callout numbered-flow focus-node footer-band"/>
-<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.08"/></filter></defs>
+<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.07"/></filter></defs>
 <rect width="1560" height="1000" fill="#F4F7FC"/>
 <rect x="52" y="36" width="8" height="76" rx="4" fill="#3B6EDC"/>
-<text id="page-title" x="82" y="74" font-size="40" font-weight="700" text-anchor="start" fill="#1F2937" data-role="page-title">云原生多可用区部署架构</text>
+<text id="page-title" x="82" y="74" font-size="40" font-weight="700" text-anchor="start" fill="#305AB4" data-role="page-title">云原生多可用区部署架构</text>
 <text id="subtitle" x="82" y="106" font-size="15" font-weight="400" text-anchor="start" fill="#475569">流量跨可用区调度，工作负载弹性部署，数据资源具备高可用保护。</text>
-<rect x="985" y="52" width="150" height="42" rx="21" fill="#FDFEFF" stroke="#ADC2F0" stroke-width="1.2"/>
-<text id="badge-0" x="1060" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">部署架构</text>
-<rect x="1149" y="52" width="150" height="42" rx="21" fill="#FDFEFF" stroke="#ADC2F0" stroke-width="1.2"/>
-<text id="badge-1" x="1224" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">分层架构</text>
-<rect x="1313" y="52" width="190" height="42" rx="21" fill="#FDFEFF" stroke="#A6DAE8" stroke-width="1.2"/>
-<text id="badge-2" x="1408" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">Tech Blue</text>
-<rect id="main-shell" x="40" y="140" width="1420" height="720" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="region" data-color-role="group" data-visual-role="canvas" filter="url(#softShadow)"/>
-<rect id="top-band" x="70" y="165" width="1360" height="58" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="region" data-color-role="axis-main" data-module="top-band"/>
-<rect id="top-chip-0" x="105" y="176" width="380" height="36" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="295" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">业务入口</text>
-<rect id="top-chip-1" x="545" y="176" width="380" height="36" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="735" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">核心能力</text>
-<rect id="top-chip-2" x="985" y="176" width="380" height="36" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1175" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">治理保障</text>
-<rect id="footer-band" x="40" y="890" width="1420" height="78" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="region" data-color-role="data-flow" data-module="footer-band"/>
-<rect id="footer-0" x="230" y="902" width="245" height="52" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="352" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">跨区容灾</text>
-<rect id="footer-1" x="520" y="902" width="245" height="52" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="642" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">弹性伸缩</text>
-<rect id="footer-2" x="810" y="902" width="245" height="52" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="932" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">自动发布</text>
-<rect id="footer-3" x="1100" y="902" width="245" height="52" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1222" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">统一运维</text>
-<rect id="layer-0" x="70" y="245" width="1230" height="88" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="region" data-color-role="axis-main"/>
-<rect id="layer-title-0" x="88" y="259" width="205" height="60" rx="14" fill="#3B6EDC" stroke="#305AB4" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="190" y="289" font-size="17" font-weight="700" text-anchor="middle" fill="#FFFFFF">流量入口</text>
-<rect id="layer-0-item-0" x="320" y="259" width="220" height="60" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="430" y="289" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">全局 DNS</text>
-<rect id="layer-0-item-1" x="565" y="259" width="220" height="60" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="675" y="289" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">Web 防护</text>
-<rect id="layer-0-item-2" x="810" y="259" width="220" height="60" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="920" y="289" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">负载均衡</text>
-<rect id="layer-1" x="70" y="353" width="1230" height="88" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="region" data-color-role="group"/>
-<rect id="layer-title-1" x="88" y="367" width="205" height="60" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="190" y="397" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2937">容器平台</text>
-<rect id="layer-1-item-0" x="320" y="367" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="group"/>
-<text x="430" y="397" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">可用区 A</text>
-<rect id="layer-1-item-1" x="565" y="367" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="group"/>
-<text x="675" y="397" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">可用区 B</text>
-<rect id="layer-1-item-2" x="810" y="367" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="group"/>
-<text x="920" y="397" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">弹性调度</text>
-<rect id="focus" x="1055" y="367" width="220" height="60" rx="14" fill="#3B6EDC" stroke="#305AB4" stroke-width="1.2" data-role="node" data-color-role="focus" data-visual-role="focus" data-module="focus-node"/>
-<text x="1165" y="397" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">多可用区调度</text>
-<rect id="layer-2" x="70" y="461" width="1230" height="88" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="region" data-color-role="group"/>
-<rect id="layer-title-2" x="88" y="475" width="205" height="60" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="190" y="505" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2937">服务工作负载</text>
-<rect id="layer-2-item-0" x="320" y="475" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="group"/>
-<text x="430" y="505" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">网关服务</text>
-<rect id="layer-2-item-1" x="565" y="475" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="group"/>
-<text x="675" y="505" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">业务服务</text>
-<rect id="layer-2-item-2" x="810" y="475" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="group"/>
-<text x="920" y="505" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">异步任务</text>
-<rect id="layer-3" x="70" y="569" width="1230" height="88" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="region" data-color-role="group"/>
-<rect id="layer-title-3" x="88" y="583" width="205" height="60" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="190" y="613" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2937">数据资源</text>
-<rect id="layer-3-item-0" x="320" y="583" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="group"/>
-<text x="430" y="613" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">主从数据库</text>
-<rect id="layer-3-item-1" x="565" y="583" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="group"/>
-<text x="675" y="613" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">分布式缓存</text>
-<rect id="layer-3-item-2" x="810" y="583" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="group"/>
-<text x="920" y="613" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2937">对象存储</text>
-<rect id="side-rail" x="1325" y="245" width="105" height="565" rx="14" fill="#DADFEA" stroke="#A7B8DF" stroke-width="1.2" data-role="region" data-color-role="side-rail" data-module="aux-column" filter="url(#softShadow)"/>
-<rect id="side-0" x="1339" y="320" width="77" height="54" rx="14" fill="#DADFEA" stroke="#A7B8DF" stroke-width="1.2" data-role="node" data-color-role="side-rail"/>
-<text x="1377" y="347" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">发布流水线</text>
-<rect id="side-1" x="1339" y="400" width="77" height="54" rx="14" fill="#DADFEA" stroke="#A7B8DF" stroke-width="1.2" data-role="node" data-color-role="side-rail"/>
-<text x="1377" y="427" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">日志平台</text>
-<rect id="side-2" x="1339" y="480" width="77" height="54" rx="14" fill="#DADFEA" stroke="#A7B8DF" stroke-width="1.2" data-role="node" data-color-role="side-rail"/>
-<text x="1377" y="507" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">指标告警</text>
-<rect id="side-3" x="1339" y="560" width="77" height="54" rx="14" fill="#DADFEA" stroke="#A7B8DF" stroke-width="1.2" data-role="node" data-color-role="side-rail"/>
-<text x="1377" y="587" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">备份恢复</text>
-<rect id="layer-insight" x="70" y="690" width="1230" height="120" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="region" data-color-role="data-flow"/>
-<text x="685" y="742" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">流量跨可用区调度，工作负载弹性部署，数据资源具备高可用保护。</text>
-<text x="685" y="766" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">架构能力形成统一承载、弹性扩展与闭环治理</text>
-<text id="footer-title" x="74" y="933" font-size="20" font-weight="700" text-anchor="start" fill="#2289A4">核心价值</text>
-<text id="side-title" x="1377" y="286" font-size="16" font-weight="700" text-anchor="middle" fill="#254793">治理保障</text>
-<g id="layer-icon-0" data-role="icon" data-color-role="axis-main" fill="#3B6EDC"><circle cx="118" cy="283" r="5"/><path d="M109 302c1-8 5-11 9-11s8 3 9 11" fill="none" stroke="#3B6EDC" stroke-width="2.4" stroke-linecap="round"/></g>
-<g id="layer-icon-1" data-role="icon" data-color-role="axis-cross" fill="#5B8FF9"><path d="M118 385l9 4v7c0 7-4 11-9 14-5-3-9-7-9-14V389z" fill="none" stroke="#5B8FF9" stroke-width="2.4"/><path d="M114 396l3 3 6-7" fill="none" stroke="#5B8FF9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g id="layer-icon-2" data-role="icon" data-color-role="data-flow" fill="#2AA7C8"><rect x="106" y="496" width="7" height="18" rx="2"/><rect x="115" y="492" width="7" height="22" rx="2"/><rect x="124" y="500" width="7" height="14" rx="2"/></g>
+<rect x="985" y="52" width="150" height="42" rx="21" fill="#FDFEFF" stroke="#AFC5EE" stroke-width="1.2"/>
+<text id="badge-0" x="1060" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">部署架构</text>
+<rect x="1149" y="52" width="150" height="42" rx="21" fill="#FDFEFF" stroke="#A7D8E2" stroke-width="1.2"/>
+<text id="badge-1" x="1224" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">分层架构</text>
+<rect x="1313" y="52" width="190" height="42" rx="21" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2"/>
+<text id="badge-2" x="1408" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">Tech Blue</text>
+<rect id="main-shell" x="40" y="140" width="1420" height="720" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="group" data-visual-role="canvas" filter="url(#softShadow)"/>
+<rect id="top-band" x="70" y="165" width="1360" height="58" rx="14" fill="#F3F7FF" stroke="#AFC5EE" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="axis-main" data-module="top-band"/>
+<rect id="top-chip-0" x="105" y="176" width="380" height="36" rx="14" fill="#FDFEFF" stroke="#AFC5EE" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-main"/>
+<text id="top-chip-0-label" x="295" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">业务入口</text>
+<rect id="top-chip-1" x="545" y="176" width="380" height="36" rx="14" fill="#FDFEFF" stroke="#A7D8E2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-cross"/>
+<text id="top-chip-1-label" x="735" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">核心能力</text>
+<rect id="top-chip-2" x="985" y="176" width="380" height="36" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="top-chip-2-label" x="1175" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">治理保障</text>
+<rect id="footer-band" x="40" y="890" width="1420" height="78" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="data-flow" data-module="footer-band"/>
+<rect id="footer-0" x="230" y="902" width="245" height="52" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="footer-0-label" x="352" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#162A50">跨区容灾</text>
+<rect id="footer-1" x="520" y="902" width="245" height="52" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="footer-1-label" x="642" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#162A50">弹性伸缩</text>
+<rect id="footer-2" x="810" y="902" width="245" height="52" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="footer-2-label" x="932" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#162A50">自动发布</text>
+<rect id="footer-3" x="1100" y="902" width="245" height="52" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="footer-3-label" x="1222" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#162A50">统一运维</text>
+<rect id="layer-0" x="70" y="245" width="1230" height="88" rx="14" fill="#F6F9FF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="data-flow"/>
+<rect id="layer-title-0" x="88" y="259" width="205" height="60" rx="14" fill="#5B8FF9" stroke="#476FC2" stroke-width="1.2" data-font-color="#000000" data-role="node" data-color-role="data-flow"/>
+<text id="layer-title-0-label" x="190" y="289" font-size="17" font-weight="700" text-anchor="middle" fill="#000000">流量入口</text>
+<rect id="layer-0-item-0" x="320" y="259" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="layer-0-item-0-label" x="430" y="289" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">全局 DNS</text>
+<rect id="layer-0-item-1" x="565" y="259" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="layer-0-item-1-label" x="675" y="289" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">Web 防护</text>
+<rect id="layer-0-item-2" x="810" y="259" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="layer-0-item-2-label" x="920" y="289" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">负载均衡</text>
+<rect id="layer-1" x="70" y="353" width="1230" height="88" rx="14" fill="#F3F7FF" stroke="#AFC5EE" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="axis-main"/>
+<rect id="layer-title-1" x="88" y="367" width="205" height="60" rx="14" fill="#3B6EDC" stroke="#305AB4" stroke-width="1.2" data-font-color="#FFFFFF" data-role="node" data-color-role="axis-main"/>
+<text id="layer-title-1-label" x="190" y="397" font-size="17" font-weight="700" text-anchor="middle" fill="#FFFFFF">容器平台</text>
+<rect id="layer-1-item-0" x="320" y="367" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#AFC5EE" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-main"/>
+<text id="layer-1-item-0-label" x="430" y="397" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">可用区 A</text>
+<rect id="layer-1-item-1" x="565" y="367" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#AFC5EE" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-main"/>
+<text id="layer-1-item-1-label" x="675" y="397" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">可用区 B</text>
+<rect id="layer-1-item-2" x="810" y="367" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#AFC5EE" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-main"/>
+<text id="layer-1-item-2-label" x="920" y="397" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">弹性调度</text>
+<rect id="focus" x="1055" y="367" width="220" height="60" rx="14" fill="#3B6EDC" stroke="#305AB4" stroke-width="1.2" data-font-color="#FFFFFF" data-role="node" data-color-role="focus" data-visual-role="focus" data-module="focus-node"/>
+<text id="focus-label" x="1165" y="397" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">多可用区调度</text>
+<rect id="layer-2" x="70" y="461" width="1230" height="88" rx="14" fill="#F2FBFC" stroke="#A7D8E2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="axis-cross"/>
+<rect id="layer-title-2" x="88" y="475" width="205" height="60" rx="14" fill="#2AA7C8" stroke="#1F7B94" stroke-width="1.2" data-font-color="#000000" data-role="node" data-color-role="axis-cross"/>
+<text id="layer-title-2-label" x="190" y="505" font-size="17" font-weight="700" text-anchor="middle" fill="#000000">服务工作负载</text>
+<rect id="layer-2-item-0" x="320" y="475" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#A7D8E2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-cross"/>
+<text id="layer-2-item-0-label" x="430" y="505" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">网关服务</text>
+<rect id="layer-2-item-1" x="565" y="475" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#A7D8E2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-cross"/>
+<text id="layer-2-item-1-label" x="675" y="505" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">业务服务</text>
+<rect id="layer-2-item-2" x="810" y="475" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#A7D8E2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-cross"/>
+<text id="layer-2-item-2-label" x="920" y="505" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">异步任务</text>
+<rect id="layer-3" x="70" y="569" width="1230" height="88" rx="14" fill="#F6F9FF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="group"/>
+<rect id="layer-title-3" x="88" y="583" width="205" height="60" rx="14" fill="#5B8FF9" stroke="#476FC2" stroke-width="1.2" data-font-color="#000000" data-role="node" data-color-role="group"/>
+<text id="layer-title-3-label" x="190" y="613" font-size="17" font-weight="700" text-anchor="middle" fill="#000000">数据资源</text>
+<rect id="layer-3-item-0" x="320" y="583" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="group"/>
+<text id="layer-3-item-0-label" x="430" y="613" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">主从数据库</text>
+<rect id="layer-3-item-1" x="565" y="583" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="group"/>
+<text id="layer-3-item-1-label" x="675" y="613" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">分布式缓存</text>
+<rect id="layer-3-item-2" x="810" y="583" width="220" height="60" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="group"/>
+<text id="layer-3-item-2-label" x="920" y="613" font-size="15" font-weight="700" text-anchor="middle" fill="#162A50">对象存储</text>
+<rect id="side-rail" x="1325" y="245" width="105" height="565" rx="14" fill="#E8EEF8" stroke="#9FB2D2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="side-rail" data-module="aux-column" filter="url(#softShadow)"/>
+<rect id="side-0" x="1339" y="320" width="77" height="54" rx="14" fill="#FDFEFF" stroke="#9FB2D2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="side-rail"/>
+<text id="side-0-label" x="1377" y="347" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">发布流水线</text>
+<rect id="side-1" x="1339" y="400" width="77" height="54" rx="14" fill="#FDFEFF" stroke="#9FB2D2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="side-rail"/>
+<text id="side-1-label" x="1377" y="427" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">日志平台</text>
+<rect id="side-2" x="1339" y="480" width="77" height="54" rx="14" fill="#FDFEFF" stroke="#9FB2D2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="side-rail"/>
+<text id="side-2-label" x="1377" y="507" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">指标告警</text>
+<rect id="side-3" x="1339" y="560" width="77" height="54" rx="14" fill="#FDFEFF" stroke="#9FB2D2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="side-rail"/>
+<text id="side-3-label" x="1377" y="587" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">备份恢复</text>
+<rect id="layer-insight" x="70" y="690" width="1230" height="120" rx="14" fill="#F6F9FF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="data-flow"/>
+<text id="layer-insight-label" x="685" y="742" font-size="18" font-weight="700" text-anchor="middle" fill="#162A50">流量跨可用区调度，工作负载弹性部署，数据资源具备高可用保护。</text>
+<text id="layer-insight-sublabel" x="685" y="766" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">架构能力形成统一承载、弹性扩展与闭环治理</text>
+<text id="footer-title" x="74" y="933" font-size="20" font-weight="700" text-anchor="start" fill="#476FC2">核心价值</text>
+<text id="side-title" x="1377" y="286" font-size="16" font-weight="700" text-anchor="middle" fill="#162A50">治理保障</text>
+<g id="layer-icon-0" data-role="icon" data-color-role="data-flow" fill="#5B8FF9"><circle cx="118" cy="283" r="5"/><path d="M109 302c1-8 5-11 9-11s8 3 9 11" fill="none" stroke="#5B8FF9" stroke-width="2.4" stroke-linecap="round"/></g>
+<g id="layer-icon-1" data-role="icon" data-color-role="axis-main" fill="#3B6EDC"><path d="M118 385l9 4v7c0 7-4 11-9 14-5-3-9-7-9-14V389z" fill="none" stroke="#3B6EDC" stroke-width="2.4"/><path d="M114 396l3 3 6-7" fill="none" stroke="#3B6EDC" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="layer-icon-2" data-role="icon" data-color-role="axis-cross" fill="#2AA7C8"><rect x="106" y="496" width="7" height="18" rx="2"/><rect x="115" y="492" width="7" height="22" rx="2"/><rect x="124" y="500" width="7" height="14" rx="2"/></g>
 </svg>

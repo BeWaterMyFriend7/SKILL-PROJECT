@@ -10,11 +10,13 @@
 ## 颜色与字体
 
 - 主题和派生令牌以 `theme-tokens.md`、`scripts/palette.py` 为准。
-- primary、secondary、tertiary、accent 分别承担主结构、辅助结构、并列结构和唯一焦点；状态色只表达真实状态。
+- 先应用主题视觉配方，再选择结构角色；普通卡片、浅容器、实色骨架和焦点必须形成至少三级明度层次。
+- Tech Blue 的数据青可以承担主要容器或轴向结构，但必须按整层、整组或整轴使用；Vibrant 的状态色只表达真实状态。
 - 正文对比度至少 `4.5:1`，大号或粗体至少 `3:1`。
 - 使用 `Inter, Noto Sans SC, Microsoft YaHei, sans-serif`；页面标题通常 32～48，区域标题 18～24，分组标题 15～18，卡片标题 13～16，正文 12～14，辅助文字不小于 11。
 - 浅色允许一个统一的轻微阴影预设；深色默认不用阴影。禁止纯黑背景、网格、强渐变、霓虹描边和重阴影。
 - 新版模板和示例声明 `visualContract="enterprise-v2"`；主要节点声明 `colorRole`，并包含一个明确视觉焦点。
+- `domain-app/domain-control/domain-network/domain-data` 只表达受控功能域；`status-success/status-warning/status-error` 只表达真实状态。
 
 ## 布局
 

@@ -16,7 +16,7 @@
 - 布局：network
 - 主叙事轴：radial
 - 视觉合同：enterprise-v2
-- 附加模块：focus-node、footer-band、top-band
+- 附加模块：focus-node、footer-band
 - 图标策略：仅在入口、焦点或关键区域按内容少量使用自包含线性图标，不设置硬上限
 
 ## 结构颜色映射
@@ -26,7 +26,7 @@
 - side-rail: #243B63（来源：navy）
 - focus: #C62828（来源：red）
 - data-flow: #4A90E2（来源：accent-blue）
-- group: #243B63（来源：navy）
+- group: #4A90E2（来源：accent-blue）
 - connector: #243B63（来源：navy）
 
 ## 质量预期

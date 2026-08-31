@@ -1,60 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1000" viewBox="0 0 1560 1000" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="tech-blue" data-mode="light" data-layout="mixed-axis" data-dominant-axis="mixed" data-visual-contract="enterprise-v2" data-modules="focus-node footer-band top-band" data-generation="fresh-catalog-v1" data-diagram-type="state" data-spec-hash="fea3dc7d4c0aa87737b106d99da117d12538405dc3b630fbd69027d2f98e7110">
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1000" viewBox="0 0 1560 1000" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="tech-blue" data-mode="light" data-layout="mixed-axis" data-dominant-axis="mixed" data-visual-contract="enterprise-v2" data-modules="focus-node footer-band" data-generation="fresh-catalog-v1" data-diagram-type="state" data-spec-hash="fea3dc7d4c0aa87737b106d99da117d12538405dc3b630fbd69027d2f98e7110">
 <title id="title">订单状态流转</title>
 <desc id="desc">订单围绕支付和履约主链路流转，异常状态拥有明确退出路径。</desc>
 <metadata data-layout="mixed-axis" data-optional-modules="top-band aux-column callout numbered-flow focus-node footer-band"/>
-<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.08"/></filter><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="context-stroke"/></marker></defs>
+<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.07"/></filter><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="context-stroke"/></marker></defs>
 <rect width="1560" height="1000" fill="#F4F7FC"/>
-<rect x="52" y="36" width="8" height="76" rx="4" fill="#3B6EDC"/>
-<text id="page-title" x="82" y="74" font-size="40" font-weight="700" text-anchor="start" fill="#1F2937" data-role="page-title">订单状态流转</text>
+<rect x="52" y="36" width="8" height="76" rx="4" fill="#2AA7C8"/>
+<text id="page-title" x="82" y="74" font-size="40" font-weight="700" text-anchor="start" fill="#305AB4" data-role="page-title">订单状态流转</text>
 <text id="subtitle" x="82" y="106" font-size="15" font-weight="400" text-anchor="start" fill="#475569">订单围绕支付和履约主链路流转，异常状态拥有明确退出路径。</text>
-<rect x="985" y="52" width="150" height="42" rx="21" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2"/>
-<text id="badge-0" x="1060" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">状态图</text>
-<rect x="1149" y="52" width="150" height="42" rx="21" fill="#FDFEFF" stroke="#ADC2F0" stroke-width="1.2"/>
-<text id="badge-1" x="1224" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">闭环状态</text>
-<rect x="1313" y="52" width="190" height="42" rx="21" fill="#FDFEFF" stroke="#A6DAE8" stroke-width="1.2"/>
-<text id="badge-2" x="1408" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">Tech Blue</text>
-<rect id="main-shell" x="40" y="140" width="1420" height="720" rx="14" fill="#FDFEFF" stroke="#BAD0FC" stroke-width="1.2" data-role="region" data-color-role="group" data-visual-role="canvas" filter="url(#softShadow)"/>
-<rect id="top-band" x="70" y="165" width="1360" height="58" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="region" data-color-role="axis-main" data-module="top-band"/>
-<rect id="top-chip-0" x="105" y="176" width="380" height="36" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="295" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">状态演进</text>
-<rect id="top-chip-1" x="545" y="176" width="380" height="36" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="735" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">持续反馈</text>
-<rect id="top-chip-2" x="985" y="176" width="380" height="36" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1175" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#1F2937">闭环优化</text>
-<rect id="footer-band" x="40" y="890" width="1420" height="78" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="region" data-color-role="data-flow" data-module="footer-band"/>
-<rect id="footer-0" x="230" y="902" width="245" height="52" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="352" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">状态唯一</text>
-<rect id="footer-1" x="520" y="902" width="245" height="52" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="642" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">转换受控</text>
-<rect id="footer-2" x="810" y="902" width="245" height="52" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="932" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">异常可退</text>
-<rect id="footer-3" x="1100" y="902" width="245" height="52" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1222" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2937">结果可追踪</text>
-<rect id="cycle-0" x="100" y="300" width="220" height="96" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="210" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#1F2937">待支付</text>
-<text x="210" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 1</text>
-<rect id="cycle-1" x="360" y="300" width="220" height="96" rx="14" fill="#DFE6F1" stroke="#BAD0FC" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="470" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#1F2937">已支付</text>
-<text x="470" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 2</text>
-<rect id="cycle-2" x="620" y="300" width="220" height="96" rx="14" fill="#3B6EDC" stroke="#305AB4" stroke-width="1.2" data-role="node" data-color-role="focus" data-visual-role="focus" data-module="focus-node"/>
-<text x="730" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">处理中</text>
-<text x="730" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#FFFFFF">阶段 3</text>
-<rect id="cycle-3" x="880" y="300" width="220" height="96" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="990" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#1F2937">已完成</text>
-<text x="990" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 4</text>
-<rect id="cycle-4" x="1140" y="300" width="220" height="96" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="1250" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#1F2937">已关闭</text>
-<text x="1250" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 5</text>
-<rect id="cycle-5" x="1140" y="580" width="220" height="96" rx="14" fill="#DBE2EE" stroke="#ADC2F0" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="1250" y="620" font-size="16" font-weight="700" text-anchor="middle" fill="#1F2937">已退款</text>
-<text x="1250" y="644" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 6</text>
-<rect id="cycle-center" x="610" y="420" width="340" height="110" rx="14" fill="#DAE8EC" stroke="#A6DAE8" stroke-width="1.2" data-role="region" data-color-role="data-flow"/>
-<text x="780" y="467" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2937">持续反馈闭环</text>
-<text x="780" y="491" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">订单围绕支付和履约主链路流转，异常状态拥有明确退出路径。</text>
-<text id="footer-title" x="74" y="933" font-size="20" font-weight="700" text-anchor="start" fill="#2289A4">核心价值</text>
-<g id="cycle-icon-0" data-role="icon" data-color-role="axis-main" fill="#5B8FF9"><circle cx="130" cy="324" r="5"/><path d="M121 343c1-8 5-11 9-11s8 3 9 11" fill="none" stroke="#5B8FF9" stroke-width="2.4" stroke-linecap="round"/></g>
-<g id="cycle-icon-3" data-role="icon" data-color-role="axis-main" fill="#5B8FF9"><path d="M910 318l9 4v7c0 7-4 11-9 14-5-3-9-7-9-14V322z" fill="none" stroke="#5B8FF9" stroke-width="2.4"/><path d="M906 329l3 3 6-7" fill="none" stroke="#5B8FF9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g id="cycle-icon-5" data-role="icon" data-color-role="axis-main" fill="#5B8FF9"><rect x="1158" y="601" width="7" height="18" rx="2"/><rect x="1167" y="597" width="7" height="22" rx="2"/><rect x="1176" y="605" width="7" height="14" rx="2"/></g>
+<rect x="985" y="52" width="150" height="42" rx="21" fill="#FDFEFF" stroke="#A7D8E2" stroke-width="1.2"/>
+<text id="badge-0" x="1060" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">状态图</text>
+<rect x="1149" y="52" width="150" height="42" rx="21" fill="#FDFEFF" stroke="#AFC5EE" stroke-width="1.2"/>
+<text id="badge-1" x="1224" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">闭环状态</text>
+<rect x="1313" y="52" width="190" height="42" rx="21" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2"/>
+<text id="badge-2" x="1408" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#162A50">Tech Blue</text>
+<rect id="main-shell" x="40" y="140" width="1420" height="720" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="group" data-visual-role="canvas" filter="url(#softShadow)"/>
+<rect id="footer-band" x="40" y="890" width="1420" height="78" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="data-flow" data-module="footer-band"/>
+<rect id="footer-0" x="230" y="902" width="245" height="52" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="footer-0-label" x="352" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#162A50">状态唯一</text>
+<rect id="footer-1" x="520" y="902" width="245" height="52" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="footer-1-label" x="642" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#162A50">转换受控</text>
+<rect id="footer-2" x="810" y="902" width="245" height="52" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="footer-2-label" x="932" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#162A50">异常可退</text>
+<rect id="footer-3" x="1100" y="902" width="245" height="52" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="footer-3-label" x="1222" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#162A50">结果可追踪</text>
+<rect id="cycle-0" x="100" y="300" width="220" height="96" rx="14" fill="#FDFEFF" stroke="#A7D8E2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-main"/>
+<text id="cycle-0-label" x="210" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#162A50">待支付</text>
+<text id="cycle-0-sublabel" x="210" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 1</text>
+<rect id="cycle-1" x="360" y="300" width="220" height="96" rx="14" fill="#FDFEFF" stroke="#AFC5EE" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-cross"/>
+<text id="cycle-1-label" x="470" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#162A50">已支付</text>
+<text id="cycle-1-sublabel" x="470" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 2</text>
+<rect id="cycle-2" x="620" y="300" width="220" height="96" rx="14" fill="#3B6EDC" stroke="#305AB4" stroke-width="1.2" data-font-color="#FFFFFF" data-role="node" data-color-role="focus" data-visual-role="focus" data-module="focus-node"/>
+<text id="cycle-2-label" x="730" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">处理中</text>
+<text id="cycle-2-sublabel" x="730" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#FFFFFF">阶段 3</text>
+<rect id="cycle-3" x="880" y="300" width="220" height="96" rx="14" fill="#FDFEFF" stroke="#A7D8E2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-main"/>
+<text id="cycle-3-label" x="990" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#162A50">已完成</text>
+<text id="cycle-3-sublabel" x="990" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 4</text>
+<rect id="cycle-4" x="1140" y="300" width="220" height="96" rx="14" fill="#FDFEFF" stroke="#AFC5EE" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="axis-cross"/>
+<text id="cycle-4-label" x="1250" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#162A50">已关闭</text>
+<text id="cycle-4-sublabel" x="1250" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 5</text>
+<rect id="cycle-5" x="1140" y="580" width="220" height="96" rx="14" fill="#FDFEFF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="node" data-color-role="data-flow"/>
+<text id="cycle-5-label" x="1250" y="620" font-size="16" font-weight="700" text-anchor="middle" fill="#162A50">已退款</text>
+<text id="cycle-5-sublabel" x="1250" y="644" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">阶段 6</text>
+<rect id="cycle-center" x="610" y="420" width="340" height="110" rx="14" fill="#F6F9FF" stroke="#B9CCF2" stroke-width="1.2" data-font-color="#162A50" data-role="region" data-color-role="data-flow"/>
+<text id="cycle-center-label" x="780" y="467" font-size="18" font-weight="700" text-anchor="middle" fill="#162A50">持续反馈闭环</text>
+<text id="cycle-center-sublabel" x="780" y="491" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">订单围绕支付和履约主链路流转，异常状态拥有明确退出路径。</text>
+<text id="footer-title" x="74" y="933" font-size="20" font-weight="700" text-anchor="start" fill="#476FC2">核心价值</text>
+<g id="cycle-icon-0" data-role="icon" data-color-role="axis-main" fill="#2AA7C8"><circle cx="130" cy="324" r="5"/><path d="M121 343c1-8 5-11 9-11s8 3 9 11" fill="none" stroke="#2AA7C8" stroke-width="2.4" stroke-linecap="round"/></g>
+<g id="cycle-icon-5" data-role="icon" data-color-role="axis-main" fill="#2AA7C8"><path d="M1170 598l9 4v7c0 7-4 11-9 14-5-3-9-7-9-14V602z" fill="none" stroke="#2AA7C8" stroke-width="2.4"/><path d="M1166 609l3 3 6-7" fill="none" stroke="#2AA7C8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
 <line id="cycle-edge-1" data-role="edge" data-color-role="connector" x1="320" y1="348" x2="360" y2="348" stroke="#3B6EDC" stroke-width="2.4" marker-end="url(#arrow)"/>
 <text id="cycle-edge-1-label" x="355" y="338" font-size="12" font-weight="700" text-anchor="middle" fill="#475569">提交</text>
 <line id="cycle-edge-2" data-role="edge" data-color-role="connector" x1="580" y1="348" x2="620" y2="348" stroke="#3B6EDC" stroke-width="2.4" marker-end="url(#arrow)"/>

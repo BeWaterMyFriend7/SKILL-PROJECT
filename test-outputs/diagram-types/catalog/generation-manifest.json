@@ -195,22 +195,22 @@
       "specHash": "0c6d2c6e96995aec4fcae9b659df09b73d51da2916de23c1f9a53a308e1974d5",
       "dsl": {
         "path": "dsl/architecture-application.md",
-        "sha256": "59d2bee9f3a975fad428baca36f498a2896425d88f460f0f565c82373286b380"
+        "sha256": "29b858246787050ffbbdf42f9721926c6b1bab42f33ba94e2a6f617690a898ff"
       },
       "svg": {
         "path": "svg/architecture-application-tech-blue-light-enterprise.svg",
-        "sha256": "5ec187fea40cc34ee4e49ebd31e07d286f026117f205c11fb8de45259fb898d7"
+        "sha256": "b87b7908aba981a34fa874e3cfb3c73f6fb8df8b91c073b9076964e781342e62"
       },
       "drawio": {
         "path": "xml/architecture-application-tech-blue-light-enterprise.drawio",
-        "sha256": "4e17ca705f3d6b1ac5be32ab640da3b7255aa8867fa0709f6ecacc5b3b6acafd"
+        "sha256": "4fdff23c6fe894987581f883e0612510069dfcc454591950e53dc218351f30b4"
       },
       "roleColors": {
         "axis-main": "#3B6EDC",
-        "axis-cross": "#5B8FF9",
+        "axis-cross": "#2AA7C8",
         "side-rail": "#2D56B3",
         "focus": "#3B6EDC",
-        "data-flow": "#2AA7C8",
+        "data-flow": "#5B8FF9",
         "group": "#5B8FF9",
         "connector": "#3B6EDC"
       },
@@ -237,11 +237,11 @@
       },
       "svg": {
         "path": "svg/architecture-business-vibrant-light-enterprise.svg",
-        "sha256": "f2d261772a5f27bee1ea6a18191c76262eabaa8f58490b7b82c0f7ac0ded4fcb"
+        "sha256": "7f59079a3e14e641a800fbcbf6a8a95302d34a4d572d17009f9d856d8274faa2"
       },
       "drawio": {
         "path": "xml/architecture-business-vibrant-light-enterprise.drawio",
-        "sha256": "bc1f080ca425c8a77c7a4dee933002c67a0a7873ed107febab642eedbfad440e"
+        "sha256": "b6de57b2b4ab74eb1ab60deb02f44fd929d7d70fab4a6c0ddfc907c69b9adcfc"
       },
       "roleColors": {
         "axis-main": "#3B82F6",
@@ -275,11 +275,11 @@
       },
       "svg": {
         "path": "svg/architecture-data-mint-green-light-enterprise.svg",
-        "sha256": "88d8c45f50f50cca6811087d183b0bbbaec3c12767db2da6c1e13f351d52400f"
+        "sha256": "c3c872e4225cf3cf19299f6786bbbba2a22519a1df54ec0014718ac6bd336929"
       },
       "drawio": {
         "path": "xml/architecture-data-mint-green-light-enterprise.drawio",
-        "sha256": "fc75a1c07b6de6fb4f36d039b2fc8719fde9ba7563039f9a00b0fb4535bae054"
+        "sha256": "e83450a3f5aea8db4f678c2261b9bc16710d62fde8d7a23f10799abe944a6295"
       },
       "roleColors": {
         "axis-main": "#2E8B57",
@@ -309,22 +309,22 @@
       "specHash": "f4d3c7566e2140a0b7d79c51469f34d6ac4a0777289c6aa505507e60ff6f86e0",
       "dsl": {
         "path": "dsl/architecture-deployment.md",
-        "sha256": "90fbe43228d0d3cdc1c5167a98495d06d685a6853af61f9e6a1e3de255235e7d"
+        "sha256": "f1d87be05186168f6019bd11904afa5f1f07ff1696992710281e39991a09118e"
       },
       "svg": {
         "path": "svg/architecture-deployment-tech-blue-light-enterprise.svg",
-        "sha256": "423b86e1b83d30e46935208c8f394b110bf1849d5ec178a7c0ab159489f9ddbc"
+        "sha256": "a45d813c09c11d32f26ba254e28bff45722cdcb9d9fc1645744f6693563fc563"
       },
       "drawio": {
         "path": "xml/architecture-deployment-tech-blue-light-enterprise.drawio",
-        "sha256": "6c2586d2d86a7cb25daf5dfe9de1c994f68a59c47f5cb596b8bdb18d916df587"
+        "sha256": "dc6c11e81495d0afddcf181cd14e8f7f9f03e56f3577d707935e6f2a37b1d98c"
       },
       "roleColors": {
         "axis-main": "#3B6EDC",
-        "axis-cross": "#5B8FF9",
+        "axis-cross": "#2AA7C8",
         "side-rail": "#2D56B3",
         "focus": "#3B6EDC",
-        "data-flow": "#2AA7C8",
+        "data-flow": "#5B8FF9",
         "group": "#5B8FF9",
         "connector": "#3B6EDC"
       },
@@ -347,15 +347,15 @@
       "specHash": "c1244811aace3183b01ed6c2690d0768527ef623bec482fb6b7a3077f40e0188",
       "dsl": {
         "path": "dsl/architecture-technical.md",
-        "sha256": "8246e68ba7c53bc3c347efeb07bee30b1dc1ffb8531b1f904df085b88e6c22e4"
+        "sha256": "94e46adfaa7e8742dcf1934d4091b4e4dfbab8896950f085ed703f769f2da611"
       },
       "svg": {
         "path": "svg/architecture-technical-steady-red-blue-light-enterprise.svg",
-        "sha256": "052d97046c73cca9b75cda0724d3d99f99cfd1ff462f7367f58faa68719b5539"
+        "sha256": "cc7181b471287d1b231434589ac0aff21a4c0764591bdfdf7edea3a6804e2631"
       },
       "drawio": {
         "path": "xml/architecture-technical-steady-red-blue-light-enterprise.drawio",
-        "sha256": "34860e751c5dd83a902f239826f548456c64cb6a521829d1b25504092f8207c0"
+        "sha256": "25d8b68ee882f93e508c6233b011d87179def7bd11a694f053b44a8dbd1c947f"
       },
       "roleColors": {
         "axis-main": "#243B63",
@@ -363,7 +363,7 @@
         "side-rail": "#243B63",
         "focus": "#C62828",
         "data-flow": "#4A90E2",
-        "group": "#243B63",
+        "group": "#4A90E2",
         "connector": "#243B63"
       },
       "legacyInputFiles": []
@@ -388,11 +388,11 @@
       },
       "svg": {
         "path": "svg/comparison-vibrant-light-enterprise.svg",
-        "sha256": "9c189942e7f22b8eb503b46b21e78c5035d9fd41484f8148e2840ff990618896"
+        "sha256": "d0b1ef8bf8157564750c6263f57478275e4b8ab3bff47c5eb4e2d53e18ef9191"
       },
       "drawio": {
         "path": "xml/comparison-vibrant-light-enterprise.drawio",
-        "sha256": "23ee9cf5e9ce1816ca10644d54da4750b179de259864e7296fbab9e391927b76"
+        "sha256": "6377c0e5bf7028c42d58d2b52b8f89646e6dee12fb1ea4c7a25b1b0b9e5dce37"
       },
       "roleColors": {
         "axis-main": "#3B82F6",
@@ -425,11 +425,11 @@
       },
       "svg": {
         "path": "svg/decision-matrix-mint-green-light-enterprise.svg",
-        "sha256": "11427cc16589dfb84502c7aff5aae82e96129779f711115e8f8d2c51ee49c648"
+        "sha256": "258a8e7ec35c1fa7d2f423d717ae795f384e9287b7616b87be21f14e9c992f7a"
       },
       "drawio": {
         "path": "xml/decision-matrix-mint-green-light-enterprise.drawio",
-        "sha256": "c9e217fdf48c2034f1d463ded2eef236b91f8679944603e07694a3bf984cd809"
+        "sha256": "52ee482909ec09d0381b6dac3ebb73dcc56f9c74b9cf840f9ab938b40b088492"
       },
       "roleColors": {
         "axis-main": "#2E8B57",
@@ -452,21 +452,20 @@
       "dominantAxis": "x",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "97909e4230dc39af55592da34512b77d22f9f86c54147527bdf6ba46ae3b296c",
       "dsl": {
         "path": "dsl/flow-branching.md",
-        "sha256": "9bab6b02227b174f253e053ffdfcf8c13af534966292841998ff92656280ba97"
+        "sha256": "f0ae485263ea86138703d8bc130d7e2fa89896bfc0b38dcb700d3b2c8f62c346"
       },
       "svg": {
         "path": "svg/flow-branching-vibrant-light-enterprise.svg",
-        "sha256": "acb9e91391a3b78ffae5943ba0fc60838edd4ccc152637b57066bb3ee706e778"
+        "sha256": "0bb6be0d588247f2b15fe227a884e6adf696ffb0f3f6caa4564d923173dedc29"
       },
       "drawio": {
         "path": "xml/flow-branching-vibrant-light-enterprise.drawio",
-        "sha256": "8f9b6c2a3356fd2e12bc86792fa41679de5048a1611be0110166c9971df3f01d"
+        "sha256": "67a72b90cacd34405e8cd8c6d7d2ba4f2d394a64884186173b8bbd8186865d8c"
       },
       "roleColors": {
         "axis-main": "#06B6D4",
@@ -489,28 +488,27 @@
       "dominantAxis": "x",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "b0840d889bb3654622c421723d62d08788985f1d37d6a8d42076551d443e16d9",
       "dsl": {
         "path": "dsl/flow-linear.md",
-        "sha256": "a9b7327a58b8f0d4c17f5acacfc373839b3617fd3aade21acbf2ef5156633776"
+        "sha256": "3643a5af9baeca6a87d2f1db522c89b868e3c3422ddc0c58922fcb1d1b34721c"
       },
       "svg": {
         "path": "svg/flow-linear-tech-blue-light-enterprise.svg",
-        "sha256": "8e89e1c16face6be2c86870c7b01c724a9685ba272790653d121510908406cfc"
+        "sha256": "58f252546ec89e451739964ad2048df7baf57d77e154562fc1652c94e337e4b3"
       },
       "drawio": {
         "path": "xml/flow-linear-tech-blue-light-enterprise.drawio",
-        "sha256": "9e5abc397d8b3343871c1b5b0702ffe1f0a08ce6d5e52b2da49e36846a732b1c"
+        "sha256": "b69107594937fe0546034c3f6b4fb650ecac0e01d09a67ec6433f1c55f5414d5"
       },
       "roleColors": {
-        "axis-main": "#3B6EDC",
-        "axis-cross": "#2AA7C8",
+        "axis-main": "#2AA7C8",
+        "axis-cross": "#3B6EDC",
         "side-rail": "#2D56B3",
         "focus": "#5B8FF9",
-        "data-flow": "#2AA7C8",
+        "data-flow": "#3B6EDC",
         "group": "#5B8FF9",
         "connector": "#3B6EDC"
       },
@@ -526,21 +524,20 @@
       "dominantAxis": "mixed",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "66d775d0eb53044bd34815b4cc36c381bbd903c94c2e25518015a2117f8401e0",
       "dsl": {
         "path": "dsl/lifecycle.md",
-        "sha256": "38c7c64881f40c1a4bec85d2f31417a0efac5dfc154d964c8b510a4fc50aa416"
+        "sha256": "7ca8e0cf37513a5030764df467637031c763bbff0c9ac29132912b91fceb36d7"
       },
       "svg": {
         "path": "svg/lifecycle-vibrant-light-enterprise.svg",
-        "sha256": "91afe866500d0fa115005bebc8b0c708997ea143b1a0f730bcdeafeb00be3be0"
+        "sha256": "5601e6ec092ba0470d28166a0fbac0389ba3e277798f18287f0f8dd64cdaced8"
       },
       "drawio": {
         "path": "xml/lifecycle-vibrant-light-enterprise.drawio",
-        "sha256": "556b3868d727740dd72b70f161a8f759186ed6b8f20836e29ab69e3669d1d3a3"
+        "sha256": "b491dfa6c136abdc60e35f4ae1aef1ed2325f4ea69f74198cb8a38d34ac1b0e2"
       },
       "roleColors": {
         "axis-main": "#3B82F6",
@@ -563,21 +560,20 @@
       "dominantAxis": "radial",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "d8366d11e5862a2e43b032cf75b02743fa7ecb48e6c80ab94eb1448277b1497e",
       "dsl": {
         "path": "dsl/relationship-dependency.md",
-        "sha256": "225ba8a4464c7a282b2fb85e870d7dafe51c496a28b075e2a0a84e496c7128fd"
+        "sha256": "efda66cf19db1ab35c9d90841f94a9307c6bf2be780eebd9db578cac0ff6f571"
       },
       "svg": {
         "path": "svg/relationship-dependency-steady-red-blue-light-enterprise.svg",
-        "sha256": "5e9b1c2af8becdc33cb2cb0955898adc3282448097b62cae865d2dc7b1f469c5"
+        "sha256": "f0406bec0fafafea17bfba402fb33354ed59c09d96cf1106e0a5c21091ba4c19"
       },
       "drawio": {
         "path": "xml/relationship-dependency-steady-red-blue-light-enterprise.drawio",
-        "sha256": "e843e4d82daebab786d416b1e4834d205a857c573939ed837106bf7fe7936523"
+        "sha256": "816dad195bd808d0a6ba792810b8dd4238e2e4c985849e16dfb123ab1ee4cae1"
       },
       "roleColors": {
         "axis-main": "#243B63",
@@ -585,7 +581,7 @@
         "side-rail": "#243B63",
         "focus": "#C62828",
         "data-flow": "#4A90E2",
-        "group": "#243B63",
+        "group": "#4A90E2",
         "connector": "#243B63"
       },
       "legacyInputFiles": []
@@ -600,21 +596,20 @@
       "dominantAxis": "radial",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "02e3f205d1e9cd50d7e3510407b03fd132a43e219b7a907d82868ffb4ee67163",
       "dsl": {
         "path": "dsl/relationship-er.md",
-        "sha256": "65d881b6c57b87c812653ad26aa605ca2dd1407b221819d5322affca8211da00"
+        "sha256": "68edd5eeed7138bac2b43d9671085cba9b9d7010c3d4d0985bb5288f5ecdce21"
       },
       "svg": {
         "path": "svg/relationship-er-mint-green-light-enterprise.svg",
-        "sha256": "fbeb4f88cfeacb6ddc5602edc7f93b5cc8c71e75ec2c3852b4d674e72460bf6b"
+        "sha256": "9f3eff53f698a9898d3c5ff12e2939e25d37c5415e0345f2825867dbeeb5b9ca"
       },
       "drawio": {
         "path": "xml/relationship-er-mint-green-light-enterprise.drawio",
-        "sha256": "7813d503d8e03c72e33852f69ab87fffb23dcde67abd53d4e7864fd83e8c152c"
+        "sha256": "bbf5e27432899bb50cec60f1fbf34c56660e9f2caf5d6e78a39ce42a58ae4276"
       },
       "roleColors": {
         "axis-main": "#2E8B57",
@@ -637,21 +632,20 @@
       "dominantAxis": "radial",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "c0978fbddb119d2e329910036a6088e784b16615cc48e0dcd3225efaec01fdf6",
       "dsl": {
         "path": "dsl/relationship-knowledge.md",
-        "sha256": "47a7ca8b1deda29d1b025a7b75f07663eb07247a4fe0daf515b5809a69a3a1e7"
+        "sha256": "776a9c7c4bf0b5c8edbdcce4f3248ca8b5a35e82979a29e81a74f470ff9df9be"
       },
       "svg": {
         "path": "svg/relationship-knowledge-mint-green-light-enterprise.svg",
-        "sha256": "80106ceee485d53e10dca92edd26377750188492a94a60adf82bbb8006a07d63"
+        "sha256": "e80b11947517ed4575aec4bf11d4fffd7f522cd7ec0622aca973b04a87256857"
       },
       "drawio": {
         "path": "xml/relationship-knowledge-mint-green-light-enterprise.drawio",
-        "sha256": "af2b0e50de9309565fddd1539c114bc15693989c1ebe5fc43ebe1686939ca463"
+        "sha256": "23425f7509ede097a05738e741a1739ac95623fc9fbda2b7253473bfc801ec60"
       },
       "roleColors": {
         "axis-main": "#2E8B57",
@@ -674,30 +668,29 @@
       "dominantAxis": "x",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "00b1305f3bc5de6932df57fe3ceb0a2f37afd2cb3b0b7e8f2df6337f1c2e73c4",
       "dsl": {
         "path": "dsl/roadmap.md",
-        "sha256": "fbd80a3fa37c90ee84fc075d4a86da18df569adf9f8dcd37d4559a7e7eb00eb5"
+        "sha256": "74e53b9db5fae23ad8dcfdd6a9649049eeff54478b42759297e36599f7f1e36e"
       },
       "svg": {
         "path": "svg/roadmap-steady-red-blue-light-enterprise.svg",
-        "sha256": "76eba813979f8f2ddb52f9b7c7b1e96457936b94ceec542a86e48e6023ccd6bf"
+        "sha256": "89eed4e135bdca55667125c7d54539de303e878363e1324d10bdd595b1282fb3"
       },
       "drawio": {
         "path": "xml/roadmap-steady-red-blue-light-enterprise.drawio",
-        "sha256": "266a17938dcbf34892e9e6a70b51c3c3aa6c59089dac49f51085943421b31bdf"
+        "sha256": "5bd354302707d728125495dd5f6979b144345e68b64d249a05cbf6a27bc95c7a"
       },
       "roleColors": {
-        "axis-main": "#4A90E2",
-        "axis-cross": "#243B63",
+        "axis-main": "#243B63",
+        "axis-cross": "#4A90E2",
         "side-rail": "#243B63",
         "focus": "#C62828",
         "data-flow": "#4A90E2",
-        "group": "#243B63",
-        "connector": "#4A90E2"
+        "group": "#4A90E2",
+        "connector": "#243B63"
       },
       "legacyInputFiles": []
     },
@@ -711,28 +704,27 @@
       "dominantAxis": "x",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "6a3c13a9ebd4b6360b0538aa39c1f91687769d5edc1981c1e9cca641d05ceea6",
       "dsl": {
         "path": "dsl/sequence.md",
-        "sha256": "d8f0ba8ddac0fcf5f96d62247263ffdf9e8e42724abfa78c332f946420e70b95"
+        "sha256": "56e453df7e7e3892849247c4c91060a6d6bb367645b77f3425bd3e3a771dc020"
       },
       "svg": {
         "path": "svg/sequence-tech-blue-light-enterprise.svg",
-        "sha256": "4561a301d1c39c4b4c0e4fa0fba637fe240dc59b29a748ec8f627161917bf2f0"
+        "sha256": "b58da6c087db6243a19ed0a9d3f2635c4d7a0257499d1f313ee39706ffed2722"
       },
       "drawio": {
         "path": "xml/sequence-tech-blue-light-enterprise.drawio",
-        "sha256": "9e535631874e6c49d87e037e47b967a30a5a4bd6b5113fe847ec02b985251c85"
+        "sha256": "d3d23b92244d1ab477a174e5b884491b7d77d23b95cf5e49a380ec1d8584d20a"
       },
       "roleColors": {
-        "axis-main": "#3B6EDC",
-        "axis-cross": "#2AA7C8",
+        "axis-main": "#2AA7C8",
+        "axis-cross": "#3B6EDC",
         "side-rail": "#2D56B3",
         "focus": "#5B8FF9",
-        "data-flow": "#2AA7C8",
+        "data-flow": "#3B6EDC",
         "group": "#5B8FF9",
         "connector": "#3B6EDC"
       },
@@ -748,28 +740,27 @@
       "dominantAxis": "mixed",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "fea3dc7d4c0aa87737b106d99da117d12538405dc3b630fbd69027d2f98e7110",
       "dsl": {
         "path": "dsl/state.md",
-        "sha256": "80f2fdeceb91bf9d179192816e6bcbe2ac2353ac216c16d331be0e4a2018b657"
+        "sha256": "3b287e7d5bbd806c7be187d963d94d06a3d20ed42e7d03176b3133ca44f661da"
       },
       "svg": {
         "path": "svg/state-tech-blue-light-enterprise.svg",
-        "sha256": "0ebd0f16af7fcb3101a814f10e8c8d91f48f36d6a0e3e4125f654b726f735272"
+        "sha256": "d23821a31101de392844c02d61e96e66a8eb7a8c0ea6089f9ad5ded2ef8e5fe5"
       },
       "drawio": {
         "path": "xml/state-tech-blue-light-enterprise.drawio",
-        "sha256": "b776a8de53e209798bd5b5a0e7c24018d451b6d15c6e013915229888ed0546de"
+        "sha256": "b27beb9e06f3fb43723ee26a4ccb7a14759d31e48b7dd6d78d6b13b995c48f9b"
       },
       "roleColors": {
-        "axis-main": "#5B8FF9",
+        "axis-main": "#2AA7C8",
         "axis-cross": "#3B6EDC",
         "side-rail": "#2D56B3",
         "focus": "#3B6EDC",
-        "data-flow": "#2AA7C8",
+        "data-flow": "#5B8FF9",
         "group": "#5B8FF9",
         "connector": "#3B6EDC"
       },
@@ -785,21 +776,20 @@
       "dominantAxis": "mixed",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "bc08a09dbd459563d9657cba62c5e60a783064927876cc7654fd12af0f683361",
       "dsl": {
         "path": "dsl/summary.md",
-        "sha256": "00392277fa03970bf1b32d4c6d5d839874709f0fec46963e9b612161fbf85a18"
+        "sha256": "f50b2a222fa427ce9cda0a5fd4b24cbefc072e26a2f2a9b05fc0e92ccef1adcc"
       },
       "svg": {
         "path": "svg/summary-vibrant-light-enterprise.svg",
-        "sha256": "76acfa0cd372dd0708dc0467ae078307131273c0e6b5bfadb7498dcfe59d1e5c"
+        "sha256": "801c3786f74aecd3bb588ab2ff6a2f71d35fdfc8d3c4bd642d0ebf30d3f637cc"
       },
       "drawio": {
         "path": "xml/summary-vibrant-light-enterprise.drawio",
-        "sha256": "a39e356e1a4cf0166e3fa529c1084fb4fdb39f1402b0dc9928dd62f8962b9fd9"
+        "sha256": "0cc0397917c17a99b95ec83dff427e72c7bd48bb336d741e8cf915021a37b6b8"
       },
       "roleColors": {
         "axis-main": "#3B82F6",
@@ -828,15 +818,15 @@
       "specHash": "08674b53a1bd2dca7541f2b8f77f1a71c2a83ac5ee33b845f810d099592792b6",
       "dsl": {
         "path": "dsl/swot.md",
-        "sha256": "2a42c3c5bbb7994db013a690b0372ac1857b4022bda35897f538dec946cf6f9e"
+        "sha256": "8c1db4d0ac6e9a8a7b2f57e709c9705c51930e7647e1c6a7364b52cb60a90bef"
       },
       "svg": {
         "path": "svg/swot-steady-red-blue-light-enterprise.svg",
-        "sha256": "77458e03b90b7484c22c8ce4118d7faa79d0fe2849065a3783bad4f7e01fb76b"
+        "sha256": "67ceee98f9122708918697de2f3f6e67518de1644e743dfcd9af76d0bbf2e022"
       },
       "drawio": {
         "path": "xml/swot-steady-red-blue-light-enterprise.drawio",
-        "sha256": "87aa57250da1aaf8cf955c4f0bc8bc2b5b5d2fb92304ea1fc2549f4532e3c4ba"
+        "sha256": "0a1eb0a674ce1d291bc122b9768db60a677894caa4eeb2a59ac5e7540054168d"
       },
       "roleColors": {
         "axis-main": "#243B63",
@@ -844,7 +834,7 @@
         "side-rail": "#243B63",
         "focus": "#C62828",
         "data-flow": "#4A90E2",
-        "group": "#243B63",
+        "group": "#4A90E2",
         "connector": "#243B63"
       },
       "legacyInputFiles": []
@@ -859,30 +849,29 @@
       "dominantAxis": "x",
       "modules": [
         "focus-node",
-        "footer-band",
-        "top-band"
+        "footer-band"
       ],
       "specHash": "87dc9366e4f0f0a7ad7485864863a8ed8bd47960cb89b1f88ce5d0bfab6f5539",
       "dsl": {
         "path": "dsl/timeline.md",
-        "sha256": "6e96dd3b3983f5811011fd320b5cf24bef9dc4643476fc0d5f8847d4ea37693e"
+        "sha256": "cfffa0f76e1cd3753e3b4f7639dcbbd5e53384b7b7a88fc3baf11ea2a6e3a13f"
       },
       "svg": {
         "path": "svg/timeline-steady-red-blue-light-enterprise.svg",
-        "sha256": "2b0a0bd4c2a21d3382b134e9fed2fe396f90edce6c8c7446b1c6a0e37d20ad51"
+        "sha256": "22320c093a788e46cd1c22c9fe1492fb7fdaa5c4e9d4494e4160d78a361a5029"
       },
       "drawio": {
         "path": "xml/timeline-steady-red-blue-light-enterprise.drawio",
-        "sha256": "d0c99832a47bbc5361fceb3e6da0c5dd286f58f9b0ca5d32e6e7b21656f2a9da"
+        "sha256": "ab228eae3c5a51ef49f07fbe2f9ed61411c22272a2b9c241814994cb5f92d35b"
       },
       "roleColors": {
-        "axis-main": "#4A90E2",
-        "axis-cross": "#243B63",
+        "axis-main": "#243B63",
+        "axis-cross": "#4A90E2",
         "side-rail": "#243B63",
         "focus": "#C62828",
         "data-flow": "#4A90E2",
-        "group": "#243B63",
-        "connector": "#4A90E2"
+        "group": "#4A90E2",
+        "connector": "#243B63"
       },
       "legacyInputFiles": []
     }

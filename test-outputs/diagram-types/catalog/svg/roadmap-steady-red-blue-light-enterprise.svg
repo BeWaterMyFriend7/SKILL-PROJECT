@@ -1,54 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1000" viewBox="0 0 1560 1000" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="steady-red-blue" data-mode="light" data-layout="timeline" data-dominant-axis="x" data-visual-contract="enterprise-v2" data-modules="focus-node footer-band top-band" data-generation="fresh-catalog-v1" data-diagram-type="roadmap" data-spec-hash="00b1305f3bc5de6932df57fe3ceb0a2f37afd2cb3b0b7e8f2df6337f1c2e73c4">
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1000" viewBox="0 0 1560 1000" role="img" aria-labelledby="title desc" font-family="Inter, Noto Sans SC, Microsoft YaHei, Arial, sans-serif" data-theme="steady-red-blue" data-mode="light" data-layout="timeline" data-dominant-axis="x" data-visual-contract="enterprise-v2" data-modules="focus-node footer-band" data-generation="fresh-catalog-v1" data-diagram-type="roadmap" data-spec-hash="00b1305f3bc5de6932df57fe3ceb0a2f37afd2cb3b0b7e8f2df6337f1c2e73c4">
 <title id="title">数据能力演进路线图</title>
 <desc id="desc">数据能力按治理、统一、实时和智能四阶段渐进演进。</desc>
 <metadata data-layout="timeline" data-optional-modules="top-band aux-column callout numbered-flow focus-node footer-band"/>
-<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.08"/></filter></defs>
+<defs><filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.055"/></filter></defs>
 <rect width="1560" height="1000" fill="#F6F7FB"/>
 <rect x="52" y="36" width="8" height="76" rx="4" fill="#C62828"/>
-<text id="page-title" x="82" y="74" font-size="40" font-weight="700" text-anchor="start" fill="#243B63" data-role="page-title">数据能力演进路线图</text>
+<text id="page-title" x="82" y="74" font-size="40" font-weight="700" text-anchor="start" fill="#A22121" data-role="page-title">数据能力演进路线图</text>
 <text id="subtitle" x="82" y="106" font-size="15" font-weight="400" text-anchor="start" fill="#475569">数据能力按治理、统一、实时和智能四阶段渐进演进。</text>
-<rect x="985" y="52" width="150" height="42" rx="21" fill="#FFFFFF" stroke="#B3D0F3" stroke-width="1.2"/>
-<text id="badge-0" x="1060" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#243B63">路线图</text>
-<rect x="1149" y="52" width="150" height="42" rx="21" fill="#FFFFFF" stroke="#E7A5A5" stroke-width="1.2"/>
-<text id="badge-1" x="1224" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#243B63">时间规划</text>
-<rect x="1313" y="52" width="190" height="42" rx="21" fill="#FFFFFF" stroke="#B3D0F3" stroke-width="1.2"/>
-<text id="badge-2" x="1408" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#243B63">Steady Red &amp; Blue</text>
-<rect id="main-shell" x="40" y="140" width="1420" height="720" rx="14" fill="#FFFFFF" stroke="#A3ADBD" stroke-width="1.2" data-role="region" data-color-role="group" data-visual-role="canvas" filter="url(#softShadow)"/>
-<rect id="top-band" x="70" y="165" width="1360" height="58" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="region" data-color-role="axis-main" data-module="top-band"/>
-<rect id="top-chip-0" x="105" y="176" width="380" height="36" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="295" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#243B63">目标阶段</text>
-<rect id="top-chip-1" x="545" y="176" width="380" height="36" rx="14" fill="#E5E7EC" stroke="#A3ADBD" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="735" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#243B63">关键里程碑</text>
-<rect id="top-chip-2" x="985" y="176" width="380" height="36" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1175" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#243B63">验收结果</text>
-<rect id="footer-band" x="40" y="890" width="1420" height="78" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="region" data-color-role="data-flow" data-module="footer-band"/>
-<rect id="footer-0" x="230" y="902" width="245" height="52" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="352" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#243B63">基础治理</text>
-<rect id="footer-1" x="520" y="902" width="245" height="52" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="642" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#243B63">资产统一</text>
-<rect id="footer-2" x="810" y="902" width="245" height="52" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="932" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#243B63">实时洞察</text>
-<rect id="footer-3" x="1100" y="902" width="245" height="52" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="node" data-color-role="data-flow"/>
-<text x="1222" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#243B63">智能决策</text>
-<rect id="stage-0" x="40" y="285" width="240" height="126" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="160" y="340" font-size="17" font-weight="700" text-anchor="middle" fill="#243B63">阶段一</text>
-<text x="160" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">数据标准 · 质量治理</text>
-<rect id="stage-1" x="433" y="570" width="240" height="126" rx="14" fill="#E5E7EC" stroke="#A3ADBD" stroke-width="1.2" data-role="node" data-color-role="axis-cross"/>
-<text x="553" y="625" font-size="17" font-weight="700" text-anchor="middle" fill="#243B63">阶段二</text>
-<text x="553" y="649" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">统一指标 · 主题资产</text>
-<rect id="stage-2" x="826" y="285" width="240" height="126" rx="14" fill="#DDE6EF" stroke="#B3D0F3" stroke-width="1.2" data-role="node" data-color-role="axis-main"/>
-<text x="946" y="340" font-size="17" font-weight="700" text-anchor="middle" fill="#243B63">阶段三</text>
-<text x="946" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">实时计算 · 自助分析</text>
-<rect id="stage-3" x="1220" y="570" width="240" height="126" rx="14" fill="#C62828" stroke="#A22121" stroke-width="1.2" data-role="node" data-color-role="focus" data-visual-role="focus" data-module="focus-node"/>
-<text x="1340" y="625" font-size="17" font-weight="700" text-anchor="middle" fill="#FFFFFF">阶段四</text>
-<text x="1340" y="649" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#FFFFFF">智能预测 · 自动决策</text>
+<rect x="985" y="52" width="150" height="42" rx="21" fill="#FFFFFF" stroke="#E2A4A4" stroke-width="1.2"/>
+<text id="badge-0" x="1060" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#142744">路线图</text>
+<rect x="1149" y="52" width="150" height="42" rx="21" fill="#FFFFFF" stroke="#AEBBD0" stroke-width="1.2"/>
+<text id="badge-1" x="1224" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#142744">时间规划</text>
+<rect x="1313" y="52" width="190" height="42" rx="21" fill="#FFFFFF" stroke="#B4CFEC" stroke-width="1.2"/>
+<text id="badge-2" x="1408" y="77" font-size="13" font-weight="700" text-anchor="middle" fill="#142744">Steady Red &amp; Blue</text>
+<rect id="main-shell" x="40" y="140" width="1420" height="720" rx="14" fill="#FFFFFF" stroke="#B4CFEC" stroke-width="1.2" data-font-color="#142744" data-role="region" data-color-role="group" data-visual-role="canvas" filter="url(#softShadow)"/>
+<rect id="footer-band" x="40" y="890" width="1420" height="78" rx="14" fill="#FFFFFF" stroke="#B4CFEC" stroke-width="1.2" data-font-color="#142744" data-role="region" data-color-role="axis-cross" data-module="footer-band"/>
+<rect id="footer-0" x="230" y="902" width="245" height="52" rx="14" fill="#FFFFFF" stroke="#B4CFEC" stroke-width="1.2" data-font-color="#142744" data-role="node" data-color-role="axis-cross"/>
+<text id="footer-0-label" x="352" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#142744">基础治理</text>
+<rect id="footer-1" x="520" y="902" width="245" height="52" rx="14" fill="#FFFFFF" stroke="#B4CFEC" stroke-width="1.2" data-font-color="#142744" data-role="node" data-color-role="axis-cross"/>
+<text id="footer-1-label" x="642" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#142744">资产统一</text>
+<rect id="footer-2" x="810" y="902" width="245" height="52" rx="14" fill="#FFFFFF" stroke="#B4CFEC" stroke-width="1.2" data-font-color="#142744" data-role="node" data-color-role="axis-cross"/>
+<text id="footer-2-label" x="932" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#142744">实时洞察</text>
+<rect id="footer-3" x="1100" y="902" width="245" height="52" rx="14" fill="#FFFFFF" stroke="#B4CFEC" stroke-width="1.2" data-font-color="#142744" data-role="node" data-color-role="axis-cross"/>
+<text id="footer-3-label" x="1222" y="928" font-size="14" font-weight="700" text-anchor="middle" fill="#142744">智能决策</text>
+<rect id="stage-0" x="40" y="285" width="240" height="126" rx="14" fill="#FFFFFF" stroke="#AEBBD0" stroke-width="1.2" data-font-color="#142744" data-role="node" data-color-role="axis-main"/>
+<text id="stage-0-label" x="160" y="340" font-size="17" font-weight="700" text-anchor="middle" fill="#142744">阶段一</text>
+<text id="stage-0-sublabel" x="160" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">数据标准 · 质量治理</text>
+<rect id="stage-1" x="433" y="570" width="240" height="126" rx="14" fill="#FFFFFF" stroke="#B4CFEC" stroke-width="1.2" data-font-color="#142744" data-role="node" data-color-role="axis-cross"/>
+<text id="stage-1-label" x="553" y="625" font-size="17" font-weight="700" text-anchor="middle" fill="#142744">阶段二</text>
+<text id="stage-1-sublabel" x="553" y="649" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">统一指标 · 主题资产</text>
+<rect id="stage-2" x="826" y="285" width="240" height="126" rx="14" fill="#FFFFFF" stroke="#AEBBD0" stroke-width="1.2" data-font-color="#142744" data-role="node" data-color-role="axis-main"/>
+<text id="stage-2-label" x="946" y="340" font-size="17" font-weight="700" text-anchor="middle" fill="#142744">阶段三</text>
+<text id="stage-2-sublabel" x="946" y="364" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#64748B">实时计算 · 自助分析</text>
+<rect id="stage-3" x="1220" y="570" width="240" height="126" rx="14" fill="#C62828" stroke="#A22121" stroke-width="1.2" data-font-color="#FFFFFF" data-role="node" data-color-role="focus" data-visual-role="focus" data-module="focus-node"/>
+<text id="stage-3-label" x="1340" y="625" font-size="17" font-weight="700" text-anchor="middle" fill="#FFFFFF">阶段四</text>
+<text id="stage-3-sublabel" x="1340" y="649" font-size="11" data-text-role="auxiliary" text-anchor="middle" fill="#FFFFFF">智能预测 · 自动决策</text>
 <text id="footer-title" x="74" y="933" font-size="20" font-weight="700" text-anchor="start" fill="#3D76B9">核心价值</text>
-<g id="timeline-icon-0" data-role="icon" data-color-role="axis-main" fill="#4A90E2"><circle cx="70" cy="311" r="5"/><path d="M61 330c1-8 5-11 9-11s8 3 9 11" fill="none" stroke="#4A90E2" stroke-width="2.4" stroke-linecap="round"/></g>
-<g id="timeline-icon-2" data-role="icon" data-color-role="axis-main" fill="#4A90E2"><path d="M856 305l9 4v7c0 7-4 11-9 14-5-3-9-7-9-14V309z" fill="none" stroke="#4A90E2" stroke-width="2.4"/><path d="M852 316l3 3 6-7" fill="none" stroke="#4A90E2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="timeline-icon-0" data-role="icon" data-color-role="axis-main" fill="#243B63"><circle cx="70" cy="311" r="5"/><path d="M61 330c1-8 5-11 9-11s8 3 9 11" fill="none" stroke="#243B63" stroke-width="2.4" stroke-linecap="round"/></g>
+<g id="timeline-icon-2" data-role="icon" data-color-role="axis-main" fill="#243B63"><path d="M856 305l9 4v7c0 7-4 11-9 14-5-3-9-7-9-14V309z" fill="none" stroke="#243B63" stroke-width="2.4"/><path d="M852 316l3 3 6-7" fill="none" stroke="#243B63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g id="timeline-icon-3" data-role="icon" data-color-role="focus" fill="#C62828"><rect x="1238" y="593" width="7" height="18" rx="2"/><rect x="1247" y="589" width="7" height="22" rx="2"/><rect x="1256" y="597" width="7" height="14" rx="2"/></g>
-<line id="timeline-axis" data-role="edge" data-color-role="axis-main" x1="160" y1="500" x2="1340" y2="500" stroke="#4A90E2" stroke-width="2.4"/>
-<line id="stage-link-0" data-role="edge" data-color-role="axis-main" x1="160" y1="411" x2="160" y2="500" stroke="#4A90E2" stroke-width="2.4" stroke-dasharray="7 6"/>
-<line id="stage-link-1" data-role="edge" data-color-role="axis-cross" x1="553" y1="570" x2="553" y2="500" stroke="#243B63" stroke-width="2.4" stroke-dasharray="7 6"/>
-<line id="stage-link-2" data-role="edge" data-color-role="axis-main" x1="946" y1="411" x2="946" y2="500" stroke="#4A90E2" stroke-width="2.4" stroke-dasharray="7 6"/>
+<line id="timeline-axis" data-role="edge" data-color-role="axis-main" x1="160" y1="500" x2="1340" y2="500" stroke="#243B63" stroke-width="2.4"/>
+<line id="stage-link-0" data-role="edge" data-color-role="axis-main" x1="160" y1="411" x2="160" y2="500" stroke="#243B63" stroke-width="2.4" stroke-dasharray="7 6"/>
+<line id="stage-link-1" data-role="edge" data-color-role="axis-cross" x1="553" y1="570" x2="553" y2="500" stroke="#4A90E2" stroke-width="2.4" stroke-dasharray="7 6"/>
+<line id="stage-link-2" data-role="edge" data-color-role="axis-main" x1="946" y1="411" x2="946" y2="500" stroke="#243B63" stroke-width="2.4" stroke-dasharray="7 6"/>
 <line id="stage-link-3" data-role="edge" data-color-role="focus" x1="1340" y1="570" x2="1340" y2="500" stroke="#C62828" stroke-width="2.4" stroke-dasharray="7 6"/>
 </svg>

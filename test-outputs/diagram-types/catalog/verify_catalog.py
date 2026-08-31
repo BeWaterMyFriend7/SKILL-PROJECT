@@ -29,6 +29,7 @@ SVG_VALIDATOR = REPO / ".opencode/skills/svg-generator/scripts/validate.py"
 XML_VALIDATOR = REPO / ".opencode/skills/xml-diagram/scripts/validate.py"
 SVG_SKILL = REPO / ".opencode/skills/svg-generator"
 XML_SKILL = REPO / ".opencode/skills/xml-diagram"
+STYLE_MAP_PATH = SVG_SKILL / "scripts/style_map.py"
 
 
 def sha256(path: Path) -> str:
@@ -65,6 +66,23 @@ def load_svg_validator():
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
     return module
+
+
+def load_style_map():
+    spec = importlib.util.spec_from_file_location("catalog_verification_style_map", STYLE_MAP_PATH)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader
+    spec.loader.exec_module(module)
+    return module
+
+
+def parse_drawio_style(value: str | None) -> dict[str, str]:
+    result = {}
+    for part in (value or "").split(";"):
+        if "=" in part:
+            key, item = part.split("=", 1)
+            result[key] = item
+    return result
 
 
 def find_drawio(configured: str | None) -> Path | None:
@@ -143,15 +161,34 @@ def clean_images(items: list[dict[str, object]]) -> list[str]:
 def svg_semantics(path: Path) -> tuple[dict[str, tuple[object, ...]], dict[str, tuple[object, ...]]]:
     root = ET.parse(path).getroot()
     boxes, relations = {}, {}
+    label_colors = {
+        item.get("id")[:-6]: item.get("fill")
+        for item in root.iter()
+        if item.get("id", "").endswith("-label")
+    }
     for item in root.iter():
         item_id = item.get("id")
         role = item.get("data-role")
         if not item_id or not role:
             continue
         if role in {"node", "region"}:
-            boxes[item_id] = (role, item.get("data-color-role"), item.get("data-visual-role"), item.get("data-module"), float(item.get("x", 0)), float(item.get("y", 0)), float(item.get("width", 0)), float(item.get("height", 0)))
+            boxes[item_id] = (
+                role,
+                item.get("data-color-role"),
+                item.get("data-visual-role"),
+                item.get("data-module"),
+                float(item.get("x", 0)),
+                float(item.get("y", 0)),
+                float(item.get("width", 0)),
+                float(item.get("height", 0)),
+                item.get("fill"),
+                item.get("stroke"),
+                label_colors.get(item_id, item.get("data-font-color")),
+                item.get("filter") == "url(#softShadow)",
+            )
         elif role in {"edge", "lifeline", "icon"}:
-            relations[item_id] = (role, item.get("data-color-role"))
+            actual_color = item.get("stroke") if role in {"edge", "lifeline"} else None
+            relations[item_id] = (role, item.get("data-color-role"), actual_color)
     return boxes, relations
 
 
@@ -164,9 +201,25 @@ def drawio_semantics(path: Path) -> tuple[dict[str, tuple[object, ...]], dict[st
             continue
         if role in {"node", "region"}:
             geometry = item.find("mxGeometry")
-            boxes[item_id] = (role, item.get("colorRole"), item.get("visualRole"), item.get("module"), float(geometry.get("x", 0)), float(geometry.get("y", 0)), float(geometry.get("width", 0)), float(geometry.get("height", 0)))
+            style = parse_drawio_style(item.get("style"))
+            boxes[item_id] = (
+                role,
+                item.get("colorRole"),
+                item.get("visualRole"),
+                item.get("module"),
+                float(geometry.get("x", 0)),
+                float(geometry.get("y", 0)),
+                float(geometry.get("width", 0)),
+                float(geometry.get("height", 0)),
+                style.get("fillColor"),
+                style.get("strokeColor"),
+                style.get("fontColor"),
+                style.get("shadow") == "1",
+            )
         elif role in {"edge", "lifeline", "icon"}:
-            relations[item_id] = (role, item.get("colorRole"))
+            style = parse_drawio_style(item.get("style"))
+            actual_color = style.get("strokeColor") if role in {"edge", "lifeline"} else None
+            relations[item_id] = (role, item.get("colorRole"), actual_color)
     return boxes, relations
 
 
@@ -183,6 +236,103 @@ def verify_pair(svg: Path, drawio: Path) -> dict[str, object]:
     return {"boxes": len(svg_boxes), "relationsAndIcons": len(svg_relations), "status": "matched"}
 
 
+def verify_visual_recipe(spec: dict[str, object], svg: Path) -> dict[str, object]:
+    root = ET.parse(svg).getroot()
+    style = load_style_map().build_style_map(
+        spec["theme"],
+        layout=spec["layout"],
+        dominant_axis=spec["dominantAxis"],
+    )
+    tokens = {**style["roles"], **style["semantic-roles"]}
+    neutral = style["neutral"]
+    boxes = [
+        item
+        for item in root.iter()
+        if item.get("data-role") in {"node", "region"} and item.get("data-color-role")
+    ]
+    roles = {
+        item.get("data-color-role") for item in boxes
+    }
+    required: set[str] = {"focus"}
+    if spec["theme"] == "vibrant" and spec["skeleton"] == "layered":
+        required.update({"domain-app", "domain-control", "domain-network", "domain-data"})
+    if spec["id"] == "flow-branching" and spec["theme"] == "vibrant":
+        required.update({"status-warning", "status-error"})
+    if spec["theme"] == "tech-blue" and spec["skeleton"] == "layered":
+        required.update({"axis-main", "axis-cross", "data-flow"})
+    if spec["theme"] == "steady-red-blue" and spec["skeleton"] == "layered":
+        required.update({"focus", "side-rail", "axis-cross"})
+    missing = sorted(required - roles)
+    if missing:
+        raise RuntimeError(f"visual recipe roles missing for {spec['id']}: {missing}")
+    if spec["theme"] == "vibrant" and spec["skeleton"] != "layered":
+        misplaced = sorted(role for role in roles if role.startswith("domain-"))
+        if misplaced:
+            raise RuntimeError(f"functional domain colors used outside a domain-layer diagram for {spec['id']}: {misplaced}")
+
+    total_area = 0.0
+    strong_area = 0.0
+    focus_area = 0.0
+    status_area = 0.0
+    ordinary_card_area = 0.0
+    surface_card_area = 0.0
+    for item in boxes:
+        role = item.get("data-color-role")
+        if role not in tokens:
+            raise RuntimeError(f"unknown visual role in {spec['id']}: {role}")
+        token = tokens[role]
+        fill, stroke = item.get("fill"), item.get("stroke")
+        allowed_fills = {neutral["surface"], neutral["surface-muted"], token["base"], token["soft"], token["subtle"]}
+        if fill not in allowed_fills or stroke not in {token["strong"], token["border"], token["base"]}:
+            raise RuntimeError(f"visual token mismatch in {spec['id']}/{item.get('id')}: fill={fill}, stroke={stroke}, role={role}")
+        area = float(item.get("width", 0)) * float(item.get("height", 0))
+        total_area += area
+        if fill == token["base"]:
+            strong_area += area
+        if item.get("data-visual-role") == "focus":
+            focus_area += area
+        if role.startswith("status-"):
+            status_area += area
+        if item.get("data-role") == "node" and item.get("data-visual-role") != "focus" and not role.startswith("status-"):
+            ordinary_card_area += area
+            if fill in {neutral["surface"], neutral["surface-muted"]}:
+                surface_card_area += area
+
+    if not total_area:
+        raise RuntimeError(f"no measurable visual regions in {spec['id']}")
+    metrics = {
+        "strongAreaRatio": round(strong_area / total_area, 4),
+        "focusAreaRatio": round(focus_area / total_area, 4),
+        "statusAreaRatio": round(status_area / total_area, 4),
+        "surfaceCardRatio": round(surface_card_area / ordinary_card_area, 4) if ordinary_card_area else 1.0,
+    }
+    budgets = style["recipe"]["area-budget"]
+    for metric, budget_key in (("strongAreaRatio", "strong"), ("focusAreaRatio", "focus"), ("statusAreaRatio", "status")):
+        if metrics[metric] > budgets[budget_key]:
+            raise RuntimeError(f"{metric} budget exceeded in {spec['id']}: {metrics[metric]} > {budgets[budget_key]}")
+    if metrics["surfaceCardRatio"] < 0.70:
+        raise RuntimeError(f"white/surface card ratio too low in {spec['id']}: {metrics['surfaceCardRatio']}")
+
+    if spec["theme"] == "tech-blue" and spec["skeleton"] == "layered":
+        grouped: dict[str, set[str]] = {}
+        for item in boxes:
+            item_id = item.get("id", "")
+            parts = item_id.split("-")
+            if len(parts) >= 2 and parts[0] == "layer" and parts[1].isdigit():
+                grouped.setdefault(parts[1], set()).add(item.get("data-color-role"))
+        inconsistent = {key: sorted(value) for key, value in grouped.items() if len(value) != 1}
+        if inconsistent:
+            raise RuntimeError(f"Tech Blue layer color groups are inconsistent in {spec['id']}: {inconsistent}")
+
+    return {
+        "status": "matched",
+        "roles": sorted(roles),
+        "requiredRoles": sorted(required),
+        "metrics": metrics,
+        "budgets": budgets,
+    }
+
+
 def verify_sources(items: list[dict[str, object]]) -> list[dict[str, object]]:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     if manifest.get("generationMode") != "fresh-catalog-v1" or manifest.get("legacyInputFiles") != []:
@@ -193,6 +343,7 @@ def verify_sources(items: list[dict[str, object]]) -> list[dict[str, object]]:
     if [item["id"] for item in artifacts] != [item["id"] for item in items]:
         raise RuntimeError("manifest catalog order/content mismatch")
     verified = []
+    specs_by_id = {item["id"]: item for item in items}
     for artifact in artifacts:
         if artifact.get("legacyInputFiles") != []:
             raise RuntimeError(f"legacy input declared for {artifact['id']}")
@@ -207,7 +358,8 @@ def verify_sources(items: list[dict[str, object]]) -> list[dict[str, object]]:
                 raise RuntimeError(f"fresh marker/spec hash missing: {declared['path']}")
             files[kind] = {"path": declared["path"], "sha256": declared["sha256"]}
         pair = verify_pair(HERE / artifact["svg"]["path"], HERE / artifact["drawio"]["path"])
-        verified.append({"id": artifact["id"], "specHash": artifact["specHash"], "pair": pair, "files": files})
+        recipe = verify_visual_recipe(specs_by_id[artifact["id"]], HERE / artifact["svg"]["path"])
+        verified.append({"id": artifact["id"], "specHash": artifact["specHash"], "pair": pair, "recipe": recipe, "files": files})
     return verified
 
 
