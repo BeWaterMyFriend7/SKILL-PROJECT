@@ -85,8 +85,8 @@
     <tr>
       <td>记忆协作相关</td>
       <td><code>agent-offline-mermory</code></td>
-      <td>管理本地 Obsidian 或纯 Markdown 文件夹中的 AI 协作记忆：任务交接、待办、可复用经验，支持自动/手动经验加载</td>
-      <td>Markdown 记忆笔记与索引</td>
+      <td>管理本地 Obsidian 或纯 Markdown 文件夹中的任务、知识和每日总结，提供可视化首页、手动记录及自动/手动经验加载</td>
+      <td>Markdown 记忆笔记、索引与 Obsidian 仪表盘</td>
       <td colspan="2"><a href="docs/agent-offline-mermory/README.md">文档与示例</a></td>
     </tr>
   </tbody>
@@ -106,7 +106,7 @@
     <tr><td>drawio可编辑的原型页面</td><td><code>prototype-design-xml</code></td></tr>
     <tr><td rowspan="2">代码变更相关</td><td>需求变化或者新增需求，与现有实现路径不一致，分析需求、方案和影响范围和实施计划</td><td><code>code-change-plan</code></td></tr>
     <tr><td>合并前分析冲突点和解决方案</td><td><code>code-merge-helper</code></td></tr>
-    <tr><td>记忆协作相关</td><td>跨会话管理任务交接、待办和可复用经验，需要自动风险提醒或手动加载</td><td><code>agent-offline-mermory</code></td></tr>
+    <tr><td>记忆协作相关</td><td>跨会话管理任务、知识和每日总结，需要 Obsidian 可视化首页、手动记录或经验风险提醒</td><td><code>agent-offline-mermory</code></td></tr>
   </tbody>
 </table>
 
@@ -163,6 +163,12 @@
 ![红包运营后台概览](docs/prototype-design-html/images/red-packet-overview.png)
 
 ![消息聊天原型](docs/prototype-design-html/images/chat-prototype.png)
+
+#### Obsidian 记忆首页
+
+![Agent Memory Obsidian 首页](docs/agent-offline-mermory/images/obsidian-dashboard.png)
+
+![Agent Memory 手动记录](docs/agent-offline-mermory/images/manual-record-dialog.png)
 
 ## 第二部分：网上优秀的 Skill 推荐
 

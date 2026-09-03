@@ -1,159 +1,249 @@
-# agent-offline-mermory 使用说明
+# agent-offline-mermory 使用手册
 
-## 适用场景
+`agent-offline-mermory` 用本地 Markdown 文件保存 AI 协作记忆，支持 Obsidian 仓库和普通 Markdown 文件夹。记录分为任务、知识和每日总结三类，所有读写都限制在用户配置的记忆根目录内。
 
-- 跨会话管理未完成任务、交接文档和可复用经验（如 Git 提交踩坑、部署注意事项）。
-- 记忆根目录可位于 Obsidian 仓库内（默认校验 `.obsidian`），也支持纯 Markdown 文件夹（`require_obsidian=false`）。
-- 经验加载支持 `auto`（默认）与 `manual` 两种模式，用于技术流程前的只读风险提醒或按需查询。
+![Obsidian 记忆首页](images/obsidian-dashboard.png)
+
+## 功能概览
+
+- `Tasks`：保存未完成事项、任务进度、阻塞和恢复工作所需的信息。
+- `Knowledge`：保存可复用的问题原因、解决方案、验证方法和经验。
+- `Daily`：按日期保存当天完成内容、问题和待办。
+- 自动维护三类记录的 `_index.md` 索引。
+- Obsidian 模式提供 Dataview 仪表盘、数字统计、首页搜索、最近记录和手动记录入口。
+- 经验加载支持 `auto`（默认）和 `manual` 两种模式。
+- 普通对话不会自动写入记录；每日总结也不会在任务结束后自动生成。
 
 ## 触发方式
 
-这个 Skill 只有在**明确触发**时才会读写记忆，普通对话不会偷偷读取你的记忆目录。
-
-- **明确触发**：对话中说 `$agent-offline-mermory`、说“使用 agent-offline-mermory”，或从 Skill 菜单选择本 Skill。明确触发后才会执行查询、写入、整理交接等操作。
-- **自动回忆（仅 auto 模式）**：当任务确实涉及 Git、代码修改、测试、构建、部署、环境配置等可重复技术流程时，开始前只读检索 `Knowledge` 作为风险提醒，不写入任何内容。
-- **不触发**：普通总结、闲聊和一般提问（如“总结一下刚才的聊天”）不会读取记忆目录，也不会加载经验。
-
-使用示例统一以 `$agent-offline-mermory` 开头，表示这是明确调用。首次使用初始化是唯一不需要前缀的特殊情况，见下文。
-
-## 经验加载模式
-
-初始化时可以选定经验加载模式，之后可随时修改：
-
-- `auto`（默认）：可重复技术流程开始前自动只读检索 `Knowledge`，最多 3 条，严格按相关度过滤；没有匹配时明确告知“未找到相关经验”，不会硬加载无关内容。适合需要风险提醒、可接受少量额外调用的场景。
-- `manual`：只有明确调用 `$agent-offline-mermory` 时才加载经验，其余任务完全不检索。适合在意 token、任务多为一次性的场景。
-- **临时跳过**：对话中说“这次不用加载经验”，本次任务跳过检索，不修改配置。
-- **修改方式**：对 Agent 说“把经验加载模式改成 manual/auto”，Agent 会重新执行初始化并保留当前记忆根目录。
-
-## 快速使用
-
-所有操作都通过对话完成，不需要手敲命令。第一次使用需要先初始化（见下节），之后用 `$agent-offline-mermory` 明确触发即可：
+主动查询或写入记忆时，需要明确调用 Skill：
 
 ```text
 $agent-offline-mermory 查询尚未完成的任务
 ```
 
-- 执行规则：[SKILL.md](../../.opencode/skills/agent-offline-mermory/SKILL.md)
-- 配置模板：[settings.example.json](../../.opencode/skills/agent-offline-mermory/settings.example.json)
+也可以说“使用 agent-offline-mermory”，或从 Skill 菜单选择本 Skill。
 
-## 初始化（首次使用必做）
+- **明确触发**：允许查询 `Tasks`、`Knowledge`、`Daily`，以及新建或更新记录。
+- **自动回忆**：仅在 `experience_mode=auto` 且任务涉及 Git、代码修改、测试、构建、部署或环境配置等可复用技术流程时，只读检索相关 `Knowledge`，不写入任何内容。
+- **不触发**：普通总结、闲聊和一般提问不会读取记忆目录。
+- **临时跳过**：说“这次不用加载经验”，只跳过本次经验检索，不修改配置。
 
-安装后必须初始化，否则查询和写入都会被拒绝。初始化只需要确认三件事，每件事都有实际意义：
+## 初始化
 
-1. **记忆根目录路径**：所有记录（任务、经验、临时笔记）存放的位置。它同时是安全边界——之后所有读写都只发生在这个目录内，防止写错地方。
-2. **是否要求 Obsidian（`require_obsidian`）**：选 `true`（默认）要求目录位于 Obsidian 仓库内，记录可被 Obsidian 双链、图谱检索；选 `false` 则任意 Markdown 文件夹都可以，更自由，不依赖 Obsidian。
-3. **经验加载模式（`experience_mode`）**：决定技术流程前是否自动加载经验提醒（`auto`）还是只用不加载（`manual`），见上文“经验加载模式”。
+安装后必须先初始化。初始化需要确认：
 
-初始化会创建 `Inbox`、`Tasks`、`Knowledge` 三个目录、一个入口文档和 `_index.md` 索引；之后每次写入或更新记录，索引自动刷新，无需手动维护。
+1. `memory_root`：记忆根目录绝对路径。
+2. `require_obsidian`：是否要求目录位于 Obsidian Vault 内，默认 `true`。
+3. `experience_mode`：选择 `auto` 或 `manual`，默认 `auto`。
 
-三种初始化方式任选其一：
-
-### 方式一：对话初始化（推荐）
-
-直接对 Agent 说：
+### 对话初始化（推荐）
 
 ```text
 初始化 agent-offline-mermory
 ```
 
-Agent 会通过对话逐一确认上面三件事（例如：请用户提供或帮助选择记忆根目录路径，确认是否使用 Obsidian，确认经验模式），然后代为完成初始化，并告诉你记忆根目录和后续用法。全程不需要敲任何命令。
+Agent 会逐项确认配置并完成初始化，不需要用户手敲长命令。
 
-### 方式二：命令行交互式
+### 命令行初始化
 
-运行短命令，写入器会逐步提问（路径、是否 Obsidian、经验模式），不需要一次输入所有参数：
+Windows：
 
 ```powershell
 & "<Skill目录>\scripts\write-memory.ps1" -Action Init
 ```
 
+Linux 或 macOS：
+
 ```sh
 sh "<Skill目录>/scripts/write-memory.sh" --action init
 ```
 
-### 方式三：编辑配置文件
+也可以把 `settings.example.json` 复制为 `settings.json`，填写配置后再执行初始化。
 
-如果不希望对话，也可以手动配置：
+初始化完成后会生成：
 
-1. 将 `settings.example.json` 复制为 `settings.json`；
-2. 修改其中的 `memory_root`（记忆根目录绝对路径）、`require_obsidian`、`experience_mode`；
-3. 对 Agent 说“已完成初始化配置，请继续”，Agent 会读取配置完成初始化。
+```text
+<记忆根目录>/
+├── <记忆根目录名>.md        # 入口文档；Obsidian 模式下为仪表盘
+├── Daily/
+│   └── _index.md             # 每日总结索引
+├── Tasks/
+│   └── _index.md             # 任务索引
+└── Knowledge/
+    └── _index.md             # 知识索引
+```
 
-## 使用示例
+## Obsidian 首页
 
-以下示例都是明确触发（带 `$agent-offline-mermory`），可以直接照用。
+当 `require_obsidian=true` 时，入口文档会使用 DataviewJS 渲染仪表盘。需要在 Obsidian 中安装并启用社区插件 **Dataview**，同时允许 JavaScript 查询。
 
-### 示例 1：查询待办
+首页包含：
+
+- **任务数、知识数、每日总结数**：点击指标卡直接打开对应目录的索引文件。
+- **搜索栏**：实时过滤当前首页中的任务、知识和总结。
+- **任务表、最近更新、最近知识、最近总结**：四个区域采用固定高度和纵向滚动。
+- **完整标题提示**：列表标题在空间不足时省略，鼠标悬停可查看完整名称。
+- **手动记录**：选择任务、知识或总结，直接按对应模板创建文件。
+
+每个列表默认最多显示 10 条。可以修改入口文档 frontmatter：
+
+```yaml
+dashboard_limit: 10
+```
+
+有效范围为 1–100，超出范围时会自动限制到边界值。
+
+重新执行 `init` 或 `set-root` 时，写入器会自动升级旧版仪表盘，不会删除已有任务、知识或总结。
+
+## 手动记录
+
+点击首页右上方的“手动记录”，弹窗会提供三种类型。
+
+![手动记录弹窗](images/manual-record-dialog.png)
+
+- **任务**：填写标题后，在 `Tasks` 中创建独立文件，并预置目标、进度、风险和关键文件章节。
+- **知识**：填写标题后，在 `Knowledge` 中创建独立文件，并预置场景、原因、解决方案和注意事项章节。
+- **总结**：不需要填写标题，使用当天日期在 `Daily` 中创建 `YYYY-MM-DD.md`；如果当天文件已经存在，只打开文件，不覆盖内容。
+
+任务和知识文件名包含创建日期、时间和安全处理后的标题。创建成功后，对应 `_index.md` 会立即刷新并自动打开新文件。这个入口只在用户点击并确认后执行，不会自动触发。
+
+## 三类记录模板
+
+### 任务
+
+```markdown
+---
+type: agent-task
+status: active
+tags: []
+created: "创建时间"
+updated: "更新时间"
+---
+
+# 任务标题
+
+## 目标
+
+## 进度与下一步
+
+## 阻塞与风险
+
+## 关键文件与命令
+```
+
+### 知识
+
+```markdown
+---
+type: agent-knowledge
+tags: []
+created: "创建时间"
+updated: "更新时间"
+---
+
+# 知识标题
+
+## 场景
+
+## 问题与原因
+
+## 解决方案与验证
+
+## 注意事项
+```
+
+### 每日总结
+
+```markdown
+---
+type: agent-daily
+date: "YYYY-MM-DD"
+created: "创建时间"
+updated: "更新时间"
+---
+
+# YYYY-MM-DD
+
+## 完成
+
+## 问题
+
+## 待办
+```
+
+首页手动记录会创建包含全部空章节的模板。Agent 写入时可以省略没有内容的章节；再次写入当天总结时，会追加到当天文件而不是创建第二份总结。
+
+## 对话使用示例
+
+### 查询待办
 
 ```text
 $agent-offline-mermory 有哪些待办需要处理？
 ```
 
-Agent 查询 `Tasks` 中状态为 Active 的记录，列出标题、状态和文件路径。
+Agent 查询 `Tasks` 中状态为 `active` 的记录，并返回标题、状态、摘要和绝对路径。
 
-### 示例 2：记录任务交接
+### 记录任务交接
 
 ```text
 $agent-offline-mermory 把当前任务整理成交接文档
 ```
 
-Agent 将当前任务的背景、进度、阻塞、下一步和关键文件整理成 Markdown，写入 `Tasks/`，并告知你文件路径。
-
-### 示例 3：记录踩坑经验
+### 记录可复用经验
 
 ```text
 $agent-offline-mermory 记录这次 Git 提交踩坑：hooks 没生效，提交前先检查 .git/hooks
 ```
 
-Agent 先只读检索 `Knowledge` 中已有的 Git 相关经验（有高相关结果时会先说明），再新建一条知识记录。
+写入知识前会先只读检索相似经验；没有高相关结果时会明确说明，不会加载无关记录。
 
-### 示例 4：查询经验
+### 记录每日总结
+
+```text
+$agent-offline-mermory 记录今天的每日总结
+```
+
+### 查询经验
 
 ```text
 $agent-offline-mermory Git 提交有哪些经验？
 ```
 
-Agent 只读查询 `Knowledge`，按相关度返回最多 5 条并附摘要，没有匹配时明确告知未找到。
-
-### 示例 5：更新已有文档
+### 更新指定文档
 
 ```text
 $agent-offline-mermory 把“红包系统部署”这篇任务的下一步更新为：环境变量已配置，开始验证
 ```
 
-Agent 定位你指出的已有文档，追加更新内容并刷新索引，同时报告更新后的路径。
+只有用户明确提供文件路径、准确文档名或 Obsidian 链接时，Agent 才会更新已有文档。
 
-### 示例 6：切换经验加载模式
+### 切换经验加载模式
 
 ```text
 $agent-offline-mermory 把经验加载模式改成 manual，只在我说用的时候再加载
 ```
 
-Agent 重新执行初始化并保留当前记忆根目录，将 `experience_mode` 切换为 `manual`。
+## 经验加载模式
 
-### 示例 7：单次跳过经验加载
+- `auto`：可重复技术流程开始前自动只读检索 `Knowledge`，最多加载 3 条高相关经验。
+- `manual`：只有明确调用本 Skill 时才加载经验。
+- 没有高相关结果时会继续当前任务，不创建记录，也不会把无关内容当作经验。
 
-```text
-这次不用加载经验，直接开始
-```
+## 安全边界
 
-Agent 本次任务跳过经验检索，不修改任何配置；后续任务按原有模式继续。
+- 所有 Agent 写入必须通过 Skill 自带写入器完成。
+- 不得写入已配置记忆根目录之外的位置。
+- 不得自行猜测要更新哪个已有文件。
+- 查询会跳过 `_index.md`，避免把索引本身当成记录。
+- Obsidian 首页手动记录只通过 Vault API 写入当前记忆目录，不会覆盖已有当天总结。
+- `settings.json` 保存本地绝对路径，不应提交到 Git。
 
-## 核心流程
+## 相关文件
 
-1. 检查是否已初始化，未初始化先引导用户完成初始化。
-2. 按 `experience_mode` 决定是否在可重复技术流程前只读检索 `Knowledge`。
-3. 明确触发后，按用户意图查询 `Tasks` / `Knowledge` / `Inbox`。
-4. 写入或更新记录；写入后自动刷新 `Tasks/`、`Knowledge/` 索引。
-5. 向用户报告记录类型、新建/更新、绝对路径和索引刷新情况。
-
-## 记忆目录结构
-
-```text
-<记忆根目录>/
-├── <记忆根目录名>.md        # 入口文档
-├── Inbox/                    # 临时记录（按天）
-├── Tasks/                    # 任务交接与待办
-│   └── _index.md             # 自动维护的任务索引
-└── Knowledge/                # 可复用经验
-    └── _index.md             # 自动维护的知识索引
-```
+- [Skill 执行规则](../../.opencode/skills/agent-offline-mermory/SKILL.md)
+- [配置模板](../../.opencode/skills/agent-offline-mermory/settings.example.json)
+- [任务模板](../../.opencode/skills/agent-offline-mermory/assets/templates/task-handoff.md)
+- [知识模板](../../.opencode/skills/agent-offline-mermory/assets/templates/knowledge-note.md)
+- [每日总结模板](../../.opencode/skills/agent-offline-mermory/assets/templates/daily-summary.md)
+- [Obsidian 首页模板](../../.opencode/skills/agent-offline-mermory/assets/templates/dashboard-obsidian.md)
