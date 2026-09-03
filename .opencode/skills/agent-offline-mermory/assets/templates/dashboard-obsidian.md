@@ -1,6 +1,6 @@
 ---
 type: agent-memory-index
-dashboard_version: 13
+dashboard_version: 14
 dashboard_limit: 10
 created: "{{timestamp}}"
 updated: "{{timestamp}}"
@@ -11,8 +11,8 @@ updated: "{{timestamp}}"
 > 需要启用 Obsidian 社区插件 **Dataview** 及其 JavaScript 查询。可通过顶部 `dashboard_limit` 调整每区显示数量，有效范围为 1–100。
 
 ```dataviewjs
-const STYLE_ID = 'agent-memory-dashboard-styles-v13';
-['agent-memory-dashboard-styles', 'agent-memory-dashboard-styles-v9', 'agent-memory-dashboard-styles-v10', 'agent-memory-dashboard-styles-v11', 'agent-memory-dashboard-styles-v12', STYLE_ID].forEach(id => document.getElementById(id)?.remove());
+const STYLE_ID = 'agent-memory-dashboard-styles-v14';
+['agent-memory-dashboard-styles', 'agent-memory-dashboard-styles-v9', 'agent-memory-dashboard-styles-v10', 'agent-memory-dashboard-styles-v11', 'agent-memory-dashboard-styles-v12', 'agent-memory-dashboard-styles-v13', STYLE_ID].forEach(id => document.getElementById(id)?.remove());
 const ensureStyles = () => {
   if (document.getElementById(STYLE_ID)) return;
   const style = document.createElement('style');
@@ -174,7 +174,7 @@ updated: "${timestamp}"
 
 ## 问题
 
-## 明日计划
+## 待办
 `;
 };
 const refreshIndex = async directory => {

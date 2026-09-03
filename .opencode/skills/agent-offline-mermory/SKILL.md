@@ -277,7 +277,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 ```markdown
 ## 完成
 ## 问题
-## 明日计划
+## 待办
 ```
 
 省略空章节。只记录当天实际发生或计划的内容，不重复搬运 Task 和 Knowledge 中的细节。
@@ -291,7 +291,7 @@ sh "<Skill目录>/scripts/write-memory.sh" --action set-root
 ## 问题
 - Windows 控制台中文乱码；原因：编码未切换；处理：脚本已用 UTF-8 输出，已解决
 
-## 明日计划
+## 待办
 - 提交并推送本次改动，同步安装副本
 ```
 
