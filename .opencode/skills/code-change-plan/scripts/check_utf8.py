@@ -1,91 +1,31 @@
 #!/usr/bin/env python3
-"""Check file encoding: UTF-8 without BOM, no Unicode replacement characters.
-
-Usage:
-    python scripts/check_utf8.py [--strict-mojibake] <file>
-
-Exit code 0 = clean, 1 = issues found, 2 = read error.
-"""
-import sys
+"""Read-only UTF-8 check. Exit 0 clean, 1 invalid, 2 usage/read error."""
+import argparse
 from pathlib import Path
+import sys
+from write_utf8 import validate_text, suspicious_mojibake_markers
 
 
-MOJIBAKE_MARKERS = (
-    "鍦",
-    "涓",
-    "鈥",
-    "銆",
-    "锛",
-    "绗",
-    "闇",
-    "浠",
-    "Ã",
-    "Â",
-)
-
-
-def _format_marker(marker: str) -> str:
-    return marker.encode("unicode_escape").decode("ascii")
-
-
-def suspicious_mojibake_markers(text: str) -> list[str]:
-    return [marker for marker in MOJIBAKE_MARKERS if marker in text]
-
-
-def check(filepath: str, strict_mojibake: bool = False) -> int:
-    path = Path(filepath)
-    if not path.is_file():
-        print(f"ERROR: File not found: {filepath}")
-        return 2
-
+def check(filepath, strict_mojibake=False):
     try:
-        raw = path.read_bytes()
+        raw = Path(filepath).read_bytes()
     except OSError as exc:
-        print(f"ERROR: Cannot read {filepath}: {exc}")
+        print("ERROR: " + str(exc), file=sys.stderr)
         return 2
-
-    errors = []
-
-    # BOM check
-    if raw[:3] == b'\xef\xbb\xbf':
-        errors.append("BOM detected (file starts with UTF-8 BOM)")
-
-    # Valid UTF-8 decode
     try:
-        text = raw.decode("utf-8")
-    except UnicodeDecodeError as ude:
-        errors.append(f"Invalid UTF-8 encoding: {ude}")
-        for err in errors:
-            print(f"FAIL: {err}")
+        if raw.startswith(b"\xef\xbb\xbf"):
+            raise ValueError("UTF-8 BOM detected")
+        validate_text(raw.decode("utf-8"), strict_mojibake)
+    except ValueError as exc:
+        print("INVALID: " + str(exc), file=sys.stderr)
         return 1
-
-    # Replacement character check
-    if '\ufffd' in text:
-        errors.append("Unicode replacement characters found (mojibake / encoding corruption)")
-
-    if strict_mojibake:
-        markers = suspicious_mojibake_markers(text)
-        if markers:
-            rendered = ", ".join(_format_marker(marker) for marker in markers)
-            errors.append(f"Suspicious mojibake markers found: {rendered}")
-
-    if errors:
-        for err in errors:
-            print(f"FAIL: {err}")
-        return 1
-
-    print(f"UTF-8 OK: {filepath}")
+    print("UTF-8 OK: " + str(filepath))
     return 0
 
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    strict_mojibake = False
-    if "--strict-mojibake" in args:
-        strict_mojibake = True
-        args.remove("--strict-mojibake")
-
-    if len(args) != 1:
-        print(f"Usage: {sys.argv[0]} [--strict-mojibake] <file>")
-        raise SystemExit(2)
-    raise SystemExit(check(args[0], strict_mojibake=strict_mojibake))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("file")
+    parser.add_argument("--strict-mojibake", action="store_true", help="Heuristic; may reject valid text")
+    args = parser.parse_args()
+    raise SystemExit(check(args.file, args.strict_mojibake))

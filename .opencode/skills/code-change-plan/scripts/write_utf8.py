@@ -1,150 +1,110 @@
 #!/usr/bin/env python3
-"""
-UTF-8 File Writer and Validator
-
-Ensures all output files use correct UTF-8 encoding (without BOM).
-Works across Windows, Linux, and macOS.
-
-Usage:
-    python write_utf8.py <file_path> <content>
-    python write_utf8.py <file_path> --stdin
-    python write_utf8.py <file_path> --validate
-    python write_utf8.py <file_path> --validate-strict
-    python write_utf8.py <file_path> --read
-
-Examples:
-    # Write from argument
-    python write_utf8.py output.md "# Title\\nContent"
-
-    # Write from stdin
-    echo "Content" | python write_utf8.py output.md --stdin
-
-    # Validate encoding
-    python write_utf8.py output.md --validate-strict
-
-    # Read file safely (Windows PowerShell)
-    python write_utf8.py output.md --read
-"""
-
-import sys
+"""UTF-8 writer/reader/validator. Python 3.10+, standard library only."""
+import argparse
+import os
 from pathlib import Path
-from typing import Optional
+import stat
+import sys
+import tempfile
+
+# Heuristics only: these characters can occur in perfectly valid text.
+MOJIBAKE_MARKERS = ("鍦", "涓", "鈥", "銆", "锛", "绗", "闇", "浠", "Ã", "Â")
 
 
-def write_utf8_file(file_path: str, content: str) -> None:
-    """Write UTF-8 file without BOM"""
-    path = Path(file_path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(content, encoding='utf-8', newline='\n')
+def suspicious_mojibake_markers(text):
+    return [marker for marker in MOJIBAKE_MARKERS if marker in text]
 
 
-def read_utf8_file(file_path: str) -> str:
-    """Read UTF-8 file"""
-    return Path(file_path).read_text(encoding='utf-8')
+def validate_text(text, strict_mojibake=False):
+    text.encode("utf-8", errors="strict")
+    if "\ufffd" in text:
+        raise ValueError("U+FFFD found; check the original input")
+    if strict_mojibake and suspicious_mojibake_markers(text):
+        raise ValueError("Suspected mojibake (heuristic; valid text may match)")
 
 
-def validate_utf8_file(file_path: str, strict_mojibake: bool = False) -> tuple[bool, Optional[str]]:
-    """
-    Validate file is valid UTF-8 without BOM
+def read_utf8_file(file_path):
+    return Path(file_path).read_bytes().decode("utf-8", errors="strict")
 
-    Returns: (is_valid, error_message)
-    """
-    path = Path(file_path)
 
-    if not path.exists():
-        return False, f"File not found: {file_path}"
-
+def validate_utf8_file(file_path, strict_mojibake=False):
     try:
-        # Check for BOM
-        with open(path, 'rb') as f:
-            first_bytes = f.read(3)
-            if first_bytes == b'\xef\xbb\xbf':
-                return False, "File contains UTF-8 BOM (should be without BOM)"
-
-        # Try reading as UTF-8
-        content = path.read_text(encoding='utf-8')
-
-        # Check for Unicode replacement character
-        if '�' in content:
-            return False, "File contains Unicode replacement character U+FFFD (corrupted encoding)"
-
-        # Strict mode: check common mojibake patterns
-        if strict_mojibake:
-            mojibake_patterns = ['鑬', '钉', '銆', '閑', '涓', '霄']
-            found_patterns = [p for p in mojibake_patterns if p in content]
-            if found_patterns:
-                return False, f"Detected suspicious mojibake characters: {', '.join(found_patterns)}"
-
+        raw = Path(file_path).read_bytes()
+        if raw.startswith(b"\xef\xbb\xbf"):
+            return False, "UTF-8 BOM detected"
+        text = raw.decode("utf-8", errors="strict")
+        validate_text(text, strict_mojibake)
         return True, None
-
-    except UnicodeDecodeError as e:
-        return False, f"UTF-8 decode failed: {e}"
-    except Exception as e:
-        return False, f"Validation failed: {e}"
+    except (OSError, ValueError) as exc:
+        return False, str(exc)
 
 
-def main():
-    if len(sys.argv) < 2:
-        print(__doc__)
-        sys.exit(1)
+def write_utf8_file(file_path, content, strict_mojibake=False):
+    # Prepare and validate before creating directories or touching the target.
+    text = content.removeprefix("\ufeff").replace("\r\n", "\n").replace("\r", "\n")
+    validate_text(text, strict_mojibake)
+    raw = text.encode("utf-8")
+    path = Path(file_path)
+    if path.is_symlink():
+        raise ValueError("Refusing to replace a symbolic link")
+    mode = stat.S_IMODE(path.stat().st_mode) if path.exists() else None
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        # Same directory is required for atomic replacement on one filesystem.
+        with tempfile.NamedTemporaryFile(dir=path.parent, prefix="." + path.name + ".", delete=False) as stream:
+            temporary = Path(stream.name)
+            stream.write(raw)
+            stream.flush()
+            os.fsync(stream.fileno())
+        if mode is not None:
+            os.chmod(temporary, mode)
+        os.replace(temporary, path)
+        temporary = None
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
 
-    file_path = sys.argv[1]
 
-    # Validate mode
-    if len(sys.argv) == 3 and sys.argv[2] == '--validate':
-        is_valid, error = validate_utf8_file(file_path, strict_mojibake=False)
-        if is_valid:
-            print(f"OK: {file_path} is valid UTF-8 without BOM")
-            sys.exit(0)
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("file_path")
+    parser.add_argument("content", nargs="?", help="Literal text; use -- before text beginning with -")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--stdin", action="store_true")
+    mode.add_argument("--read", action="store_true")
+    mode.add_argument("--validate", action="store_true")
+    mode.add_argument("--validate-strict", action="store_true")
+    parser.add_argument("--strict-mojibake", action="store_true", help="Opt-in heuristic; may reject valid text")
+    args = parser.parse_args(argv)
+    selected = args.stdin or args.read or args.validate or args.validate_strict
+    if selected and args.content is not None:
+        parser.error("content cannot be combined with a mode")
+    if not selected and args.content is None:
+        parser.error("provide content or a mode")
+    if args.read and args.strict_mojibake:
+        parser.error("--strict-mojibake is not a read option")
+    try:
+        strict = args.strict_mojibake or args.validate_strict
+        if args.read:
+            sys.stdout.buffer.write(read_utf8_file(args.file_path).encode("utf-8"))
+        elif args.validate or args.validate_strict:
+            valid, error = validate_utf8_file(args.file_path, strict)
+            if not valid:
+                print("INVALID: " + error, file=sys.stderr)
+                return 1
+            print("UTF-8 OK: " + args.file_path)
         else:
-            print(f"ERROR: {file_path} validation failed: {error}", file=sys.stderr)
-            sys.exit(1)
-
-    # Strict validate mode
-    if len(sys.argv) == 3 and sys.argv[2] == '--validate-strict':
-        is_valid, error = validate_utf8_file(file_path, strict_mojibake=True)
-        if is_valid:
-            print(f"OK: {file_path} is valid UTF-8 without BOM and mojibake")
-            sys.exit(0)
-        else:
-            print(f"ERROR: {file_path} validation failed: {error}", file=sys.stderr)
-            sys.exit(1)
-
-    # Read mode
-    if len(sys.argv) == 3 and sys.argv[2] == '--read':
-        try:
-            content = read_utf8_file(file_path)
-            print(content, end='')
-            sys.exit(0)
-        except Exception as e:
-            print(f"Read failed: {e}", file=sys.stderr)
-            sys.exit(1)
-
-    # Write mode
-    if len(sys.argv) >= 3:
-        if sys.argv[2] == '--stdin':
-            content = sys.stdin.read()
-        else:
-            content = sys.argv[2]
-
-        try:
-            write_utf8_file(file_path, content)
-            print(f"OK: Written to {file_path}")
-
-            # Auto-validate
-            is_valid, error = validate_utf8_file(file_path, strict_mojibake=True)
-            if not is_valid:
-                print(f"WARNING: Post-write validation failed: {error}", file=sys.stderr)
-                sys.exit(1)
-
-            sys.exit(0)
-        except Exception as e:
-            print(f"Write failed: {e}", file=sys.stderr)
-            sys.exit(1)
-
-    print(__doc__)
-    sys.exit(1)
+            content = sys.stdin.buffer.read().decode("utf-8") if args.stdin else args.content
+            if not strict and suspicious_mojibake_markers(content):
+                print("NOTE: suspicious characters are only a heuristic; input is accepted if valid", file=sys.stderr)
+            write_utf8_file(args.file_path, content, strict)
+            print("Written: " + args.file_path)
+        return 0
+    except (OSError, ValueError) as exc:
+        print("ERROR: " + str(exc), file=sys.stderr)
+        return 2
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    raise SystemExit(main())

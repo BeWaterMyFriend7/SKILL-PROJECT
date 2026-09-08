@@ -1,105 +1,22 @@
-# Shared Utilities
+# 编码工具
 
-本目录包含跨 skill 共享的工具脚本。
+Python 3.10+，仅标准库。两个 skill 各自携带完整工具，不依赖另一个 skill 或 shared 目录。
+以下命令在当前 skill 的 scripts 目录运行，或改用脚本绝对路径。
 
-## write_utf8.py
-
-统一的 UTF-8 文件写入和验证工具，解决 Windows/PowerShell 环境下的编码问题。
-
-### 为什么需要这个工具？
-
-在 Windows PowerShell 环境中，使用 `Set-Content` / `Out-File` 写入中文内容时，默认使用系统编码（如 GBK），导致：
-- UTF-8 文件被错误编码
-- 可能添加不需要的 BOM 头
-- 跨平台兼容性问题
-
-本工具确保：
-- 始终使用 UTF-8 编码（无 BOM）
-- 统一的换行符（LF）
-- 自动验证写入结果
-- 跨平台兼容（Windows/Linux/macOS）
-
-### 使用方法
-
-#### 1. 写入文件
-
-**从参数写入：**
-```bash
-python write_utf8.py output.md "# 标题\n内容"
+```powershell
+python -B -X utf8 write_utf8.py output.md '正文'
+python -B -X utf8 write_utf8.py output.md --read
+python -B -X utf8 write_utf8.py output.md --validate
+python -B -X utf8 check_utf8.py output.md
 ```
 
-**从标准输入写入（推荐）：**
-```bash
-# Linux/macOS
-echo "内容" | python write_utf8.py output.md --stdin
+正文参数是原样文本，字符串中的反斜杠 n 不会自动变成换行。带前导短横线的正文用 `output.md -- '-正文'`。
+`--stdin` 从标准输入接收 UTF-8 字节；PowerShell 管道需先将 `$OutputEncoding` 设置为 UTF-8，Python 的 UTF-8 模式无法修复上游已丢失的字符。
 
-# Windows PowerShell
-@"
-# 标题
-内容
-"@ | python write_utf8.py output.md --stdin
-```
+写入前校验，移除一个开头 BOM，将 CRLF/CR 转为 LF，再通过同目录临时文件原子替换。确定的无效 UTF-8、U+FFFD、参数错误或替换失败均不会覆盖旧文件；临时文件会清理。拒绝替换符号链接。保留已有文件权限位，但不承诺保留 ACL、扩展属性等全部元数据，不用于依赖这些元数据的文件。
 
-#### 2. 读取文件
+默认不会将普通汉字当作乱码判定。显式 `--validate-strict` 或 `--strict-mojibake` 启用启发式检查，可能拒绝“涓涓细流”等正常文本，不能据此自动修正文档。
+`--validate` 检查 UTF-8 无 BOM 与 U+FFFD；不检查报告质量或审批正确性。报告尚未执行的验证仍应标为计划。
 
-在 PowerShell 中安全读取 UTF-8 文件：
-```bash
-python write_utf8.py output.md --read
-```
-
-等价于（但更安全）：
-```bash
-python -c "from pathlib import Path; print(Path('output.md').read_text(encoding='utf-8'))"
-```
-
-#### 3. 验证文件
-
-**基本验证（检查 UTF-8 和 BOM）：**
-```bash
-python write_utf8.py output.md --validate
-```
-
-**严格验证（额外检查 mojibake）：**
-```bash
-python write_utf8.py output.md --validate-strict
-```
-
-### 常见的编码错误特征
-
-如果在输出中看到以下字符，说明存在编码问题：
-
-| 乱码字符 | 原始字符 | 原因 |
-|---------|---------|------|
-| 鍦 | 在 | GBK → UTF-8 误解析 |
-| 鈥 | " | 同上 |
-| 銆 | 、 | 同上 |
-| 锛 | ， | 同上 |
-| � (U+FFFD) | （任意） | Unicode 替换字符，编码损坏 |
-
-**解决方法：** 使用本工具重新生成文件。
-
-### 在 Skill 中的使用
-
-各个 skill 的 SKILL.md 中应引用本工具，而非重复编码规则：
-
-```markdown
-### 文件编码规则
-
-使用统一的 UTF-8 工具写入文件：
-\`\`\`bash
-python ../.opencode/skills/shared/write_utf8.py output.md --stdin
-\`\`\`
-
-详细说明见 `../shared/README.md`
-```
-
-### 技术细节
-
-- **编码：** UTF-8 without BOM
-- **换行符：** LF (`\n`)，即使在 Windows 上
-- **自动创建目录：** 父目录不存在时自动创建
-- **验证：** 写入后自动验证编码正确性
-
-### 依赖
-
-Python 3.7+ 标准库，无第三方依赖。
+writer 退出码：0 成功，1 校验不通过，2 参数或 I/O/写入输入错误。
+checker 退出码：0 通过，1 编码问题，2 参数或读取错误。
