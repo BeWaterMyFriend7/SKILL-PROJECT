@@ -1,6 +1,6 @@
 ---
 type: agent-memory-index
-dashboard_version: 14
+dashboard_version: 15
 dashboard_limit: 10
 created: "{{timestamp}}"
 updated: "{{timestamp}}"
@@ -11,8 +11,8 @@ updated: "{{timestamp}}"
 > 需要启用 Obsidian 社区插件 **Dataview** 及其 JavaScript 查询。可通过顶部 `dashboard_limit` 调整每区显示数量，有效范围为 1–100。
 
 ```dataviewjs
-const STYLE_ID = 'agent-memory-dashboard-styles-v14';
-['agent-memory-dashboard-styles', 'agent-memory-dashboard-styles-v9', 'agent-memory-dashboard-styles-v10', 'agent-memory-dashboard-styles-v11', 'agent-memory-dashboard-styles-v12', 'agent-memory-dashboard-styles-v13', STYLE_ID].forEach(id => document.getElementById(id)?.remove());
+const STYLE_ID = 'agent-memory-dashboard-styles-v15';
+['agent-memory-dashboard-styles', 'agent-memory-dashboard-styles-v9', 'agent-memory-dashboard-styles-v10', 'agent-memory-dashboard-styles-v11', 'agent-memory-dashboard-styles-v12', 'agent-memory-dashboard-styles-v13', 'agent-memory-dashboard-styles-v14', STYLE_ID].forEach(id => document.getElementById(id)?.remove());
 const ensureStyles = () => {
   if (document.getElementById(STYLE_ID)) return;
   const style = document.createElement('style');
@@ -28,7 +28,7 @@ const ensureStyles = () => {
     .am-clock { min-width:9rem; padding:.8rem 1rem; border:1px solid var(--background-modifier-border); border-radius:16px; background:var(--background-primary-alt); text-align:right; }
     .am-clock span,.am-clock small { display:block; color:var(--text-muted); font-size:.72rem; }
     .am-clock strong { display:block; margin:.15rem 0; color:var(--text-normal); font-size:1.8rem; letter-spacing:-.05em; line-height:1; }
-    .am-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.85rem; margin-top:1.35rem; }
+    .am-stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.85rem; margin-top:1.35rem; }
     .am-stat { box-sizing:border-box; display:flex; min-width:0; min-height:112px; flex-direction:column; justify-content:center; padding:1rem 1.1rem; border:1px solid var(--background-modifier-border); border-radius:17px; background:var(--background-primary); color:var(--text-normal); text-align:left; }
     .am-stat-link { cursor:pointer; outline:0; transition:transform 120ms,border-color 120ms,background 120ms,box-shadow 120ms; }
     .am-stat-link:hover,.am-stat-link:focus-visible { transform:translateY(-2px); border-color:var(--interactive-accent); background:var(--background-primary-alt); box-shadow:0 10px 24px rgba(0,0,0,.08); }
@@ -71,7 +71,7 @@ const ensureStyles = () => {
     .am-modal-title { margin:0; color:var(--text-normal); font-size:1.08rem; line-height:1.35; }
     .am-modal-note { margin:.28rem 0 0; color:var(--text-muted); font-size:.76rem; line-height:1.55; }
     .am-modal-close { flex:0 0 auto; padding:.1rem .35rem; cursor:pointer; border:0; background:transparent; color:var(--text-muted); font-size:1.25rem; line-height:1.2; }
-    .am-capture-options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.55rem; }
+    .am-capture-options { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.55rem; }
     .am-capture-option { display:flex; min-width:0; align-items:center; justify-content:center; gap:.42rem; padding:.68rem .55rem; border:1px solid var(--background-modifier-border); border-radius:12px; background:var(--background-secondary); color:var(--text-normal); cursor:pointer; font:inherit; font-size:.82rem; font-weight:700; line-height:1.3; white-space:nowrap; }
     .am-capture-option.is-active { border-color:var(--interactive-accent); background:var(--background-primary-alt); }
     .am-capture-form { display:grid; gap:.48rem; margin-top:.9rem; }
@@ -103,13 +103,14 @@ const isDailySummary = page => isMemoryRecord(page,'Daily','agent-daily') && (pa
 const millis = page => { const value=page.file?.mtime; if (value && typeof value.toMillis==='function') return value.toMillis(); const parsed=Date.parse(String(value??'')); return Number.isNaN(parsed)?0:parsed; };
 const formatDate = value => { if (value && typeof value.toFormat==='function') return value.toFormat('MM-dd HH:mm'); const parsed=new Date(String(value??'')); return Number.isNaN(parsed.getTime())?'—':parsed.toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}); };
 const displayName = page => String(page.file?.name??'').replace(/^\d{4}-\d{2}-\d{2}-\d{6}-/,'').replace(/^\d{4}-\d{2}-\d{2}-/,'');
-const statusText = value => ({active:'进行中',completed:'已完成',done:'已完成',blocked:'已阻塞',paused:'已暂停'}[String(value??'active').toLowerCase()] || String(value||'进行中'));
+const statusText = value => ({todo:'待处理',doing:'进行中',done:'已完成'}[String(value??'todo').toLowerCase()] || String(value||'待处理'));
 const rawLimit = Number(dv.current()?.dashboard_limit ?? 10);
 const listLimit = Math.min(100,Math.max(1,Number.isFinite(rawLimit)?Math.floor(rawLimit):10));
-const tasks = pagesIn('Tasks').where(page=>isMemoryRecord(page,'Tasks','agent-task')).array().sort((a,b)=>millis(b)-millis(a));
-const knowledge = pagesIn('Knowledge').where(page=>isMemoryRecord(page,'Knowledge','agent-knowledge')).array().sort((a,b)=>millis(b)-millis(a));
+const tasks = pagesIn('Task').where(page=>isMemoryRecord(page,'Task','agent-task')).array().sort((a,b)=>millis(b)-millis(a));
+const experience = pagesIn('Experience').where(page=>isMemoryRecord(page,'Experience','agent-experience')).array().sort((a,b)=>millis(b)-millis(a));
+const principles = pagesIn('Principle').where(page=>isMemoryRecord(page,'Principle','agent-principle')).array().sort((a,b)=>millis(b)-millis(a));
 const dailies = pagesIn('Daily').where(isDailySummary).array().sort((a,b)=>millis(b)-millis(a));
-const allRecords = [...tasks.map(page=>({page,kind:'任务'})),...knowledge.map(page=>({page,kind:'知识'})),...dailies.map(page=>({page,kind:'总结'}))].sort((a,b)=>millis(b.page)-millis(a.page));
+const allRecords = [...tasks.map(page=>({page,kind:'任务'})),...experience.map(page=>({page,kind:'经验'})),...principles.map(page=>({page,kind:'原则'})),...dailies.map(page=>({page,kind:'总结'}))].sort((a,b)=>millis(b.page)-millis(a.page));
 const now = new Date();
 const currentTitle = String(dv.current()?.file?.name ?? '{{name}}');
 const indexPath = directory => pathInMemory(directory,'_index.md');
@@ -117,65 +118,23 @@ const empty = '<div class="am-empty">暂无记录</div>';
 const linkList = items => items.length ? items.map(({page,kind})=>{ const title=displayName(page); return `<a href="#" class="am-link-item am-filterable" data-am-path="${escapeHtml(page.file.path)}" title="${escapeHtml(title)}"><span class="am-item-main">${escapeHtml(title)}</span><span class="${kind?'am-item-kind':'am-item-time'}">${escapeHtml(kind||formatDate(page.file.mtime))}</span></a>`; }).join('') : empty;
 
 const captureOptions = {
-  task:{directory:'Tasks',icon:'☑',label:'任务',placeholder:'例如：完成首页布局优化',help:'在 Tasks 中新建任务文件，并预置目标、进度、风险和关键文件章节。'},
-  knowledge:{directory:'Knowledge',icon:'◇',label:'知识',placeholder:'例如：Obsidian Dataview 布局经验',help:'在 Knowledge 中新建知识文件，并预置场景、原因、方案和注意事项章节。'},
+  task:{directory:'Task',icon:'☑',label:'任务',placeholder:'例如：完成首页布局优化',help:'在 Task 中新建任务文件，并填写下一步行动，状态使用 todo / doing / done。'},
+  experience:{directory:'Experience',icon:'◇',label:'经验',placeholder:'例如：Obsidian Dataview 布局经验',help:'在 Experience 中新建经验文件，并记录一个具体问题的场景、问题和有效处理方式。'},
+  principle:{directory:'Principle',icon:'◆',label:'原则',placeholder:'例如：批量写入的适用条件',help:'记录可跨场景复用的原则、适用条件和下一步行动。'},
   daily:{directory:'Daily',icon:'◷',label:'总结',placeholder:'',help:`使用今天的日期 ${localDateKey()} 建档；如果文件已存在，将直接打开且不会覆盖。`}
 };
 const safeFileTitle = value => { let clean=String(value??'').trim().replace(/[<>:"/\\|?*\x00-\x1f]/g,'-').replace(/\s+/g,'-').replace(/-+/g,'-').replace(/^[ .-]+|[ .-]+$/g,''); if(!clean) clean='未命名记录'; if(/^(con|prn|aux|nul|com[1-9]|lpt[1-9])$/i.test(clean)) clean=`_${clean}`; return clean.slice(0,72).replace(/[ .-]+$/g,'')||'未命名记录'; };
 const uniqueNotePath = (directory,title,createdAt) => { const base=`${localDateKey(createdAt)}-${localTimeKey(createdAt)}-${safeFileTitle(title)}`; let candidate=pathInMemory(directory,`${base}.md`); let suffix=2; while(app.vault.getAbstractFileByPath(candidate)){ candidate=pathInMemory(directory,`${base}-${suffix}.md`); suffix+=1; } return candidate; };
 const noteTemplate = (type,title,createdAt) => {
   const timestamp=createdAt.toISOString();
-  if(type==='task') return `---
-type: agent-task
-status: active
-tags: []
-created: "${timestamp}"
-updated: "${timestamp}"
----
-
-# ${title}
-
-## 目标
-
-## 进度与下一步
-
-## 阻塞与风险
-
-## 关键文件与命令
-`;
-  if(type==='knowledge') return `---
-type: agent-knowledge
-tags: []
-created: "${timestamp}"
-updated: "${timestamp}"
----
-
-# ${title}
-
-## 场景
-
-## 问题与原因
-
-## 解决方案与验证
-
-## 注意事项
-`;
   const date=localDateKey(createdAt);
-  return `---
-type: agent-daily
-date: "${date}"
-created: "${timestamp}"
-updated: "${timestamp}"
----
-
-# ${date}
-
-## 完成
-
-## 问题
-
-## 待办
-`;
+  const bodies={
+    task:'- 状态：todo\n- 行动：\n',
+    experience:'- 场景：\n- 问题：\n- 处理：\n',
+    principle:'- 原则：\n- 适用：\n- 行动：\n',
+    daily:'## 完成\n\n## 形成经验\n\n## 形成原则\n\n## 待处理\n'
+  };
+  return `---\ntype: agent-${type}\n${type==='task'?'status: todo\n':''}${type==='daily'?'date: "'+date+'"\n':''}created: "${timestamp}"\nupdated: "${timestamp}"\n---\n\n# ${type==='daily'?date:title}\n\n${bodies[type]}`;
 };
 const refreshIndex = async directory => {
   const prefix=`${pathInMemory(directory)}/`;
@@ -190,13 +149,13 @@ const refreshIndex = async directory => {
     if(directory==='Daily'&&type!=='agent-daily'&&!/^\d{4}-\d{2}-\d{2}$/.test(file.basename)) return null;
     const heading=cache?.headings?.find(item=>item.level===1)?.heading??content.match(/^#\s+(.+)$/m)?.[1]?.trim();
     const title=String(heading||file.basename).replace(/\|/g,'／').replace(/\]/g,'］');
-    const status=String(frontmatter.status??frontmatterValue('status')??'active').toLowerCase();
+    const status=String(frontmatter.status??frontmatterValue('status')??'todo').toLowerCase();
     return {file,title,status,modified:file.stat.mtime};
   }))).filter(Boolean).sort((a,b)=>b.modified-a.modified);
-  const includeStatus=directory==='Tasks';
+  const includeStatus=directory==='Task';
   const header=includeStatus?'| 状态 | 标题 | 更新时间 | 文件 |\n| --- | --- | --- | --- |':'| 标题 | 更新时间 | 文件 |\n| --- | --- | --- |';
   const rows=records.map(record=>{ const modified=new Date(record.modified).toLocaleString('zh-CN',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}); const link=`[[${record.file.path}|${record.title}]]`; return includeStatus?`| ${record.status} | ${record.title} | ${modified} | ${link} |`:`| ${record.title} | ${modified} | ${link} |`; });
-  const titles={Tasks:'任务索引',Knowledge:'知识索引',Daily:'每日总结索引'};
+  const titles={Task:'任务索引',Experience:'场景经验索引',Principle:'通用原则索引',Daily:'每日总结索引'};
   const timestamp=new Date().toISOString();
   const content=`---\ntype: agent-memory-index\nupdated: "${timestamp}"\n---\n\n# ${titles[directory]}\n\n${rows.length?`${header}\n${rows.join('\n')}`:'（暂无记录）'}\n`;
   const indexFile=app.vault.getAbstractFileByPath(pathInMemory(directory,'_index.md'));
@@ -225,21 +184,23 @@ previewSizer?.style.setProperty('max-width','min(1520px, calc(100% - 2rem))','im
 root.innerHTML=`
   <section class="am-hero">
     <div class="am-hero-top">
-      <div><div class="am-eyebrow">LOCAL MEMORY · OBSIDIAN</div><h1 class="am-title">🏠 ${escapeHtml(currentTitle)}</h1><p class="am-subtitle">任务、知识和每日总结，都从这里开始。</p></div>
+      <div><div class="am-eyebrow">LOCAL MEMORY · OBSIDIAN</div><h1 class="am-title">🏠 ${escapeHtml(currentTitle)}</h1><p class="am-subtitle">任务、场景经验、通用原则和每日总结，都从这里开始。</p></div>
       <div class="am-clock"><span>现在</span><strong>${now.toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})}</strong><small>${now.toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric',weekday:'long'})}</small></div>
     </div>
     <div class="am-stats">
-      <div class="am-stat am-stat-link" data-am-path="${escapeHtml(indexPath('Tasks'))}" role="link" tabindex="0" title="打开任务索引"><div class="am-stat-label">📋 任务数</div><div class="am-stat-value">${tasks.length}</div><div class="am-stat-note">点击打开任务索引</div></div>
-      <div class="am-stat am-stat-link" data-am-path="${escapeHtml(indexPath('Knowledge'))}" role="link" tabindex="0" title="打开知识索引"><div class="am-stat-label">📚 知识数</div><div class="am-stat-value">${knowledge.length}</div><div class="am-stat-note">点击打开知识索引</div></div>
+      <div class="am-stat am-stat-link" data-am-path="${escapeHtml(indexPath('Task'))}" role="link" tabindex="0" title="打开任务索引"><div class="am-stat-label">📋 任务数</div><div class="am-stat-value">${tasks.length}</div><div class="am-stat-note">点击打开任务索引</div></div>
+      <div class="am-stat am-stat-link" data-am-path="${escapeHtml(indexPath('Experience'))}" role="link" tabindex="0" title="打开经验索引"><div class="am-stat-label">📚 经验数</div><div class="am-stat-value">${experience.length}</div><div class="am-stat-note">点击打开经验索引</div></div>
       <div class="am-stat am-stat-link" data-am-path="${escapeHtml(indexPath('Daily'))}" role="link" tabindex="0" title="打开每日总结索引"><div class="am-stat-label">📅 每日总结数</div><div class="am-stat-value">${dailies.length}</div><div class="am-stat-note">点击打开总结索引</div></div>
+      <div class="am-stat am-stat-link" data-am-path="${escapeHtml(indexPath('Principle'))}" role="link" tabindex="0" title="打开原则索引"><div class="am-stat-label">◆ 原则数</div><div class="am-stat-value">${principles.length}</div><div class="am-stat-note">点击打开原则索引</div></div>
     </div>
-    <div class="am-search-row"><label class="am-search"><span class="am-search-icon">⌕</span><input data-am-search type="search" placeholder="搜索首页中的任务、知识和总结"><span class="am-search-hint">实时过滤</span></label><button class="am-button" data-am-capture type="button">＋ 手动记录</button></div>
+    <div class="am-search-row"><label class="am-search"><span class="am-search-icon">⌕</span><input data-am-search type="search" placeholder="搜索首页中的任务、经验、原则和总结"><span class="am-search-hint">实时过滤</span></label><button class="am-button" data-am-capture type="button">＋ 手动记录</button></div>
   </section>
   <div class="am-main-grid">
     <section class="am-panel"><div class="am-panel-header"><span class="am-panel-title">任务表</span><span class="am-panel-meta">${tasks.length} 条任务 · 显示最近 ${Math.min(tasks.length,listLimit)} 条</span></div><div class="am-table-wrap">${tasks.length?`<table class="am-table"><thead><tr><th>任务</th><th>状态</th><th>更新</th></tr></thead><tbody>${tasks.slice(0,listLimit).map(page=>{const title=displayName(page);return `<tr class="am-filterable"><td><a href="#" data-am-path="${escapeHtml(page.file.path)}" class="am-task-name" title="${escapeHtml(title)}">${escapeHtml(title)}</a></td><td><span class="am-status">${escapeHtml(statusText(page.status))}</span></td><td>${formatDate(page.file.mtime)}</td></tr>`;}).join('')}</tbody></table>`:empty}</div></section>
-    <section class="am-panel"><div class="am-panel-header"><span class="am-panel-title">最近更新</span><span class="am-panel-meta">任务、知识和总结 · 显示最近 ${Math.min(allRecords.length,listLimit)} 条</span></div><div class="am-panel-body"><div class="am-link-list">${linkList(allRecords.slice(0,listLimit))}</div></div></section>
-    <section class="am-panel"><div class="am-panel-header"><span class="am-panel-title">最近知识</span><span class="am-panel-meta">${knowledge.length} 条知识 · 显示最近 ${Math.min(knowledge.length,listLimit)} 条</span></div><div class="am-panel-body"><div class="am-link-list">${linkList(knowledge.slice(0,listLimit).map(page=>({page,kind:''})))}</div></div></section>
+    <section class="am-panel"><div class="am-panel-header"><span class="am-panel-title">最近更新</span><span class="am-panel-meta">任务、经验、原则和总结 · 显示最近 ${Math.min(allRecords.length,listLimit)} 条</span></div><div class="am-panel-body"><div class="am-link-list">${linkList(allRecords.slice(0,listLimit))}</div></div></section>
+    <section class="am-panel"><div class="am-panel-header"><span class="am-panel-title">最近经验</span><span class="am-panel-meta">${experience.length} 条经验 · 显示最近 ${Math.min(experience.length,listLimit)} 条</span></div><div class="am-panel-body"><div class="am-link-list">${linkList(experience.slice(0,listLimit).map(page=>({page,kind:''})))}</div></div></section>
     <section class="am-panel"><div class="am-panel-header"><span class="am-panel-title">最近总结</span><span class="am-panel-meta">${dailies.length} 条总结 · 显示最近 ${Math.min(dailies.length,listLimit)} 条</span></div><div class="am-panel-body"><div class="am-link-list">${linkList(dailies.slice(0,listLimit).map(page=>({page,kind:''})))}</div></div></section>
+    <section class="am-panel"><div class="am-panel-header"><span class="am-panel-title">通用原则</span><span class="am-panel-meta">${principles.length} 条原则</span></div><div class="am-panel-body"><div class="am-link-list">${linkList(principles.slice(0,listLimit).map(page=>({page,kind:''})))}</div></div></section>
   </div>`;
 root.querySelectorAll('[data-am-path]').forEach(element=>element.addEventListener('click',event=>{event.preventDefault();app.workspace.openLinkText(element.dataset.amPath,currentPath,false);}));
 root.querySelectorAll('.am-stat-link').forEach(element=>element.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();element.click();}}));
@@ -249,4 +210,4 @@ const searchInput=root.querySelector('[data-am-search]'); searchInput.addEventLi
 
 ---
 
-写入原则：Agent 仅在明确触发 `agent-offline-mermory` 时通过写入器写入；首页“手动记录”仅在用户点击并确认后，按内置模板在当前记忆根目录的 `Daily`、`Tasks` 或 `Knowledge` 中创建文件。
+写入原则：Agent 仅在明确触发 `agent-offline-mermory` 时通过写入器写入；首页“手动记录”仅在用户点击并确认后，按内置模板在当前记忆根目录的 `Daily`、`Task`、`Experience` 或 `Principle` 中创建文件。

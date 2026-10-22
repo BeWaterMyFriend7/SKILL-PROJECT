@@ -8,6 +8,8 @@ import json
 import os
 import re
 import sys
+import shutil
+from urllib.parse import quote, unquote
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
@@ -22,12 +24,13 @@ if hasattr(sys.stderr, "reconfigure"):
 SKILL_ROOT = Path(__file__).resolve().parent.parent
 SETTINGS_PATH = SKILL_ROOT / "settings.json"
 TEMPLATE_ROOT = SKILL_ROOT / "assets" / "templates"
-RECORD_TYPES = {"daily": "Daily", "task": "Task", "knowledge": "Knowledge"}
+RECORD_TYPES = {"daily": "Daily", "task": "Task", "experience": "Experience", "principle": "Principle"}
 QUERY_DIRECTORIES = {
     "daily": ("Daily",),
-    "task": ("Tasks",),
-    "knowledge": ("Knowledge",),
-    "all": ("Daily", "Tasks", "Knowledge"),
+    "task": ("Task",),
+    "experience": ("Experience",),
+    "principle": ("Principle",),
+    "all": ("Daily", "Task", "Experience", "Principle"),
 }
 WINDOWS_RESERVED_NAMES = {
     "CON",
@@ -40,7 +43,7 @@ WINDOWS_RESERVED_NAMES = {
 DEFAULT_REQUIRE_OBSIDIAN = True
 DEFAULT_EXPERIENCE_MODE = "auto"
 INDEX_FILENAME = "_index.md"
-DASHBOARD_VERSION = 14
+DASHBOARD_VERSION = 15
 
 
 class WriterError(RuntimeError):
@@ -166,15 +169,16 @@ def initialize_memory_root(
         vault_root = ""
 
     root.mkdir(parents=True, exist_ok=True)
-    for directory_name in ("Daily", "Tasks", "Knowledge"):
-        (root / directory_name).mkdir(parents=True, exist_ok=True)
+    migration = migrate_legacy_records(root)
+    for directory_name in ("Daily", "Task", "Experience", "Principle"):
+        assert_path_within_root(root / directory_name, root).mkdir(parents=True, exist_ok=True)
 
     root_name = root.name or "AgentMemory"
     dashboard_path = root / f"{root_name}.md"
     dashboard_template = (
         "dashboard-obsidian.md" if require_obsidian else "dashboard.md"
     )
-    expected_version = DASHBOARD_VERSION if require_obsidian else 1
+    expected_version = DASHBOARD_VERSION
     if (
         not dashboard_path.exists()
         or dashboard_version(dashboard_path) < expected_version
@@ -195,6 +199,7 @@ def initialize_memory_root(
         "require_obsidian": require_obsidian,
         "experience_mode": experience_mode,
         "dashboard": str(dashboard_path),
+        "migration": migration,
     }
     return result
 
@@ -290,15 +295,109 @@ def interactive_setup(action: str) -> Dict[str, Any]:
     return result
 
 
+def migrate_legacy_records(root: Path) -> Dict[str, Any]:
+    """一次性归类；备份旧目录，保留正文，不猜测或提炼原则。"""
+    sources = [root / name for name in ("Tasks", "Knowledge") if (root / name).exists()]
+    if not sources:
+        return {"count": 0}
+    # 先校验所有路径；拒绝链接，避免备份或搬运越过根目录。
+    for source in sources:
+        assert_path_within_root(source, root)
+        if not source.is_dir():
+            raise WriterError(f"旧分类不是目录：{source}")
+        for path in [source, *source.rglob("*")]:
+            assert_path_within_root(path, root)
+            if path.is_symlink():
+                raise WriterError(f"迁移不接受符号链接：{path}")
+    destination = assert_path_within_root(root / "Experience", root)
+    for source in sources:
+        if (destination / source.name).exists():
+            raise WriterError(f"迁移目标已存在，未修改：{destination / source.name}")
+        for path in source.rglob("*.md"):
+            content = path.read_text(encoding="utf-8-sig")
+            if content.startswith("---\n") and content.find("\n---", 4) < 0:
+                raise WriterError(f"frontmatter 未闭合，未修改：{path}")
+    backup = assert_path_within_root(root / ".migration-backup" / utc_now().strftime("%Y%m%d%H%M%S%f"), root)
+    backup.mkdir(parents=True)
+    for source in sources:
+        shutil.copytree(source, backup / source.name)
+    # 保存并重写根目录内 Markdown 链接，备份不参与扫描。
+    originals = {}
+    for path in root.rglob("*.md"):
+        if ".migration-backup" in path.relative_to(root).parts:
+            continue
+        assert_path_within_root(path, root)
+        if path.is_symlink():
+            raise WriterError(f"迁移不接受符号链接：{path}")
+        originals[path] = path.read_text(encoding="utf-8-sig")
+        snapshot = backup / "_references" / path.relative_to(root)
+        snapshot.parent.mkdir(parents=True, exist_ok=True)
+        write_utf8(snapshot, originals[path])
+    def relocated(path: Path) -> Path:
+        for source in sources:
+            try:
+                return destination / source.name / path.relative_to(source)
+            except ValueError:
+                pass
+        return path
+    destination.mkdir(exist_ok=True)
+    count = 0
+    for source in sources:
+        # 以旧分类名隔离同名文件，保留附件的相对位置。
+        target = destination / source.name
+        if target.exists():
+            raise WriterError(f"迁移目标已存在，未覆盖：{target}；备份：{backup}")
+        source.rename(target)
+        for path in target.rglob("*.md"):
+            if path.name == INDEX_FILENAME:
+                continue
+            content = path.read_text(encoding="utf-8-sig")
+            if content.startswith("---\n"):
+                end = content.find("\n---", 4)
+                if end < 0:
+                    raise WriterError(f"frontmatter 未闭合：{path}；备份：{backup}")
+                metadata = content[4:end]
+                metadata = re.sub(r"^type:.*\n?", "", metadata, flags=re.M)
+                content = "---\ntype: agent-experience\n" + metadata + content[end:]
+            else:
+                content = "---\ntype: agent-experience\n---\n\n" + content
+            write_utf8(path, content)
+            count += 1
+    for old_path in originals:
+        new_path = relocated(old_path)
+        content = new_path.read_text(encoding="utf-8-sig")
+        def markdown_link(match):
+            label, raw = match.group(1), match.group(2)
+            clean = raw.strip("<>")
+            if re.match(r"^[a-zA-Z]+:", clean) or clean.startswith("#"):
+                return match.group(0)
+            parts = clean.split("#", 1)
+            old_target = (old_path.parent / unquote(parts[0])).resolve()
+            new_target = relocated(old_target)
+            if old_target == new_target and old_path == new_path:
+                return match.group(0)
+            link = quote(os.path.relpath(new_target, new_path.parent).replace("\\", "/"), safe="/.")
+            if len(parts) > 1:
+                link += "#" + parts[1]
+            return "[" + label + "](" + link + ")"
+        content = re.sub(r"\[([^\]\n]*)\]\(([^)\n]+)\)", markdown_link, content)
+        for source in sources:
+            content = content.replace("[[" + source.name + "/", "[[Experience/" + source.name + "/")
+        if content != new_path.read_text(encoding="utf-8-sig"):
+            write_utf8(new_path, content)
+    return {"count": count, "backup": str(backup)}
+
+
 def refresh_memory_indexes(root: Path) -> None:
     now = utc_now()
     index_specs = (
-        ("Tasks", "任务索引", True),
-        ("Knowledge", "知识索引", False),
+        ("Task", "任务索引", True),
+        ("Experience", "场景经验索引", False),
+        ("Principle", "通用原则索引", False),
         ("Daily", "每日总结索引", False),
     )
     for directory_name, index_title, include_status in index_specs:
-        directory = root / directory_name
+        directory = assert_path_within_root(root / directory_name, root)
         if not directory.is_dir():
             continue
 
@@ -326,7 +425,7 @@ def refresh_memory_indexes(root: Path) -> None:
             modified = datetime.fromtimestamp(
                 resolved.stat().st_mtime, tz=timezone.utc
             )
-            relative = os.path.relpath(resolved, root).replace("\\", "/")
+            relative = os.path.relpath(resolved, directory).replace("\\", "/")
             rows.append((modified, status, title, relative))
 
         rows.sort(key=lambda row: row[0], reverse=True)
@@ -418,20 +517,36 @@ def capture_note(
 
     now = utc_now()
     timestamp = iso_timestamp(now)
+    task_status = re.search(r"^- 状态：\s*(todo|doing|done)\s*$", content, re.M)
     default_titles = {
         "Daily": "每日总结",
         "Task": "任务交接",
-        "Knowledge": "知识记录",
+        "Experience": "场景经验",
+        "Principle": "通用原则",
     }
     record_title = (title or default_titles[record_type]).strip()
 
     if target_file and target_file.strip():
         target_path = resolve_existing_target(target_file, root)
-        update = (
-            f"\n\n## 更新 - {timestamp} - {record_title}\n\n"
-            f"{content.strip()}\n"
-        )
-        append_utf8(target_path, update)
+        previous = target_path.read_text(encoding="utf-8-sig")
+        if parse_frontmatter(previous).get("type") != "agent-" + record_type.lower():
+            raise WriterError("目标文档类型与 --type 不一致。")
+        if record_type == "Task" and task_status:
+            previous = re.sub(r"^status:.*$", "status: " + task_status.group(1), previous, count=1, flags=re.M)
+        previous = re.sub(r"^updated:.*$", 'updated: "' + timestamp + '"', previous, count=1, flags=re.M)
+        if record_type == "Task":
+            # 状态、下一步行动等字段更新原值，避免保留互相矛盾的多份任务状态。
+            for line in content.strip().splitlines():
+                field = re.match(r"^- ([^：]+)：", line)
+                pattern = r"^- " + re.escape(field.group(1)) + r"：.*$" if field else None
+                if pattern and re.search(pattern, previous, re.M):
+                    previous = re.sub(pattern, lambda _: line, previous, flags=re.M)
+                elif line.strip():
+                    previous = previous.rstrip() + "\n" + line + "\n"
+            write_utf8(target_path, previous)
+        else:
+            update = f"\n\n## 更新 - {timestamp} - {record_title}\n\n{content.strip()}\n"
+            write_utf8(target_path, previous.rstrip() + update)
         result = {
             "success": True,
             "action": "updated",
@@ -463,9 +578,9 @@ def capture_note(
                 write_utf8(target_path, document.rstrip() + "\n")
                 result_action = "created"
         else:
-            directory_name = "Tasks" if record_type == "Task" else "Knowledge"
+            directory_name = record_type
             template_name = (
-                "task-handoff.md" if record_type == "Task" else "knowledge-note.md"
+                {"Task": "task-handoff.md", "Experience": "experience.md", "Principle": "principle.md"}[record_type]
             )
             destination = assert_path_within_root(root / directory_name, root)
             destination.mkdir(parents=True, exist_ok=True)
@@ -475,6 +590,7 @@ def capture_note(
                 {
                     "timestamp": timestamp,
                     "title": record_title,
+                    "status": task_status.group(1) if task_status else "todo",
                     "content": content.strip(),
                 },
             )
@@ -515,10 +631,8 @@ def note_title(path: Path, content: str) -> str:
 
 
 def note_status(frontmatter: Dict[str, str]) -> str:
-    raw_status = frontmatter.get("status", "").strip().lower()
-    if raw_status in {"completed", "complete", "done", "closed", "已完成", "完成"}:
-        return "completed"
-    return "active"
+    raw_status = frontmatter.get("status", "todo").strip().lower()
+    return raw_status if raw_status in {"todo", "doing", "done"} else "todo"
 
 
 def query_terms(value: str) -> List[str]:
@@ -614,7 +728,7 @@ def query_notes(
                 )
                 if not is_daily_type and not is_daily_name:
                     continue
-            current_status = note_status(frontmatter)
+            current_status = note_status(frontmatter) if directory_name == "Task" else ""
             if status != "all" and current_status != status:
                 continue
 
@@ -626,8 +740,9 @@ def query_notes(
             modified = resolved.stat().st_mtime
             record_type = {
                 "Daily": "Daily",
-                "Tasks": "Task",
-                "Knowledge": "Knowledge",
+                "Task": "Task",
+                "Experience": "Experience",
+                "Principle": "Principle",
             }[directory_name]
             matches.append(
                 {
@@ -710,7 +825,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--status",
         type=str.lower,
-        choices=("active", "completed", "all"),
+        choices=("todo", "doing", "done", "all"),
         default="all",
         help="查询任务状态，默认为 all。",
     )

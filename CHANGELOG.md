@@ -2,6 +2,13 @@
 
 本文件按项目关键日期记录当时状态和重要变化，不逐条复制 Git 提交记录。
 
+## 2026-09-08
+
+- 记忆分类调整为 Daily、Experience、Principle、Task，区分场景事实与通用原则。
+- 正文采用高信息密度模板；Task 明确下一步行动，状态统一为 todo / doing / done。
+- Markdown 首页与 Obsidian 统计、列表、手动建档同步四类记录，不新增 HTML。
+- 初始化升级时备份旧 Tasks、Knowledge，再全部归入 Experience；不保留旧类型查询。
+
 ## 2026-08-16
 
 ### 当前状态

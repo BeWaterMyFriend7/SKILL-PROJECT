@@ -6,7 +6,7 @@ param(
 
     [string]$MemoryRoot,
 
-    [ValidateSet('Inbox', 'Task', 'Knowledge', 'All')]
+    [ValidateSet('Daily', 'Task', 'Experience', 'Principle', 'All')]
     [string]$Type,
 
     [string]$Title,
@@ -17,7 +17,7 @@ param(
 
     [string]$Query,
 
-    [ValidateSet('Active', 'Completed', 'All')]
+    [ValidateSet('Todo', 'Doing', 'Done', 'All')]
     [string]$Status,
 
     [ValidateRange(1, 50)]
