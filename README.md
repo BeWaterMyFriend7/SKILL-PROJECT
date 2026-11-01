@@ -173,6 +173,7 @@
 | grill-me | 需求分析、方案设计提升工具。针对方案逐条审查，帮助把设计考虑得更全面，边界更清晰 | https://github.com/mattpocock/skills |
 | codegraph | 代码结构图谱/依赖关系分析工具。生成模块依赖关系图、调用链路图，帮助 AI 理解复杂项目架构，节省 token | https://github.com/colbymchenry/codegraph |
 | Understand-Anything | 理解项目代码，建立图谱，进行影响分析和可视化展示 | https://github.com/Egonex-AI/Understand-Anything/blob/main/READMEs/README.zh-CN.md |
+| agent-qa-authoring | [agent-qa](https://vostride.com) 官方测试编写 Skill：通过本地 stdio MCP 创建、校验和运行网页与移动端测试，配合 memidex 持久记忆与证据门控自我改进。需 Node.js 24+；FSL-1.1-ALv2 限制竞争性商业用途，模型和可选设备费用另计 | https://github.com/vostride/agent-qa/tree/main/skills/agent-qa-authoring |
 
 ### 通用 Agent Skills 推荐
 
